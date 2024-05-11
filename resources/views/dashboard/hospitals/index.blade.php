@@ -405,13 +405,6 @@
     {{-- Add User Modal Code --}}
     {{-- Add User Modal Code --}}
 
-    <script>
-      $("#packageexpirydatebulk").datepicker({
-        format: 'MM dd, yyyy',
-        todayHighlight: true,
-        autoclose: true,
-      });
-    </script>
 @endsection
 
 @section('third_party_scripts')
