@@ -48,7 +48,7 @@
                 @foreach($hospitals as $hospital)
                   <tr>
                     <td>
-                      <a href="{{ route('dashboard.hospitals.single', $hospital->id) }}">{{ $hospital->name }}</a>
+                      {{ $hospital->name }}
                       <small><b>প্যাকেজ: ({{ bangla($hospital->payments->count()) }} বার)</b>, <b>পরীক্ষা: {{ bangla($hospital->meritlists->count()) }} টি</b></small>
                       <br/>
                             {{-- {{ $hospital->balances2 }} --}}
