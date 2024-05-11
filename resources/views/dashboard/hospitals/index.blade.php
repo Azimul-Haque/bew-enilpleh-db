@@ -51,7 +51,7 @@
                       {{ $hospital->name }}
                       <small class="text-black-50"><i class="fas fa-phone"></i> {{ $hospital->telephone }}</small>
                       <small class="text-black-50"><i class="fas fa-mobile"></i> {{ $hospital->mobile }}</small><br/>
-                      <span class="badge bg-success @else bg-info">{{ $hospital->hospital_type }}</span>
+                      <span class="badge bg-success">{{ $hospital->hospital_type }}</span>
                     </td>
                     <td align="right" width="40%">
                       <button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#smsModal{{ $hospital->id }}">
