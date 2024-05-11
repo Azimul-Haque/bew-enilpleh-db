@@ -60,7 +60,7 @@ class APIController extends Controller
         if($softtoken == env('SOFT_TOKEN'))
         {
             $hospitals = Cache::remember('hospitals'.$hospital_type . $district_id, 30 * 24 * 60 * 60, function () use ($hospital_type, $district_id) {
-                 $courses = Hospital::select('id', 'name')
+                 $courses = Hospital::select('id', 'name', 'hospital_type', 'telephone', 'mobile', 'location')
                              ->where('status', 1) // take only active courses
                              ->where('type', $coursetype) // 1 = Course, 2 = BJS MT, 3 = Bar MT, 4 = Free MT, 5 = QB
                              ->orderBy('priority', 'asc')
