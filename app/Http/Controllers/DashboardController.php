@@ -208,6 +208,8 @@ class DashboardController extends Controller
         ));
 
         $hospital = Hospital::findOrFail($id);
+        Cache::forget('hospitals'. $request->hospital_type . $request->district);
+        
         $hospital->district_id = $request->district;
         $hospital->upazilla_id = $request->upazilla;
         $hospital->name = $request->name;
