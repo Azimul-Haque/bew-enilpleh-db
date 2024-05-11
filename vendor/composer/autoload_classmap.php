@@ -70,6 +70,7 @@ return array(
     'App\\Tag' => $baseDir . '/app/Tag.php',
     'App\\Temppayment' => $baseDir . '/app/Temppayment.php',
     'App\\Topic' => $baseDir . '/app/Topic.php',
+    'App\\Upazilla' => $baseDir . '/app/Upazilla.php',
     'App\\User' => $baseDir . '/app/User.php',
     'App\\Userotp' => $baseDir . '/app/Userotp.php',
     'Asm89\\Stack\\Cors' => $vendorDir . '/asm89/stack-cors/src/Asm89/Stack/Cors.php',

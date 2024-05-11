@@ -621,6 +621,7 @@ class ComposerStaticInitd99be2aa22b662638be63ef18831ea06
         'App\\Tag' => __DIR__ . '/../..' . '/app/Tag.php',
         'App\\Temppayment' => __DIR__ . '/../..' . '/app/Temppayment.php',
         'App\\Topic' => __DIR__ . '/../..' . '/app/Topic.php',
+        'App\\Upazilla' => __DIR__ . '/../..' . '/app/Upazilla.php',
         'App\\User' => __DIR__ . '/../..' . '/app/User.php',
         'App\\Userotp' => __DIR__ . '/../..' . '/app/Userotp.php',
         'Asm89\\Stack\\Cors' => __DIR__ . '/..' . '/asm89/stack-cors/src/Asm89/Stack/Cors.php',
