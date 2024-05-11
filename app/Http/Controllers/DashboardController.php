@@ -155,7 +155,7 @@ class DashboardController extends Controller
         $districts = District::all();
 
         // $sites = Site::all();
-        return view('dashboard.users.index')
+        return view('dashboard.hospitals.index')
                     ->withHospitalscount($hospitalscount)
                     ->withHospitals($hospitals)
                     ->withDistricts($districts);
