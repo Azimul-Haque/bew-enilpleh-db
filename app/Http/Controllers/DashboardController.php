@@ -129,7 +129,7 @@ class DashboardController extends Controller
     public function getHospitals()
     {
         $userscount = User::count();
-        $hospitals = Hospital::paginate()
+        $hospitals = Hospital::->orderBy('id', 'desc')->paginate(10);
         
         return view('dashboard.hospitals.index')->withPackages($hospitals);
     }
