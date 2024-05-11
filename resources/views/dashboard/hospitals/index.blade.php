@@ -51,9 +51,7 @@
                       {{ $hospital->name }}
                       <small class="text-black-50"><i class="fas fa-phone"></i> {{ $hospital->telephone }}</small>
                       <small class="text-black-50"><i class="fas fa-mobile"></i> {{ $hospital->mobile }}</small><br/>
-                      <span class="badge bg-success @else bg-info">{{ $hospital->hospital_type }}</span>,
-                      <small><span>যোগদান: {{ date('d F, Y h:i A', strtotime($hospital->created_at)) }}</span></small>,
-                      <small><span>প্যাকেজ: <b>{{ date('d F, Y', strtotime($hospital->package_expiry_date)) }}</b></span></small>
+                      <span class="badge bg-success @else bg-info">{{ $hospital->hospital_type }}</span>
                     </td>
                     <td align="right" width="40%">
                       <button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#smsModal{{ $hospital->id }}">
