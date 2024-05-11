@@ -150,8 +150,7 @@ class DashboardController extends Controller
                               ->orWhere('telephone', 'LIKE', "%$search%")
                               ->orWhere('mobile', 'LIKE', "%$search%")
                               ->orWhereHas('district', function ($query) use ($search){
-                                  $query->orWhere('name', 'like', '%'.$search.'%');
-                                  $query->orWhere('name_bangla', 'like', '%'.$search.'%');
+                                  $query->where('name_bangla', 'like', '%'.$search.'%');
                               })->with(['district' => function($query) use ($search){
                                     $query->orWhere('name', 'like', '%'.$search.'%');
                                     $query->orWhere('name_bangla', 'like', '%'.$search.'%');
@@ -159,7 +158,7 @@ class DashboardController extends Controller
 
                               ->orderBy('id', 'desc')
                               ->paginate(10);
-                              
+
         $districts = District::all();
 
         // $sites = Site::all();
