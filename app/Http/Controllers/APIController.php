@@ -44,11 +44,29 @@ class APIController extends Controller
         try {
           $upazillas = Upazilla::where('district_id', $district_id)->get();
           return $upazillas;
+
+          $upazillas = Cache::remember('upazillas'.$coursetype, 10 * 24 * 60 * 60, function () use ($coursetype) {
+               $upazillas = Course::select('id', 'name')
+                           ->where('status', 1) // take only active courses
+                           ->where('type', $coursetype) // 1 = Course, 2 = BJS MT, 3 = Bar MT, 4 = Free MT, 5 = QB
+                           ->orderBy('priority', 'asc')
+                           ->get();
+               foreach($upazillas as $course) {
+                   $course->examcount = $course->courseexams->count();
+                   $course->makeHidden('courseexams');
+               }
+               return $upazillas;
+          });
         }
         catch (\Exception $e) {
           return $e->getMessage();
         }
     }
+
+
+
+
+
 
     public function generateOTP(Request $request)
     {
