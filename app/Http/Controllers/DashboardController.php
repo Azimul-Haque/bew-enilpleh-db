@@ -168,12 +168,9 @@ class DashboardController extends Controller
             'upazilla'            => 'required',
             'name'                => 'required|string|max:191',
             'hospital_type'       => 'required',
-            'telephone'       => 'required',
-            'mobile'       => 'required',
-            'location'       => 'required',
-            
-            'status'                  => 'required',
-            'suggested'               => 'required',
+            'telephone'           => 'required',
+            'mobile'              => 'required',
+            'location'            => 'required',
         ));
 
         $package = new Package;
