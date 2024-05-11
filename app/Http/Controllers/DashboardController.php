@@ -170,7 +170,7 @@ class DashboardController extends Controller
             'hospital_type'       => 'required',
             'telephone'       => 'required',
             'mobile'       => 'required',
-            ''       => 'required',
+            'location'       => 'required',
             
             'status'                  => 'required',
             'suggested'               => 'required',
