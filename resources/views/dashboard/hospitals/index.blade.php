@@ -100,7 +100,7 @@
                                         <input type="text"
                                                name="name"
                                                class="form-control"
-                                               value="{{ old('name') }}"
+                                               value="{{ $hospital->name }}"
                                                placeholder="হাসপাতালের নাম" required>
                                         <div class="input-group-append">
                                             <div class="input-group-text"><span class="fas fa-hospital"></span></div>
