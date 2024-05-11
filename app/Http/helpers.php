@@ -54,7 +54,7 @@
       } elseif($hospital_type == 2) {
         return 'প্রাইভেট হাসপাতাল';
       } else($hospital_type == 3) {
-        return 'স্বাস্থ্য কমপ্লেক্স';
+        // return 'স্বাস্থ্য কমপ্লেক্স';
       }  
   }
 
