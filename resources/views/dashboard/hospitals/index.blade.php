@@ -38,8 +38,7 @@
                 <tr>
                   <th>নাম</th>
                   <th>লোকেশন</th>
-                  <th>
-                  <th><span class="badge bg-danger">55%</span></th>
+                  <th>লোকেশন</th>
                 </tr>
               </thead>
               <tbody>
