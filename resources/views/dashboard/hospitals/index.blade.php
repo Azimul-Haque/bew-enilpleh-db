@@ -49,7 +49,8 @@
                   <tr>
                     <td>
                       {{ $hospital->name }}
-                      <small class="text-black-50">{{ $hospital->telephone }}</small>  <small class="text-black-50">{{ $hospital->mobile }}</small>
+                      <small class="text-black-50">{{ $hospital->telephone }}</small>
+                      <small class="text-black-50">{{ $hospital->mobile }}</small>
                       <span class="badge bg-success @else bg-info">{{ $hospital->hospital_type }}</span>,
                       <small><span>যোগদান: {{ date('d F, Y h:i A', strtotime($hospital->created_at)) }}</span></small>,
                       <small><span>প্যাকেজ: <b>{{ date('d F, Y', strtotime($hospital->package_expiry_date)) }}</b></span></small>
