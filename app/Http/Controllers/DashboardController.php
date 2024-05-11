@@ -208,8 +208,7 @@ class DashboardController extends Controller
         ));
 
         $hospital = Hospital::findOrFail($id);
-        Cache::forget('hospitals'. $request->hospital_type . $request->district);
-        
+        Cache::forget('hospitals'. $hospital->hospital_type . $hospital->district);
         $hospital->district_id = $request->district;
         $hospital->upazilla_id = $request->upazilla;
         $hospital->name = $request->name;
@@ -218,7 +217,6 @@ class DashboardController extends Controller
         $hospital->mobile = $request->mobile;
         $hospital->location = $request->location;
         $hospital->save();
-
         
         Session::flash('success', 'Hospital updated successfully!');
         return redirect()->back();
