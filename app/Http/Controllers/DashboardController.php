@@ -209,19 +209,8 @@ class DashboardController extends Controller
         $hospital->location = $request->location;
         $hospital->save();
 
-        $package = 
-        $package->name = $request->name;
-        $package->tagline = $request->tagline;
-        $package->duration = $request->duration;
-        $package->numeric_duration = $request->numeric_duration;
-        $package->price = $request->price;
-        $package->strike_price = $request->strike_price;
-        $package->status = $request->status;
-        $package->suggested = $request->suggested;
-        $package->save();
-
         Session::flash('success', 'Package updated successfully!');
-        return redirect()->route('dashboard.packages');
+        return redirect()->route('dashboard.hospitals');
     }
 
     public function deleteHospital($id)
@@ -230,7 +219,7 @@ class DashboardController extends Controller
         $package->delete();
 
         Session::flash('success', 'Package deleted successfully!');
-        return redirect()->route('dashboard.packages');
+        return redirect()->route('dashboard.hospitals');
     }
 
 
