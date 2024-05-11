@@ -173,16 +173,16 @@ class DashboardController extends Controller
             'location'            => 'required',
         ));
 
-        $package = new Package;
-        $package->name = $request->name;
-        $package->tagline = $request->tagline;
-        $package->duration = $request->duration;
-        $package->numeric_duration = $request->numeric_duration;
-        $package->price = $request->price;
-        $package->strike_price = $request->strike_price;
-        $package->status = $request->status;
-        $package->suggested = $request->suggested;
-        $package->save();
+        $hospital = new Hospital;
+        $hospital->name = $request->name;
+        $hospital->tagline = $request->tagline;
+        $hospital->duration = $request->duration;
+        $hospital->numeric_duration = $request->numeric_duration;
+        $hospital->price = $request->price;
+        $hospital->strike_price = $request->strike_price;
+        $hospital->status = $request->status;
+        $hospital->suggested = $request->suggested;
+        $hospital->save();
 
         Session::flash('success', 'Package added successfully!');
         return redirect()->route('dashboard.packages');
