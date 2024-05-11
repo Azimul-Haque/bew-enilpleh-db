@@ -181,13 +181,6 @@ class DashboardController extends Controller
         $hospital->telephone = $request->telephone;
         $hospital->mobile = $request->mobile;
         $hospital->location = $request->location;
-        
-        $hospital->duration = $request->duration;
-        $hospital->numeric_duration = $request->numeric_duration;
-        $hospital->price = $request->price;
-        $hospital->strike_price = $request->strike_price;
-        $hospital->status = $request->status;
-        $hospital->suggested = $request->suggested;
         $hospital->save();
 
         Session::flash('success', 'Package added successfully!');
