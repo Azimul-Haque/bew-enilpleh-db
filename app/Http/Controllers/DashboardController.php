@@ -235,9 +235,6 @@ class DashboardController extends Controller
 
 
 
-
-
-
     public function getUsers()
     {
         $userscount = User::count();
