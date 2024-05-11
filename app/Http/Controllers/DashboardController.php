@@ -209,16 +209,16 @@ class DashboardController extends Controller
         $hospital->location = $request->location;
         $hospital->save();
 
-        Session::flash('success', 'Package updated successfully!');
+        Session::flash('success', 'Hospital updated successfully!');
         return redirect()->route('dashboard.hospitals');
     }
 
     public function deleteHospital($id)
     {
-        $package = Package::find($id);
-        $package->delete();
+        $hospital = Hospital::find($id);
+        $hospital->delete();
 
-        Session::flash('success', 'Package deleted successfully!');
+        Session::flash('success', 'Hospital deleted successfully!');
         return redirect()->route('dashboard.hospitals');
     }
 
