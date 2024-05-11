@@ -388,7 +388,7 @@
                              value="{{ old('location') }}"
                              autocomplete="off"
                              class="form-control"
-                             placeholder="মোবাইল নম্বর" required>
+                             placeholder="গুগল ম্যাপ লোকেশন লিংক" required>
                       <div class="input-group-append">
                           <div class="input-group-text"><span class="fas fa-map-marker-alt"></span></div>
                       </div>
