@@ -17,7 +17,6 @@ class CreateDistrictsTable extends Migration
             $table->id();
             $table->string('name');
             $table->string('name_bangla');
-            $table->timestamps();
         });
     }
 
