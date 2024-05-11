@@ -51,7 +51,7 @@
                       <span class="badge bg-success">{{ $hospital->hospital_type }}</span>
                     </td>
                     <td>
-                      {{ $hospital->upazilla }}, {{ $hospital->district }}
+                      {{ $hospital->upazilla->name }}, {{ $hospital->district }}
                     </td>
                     <td align="right" width="40%">
                       <button type="button" class="btn btn-warning btn-sm" data-toggle="modal" data-target="#notifModal{{ $hospital->id }}">
