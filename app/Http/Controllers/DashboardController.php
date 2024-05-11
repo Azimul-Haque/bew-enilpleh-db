@@ -208,7 +208,7 @@ class DashboardController extends Controller
         ));
 
         $hospital = Hospital::findOrFail($id);
-        Cache::forget('hospitals'. $hospital->hospital_type . $hospital->district);
+        Cache::forget('hospitals'. $hospital->hospital_type . $hospital->district_id);
         $hospital->district_id = $request->district;
         $hospital->upazilla_id = $request->upazilla;
         $hospital->name = $request->name;
@@ -217,7 +217,7 @@ class DashboardController extends Controller
         $hospital->mobile = $request->mobile;
         $hospital->location = $request->location;
         $hospital->save();
-        
+
         Session::flash('success', 'Hospital updated successfully!');
         return redirect()->back();
     }
@@ -225,7 +225,7 @@ class DashboardController extends Controller
     public function deleteHospital($id)
     {
         $hospital = Hospital::find($id);
-        Cache::forget('hospitals'. $hospital->hospital_type . $hospital->district);
+        Cache::forget('hospitals'. $hospital->hospital_type . $hospital->district_id);
         $hospital->delete();
 
         Session::flash('success', 'Hospital deleted successfully!');
