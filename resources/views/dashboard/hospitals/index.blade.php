@@ -54,36 +54,6 @@
                       <span class="badge bg-success">{{ $hospital->hospital_type }}</span>
                     </td>
                     <td align="right" width="40%">
-                      <button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#smsModal{{ $hospital->id }}">
-                        <i class="fas fa-envelope"></i>
-                      </button>
-                      {{-- SMS Modal Code --}}
-                      {{-- SMS Modal Code --}}
-                      <!-- Modal -->
-                      <div class="modal fade" id="smsModal{{ $hospital->id }}" tabindex="-1" role="dialog" aria-labelledby="smsModalLabel" aria-hidden="true" data-backdrop="static">
-                        <div class="modal-dialog" role="document">
-                          <div class="modal-content">
-                            <div class="modal-header bg-info">
-                              <h5 class="modal-title" id="smsModalLabel">এসএমএস পাঠান</h5>
-                              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                              </button>
-                            </div>
-                            <form method="post" action="{{ route('dashboard.hospitals.singlesms', $hospital->id) }}">
-                              <div class="modal-body">
-                                    @csrf
-                                    <textarea class="form-control" placeholder="মেসেজ লিখুন" name="message" style="min-height: 150px; resize: none;" required></textarea>
-                              </div>
-                              <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-dismiss="modal">ফিরে যান</button>
-                                <button type="submit" class="btn btn-info">মেসেজ পাঠান</button>
-                              </div>
-                            </form>
-                          </div>
-                        </div>
-                      </div>
-                      {{-- SMS Modal Code --}}
-                      {{-- SMS Modal Code --}}
                       <button type="button" class="btn btn-warning btn-sm" data-toggle="modal" data-target="#notifModal{{ $hospital->id }}">
                         <i class="fas fa-bell"></i>
                       </button>
