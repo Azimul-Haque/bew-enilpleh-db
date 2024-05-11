@@ -477,6 +477,33 @@
 @section('third_party_scripts')
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script type="text/javascript">
+
+        $('#district').on('change', function() {
+          $('#upazilla').prop('disabled', true);
+          $('#school').prop('disabled', true);
+          $('#gotoschoolbtn').prop('disabled', true);
+          $('#upazilla').append('<option value="" selected disabled>লোড হচ্ছে...</option>');
+          $('#school').find('option').remove().end().append('<option value="" selected disabled>স্কুল নির্বাচন করুন</option>');
+
+          $.ajax({
+            url: "/schools/getupazillas/api/"+$(this).val(), 
+            type: "GET",
+            success: function(result){
+              $('#upazilla')
+                  .find('option')
+                  .remove()
+                  .end()
+                  .prop('disabled', false)
+                  .append('<option value="" selected disabled>উপজেলা নির্ধারণ করুন</option>')
+              ;
+              for(var countupazilla = 0; countupazilla < result.length; countupazilla++) {
+                //console.log(result[countupazilla]);
+                $('#upazilla').append('<option value="'+result[countupazilla]+'">'+result[countupazilla]+'</option>')
+              }
+            }
+          });
+        });
+        
         $('#adduserrole').change(function () {
             if($('#adduserrole').val() == 'accountant') {
                 $('#ifaccountant').hide();
