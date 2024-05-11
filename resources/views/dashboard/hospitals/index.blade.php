@@ -36,9 +36,9 @@
             <table class="table">
               <thead>
                 <tr>
-                  <th>নাম</th>
-                  <th align="right">লোকেশন</th>
-                  <th align="right">কার্যক্রম</th>
+                  <td>নাম</td>
+                  <td align="right">লোকেশন</td>
+                  <td align="right">কার্যক্রম</td>
                 </tr>
               </thead>
               <tbody>
