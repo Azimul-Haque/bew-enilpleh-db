@@ -167,9 +167,8 @@ class DashboardController extends Controller
             'district'            => 'required',
             'upazilla'            => 'required',
             'name'                => 'required|string|max:191',
-            'hospital_type'        => 'required|integer',
-            'price'                   => 'required|integer',
-            'strike_price'            => 'required|integer',
+            'hospital_type'       => 'required',
+            
             'status'                  => 'required',
             'suggested'               => 'required',
         ));
