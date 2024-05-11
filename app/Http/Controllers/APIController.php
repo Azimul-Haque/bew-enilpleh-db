@@ -55,7 +55,7 @@ class APIController extends Controller
         }
     }
 
-    public function getHospitalsDistrict($softtoken, $coursetype)
+    public function getHospitalsDistrict($softtoken, $district_id)
     {
         if($softtoken == env('SOFT_TOKEN'))
         {
