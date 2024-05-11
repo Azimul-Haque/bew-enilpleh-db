@@ -76,7 +76,7 @@ class APIController extends Controller
             // dd($courses);
             return response()->json([
                 'success' => true,
-                'courses' => $hospitals,
+                'hospitals' => $hospitals,
             ]);
         } else {
             return response()->json([
