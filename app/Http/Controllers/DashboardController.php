@@ -128,9 +128,32 @@ class DashboardController extends Controller
 
     public function getHospitals()
     {
-        $hospitals = Hospital::all();
+        $hospitals = Hospital::paginate()
         
         return view('dashboard.hospitals.index')->withPackages($hospitals);
+    }
+
+    public function getHospitalsSearch($search)
+    {
+        $userscount = User::where('name', 'LIKE', "%$search%")
+                          ->orWhere('email', 'LIKE', "%$search%")
+                          ->orWhere('mobile', 'LIKE', "%$search%")
+                          ->orWhere('uid', 'LIKE', "%$search%")
+                          ->orWhere('onesignal_id', 'LIKE', "%$search%")
+                          ->orderBy('id', 'desc')
+                          ->count();
+        $users = User::where('name', 'LIKE', "%$search%")
+                     ->orWhere('email', 'LIKE', "%$search%")
+                     ->orWhere('mobile', 'LIKE', "%$search%")
+                     ->orWhere('uid', 'LIKE', "%$search%")
+                     ->orWhere('onesignal_id', 'LIKE', "%$search%")
+                     ->orderBy('id', 'desc')
+                     ->paginate(10);
+
+        // $sites = Site::all();
+        return view('dashboard.users.index')
+                    ->withUsers($users)
+                    ->withUserscount($userscount);
     }
 
     public function storeHospital(Request $request)
