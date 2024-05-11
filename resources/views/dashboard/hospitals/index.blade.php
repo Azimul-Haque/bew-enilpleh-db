@@ -374,12 +374,12 @@
                   </div>
 
                   <div class="input-group mb-3">
-                      <input type="text"
+                      <input type="number"
                              name="mobile"
                              value="{{ old('mobile') }}"
                              autocomplete="off"
                              class="form-control"
-                             placeholder="মোবাইল নম্বর (১১ ডিজিট)" required>
+                             placeholder="মোবাইল নম্বর" required>
                       <div class="input-group-append">
                           <div class="input-group-text"><span class="fas fa-phone"></span></div>
                       </div>
