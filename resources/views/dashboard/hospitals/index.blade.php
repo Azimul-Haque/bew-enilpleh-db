@@ -109,9 +109,9 @@
                                     <div class="input-group mb-3">
                                       <select name="hospital_type" class="form-control" required>
                                           <option selected="" disabled="" value="">হাসপাতালের ধরন</option>
-                                          <option value="1">মেডিকেল কলেজ ও হাসপাতাল</option>
-                                          <option value="2">প্রাইভেট হাসপাতাল</option>
-                                          <option value="3">স্বাস্থ্য কমপ্লেক্স</option>
+                                          <option value="1" @if($hospital->hospital_type == 1) selected @endif>মেডিকেল কলেজ ও হাসপাতাল</option>
+                                          <option value="2" @if($hospital->hospital_type == 2) selected @endif>প্রাইভেট হাসপাতাল</option>
+                                          <option value="3" @if($hospital->hospital_type == 3) selected @endif>স্বাস্থ্য কমপ্লেক্স</option>
                                       </select>
                                       <div class="input-group-append">
                                           <div class="input-group-text"><span class="fas fa-star-half-alt"></span></div>
