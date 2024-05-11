@@ -93,6 +93,7 @@ class APIController extends Controller
             $hospitals = Cache::remember('hospitals'.$hospital_type . $district_id, 30 * 24 * 60 * 60, function () use ($hospital_type, $district_id, $upazilla_id) {
                  $hospitals = Hospital::where('hospital_type', $hospital_type)
                              ->where('district_id', $district_id)
+                             ->where('upazilla_id', $upazilla_id)
                              ->orderBy('id', 'desc')
                              ->get();
                              // dd($hospitals);
