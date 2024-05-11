@@ -128,9 +128,9 @@ class DashboardController extends Controller
 
     public function getHospitals()
     {
-        $packages = Package::all();
+        $hospitals = Package::all();
         
-        return view('dashboard.hospitals.index')->withPackages($packages);
+        return view('dashboard.hospitals.index')->withPackages($hospitals);
     }
 
     public function storeHospital(Request $request)
