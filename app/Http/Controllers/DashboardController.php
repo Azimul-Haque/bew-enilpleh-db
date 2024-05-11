@@ -159,7 +159,7 @@ class DashboardController extends Controller
 
                               ->orderBy('id', 'desc')
                               ->paginate(10);
-                              dd($hospitals);
+                              
         $districts = District::all();
 
         // $sites = Site::all();
