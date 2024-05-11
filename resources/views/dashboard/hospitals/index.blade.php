@@ -141,7 +141,7 @@
                                     <div class="input-group mb-3">
                                         <input type="text"
                                                name="location"
-                                               value="{{ old('location') }}"
+                                               value="{{ $hospital->location }}"
                                                autocomplete="off"
                                                class="form-control"
                                                placeholder="গুগল ম্যাপ লোকেশন লিংক" required>
