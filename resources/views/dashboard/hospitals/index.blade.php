@@ -325,7 +325,7 @@
                     <select name="status" class="form-control" required>
                         <option selected="" disabled="" value="">জেলা নির্বাচন করুন</option>
                         @foreach($districts as $district)
-                          <option value="1" @if($course->status == 1) selected @endif>Active</option>
+                          <option value="{{ $district->id }}" @endif>{{ $district->name_bangla }}</option>
                         @endforeach
                     </select>
                     <div class="input-group-append">
