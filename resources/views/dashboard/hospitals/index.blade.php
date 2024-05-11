@@ -16,7 +16,7 @@
             <div class="card-tools">
               <form class="form-inline form-group-lg" action="">
                 <div class="form-group">
-                  <input type="search-param" class="form-control form-control-sm" placeholder="ব্যবহারকারী খুঁজুন" id="search-param" required>
+                  <input type="search-param" class="form-control form-control-sm" placeholder="হাসপাতাল খুঁজুন" id="search-param" required>
                 </div>
                 <button type="button" id="search-button" class="btn btn-default btn-sm" style="margin-left: 5px;">
                   <i class="fas fa-search"></i> খুঁজুন
@@ -145,7 +145,7 @@
                         <div class="modal-dialog" role="document">
                           <div class="modal-content">
                             <div class="modal-header bg-primary">
-                              <h5 class="modal-title" id="editUserModalLabel">ব্যবহারকারী তথ্য হালনাগাদ</h5>
+                              <h5 class="modal-title" id="editUserModalLabel">হাসপাতাল তথ্য হালনাগাদ</h5>
                               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                 <span aria-hidden="true">&times;</span>
                               </button>
@@ -208,7 +208,7 @@
                                         <option value="admin" @if($user->role == 'admin') selected="" @endif>এডমিন</option>
                                         <option value="manager" @if($user->role == 'manager') selected="" @endif>ম্যানেজার</option>
                                         <option value="volunteer" @if($user->role == 'volunteer') selected="" @endif>ভলান্টিয়ার</option>
-                                        <option value="user" @if($user->role == 'user') selected="" @endif>ব্যবহারকারী</option>
+                                        <option value="user" @if($user->role == 'user') selected="" @endif>হাসপাতাল</option>
                                         {{-- <option value="accountant" @if($user->role == 'accountant') selected="" @endif>একাউন্টেন্ট</option> --}}
                                       </select>
                                         <div class="input-group-append">
@@ -263,13 +263,13 @@
                           <div class="modal-dialog" role="document">
                             <div class="modal-content">
                               <div class="modal-header bg-danger">
-                                <h5 class="modal-title" id="deleteUserModalLabel">ব্যবহারকারী ডিলেট</h5>
+                                <h5 class="modal-title" id="deleteUserModalLabel">হাসপাতাল ডিলেট</h5>
                                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                   <span aria-hidden="true">&times;</span>
                                 </button>
                               </div>
                               <div class="modal-body">
-                                আপনি কি নিশ্চিতভাবে এই ব্যবহারকারীকে ডিলেট করতে চান?<br/>
+                                আপনি কি নিশ্চিতভাবে এই হাসপাতালকে ডিলেট করতে চান?<br/>
                                 <center>
                                     <big><b>{{ $user->name }}</b></big><br/>
                                     <small><i class="fas fa-phone"></i> {{ $user->mobile }}</small>
@@ -311,7 +311,7 @@
       <div class="modal-dialog" role="document">
         <div class="modal-content">
           <div class="modal-header bg-success">
-            <h5 class="modal-title" id="addUserModalLabel">নতুন ব্যবহারকারী যোগ</h5>
+            <h5 class="modal-title" id="addUserModalLabel">নতুন হাসপাতাল যোগ</h5>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
@@ -350,7 +350,7 @@
                       <option value="admin">এডমিন</option>
                      <option value="manager">ম্যানেজার</option>
                      <option value="volunteer">ভলান্টিয়ার</option>
-                      <option value="user">ব্যবহারকারী</option>
+                      <option value="user">হাসপাতাল</option>
               {{-- <option value="accountant">একাউন্টেন্ট</option> --}}
                     </select>
                       <div class="input-group-append">
@@ -389,7 +389,7 @@
       <div class="modal-dialog" role="document">
         <div class="modal-content">
           <div class="modal-header bg-info">
-            <h5 class="modal-title" id="addBulkDateLabel">নতুন ব্যবহারকারী যোগ</h5>
+            <h5 class="modal-title" id="addBulkDateLabel">নতুন হাসপাতাল যোগ</h5>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
