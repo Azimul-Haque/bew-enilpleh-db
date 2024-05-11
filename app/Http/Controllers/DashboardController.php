@@ -168,6 +168,9 @@ class DashboardController extends Controller
             'upazilla'            => 'required',
             'name'                => 'required|string|max:191',
             'hospital_type'       => 'required',
+            'telephone'       => 'required',
+            'mobile'       => 'required',
+            ''       => 'required',
             
             'status'                  => 'required',
             'suggested'               => 'required',
