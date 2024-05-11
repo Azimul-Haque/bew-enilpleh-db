@@ -322,7 +322,7 @@
                   @csrf
 
                   <div class="input-group mb-3">
-                    <select name="status" class="form-control" required>
+                    <select name="district" id="district" class="form-control" required>
                         <option selected="" disabled="" value="">জেলা নির্বাচন করুন</option>
                         @foreach($districts as $district)
                           <option value="{{ $district->id }}">{{ $district->name_bangla }}</option>
