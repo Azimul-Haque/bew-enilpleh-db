@@ -329,7 +329,7 @@
                         @endforeach
                     </select>
                     <div class="input-group-append">
-                        <div class="input-group-text"><span class="fas fa-location"></span></div>
+                        <div class="input-group-text"><span class="fas fa-map-marked"></span></div>
                     </div>
                   </div>
                   <div class="input-group mb-3">
