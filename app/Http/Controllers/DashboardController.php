@@ -42,7 +42,7 @@ class DashboardController extends Controller
     {
         parent::__construct();
         $this->middleware('auth')->except('clear');
-        $this->middleware(['admin'])->only('getUsers', 'storeUser', 'updateUser', 'deleteUser', 'getUser', 'deleteBalance', 'getCreditors', 'getSingleCreditor', 'getAddDuePage', 'deleteCreditorDue', 'getSiteCategorywise', 'getPackages', 'storePackage', 'updatePackage', 'deletePackage', 'getPayments', 'getMessages', 'updateMessage', 'getNotifications', 'sendSingleNotification', 'sendSingleSMS', 'getExamSolvePDF', 'getHospitals');
+        $this->middleware(['admin'])->only('getUsers', 'storeUser', 'updateUser', 'deleteUser', 'getUser', 'getMessages', 'updateMessage', 'getNotifications', 'getHospitals', 'storeHospital', 'updateHospital');
         
     }
 
