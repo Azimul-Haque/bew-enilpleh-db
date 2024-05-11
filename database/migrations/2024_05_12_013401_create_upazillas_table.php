@@ -15,7 +15,7 @@ class CreateUpazillasTable extends Migration
     {
         Schema::create('upazillas', function (Blueprint $table) {
             $table->increments('id');
-            $table->number('district_id')->unsigned();
+            $table->integer('district_id')->unsigned();
             $table->string('name');
             $table->string('name_bangla');
         });
