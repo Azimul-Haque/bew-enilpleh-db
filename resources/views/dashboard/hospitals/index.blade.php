@@ -14,7 +14,7 @@
 
             <div class="card-tools">
             	<button type="button" class="btn btn-success btn-sm"  data-toggle="modal" data-target="#addPackageModal" title="" rel="tooltip" data-original-title="হাসপাতাল যোগ করুন">
-            		<i class="fas fa-clipboard-check"></i> নতুন হাসপাতাল
+            		<i class="fas fa-plus"></i> নতুন হাসপাতাল
             	</button>
             </div>
           </div>
