@@ -492,15 +492,6 @@
           });
         });
 
-        $('#adduserrole').change(function () {
-            if($('#adduserrole').val() == 'accountant') {
-                $('#ifaccountant').hide();
-            } else {
-                $('#ifaccountant').show();
-            }
-        });
-
-
         $(document).on('click', '#search-button', function() {
           if($('#search-param').val() != '') {
             var urltocall = '{{ route('dashboard.hospitals') }}' +  '/' + $('#search-param').val();
