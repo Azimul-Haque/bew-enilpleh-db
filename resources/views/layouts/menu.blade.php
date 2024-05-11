@@ -19,7 +19,7 @@
 <li class="nav-item">
     <a href="{{ route('dashboard.hospitals') }}" class="nav-link {{ Request::is('dashboard/hospitals') ? 'active' : '' }} {{ Request::is('dashboard/hospitals/*') ? 'active' : '' }}">
         <i class="nav-icon fas fa-hand-holding-usd"></i>
-        <p>পেমেন্টসমূহ</p>
+        <p>হাসপাতাল তালিকা</p>
     </a>
 </li>
 @endif
