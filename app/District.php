@@ -9,6 +9,6 @@ class District extends Model
     public $timestamps = false;
 
     public function hospitals(){
-        return $this->hasMany('App\Blog');
+        return $this->hasMany('App\Hospital');
     }
 }
