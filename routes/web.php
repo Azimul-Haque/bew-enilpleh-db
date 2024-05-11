@@ -30,9 +30,9 @@ Route::get('/check/ip', 'IndexController@checkIP')->name('index.check.ip');
 
 
 // Hospital
-Route::get('/dashboard/hospitals', 'DashboardController@getPackages')->name('dashboard.packages');
-Route::post('/dashboard/hospitals/store', 'DashboardController@storePackage')->name('dashboard.packages.store');
-Route::post('/dashboard/hospitals/{id}/update', 'DashboardController@updatePackage')->name('dashboard.packages.update');
+Route::get('/dashboard/hospitals', 'DashboardController@getHospitals')->name('dashboard.hospitals');
+Route::post('/dashboard/hospitals/store', 'DashboardController@storeHospital')->name('dashboard.hospitals.store');
+Route::post('/dashboard/hospitals/{id}/update', 'DashboardController@updateHospital')->name('dashboard.hospitals.update');
 
 
 
