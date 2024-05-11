@@ -390,7 +390,7 @@
                              class="form-control"
                              placeholder="মোবাইল নম্বর" required>
                       <div class="input-group-append">
-                          <div class="input-group-text"><span class="fas fa-location"></span></div>
+                          <div class="input-group-text"><span class="fas fa-map-marker-alt"></span></div>
                       </div>
                   </div>            
             </div>
