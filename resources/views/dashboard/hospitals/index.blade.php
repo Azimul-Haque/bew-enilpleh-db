@@ -483,7 +483,7 @@
           $('#upazilla').append('<option value="" selected disabled>উপজেলা লোড হচ্ছে...</option>');
 
           $.ajax({
-            url: "/getupazillas/api/"+$(this).val(), 
+            url: "/getupazillas/"+$(this).val(), 
             type: "GET",
             success: function(result){
               $('#upazilla')
