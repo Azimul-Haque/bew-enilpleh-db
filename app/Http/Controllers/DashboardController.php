@@ -230,6 +230,7 @@ class DashboardController extends Controller
     {
         $hospital = Hospital::find($id);
         Cache::forget('hospitals'. $hospital->hospital_type . $hospital->district_id);
+        Cache::forget('hospitals'. $hospital->hospital_type . $hospital->district_id . $hospital->upazilla_id);
         $hospital->delete();
 
         Session::flash('success', 'Hospital deleted successfully!');
