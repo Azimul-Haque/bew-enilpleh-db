@@ -78,89 +78,77 @@
                                     @csrf
 
                                     <div class="input-group mb-3">
+                                      <select name="district" id="district" class="form-control" required>
+                                          <option selected="" disabled="" value="">জেলা নির্বাচন করুন</option>
+                                          @foreach($districts as $district)
+                                            <option value="{{ $district->id }}">{{ $district->name_bangla }}</option>
+                                          @endforeach
+                                      </select>
+                                      <div class="input-group-append">
+                                          <div class="input-group-text"><span class="fas fa-map"></span></div>
+                                      </div>
+                                    </div>
+                                    <div class="input-group mb-3">
+                                      <select name="upazilla" id="upazilla" class="form-control" required>
+                                          <option selected="" disabled="" value="">উপজেলা নির্বাচন করুন</option>
+                                      </select>
+                                      <div class="input-group-append">
+                                          <div class="input-group-text"><span class="fas fa-map-marked-alt"></span></div>
+                                      </div>
+                                    </div>
+                                    <div class="input-group mb-3">
                                         <input type="text"
                                                name="name"
                                                class="form-control"
-                                               value="{{ $hospital->name }}"
-                                               placeholder="নাম" required>
+                                               value="{{ old('name') }}"
+                                               placeholder="হাসপাতালের নাম" required>
                                         <div class="input-group-append">
-                                            <div class="input-group-text"><span class="fas fa-user"></span></div>
+                                            <div class="input-group-text"><span class="fas fa-hospital"></span></div>
                                         </div>
                                     </div>
-
                                     <div class="input-group mb-3">
-                                        <input type="text"
-                                               name="mobile"
-                                               value="{{ $hospital->mobile }}"
-                                               autocomplete="off"
+                                      <select name="hospital_type" class="form-control" required>
+                                          <option selected="" disabled="" value="">হাসপাতালের ধরন</option>
+                                          <option value="1">মেডিকেল কলেজ ও হাসপাতাল</option>
+                                          <option value="2">প্রাইভেট হাসপাতাল</option>
+                                          <option value="3">স্বাস্থ্য কমপ্লেক্স</option>
+                                      </select>
+                                      <div class="input-group-append">
+                                          <div class="input-group-text"><span class="fas fa-star-half-alt"></span></div>
+                                      </div>
+                                    </div>
+                                    <div class="input-group mb-3">
+                                        <input type="number"
+                                               name="telephone"
                                                class="form-control"
-                                               placeholder="মোবাইল নম্বর (১১ ডিজিট)" required>
+                                               value="{{ old('telephone') }}"
+                                               placeholder="টেলিফোন নং" required>
                                         <div class="input-group-append">
                                             <div class="input-group-text"><span class="fas fa-phone"></span></div>
                                         </div>
                                     </div>
-
                                     <div class="input-group mb-3">
-                                        <input type="text"
-                                               name="uid"
-                                               value="{{ $hospital->uid }}"
+                                        <input type="number"
+                                               name="mobile"
+                                               value="{{ old('mobile') }}"
                                                autocomplete="off"
                                                class="form-control"
-                                               placeholder="Firebase UID">
+                                               placeholder="মোবাইল নম্বর" required>
                                         <div class="input-group-append">
-                                            <div class="input-group-text"><span class="fas fa-server"></span></div>
+                                            <div class="input-group-text"><span class="fas fa-mobile"></span></div>
                                         </div>
                                     </div>
-
                                     <div class="input-group mb-3">
                                         <input type="text"
-                                               name="onesignal_id"
-                                               value="{{ $hospital->onesignal_id }}"
+                                               name="location"
+                                               value="{{ old('location') }}"
                                                autocomplete="off"
                                                class="form-control"
-                                               placeholder="Onesignal Player ID">
+                                               placeholder="গুগল ম্যাপ লোকেশন লিংক" required>
                                         <div class="input-group-append">
-                                            <div class="input-group-text"><span class="fas fa-bell"></span></div>
+                                            <div class="input-group-text"><span class="fas fa-map-marker-alt"></span></div>
                                         </div>
-                                    </div>
-
-                                    <div class="input-group mb-3">
-                                      <select name="role" class="form-control" required>
-                                        <option disabled="" value="">ধরন নির্ধারণ করুন</option>
-                                        <option value="admin" @if($hospital->role == 'admin') selected="" @endif>এডমিন</option>
-                                        <option value="manager" @if($hospital->role == 'manager') selected="" @endif>ম্যানেজার</option>
-                                        <option value="volunteer" @if($hospital->role == 'volunteer') selected="" @endif>ভলান্টিয়ার</option>
-                                        <option value="user" @if($hospital->role == 'user') selected="" @endif>হাসপাতাল</option>
-                                        {{-- <option value="accountant" @if($hospital->role == 'accountant') selected="" @endif>একাউন্টেন্ট</option> --}}
-                                      </select>
-                                        <div class="input-group-append">
-                                            <div class="input-group-text"><span class="fas fa-user-secret"></span></div>
-                                        </div>
-                                    </div>
-
-                                    <div class="input-group mb-3">
-                                        <input type="text"
-                                               name="packageexpirydate"
-                                               id="packageexpirydate{{ $hospital->id }}" 
-                                               value="{{ date('F d, Y', strtotime($hospital->package_expiry_date)) }}"
-                                               autocomplete="off"
-                                               class="form-control"
-                                               placeholder="প্যাকেজের মেয়াদ বৃদ্ধি" required>
-                                        <div class="input-group-append">
-                                            <div class="input-group-text"><span class="fas fa-calendar-check"></span></div>
-                                        </div>
-                                    </div>
-
-                                    <div class="input-group mb-3">
-                                        <input type="password"
-                                               name="password"
-                                               class="form-control"
-                                               autocomplete="new-password"
-                                               placeholder="পাসওয়ার্ড (ঐচ্ছিক)">
-                                        <div class="input-group-append">
-                                            <div class="input-group-text"><span class="fas fa-lock"></span></div>
-                                        </div>
-                                    </div>
+                                    </div>            
                                 
                               </div>
                               <div class="modal-footer">
