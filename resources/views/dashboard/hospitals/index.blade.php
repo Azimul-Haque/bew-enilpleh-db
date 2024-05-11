@@ -367,7 +367,7 @@
                              name="telephone"
                              class="form-control"
                              value="{{ old('telephone') }}"
-                             placeholder="নাম" required>
+                             placeholder="টেলিফোন নং" required>
                       <div class="input-group-append">
                           <div class="input-group-text"><span class="fas fa-user"></span></div>
                       </div>
