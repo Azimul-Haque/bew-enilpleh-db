@@ -351,7 +351,7 @@
                       </div>
                   </div>
                   <div class="input-group mb-3">
-                    <select name="upazilla" id="upazilla" class="form-control" required>
+                    <select name="hospital_type" class="form-control" required>
                         <option selected="" disabled="" value="">উপজেলা নির্বাচন করুন</option>
                     </select>
                     <div class="input-group-append">
