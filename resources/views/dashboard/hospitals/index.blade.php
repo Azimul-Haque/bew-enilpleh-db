@@ -50,9 +50,7 @@
                       <small class="text-black-50"><i class="fas fa-mobile"></i> {{ $hospital->mobile }}</small><br/>
                       <span class="badge bg-success">{{ $hospital->hospital_type }}</span>
                     </td>
-                    <td>
-                      
-                    </td>
+                    
                     <td align="right" width="40%">
                       <button type="button" class="btn btn-warning btn-sm" data-toggle="modal" data-target="#notifModal{{ $hospital->id }}">
                         <i class="fas fa-bell"></i>
