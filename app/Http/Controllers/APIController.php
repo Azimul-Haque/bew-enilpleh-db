@@ -63,8 +63,7 @@ class APIController extends Controller
                  $courses = Hospital::select('id', 'name', 'hospital_type', 'telephone', 'mobile', 'location')
                              ->where('hospital_type', $hospital_type)
                              ->where('district_id', $district_id)
-                             ->where('type', $coursetype) 
-                             ->orderBy('priority', 'asc')
+                             ->orderBy('id', 'desc')
                              ->get();
                  foreach($courses as $course) {
                      $course->examcount = $course->courseexams->count();
