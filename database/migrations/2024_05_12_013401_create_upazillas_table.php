@@ -14,8 +14,11 @@ class CreateUpazillasTable extends Migration
     public function up()
     {
         Schema::create('upazillas', function (Blueprint $table) {
-            $table->id();
-            $table->timestamps();
+            $table->increments('id');
+            $table->string('district');
+            $table->string('district_bangla');
+            $table->string('upazilla');
+            $table->string('upazilla_bangla');
         });
     }
 
