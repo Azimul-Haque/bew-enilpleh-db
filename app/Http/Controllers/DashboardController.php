@@ -225,6 +225,7 @@ class DashboardController extends Controller
     public function deleteHospital($id)
     {
         $hospital = Hospital::find($id);
+        Cache::forget('hospitals'. $hospital->hospital_type . $hospital->district);
         $hospital->delete();
 
         Session::flash('success', 'Hospital deleted successfully!');
