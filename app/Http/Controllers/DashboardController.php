@@ -171,7 +171,7 @@ class DashboardController extends Controller
     public function storeHospital(Request $request)
     {
         $this->validate($request,array(
-            'district'            => 'required',
+            'district_id'            => 'required',
             'upazilla'            => 'required',
             'name'                => 'required|string|max:191',
             'hospital_type'       => 'required',
@@ -182,7 +182,7 @@ class DashboardController extends Controller
 
         $hospital = new Hospital;
         $hospital->district_id = $request->district;
-        $hospital->upazilla_id = $request->upazilla;
+        $hospital->upazilla_id = $request->district_id;
         $hospital->name = $request->name;
         $hospital->hospital_type = $request->hospital_type;
         $hospital->telephone = $request->telephone;
@@ -190,7 +190,7 @@ class DashboardController extends Controller
         $hospital->location = $request->location;
         $hospital->save();
 
-        Cache::forget('hospitals'. $request->hospital_type . $request->district);
+        Cache::forget('hospitals'. $request->hospital_type . $request->district_id);
         Session::flash('success', 'Hospital added successfully!');
         return redirect()->route('dashboard.hospitals');
     }
@@ -198,8 +198,8 @@ class DashboardController extends Controller
     public function updateHospital(Request $request, $id)
     {
         $this->validate($request,array(
-            'district'            => 'required',
-            'upazilla'            => 'required',
+            'district_id'            => 'required',
+            'upazilla_id'            => 'required',
             'name'                => 'required|string|max:191',
             'hospital_type'       => 'required',
             'telephone'           => 'required',
@@ -209,8 +209,8 @@ class DashboardController extends Controller
 
         $hospital = Hospital::findOrFail($id);
         Cache::forget('hospitals'. $hospital->hospital_type . $hospital->district_id);
-        $hospital->district_id = $request->district;
-        $hospital->upazilla_id = $request->upazilla;
+        $hospital->district_id = $request->district_id;
+        $hospital->upazilla_id = $request->upazilla_id;
         $hospital->name = $request->name;
         $hospital->hospital_type = $request->hospital_type;
         $hospital->telephone = $request->telephone;
