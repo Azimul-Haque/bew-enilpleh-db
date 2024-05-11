@@ -136,7 +136,9 @@ class DashboardController extends Controller
         
         return view('dashboard.hospitals.index')
                             ->withHospitalscount($hospitalscount)
-                            ->withHospitals($hospitals);
+                            ->withHospitals($hospitals)
+                            ->withDistricts($districts)
+                            ->withupazillas($upazillas);
     }
 
     public function getHospitalsSearch($search)
