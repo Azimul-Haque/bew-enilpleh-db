@@ -14,6 +14,10 @@ use App\Blog;
 use App\Blogcategory;
 use App\Meritlist;
 
+use App\District;
+use App\Upazilla;
+use App\Hospital;
+
 use Carbon\Carbon;
 use DB;
 use Hash;
