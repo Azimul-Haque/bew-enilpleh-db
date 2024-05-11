@@ -19,7 +19,8 @@ class CreateHospitalsTable extends Migration
             $table->integer('upazilla_id')->unsigned();
             $table->string('name');
             $table->integer('hospital_type');
-            $table->integer('hospital_type');
+            $table->string('contact');
+            $table->string('address');
             $table->timestamps();
         });
     }
