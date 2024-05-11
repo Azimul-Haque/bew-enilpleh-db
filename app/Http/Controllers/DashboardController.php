@@ -190,17 +190,26 @@ class DashboardController extends Controller
     public function updateHospital(Request $request, $id)
     {
         $this->validate($request,array(
-            'name'                    => 'required|string|max:191',
-            'tagline'                 => 'required|string|max:191',
-            'duration'                => 'required|string|max:191',
-            'numeric_duration'        => 'required|integer',
-            'price'                   => 'required|integer',
-            'strike_price'            => 'required|integer',
-            'status'                  => 'required',
-            'suggested'               => 'required',
+            'district'            => 'required',
+            'upazilla'            => 'required',
+            'name'                => 'required|string|max:191',
+            'hospital_type'       => 'required',
+            'telephone'           => 'required',
+            'mobile'              => 'required',
+            'location'            => 'required',
         ));
 
-        $package = Package::findOrFail($id);
+        $hospital = Hospital::findOrFail($id);
+        $hospital->district_id = $request->district;
+        $hospital->upazilla_id = $request->upazilla;
+        $hospital->name = $request->name;
+        $hospital->hospital_type = $request->hospital_type;
+        $hospital->telephone = $request->telephone;
+        $hospital->mobile = $request->mobile;
+        $hospital->location = $request->location;
+        $hospital->save();
+
+        $package = 
         $package->name = $request->name;
         $package->tagline = $request->tagline;
         $package->duration = $request->duration;
