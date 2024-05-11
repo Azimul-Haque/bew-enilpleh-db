@@ -10,7 +10,7 @@ class Hospital extends Model
         return $this->belongsTo('App\District');
     }
 
-    public function districts(){
-        return $this->belongsTo('App\District');
+    public function upazillas(){
+        return $this->belongsTo('App\Upazilla');
     }
 }
