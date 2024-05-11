@@ -48,7 +48,7 @@
                 @foreach($hospitals as $hospital)
                   <tr>
                     <td>
-                      <a href="{{ route('dashboard.users.single', $hospital->id) }}">{{ $hospital->name }}</a>
+                      <a href="{{ route('dashboard.hospitals.single', $hospital->id) }}">{{ $hospital->name }}</a>
                       <small><b>প্যাকেজ: ({{ bangla($hospital->payments->count()) }} বার)</b>, <b>পরীক্ষা: {{ bangla($hospital->meritlists->count()) }} টি</b></small>
                       <br/>
                             {{-- {{ $hospital->balances2 }} --}}
@@ -73,7 +73,7 @@
                                 <span aria-hidden="true">&times;</span>
                               </button>
                             </div>
-                            <form method="post" action="{{ route('dashboard.users.singlesms', $hospital->id) }}">
+                            <form method="post" action="{{ route('dashboard.hospitals.singlesms', $hospital->id) }}">
                               <div class="modal-body">
                                     @csrf
                                     <textarea class="form-control" placeholder="মেসেজ লিখুন" name="message" style="min-height: 150px; resize: none;" required></textarea>
@@ -103,7 +103,7 @@
                                 <span aria-hidden="true">&times;</span>
                               </button>
                             </div>
-                            <form method="post" action="{{ route('dashboard.users.singlenotification', $hospital->id) }}">
+                            <form method="post" action="{{ route('dashboard.hospitals.singlenotification', $hospital->id) }}">
                               <div class="modal-body">
                                     @csrf
                                     <div class="input-group mb-3">
@@ -150,7 +150,7 @@
                                 <span aria-hidden="true">&times;</span>
                               </button>
                             </div>
-                            <form method="post" action="{{ route('dashboard.users.update', $hospital->id) }}">
+                            <form method="post" action="{{ route('dashboard.hospitals.update', $hospital->id) }}">
                               <div class="modal-body">
                                 
                                     @csrf
@@ -277,7 +277,7 @@
                               </div>
                               <div class="modal-footer">
                                 <button type="button" class="btn btn-secondary" data-dismiss="modal">ফিরে যান</button>
-                                <a href="{{ route('dashboard.users.delete', $hospital->id) }}" class="btn btn-danger">ডিলেট করুন</a>
+                                <a href="{{ route('dashboard.hospitals.delete', $hospital->id) }}" class="btn btn-danger">ডিলেট করুন</a>
                               </div>
                             </div>
                           </div>
@@ -316,7 +316,7 @@
               <span aria-hidden="true">&times;</span>
             </button>
           </div>
-          <form method="post" action="{{ route('dashboard.users.store') }}">
+          <form method="post" action="{{ route('dashboard.hospitals.store') }}">
             <div class="modal-body">
               
                   @csrf
