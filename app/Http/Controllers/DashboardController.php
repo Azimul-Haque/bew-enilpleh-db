@@ -156,10 +156,10 @@ class DashboardController extends Controller
                                     $query->where('name', 'like', '%'.$search.'%');
                                     $query->orWhere('name_bangla', 'like', '%'.$search.'%');
                                 }])
-                              
+
                               ->orderBy('id', 'desc')
                               ->paginate(10);
-
+                              dd($hospitals);
         $districts = District::all();
 
         // $sites = Site::all();
