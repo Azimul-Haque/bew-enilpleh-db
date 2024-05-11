@@ -20,7 +20,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 Route::get('/testapi', 'APIController@test')->name('api.test');
 
-Route::post('/getupazilla', 'APIController@generateOTP')->name('api.generateotp');
+Route::post('/getupazilla', 'APIController@getUpazillasAPI')->name('api.getupazillas');
 
 
 
