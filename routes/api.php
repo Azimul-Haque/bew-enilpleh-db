@@ -20,7 +20,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 Route::get('/testapi', 'APIController@test')->name('api.test');
 
-Route::post('/getupazilla', 'APIController@getUpazillasAPI')->name('api.getupazillas');
+Route::post('/getupazilla/{district_id}', 'APIController@getUpazillasAPI')->name('api.getupazillas');
 
 
 
