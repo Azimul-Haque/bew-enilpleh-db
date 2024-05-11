@@ -33,7 +33,7 @@ Route::get('/check/ip', 'IndexController@checkIP')->name('index.check.ip');
 Route::get('/dashboard/hospitals', 'DashboardController@getHospitals')->name('dashboard.hospitals');
 Route::post('/dashboard/hospitals/store', 'DashboardController@storeHospital')->name('dashboard.hospitals.store');
 Route::post('/dashboard/hospitals/{id}/update', 'DashboardController@updateHospital')->name('dashboard.hospitals.update');
-Route::get('/dashboard/hospitals/{id}/delete', 'DashboardController@deleteUser')->name('dashboard.users.delete');
+Route::get('/dashboard/hospitals/{id}/delete', 'DashboardController@deleteHospital')->name('dashboard.users.delete');
 
 
 
