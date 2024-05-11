@@ -47,10 +47,6 @@ class APIController extends Controller
 
           $upazillas = Cache::remember('upazillas'.$district_id, 30 * 24 * 60 * 60, function () use ($district_id) {
                $upazillas = Upazilla::where('district_id', $district_id)->get();
-               foreach($upazillas as $course) {
-                   $course->examcount = $course->courseexams->count();
-                   $course->makeHidden('courseexams');
-               }
                return $upazillas;
           });
         }
