@@ -353,9 +353,9 @@
                   <div class="input-group mb-3">
                     <select name="hospital_type" class="form-control" required>
                         <option selected="" disabled="" value="">হাসপাতালের ধরন</option>
-                        <option value="1">হাসপাতালের ধরন</option>
-                        <option value="2">হাসপাতালের ধরন</option>
-                        <option value="3">হাসপাতালের ধরন</option>
+                        <option value="1">মেডিকেল কলেজ ও হাসপাতাল</option>
+                        <option value="2">প্রাইভেট হাসপাতাল</option>
+                        <option value="3">স্বাস্থ্য কমপ্লেক্স</option>
                     </select>
                     <div class="input-group-append">
                         <div class="input-group-text"><span class="fas fa-star-half-alt"></span></div>
