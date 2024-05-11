@@ -50,11 +50,11 @@
 
   function hospital_type($hospital_type) {
       if ($hospital_type == 1)
-          return 'মেডিকেল কলেজ ও হাসপাতাল'
+          return 'মেডিকেল কলেজ ও হাসপাতাল';
       elseif($hospital_type == 2)
-          return 'প্রাইভেট হাসপাতাল'
+          return 'প্রাইভেট হাসপাতাল';
       else($hospital_type == 3)
-          return 'স্বাস্থ্য কমপ্লেক্স'
+          return 'স্বাস্থ্য কমপ্লেক্স';
   }
 
   function local_currency($num) {
