@@ -73,7 +73,7 @@
                                                name="name"
                                                class="form-control"
                                                value="{{ $package->name }}"
-                                               placeholder="প্যাকেজের নাম" required>
+                                               placeholder="হাসপাতালের নাম" required>
                                         <div class="input-group-append">
                                             <div class="input-group-text"><span class="fas fa-ticket-alt"></span></div>
                                         </div>
@@ -232,7 +232,7 @@
 	                           name="name"
 	                           class="form-control"
 	                           value="{{ old('name') }}"
-	                           placeholder="প্যাকেজের নাম" required>
+	                           placeholder="হাসপাতালের নাম" required>
 	                    <div class="input-group-append">
 	                        <div class="input-group-text"><span class="fas fa-ticket-alt"></span></div>
 	                    </div>
