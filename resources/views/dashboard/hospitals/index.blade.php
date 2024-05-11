@@ -54,9 +54,9 @@
                       {{ $hospital->upazilla->name_bangla }}, {{ $hospital->district->name_bangla }}
                     </td>
                     <td align="right" width="40%">
-                      <button type="button" class="btn btn-warning btn-sm" data-toggle="modal" data-target="#notifModal{{ $hospital->id }}">
+                      {{-- <button type="button" class="btn btn-warning btn-sm" data-toggle="modal" data-target="#notifModal{{ $hospital->id }}">
                         <i class="fas fa-bell"></i>
-                      </button>
+                      </button> --}}
                       <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#editUserModal{{ $hospital->id }}">
                         <i class="fas fa-edit"></i>
                       </button>
