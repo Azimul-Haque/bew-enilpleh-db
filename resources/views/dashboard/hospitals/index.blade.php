@@ -58,7 +58,7 @@
                         <i class="fas fa-bell"></i>
                       </button>
                       <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#editUserModal{{ $hospital->id }}">
-                        <i class="fas fa-user-edit"></i>
+                        <i class="fas fa-edit"></i>
                       </button>
                       {{-- Edit User Modal Code --}}
                       {{-- Edit User Modal Code --}}
