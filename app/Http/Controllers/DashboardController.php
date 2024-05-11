@@ -165,9 +165,9 @@ class DashboardController extends Controller
     {
         $this->validate($request,array(
             'district'            => 'required|string|max:191',
-            'upazilla'                 => 'required|string|max:191',
+            'upazilla'            => 'required|string|max:191',
             'name'                => 'required|string|max:191',
-            'numeric_duration'        => 'required|integer',
+            'hospital_type'        => 'required|integer',
             'price'                   => 'required|integer',
             'strike_price'            => 'required|integer',
             'status'                  => 'required',
