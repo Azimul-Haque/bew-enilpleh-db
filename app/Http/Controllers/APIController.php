@@ -60,16 +60,16 @@ class APIController extends Controller
         if($softtoken == env('SOFT_TOKEN'))
         {
             $hospitals = Cache::remember('hospitals'.$hospital_type . $district_id, 30 * 24 * 60 * 60, function () use ($hospital_type, $district_id) {
-                 $courses = Hospital::select('id', 'name', 'hospital_type', 'telephone', 'mobile', 'location')
+                 $hospitals = Hospital::select('id', 'name', 'hospital_type', 'telephone', 'mobile', 'location')
                              ->where('hospital_type', $hospital_type)
                              ->where('district_id', $district_id)
                              ->orderBy('id', 'desc')
                              ->get();
-                 foreach($courses as $course) {
-                     $course->examcount = $course->courseexams->count();
-                     $course->makeHidden('courseexams');
+                 foreach($hospitals as $hospital) {
+                     $hospital->examcount = $hospital->hospitalexams->count();
+                     $hospital->makeHidden('courseexams');
                  }
-                 return $courses;
+                 return $hospitals;
             });
             
             // dd($courses);
