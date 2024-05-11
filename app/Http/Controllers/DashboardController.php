@@ -141,6 +141,7 @@ class DashboardController extends Controller
 
     public function getHospitalsSearch($search)
     {
+        $hospitalscount = Hospital::count();
         $userscount = User::where('name', 'LIKE', "%$search%")
                           ->orWhere('email', 'LIKE', "%$search%")
                           ->orWhere('mobile', 'LIKE', "%$search%")
