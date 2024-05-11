@@ -66,7 +66,8 @@ class APIController extends Controller
                              ->orderBy('id', 'desc')
                              ->get();
                  foreach($hospitals as $hospital) {
-                     $hospital->examcount = $hospital->hospitalexams->count();
+                     $hospital->district = $hospital->district->name_bangla;
+                     $hospital->upazilla = $hospital->upazilla->name_bangla;
                      $hospital->makeHidden('courseexams');
                  }
                  return $hospitals;
