@@ -364,9 +364,9 @@
 
                   <div class="input-group mb-3">
                       <input type="text"
-                             name="name"
+                             name="telephone"
                              class="form-control"
-                             value="{{ old('name') }}"
+                             value="{{ old('telephone') }}"
                              placeholder="নাম" required>
                       <div class="input-group-append">
                           <div class="input-group-text"><span class="fas fa-user"></span></div>
