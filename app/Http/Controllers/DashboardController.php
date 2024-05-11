@@ -150,10 +150,10 @@ class DashboardController extends Controller
                               ->orWhere('telephone', 'LIKE', "%$search%")
                               ->orWhere('mobile', 'LIKE', "%$search%")
                               ->orWhereHas('district', function ($query) use ($search){
-                                  $query->where('name', 'like', '%'.$search.'%');
+                                  $query->orWhere('name', 'like', '%'.$search.'%');
                                   $query->orWhere('name_bangla', 'like', '%'.$search.'%');
                               })->with(['district' => function($query) use ($search){
-                                    $query->where('name', 'like', '%'.$search.'%');
+                                    $query->orWhere('name', 'like', '%'.$search.'%');
                                     $query->orWhere('name_bangla', 'like', '%'.$search.'%');
                                 }])
 
