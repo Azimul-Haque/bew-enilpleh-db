@@ -347,7 +347,7 @@
                              name="name"
                              class="form-control"
                              value="{{ old('name') }}"
-                             placeholder="নাম" required>
+                             placeholder="হাসপাতালের নাম" required>
                       <div class="input-group-append">
                           <div class="input-group-text"><span class="fas fa-user"></span></div>
                       </div>
