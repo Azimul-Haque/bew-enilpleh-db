@@ -369,7 +369,7 @@
                              value="{{ old('telephone') }}"
                              placeholder="টেলিফোন নং" required>
                       <div class="input-group-append">
-                          <div class="input-group-text"><span class="fas fa-user"></span></div>
+                          <div class="input-group-text"><span class="fas fa-phone"></span></div>
                       </div>
                   </div>
 
@@ -381,7 +381,7 @@
                              class="form-control"
                              placeholder="মোবাইল নম্বর" required>
                       <div class="input-group-append">
-                          <div class="input-group-text"><span class="fas fa-phone"></span></div>
+                          <div class="input-group-text"><span class="fas fa-mobile"></span></div>
                       </div>
                   </div>
 
