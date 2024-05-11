@@ -51,7 +51,7 @@
   function hospital_type($hospital_type) {
       if ($hospital_type == 1) {
         return 'মেডিকেল কলেজ ও হাসপাতাল';
-      } else if($hospital_type == 2) {
+      } elseif($hospital_type == 2) {
         return 'প্রাইভেট হাসপাতাল';
       } else($hospital_type == 3) {
         return 'স্বাস্থ্য কমপ্লেক্স';
