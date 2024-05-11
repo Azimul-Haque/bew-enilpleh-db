@@ -337,7 +337,7 @@
                         <option selected="" disabled="" value="">উপজেলা নির্বাচন করুন</option>
                     </select>
                     <div class="input-group-append">
-                        <div class="input-group-text"><span class="fas fa-star-half-alt"></span></div>
+                        <div class="input-group-text"><span class="fas fa-map-marked-alt"></span></div>
                     </div>
                   </div>
                   <div class="input-group mb-3">
