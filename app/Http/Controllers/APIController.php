@@ -68,7 +68,7 @@ class APIController extends Controller
                  foreach($hospitals as $hospital) {
                      $hospital->district = $hospital->district->name_bangla;
                      $hospital->upazilla = $hospital->upazilla->name_bangla;
-                     $hospital->makeHidden('courseexams');
+                     $hospital->makeHidden('district', 'upazilla');
                  }
                  return $hospitals;
             });
@@ -76,7 +76,7 @@ class APIController extends Controller
             // dd($courses);
             return response()->json([
                 'success' => true,
-                'courses' => $courses,
+                'courses' => $hospitals,
             ]);
         } else {
             return response()->json([
