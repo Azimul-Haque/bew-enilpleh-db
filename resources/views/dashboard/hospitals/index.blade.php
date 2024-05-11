@@ -1,20 +1,20 @@
 @extends('layouts.app')
-@section('title') ড্যাশবোর্ড | প্যাকেজ @endsection
+@section('title') ড্যাশবোর্ড | হাসপাতাল @endsection
 
 @section('third_party_stylesheets')
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/icheck-bootstrap@3.0.1/icheck-bootstrap.min.css">
 @endsection
 
 @section('content')
-	@section('page-header') প্যাকেজ @endsection
+	@section('page-header') হাসপাতাল @endsection
     <div class="container-fluid">
 		<div class="card">
           <div class="card-header">
-            <h3 class="card-title">প্যাকেজ তালিকা</h3>
+            <h3 class="card-title">হাসপাতাল তালিকা</h3>
 
             <div class="card-tools">
-            	<button type="button" class="btn btn-success btn-sm"  data-toggle="modal" data-target="#addPackageModal" title="" rel="tooltip" data-original-title="প্যাকেজ যোগ করুন">
-            		<i class="fas fa-clipboard-check"></i> নতুন প্যাকেজ
+            	<button type="button" class="btn btn-success btn-sm"  data-toggle="modal" data-target="#addPackageModal" title="" rel="tooltip" data-original-title="হাসপাতাল যোগ করুন">
+            		<i class="fas fa-clipboard-check"></i> নতুন হাসপাতাল
             	</button>
             </div>
           </div>
@@ -58,7 +58,7 @@
             			      <div class="modal-dialog" role="document">
             			        <div class="modal-content">
             			          <div class="modal-header bg-primary">
-            			            <h5 class="modal-title" id="editPackageModalLabel">প্যাকেজ তথ্য হালনাগাদ</h5>
+            			            <h5 class="modal-title" id="editPackageModalLabel">হাসপাতাল তথ্য হালনাগাদ</h5>
             			            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             			              <span aria-hidden="true">&times;</span>
             			            </button>
@@ -180,13 +180,13 @@
                           <div class="modal-dialog" role="document">
                             <div class="modal-content">
                               <div class="modal-header bg-danger">
-                                <h5 class="modal-title" id="deletePackageModalLabel">প্যাকেজ ডিলেট</h5>
+                                <h5 class="modal-title" id="deletePackageModalLabel">হাসপাতাল ডিলেট</h5>
                                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                   <span aria-hidden="true">&times;</span>
                                 </button>
                               </div>
                               <div class="modal-body">
-                                আপনি কি নিশ্চিতভাবে এই প্যাকেজটি ডিলেট করতে চান?<br/>
+                                আপনি কি নিশ্চিতভাবে এই হাসপাতালটি ডিলেট করতে চান?<br/>
                                 <center>
                                     <big><b>{{ $package->name }}</b></big><br/>
                                     <span>৳ {{ $package->price }}</span>
@@ -217,7 +217,7 @@
       <div class="modal-dialog" role="document">
         <div class="modal-content">
           <div class="modal-header bg-success">
-            <h5 class="modal-title" id="addPackageModalLabel">নতুন প্যাকেজ যোগ</h5>
+            <h5 class="modal-title" id="addPackageModalLabel">নতুন হাসপাতাল যোগ</h5>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
