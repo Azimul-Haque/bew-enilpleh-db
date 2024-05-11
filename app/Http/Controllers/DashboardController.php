@@ -217,7 +217,7 @@ class DashboardController extends Controller
         $hospital->save();
 
         Session::flash('success', 'Hospital updated successfully!');
-        return redirect()->route('dashboard.hospitals');
+        return redirect()->back();
     }
 
     public function deleteHospital($id)
