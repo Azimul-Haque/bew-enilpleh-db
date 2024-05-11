@@ -130,6 +130,9 @@ class DashboardController extends Controller
     {
         $hospitalscount = Hospital::count();
         $hospitals = Hospital::orderBy('id', 'desc')->paginate(10);
+
+        $districts = District::all();
+        $districts = District::all();
         
         return view('dashboard.hospitals.index')
                             ->withHospitalscount($hospitalscount)
