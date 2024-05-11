@@ -48,16 +48,16 @@
           return $number. $ends[$number % 10];
   }
 
-  // function hospital_type($hospital_type) {
-  //     if ($hospital_type == 1) {
-  //       $text = "মেডিকেল কলেজ ও হাসপাতাল";
-  //     } elseif($hospital_type == 2) {
-  //       $text = "প্রাইভেট হাসপাতাল";
-  //     } else($hospital_type == 3) {
-  //       $text = "স্বাস্থ্য কমপ্লেক্স";
-  //     }
-  //     return $text;
-  // }
+  function hospital_type($hospital_type) {
+      if ($hospital_type == 1) {
+        $text = "মেডিকেল কলেজ ও হাসপাতাল";
+      } elseif($hospital_type == 2) {
+        $text = "প্রাইভেট হাসপাতাল";
+      } else($hospital_type == 3) {
+        $text = "স্বাস্থ্য কমপ্লেক্স";
+      }
+      return $text;
+  }
 
   function local_currency($num) {
     $explrestunits = "" ;
