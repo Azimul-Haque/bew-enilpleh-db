@@ -37,7 +37,7 @@
               <thead>
                 <tr>
                   <td>নাম</td>
-                  <td align="right">লোকেশন</td>
+                  <td>লোকেশন</td>
                   <td align="right">কার্যক্রম</td>
                 </tr>
               </thead>
