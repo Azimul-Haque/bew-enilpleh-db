@@ -324,8 +324,11 @@
                   <div class="input-group mb-3">
                     <select name="status" class="form-control" required>
                         <option selected="" disabled="" value="">জেলা নির্বাচন করুন</option>
-                        <option value="1" @if($course->status == 1) selected @endif>Active</option>
-                        <option value="0" @if($course->status == 0) selected @endif>In-active</option>
+                        @foreach($districts as $district)
+                          <option value="1" @if($course->status == 1) selected @endif>Active</option>
+                        @endforeach
+                        <option value="1" @if($course->status == 1) selected @endif>Active</opti{{-- on>
+                        <option value="0" @if($course->status == 0) selected @endif>In-active</option> --}}
                     </select>
                     <div class="input-group-append">
                         <div class="input-group-text"><span class="fas fa-star-half-alt"></span></div>
