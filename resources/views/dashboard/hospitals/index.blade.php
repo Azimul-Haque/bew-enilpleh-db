@@ -494,7 +494,7 @@
                   .append('<option value="" selected disabled>উপজেলা নির্ধারণ করুন</option>')
               ;
               for(var countupazilla = 0; countupazilla < result.length; countupazilla++) {
-                //console.log(result[countupazilla]);
+                console.log(result[countupazilla]);
                 $('#upazilla').append('<option value="'+result[countupazilla]+'">'+result[countupazilla]+'</option>')
               }
             }
