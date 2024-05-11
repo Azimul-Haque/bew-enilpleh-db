@@ -361,7 +361,6 @@
                         <div class="input-group-text"><span class="fas fa-star-half-alt"></span></div>
                     </div>
                   </div>
-
                   <div class="input-group mb-3">
                       <input type="number"
                              name="telephone"
@@ -372,7 +371,6 @@
                           <div class="input-group-text"><span class="fas fa-phone"></span></div>
                       </div>
                   </div>
-
                   <div class="input-group mb-3">
                       <input type="number"
                              name="mobile"
@@ -384,33 +382,17 @@
                           <div class="input-group-text"><span class="fas fa-mobile"></span></div>
                       </div>
                   </div>
-
                   <div class="input-group mb-3">
-                    <select name="role" id="adduserrole" class="form-control" required>
-                      <option selected="" disabled="" value="">ধরন</option>
-                      <option value="admin">এডমিন</option>
-                     <option value="manager">ম্যানেজার</option>
-                     <option value="volunteer">ভলান্টিয়ার</option>
-                      <option value="user">হাসপাতাল</option>
-              {{-- <option value="accountant">একাউন্টেন্ট</option> --}}
-                    </select>
-                      <div class="input-group-append">
-                          <div class="input-group-text"><span class="fas fa-user-secret"></span></div>
-                      </div>
-                  </div>
-
-
-                  <div class="input-group mb-3">
-                      <input type="password"
-                             name="password"
-                             class="form-control"
+                      <input type="text"
+                             name="mobile"
+                             value="{{ old('mobile') }}"
                              autocomplete="off"
-                             placeholder="পাসওয়ার্ড" required>
+                             class="form-control"
+                             placeholder="মোবাইল নম্বর" required>
                       <div class="input-group-append">
-                          <div class="input-group-text"><span class="fas fa-lock"></span></div>
+                          <div class="input-group-text"><span class="fas fa-mobile"></span></div>
                       </div>
-                  </div>
-              
+                  </div>            
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-dismiss="modal">ফিরে যান</button>
