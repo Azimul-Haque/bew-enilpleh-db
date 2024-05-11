@@ -152,11 +152,7 @@ class DashboardController extends Controller
                               ->orWhereHas('district', function ($query) use ($search){
                                   $query->where('name', 'like', '%'.$search.'%');
                                   $query->orWhere('name_bangla', 'like', '%'.$search.'%');
-                              })->with(['district' => function($query) use ($search){
-                                    $query->where('name', 'like', '%'.$search.'%');
-                                    $query->orWhere('name_bangla', 'like', '%'.$search.'%');
-                                }])
-
+                              })
                               ->orderBy('id', 'desc')
                               ->paginate(10);
 
