@@ -482,7 +482,7 @@
           $('#upazilla').prop('disabled', true);
           $('#school').prop('disabled', true);
           $('#gotoschoolbtn').prop('disabled', true);
-          $('#upazilla').append('<option value="" selected disabled>লোড হচ্ছে...</option>');
+          $('#upazilla').append('<option value="" selected disabled>উপজেলা লোড হচ্ছে...</option>');
           $('#school').find('option').remove().end().append('<option value="" selected disabled>স্কুল নির্বাচন করুন</option>');
 
           $.ajax({
@@ -503,7 +503,7 @@
             }
           });
         });
-        
+
         $('#adduserrole').change(function () {
             if($('#adduserrole').val() == 'accountant') {
                 $('#ifaccountant').hide();
