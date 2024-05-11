@@ -20,6 +20,7 @@ return array(
     'App\\Examquestion' => $baseDir . '/app/Examquestion.php',
     'App\\Exceptions\\Handler' => $baseDir . '/app/Exceptions/Handler.php',
     'App\\Expense' => $baseDir . '/app/Expense.php',
+    'App\\Hospital' => $baseDir . '/app/Hospital.php',
     'App\\Http\\Controllers\\APIController' => $baseDir . '/app/Http/Controllers/APIController.php',
     'App\\Http\\Controllers\\Auth\\ConfirmPasswordController' => $baseDir . '/app/Http/Controllers/Auth/ConfirmPasswordController.php',
     'App\\Http\\Controllers\\Auth\\ForgotPasswordController' => $baseDir . '/app/Http/Controllers/Auth/ForgotPasswordController.php',

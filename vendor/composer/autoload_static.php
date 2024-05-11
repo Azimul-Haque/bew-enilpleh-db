@@ -571,6 +571,7 @@ class ComposerStaticInitd99be2aa22b662638be63ef18831ea06
         'App\\Examquestion' => __DIR__ . '/../..' . '/app/Examquestion.php',
         'App\\Exceptions\\Handler' => __DIR__ . '/../..' . '/app/Exceptions/Handler.php',
         'App\\Expense' => __DIR__ . '/../..' . '/app/Expense.php',
+        'App\\Hospital' => __DIR__ . '/../..' . '/app/Hospital.php',
         'App\\Http\\Controllers\\APIController' => __DIR__ . '/../..' . '/app/Http/Controllers/APIController.php',
         'App\\Http\\Controllers\\Auth\\ConfirmPasswordController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/ConfirmPasswordController.php',
         'App\\Http\\Controllers\\Auth\\ForgotPasswordController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/ForgotPasswordController.php',
