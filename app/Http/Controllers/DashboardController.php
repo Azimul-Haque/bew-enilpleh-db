@@ -122,6 +122,84 @@ class DashboardController extends Controller
         return redirect()->route('dashboard.index');
     }
 
+    public function getHospitals()
+    {
+        $packages = Package::all();
+        
+        return view('dashboard.packages.index')->withPackages($packages);
+    }
+
+    public function storePackage(Request $request)
+    {
+        $this->validate($request,array(
+            'name'                    => 'required|string|max:191',
+            'tagline'                 => 'required|string|max:191',
+            'duration'                => 'required|string|max:191',
+            'numeric_duration'        => 'required|integer',
+            'price'                   => 'required|integer',
+            'strike_price'            => 'required|integer',
+            'status'                  => 'required',
+            'suggested'               => 'required',
+        ));
+
+        $package = new Package;
+        $package->name = $request->name;
+        $package->tagline = $request->tagline;
+        $package->duration = $request->duration;
+        $package->numeric_duration = $request->numeric_duration;
+        $package->price = $request->price;
+        $package->strike_price = $request->strike_price;
+        $package->status = $request->status;
+        $package->suggested = $request->suggested;
+        $package->save();
+
+        Session::flash('success', 'Package added successfully!');
+        return redirect()->route('dashboard.packages');
+    }
+
+    public function updatePackage(Request $request, $id)
+    {
+        $this->validate($request,array(
+            'name'                    => 'required|string|max:191',
+            'tagline'                 => 'required|string|max:191',
+            'duration'                => 'required|string|max:191',
+            'numeric_duration'        => 'required|integer',
+            'price'                   => 'required|integer',
+            'strike_price'            => 'required|integer',
+            'status'                  => 'required',
+            'suggested'               => 'required',
+        ));
+
+        $package = Package::findOrFail($id);
+        $package->name = $request->name;
+        $package->tagline = $request->tagline;
+        $package->duration = $request->duration;
+        $package->numeric_duration = $request->numeric_duration;
+        $package->price = $request->price;
+        $package->strike_price = $request->strike_price;
+        $package->status = $request->status;
+        $package->suggested = $request->suggested;
+        $package->save();
+
+        Session::flash('success', 'Package updated successfully!');
+        return redirect()->route('dashboard.packages');
+    }
+
+    public function deletePackage($id)
+    {
+        $package = Package::find($id);
+        $package->delete();
+
+        Session::flash('success', 'Package deleted successfully!');
+        return redirect()->route('dashboard.packages');
+    }
+
+
+
+
+
+
+
     public function getUsers()
     {
         $userscount = User::count();
