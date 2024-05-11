@@ -156,6 +156,13 @@ class DashboardController extends Controller
                                     $query->where('name', 'like', '%'.$search.'%');
                                     $query->orWhere('name_bangla', 'like', '%'.$search.'%');
                                 }])
+                              ->orWhereHas('upazilla', function ($query) use ($search){
+                                  $query->where('name', 'like', '%'.$search.'%');
+                                  $query->orWhere('name_bangla', 'like', '%'.$search.'%');
+                              })->with(['upazilla' => function($query) use ($search){
+                                    $query->where('name', 'like', '%'.$search.'%');
+                                    $query->orWhere('name_bangla', 'like', '%'.$search.'%');
+                                }])
                               ->orderBy('id', 'desc')
                               ->paginate(10);
 
