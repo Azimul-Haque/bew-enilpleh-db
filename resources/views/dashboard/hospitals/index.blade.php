@@ -45,26 +45,26 @@
                   </td>
                   <td><span class="badge bg-danger">55%</span></td>
                 </tr> --}}
-                @foreach($hospitals as $user)
+                @foreach($hospitals as $hospital)
                   <tr>
                     <td>
-                      <a href="{{ route('dashboard.users.single', $user->id) }}">{{ $user->name }}</a>
-                      <small><b>প্যাকেজ: ({{ bangla($user->payments->count()) }} বার)</b>, <b>পরীক্ষা: {{ bangla($user->meritlists->count()) }} টি</b></small>
+                      <a href="{{ route('dashboard.users.single', $hospital->id) }}">{{ $hospital->name }}</a>
+                      <small><b>প্যাকেজ: ({{ bangla($hospital->payments->count()) }} বার)</b>, <b>পরীক্ষা: {{ bangla($hospital->meritlists->count()) }} টি</b></small>
                       <br/>
-                            {{-- {{ $user->balances2 }} --}}
-                      <small class="text-black-50">{{ $user->mobile }}</small> 
-                      <span class="badge @if($user->role == 'admin') bg-success @else bg-info @endif">{{ ucfirst($user->role) }}</span>,
-                      <small><span>যোগদান: {{ date('d F, Y h:i A', strtotime($user->created_at)) }}</span></small>,
-                      <small><span>প্যাকেজ: <b>{{ date('d F, Y', strtotime($user->package_expiry_date)) }}</b></span></small>
+                            {{-- {{ $hospital->balances2 }} --}}
+                      <small class="text-black-50">{{ $hospital->mobile }}</small> 
+                      <span class="badge @if($hospital->role == 'admin') bg-success @else bg-info @endif">{{ ucfirst($hospital->role) }}</span>,
+                      <small><span>যোগদান: {{ date('d F, Y h:i A', strtotime($hospital->created_at)) }}</span></small>,
+                      <small><span>প্যাকেজ: <b>{{ date('d F, Y', strtotime($hospital->package_expiry_date)) }}</b></span></small>
                     </td>
                     <td align="right" width="40%">
-                      <button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#smsModal{{ $user->id }}">
+                      <button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#smsModal{{ $hospital->id }}">
                         <i class="fas fa-envelope"></i>
                       </button>
                       {{-- SMS Modal Code --}}
                       {{-- SMS Modal Code --}}
                       <!-- Modal -->
-                      <div class="modal fade" id="smsModal{{ $user->id }}" tabindex="-1" role="dialog" aria-labelledby="smsModalLabel" aria-hidden="true" data-backdrop="static">
+                      <div class="modal fade" id="smsModal{{ $hospital->id }}" tabindex="-1" role="dialog" aria-labelledby="smsModalLabel" aria-hidden="true" data-backdrop="static">
                         <div class="modal-dialog" role="document">
                           <div class="modal-content">
                             <div class="modal-header bg-info">
@@ -73,7 +73,7 @@
                                 <span aria-hidden="true">&times;</span>
                               </button>
                             </div>
-                            <form method="post" action="{{ route('dashboard.users.singlesms', $user->id) }}">
+                            <form method="post" action="{{ route('dashboard.users.singlesms', $hospital->id) }}">
                               <div class="modal-body">
                                     @csrf
                                     <textarea class="form-control" placeholder="মেসেজ লিখুন" name="message" style="min-height: 150px; resize: none;" required></textarea>
@@ -88,13 +88,13 @@
                       </div>
                       {{-- SMS Modal Code --}}
                       {{-- SMS Modal Code --}}
-                      <button type="button" class="btn btn-warning btn-sm" data-toggle="modal" data-target="#notifModal{{ $user->id }}">
+                      <button type="button" class="btn btn-warning btn-sm" data-toggle="modal" data-target="#notifModal{{ $hospital->id }}">
                         <i class="fas fa-bell"></i>
                       </button>
                       {{-- Notif Modal Code --}}
                       {{-- Notif Modal Code --}}
                       <!-- Modal -->
-                      <div class="modal fade" id="notifModal{{ $user->id }}" tabindex="-1" role="dialog" aria-labelledby="notifModalLabel" aria-hidden="true" data-backdrop="static">
+                      <div class="modal fade" id="notifModal{{ $hospital->id }}" tabindex="-1" role="dialog" aria-labelledby="notifModalLabel" aria-hidden="true" data-backdrop="static">
                         <div class="modal-dialog" role="document">
                           <div class="modal-content">
                             <div class="modal-header bg-warning">
@@ -103,7 +103,7 @@
                                 <span aria-hidden="true">&times;</span>
                               </button>
                             </div>
-                            <form method="post" action="{{ route('dashboard.users.singlenotification', $user->id) }}">
+                            <form method="post" action="{{ route('dashboard.users.singlenotification', $hospital->id) }}">
                               <div class="modal-body">
                                     @csrf
                                     <div class="input-group mb-3">
@@ -135,13 +135,13 @@
                       </div>
                       {{-- Notif Modal Code --}}
                       {{-- Notif Modal Code --}}
-                      <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#editUserModal{{ $user->id }}">
+                      <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#editUserModal{{ $hospital->id }}">
                         <i class="fas fa-user-edit"></i>
                       </button>
                       {{-- Edit User Modal Code --}}
                       {{-- Edit User Modal Code --}}
                       <!-- Modal -->
-                      <div class="modal fade" id="editUserModal{{ $user->id }}" tabindex="-1" role="dialog" aria-labelledby="editUserModalLabel" aria-hidden="true" data-backdrop="static">
+                      <div class="modal fade" id="editUserModal{{ $hospital->id }}" tabindex="-1" role="dialog" aria-labelledby="editUserModalLabel" aria-hidden="true" data-backdrop="static">
                         <div class="modal-dialog" role="document">
                           <div class="modal-content">
                             <div class="modal-header bg-primary">
@@ -150,7 +150,7 @@
                                 <span aria-hidden="true">&times;</span>
                               </button>
                             </div>
-                            <form method="post" action="{{ route('dashboard.users.update', $user->id) }}">
+                            <form method="post" action="{{ route('dashboard.users.update', $hospital->id) }}">
                               <div class="modal-body">
                                 
                                     @csrf
@@ -159,7 +159,7 @@
                                         <input type="text"
                                                name="name"
                                                class="form-control"
-                                               value="{{ $user->name }}"
+                                               value="{{ $hospital->name }}"
                                                placeholder="নাম" required>
                                         <div class="input-group-append">
                                             <div class="input-group-text"><span class="fas fa-user"></span></div>
@@ -169,7 +169,7 @@
                                     <div class="input-group mb-3">
                                         <input type="text"
                                                name="mobile"
-                                               value="{{ $user->mobile }}"
+                                               value="{{ $hospital->mobile }}"
                                                autocomplete="off"
                                                class="form-control"
                                                placeholder="মোবাইল নম্বর (১১ ডিজিট)" required>
@@ -181,7 +181,7 @@
                                     <div class="input-group mb-3">
                                         <input type="text"
                                                name="uid"
-                                               value="{{ $user->uid }}"
+                                               value="{{ $hospital->uid }}"
                                                autocomplete="off"
                                                class="form-control"
                                                placeholder="Firebase UID">
@@ -193,7 +193,7 @@
                                     <div class="input-group mb-3">
                                         <input type="text"
                                                name="onesignal_id"
-                                               value="{{ $user->onesignal_id }}"
+                                               value="{{ $hospital->onesignal_id }}"
                                                autocomplete="off"
                                                class="form-control"
                                                placeholder="Onesignal Player ID">
@@ -205,11 +205,11 @@
                                     <div class="input-group mb-3">
                                       <select name="role" class="form-control" required>
                                         <option disabled="" value="">ধরন নির্ধারণ করুন</option>
-                                        <option value="admin" @if($user->role == 'admin') selected="" @endif>এডমিন</option>
-                                        <option value="manager" @if($user->role == 'manager') selected="" @endif>ম্যানেজার</option>
-                                        <option value="volunteer" @if($user->role == 'volunteer') selected="" @endif>ভলান্টিয়ার</option>
-                                        <option value="user" @if($user->role == 'user') selected="" @endif>হাসপাতাল</option>
-                                        {{-- <option value="accountant" @if($user->role == 'accountant') selected="" @endif>একাউন্টেন্ট</option> --}}
+                                        <option value="admin" @if($hospital->role == 'admin') selected="" @endif>এডমিন</option>
+                                        <option value="manager" @if($hospital->role == 'manager') selected="" @endif>ম্যানেজার</option>
+                                        <option value="volunteer" @if($hospital->role == 'volunteer') selected="" @endif>ভলান্টিয়ার</option>
+                                        <option value="user" @if($hospital->role == 'user') selected="" @endif>হাসপাতাল</option>
+                                        {{-- <option value="accountant" @if($hospital->role == 'accountant') selected="" @endif>একাউন্টেন্ট</option> --}}
                                       </select>
                                         <div class="input-group-append">
                                             <div class="input-group-text"><span class="fas fa-user-secret"></span></div>
@@ -219,8 +219,8 @@
                                     <div class="input-group mb-3">
                                         <input type="text"
                                                name="packageexpirydate"
-                                               id="packageexpirydate{{ $user->id }}" 
-                                               value="{{ date('F d, Y', strtotime($user->package_expiry_date)) }}"
+                                               id="packageexpirydate{{ $hospital->id }}" 
+                                               value="{{ date('F d, Y', strtotime($hospital->package_expiry_date)) }}"
                                                autocomplete="off"
                                                class="form-control"
                                                placeholder="প্যাকেজের মেয়াদ বৃদ্ধি" required>
@@ -252,14 +252,14 @@
                       {{-- Edit User Modal Code --}}
                       {{-- Edit User Modal Code --}}
 
-                      <button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#deleteUserModal{{ $user->id }}">
+                      <button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#deleteUserModal{{ $hospital->id }}">
                         <i class="fas fa-user-minus"></i>
                       </button>
                     </td>
                         {{-- Delete User Modal Code --}}
                         {{-- Delete User Modal Code --}}
                         <!-- Modal -->
-                        <div class="modal fade" id="deleteUserModal{{ $user->id }}" tabindex="-1" role="dialog" aria-labelledby="deleteUserModalLabel" aria-hidden="true" data-backdrop="static">
+                        <div class="modal fade" id="deleteUserModal{{ $hospital->id }}" tabindex="-1" role="dialog" aria-labelledby="deleteUserModalLabel" aria-hidden="true" data-backdrop="static">
                           <div class="modal-dialog" role="document">
                             <div class="modal-content">
                               <div class="modal-header bg-danger">
@@ -271,13 +271,13 @@
                               <div class="modal-body">
                                 আপনি কি নিশ্চিতভাবে এই হাসপাতালকে ডিলেট করতে চান?<br/>
                                 <center>
-                                    <big><b>{{ $user->name }}</b></big><br/>
-                                    <small><i class="fas fa-phone"></i> {{ $user->mobile }}</small>
+                                    <big><b>{{ $hospital->name }}</b></big><br/>
+                                    <small><i class="fas fa-phone"></i> {{ $hospital->mobile }}</small>
                                 </center>
                               </div>
                               <div class="modal-footer">
                                 <button type="button" class="btn btn-secondary" data-dismiss="modal">ফিরে যান</button>
-                                <a href="{{ route('dashboard.users.delete', $user->id) }}" class="btn btn-danger">ডিলেট করুন</a>
+                                <a href="{{ route('dashboard.users.delete', $hospital->id) }}" class="btn btn-danger">ডিলেট করুন</a>
                               </div>
                             </div>
                           </div>
@@ -289,7 +289,7 @@
                   <script type="text/javascript" src="{{ asset('js/bootstrap-datepicker.min.js') }}"></script>
                   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
                   <script>
-                    $("#packageexpirydate{{ $user->id }}").datepicker({
+                    $("#packageexpirydate{{ $hospital->id }}").datepicker({
                       format: 'MM dd, yyyy',
                       todayHighlight: true,
                       autoclose: true,
