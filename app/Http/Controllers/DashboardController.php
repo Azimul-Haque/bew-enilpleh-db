@@ -129,7 +129,7 @@ class DashboardController extends Controller
         return view('dashboard.packages.index')->withPackages($packages);
     }
 
-    public function storePackage(Request $request)
+    public function storeHospital(Request $request)
     {
         $this->validate($request,array(
             'name'                    => 'required|string|max:191',
@@ -157,7 +157,7 @@ class DashboardController extends Controller
         return redirect()->route('dashboard.packages');
     }
 
-    public function updatePackage(Request $request, $id)
+    public function updateHospital(Request $request, $id)
     {
         $this->validate($request,array(
             'name'                    => 'required|string|max:191',
@@ -185,7 +185,7 @@ class DashboardController extends Controller
         return redirect()->route('dashboard.packages');
     }
 
-    public function deletePackage($id)
+    public function deleteHospital($id)
     {
         $package = Package::find($id);
         $package->delete();
