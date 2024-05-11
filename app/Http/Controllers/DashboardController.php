@@ -218,6 +218,8 @@ class DashboardController extends Controller
         $hospital->location = $request->location;
         $hospital->save();
 
+        Cache::forget('hospitals'. $request->hospital_type . $request->district_id);
+
         Session::flash('success', 'Hospital updated successfully!');
         return redirect()->back();
     }
