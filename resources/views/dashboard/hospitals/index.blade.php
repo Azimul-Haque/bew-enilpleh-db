@@ -35,7 +35,7 @@
           <div class="card-body p-0">
             <table class="table">
               <tbody>
-                {{-- <tr>
+                <tr>
                   <td>1.</td>
                   <td>Update software</td>
                   <td>
@@ -44,7 +44,7 @@
                     </div>
                   </td>
                   <td><span class="badge bg-danger">55%</span></td>
-                </tr> --}}
+                </tr>
                 @foreach($hospitals as $hospital)
                   <tr>
                     <td>
