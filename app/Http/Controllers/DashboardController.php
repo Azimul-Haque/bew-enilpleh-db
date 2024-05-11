@@ -174,8 +174,9 @@ class DashboardController extends Controller
         ));
 
         $hospital = new Hospital;
+        $hospital->district_id = $request->district;
+        $hospital->upazilla_id = $request->upazilla;
         $hospital->name = $request->name;
-        $hospital->tagline = $request->tagline;
         $hospital->duration = $request->duration;
         $hospital->numeric_duration = $request->numeric_duration;
         $hospital->price = $request->price;
