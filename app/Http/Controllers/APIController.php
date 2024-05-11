@@ -61,7 +61,7 @@ class APIController extends Controller
         {
             $hospitals = Cache::remember('hospitals'.$hospital_type . $district_id, 30 * 24 * 60 * 60, function () use ($hospital_type, $district_id) {
                  $courses = Hospital::select('id', 'name', 'hospital_type', 'telephone', 'mobile', 'location')
-                             ->where('status', 1) // take only active courses
+                             ->where('hospital_type', $hospital_type)
                              ->where('type', $coursetype) 
                              ->orderBy('priority', 'asc')
                              ->get();
