@@ -21,7 +21,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 Route::get('/testapi', 'APIController@test')->name('api.test');
 
 Route::get('/getupazillas/{district_id}', 'APIController@getUpazillasAPI')->name('api.getupazillas');
-Route::get('/gethospitals/{softtoken}/{district_id}', 'APIController@getHospitalsDistrict')->name('api.gethospitalsdistrict');
+Route::get('/gethospitals/{softtoken}/{hospital_type}/{district_id}', 'APIController@getHospitalsDistrict')->name('api.gethospitalsdistrict');
 
 
 Route::post('/generateotp', 'APIController@generateOTP')->name('api.generateotp');
