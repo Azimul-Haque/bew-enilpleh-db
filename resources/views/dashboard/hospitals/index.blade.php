@@ -332,7 +332,6 @@
                         <div class="input-group-text"><span class="fas fa-star-half-alt"></span></div>
                     </div>
                   </div>
-
                   <div class="input-group mb-3">
                     <select name="upazilla" id="upazilla" class="form-control" required>
                         <option selected="" disabled="" value="">উপজেলা নির্বাচন করুন</option>
@@ -341,7 +340,6 @@
                         <div class="input-group-text"><span class="fas fa-star-half-alt"></span></div>
                     </div>
                   </div>
-
                   <div class="input-group mb-3">
                       <input type="text"
                              name="name"
@@ -351,6 +349,14 @@
                       <div class="input-group-append">
                           <div class="input-group-text"><span class="fas fa-user"></span></div>
                       </div>
+                  </div>
+                  <div class="input-group mb-3">
+                    <select name="upazilla" id="upazilla" class="form-control" required>
+                        <option selected="" disabled="" value="">উপজেলা নির্বাচন করুন</option>
+                    </select>
+                    <div class="input-group-append">
+                        <div class="input-group-text"><span class="fas fa-star-half-alt"></span></div>
+                    </div>
                   </div>
 
                   <div class="input-group mb-3">
