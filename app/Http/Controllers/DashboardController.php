@@ -164,8 +164,8 @@ class DashboardController extends Controller
     public function storeHospital(Request $request)
     {
         $this->validate($request,array(
-            'district'            => 'required|string|max:191',
-            'upazilla'            => 'required|string|max:191',
+            'district'            => 'required',
+            'upazilla'            => 'required',
             'name'                => 'required|string|max:191',
             'hospital_type'        => 'required|integer',
             'price'                   => 'required|integer',
