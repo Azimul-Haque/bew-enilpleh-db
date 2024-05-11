@@ -39,7 +39,7 @@ class APIController extends Controller
         
     }
 
-    public function getUpazillasAPI($district)
+    public function getUpazillasAPI($district_id)
     {
         try {
           $upazillas = Upazilla::where('district', $district)->get()->pluck('upazilla');
