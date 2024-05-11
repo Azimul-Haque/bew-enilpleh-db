@@ -50,9 +50,9 @@
 
   function hospital_type($hospital_type) {
       if ($hospital_type == 1)
-          return ''
-      else
-          return $number. $ends[$number % 10];
+          return 'মেডিকেল কলেজ ও হাসপাতাল'
+      else if ($hospital_type == 2)
+          return 'মেডিকেল কলেজ ও হাসপাতাল'
   }
 
   function local_currency($num) {
