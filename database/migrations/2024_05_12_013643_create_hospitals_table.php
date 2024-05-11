@@ -21,7 +21,7 @@ class CreateHospitalsTable extends Migration
             $table->integer('hospital_type');
             $table->string('telephone');
             $table->string('mobile');
-            $table->string('address');
+            $table->string('location');
             $table->timestamps();
         });
     }
