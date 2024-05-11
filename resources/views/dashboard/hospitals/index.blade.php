@@ -121,7 +121,7 @@
                                         <input type="number"
                                                name="telephone"
                                                class="form-control"
-                                               value="{{ old('telephone') }}"
+                                               value="{{ $hospital->telephone }}"
                                                placeholder="টেলিফোন নং" required>
                                         <div class="input-group-append">
                                             <div class="input-group-text"><span class="fas fa-phone"></span></div>
@@ -130,7 +130,7 @@
                                     <div class="input-group mb-3">
                                         <input type="number"
                                                name="mobile"
-                                               value="{{ old('mobile') }}"
+                                               value="{{ $hospital->mobile }}"
                                                autocomplete="off"
                                                class="form-control"
                                                placeholder="মোবাইল নম্বর" required>
