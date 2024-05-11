@@ -33,7 +33,18 @@ class APIController extends Controller
     public function test()
     {
         
-    } 
+    }
+
+    public function getUpazillasAPI($district)
+    {
+        try {
+          $upazillas = Upazilla::where('district', $district)->get()->pluck('upazilla');
+          return $upazillas;
+        }
+        catch (\Exception $e) {
+          return $e->getMessage();
+        }
+    }
 
     public function generateOTP(Request $request)
     {
