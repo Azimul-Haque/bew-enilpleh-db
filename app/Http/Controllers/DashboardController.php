@@ -151,6 +151,7 @@ class DashboardController extends Controller
                                   ->orWhere('mobile', 'LIKE', "%$search%")
                                   ->whereHas('districts', function ($query) use ($search){
                                       $query->where('name', 'like', '%'.$search.'%');
+                                      $query->where('name_bangla', 'like', '%'.$search.'%');
                                   })
                                   ->orderBy('id', 'desc')
                                   ->paginate(10);
