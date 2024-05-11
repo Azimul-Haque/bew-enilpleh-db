@@ -128,6 +128,7 @@ class DashboardController extends Controller
 
     public function getHospitals()
     {
+        $userscount = User::count();
         $hospitals = Hospital::paginate()
         
         return view('dashboard.hospitals.index')->withPackages($hospitals);
