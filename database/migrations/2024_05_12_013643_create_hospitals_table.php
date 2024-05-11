@@ -18,7 +18,8 @@ class CreateHospitalsTable extends Migration
             $table->integer('district_id')->unsigned();
             $table->integer('upazilla_id')->unsigned();
             $table->string('name');
-            $table->string('name_bangla');
+            $table->integer('hospital_type');
+            $table->integer('hospital_type');
             $table->timestamps();
         });
     }
