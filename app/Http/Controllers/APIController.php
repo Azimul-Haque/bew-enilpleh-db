@@ -45,10 +45,10 @@ class APIController extends Controller
           $upazillas = Upazilla::where('district_id', $district_id)->get();
           return $upazillas;
 
-          $upazillas = Cache::remember('upazillas'.$district_id, 30 * 24 * 60 * 60, function () use ($coursetype) {
-               $upazillas = Course::select('id', 'name')
+          $upazillas = Cache::remember('upazillas'.$district_id, 30 * 24 * 60 * 60, function () use ($district_id) {
+               $upazillas = Upazilla::select('id', 'name')
                            ->where('status', 1) // take only active courses
-                           ->where('type', $coursetype) // 1 = Course, 2 = BJS MT, 3 = Bar MT, 4 = Free MT, 5 = QB
+                           ->where('type', $district_id)
                            ->orderBy('priority', 'asc')
                            ->get();
                foreach($upazillas as $course) {
