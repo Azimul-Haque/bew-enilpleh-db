@@ -191,6 +191,7 @@ class DashboardController extends Controller
         $hospital->save();
 
         Cache::forget('hospitals'. $request->hospital_type . $request->district_id);
+        Cache::forget('hospitals'. $request->hospital_type . $request->district_id . $request->upazilla_id);
         Session::flash('success', 'Hospital added successfully!');
         return redirect()->route('dashboard.hospitals');
     }
