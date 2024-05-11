@@ -49,9 +49,6 @@
                   <tr>
                     <td>
                       {{ $hospital->name }}
-                      <small><b>প্যাকেজ: ({{ bangla($hospital->payments->count()) }} বার)</b>, <b>পরীক্ষা: {{ bangla($hospital->meritlists->count()) }} টি</b></small>
-                      <br/>
-                            {{-- {{ $hospital->balances2 }} --}}
                       <small class="text-black-50">{{ $hospital->mobile }}</small> 
                       <span class="badge @if($hospital->role == 'admin') bg-success @else bg-info @endif">{{ ucfirst($hospital->role) }}</span>,
                       <small><span>যোগদান: {{ date('d F, Y h:i A', strtotime($hospital->created_at)) }}</span></small>,
