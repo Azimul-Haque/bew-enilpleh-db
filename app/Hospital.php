@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Hospital extends Model
 {
-    public function user(){
-        return $this->belongsTo('App\districts');
+    public function districts(){
+        return $this->belongsTo('App\District');
     }
 }
