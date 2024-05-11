@@ -6,11 +6,11 @@ use Illuminate\Database\Eloquent\Model;
 
 class Hospital extends Model
 {
-    public function districts(){
+    public function district(){
         return $this->belongsTo('App\District');
     }
 
-    public function upazillas(){
+    public function upazilla(){
         return $this->belongsTo('App\Upazilla');
     }
 }
