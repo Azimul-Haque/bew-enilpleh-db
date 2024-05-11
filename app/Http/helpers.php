@@ -52,7 +52,9 @@
       if ($hospital_type == 1)
           return 'মেডিকেল কলেজ ও হাসপাতাল'
       else if ($hospital_type == 2)
-          return 'মেডিকেল কলেজ ও হাসপাতাল'
+          return 'প্রাইভেট হাসপাতাল'
+      else if ($hospital_type == 3)
+          return 'প্রাইভেট হাসপাতাল'
   }
 
   function local_currency($num) {
