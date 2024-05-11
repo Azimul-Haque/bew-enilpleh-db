@@ -161,7 +161,8 @@ class DashboardController extends Controller
         // $sites = Site::all();
         return view('dashboard.users.index')
                     ->withUsers($users)
-                    ->withUserscount($userscount);
+                    ->withUserscount($userscount)
+                    ->withDistricts($districts);
     }
 
     public function storeHospital(Request $request)
