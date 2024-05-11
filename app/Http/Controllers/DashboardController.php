@@ -156,6 +156,8 @@ class DashboardController extends Controller
                      ->orderBy('id', 'desc')
                      ->paginate(10);
 
+        $districts = District::all();
+
         // $sites = Site::all();
         return view('dashboard.users.index')
                     ->withUsers($users)
