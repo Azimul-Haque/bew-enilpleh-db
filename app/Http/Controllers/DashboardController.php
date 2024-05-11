@@ -183,8 +183,8 @@ class DashboardController extends Controller
         $hospital->location = $request->location;
         $hospital->save();
 
-        Session::flash('success', 'Package added successfully!');
-        return redirect()->route('dashboard.packages');
+        Session::flash('success', 'Hospital added successfully!');
+        return redirect()->route('dashboard.hospitals');
     }
 
     public function updateHospital(Request $request, $id)
