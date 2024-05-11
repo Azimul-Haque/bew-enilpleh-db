@@ -495,7 +495,8 @@
               ;
               for(var countupazilla = 0; countupazilla < result.length; countupazilla++) {
                 console.log(result[countupazilla]);
-                $('#upazilla').append('<option value="'+result[countupazilla]+'">'+result[countupazilla]+'</option>')
+                $('#upazilla').append('<option value="'+result[countupazilla]['id']+'">'+result[countupazilla]['name_bangla
+']+'</option>')
               }
             }
           });
