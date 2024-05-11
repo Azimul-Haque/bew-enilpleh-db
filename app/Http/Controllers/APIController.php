@@ -22,6 +22,10 @@ use App\Material;
 use App\Meritlist;
 use App\Reportedquestion;
 
+
+use App\District;
+use App\Upazilla;
+
 use Hash;
 use Carbon\Carbon;
 use DB;
