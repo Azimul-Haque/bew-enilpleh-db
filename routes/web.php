@@ -26,6 +26,23 @@ Route::post('/payment/app/confirm', 'IndexController@paymentSuccessApp')->name('
 Route::get('/payment/app/cancel', 'IndexController@paymentCancelApp')->name('index.payment.cancel.app');
 Route::get('/check/ip', 'IndexController@checkIP')->name('index.check.ip');
 
+
+
+
+// Hospital
+Route::get('/dashboard/hospitals', 'DashboardController@getPackages')->name('dashboard.packages');
+Route::post('/dashboard/hospitals/store', 'DashboardController@storePackage')->name('dashboard.packages.store');
+Route::post('/dashboard/hospitals/{id}/update', 'DashboardController@updatePackage')->name('dashboard.packages.update');
+
+
+
+
+
+
+
+
+
+
 // blog
 Route::get('/blogs', 'BlogController@index')->name('blogs.index');
 // Route::resource('blogs','BlogController');
