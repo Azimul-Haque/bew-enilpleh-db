@@ -353,6 +353,7 @@
                   <div class="input-group mb-3">
                     <select name="hospital_type" class="form-control" required>
                         <option selected="" disabled="" value="">হাসপাতালের ধরন</option>
+                        <option selected="" disabled="" value="">হাসপাতালের ধরন</option>
                     </select>
                     <div class="input-group-append">
                         <div class="input-group-text"><span class="fas fa-star-half-alt"></span></div>
