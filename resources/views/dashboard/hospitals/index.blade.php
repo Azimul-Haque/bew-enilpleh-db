@@ -336,7 +336,6 @@
                   <div class="input-group mb-3">
                     <select name="district" id="district" class="form-control" required>
                         <option selected="" disabled="" value="">উপজেলা নির্বাচন করুন</option>
-                        
                     </select>
                     <div class="input-group-append">
                         <div class="input-group-text"><span class="fas fa-star-half-alt"></span></div>
