@@ -363,7 +363,7 @@
                   </div>
 
                   <div class="input-group mb-3">
-                      <input type="text"
+                      <input type="number"
                              name="telephone"
                              class="form-control"
                              value="{{ old('telephone') }}"
