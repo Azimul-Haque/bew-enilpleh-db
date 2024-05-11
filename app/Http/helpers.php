@@ -53,7 +53,7 @@
         $text = "মেডিকেল কলেজ ও হাসপাতাল";
       } elseif($hospital_type == 2) {
         $text = "প্রাইভেট হাসপাতাল";
-      } else($hospital_type == 3) {
+      } elseif($hospital_type == 3) {
         $text = "স্বাস্থ্য কমপ্লেক্স";
       }
       return $text;
