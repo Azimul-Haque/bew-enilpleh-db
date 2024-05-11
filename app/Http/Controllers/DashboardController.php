@@ -146,7 +146,7 @@ class DashboardController extends Controller
                                   ->orWhere('mobile', 'LIKE', "%$search%")
                                   ->orderBy('id', 'desc')
                                   ->count();
-        $users = User::wwhere('name', 'LIKE', "%$search%")
+        $hospitals = User::wwhere('name', 'LIKE', "%$search%")
                       ->orWhere('telephone', 'LIKE', "%$search%")
                       ->orWhere('mobile', 'LIKE', "%$search%")
                       ->orderBy('id', 'desc')
@@ -156,8 +156,8 @@ class DashboardController extends Controller
 
         // $sites = Site::all();
         return view('dashboard.users.index')
-                    ->withUsers($users)
-                    ->withUserscount($userscount)
+                    ->withHospitalscount($hospitalscount)
+                    ->withHospitals($hospitals)
                     ->withDistricts($districts);
     }
 
