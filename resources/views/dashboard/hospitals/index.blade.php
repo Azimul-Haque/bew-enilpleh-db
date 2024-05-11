@@ -334,7 +334,7 @@
                   </div>
 
                   <div class="input-group mb-3">
-                    <select name="district" id="district" class="form-control" required>
+                    <select name="upazilla" id="upazilla" class="form-control" required>
                         <option selected="" disabled="" value="">উপজেলা নির্বাচন করুন</option>
                     </select>
                     <div class="input-group-append">
