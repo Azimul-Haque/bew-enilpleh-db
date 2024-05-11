@@ -175,7 +175,7 @@
                       {{-- Edit User Modal Code --}}
 
                       <button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#deleteUserModal{{ $hospital->id }}">
-                        <i class="fas fa-user-minus"></i>
+                        <i class="fas fa-delete"></i>
                       </button>
                     </td>
                         {{-- Delete User Modal Code --}}
