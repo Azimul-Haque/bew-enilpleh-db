@@ -146,13 +146,11 @@ class DashboardController extends Controller
                                   ->orWhere('mobile', 'LIKE', "%$search%")
                                   ->orderBy('id', 'desc')
                                   ->count();
-        $users = User::where('name', 'LIKE', "%$search%")
-                     ->orWhere('email', 'LIKE', "%$search%")
-                     ->orWhere('mobile', 'LIKE', "%$search%")
-                     ->orWhere('uid', 'LIKE', "%$search%")
-                     ->orWhere('onesignal_id', 'LIKE', "%$search%")
-                     ->orderBy('id', 'desc')
-                     ->paginate(10);
+        $users = User::wwhere('name', 'LIKE', "%$search%")
+                      ->orWhere('telephone', 'LIKE', "%$search%")
+                      ->orWhere('mobile', 'LIKE', "%$search%")
+                      ->orderBy('id', 'desc')
+                      ->paginate(10);
 
         $districts = District::all();
 
