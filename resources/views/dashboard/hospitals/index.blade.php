@@ -34,17 +34,19 @@
           <!-- /.card-header -->
           <div class="card-body p-0">
             <table class="table">
-              <tbody>
+              <thead>
                 <tr>
-                  <td>1.</td>
-                  <td>Update software</td>
-                  <td>
+                  <th>নাম</th>
+                  <th>লোকেশন</th>
+                  <th>
                     <div class="progress progress-xs">
                       <div class="progress-bar progress-bar-danger" style="width: 55%"></div>
                     </div>
-                  </td>
-                  <td><span class="badge bg-danger">55%</span></td>
+                  </th>
+                  <th><span class="badge bg-danger">55%</span></th>
                 </tr>
+              </thead>
+              <tbody>
                 @foreach($hospitals as $hospital)
                   <tr>
                     <td>
