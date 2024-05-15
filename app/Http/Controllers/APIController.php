@@ -46,8 +46,12 @@ class APIController extends Controller
             try {
               $districts = Cache::remember('districts', 30 * 24 * 60 * 60, function ()  {
                    $districts = District::get();
-                   return $upazillas;
+                   return $districts;
               });
+              return response()->json([
+                  'success' => true,
+                  'districts' => $districts,
+              ]);
             }
             catch (\Exception $e) {
               return $e->getMessage();
