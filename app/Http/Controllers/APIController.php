@@ -49,8 +49,7 @@ class APIController extends Controller
                    return $districts;
               });
               // return $districts;
-              return view('dashboard.hospitals.print')
-                          ->withDistricts($districts);
+              return view('dashboard.hospitals.print')->withDistricts($districts);
             }
             catch (\Exception $e) {
               return $e->getMessage();
