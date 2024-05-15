@@ -50,6 +50,9 @@ class APIController extends Controller
               });
               // return $districts;
               return view('dashboard.hospitals.print')->withDistricts($districts);
+
+              return response()->json($districts, 200, ['Content-Type' => 'application/json;charset=UTF-8', 'Charset' => 'utf-8'],
+        JSON_UNESCAPED_UNICODE);
             }
             catch (\Exception $e) {
               return $e->getMessage();
