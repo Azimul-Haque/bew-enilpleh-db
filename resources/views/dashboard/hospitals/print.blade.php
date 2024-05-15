@@ -12,24 +12,6 @@
     <div class="card">
           <div class="card-header">
             <h3 class="card-title">জেলা</h3>
-
-            <div class="card-tools">
-              <form class="form-inline form-group-lg" action="">
-                <div class="form-group">
-                  <input type="search-param" class="form-control form-control-sm" placeholder="হাসপাতাল খুঁজুন" id="search-param" required>
-                </div>
-                <button type="button" id="search-button" class="btn btn-default btn-sm" style="margin-left: 5px;">
-                  <i class="fas fa-search"></i> খুঁজুন
-                </button>
-                {{-- <button type="button" class="btn btn-info btn-sm"  data-toggle="modal" data-target="#addBulkDate" style="margin-left: 5px;">
-                  <i class="fas fa-calendar-alt"></i> বাল্ক মেয়াদ বাড়ান
-                </button> --}}
-                <button type="button" class="btn btn-success btn-sm"  data-toggle="modal" data-target="#addUserModal" style="margin-left: 5px;">
-                  <i class="fas fa-user-plus"></i> নতুন
-                </button>
-              </form>
-              
-            </div>
           </div>
           <!-- /.card-header -->
           <div class="card-body p-0">
