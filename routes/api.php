@@ -20,8 +20,8 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 Route::get('/testapi', 'APIController@test')->name('api.test');
 
-Route::get('/getdistricts/{softtoken}/', 'APIController@getDistricts')->name('api.getupazillas');
-Route::get('/getupazillas/{softtoken}/{district_id}', 'APIController@getUpazillasAPI')->name('api.getupazillas');
+Route::get('/getdistricts/{softtoken}/', 'APIController@getDistricts')->name('api.getdistrics');
+Route::get('/getupazillas/{softtoken}/{district_id}', 'APIController@getUpazillas')->name('api.getupazillas');
 Route::get('/gethospitals/{softtoken}/{hospital_type}/{district_id}', 'APIController@getHospitalsDistrict')->name('api.gethospitalsdistrict');
 Route::get('/gethospitals/{softtoken}/{hospital_type}/{district_id}/{upazilla_id}', 'APIController@getHospitalsUpazilla')->name('api.gethospitalsupazilla');
 
