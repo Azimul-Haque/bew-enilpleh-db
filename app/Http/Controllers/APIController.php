@@ -44,11 +44,10 @@ class APIController extends Controller
     {
         if($softtoken == env('SOFT_TOKEN')) {
             try {
-              $districts = District::get();
-              return $upazillas;
+              
 
               $districts = Cache::remember('districts', 30 * 24 * 60 * 60, function ()  {
-                   $upazillas = Upazilla::where('district_id', $district_id)->get();
+                   $districts = District::get();
                    return $upazillas;
               });
             }
