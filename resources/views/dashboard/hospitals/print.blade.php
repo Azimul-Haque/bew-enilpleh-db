@@ -7,11 +7,11 @@
 @endsection
 
 @section('content')
-  @section('page-header') হাসপাতাল তালিকা (মোট {{ bangla($hospitalscount) }} টি) @endsection
+  @section('page-header') জেলা @endsection
     <div class="container-fluid">
     <div class="card">
           <div class="card-header">
-            <h3 class="card-title">হাসপাতাল তালিকা</h3>
+            <h3 class="card-title">জেলা</h3>
 
             <div class="card-tools">
               <form class="form-inline form-group-lg" action="">
