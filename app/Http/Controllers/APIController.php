@@ -48,7 +48,7 @@ class APIController extends Controller
                    $districts = District::get();
                    return $districts;
               });
-              dd($districts);
+              print_r($districts);
               return $districts;
             }
             catch (\Exception $e) {
