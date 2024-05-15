@@ -15,7 +15,7 @@
           </div>
           <!-- /.card-header -->
           <div class="card-body p-0">
-            
+            {{ $districts }}
           </div>
           <!-- /.card-body -->
         </div>
