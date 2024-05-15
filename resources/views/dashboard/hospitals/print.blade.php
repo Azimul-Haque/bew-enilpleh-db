@@ -19,7 +19,6 @@
           </div>
           <!-- /.card-body -->
         </div>
-        {{ $hospitals->links() }}
     </div>
 
     
