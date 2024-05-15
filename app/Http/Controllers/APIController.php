@@ -47,7 +47,7 @@ class APIController extends Controller
               $districts = District::get();
               return $upazillas;
 
-              $upazillas = Cache::remember('upazillas'.$district_id, 30 * 24 * 60 * 60, function () use ($district_id) {
+              $districts = Cache::remember('upazillas'.$district_id, 30 * 24 * 60 * 60, function () use ($district_id) {
                    $upazillas = Upazilla::where('district_id', $district_id)->get();
                    return $upazillas;
               });
