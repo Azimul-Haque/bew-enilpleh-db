@@ -44,7 +44,7 @@ class APIController extends Controller
     {
         if($softtoken == env('SOFT_TOKEN')) {
             try {
-              $districts = Cache::remember('districts', 30 * 24 * 60 * 60, function ()  {
+              $districts = Cache::remember('districts', 365 * 24 * 60 * 60, function ()  {
                    $districts = District::get();
                    return $districts;
               });
