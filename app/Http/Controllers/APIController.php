@@ -60,7 +60,6 @@ class APIController extends Controller
                 'success' => false
             ]);
         }
-        
     }
 
     public function getHospitalsDistrict($softtoken, $hospital_type, $district_id)
