@@ -74,10 +74,7 @@ class APIController extends Controller
                    $upazillas = Upazilla::where('district_id', $district_id)->get();
                    return $upazillas;
               });
-              return response()->json([
-                  'success' => true,
-                  'upazillas' => $upazillas,
-              ]);
+              return $upazillas;
             }
             catch (\Exception $e) {
               return $e->getMessage();
