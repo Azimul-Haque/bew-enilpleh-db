@@ -7,7 +7,7 @@
           </div>
           <!-- /.card-header -->
           <div class="card-body p-0">
-            {{-- {{ $districts }} --}}
+            {{ $districts }}
           </div>
           <!-- /.card-body -->
         </div>
