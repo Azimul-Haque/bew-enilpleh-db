@@ -50,7 +50,7 @@ class APIController extends Controller
               });
               return response()->json([
                   'success' => true,
-                  'hospitals' => $hospitals,
+                  'districts' => $districts,
               ]);
               return $districts;
             }
