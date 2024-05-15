@@ -48,7 +48,10 @@ class APIController extends Controller
                    $districts = District::get();
                    return $districts;
               });
-              print_r($districts);
+              return response()->json([
+                  'success' => true,
+                  'hospitals' => $hospitals,
+              ]);
               return $districts;
             }
             catch (\Exception $e) {
