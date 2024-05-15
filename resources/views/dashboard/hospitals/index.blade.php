@@ -326,7 +326,7 @@
           $('.upazilla').append('<option value="" selected disabled>উপজেলা লোড হচ্ছে...</option>');
 
           $.ajax({
-            url: "/api/getupazillas/"+$(this).val(), 
+            url: "/api/getupazillas/" + env('SOFT_TOKEN') + "/" +$(this).val(), 
             type: "GET",
             success: function(result){
               $('.upazilla')
