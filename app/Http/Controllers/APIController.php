@@ -736,6 +736,9 @@ class APIController extends Controller
             'message'    =>   'required',
         ));
 
+        // KAJ ACHE...
+        // KAJ ACHE...
+        // KAJ ACHE...
         $message = new Message;
         $message->user_id = $user->id;
         $message->message = $request->message;
