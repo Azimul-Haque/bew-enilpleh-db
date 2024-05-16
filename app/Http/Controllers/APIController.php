@@ -84,26 +84,6 @@ class APIController extends Controller
         }
     }
 
-    public function getDistrictUpazillas($softtoken, $district_id)
-    {
-        if($softtoken == env('SOFT_TOKEN')) {
-            try {
-              $upazillas = Cache::remember('upazillas'.$district_id, 365 * 24 * 60 * 60, function () use ($district_id) {
-                   $upazillas = Upazilla::where('district_id', $district_id)->get();
-                   return $upazillas;
-              });
-              return $upazillas;
-            }
-            catch (\Exception $e) {
-              return $e->getMessage();
-            }
-        } else {
-            return response()->json([
-                'success' => false
-            ]);
-        }
-    }
-
     public function getHospitalsDistrict($softtoken, $hospital_type, $district_id)
     {
         if($softtoken == env('SOFT_TOKEN'))
