@@ -18,7 +18,7 @@
 <body class="hold-transition login-page">
 <div class="login-box">
     <div class="login-logo">
-        <a href="{{ url('/home') }}"><b>বিসিএস এক্সাম</b></a>
+        <a href="{{ url('/home') }}"><b>বিডি হেল্পলাইন</b></a>
     </div>
     <!-- /.login-logo -->
 
