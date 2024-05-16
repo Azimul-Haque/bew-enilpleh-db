@@ -25,7 +25,7 @@
                 <tr>
                   <th>নাম</th>
                   <th>যোগাযোগ</th>
-                  <th>প্যাকেজ</th>
+                  {{-- <th>প্যাকেজ</th> --}}
                   <th>মেসেজ</th>
                   <th>সময়</th>
                   <th>Action</th>
@@ -41,7 +41,7 @@
                       {{ $message->user->name }}
                     </td>
                     <td>{{ $message->user->mobile }}</td>
-                    <td>{{ $message->user->payments->count() }} বার কিনেছেন</td>
+                    {{-- <td>{{ $message->user->payments->count() }} বার কিনেছেন</td> --}}
                     <td>{{ $message->message }}</td>
                     <td>{{ date('F d, Y h:m A', strtotime($message->created_at)) }}</td>
                 		
