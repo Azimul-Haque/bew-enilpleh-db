@@ -736,8 +736,6 @@ class APIController extends Controller
             'message'    =>   'required',
         ));
 
-        $user = User::where('mobile', $request->mobile)->first();
-
         $message = new Message;
         $message->user_id = $user->id;
         $message->message = $request->message;
