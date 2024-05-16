@@ -28,7 +28,7 @@
 
 
 
-@if(Auth::user()->role == 'admin')
+{{-- @if(Auth::user()->role == 'admin')
 <li class="nav-item">
     <a href="{{ route('dashboard.payments') }}" class="nav-link {{ Request::is('dashboard/payments') ? 'active' : '' }} {{ Request::is('dashboard/payments/*') ? 'active' : '' }}">
         <i class="nav-icon fas fa-hand-holding-usd"></i>
@@ -95,7 +95,7 @@
         <p>ম্যাটেরিয়ালসমূহ</p>
     </a>
 </li>
-@endif
+@endif --}}
 
 @if(Auth::user()->role == 'admin')
 <li class="nav-item">
@@ -111,7 +111,7 @@
 </li>
 @endif
 
-@if(Auth::user()->role == 'admin')
+{{-- @if(Auth::user()->role == 'admin')
 <li class="nav-item">
     <a href="{{ route('dashboard.notifications') }}" class="nav-link {{ Request::is('dashboard/notifications') ? 'active' : '' }} {{ Request::is('dashboard/notification/*') ? 'active' : '' }}">
         <i class="nav-icon fas fa-bell"></i>
@@ -127,7 +127,7 @@
         <p>ব্লগ</p>
     </a>
 </li>
-@endif
+@endif --}}
 
 {{-- <li class="nav-item">
     <a href="{{ route('dashboard.components') }}" class="nav-link {{ Request::is('dashboard/components') ? 'active' : '' }}">
