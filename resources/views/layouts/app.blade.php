@@ -34,11 +34,11 @@
 
         <!-- Right navbar links -->
         <ul class="navbar-nav ml-auto">
-          <li class="nav-item">
+          {{-- <li class="nav-item">
             <a class="nav-link" href="{{ route('index.index') }}"  target="_blank">
               <i class="fas fa-globe"></i>
             </a>
-          </li>
+          </li> --}}
           <li class="nav-item dropdown">
             <a class="nav-link" data-toggle="dropdown" href="#">
               <i class="far fa-bell"></i>
