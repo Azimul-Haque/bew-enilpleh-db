@@ -51,9 +51,10 @@ class IndexController extends Controller
      */
     public function index()
     {
-        $packages = Package::where('status', 1)->get();
+        return redirect()->route('dashboard.index');
+        // $packages = Package::where('status', 1)->get();
 
-        return view('index.index')->withPackages($packages);
+        // return view('index.index')->withPackages($packages);
     }
 
     public function termsAndConditions()
