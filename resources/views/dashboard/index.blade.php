@@ -8,7 +8,7 @@
 @section('content')
 	@section('page-header') ড্যাশবোর্ড @endsection
     <div class="container-fluid">
-        <div class="row">
+        {{-- <div class="row">
           <div class="col-lg-3 col-6">
             <!-- small box -->
             <div class="small-box bg-info">
@@ -68,7 +68,7 @@
               <a href="{{ route('dashboard.users') }}" class="small-box-footer">ব্যবহারকারীগণ <i class="fas fa-arrow-circle-right"></i></a>
             </div>
           </div>
-        </div>
+        </div> --}}
         <div class="row">
           {{-- <div class="col-md-6">
             <a href="{{ route('dashboard.deposit.getlist', [date('Y-m-d'), 'All']) }}" class="info-box mb-3">
