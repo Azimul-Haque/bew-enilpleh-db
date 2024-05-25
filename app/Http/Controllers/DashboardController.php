@@ -712,8 +712,6 @@ class DashboardController extends Controller
                     ->withTotalexpense($totalexpense);
     }
 
-    
-
     public function getCategories()
     {
         $categories = Category::where('name', '!=', null)
