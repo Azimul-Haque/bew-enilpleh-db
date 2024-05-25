@@ -6,6 +6,15 @@ use Illuminate\Database\Eloquent\Model;
 
 class Doctor extends Model
 {
+
+    public function district(){
+        return $this->belongsTo('App\District');
+    }
+
+    public function upazilla(){
+        return $this->belongsTo('App\Upazilla');
+    }
+    
     public function doctormedicaldepartments(){
         return $this->hasMany('App\Doctormedicaldepartment');
     }
