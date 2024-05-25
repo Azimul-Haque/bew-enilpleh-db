@@ -16,7 +16,7 @@ class CreateMedicaldepartmentsTable extends Migration
         Schema::create('medicaldepartments', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->timestamps();
+            $table->string('thumbnail')->nullable();
         });
     }
 
