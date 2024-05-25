@@ -321,13 +321,28 @@
                     </select>
                   </div>
                   
-                  <div>
+                  <div style="margin-bottom: 15px;">
                     <select name="hospitals[]" class="form-control multiple-select" multiple="multiple" data-placeholder="ডাক্তার যে হাসপাতালের সাথে সম্পৃক্ত (প্রয়োজনে একাধিক সিলেক্ট করা যাবে)" required>
                         @foreach($hospitals as $hospital)
                           <option value="{{ $hospital->id }}">{{ $hospital->name }}</option>
                         @endforeach
                     </select>
-                  </div>          
+                  </div>
+
+                  <div class="form-group ">
+                      <label for="image">ছবি (প্রয়োজনে)</label>
+                      <input type="file" id="image{{ $question->id }}" name="image" accept="image/*">
+                  </div>
+                  <center>
+                      <?php
+                        if($question->questionimage) {
+                            $currentimage = asset('images/questions/' . $question->questionimage->image);
+                        } else {
+                            $currentimage = asset('images/placeholder.png');
+                        }
+                      ?>
+                      <img src="{{ $currentimage }}" id='img-upload{{ $question->id }}' style="width: 250px; height: auto;" class="img-responsive" />
+                  </center>
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-dismiss="modal">ফিরে যান</button>
