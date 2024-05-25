@@ -249,7 +249,6 @@ class DashboardController extends Controller
         $doctorscount = Doctor::where('name', 'LIKE', "%$search%")
                                   ->orWhere('serial', 'LIKE', "%$search%")
                                   ->orWhere('mobile', 'LIKE', "%$search%")
-                                  ->orderBy('id', 'desc')
                                   ->count();
         $doctors = Doctor::where('name', 'LIKE', "%$search%")
                               ->orWhere('telephone', 'LIKE', "%$search%")
