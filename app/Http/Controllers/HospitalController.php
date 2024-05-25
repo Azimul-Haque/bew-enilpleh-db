@@ -4,16 +4,6 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-use App\User;
-use App\Package;
-use App\Payment;
-use App\Message;
-use App\Notification;
-use App\Exam;
-use App\Blog;
-use App\Blogcategory;
-use App\Meritlist;
-
 use App\District;
 use App\Upazilla;
 use App\Hospital;
