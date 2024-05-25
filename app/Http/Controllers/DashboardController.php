@@ -249,7 +249,7 @@ class DashboardController extends Controller
         $doctorscount = Doctor::count();
         $doctors = Doctor::orderBy('id', 'desc')->paginate(10);
 
-        $medicaldepartments = Medicaldepartments::all();
+        $medicaldepartments = Medicaldepartment::all();
         $medicalsymptom = Medicalsymptom::all();
         
         return view('dashboard.doctors.index')
