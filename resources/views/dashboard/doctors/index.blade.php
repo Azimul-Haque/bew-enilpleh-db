@@ -294,7 +294,7 @@
                   <div class="">
                     <select name="medicalsymtoms[]" class="form-control multiple-select" multiple="multiple" data-placeholder="লক্ষণ (প্রয়োজনে একাধিক সিলেক্ট করা যাবে)" required>
                         
-                        @foreach($medicaldepartments as $medicaldepartment)
+                        @foreach($medicalsymptoms as $medicaldepartment)
                           <option value="{{ $medicaldepartment->id }}">{{ $medicaldepartment->name }}</option>
                         @endforeach
                     </select>
