@@ -19,7 +19,6 @@ class CreateDoctorsTable extends Migration
             $table->string('degree');
             $table->string('serial');
             $table->string('helpline');
-            $table->string('image');
             $table->timestamps();
         });
     }
