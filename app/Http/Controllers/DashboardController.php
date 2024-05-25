@@ -14,17 +14,6 @@ use App\Blog;
 use App\Blogcategory;
 use App\Meritlist;
 
-use App\District;
-use App\Upazilla;
-use App\Hospital;
-use App\Doctor;
-use App\Doctorimage;
-use App\Doctorhospital;
-use App\Medicaldepartment;
-use App\Medicalsymptom;
-use App\Doctormedicaldepartment;
-use App\Doctormedicalsymptom;
-
 use Carbon\Carbon;
 use DB;
 use Hash;
