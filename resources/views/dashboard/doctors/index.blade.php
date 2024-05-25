@@ -268,7 +268,7 @@
                              value="{{ old('helpline') }}"
                              autocomplete="off"
                              class="form-control"
-                             placeholder="হেল্পলাইন নম্বর" required>
+                             placeholder="হেল্পলাইন নম্বর (যদি থাকে)" required>
                       <div class="input-group-append">
                           <div class="input-group-text"><span class="fas fa-mobile"></span></div>
                       </div>
