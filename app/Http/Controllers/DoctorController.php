@@ -34,9 +34,9 @@ class DoctorController extends Controller
     public function __construct()
     {
         parent::__construct();
-        $this->middleware(['admin'])->only('index', 'indexSearch', 'storeHospital', 'updateHospital', 'deleteHospital');
+        $this->middleware(['admin'])->only('index', 'indexSearch');
     }
-    
+
     public function index()
     {
         $doctorscount = Doctor::count();
