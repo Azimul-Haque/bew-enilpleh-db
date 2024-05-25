@@ -11,4 +11,8 @@ class Upazilla extends Model
     public function hospitals(){
         return $this->hasMany('App\Hospital');
     }
+
+    public function doctors(){
+        return $this->hasMany('App\Doctor');
+    }
 }
