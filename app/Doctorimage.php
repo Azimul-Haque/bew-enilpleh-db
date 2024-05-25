@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Doctorimage extends Model
 {
-    public function qustion(){
-        return $this->belongsTo('App\Question');
+    public function doctor(){
+        return $this->belongsTo('App\Doctor');
     }
 }
