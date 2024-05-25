@@ -289,6 +289,15 @@
                           <option value="{{ $medicaldepartment->id }}">{{ $medicaldepartment->name }}</option>
                         @endforeach
                     </select>
+                  </div> 
+                  
+                  <div class="">
+                    <select name="medicaldepartment[]" class="form-control multiple-select" multiple="multiple" data-placeholder="বিভাগ (প্রয়োজনে একাধিক সিলেক্ট করা যাবে)" required>
+                        
+                        @foreach($medicaldepartments as $medicaldepartment)
+                          <option value="{{ $medicaldepartment->id }}">{{ $medicaldepartment->name }}</option>
+                        @endforeach
+                    </select>
                   </div>          
             </div>
             <div class="modal-footer">
