@@ -1,5 +1,5 @@
 @extends('layouts.app')
-@section('title') ড্যাশবোর্ড | হাসপাতাল তালিকা @endsection
+@section('title') ড্যাশবোর্ড | ডাক্তার তালিকা @endsection
 
 @section('third_party_stylesheets')
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/icheck-bootstrap@3.0.1/icheck-bootstrap.min.css">
@@ -7,16 +7,16 @@
 @endsection
 
 @section('content')
-  @section('page-header') হাসপাতাল তালিকা (মোট {{ bangla($hospitalscount) }} টি) @endsection
+  @section('page-header') ডাক্তার তালিকা (মোট {{ bangla($hospitalscount) }} টি) @endsection
     <div class="container-fluid">
     <div class="card">
           <div class="card-header">
-            <h3 class="card-title">হাসপাতাল তালিকা</h3>
+            <h3 class="card-title">ডাক্তার তালিকা</h3>
 
             <div class="card-tools">
               <form class="form-inline form-group-lg" action="">
                 <div class="form-group">
-                  <input type="search-param" class="form-control form-control-sm" placeholder="হাসপাতাল খুঁজুন" id="search-param" required>
+                  <input type="search-param" class="form-control form-control-sm" placeholder="ডাক্তার খুঁজুন" id="search-param" required>
                 </div>
                 <button type="button" id="search-button" class="btn btn-default btn-sm" style="margin-left: 5px;">
                   <i class="fas fa-search"></i> খুঁজুন
@@ -67,7 +67,7 @@
                         <div class="modal-dialog" role="document">
                           <div class="modal-content">
                             <div class="modal-header bg-primary">
-                              <h5 class="modal-title" id="editUserModalLabel">হাসপাতাল তথ্য হালনাগাদ</h5>
+                              <h5 class="modal-title" id="editUserModalLabel">ডাক্তার তথ্য হালনাগাদ</h5>
                               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                 <span aria-hidden="true">&times;</span>
                               </button>
@@ -101,16 +101,16 @@
                                                name="name"
                                                class="form-control"
                                                value="{{ $hospital->name }}"
-                                               placeholder="হাসপাতালের নাম" required>
+                                               placeholder="ডাক্তারের নাম" required>
                                         <div class="input-group-append">
                                             <div class="input-group-text"><span class="fas fa-hospital"></span></div>
                                         </div>
                                     </div>
                                     <div class="input-group mb-3">
                                       <select name="hospital_type" class="form-control" required>
-                                          <option selected="" disabled="" value="">হাসপাতালের ধরন</option>
-                                          <option value="1" @if($hospital->hospital_type == 1) selected @endif>মেডিকেল কলেজ ও হাসপাতাল</option>
-                                          <option value="2" @if($hospital->hospital_type == 2) selected @endif>প্রাইভেট হাসপাতাল</option>
+                                          <option selected="" disabled="" value="">ডাক্তারের ধরন</option>
+                                          <option value="1" @if($hospital->hospital_type == 1) selected @endif>মেডিকেল কলেজ ও ডাক্তার</option>
+                                          <option value="2" @if($hospital->hospital_type == 2) selected @endif>প্রাইভেট ডাক্তার</option>
                                           <option value="3" @if($hospital->hospital_type == 3) selected @endif>স্বাস্থ্য কমপ্লেক্স</option>
                                       </select>
                                       <div class="input-group-append">
@@ -173,13 +173,13 @@
                           <div class="modal-dialog" role="document">
                             <div class="modal-content">
                               <div class="modal-header bg-danger">
-                                <h5 class="modal-title" id="deleteUserModalLabel">হাসপাতাল ডিলেট</h5>
+                                <h5 class="modal-title" id="deleteUserModalLabel">ডাক্তার ডিলেট</h5>
                                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                   <span aria-hidden="true">&times;</span>
                                 </button>
                               </div>
                               <div class="modal-body">
-                                আপনি কি নিশ্চিতভাবে এই হাসপাতালকে ডিলেট করতে চান?<br/>
+                                আপনি কি নিশ্চিতভাবে এই ডাক্তারকে ডিলেট করতে চান?<br/>
                                 <center>
                                     <big><b>{{ $hospital->name }}</b></big><br/>
                                     <small><i class="fas fa-phone"></i> {{ $hospital->mobile }}</small>
@@ -221,7 +221,7 @@
       <div class="modal-dialog" role="document">
         <div class="modal-content">
           <div class="modal-header bg-success">
-            <h5 class="modal-title" id="addUserModalLabel">নতুন হাসপাতাল যোগ</h5>
+            <h5 class="modal-title" id="addUserModalLabel">নতুন ডাক্তার যোগ</h5>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
@@ -255,16 +255,16 @@
                              name="name"
                              class="form-control"
                              value="{{ old('name') }}"
-                             placeholder="হাসপাতালের নাম" required>
+                             placeholder="ডাক্তারের নাম" required>
                       <div class="input-group-append">
                           <div class="input-group-text"><span class="fas fa-hospital"></span></div>
                       </div>
                   </div>
                   <div class="input-group mb-3">
                     <select name="hospital_type" class="form-control" required>
-                        <option selected="" disabled="" value="">হাসপাতালের ধরন</option>
-                        <option value="1">মেডিকেল কলেজ ও হাসপাতাল</option>
-                        <option value="2">প্রাইভেট হাসপাতাল</option>
+                        <option selected="" disabled="" value="">ডাক্তারের ধরন</option>
+                        <option value="1">মেডিকেল কলেজ ও ডাক্তার</option>
+                        <option value="2">প্রাইভেট ডাক্তার</option>
                         <option value="3">স্বাস্থ্য কমপ্লেক্স</option>
                     </select>
                     <div class="input-group-append">
