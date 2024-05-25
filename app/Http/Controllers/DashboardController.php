@@ -151,13 +151,6 @@ class DashboardController extends Controller
         $hospitalscount = Hospital::where('name', 'LIKE', "%$search%")
                                   ->orWhere('telephone', 'LIKE', "%$search%")
                                   ->orWhere('mobile', 'LIKE', "%$search%")
-                                  ->orWhereHas('district', function ($query) use ($search){
-                                      $query->where('name', 'like', '%'.$search.'%');
-                                      $query->orWhere('name_bangla', 'like', '%'.$search.'%');
-                                  })->orWhereHas('upazilla', function ($query) use ($search){
-                                      $query->where('name', 'like', '%'.$search.'%');
-                                      $query->orWhere('name_bangla', 'like', '%'.$search.'%');
-                                  })
                                   ->orderBy('id', 'desc')
                                   ->count();
         $hospitals = Hospital::where('name', 'LIKE', "%$search%")
