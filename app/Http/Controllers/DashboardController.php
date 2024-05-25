@@ -57,7 +57,13 @@ class DashboardController extends Controller
 
         
 
-        
+        $totalpayment = Payment::sum('amount');
+        $last14daysusersdaily = DB::table('users')
+                                    ->select('created_at', DB::raw('COUNT(*) as totalusers'))
+                                    ->groupBy(DB::raw("DATE_FORMAT(created_at, '%Y-%m-%d')"))
+                                    ->orderBy('created_at', 'DESC')
+                                    ->take(14)
+                                    ->get();
         $daysforchartc = [];
         foreach ($last14daysusersdaily as $key => $days) {
             $daysforchartc[] = date_format(date_create($days->created_at), "M d");
@@ -81,6 +87,9 @@ class DashboardController extends Controller
         // dd($totaluserscumulitiveforchartc);
 
         return view('dashboard.index')->withTotalusers($totalusers)
+                                      ->withTotalpayment($totalpayment)
+                                      ->withTotalmonthlypayment($totalmonthlypayment)
+                                      ->withTotalexamsattendedtoday($totalexamsattendedtoday)
                                       ->withDaysforchartc($daysforchartc)
                                       ->withTotalusersforchartc($totalusersforchartc)
                                       ->withTotaluserscumulitiveforchartc($totaluserscumulitiveforchartc);
