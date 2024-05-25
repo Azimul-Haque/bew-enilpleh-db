@@ -434,12 +434,12 @@
         $("#image").change(function(){
             readURL(this);
             var filesize = parseInt((this.files[0].size)/1024);
-            if(filesize > 1000) {
+            if(filesize > 2000) {
               $("#image").val('');
               // toastr.warning('File size is: '+filesize+' Kb. try uploading less than 300Kb', 'WARNING').css('width', '400px;');
               Toast.fire({
                   icon: 'warning',
-                  title: 'File size is: '+filesize+' Kb. try uploading less than 1MB'
+                  title: 'File size is: '+filesize+' Kb. try uploading less than 2MB'
               })
               setTimeout(function() {
               $("#img-upload").attr('src', '{{ asset('images/placeholder.png') }}');
