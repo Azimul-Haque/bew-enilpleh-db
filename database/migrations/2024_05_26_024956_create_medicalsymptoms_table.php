@@ -15,7 +15,8 @@ class CreateMedicalsymptomsTable extends Migration
     {
         Schema::create('medicalsymptoms', function (Blueprint $table) {
             $table->id();
-            $table->timestamps();
+            $table->string('name');
+            $table->string('thumbnail')->nullable();
         });
     }
 
