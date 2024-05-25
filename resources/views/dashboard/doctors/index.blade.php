@@ -266,26 +266,32 @@
                     </div>
                   </div>
 
-                  <div class="input-group mb-3">
-                      <input type="text"
-                             name="name"
-                             class="form-control"
-                             value="{{ old('name') }}"
-                             placeholder="ডাক্তারের নাম" required>
-                      <div class="input-group-append">
-                          <div class="input-group-text"><span class="fas fa-user-md"></span></div>
+                  <div class="row">
+                    <div class="col-md-6">
+                      <div class="input-group mb-3">
+                          <input type="text"
+                                 name="name"
+                                 class="form-control"
+                                 value="{{ old('name') }}"
+                                 placeholder="ডাক্তারের নাম" required>
+                          <div class="input-group-append">
+                              <div class="input-group-text"><span class="fas fa-user-md"></span></div>
+                          </div>
                       </div>
-                  </div>
-                  <div class="input-group mb-3">
-                      <input type="text"
-                             name="degree"
-                             value="{{ old('degree') }}"
-                             autocomplete="off"
-                             class="form-control"
-                             placeholder="ডাক্তারের ডিগ্রি/ ডিগ্রিসমূহ (যেমন: MBBS, FCPS, MD)" required>
-                      <div class="input-group-append">
-                          <div class="input-group-text"><span class="fas fa-certificate"></span></div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="input-group mb-3">
+                          <input type="text"
+                                 name="degree"
+                                 value="{{ old('degree') }}"
+                                 autocomplete="off"
+                                 class="form-control"
+                                 placeholder="ডাক্তারের ডিগ্রি/ ডিগ্রিসমূহ (যেমন: MBBS, FCPS, MD)" required>
+                          <div class="input-group-append">
+                              <div class="input-group-text"><span class="fas fa-certificate"></span></div>
+                          </div>
                       </div>
+                    </div>
                   </div>
                   <div class="input-group mb-3">
                       <input type="number"
