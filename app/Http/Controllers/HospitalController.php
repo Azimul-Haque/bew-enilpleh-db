@@ -6,6 +6,14 @@ use Illuminate\Http\Request;
 
 class HospitalController extends Controller
 {
+    public function __construct()
+    {
+        parent::__construct();
+        $this->middleware('auth')->except('clear');
+        $this->middleware(['admin'])->only('getUsers', 'storeUser', 'updateUser', 'deleteUser', 'getUser', 'getMessages', 'updateMessage', 'getNotifications', 'getHospitals', 'storeHospital', 'updateHospital', 'deleteHospital', 'getDoctors');
+        
+    }
+    
     public function index()
     {
         $hospitalscount = Hospital::count();
