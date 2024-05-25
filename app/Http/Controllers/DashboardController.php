@@ -18,8 +18,11 @@ use App\District;
 use App\Upazilla;
 use App\Hospital;
 use App\Doctor;
+use App\Doctorimage;
 use App\Medicaldepartment;
 use App\Medicalsymptom;
+use App\Doctormedicaldepartment;
+use App\Doctormedicalsymptom;
 
 use Carbon\Carbon;
 use DB;
