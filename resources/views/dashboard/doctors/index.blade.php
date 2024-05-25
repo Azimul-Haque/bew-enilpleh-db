@@ -249,7 +249,7 @@
                              class="form-control"
                              placeholder="ডাক্তারের ডিগ্রি/ ডিগ্রিসমূহ (যেমন: MBBS, FCPS, MD)" required>
                       <div class="input-group-append">
-                          <div class="input-group-text"><span class="fas fa-map-marker-alt"></span></div>
+                          <div class="input-group-text"><span class="fas fa-certificate"></span></div>
                       </div>
                   </div>
                   <div class="input-group mb-3">
