@@ -254,9 +254,9 @@
                   </div>
                   <div class="input-group mb-3">
                       <input type="number"
-                             name="telephone"
+                             name="serial"
                              class="form-control"
-                             value="{{ old('telephone') }}"
+                             value="{{ old('serial') }}"
                              placeholder="টেলিফোন নং" required>
                       <div class="input-group-append">
                           <div class="input-group-text"><span class="fas fa-phone"></span></div>
