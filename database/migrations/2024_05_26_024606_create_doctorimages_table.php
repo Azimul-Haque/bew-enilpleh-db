@@ -15,6 +15,8 @@ class CreateDoctorimagesTable extends Migration
     {
         Schema::create('doctorimages', function (Blueprint $table) {
             $table->id();
+            $table->integer('doctor_id');
+            $table->string('image');
             $table->timestamps();
         });
     }
