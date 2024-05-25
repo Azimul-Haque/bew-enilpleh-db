@@ -264,8 +264,8 @@
                   </div>
                   <div class="input-group mb-3">
                       <input type="number"
-                             name="mobile"
-                             value="{{ old('mobile') }}"
+                             name="helpline"
+                             value="{{ old('helpline') }}"
                              autocomplete="off"
                              class="form-control"
                              placeholder="মোবাইল নম্বর" required>
