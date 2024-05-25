@@ -264,6 +264,26 @@ class DashboardController extends Controller
                             ->withHospitals($hospitals);
     }
 
+    public function getDoctorsSearch()
+    {
+        $doctorscount = Doctor::count();
+        $doctors = Doctor::orderBy('id', 'desc')->paginate(10);
+
+        $districts = District::all();
+        $medicaldepartments = Medicaldepartment::all();
+        $medicalsymptoms = Medicalsymptom::all();
+        $hospitals = Hospital::all();
+
+        
+        return view('dashboard.doctors.index')
+                            ->withDoctorscount($doctorscount)
+                            ->withDoctors($doctors)
+                            ->withDistricts($districts)
+                            ->withMedicaldepartments($medicaldepartments)
+                            ->withMedicalsymptoms($medicalsymptoms)
+                            ->withHospitals($hospitals);
+    }
+
 
 
 
