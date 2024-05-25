@@ -231,26 +231,6 @@
             <div class="modal-body">
               
                   @csrf
-
-                  <div class="input-group mb-3">
-                    <select name="district_id" id="district" class="form-control district" required>
-                        <option selected="" disabled="" value="">জেলা নির্বাচন করুন</option>
-                        {{-- @foreach($districts as $district)
-                          <option value="{{ $district->id }}">{{ $district->name_bangla }}</option>
-                        @endforeach --}}
-                    </select>
-                    <div class="input-group-append">
-                        <div class="input-group-text"><span class="fas fa-map"></span></div>
-                    </div>
-                  </div>
-                  <div class="input-group mb-3">
-                    <select name="upazilla_id" id="upazilla" class="form-control upazilla" required>
-                        <option selected="" disabled="" value="">উপজেলা নির্বাচন করুন</option>
-                    </select>
-                    <div class="input-group-append">
-                        <div class="input-group-text"><span class="fas fa-map-marked-alt"></span></div>
-                    </div>
-                  </div>
                   <div class="input-group mb-3">
                       <input type="text"
                              name="name"
@@ -262,16 +242,17 @@
                       </div>
                   </div>
                   <div class="input-group mb-3">
-                    <select name="hospital_type" class="form-control" required>
-                        <option selected="" disabled="" value="">ডাক্তারের ধরন</option>
-                        <option value="1">মেডিকেল কলেজ ও ডাক্তার</option>
-                        <option value="2">প্রাইভেট ডাক্তার</option>
-                        <option value="3">স্বাস্থ্য কমপ্লেক্স</option>
+                    <select name="district_id" id="district" class="form-control district" required>
+                        <option selected="" disabled="" value="">জেলা নির্বাচন করুন</option>
+                        {{-- @foreach($districts as $district)
+                          <option value="{{ $district->id }}">{{ $district->name_bangla }}</option>
+                        @endforeach --}}
                     </select>
                     <div class="input-group-append">
-                        <div class="input-group-text"><span class="fas fa-star-half-alt"></span></div>
+                        <div class="input-group-text"><span class="fas fa-map"></span></div>
                     </div>
                   </div>
+                  
                   <div class="input-group mb-3">
                       <input type="number"
                              name="telephone"
