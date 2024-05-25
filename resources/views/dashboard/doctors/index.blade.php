@@ -259,7 +259,7 @@
                         <div class="input-group-text"><span class="fas fa-map-marked-alt"></span></div>
                     </div>
                   </div>
-                  
+
                   <div class="input-group mb-3">
                       <input type="text"
                              name="name"
@@ -347,6 +347,29 @@
     <script type="text/javascript">
         $('.multiple-select').select2({
           // theme: 'bootstrap4',
+        });
+
+        $('.district').on('change', function() {
+          $('.upazilla').prop('disabled', true);
+          $('.upazilla').append('<option value="" selected disabled>উপজেলা লোড হচ্ছে...</option>');
+
+          $.ajax({
+            url: "/api/getupazillas/{{ env('SOFT_TOKEN') }}/" +$(this).val(), 
+            type: "GET",
+            success: function(result){
+              $('.upazilla')
+                  .find('option')
+                  .remove()
+                  .end()
+                  .prop('disabled', false)
+                  .append('<option value="" selected disabled>উপজেলা নির্ধারণ করুন</option>')
+              ;
+              for(var countupazilla = 0; countupazilla < result.length; countupazilla++) {
+                console.log(result[countupazilla]);
+                $('.upazilla').append('<option value="'+result[countupazilla]['id']+'">'+result[countupazilla]['name_bangla']+'</option>')
+              }
+            }
+          });
         });
 
         $(document).on('click', '#search-button', function() {
