@@ -10,7 +10,6 @@ class HospitalController extends Controller
     {
         parent::__construct();
         $this->middleware(['admin'])->only('index', 'indexSearch', 'storeHospital', 'updateHospital', 'deleteHospital');
-        
     }
 
     public function index()
