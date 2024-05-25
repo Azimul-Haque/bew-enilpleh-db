@@ -15,6 +15,7 @@ return array(
     'App\\Courseexam' => $baseDir . '/app/Courseexam.php',
     'App\\Creditor' => $baseDir . '/app/Creditor.php',
     'App\\District' => $baseDir . '/app/District.php',
+    'App\\Doctor' => $baseDir . '/app/Doctor.php',
     'App\\Due' => $baseDir . '/app/Due.php',
     'App\\Exam' => $baseDir . '/app/Exam.php',
     'App\\Examcategory' => $baseDir . '/app/Examcategory.php',
