@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Doctor extends Model
 {
-    public function doctorimage(){
-        return $this->hasOne('App\Doctorimage');
+    public function medicaldepartment(){
+        return $this->hasOne('App\Medicaldepartment');
     }
 }
