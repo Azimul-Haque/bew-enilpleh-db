@@ -13,4 +13,8 @@ class Hospital extends Model
     public function upazilla(){
         return $this->belongsTo('App\Upazilla');
     }
+
+    public function doctorhospitals(){
+        return $this->hasMany('App\Doctorhospital');
+    }
 }
