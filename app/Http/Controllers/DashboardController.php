@@ -265,6 +265,7 @@ class DashboardController extends Controller
                                   })
                                   ->count();
         $doctors = Doctor::where('name', 'LIKE', "%$search%")
+                              ->orWhere('degree', 'LIKE', "%$search%")
                               ->orWhere('serial', 'LIKE', "%$search%")
                               ->orWhere('helpline', 'LIKE', "%$search%")
                               ->orWhereHas('district', function ($query) use ($search){
