@@ -275,10 +275,10 @@
                   </div>
                   
                   <div class="input-group mb-3">
-                    <select name="district_id" id="district" class="form-control district" required>
+                    <select name="district_id" id="medicaldepartment" class="form-control" required>
                         <option selected="" disabled="" value="">বিভাগ</option>
                         @foreach($medicaldepartments as $medicaldepartment)
-                          <option value="{{ $medicaldepartment->id }}">{{ $medicaldepartment->name_bangla }}</option>
+                          <option value="{{ $medicaldepartment->id }}">{{ $medicaldepartment->name }}</option>
                         @endforeach
                     </select>
                     <div class="input-group-append">
