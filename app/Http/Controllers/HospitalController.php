@@ -4,6 +4,33 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use App\User;
+use App\Package;
+use App\Payment;
+use App\Message;
+use App\Notification;
+use App\Exam;
+use App\Blog;
+use App\Blogcategory;
+use App\Meritlist;
+
+use App\District;
+use App\Upazilla;
+use App\Hospital;
+
+use Carbon\Carbon;
+use DB;
+use Hash;
+use Auth;
+use Image;
+use File;
+use Session;
+use Artisan;
+// use Redirect;
+use OneSignal;
+use Purifier;
+use Cache;
+
 class HospitalController extends Controller
 {
     public function __construct()
