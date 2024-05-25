@@ -87,16 +87,9 @@ class DashboardController extends Controller
         // dd($totaluserscumulitiveforchartc);
 
         return view('dashboard.index')->withTotalusers($totalusers)
-                                      ->withTotalpayment($totalpayment)
-                                      ->withTotalmonthlypayment($totalmonthlypayment)
-                                      ->withTotalexamsattendedtoday($totalexamsattendedtoday)
                                       ->withDaysforchartc($daysforchartc)
                                       ->withTotalusersforchartc($totalusersforchartc)
                                       ->withTotaluserscumulitiveforchartc($totaluserscumulitiveforchartc);
-                                    // ->withTotalbalance($totalbalance)
-                                    // ->withTotalexpense($totalexpense)
-                                    // ->withTodaystotalexpense($todaystotalexpense)
-                                    // ->withTodaystotaldeposit($todaystotaldeposit);
     }
 
     public function clearQueryCache()
