@@ -15,6 +15,8 @@ class CreateDoctorhospitalsTable extends Migration
     {
         Schema::create('doctorhospitals', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('doctor_id')->unsigned();
+            $table->foreignId('hospital_id')->unsigned();
             $table->timestamps();
         });
     }
