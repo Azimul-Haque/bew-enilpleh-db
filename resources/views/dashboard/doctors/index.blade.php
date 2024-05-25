@@ -290,7 +290,7 @@
                         @endforeach
                     </select>
                   </div> 
-                  <br/>
+                  
                   <div class="">
                     <select name="medicalsymtoms[]" class="form-control multiple-select" multiple="multiple" data-placeholder="লক্ষণ (প্রয়োজনে একাধিক সিলেক্ট করা যাবে)" required>
                         
