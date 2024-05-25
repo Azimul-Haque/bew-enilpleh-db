@@ -243,8 +243,8 @@
                   </div>
                   <div class="input-group mb-3">
                       <input type="text"
-                             name="location"
-                             value="{{ old('location') }}"
+                             name="degree"
+                             value="{{ old('degree') }}"
                              autocomplete="off"
                              class="form-control"
                              placeholder="গুগল ম্যাপ লোকেশন লিংক" required>
