@@ -15,6 +15,11 @@ class CreateDoctorsTable extends Migration
     {
         Schema::create('doctors', function (Blueprint $table) {
             $table->id();
+            $table->string('name');
+            $table->integer('hospital_type');
+            $table->string('telephone');
+            $table->string('mobile');
+            $table->string('location');
             $table->timestamps();
         });
     }
