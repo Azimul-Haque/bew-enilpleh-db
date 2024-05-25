@@ -242,6 +242,17 @@
                       </div>
                   </div>
                   <div class="input-group mb-3">
+                      <input type="text"
+                             name="location"
+                             value="{{ old('location') }}"
+                             autocomplete="off"
+                             class="form-control"
+                             placeholder="গুগল ম্যাপ লোকেশন লিংক" required>
+                      <div class="input-group-append">
+                          <div class="input-group-text"><span class="fas fa-map-marker-alt"></span></div>
+                      </div>
+                  </div>
+                  <div class="input-group mb-3">
                       <input type="number"
                              name="telephone"
                              class="form-control"
