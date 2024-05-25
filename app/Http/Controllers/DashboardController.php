@@ -19,6 +19,7 @@ use App\Upazilla;
 use App\Hospital;
 use App\Doctor;
 use App\Doctorimage;
+use App\Doctorhospital;
 use App\Medicaldepartment;
 use App\Medicalsymptom;
 use App\Doctormedicaldepartment;
