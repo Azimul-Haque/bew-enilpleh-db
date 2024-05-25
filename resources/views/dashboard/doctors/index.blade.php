@@ -298,6 +298,15 @@
                           <option value="{{ $medicalsymptom->id }}">{{ $medicalsymptom->name }}</option>
                         @endforeach
                     </select>
+                  </div>
+                  
+                  <div style="margin-bottom: 15px;">
+                    <select name="medicalsymtoms[]" class="form-control multiple-select" multiple="multiple" data-placeholder="লক্ষণ (প্রয়োজনে একাধিক সিলেক্ট করা যাবে)" required>
+                        
+                        @foreach($medicalsymptoms as $medicalsymptom)
+                          <option value="{{ $medicalsymptom->id }}">{{ $medicalsymptom->name }}</option>
+                        @endforeach
+                    </select>
                   </div>          
             </div>
             <div class="modal-footer">
