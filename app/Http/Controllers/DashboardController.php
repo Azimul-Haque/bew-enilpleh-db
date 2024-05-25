@@ -251,12 +251,14 @@ class DashboardController extends Controller
 
         $medicaldepartments = Medicaldepartment::all();
         $medicalsymptoms = Medicalsymptom::all();
+        $hospitals = Hospital::all();
         
         return view('dashboard.doctors.index')
                             ->withDoctorscount($doctorscount)
                             ->withDoctors($doctors)
                             ->withMedicaldepartments($medicaldepartments)
-                            ->withMedicalsymptoms($medicalsymptoms);
+                            ->withMedicalsymptoms($medicalsymptoms)
+                            ->withHospitals($hospitals);
     }
 
 
