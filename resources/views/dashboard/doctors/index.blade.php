@@ -282,7 +282,7 @@
                       </div>
                   </div>
                   
-                  <div style="margin-bottom: 20px;">
+                  <div style="margin-bottom: 15px;">
                     <select name="medicaldepartments[]" class="form-control multiple-select" multiple="multiple" data-placeholder="বিভাগ (প্রয়োজনে একাধিক সিলেক্ট করা যাবে)" required>
                         
                         @foreach($medicaldepartments as $medicaldepartment)
