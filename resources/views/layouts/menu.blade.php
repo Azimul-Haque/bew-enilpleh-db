@@ -33,10 +33,6 @@
 </li>
 @endif
 
-
-
-
-
 {{-- @if(Auth::user()->role == 'admin')
 <li class="nav-item">
     <a href="{{ route('dashboard.payments') }}" class="nav-link {{ Request::is('dashboard/payments') ? 'active' : '' }} {{ Request::is('dashboard/payments/*') ? 'active' : '' }}">
