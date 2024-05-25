@@ -237,6 +237,21 @@ class DashboardController extends Controller
         return redirect()->route('dashboard.hospitals');
     }
 
+    
+
+    public function getDoctors()
+    {
+        $hospitalscount = Hospital::count();
+        $hospitals = Hospital::orderBy('id', 'desc')->paginate(10);
+
+        $districts = District::all();
+        
+        return view('dashboard.hospitals.index')
+                            ->withHospitalscount($hospitalscount)
+                            ->withHospitals($hospitals)
+                            ->withDistricts($districts);
+    }
+
 
 
 
