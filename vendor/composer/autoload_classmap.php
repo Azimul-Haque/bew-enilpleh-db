@@ -18,6 +18,7 @@ return array(
     'App\\Doctor' => $baseDir . '/app/Doctor.php',
     'App\\Doctorimage' => $baseDir . '/app/Doctorimage.php',
     'App\\Doctormedicaldepartment' => $baseDir . '/app/Doctormedicaldepartment.php',
+    'App\\Doctormedicalsymptom' => $baseDir . '/app/Doctormedicalsymptom.php',
     'App\\Due' => $baseDir . '/app/Due.php',
     'App\\Exam' => $baseDir . '/app/Exam.php',
     'App\\Examcategory' => $baseDir . '/app/Examcategory.php',

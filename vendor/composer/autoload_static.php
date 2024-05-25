@@ -569,6 +569,7 @@ class ComposerStaticInitd99be2aa22b662638be63ef18831ea06
         'App\\Doctor' => __DIR__ . '/../..' . '/app/Doctor.php',
         'App\\Doctorimage' => __DIR__ . '/../..' . '/app/Doctorimage.php',
         'App\\Doctormedicaldepartment' => __DIR__ . '/../..' . '/app/Doctormedicaldepartment.php',
+        'App\\Doctormedicalsymptom' => __DIR__ . '/../..' . '/app/Doctormedicalsymptom.php',
         'App\\Due' => __DIR__ . '/../..' . '/app/Due.php',
         'App\\Exam' => __DIR__ . '/../..' . '/app/Exam.php',
         'App\\Examcategory' => __DIR__ . '/../..' . '/app/Examcategory.php',
