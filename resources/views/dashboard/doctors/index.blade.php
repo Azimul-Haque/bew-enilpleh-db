@@ -331,17 +331,10 @@
 
                   <div class="form-group ">
                       <label for="image">ছবি (প্রয়োজনে)</label>
-                      <input type="file" id="image{{ $question->id }}" name="image" accept="image/*">
+                      <input type="file" id="image" name="image" accept="image/*">
                   </div>
                   <center>
-                      <?php
-                        if($question->questionimage) {
-                            $currentimage = asset('images/questions/' . $question->questionimage->image);
-                        } else {
-                            $currentimage = asset('images/placeholder.png');
-                        }
-                      ?>
-                      <img src="{{ $currentimage }}" id='img-upload{{ $question->id }}' style="width: 250px; height: auto;" class="img-responsive" />
+                      <img src="{{ asset('images/placeholder.png')}}" id='img-upload' style="width: 250px; height: auto;" class="img-responsive" />
                   </center>
             </div>
             <div class="modal-footer">
