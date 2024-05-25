@@ -257,7 +257,7 @@
                              name="serial"
                              class="form-control"
                              value="{{ old('serial') }}"
-                             placeholder="টেলিফোন নং" required>
+                             placeholder="সিরিয়াল নেওয়ার ফোন নং" required>
                       <div class="input-group-append">
                           <div class="input-group-text"><span class="fas fa-phone"></span></div>
                       </div>
