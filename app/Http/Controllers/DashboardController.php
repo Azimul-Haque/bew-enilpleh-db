@@ -251,7 +251,27 @@ class DashboardController extends Controller
         return redirect()->route('dashboard.hospitals');
     }
 
-    public function getDoctors($search)
+    public function getDoctors()
+    {
+        $doctorscount = Doctor::count();
+        $doctors = Doctor::orderBy('id', 'desc')->paginate(10);
+
+        $districts = District::all();
+        $medicaldepartments = Medicaldepartment::all();
+        $medicalsymptoms = Medicalsymptom::all();
+        $hospitals = Hospital::all();
+
+        
+        return view('dashboard.doctors.index')
+                            ->withDoctorscount($doctorscount)
+                            ->withDoctors($doctors)
+                            ->withDistricts($districts)
+                            ->withMedicaldepartments($medicaldepartments)
+                            ->withMedicalsymptoms($medicalsymptoms)
+                            ->withHospitals($hospitals);
+    }
+
+    public function getDoctorsSearch($search)
     {
         $doctorscount = Doctor::where('name', 'LIKE', "%$search%")
                                   ->orWhere('degree', 'LIKE', "%$search%")
@@ -294,25 +314,7 @@ class DashboardController extends Controller
                             ->withHospitals($hospitals);
     }
 
-    public function getDoctorsSearch()
-    {
-        $doctorscount = Doctor::count();
-        $doctors = Doctor::orderBy('id', 'desc')->paginate(10);
-
-        $districts = District::all();
-        $medicaldepartments = Medicaldepartment::all();
-        $medicalsymptoms = Medicalsymptom::all();
-        $hospitals = Hospital::all();
-
-        
-        return view('dashboard.doctors.index')
-                            ->withDoctorscount($doctorscount)
-                            ->withDoctors($doctors)
-                            ->withDistricts($districts)
-                            ->withMedicaldepartments($medicaldepartments)
-                            ->withMedicalsymptoms($medicalsymptoms)
-                            ->withHospitals($hospitals);
-    }
+    
 
 
 
