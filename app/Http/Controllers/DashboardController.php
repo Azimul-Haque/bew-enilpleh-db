@@ -258,6 +258,7 @@ class DashboardController extends Controller
 
         $districts = District::all();
         $medicaldepartments = Medicaldepartment::all();
+        dd($medicaldepartments);
         $medicalsymptoms = Medicalsymptom::all();
         $hospitals = Hospital::all();
 
