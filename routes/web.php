@@ -30,11 +30,11 @@ Route::get('/check/ip', 'IndexController@checkIP')->name('index.check.ip');
 
 
 // Hospital
-Route::get('/dashboard/hospitals', 'DashboardController@getHospitals')->name('dashboard.hospitals');
-Route::get('/dashboard/hospitals/{search}', 'DashboardController@getHospitalsSearch')->name('dashboard.hospitals.search');
-Route::post('/dashboard/hospitals/store', 'DashboardController@storeHospital')->name('dashboard.hospitals.store');
-Route::post('/dashboard/hospitals/{id}/update', 'DashboardController@updateHospital')->name('dashboard.hospitals.update');
-Route::get('/dashboard/hospitals/{id}/delete', 'DashboardController@deleteHospital')->name('dashboard.hospitals.delete');
+Route::get('/dashboard/hospitals', 'HospitalController@index')->name('dashboard.hospitals');
+Route::get('/dashboard/hospitals/{search}', 'HospitalController@indexSearch')->name('dashboard.hospitals.search');
+Route::post('/dashboard/hospitals/store', 'HospitalController@storeHospital')->name('dashboard.hospitals.store');
+Route::post('/dashboard/hospitals/{id}/update', 'HospitalController@updateHospital')->name('dashboard.hospitals.update');
+Route::get('/dashboard/hospitals/{id}/delete', 'HospitalController@deleteHospital')->name('dashboard.hospitals.delete');
 
 // Doctors
 Route::get('/dashboard/doctors', 'DoctorController@index')->name('dashboard.doctors');
