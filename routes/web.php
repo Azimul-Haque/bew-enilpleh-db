@@ -37,11 +37,11 @@ Route::post('/dashboard/hospitals/{id}/update', 'DashboardController@updateHospi
 Route::get('/dashboard/hospitals/{id}/delete', 'DashboardController@deleteHospital')->name('dashboard.hospitals.delete');
 
 // Doctors
-Route::get('/dashboard/doctors', 'DashboardController@getDoctors')->name('dashboard.doctors');
-Route::get('/dashboard/doctors/{search}', 'DashboardController@getDoctorsSearch')->name('dashboard.doctors.search');
-Route::post('/dashboard/doctors/store', 'DashboardController@storeDoctor')->name('dashboard.doctors.store');
-Route::post('/dashboard/doctors/{id}/update', 'DashboardController@updateDoctor')->name('dashboard.doctors.update');
-Route::get('/dashboard/doctors/{id}/delete', 'DashboardController@deleteDoctor')->name('dashboard.doctors.delete');
+Route::get('/dashboard/doctors', 'DoctorController@getDoctors')->name('dashboard.doctors');
+Route::get('/dashboard/doctors/{search}', 'DoctorController@getDoctorsSearch')->name('dashboard.doctors.search');
+Route::post('/dashboard/doctors/store', 'DoctorController@storeDoctor')->name('dashboard.doctors.store');
+Route::post('/dashboard/doctors/{id}/update', 'DoctorController@updateDoctor')->name('dashboard.doctors.update');
+Route::get('/dashboard/doctors/{id}/delete', 'DoctorController@deleteDoctor')->name('dashboard.doctors.delete');
 
 
 
