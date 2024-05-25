@@ -256,7 +256,7 @@ class DashboardController extends Controller
                             ->withDoctorscount($doctorscount)
                             ->withDoctors($doctors)
                             ->withMedicaldepartments($medicaldepartments)
-                            ->withmedicalsymptom($medicalsymptom);
+                            ->withMedicalsymptom($medicalsymptom);
     }
 
 
