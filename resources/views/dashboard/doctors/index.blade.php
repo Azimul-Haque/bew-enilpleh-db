@@ -439,7 +439,7 @@
               // toastr.warning('File size is: '+filesize+' Kb. try uploading less than 300Kb', 'WARNING').css('width', '400px;');
               Toast.fire({
                   icon: 'warning',
-                  title: 'File size is: '+filesize+' Kb. try uploading less than 300Kb'
+                  title: 'File size is: '+filesize+' Kb. try uploading less than 1MB'
               })
               setTimeout(function() {
               $("#img-upload").attr('src', '{{ asset('images/placeholder.png') }}');
