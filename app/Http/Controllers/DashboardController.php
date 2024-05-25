@@ -254,7 +254,8 @@ class DashboardController extends Controller
         
         return view('dashboard.hospitals.index')
                             ->withDoctorscount($doctorscount)
-                            ->withDoctorscount($doctorscount)
+                            ->withDoctors($doctors)
+                            ->withDoctors($doctors)
     }
 
 
