@@ -323,7 +323,6 @@
                   
                   <div>
                     <select name="hospitals[]" class="form-control multiple-select" multiple="multiple" data-placeholder="ডাক্তার যে হাসপাতালের সাথে সম্পৃক্ত (প্রয়োজনে একাধিক সিলেক্ট করা যাবে)" required>
-                        
                         @foreach($hospitals as $hospital)
                           <option value="{{ $hospital->id }}">{{ $hospital->name }}</option>
                         @endforeach
