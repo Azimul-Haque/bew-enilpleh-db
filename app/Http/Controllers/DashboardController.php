@@ -17,6 +17,9 @@ use App\Meritlist;
 use App\District;
 use App\Upazilla;
 use App\Hospital;
+use App\Doctor;
+use App\Medicaldepartment;
+use App\Medicalsymptom;
 
 use Carbon\Carbon;
 use DB;
