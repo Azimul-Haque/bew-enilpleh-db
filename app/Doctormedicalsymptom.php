@@ -10,7 +10,7 @@ class Doctormedicalsymptom extends Model
         return $this->belongsTo('App\Doctor');
     }
 
-    public function medicaldepartment(){
-        return $this->belongsTo('App\Medicaldepartment');
+    public function medicalsymptom(){
+        return $this->belongsTo('App\Medicalsymptom');
     }
 }
