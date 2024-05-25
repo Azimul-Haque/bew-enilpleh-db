@@ -12,7 +12,5 @@ class Medicaldepartment extends Model
         return $this->hasMany('App\Doctor');
     }
 
-    public function examcategory(){
-        return $this->belongsTo('App\Examcategory');
-    }
+    
 }
