@@ -251,7 +251,7 @@ class DashboardController extends Controller
         return redirect()->route('dashboard.hospitals');
     }
 
-    public function getDoctors()
+    public function getDoctors($search)
     {
         $doctorscount = Doctor::where('name', 'LIKE', "%$search%")
                                   ->orWhere('degree', 'LIKE', "%$search%")
