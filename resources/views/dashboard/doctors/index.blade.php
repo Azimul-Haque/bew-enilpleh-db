@@ -277,9 +277,9 @@
                   <div class="input-group mb-3">
                     <select name="district_id" id="district" class="form-control district" required>
                         <option selected="" disabled="" value="">বিভাগ</option>
-                        {{-- @foreach($districts as $district)
-                          <option value="{{ $district->id }}">{{ $district->name_bangla }}</option>
-                        @endforeach --}}
+                        @foreach($medicaldepartments as $medicaldepartment)
+                          <option value="{{ $medicaldepartment->id }}">{{ $medicaldepartment->name_bangla }}</option>
+                        @endforeach
                     </select>
                     <div class="input-group-append">
                         <div class="input-group-text"><span class="fas fa-map"></span></div>
