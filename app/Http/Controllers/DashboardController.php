@@ -316,30 +316,30 @@ class DashboardController extends Controller
 
     public function storeDoctor(Request $request)
     {
-        $this->validate($request,array(
-            'district_id'            => 'required',
-            'upazilla_id'            => 'required',
-            'name'                => 'required|string|max:191',
-            'hospital_type'       => 'required',
-            'telephone'           => 'required',
-            'mobile'              => 'required',
-            'location'            => 'required',
-        ));
+        // $this->validate($request,array(
+        //     'district_id'            => 'required',
+        //     'upazilla_id'            => 'required',
+        //     'name'                => 'required|string|max:191',
+        //     'hospital_type'       => 'required',
+        //     'telephone'           => 'required',
+        //     'mobile'              => 'required',
+        //     'location'            => 'required',
+        // ));
 
-        $hospital = new Hospital;
-        $hospital->district_id = $request->district_id;
-        $hospital->upazilla_id = $request->upazilla_id;
-        $hospital->name = $request->name;
-        $hospital->hospital_type = $request->hospital_type;
-        $hospital->telephone = $request->telephone;
-        $hospital->mobile = $request->mobile;
-        $hospital->location = $request->location;
-        $hospital->save();
+        // $hospital = new Hospital;
+        // $hospital->district_id = $request->district_id;
+        // $hospital->upazilla_id = $request->upazilla_id;
+        // $hospital->name = $request->name;
+        // $hospital->hospital_type = $request->hospital_type;
+        // $hospital->telephone = $request->telephone;
+        // $hospital->mobile = $request->mobile;
+        // $hospital->location = $request->location;
+        // $hospital->save();
 
-        Cache::forget('hospitals'. $request->hospital_type . $request->district_id);
-        Cache::forget('hospitals'. $request->hospital_type . $request->district_id . $request->upazilla_id);
-        Session::flash('success', 'Hospital added successfully!');
-        return redirect()->route('dashboard.hospitals');
+        // Cache::forget('hospitals'. $request->hospital_type . $request->district_id);
+        // Cache::forget('hospitals'. $request->hospital_type . $request->district_id . $request->upazilla_id);
+        // Session::flash('success', 'Hospital added successfully!');
+        // return redirect()->route('dashboard.hospitals');
     }
 
     
