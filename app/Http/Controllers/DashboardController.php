@@ -38,7 +38,7 @@ class DashboardController extends Controller
     {
         parent::__construct();
         $this->middleware('auth')->except('clear');
-        $this->middleware(['admin'])->only('getUsers', 'storeUser', 'updateUser', 'deleteUser', 'getUser', 'getMessages', 'updateMessage', 'getNotifications', 'getHospitals', 'storeHospital', 'updateHospital', 'deleteHospital', 'getDoctors');
+        $this->middleware(['admin'])->only('getUsers', 'storeUser', 'updateUser', 'deleteUser', 'getUser', 'getMessages', 'updateMessage', 'getNotifications');
         
     }
 
