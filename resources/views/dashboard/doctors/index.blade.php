@@ -434,7 +434,7 @@
         $("#image").change(function(){
             readURL(this);
             var filesize = parseInt((this.files[0].size)/1024);
-            if(filesize > 10000) {
+            if(filesize > 1000) {
               $("#image").val('');
               // toastr.warning('File size is: '+filesize+' Kb. try uploading less than 300Kb', 'WARNING').css('width', '400px;');
               Toast.fire({
