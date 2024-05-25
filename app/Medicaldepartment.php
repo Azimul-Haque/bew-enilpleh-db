@@ -9,6 +9,6 @@ class Medicaldepartment extends Model
     public $timestamps = false;
 
     public function doctormedicaldepartment(){
-        return $this->hasMany('App\Doctormedicaldepartment');
+        return $this->hasOne('App\Doctormedicaldepartment');
     }
 }
