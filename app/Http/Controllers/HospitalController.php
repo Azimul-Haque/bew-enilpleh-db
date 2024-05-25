@@ -9,11 +9,10 @@ class HospitalController extends Controller
     public function __construct()
     {
         parent::__construct();
-        $this->middleware('auth')->except('clear');
-        $this->middleware(['admin'])->only('getHospitals', 'storeHospital', 'updateHospital', 'deleteHospital', 'getDoctors');
+        $this->middleware(['admin'])->only('index', 'storeHospital', 'updateHospital', 'deleteHospital', 'getDoctors');
         
     }
-    
+
     public function index()
     {
         $hospitalscount = Hospital::count();
