@@ -244,7 +244,7 @@
                     <select name="district_id" id="district" class="form-control district" required>
                         <option selected="" disabled="" value="">জেলা নির্বাচন করুন</option>
                         @foreach($districts as $district)
-                          <option value="{{ $district->id }}" @if($district->id == $hospital->district_id) selected @endif>{{ $district->name_bangla }}</option>
+                          <option value="{{ $district->id }}">{{ $district->name_bangla }}</option>
                         @endforeach
                     </select>
                     <div class="input-group-append">
@@ -253,7 +253,7 @@
                   </div>
                   <div class="input-group mb-3">
                     <select name="upazilla_id" id="upazilla" class="form-control upazilla" required>
-                        <option selected="" value="{{ $hospital->upazilla_id }}">{{ $hospital->upazilla->name_bangla }}</option>
+                        <option selected="" disabled="" value="">উপজেলা নির্বাচন করুন</option>
                     </select>
                     <div class="input-group-append">
                         <div class="input-group-text"><span class="fas fa-map-marked-alt"></span></div>
