@@ -6,11 +6,11 @@ use Illuminate\Database\Eloquent\Model;
 
 class Doctormedicaldepartment extends Model
 {
-    public function exam(){
-        return $this->belongsTo('App\Exam');
+    public function doctor(){
+        return $this->belongsTo('App\Doctor');
     }
 
-    public function question(){
-        return $this->belongsTo('App\Question');
+    public function medicaldepartment(){
+        return $this->belongsTo('App\Medicaldepartment');
     }
 }
