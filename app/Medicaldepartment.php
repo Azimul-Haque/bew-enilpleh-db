@@ -11,6 +11,4 @@ class Medicaldepartment extends Model
     public function doctors(){
         return $this->hasMany('App\Doctor');
     }
-
-    
 }
