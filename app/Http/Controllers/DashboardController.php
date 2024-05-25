@@ -55,9 +55,6 @@ class DashboardController extends Controller
         // $totalsites = Site::count();
         $totalusers = User::count();
 
-        
-
-        $totalpayment = Payment::sum('amount');
         $last14daysusersdaily = DB::table('users')
                                     ->select('created_at', DB::raw('COUNT(*) as totalusers'))
                                     ->groupBy(DB::raw("DATE_FORMAT(created_at, '%Y-%m-%d')"))
