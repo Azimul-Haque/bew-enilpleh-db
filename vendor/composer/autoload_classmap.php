@@ -57,6 +57,7 @@ return array(
     'App\\Like' => $baseDir . '/app/Like.php',
     'App\\Material' => $baseDir . '/app/Material.php',
     'App\\Medicaldepartment' => $baseDir . '/app/Medicaldepartment.php',
+    'App\\Medicalsymptom' => $baseDir . '/app/Medicalsymptom.php',
     'App\\Meritlist' => $baseDir . '/app/Meritlist.php',
     'App\\Message' => $baseDir . '/app/Message.php',
     'App\\Notification' => $baseDir . '/app/Notification.php',

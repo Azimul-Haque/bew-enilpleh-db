@@ -608,6 +608,7 @@ class ComposerStaticInitd99be2aa22b662638be63ef18831ea06
         'App\\Like' => __DIR__ . '/../..' . '/app/Like.php',
         'App\\Material' => __DIR__ . '/../..' . '/app/Material.php',
         'App\\Medicaldepartment' => __DIR__ . '/../..' . '/app/Medicaldepartment.php',
+        'App\\Medicalsymptom' => __DIR__ . '/../..' . '/app/Medicalsymptom.php',
         'App\\Meritlist' => __DIR__ . '/../..' . '/app/Meritlist.php',
         'App\\Message' => __DIR__ . '/../..' . '/app/Message.php',
         'App\\Notification' => __DIR__ . '/../..' . '/app/Notification.php',
