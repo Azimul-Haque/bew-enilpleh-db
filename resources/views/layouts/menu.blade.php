@@ -27,7 +27,7 @@
 @if(Auth::user()->role == 'admin')
 <li class="nav-item">
     <a href="{{ route('dashboard.hospitals') }}" class="nav-link {{ Request::is('dashboard/hospitals') ? 'active' : '' }} {{ Request::is('dashboard/hospitals/*') ? 'active' : '' }}">
-        <i class="nav-icon fas fa-user-doctor"></i>
+        <i class="nav-icon fas fa-user-md"></i>
         <p>ডাক্তার তালিকা</p>
     </a>
 </li>
