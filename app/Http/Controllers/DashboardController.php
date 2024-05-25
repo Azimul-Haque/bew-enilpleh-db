@@ -55,25 +55,9 @@ class DashboardController extends Controller
         // $totalsites = Site::count();
         $totalusers = User::count();
 
-        $totalexamsattendedtoday = Meritlist::whereDate('created_at', Carbon::today())->count();
-
         
 
-        $totalpayment = Payment::sum('amount');
-        // $totalbalance = Balance::sum('amount');
-        // $totalexpense = Expense::sum('amount');
-
-        $totalmonthlypayment = DB::table('payments')
-                                ->select(DB::raw('SUM(amount) as totalamount'))
-                                ->where(DB::raw("DATE_FORMAT(created_at, '%Y-%m')"), "=", Carbon::now()->format('Y-m'))
-                                // ->groupBy(DB::raw("DATE_FORMAT(created_at, '%Y-%m')"))
-                                ->first();
-        $last14daysusersdaily = DB::table('users')
-                                    ->select('created_at', DB::raw('COUNT(*) as totalusers'))
-                                    ->groupBy(DB::raw("DATE_FORMAT(created_at, '%Y-%m-%d')"))
-                                    ->orderBy('created_at', 'DESC')
-                                    ->take(14)
-                                    ->get();
+        
         $daysforchartc = [];
         foreach ($last14daysusersdaily as $key => $days) {
             $daysforchartc[] = date_format(date_create($days->created_at), "M d");
@@ -97,9 +81,6 @@ class DashboardController extends Controller
         // dd($totaluserscumulitiveforchartc);
 
         return view('dashboard.index')->withTotalusers($totalusers)
-                                      ->withTotalpayment($totalpayment)
-                                      ->withTotalmonthlypayment($totalmonthlypayment)
-                                      ->withTotalexamsattendedtoday($totalexamsattendedtoday)
                                       ->withDaysforchartc($daysforchartc)
                                       ->withTotalusersforchartc($totalusersforchartc)
                                       ->withTotaluserscumulitiveforchartc($totaluserscumulitiveforchartc);
