@@ -237,8 +237,6 @@ class DashboardController extends Controller
         return redirect()->route('dashboard.hospitals');
     }
 
-    
-
     public function getDoctors()
     {
         $hospitalscount = Hospital::count();
@@ -251,6 +249,11 @@ class DashboardController extends Controller
                             ->withHospitals($hospitals)
                             ->withDistricts($districts);
     }
+
+
+
+
+
 
 
 
