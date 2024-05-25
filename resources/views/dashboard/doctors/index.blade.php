@@ -7,7 +7,7 @@
 @endsection
 
 @section('content')
-  @section('page-header') ডাক্তার তালিকা (মোট {{ bangla($hospitalscount) }} টি) @endsection
+  @section('page-header') ডাক্তার তালিকা (মোট {{ bangla($doctorscount) }} টি) @endsection
     <div class="container-fluid">
     <div class="card">
           <div class="card-header">
@@ -42,28 +42,28 @@
                 </tr>
               </thead>
               <tbody>
-                @foreach($hospitals as $hospital)
+                @foreach($doctors as $doctor)
                   <tr>
                     <td>
-                      {{ $hospital->name }}
-                      <small class="text-black-50"><i class="fas fa-phone"></i> {{ $hospital->telephone }}</small>
-                      <small class="text-black-50"><i class="fas fa-mobile"></i> {{ $hospital->mobile }}</small><br/>
-                      <span class="badge bg-success">{{ hospital_type($hospital->hospital_type) }}</span>
+                      {{ $doctor->name }}
+                      <small class="text-black-50"><i class="fas fa-phone"></i> {{ $doctor->telephone }}</small>
+                      <small class="text-black-50"><i class="fas fa-mobile"></i> {{ $doctor->mobile }}</small><br/>
+                      <span class="badge bg-success">{{ hospital_type($doctor->hospital_type) }}</span>
                     </td>
                     <td>
-                      {{ $hospital->upazilla->name_bangla }}, {{ $hospital->district->name_bangla }}
+                      {{ $doctor->upazilla->name_bangla }}, {{ $doctor->district->name_bangla }}
                     </td>
                     <td align="right" width="40%">
-                      {{-- <button type="button" class="btn btn-warning btn-sm" data-toggle="modal" data-target="#notifModal{{ $hospital->id }}">
+                      {{-- <button type="button" class="btn btn-warning btn-sm" data-toggle="modal" data-target="#notifModal{{ $doctor->id }}">
                         <i class="fas fa-bell"></i>
                       </button> --}}
-                      <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#editUserModal{{ $hospital->id }}">
+                      <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#editUserModal{{ $doctor->id }}">
                         <i class="fas fa-edit"></i>
                       </button>
                       {{-- Edit User Modal Code --}}
                       {{-- Edit User Modal Code --}}
                       <!-- Modal -->
-                      <div class="modal fade" id="editUserModal{{ $hospital->id }}" tabindex="-1" role="dialog" aria-labelledby="editUserModalLabel" aria-hidden="true" data-backdrop="static">
+                      <div class="modal fade" id="editUserModal{{ $doctor->id }}" tabindex="-1" role="dialog" aria-labelledby="editUserModalLabel" aria-hidden="true" data-backdrop="static">
                         <div class="modal-dialog" role="document">
                           <div class="modal-content">
                             <div class="modal-header bg-primary">
@@ -72,7 +72,7 @@
                                 <span aria-hidden="true">&times;</span>
                               </button>
                             </div>
-                            <form method="post" action="{{ route('dashboard.hospitals.update', $hospital->id) }}">
+                            <form method="post" action="{{ route('dashboard.hospitals.update', $doctor->id) }}">
                               <div class="modal-body">
                                 
                                     @csrf
@@ -81,7 +81,7 @@
                                       <select name="district_id" id="district" class="form-control district" required>
                                           <option selected="" disabled="" value="">জেলা নির্বাচন করুন</option>
                                           @foreach($districts as $district)
-                                            <option value="{{ $district->id }}" @if($district->id == $hospital->district_id) selected @endif>{{ $district->name_bangla }}</option>
+                                            <option value="{{ $district->id }}" @if($district->id == $doctor->district_id) selected @endif>{{ $district->name_bangla }}</option>
                                           @endforeach
                                       </select>
                                       <div class="input-group-append">
@@ -90,7 +90,7 @@
                                     </div>
                                     <div class="input-group mb-3">
                                       <select name="upazilla_id" id="upazilla" class="form-control upazilla" required>
-                                          <option selected="" value="{{ $hospital->upazilla_id }}">{{ $hospital->upazilla->name_bangla }}</option>
+                                          <option selected="" value="{{ $doctor->upazilla_id }}">{{ $doctor->upazilla->name_bangla }}</option>
                                       </select>
                                       <div class="input-group-append">
                                           <div class="input-group-text"><span class="fas fa-map-marked-alt"></span></div>
@@ -100,7 +100,7 @@
                                         <input type="text"
                                                name="name"
                                                class="form-control"
-                                               value="{{ $hospital->name }}"
+                                               value="{{ $doctor->name }}"
                                                placeholder="ডাক্তারের নাম" required>
                                         <div class="input-group-append">
                                             <div class="input-group-text"><span class="fas fa-hospital"></span></div>
@@ -109,9 +109,9 @@
                                     <div class="input-group mb-3">
                                       <select name="hospital_type" class="form-control" required>
                                           <option selected="" disabled="" value="">ডাক্তারের ধরন</option>
-                                          <option value="1" @if($hospital->hospital_type == 1) selected @endif>মেডিকেল কলেজ ও ডাক্তার</option>
-                                          <option value="2" @if($hospital->hospital_type == 2) selected @endif>প্রাইভেট ডাক্তার</option>
-                                          <option value="3" @if($hospital->hospital_type == 3) selected @endif>স্বাস্থ্য কমপ্লেক্স</option>
+                                          <option value="1" @if($doctor->hospital_type == 1) selected @endif>মেডিকেল কলেজ ও ডাক্তার</option>
+                                          <option value="2" @if($doctor->hospital_type == 2) selected @endif>প্রাইভেট ডাক্তার</option>
+                                          <option value="3" @if($doctor->hospital_type == 3) selected @endif>স্বাস্থ্য কমপ্লেক্স</option>
                                       </select>
                                       <div class="input-group-append">
                                           <div class="input-group-text"><span class="fas fa-star-half-alt"></span></div>
@@ -121,7 +121,7 @@
                                         <input type="number"
                                                name="telephone"
                                                class="form-control"
-                                               value="{{ $hospital->telephone }}"
+                                               value="{{ $doctor->telephone }}"
                                                placeholder="টেলিফোন নং" required>
                                         <div class="input-group-append">
                                             <div class="input-group-text"><span class="fas fa-phone"></span></div>
@@ -130,7 +130,7 @@
                                     <div class="input-group mb-3">
                                         <input type="number"
                                                name="mobile"
-                                               value="{{ $hospital->mobile }}"
+                                               value="{{ $doctor->mobile }}"
                                                autocomplete="off"
                                                class="form-control"
                                                placeholder="মোবাইল নম্বর" required>
@@ -141,7 +141,7 @@
                                     <div class="input-group mb-3">
                                         <input type="text"
                                                name="location"
-                                               value="{{ $hospital->location }}"
+                                               value="{{ $doctor->location }}"
                                                autocomplete="off"
                                                class="form-control"
                                                placeholder="গুগল ম্যাপ লোকেশন লিংক" required>
@@ -162,14 +162,14 @@
                       {{-- Edit User Modal Code --}}
                       {{-- Edit User Modal Code --}}
 
-                      <button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#deleteUserModal{{ $hospital->id }}">
+                      <button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#deleteUserModal{{ $doctor->id }}">
                         <i class="fas fa-trash-alt"></i>
                       </button>
                     </td>
                         {{-- Delete User Modal Code --}}
                         {{-- Delete User Modal Code --}}
                         <!-- Modal -->
-                        <div class="modal fade" id="deleteUserModal{{ $hospital->id }}" tabindex="-1" role="dialog" aria-labelledby="deleteUserModalLabel" aria-hidden="true" data-backdrop="static">
+                        <div class="modal fade" id="deleteUserModal{{ $doctor->id }}" tabindex="-1" role="dialog" aria-labelledby="deleteUserModalLabel" aria-hidden="true" data-backdrop="static">
                           <div class="modal-dialog" role="document">
                             <div class="modal-content">
                               <div class="modal-header bg-danger">
@@ -181,13 +181,13 @@
                               <div class="modal-body">
                                 আপনি কি নিশ্চিতভাবে এই ডাক্তারকে ডিলেট করতে চান?<br/>
                                 <center>
-                                    <big><b>{{ $hospital->name }}</b></big><br/>
-                                    <small><i class="fas fa-phone"></i> {{ $hospital->mobile }}</small>
+                                    <big><b>{{ $doctor->name }}</b></big><br/>
+                                    <small><i class="fas fa-phone"></i> {{ $doctor->mobile }}</small>
                                 </center>
                               </div>
                               <div class="modal-footer">
                                 <button type="button" class="btn btn-secondary" data-dismiss="modal">ফিরে যান</button>
-                                <a href="{{ route('dashboard.hospitals.delete', $hospital->id) }}" class="btn btn-danger">ডিলেট করুন</a>
+                                <a href="{{ route('dashboard.hospitals.delete', $doctor->id) }}" class="btn btn-danger">ডিলেট করুন</a>
                               </div>
                             </div>
                           </div>
@@ -199,7 +199,7 @@
                   <script type="text/javascript" src="{{ asset('js/bootstrap-datepicker.min.js') }}"></script>
                   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
                   <script>
-                    $("#packageexpirydate{{ $hospital->id }}").datepicker({
+                    $("#packageexpirydate{{ $doctor->id }}").datepicker({
                       format: 'MM dd, yyyy',
                       todayHighlight: true,
                       autoclose: true,
@@ -211,7 +211,7 @@
           </div>
           <!-- /.card-body -->
         </div>
-        {{ $hospitals->links() }}
+        {{ $doctors->links() }}
     </div>
 
     {{-- Add User Modal Code --}}
