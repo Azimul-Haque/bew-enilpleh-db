@@ -246,12 +246,12 @@ class DashboardController extends Controller
 
     public function getDoctors()
     {
-        $doctorscount = Hospital::where('name', 'LIKE', "%$search%")
+        $doctorscount = Doctor::where('name', 'LIKE', "%$search%")
                                   ->orWhere('telephone', 'LIKE', "%$search%")
                                   ->orWhere('mobile', 'LIKE', "%$search%")
                                   ->orderBy('id', 'desc')
                                   ->count();
-        $doctors = Hospital::where('name', 'LIKE', "%$search%")
+        $doctors = Doctor::where('name', 'LIKE', "%$search%")
                               ->orWhere('telephone', 'LIKE', "%$search%")
                               ->orWhere('mobile', 'LIKE', "%$search%")
                               ->orWhereHas('district', function ($query) use ($search){
