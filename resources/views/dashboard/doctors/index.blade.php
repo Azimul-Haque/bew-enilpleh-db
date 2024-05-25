@@ -275,7 +275,7 @@
                   </div>
                   
                   <div class="input-group mb-3">
-                    <select name="district_id" id="medicaldepartment" class="form-control" multiple required>
+                    <select name="district_id" id="medicaldepartment" class="form-control select2" multiple required>
                         <option selected="" disabled="" value="">বিভাগ</option>
                         @foreach($medicaldepartments as $medicaldepartment)
                           <option value="{{ $medicaldepartment->id }}">{{ $medicaldepartment->name }}</option>
