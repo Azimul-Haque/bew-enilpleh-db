@@ -283,7 +283,7 @@
                   </div>
                   
                   <div class="">
-                    <select name="medicaldepartment[]" class="form-control multiple-select" multiple="multiple" data-placeholder="বিভাগ (প্রয়োজনে একাধিক সিলেক্ট করা যাবে)" required>
+                    <select name="medicaldepartments[]" class="form-control multiple-select" multiple="multiple" data-placeholder="বিভাগ (প্রয়োজনে একাধিক সিলেক্ট করা যাবে)" required>
                         
                         @foreach($medicaldepartments as $medicaldepartment)
                           <option value="{{ $medicaldepartment->id }}">{{ $medicaldepartment->name }}</option>
@@ -292,7 +292,7 @@
                   </div> 
                   
                   <div class="">
-                    <select name="medicaldepartment[]" class="form-control multiple-select" multiple="multiple" data-placeholder="বিভাগ (প্রয়োজনে একাধিক সিলেক্ট করা যাবে)" required>
+                    <select name="medicalsymtoms[]" class="form-control multiple-select" multiple="multiple" data-placeholder="লক্ষণ (প্রয়োজনে একাধিক সিলেক্ট করা যাবে)" required>
                         
                         @foreach($medicaldepartments as $medicaldepartment)
                           <option value="{{ $medicaldepartment->id }}">{{ $medicaldepartment->name }}</option>
