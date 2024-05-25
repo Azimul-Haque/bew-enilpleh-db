@@ -246,8 +246,8 @@ class DashboardController extends Controller
 
     public function getDoctors()
     {
-        $doctorcount = Doctor::count();
-        $hospitals = Hospital::orderBy('id', 'desc')->paginate(10);
+        $doctorscount = Doctor::count();
+        $doctors = Doctor::orderBy('id', 'desc')->paginate(10);
 
         $districts = District::all();
         
