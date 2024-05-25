@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 
 class HospitalController extends Controller
 {
-    public function getHospitals()
+    public function index()
     {
         $hospitalscount = Hospital::count();
         $hospitals = Hospital::orderBy('id', 'desc')->paginate(10);
@@ -19,7 +19,7 @@ class HospitalController extends Controller
                             ->withDistricts($districts);
     }
 
-    public function getHospitalsSearch($search)
+    public function indexSearch($search)
     {
         $hospitalscount = Hospital::where('name', 'LIKE', "%$search%")
                                   ->orWhere('telephone', 'LIKE', "%$search%")
