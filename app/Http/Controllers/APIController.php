@@ -206,11 +206,11 @@ class APIController extends Controller
                                                     })->get();
                     
                     // dd($doctormedicaldepartments);
-                    // foreach($doctors as $hospital) {
-                    //     $hospital->district = $hospital->district->name_bangla;
-                    //     $hospital->upazilla = $hospital->upazilla->name_bangla;
-                    //     $hospital->makeHidden('district', 'upazilla');
-                    // }
+                    foreach($doctormedicaldepartments as $doctormedicaldepartment) {
+                        $hospital->district = $hospital->district->name_bangla;
+                        $hospital->upazilla = $hospital->upazilla->name_bangla;
+                        $hospital->makeHidden('district', 'upazilla');
+                    }
                     return $doctors;
                 });
             } else { // symptomwise
