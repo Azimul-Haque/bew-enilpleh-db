@@ -228,7 +228,7 @@
               <span aria-hidden="true">&times;</span>
             </button>
           </div>
-          <form method="post" action="{{ route('dashboard.doctors.store') }}">
+          <form method="post" action="{{ route('dashboard.doctors.store') }}" enctype='multipart/form-data'>
             <div class="modal-body">
               
                   @csrf
