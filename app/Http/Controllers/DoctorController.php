@@ -120,6 +120,8 @@ class DoctorController extends Controller
         $doctor->upazilla_id = $request->upazilla_id;
         $doctor->name = $request->name;
         $doctor->degree = $request->degree;
+        $doctor->serial = $request->serial;
+        $doctor->helpline = $request->helpline;
         $hospital->telephone = $request->telephone;
         $hospital->mobile = $request->mobile;
         $hospital->location = $request->location;
