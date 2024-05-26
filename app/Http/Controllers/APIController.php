@@ -204,13 +204,13 @@ class APIController extends Controller
                         ->where('district_id', $district_id)
                         ->orderBy('id', 'desc')
                         ->get();
-                    // dd($doctors);
-                    foreach($doctors as $hospital) {
-                        $hospital->district = $hospital->district->name_bangla;
-                        $hospital->upazilla = $hospital->upazilla->name_bangla;
-                        $hospital->makeHidden('district', 'upazilla');
-                    }
-                    return $doctors;
+                    
+                    // foreach($doctors as $hospital) {
+                    //     $hospital->district = $hospital->district->name_bangla;
+                    //     $hospital->upazilla = $hospital->upazilla->name_bangla;
+                    //     $hospital->makeHidden('district', 'upazilla');
+                    // }
+                    // return $doctors;
                 });
             } else { // symptomwise
 
