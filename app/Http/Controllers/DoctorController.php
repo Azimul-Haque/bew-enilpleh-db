@@ -125,7 +125,7 @@ class DoctorController extends Controller
         $doctor->save();
 
         if(isset($request->medicaldepartments)){
-            $doctor->medicaldepartments()->sync($request->tags_ids, false);
+            
         }
 
         
