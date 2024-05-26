@@ -56,10 +56,10 @@
                 @foreach($doctors as $doctor)
                   <tr>
                     <td>
-                      {{ $doctor->name }}
+                      {{ $doctor->name }} <span class="badge bg-success">{{ $doctor->degree }}</span><br/>
                       <small class="text-black-50"><i class="fas fa-phone"></i> {{ $doctor->serial }}</small>
-                      <small class="text-black-50"><i class="fas fa-mobile"></i> {{ $doctor->helpline }}</small><br/>
-                      <span class="badge bg-success">{{ $doctor->degree }}</span>
+                      <small class="text-black-50"><i class="fas fa-mobile"></i> {{ $doctor->helpline }}</small>
+                      
                     </td>
                     <td>
                       @foreach($doctor->doctormedicaldepartments as $medicaldepartment)
