@@ -223,13 +223,13 @@ class APIController extends Controller
                                                     })->get();
                     $doctorstoreturn = collect();
                     foreach($doctormedicalsymptoms as $doctormedicalsymptom) {
-                        $doctorstoreturn->id = $doctormedicalsymptom->doctor->id;
-                        $doctorstoreturn->name = $doctormedicalsymptom->doctor->name;
-                        $doctorstoreturn->degree = $doctormedicalsymptom->doctor->degree;
-                        $doctorstoreturn->serial = $doctormedicalsymptom->doctor->serial;
-                        $doctorstoreturn->helpline = $doctormedicalsymptom->doctor->helpline;
-                        $doctorstoreturn->image = $doctormedicalsymptom->doctor->doctorimage ? $doctormedicalsymptom->doctor->doctorimage->image : '';
-                        $courseexams->push($courseexam);
+                        $doctormedicalsymptom->id = $doctormedicalsymptom->doctor->id;
+                        $doctormedicalsymptom->name = $doctormedicalsymptom->doctor->name;
+                        $doctormedicalsymptom->degree = $doctormedicalsymptom->doctor->degree;
+                        $doctormedicalsymptom->serial = $doctormedicalsymptom->doctor->serial;
+                        $doctormedicalsymptom->helpline = $doctormedicalsymptom->doctor->helpline;
+                        $doctormedicalsymptom->image = $doctormedicalsymptom->doctor->doctorimage ? $doctormedicalsymptom->doctor->doctorimage->image : '';
+                        $doctorstoreturn->push($doctormedicalsymptom);
                     }
                     return $doctorstoreturn;
                 });
