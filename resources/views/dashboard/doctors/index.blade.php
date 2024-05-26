@@ -61,7 +61,7 @@
                       <span class="badge bg-success">{{ $doctor->degree }}</span>
                     </td>
                     <td>
-                      {{ $doctor->medicaldepartments }}, {{ $doctor->medicalsymptoms }}
+                      {{ $doctor->doctormedicaldepartments }}, {{ $doctor->medicalsymptoms }}
                     </td>
                     <td>
                       {{ $doctor->hospitals }}
