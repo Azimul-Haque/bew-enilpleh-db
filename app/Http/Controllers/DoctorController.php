@@ -137,7 +137,7 @@ class DoctorController extends Controller
             foreach($request->medicalsymptoms as $medicalsymptom_id) {
                 $doctormedicalsymptom = new Doctormedicalsymptom;
                 $doctormedicalsymptom->doctor_id = $doctor->id;
-                $doctormedicalsymptom->medicaldepartment_id = $medicaldepartment_id;
+                $doctormedicalsymptom->medicalsymptom_id = $medicalsymptom_id;
                 $doctormedicalsymptom->save();
             }            
         }
