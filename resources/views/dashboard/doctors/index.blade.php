@@ -18,7 +18,7 @@
   @section('page-header') ডাক্তার তালিকা (মোট {{ bangla($doctorscount) }} জন) @endsection
     <div class="container-fluid">
       <div class="row">
-        <div class="col-md-8">
+        <div class="col-md-9">
           <div class="card">
                 <div class="card-header">
                   <h3 class="card-title">ডাক্তার তালিকা</h3>
@@ -227,7 +227,7 @@
               </div>
               {{ $doctors->links() }}
         </div>
-        <div class="col-md-4"></div>
+        <div class="col-md-3"></div>
       </div>
     </div>
 
