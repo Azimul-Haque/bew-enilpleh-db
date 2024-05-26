@@ -252,13 +252,13 @@ class APIController extends Controller
             ]);
         }
     }
-    
-    public function getDoctorsDistrict($softtoken, $medicalitemid, $datatype, $district_id)
+
+    public function getDoctorsUpazilla($softtoken, $medicalitemid, $datatype, $district_id, $upazilla_id)
     {
         if($softtoken == env('SOFT_TOKEN'))
         {
             if($datatype == 'departmentwise') {
-                $doctors = Cache::remember('doctssasorssss'.$medicalitemid . $datatype . $district_id, 30 * 24 * 60 * 60, function () use ($medicalitemid, $datatype, $district_id) {
+                $doctors = Cache::remember('doctssasorssss'.$medicalitemid . $datatype . $district_id . $upazilla_id, 30 * 24 * 60 * 60, function () use ($medicalitemid, $datatype, $district_id) {
                     $doctormedicaldepartments = Doctormedicaldepartment::where('medicaldepartment_id', $medicalitemid)
                                                     ->whereHas('doctor', function($q) use ($district_id){
                                                         $q->where('district_id', $district_id);
