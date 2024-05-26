@@ -359,6 +359,13 @@ class DashboardController extends Controller
         return view('dashboard.packages.index')->withPackages($packages);
     }
 
+    public function getMessages()
+    {
+        $messages = Message::orderBy('id', 'desc')->paginate(12);
+
+        return view('dashboard.messages.index')->withMessages($messages);
+    }
+
     public function updateMessage(Request $request, $id)
     {
         $message = Message::find($id);
