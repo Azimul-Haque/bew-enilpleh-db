@@ -192,6 +192,41 @@ class APIController extends Controller
         }
     }
 
+    public function getHospitalsDistrict($softtoken, $hospital_type, $district_id)
+    {
+        if($softtoken == env('SOFT_TOKEN'))
+        {
+            $hospitals = Cache::remember('hospitals'.$hospital_type . $district_id, 30 * 24 * 60 * 60, function () use ($hospital_type, $district_id) {
+                 $hospitals = Hospital::where('hospital_type', $hospital_type)
+                             ->where('district_id', $district_id)
+                             ->orderBy('id', 'desc')
+                             ->get();
+                             // dd($hospitals);
+                 foreach($hospitals as $hospital) {
+                     $hospital->district = $hospital->district->name_bangla;
+                     $hospital->upazilla = $hospital->upazilla->name_bangla;
+                     $hospital->makeHidden('district', 'upazilla');
+                 }
+                 return $hospitals;
+            });
+            
+            // dd($courses);
+            return response()->json([
+                'success' => true,
+                'hospitals' => $hospitals,
+            ]);
+        } else {
+            return response()->json([
+                'success' => false
+            ]);
+        }
+    }
+
+
+
+
+
+
 
 
 
