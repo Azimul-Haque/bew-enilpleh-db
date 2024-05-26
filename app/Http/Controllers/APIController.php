@@ -153,15 +153,15 @@ class APIController extends Controller
         if($softtoken == env('SOFT_TOKEN'))
         {
             $medicaldepartments = Cache::remember('medicaldepartments', 30 * 24 * 60 * 60, function () {
-                 $hospitals = Medicaldepartment::orderBy('id', 'asc')->get();
+                 $medicaldepartments = Medicaldepartment::orderBy('id', 'asc')->get();
                              
-                 return $hospitals;
+                 return $medicaldepartments;
             });
             
             // dd($courses);
             return response()->json([
                 'success' => true,
-                'hospitals' => $hospitals,
+                'medicaldepartments' => $medicaldepartments,
             ]);
         } else {
             return response()->json([
