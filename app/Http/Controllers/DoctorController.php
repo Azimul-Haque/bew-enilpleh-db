@@ -129,6 +129,7 @@ class DoctorController extends Controller
             $doctormedicaldepartment = new Doctormedicaldepartment;
             $doctormedicaldepartment->doctor_id = $doctor->id;
             $doctormedicaldepartment->medicaldepartment_id = $medicaldepartment_id;
+            $doctormedicaldepartment->save();
         }
 
         
