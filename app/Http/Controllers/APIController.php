@@ -201,7 +201,7 @@ class APIController extends Controller
             if($datatype == 'departmentwise') {
                 $doctors = Cache::remember('doctors'.$medicalitemid . $datatype . $district_id, 30 * 24 * 60 * 60, function () use ($medicalitemid, $datatype, $district_id) {
                     $doctormedicaldepartments = Doctormedicaldepartment::where('medicaldepartment_id', $medicalitemid)
-                                                        ->whereHas('posts', function($q){
+                                                        ->whereHas('doctor', function($q){
                                                     $q->where('created_at', '>=', '2015-01-01 00:00:00');
                                                 })->get();
                     
