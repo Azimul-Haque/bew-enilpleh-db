@@ -198,6 +198,8 @@ class APIController extends Controller
         {
             if ($datatype == 'departmentwise') {
                 // code...
+            } else { // symptomwise
+
             }
             $doctors = Cache::remember('doctors'.$medicalitemid . $datatype . $district_id, 30 * 24 * 60 * 60, function () use ($medicalitemid, $datatype, $district_id) {
                  $doctors = Doctor::where('hospital_type', $hospital_type)
