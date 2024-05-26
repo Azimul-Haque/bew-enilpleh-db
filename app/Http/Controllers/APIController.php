@@ -205,8 +205,8 @@ class APIController extends Controller
                                                         $q->where('district_id', $district_id);
                                                     })->get();
                     
-                    dd($doctormedicaldepartments);
-                    // $doctorstoreturn = collect();
+                    // dd($doctormedicaldepartments);
+                    $doctorstoreturn = collect();
                     // foreach($doctormedicaldepartments as $doctormedicaldepartment) {
                     //     $doctorstoreturn->id = $doctormedicaldepartment->doctor->name_bangla;
                     //     $hospital->upazilla = $hospital->upazilla->name_bangla;
