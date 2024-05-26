@@ -165,8 +165,8 @@ class DoctorController extends Controller
 
         
 
-        Cache::forget('doctors'. $request->hospital_type . $request->district_id);
-        Cache::forget('doctors'. $request->hospital_type . $request->district_id . $request->upazilla_id);
+        Cache::forget('doctors'. $request->district_id);
+        Cache::forget('doctors'. $request->district_id . $request->upazilla_id);
         Session::flash('success', 'Hospital added successfully!');
         return redirect()->route('dashboard.hospitals');
     }
