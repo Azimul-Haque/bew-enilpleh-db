@@ -122,10 +122,9 @@ class DoctorController extends Controller
         $doctor->degree = $request->degree;
         $doctor->serial = $request->serial;
         $doctor->helpline = $request->helpline;
-        $hospital->telephone = $request->telephone;
-        $hospital->mobile = $request->mobile;
-        $hospital->location = $request->location;
-        $hospital->save();
+        
+        
+        $doctor->save();
 
         Cache::forget('hospitals'. $request->hospital_type . $request->district_id);
         Cache::forget('hospitals'. $request->hospital_type . $request->district_id . $request->upazilla_id);
