@@ -63,6 +63,9 @@
                     <td>
                       {{ $doctor->medicaldepartments }}, {{ $doctor->medicalsymptoms }}
                     </td>
+                    <td>
+                      {{ $doctor->hospitals }}
+                    </td>
                     <td>{{ $doctor->upazilla->name_bangla }}, {{ $doctor->district->name_bangla }}</td>
                     <td align="right" width="40%">
                       {{-- <button type="button" class="btn btn-warning btn-sm" data-toggle="modal" data-target="#notifModal{{ $doctor->id }}">
