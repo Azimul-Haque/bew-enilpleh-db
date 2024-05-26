@@ -212,6 +212,8 @@ class APIController extends Controller
                         $doctorstoreturn->serial = $doctormedicaldepartment->doctor->serial;
                         $doctorstoreturn->helpline = $doctormedicaldepartment->doctor->helpline;
                         $doctorstoreturn->image = $doctormedicaldepartment->doctor->doctorimage ? $doctormedicaldepartment->doctor->doctorimage->image : '';
+                        $doctorstoreturn->push($doctormedicalsymptom);
+                        dd($doctorstoreturn);
                     }
                     return $doctorstoreturn;
                 });
