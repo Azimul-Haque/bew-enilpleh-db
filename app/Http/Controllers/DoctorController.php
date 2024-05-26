@@ -158,7 +158,7 @@ class DoctorController extends Controller
             $location = public_path('images/doctors/'. $filename);
             Image::make($image)->resize(350, null, function ($constraint) { $constraint->aspectRatio(); })->save($location);
             $doctorimage              = new Doctorimage;
-            $doctorimage->question_id = $question->id;
+            $doctorimage->question_id = $doctor->id;
             $doctorimage->image       = $filename;
             $doctorimage->save();
         }
