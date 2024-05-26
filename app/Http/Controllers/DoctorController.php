@@ -122,12 +122,13 @@ class DoctorController extends Controller
         $doctor->degree = $request->degree;
         $doctor->serial = $request->serial;
         $doctor->helpline = $request->helpline;
+        $doctor->save();
 
         if(isset($request->medicaldepartments)){
             $doctor->medicaldepartments()->sync($request->tags_ids, false);
         }
+
         
-        $doctor->save();
 
         Cache::forget('hospitals'. $request->hospital_type . $request->district_id);
         Cache::forget('hospitals'. $request->hospital_type . $request->district_id . $request->upazilla_id);
