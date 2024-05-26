@@ -196,24 +196,24 @@ class APIController extends Controller
     {
         if($softtoken == env('SOFT_TOKEN'))
         {
-            if ($datatype == 'departmentwise') {
-                // code...
+            if($datatype == 'departmentwise') {
+                $doctors = Cache::remember('doctors'.$medicalitemid . $datatype . $district_id, 30 * 24 * 60 * 60, function () use ($medicalitemid, $datatype, $district_id) {
+                                 $doctors = Doctor::where('hospital_type', $hospital_type)
+                                             ->where('district_id', $district_id)
+                                             ->orderBy('id', 'desc')
+                                             ->get();
+                                             // dd($doctors);
+                                 foreach($doctors as $hospital) {
+                                     $hospital->district = $hospital->district->name_bangla;
+                                     $hospital->upazilla = $hospital->upazilla->name_bangla;
+                                     $hospital->makeHidden('district', 'upazilla');
+                                 }
+                                 return $doctors;
+                            });
             } else { // symptomwise
 
             }
-            $doctors = Cache::remember('doctors'.$medicalitemid . $datatype . $district_id, 30 * 24 * 60 * 60, function () use ($medicalitemid, $datatype, $district_id) {
-                 $doctors = Doctor::where('hospital_type', $hospital_type)
-                             ->where('district_id', $district_id)
-                             ->orderBy('id', 'desc')
-                             ->get();
-                             // dd($doctors);
-                 foreach($doctors as $hospital) {
-                     $hospital->district = $hospital->district->name_bangla;
-                     $hospital->upazilla = $hospital->upazilla->name_bangla;
-                     $hospital->makeHidden('district', 'upazilla');
-                 }
-                 return $doctors;
-            });
+            
             
             // dd($courses);
             return response()->json([
