@@ -106,7 +106,7 @@ class DoctorController extends Controller
             'district_id'            => 'required',
             'upazilla_id'            => 'required',
             'name'                => 'required|string|max:191',
-            'hospital_type'       => 'required',
+            'degree'                => 'required|string|max:191',
             'telephone'           => 'required',
             'mobile'              => 'required',
             'location'            => 'required',
