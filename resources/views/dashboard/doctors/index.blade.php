@@ -49,7 +49,7 @@
                   <th>লক্ষণ</th>
                   <th>হাসপাতাল</th>
                   <th>ঠিকানা</th>
-                  <th align="right">কার্যক্রম</th>
+                  <th align="right" width="10%">কার্যক্রম</th>
                 </tr>
               </thead>
               <tbody>
