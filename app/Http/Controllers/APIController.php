@@ -154,12 +154,7 @@ class APIController extends Controller
         {
             $medicaldepartments = Cache::remember('medicaldepartments', 30 * 24 * 60 * 60, function () {
                  $hospitals = Medicaldepartment::orderBy('id', 'asc')->get();
-                             // dd($hospitals);
-                 foreach($hospitals as $hospital) {
-                     $hospital->district = $hospital->district->name_bangla;
-                     $hospital->upazilla = $hospital->upazilla->name_bangla;
-                     $hospital->makeHidden('district', 'upazilla');
-                 }
+                             
                  return $hospitals;
             });
             
