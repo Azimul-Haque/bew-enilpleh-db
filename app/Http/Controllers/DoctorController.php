@@ -155,7 +155,7 @@ class DoctorController extends Controller
         if($request->hasFile('image')) {
             $image    = $request->file('image');
             $filename = random_string(5) . time() .'.' . "webp";
-            $location = public_path('images/questions/'. $filename);
+            $location = public_path('images/doctors/'. $filename);
             Image::make($image)->resize(350, null, function ($constraint) { $constraint->aspectRatio(); })->save($location);
             $questionimage              = new Questionimage;
             $questionimage->question_id = $question->id;
