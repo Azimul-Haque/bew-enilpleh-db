@@ -216,7 +216,22 @@ class APIController extends Controller
                     return $doctorstoreturn;
                 });
             } else { // symptomwise
-
+                $doctors = Cache::remember('doctors'.$medicalitemid . $datatype . $district_id, 30 * 24 * 60 * 60, function () use ($medicalitemid, $datatype, $district_id) {
+                    $doctormedicaldepartments = Doctormedicaldepartment::where('medicaldepartment_id', $medicalitemid)
+                                                    ->whereHas('doctor', function($q) use ($district_id){
+                                                        $q->where('district_id', $district_id);
+                                                    })->get();
+                    $doctorstoreturn = collect();
+                    foreach($doctormedicaldepartments as $doctormedicaldepartment) {
+                        $doctorstoreturn->id = $doctormedicaldepartment->doctor->id;
+                        $doctorstoreturn->name = $doctormedicaldepartment->doctor->name;
+                        $doctorstoreturn->degree = $doctormedicaldepartment->doctor->degree;
+                        $doctorstoreturn->serial = $doctormedicaldepartment->doctor->serial;
+                        $doctorstoreturn->helpline = $doctormedicaldepartment->doctor->helpline;
+                        $doctorstoreturn->image = $doctormedicaldepartment->doctor->doctorimage ? $doctormedicaldepartment->doctor->doctorimage->image : '';
+                    }
+                    return $doctorstoreturn;
+                });
             }
             
             
