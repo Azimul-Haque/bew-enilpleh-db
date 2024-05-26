@@ -26,6 +26,8 @@ Route::get('/gethospitals/{softtoken}/{hospital_type}/{district_id}', 'APIContro
 Route::get('/gethospitals/{softtoken}/{hospital_type}/{district_id}/{upazilla_id}', 'APIController@getHospitalsUpazilla')->name('api.gethospitalsupazilla');
 Route::get('/getmedicaldepartments/{softtoken}', 'APIController@getMedicalDepartments')->name('api.getmedicaldepartments');
 Route::get('/getmedicalsymptoms/{softtoken}', 'APIController@getMedicalSymptoms')->name('api.getmedicalsymptoms');
+Route::get('/getdoctors/{softtoken}/{hospital_type}/{district_id}', 'APIController@getHospitalsDistrict')->name('api.gethospitalsdistrict');
+Route::get('/getdoctors/{softtoken}/{hospital_type}/{district_id}/{upazilla_id}', 'APIController@getHospitalsUpazilla')->name('api.gethospitalsupazilla');
 
 
 Route::post('/generateotp', 'APIController@generateOTP')->name('api.generateotp');
