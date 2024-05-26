@@ -122,6 +122,7 @@ class DoctorController extends Controller
         $doctor->degree = $request->degree;
         $doctor->serial = $request->serial;
         $doctor->helpline = $request->helpline;
+
         
         
         $doctor->save();
