@@ -115,9 +115,9 @@ class DoctorController extends Controller
             'hospitals'            => 'required',
         ));
 
-        $hospital = new Hospital;
-        $hospital->district_id = $request->district_id;
-        $hospital->upazilla_id = $request->upazilla_id;
+        $doctor = new Doctor;
+        $doctor->district_id = $request->district_id;
+        $doctor->upazilla_id = $request->upazilla_id;
         $hospital->name = $request->name;
         $hospital->hospital_type = $request->hospital_type;
         $hospital->telephone = $request->telephone;
