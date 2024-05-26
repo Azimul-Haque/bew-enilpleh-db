@@ -200,7 +200,7 @@ class APIController extends Controller
         {
             if($datatype == 'departmentwise') {
                 $doctors = Cache::remember('doctors'.$medicalitemid . $datatype . $district_id, 30 * 24 * 60 * 60, function () use ($medicalitemid, $datatype, $district_id) {
-                    $doctors = Doctormedicaldepartment::where('hospital_type', $hospital_type)
+                    $doctors = Doctormedicaldepartment::where('medicaldepartment_id', $medicalitemid)
                         ->where('district_id', $district_id)
                         ->orderBy('id', 'desc')
                         ->get();
