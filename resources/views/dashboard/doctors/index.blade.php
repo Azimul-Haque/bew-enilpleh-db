@@ -45,7 +45,8 @@
               <thead>
                 <tr>
                   <th>নাম</th>
-                  <th>বিভাগ/লক্ষণ</th>
+                  <th>বিভাগ</th>
+                  <th>লক্ষণ</th>
                   <th>হাসপাতাল</th>
                   <th>ঠিকানা</th>
                   <th align="right">কার্যক্রম</th>
@@ -59,6 +60,11 @@
                       <small class="text-black-50"><i class="fas fa-phone"></i> {{ $doctor->serial }}</small>
                       <small class="text-black-50"><i class="fas fa-mobile"></i> {{ $doctor->helpline }}</small><br/>
                       <span class="badge bg-success">{{ $doctor->degree }}</span>
+                    </td>
+                    <td>
+                      @foreach($doctor->doctormedicaldepartments as $medicaldepartment)
+                        <span class="badge bg-success">{{ $medicaldepartment->medicaldepartment->name }}</span>
+                      @endforeach
                     </td>
                     <td>
                       @foreach($doctor->doctormedicaldepartments as $medicaldepartment)
