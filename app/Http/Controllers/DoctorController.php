@@ -123,7 +123,9 @@ class DoctorController extends Controller
         $doctor->serial = $request->serial;
         $doctor->helpline = $request->helpline;
 
-        
+        if(isset($request->medicaldepartments)){
+            $doctor->tags()->sync($request->tags_ids, false);
+        }
         
         $doctor->save();
 
