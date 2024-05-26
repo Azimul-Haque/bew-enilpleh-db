@@ -110,7 +110,9 @@ class DoctorController extends Controller
             'serial'           => 'required',
             'helpline'              => 'required',
             'image'            => 'sometimes',
-            'medicaldepartments'            => 'sometimes',
+            'medicaldepartments'            => 'required',
+            'medicalsymptoms'            => 'required',
+            'hospitals'            => 'required',
         ));
 
         $hospital = new Hospital;
