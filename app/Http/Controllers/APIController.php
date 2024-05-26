@@ -29,6 +29,8 @@ use App\Hospital;
 use App\Doctor;
 use App\Medicaldepartment;
 use App\Medicalsymptom;
+use App\Doctormedicaldepartment;
+use App\Doctormedicalsymptom;
 
 use Hash;
 use Carbon\Carbon;
