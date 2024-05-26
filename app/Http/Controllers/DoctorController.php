@@ -118,8 +118,8 @@ class DoctorController extends Controller
         $doctor = new Doctor;
         $doctor->district_id = $request->district_id;
         $doctor->upazilla_id = $request->upazilla_id;
-        $hospital->name = $request->name;
-        $hospital->hospital_type = $request->hospital_type;
+        $doctor->name = $request->name;
+        $doctor->degree = $request->degree;
         $hospital->telephone = $request->telephone;
         $hospital->mobile = $request->mobile;
         $hospital->location = $request->location;
