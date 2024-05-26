@@ -107,8 +107,8 @@ class DoctorController extends Controller
             'upazilla_id'            => 'required',
             'name'                => 'required|string|max:191',
             'degree'                => 'required|string|max:191',
-            'telephone'           => 'required',
-            'mobile'              => 'required',
+            'serial'           => 'required',
+            'helpline'              => 'required',
             'location'            => 'required',
         ));
 
