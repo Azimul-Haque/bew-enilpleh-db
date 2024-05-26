@@ -208,7 +208,7 @@ class APIController extends Controller
                     //     $hospital->upazilla = $hospital->upazilla->name_bangla;
                     //     $hospital->makeHidden('district', 'upazilla');
                     // }
-                    // return $doctors;
+                    return $doctors;
                 });
             } else { // symptomwise
 
