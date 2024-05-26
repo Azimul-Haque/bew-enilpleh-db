@@ -212,6 +212,7 @@ class APIController extends Controller
                         $doctorstoreturn->name = $doctormedicaldepartment->doctor->name;
                         $doctorstoreturn->degree = $doctormedicaldepartment->doctor->degree;
                         $doctorstoreturn->serial = $doctormedicaldepartment->doctor->serial;
+                        $doctorstoreturn->helpline = $doctormedicaldepartment->doctor->helpline;
                         $hospital->upazilla = $hospital->upazilla->name_bangla;
                         $hospital->makeHidden('district', 'upazilla');
                     }
