@@ -282,8 +282,9 @@ class APIController extends Controller
             } else { // symptomwise
                 $doctors = Cache::remember('doctssasorssss'.$medicalitemid . $datatype . $district_id . $upazilla_id, 30 * 24 * 60 * 60, function () use ($medicalitemid, $datatype, $district_id) {
                     $doctormedicalsymptoms = Doctormedicalsymptom::where('medicalsymptom_id', $medicalitemid)
-                                                    ->whereHas('doctor', function($q) use ($district_id){
+                                                    ->whereHas('doctor', function($q) use ($district_id, $upazilla_id){
                                                         $q->where('district_id', $district_id);
+                                                        $q->where('upazilla_id', $upazilla_id);
                                                     })->get();
                     $doctorstoreturn = collect();
                     foreach($doctormedicalsymptoms as $doctormedicalsymptom) {
