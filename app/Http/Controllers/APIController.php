@@ -26,6 +26,9 @@ use App\Reportedquestion;
 use App\District;
 use App\Upazilla;
 use App\Hospital;
+use App\Doctor;
+use App\Medicaldepartment;
+use App\Medicalsymptom;
 
 use Hash;
 use Carbon\Carbon;
