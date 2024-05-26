@@ -72,7 +72,9 @@
                       @endforeach
                     </td>
                     <td>
-                      {{ $doctor->doctorhospitals }}
+                      @foreach($doctor->doctorhospitals as $hospital)
+                        <span class="badge bg-info">{{ $hospital->hospital->name }}</span>
+                      @endforeach
                     </td>
                     <td>{{ $doctor->upazilla->name_bangla }}, {{ $doctor->district->name_bangla }}</td>
                     <td align="right" width="40%">
