@@ -57,7 +57,7 @@
                       {{ $doctor->name }}
                       <small class="text-black-50"><i class="fas fa-phone"></i> {{ $doctor->serial }}</small>
                       <small class="text-black-50"><i class="fas fa-mobile"></i> {{ $doctor->helpline }}</small><br/>
-                      <span class="badge bg-success">{{ hospital_type($doctor->hospital_type) }}</span>
+                      <span class="badge bg-success">{{ $doctor->degree }}</span>
                     </td>
                     <td>
                       {{ $doctor->upazilla->name_bangla }}, {{ $doctor->district->name_bangla }}
