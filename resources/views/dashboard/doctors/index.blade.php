@@ -140,7 +140,6 @@
                                         <input type="number"
                                                name="mobile"
                                                value="{{ $doctor->mobile }}"
-                                               autocomplete="off"
                                                class="form-control"
                                                placeholder="মোবাইল নম্বর" required>
                                         <div class="input-group-append">
@@ -151,7 +150,6 @@
                                         <input type="text"
                                                name="location"
                                                value="{{ $doctor->location }}"
-                                               autocomplete="off"
                                                class="form-control"
                                                placeholder="গুগল ম্যাপ লোকেশন লিংক" required>
                                         <div class="input-group-append">
@@ -284,7 +282,7 @@
                           <input type="text"
                                  name="degree"
                                  value="{{ old('degree') }}"
-                                 autocomplete="off"
+                                 
                                  class="form-control"
                                  placeholder="ডাক্তারের ডিগ্রি/ ডিগ্রিসমূহ (যেমন: MBBS, FCPS, MD)" required>
                           <div class="input-group-append">
@@ -311,7 +309,7 @@
                           <input type="number"
                                  name="helpline"
                                  value="{{ old('helpline') }}"
-                                 autocomplete="off"
+                                 
                                  class="form-control"
                                  placeholder="হেল্পলাইন নম্বর (যদি থাকে)">
                           <div class="input-group-append">
