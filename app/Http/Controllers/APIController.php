@@ -252,6 +252,65 @@ class APIController extends Controller
             ]);
         }
     }
+    
+    public function getDoctorsDistrict($softtoken, $medicalitemid, $datatype, $district_id)
+    {
+        if($softtoken == env('SOFT_TOKEN'))
+        {
+            if($datatype == 'departmentwise') {
+                $doctors = Cache::remember('doctssasorssss'.$medicalitemid . $datatype . $district_id, 30 * 24 * 60 * 60, function () use ($medicalitemid, $datatype, $district_id) {
+                    $doctormedicaldepartments = Doctormedicaldepartment::where('medicaldepartment_id', $medicalitemid)
+                                                    ->whereHas('doctor', function($q) use ($district_id){
+                                                        $q->where('district_id', $district_id);
+                                                    })->get();
+                    $doctorstoreturn = collect();
+                    foreach($doctormedicaldepartments as $doctormedicaldepartment) {
+                        $doctormedicaldepartment->id = $doctormedicaldepartment->doctor->id;
+                        $doctormedicaldepartment->name = $doctormedicaldepartment->doctor->name;
+                        $doctormedicaldepartment->degree = $doctormedicaldepartment->doctor->degree;
+                        $doctormedicaldepartment->serial = $doctormedicaldepartment->doctor->serial;
+                        $doctormedicaldepartment->helpline = $doctormedicaldepartment->doctor->helpline;
+                        $doctormedicaldepartment->image = $doctormedicaldepartment->doctor->doctorimage ? $doctormedicaldepartment->doctor->doctorimage->image : '';
+                        $doctormedicaldepartment->makeHidden('doctor', 'medicaldepartment_id', 'doctor_id', 'created_at', 'updated_at');
+                        $doctorstoreturn->push($doctormedicaldepartment);
+                        // dd($doctorstoreturn);
+                        
+                    }
+                    return $doctorstoreturn;
+                });
+            } else { // symptomwise
+                $doctors = Cache::remember('doctssasorssss'.$medicalitemid . $datatype . $district_id, 30 * 24 * 60 * 60, function () use ($medicalitemid, $datatype, $district_id) {
+                    $doctormedicalsymptoms = Doctormedicalsymptom::where('medicalsymptom_id', $medicalitemid)
+                                                    ->whereHas('doctor', function($q) use ($district_id){
+                                                        $q->where('district_id', $district_id);
+                                                    })->get();
+                    $doctorstoreturn = collect();
+                    foreach($doctormedicalsymptoms as $doctormedicalsymptom) {
+                        $doctormedicalsymptom->id = $doctormedicalsymptom->doctor->id;
+                        $doctormedicalsymptom->name = $doctormedicalsymptom->doctor->name;
+                        $doctormedicalsymptom->degree = $doctormedicalsymptom->doctor->degree;
+                        $doctormedicalsymptom->serial = $doctormedicalsymptom->doctor->serial;
+                        $doctormedicalsymptom->helpline = $doctormedicalsymptom->doctor->helpline;
+                        $doctormedicalsymptom->image = $doctormedicalsymptom->doctor->doctorimage ? $doctormedicalsymptom->doctor->doctorimage->image : '';
+                        $doctormedicalsymptom->makeHidden('doctor', 'medicaldepartment_id', 'doctor_id', 'created_at', 'updated_at');
+                        $doctorstoreturn->push($doctormedicalsymptom);
+                        // dd($doctorstoreturn);
+                    }
+                    return $doctorstoreturn;
+                });
+            }
+            
+            // dd($doctors);
+            return response()->json([
+                'success' => true,
+                'doctors' => $doctors,
+            ]);
+        } else {
+            return response()->json([
+                'success' => false
+            ]);
+        }
+    }
 
 
 
