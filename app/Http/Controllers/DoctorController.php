@@ -126,7 +126,7 @@ class DoctorController extends Controller
 
         if(isset($request->medicaldepartments)){
             $doctormedicaldepartment = new Doctormedicaldepartment;
-            $doctormedicaldepartment->
+            $doctormedicaldepartment->doctor_id = 
         }
 
         
