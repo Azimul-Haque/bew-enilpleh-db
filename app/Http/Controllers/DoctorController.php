@@ -135,10 +135,10 @@ class DoctorController extends Controller
 
         if(isset($request->medicalsymptoms)){
             foreach($request->medicalsymptoms as $medicalsymptom_id) {
-                $doctormedicaldepartment = new Doctormedicaldepartment;
-                $doctormedicaldepartment->doctor_id = $doctor->id;
-                $doctormedicaldepartment->medicaldepartment_id = $medicaldepartment_id;
-                $doctormedicaldepartment->save();
+                $doctormedicalsymptom = new Doctormedicalsymptom;
+                $doctormedicalsymptom->doctor_id = $doctor->id;
+                $doctormedicalsymptom->medicaldepartment_id = $medicaldepartment_id;
+                $doctormedicalsymptom->save();
             }            
         }
 
