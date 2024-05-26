@@ -217,18 +217,18 @@ class APIController extends Controller
                 });
             } else { // symptomwise
                 $doctors = Cache::remember('doctors'.$medicalitemid . $datatype . $district_id, 30 * 24 * 60 * 60, function () use ($medicalitemid, $datatype, $district_id) {
-                    $doctormedicaldepartments = Doctormedicalsymptom::where('medicalsymptom_id', $medicalitemid)
+                    $doctormedicalsymptoms = Doctormedicalsymptom::where('medicalsymptom_id', $medicalitemid)
                                                     ->whereHas('doctor', function($q) use ($district_id){
                                                         $q->where('district_id', $district_id);
                                                     })->get();
                     $doctorstoreturn = collect();
-                    foreach($doctormedicaldepartments as $doctormedicaldepartment) {
-                        $doctorstoreturn->id = $doctormedicaldepartment->doctor->id;
-                        $doctorstoreturn->name = $doctormedicaldepartment->doctor->name;
-                        $doctorstoreturn->degree = $doctormedicaldepartment->doctor->degree;
-                        $doctorstoreturn->serial = $doctormedicaldepartment->doctor->serial;
-                        $doctorstoreturn->helpline = $doctormedicaldepartment->doctor->helpline;
-                        $doctorstoreturn->image = $doctormedicaldepartment->doctor->doctorimage ? $doctormedicaldepartment->doctor->doctorimage->image : '';
+                    foreach($doctormedicalsymptoms as $doctormedicalsymptom) {
+                        $doctorstoreturn->id = $doctormedicalsymptom->doctor->id;
+                        $doctorstoreturn->name = $doctormedicalsymptom->doctor->name;
+                        $doctorstoreturn->degree = $doctormedicalsymptom->doctor->degree;
+                        $doctorstoreturn->serial = $doctormedicalsymptom->doctor->serial;
+                        $doctorstoreturn->helpline = $doctormedicalsymptom->doctor->helpline;
+                        $doctorstoreturn->image = $doctormedicalsymptom->doctor->doctorimage ? $doctormedicalsymptom->doctor->doctorimage->image : '';
                     }
                     return $doctorstoreturn;
                 });
