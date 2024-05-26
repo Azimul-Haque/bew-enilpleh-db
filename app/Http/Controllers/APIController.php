@@ -280,7 +280,7 @@ class APIController extends Controller
                     return $doctorstoreturn;
                 });
             } else { // symptomwise
-                $doctors = Cache::remember('doctssasorssss'.$medicalitemid . $datatype . $district_id, 30 * 24 * 60 * 60, function () use ($medicalitemid, $datatype, $district_id) {
+                $doctors = Cache::remember('doctssasorssss'.$medicalitemid . $datatype . $district_id . $upazilla_id, 30 * 24 * 60 * 60, function () use ($medicalitemid, $datatype, $district_id) {
                     $doctormedicalsymptoms = Doctormedicalsymptom::where('medicalsymptom_id', $medicalitemid)
                                                     ->whereHas('doctor', function($q) use ($district_id){
                                                         $q->where('district_id', $district_id);
