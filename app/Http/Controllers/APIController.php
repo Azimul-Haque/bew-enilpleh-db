@@ -213,7 +213,7 @@ class APIController extends Controller
                         $doctorstoreturn->degree = $doctormedicaldepartment->doctor->degree;
                         $doctorstoreturn->serial = $doctormedicaldepartment->doctor->serial;
                         $doctorstoreturn->helpline = $doctormedicaldepartment->doctor->helpline;
-                        $doctorstoreturn->image = $doctormedicaldepartment->doctor->doctorimage->image;
+                        $doctorstoreturn->image = $doctormedicaldepartment->doctor->doctorimage ? $doctormedicaldepartment->doctor->doctorimage->image : 'tt';
                     }
                     dd($doctorstoreturn);
                     return $doctorstoreturn;
