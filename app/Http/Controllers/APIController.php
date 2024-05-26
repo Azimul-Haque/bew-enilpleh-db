@@ -262,6 +262,7 @@ class APIController extends Controller
                     $doctormedicaldepartments = Doctormedicaldepartment::where('medicaldepartment_id', $medicalitemid)
                                                     ->whereHas('doctor', function($q) use ($district_id){
                                                         $q->where('district_id', $district_id);
+                                                        $q->where('upazilla_id', $upazilla_id);
                                                     })->get();
                     $doctorstoreturn = collect();
                     foreach($doctormedicaldepartments as $doctormedicaldepartment) {
