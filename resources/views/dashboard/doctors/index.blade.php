@@ -63,12 +63,12 @@
                     </td>
                     <td>
                       @foreach($doctor->doctormedicaldepartments as $medicaldepartment)
-                        <span class="badge bg-info">{{ $medicaldepartment->medicaldepartment->name }}</span>
+                        <span class="badge bg-primary">{{ $medicaldepartment->medicaldepartment->name }}</span>
                       @endforeach
                     </td>
                     <td>
                       @foreach($doctor->doctormedicaldepartments as $medicaldepartment)
-                        <span class="badge bg-primary">{{ $medicaldepartment->medicaldepartment->name }}</span>
+                        <span class="badge bg-info">{{ $medicaldepartment->medicaldepartment->name }}</span>
                       @endforeach
                     </td>
                     <td>
