@@ -47,6 +47,8 @@
                   <th>নাম</th>
                   <th>বিভাগ</th>
                   <th>লক্ষণ</th>
+                  <th>ঠিকানা</th>
+                  <th>হাসপাতাল</th>
                   <th align="right">কার্যক্রম</th>
                 </tr>
               </thead>
