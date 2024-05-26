@@ -208,7 +208,8 @@ class APIController extends Controller
                     // dd($doctormedicaldepartments);
                     $doctorstoreturn = collect();
                     foreach($doctormedicaldepartments as $doctormedicaldepartment) {
-                        $doctorstoreturn->id = $doctormedicaldepartment->doctor->name;
+                        $doctorstoreturn->id = $doctormedicaldepartment->doctor->id;
+                        $doctorstoreturn->name = $doctormedicaldepartment->doctor->name;
                         $hospital->upazilla = $hospital->upazilla->name_bangla;
                         $hospital->makeHidden('district', 'upazilla');
                     }
