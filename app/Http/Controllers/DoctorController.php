@@ -124,7 +124,7 @@ class DoctorController extends Controller
         $doctor->helpline = $request->helpline;
 
         if(isset($request->medicaldepartments)){
-            $doctor->tags()->sync($request->tags_ids, false);
+            $doctor->medicaldepartments()->sync($request->tags_ids, false);
         }
         
         $doctor->save();
