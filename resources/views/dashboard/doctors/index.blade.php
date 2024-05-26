@@ -60,6 +60,9 @@
                       <small class="text-black-50"><i class="fas fa-mobile"></i> {{ $doctor->helpline }}</small><br/>
                       <span class="badge bg-success">{{ $doctor->degree }}</span>
                     </td>
+                    <td>
+                      {{ $doctor->medicaldepartments }}
+                    </td>
                     <td>{{ $doctor->upazilla->name_bangla }}, {{ $doctor->district->name_bangla }}</td>
                     <td align="right" width="40%">
                       {{-- <button type="button" class="btn btn-warning btn-sm" data-toggle="modal" data-target="#notifModal{{ $doctor->id }}">
