@@ -349,7 +349,7 @@
 
                   <div class="form-group ">
                       <label for="image">ছবি/ ভিজিটিং কার্ড/ ব্যানার (প্রয়োজনে, ২ মেগাবাইটের মধ্যে)</label>
-                      <input type="file" id="image" name="image" accept="image/*">
+                      <input type="file" name="image" accept="image/*">
                   </div>
                   <center>
                       <img src="{{ asset('images/placeholder.png')}}" id='img-upload' style="width: 250px; height: auto;" class="img-responsive" />
