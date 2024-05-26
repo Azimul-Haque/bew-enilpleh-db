@@ -200,8 +200,9 @@ class APIController extends Controller
         {
             if($datatype == 'departmentwise') {
                 $doctors = Cache::remember('doctors'.$medicalitemid . $datatype . $district_id, 30 * 24 * 60 * 60, function () use ($medicalitemid, $datatype, $district_id) {
-                    $doctors = Doctormedicaldepartment::where('medicaldepartment_id', $medicalitemid)->get();
+                    $doctormedicaldepartments = Doctormedicaldepartment::where('medicaldepartment_id', $medicalitemid)->get();
                     
+                    dd($doctormedicaldepartments);
                     // foreach($doctors as $hospital) {
                     //     $hospital->district = $hospital->district->name_bangla;
                     //     $hospital->upazilla = $hospital->upazilla->name_bangla;
