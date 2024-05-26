@@ -15,8 +15,8 @@ class Doctor extends Model
         return $this->belongsTo('App\Upazilla');
     }
 
-    public function questionimage(){
-        return $this->hasOne('App\Questionimage');
+    public function doctorimage(){
+        return $this->hasOne('App\Doctorimage');
     }
     
     public function doctormedicaldepartments(){
