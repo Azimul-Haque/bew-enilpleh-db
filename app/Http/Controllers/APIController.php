@@ -175,7 +175,7 @@ class APIController extends Controller
         if($softtoken == env('SOFT_TOKEN'))
         {
             $medicalsymptoms = Cache::remember('medicalsymptoms', 30 * 24 * 60 * 60, function () {
-                 $medicalsymptoms = Medicalsymptoms::orderBy('id', 'asc')->get();
+                 $medicalsymptoms = Medicalsymptom::orderBy('id', 'asc')->get();
                              
                  return $medicalsymptoms;
             });
