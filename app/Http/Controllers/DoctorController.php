@@ -142,6 +142,15 @@ class DoctorController extends Controller
             }            
         }
 
+        if(isset($request->hospitals)){
+            foreach($request->medicalsymptoms as $medicalsymptom_id) {
+                $doctormedicalsymptom = new Doctormedicalsymptom;
+                $doctormedicalsymptom->doctor_id = $doctor->id;
+                $doctormedicalsymptom->medicalsymptom_id = $medicalsymptom_id;
+                $doctormedicalsymptom->save();
+            }            
+        }
+
         
 
         Cache::forget('hospitals'. $request->hospital_type . $request->district_id);
