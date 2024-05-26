@@ -61,10 +61,10 @@
                       <span class="badge bg-success">{{ $doctor->degree }}</span>
                     </td>
                     <td>
-                      {{ $doctor->medicaldepartments }}, {{ $doctor->medicalsymptoms }}
+                      {{-- {{ $doctor->medicaldepartments }}, {{ $doctor->medicalsymptoms }} --}}
                     </td>
                     <td>
-                      {{ $doctor->hospitals }}
+                      {{-- {{ $doctor->hospitals }} --}}
                     </td>
                     <td>{{ $doctor->upazilla->name_bangla }}, {{ $doctor->district->name_bangla }}</td>
                     <td align="right" width="40%">
