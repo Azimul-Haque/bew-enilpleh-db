@@ -212,6 +212,7 @@ class APIController extends Controller
                         $doctormedicaldepartment->serial = $doctormedicaldepartment->doctor->serial;
                         $doctormedicaldepartment->helpline = $doctormedicaldepartment->doctor->helpline;
                         $doctormedicaldepartment->image = $doctormedicaldepartment->doctor->doctorimage ? $doctormedicaldepartment->doctor->doctorimage->image : '';
+                        $doctormedicaldepartment->makeHidden('medicaldepartment_id', 'doctor_id', 'created_at', 'updated_at');
                         $doctormedicaldepartment->doctor->makeHidden('medicaldepartment_id', 'doctor_id', 'created_at', 'updated_at');
                         $doctorstoreturn->push($doctormedicaldepartment);
                         // dd($doctorstoreturn);
