@@ -215,7 +215,7 @@ class APIController extends Controller
                         $doctorstoreturn->helpline = $doctormedicaldepartment->doctor->helpline;
                         $doctorstoreturn->image = $doctormedicaldepartment->doctor->doctorimage->image;
                     }
-                    return $doctors;
+                    return $doctorstoreturn;
                 });
             } else { // symptomwise
 
