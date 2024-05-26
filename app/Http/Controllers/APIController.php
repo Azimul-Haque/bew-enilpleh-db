@@ -213,7 +213,6 @@ class APIController extends Controller
                         $doctormedicaldepartment->helpline = $doctormedicaldepartment->doctor->helpline;
                         $doctormedicaldepartment->image = $doctormedicaldepartment->doctor->doctorimage ? $doctormedicaldepartment->doctor->doctorimage->image : '';
                         $doctormedicaldepartment->makeHidden('doctor', 'medicaldepartment_id', 'doctor_id', 'created_at', 'updated_at');
-                        // $doctormedicaldepartment->doctor->makeHidden('medicaldepartment_id', 'doctor_id', 'created_at', 'updated_at');
                         $doctorstoreturn->push($doctormedicaldepartment);
                         // dd($doctorstoreturn);
                         
@@ -234,8 +233,7 @@ class APIController extends Controller
                         $doctormedicalsymptom->serial = $doctormedicalsymptom->doctor->serial;
                         $doctormedicalsymptom->helpline = $doctormedicalsymptom->doctor->helpline;
                         $doctormedicalsymptom->image = $doctormedicalsymptom->doctor->doctorimage ? $doctormedicalsymptom->doctor->doctorimage->image : '';
-                        $doctormedicalsymptom->makeHidden('doctor');
-                        // $doctormedicalsymptom->doctor->makeHidden('medicalsymptom_id', 'doctor_id', 'created_at', 'updated_at');
+                        $doctormedicalsymptom->makeHidden('doctor', 'medicaldepartment_id', 'doctor_id', 'created_at', 'updated_at');
                         $doctorstoreturn->push($doctormedicalsymptom);
                         // dd($doctorstoreturn);
                     }
