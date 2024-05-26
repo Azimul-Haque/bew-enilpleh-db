@@ -143,10 +143,10 @@ class DoctorController extends Controller
         }
 
         if(isset($request->hospitals)){
-            foreach($request->hospitals as $hospitals_id) {
+            foreach($request->hospitals as $hospital_id) {
                 $doctorhospital = new Doctorhospital;
                 $doctorhospital->doctor_id = $doctor->id;
-                $doctorhospital->hospitals_id = $hospitals_id;
+                $doctorhospital->hospital_id = $hospital_id;
                 $doctorhospital->save();
             }            
         }
