@@ -196,7 +196,7 @@ class APIController extends Controller
     {
         if($softtoken == env('SOFT_TOKEN'))
         {
-            if ($datatype == '') {
+            if ($datatype == 'departmentwise') {
                 // code...
             }
             $doctors = Cache::remember('doctors'.$medicalitemid . $datatype . $district_id, 30 * 24 * 60 * 60, function () use ($medicalitemid, $datatype, $district_id) {
