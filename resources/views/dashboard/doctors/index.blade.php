@@ -61,7 +61,9 @@
                       <span class="badge bg-success">{{ $doctor->degree }}</span>
                     </td>
                     <td>
-                      {{ $doctor->doctormedicaldepartments }}, {{ $doctor->doctormedicalsymptoms }}
+                      @foreach($doctor->doctormedicaldepartments as $medicaldepartment)
+
+                      @endforeach
                     </td>
                     <td>
                       {{ $doctor->doctorhospitals }}
