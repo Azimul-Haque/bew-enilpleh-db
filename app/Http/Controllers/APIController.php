@@ -153,11 +153,7 @@ class APIController extends Controller
         if($softtoken == env('SOFT_TOKEN'))
         {
             $medicaldepartments = Cache::remember('medicaldepartments', 30 * 24 * 60 * 60, function () {
-                 $hospitals = Hospital::where('hospital_type', $hospital_type)
-                             ->where('district_id', $district_id)
-                             ->where('upazilla_id', $upazilla_id)
-                             ->orderBy('id', 'desc')
-                             ->get();
+                 $hospitals = Medicaldepartment::orderBy('id', 'asc')->get();
                              // dd($hospitals);
                  foreach($hospitals as $hospital) {
                      $hospital->district = $hospital->district->name_bangla;
