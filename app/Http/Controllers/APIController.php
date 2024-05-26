@@ -199,7 +199,7 @@ class APIController extends Controller
         if($softtoken == env('SOFT_TOKEN'))
         {
             if($datatype == 'departmentwise') {
-                $doctors = Cache::remember('doctssasorssss'.$medicalitemid . $datatype . $district_id, 30 * 24 * 60 * 60, function () use ($medicalitemid, $datatype, $district_id) {
+                $doctors = Cache::remember('doctssasors'.$medicalitemid . $datatype . $district_id, 30 * 24 * 60 * 60, function () use ($medicalitemid, $datatype, $district_id) {
                     $doctormedicaldepartments = Doctormedicaldepartment::where('medicaldepartment_id', $medicalitemid)
                                                     ->whereHas('doctor', function($q) use ($district_id){
                                                         $q->where('district_id', $district_id);
@@ -212,8 +212,8 @@ class APIController extends Controller
                         $doctormedicaldepartment->serial = $doctormedicaldepartment->doctor->serial;
                         $doctormedicaldepartment->helpline = $doctormedicaldepartment->doctor->helpline;
                         $doctormedicaldepartment->image = $doctormedicaldepartment->doctor->doctorimage ? $doctormedicaldepartment->doctor->doctorimage->image : '';
-                        $doctormedicaldepartment->makeHidden('doctor');
-                        // $doctormedicaldepartment->doctor->makeHidden('medicaldepartment_id', 'doctor_id', 'created_at', 'updated_at');
+                        $doctormedicaldepartment->makeHidden('medicaldepartment_id', 'doctor_id', 'created_at', 'updated_at');
+                        $doctormedicaldepartment->doctor->makeHidden('medicaldepartment_id', 'doctor_id', 'created_at', 'updated_at');
                         $doctorstoreturn->push($doctormedicaldepartment);
                         // dd($doctorstoreturn);
                         
@@ -221,7 +221,7 @@ class APIController extends Controller
                     return $doctorstoreturn;
                 });
             } else { // symptomwise
-                $doctors = Cache::remember('doctssasorssss'.$medicalitemid . $datatype . $district_id, 30 * 24 * 60 * 60, function () use ($medicalitemid, $datatype, $district_id) {
+                $doctors = Cache::remember('doctssasors'.$medicalitemid . $datatype . $district_id, 30 * 24 * 60 * 60, function () use ($medicalitemid, $datatype, $district_id) {
                     $doctormedicalsymptoms = Doctormedicalsymptom::where('medicalsymptom_id', $medicalitemid)
                                                     ->whereHas('doctor', function($q) use ($district_id){
                                                         $q->where('district_id', $district_id);
@@ -234,8 +234,8 @@ class APIController extends Controller
                         $doctormedicalsymptom->serial = $doctormedicalsymptom->doctor->serial;
                         $doctormedicalsymptom->helpline = $doctormedicalsymptom->doctor->helpline;
                         $doctormedicalsymptom->image = $doctormedicalsymptom->doctor->doctorimage ? $doctormedicalsymptom->doctor->doctorimage->image : '';
-                        $doctormedicalsymptom->makeHidden('doctor');
-                        // $doctormedicalsymptom->doctor->makeHidden('medicalsymptom_id', 'doctor_id', 'created_at', 'updated_at');
+                        $doctormedicalsymptom->makeHidden('medicalsymptom_id', 'doctor_id', 'created_at', 'updated_at');
+                        $doctormedicalsymptom->doctor->makeHidden('medicalsymptom_id', 'doctor_id', 'created_at', 'updated_at');
                         $doctorstoreturn->push($doctormedicalsymptom);
                         // dd($doctorstoreturn);
                     }
