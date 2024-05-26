@@ -14,6 +14,10 @@ class Doctor extends Model
     public function upazilla(){
         return $this->belongsTo('App\Upazilla');
     }
+
+    public function questionimage(){
+        return $this->hasOne('App\Questionimage');
+    }
     
     public function doctormedicaldepartments(){
         return $this->hasMany('App\Doctormedicaldepartment');
