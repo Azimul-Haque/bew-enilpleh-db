@@ -133,7 +133,9 @@ class DoctorController extends Controller
 
                 Cache::forget('doctors'. $medicaldepartment_id . 'departmentwise' . $request->district_id);
                 Cache::forget('doctors'. $medicaldepartment_id . 'departmentwise' . $request->district_id . $request->upazilla_id);
+
                 Cache::forget('doctors'. $medicaldepartment_id . 'symptomwise' . $request->district_id);
+                Cache::forget('doctors'. $medicaldepartment_id . 'symptomwise' . $request->district_id . $request->upazilla_id);
             }            
         }
 
