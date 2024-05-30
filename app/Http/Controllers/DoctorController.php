@@ -161,7 +161,7 @@ class DoctorController extends Controller
                 $doctorhospital->hospital_id = $hospital_id;
                 $doctorhospital->save();
 
-                Cache::forget('hospitaldoctors'. $doctor->id);
+                Cache::forget('hospitaldoctors'. $hospital_id);
             }            
         }
 
