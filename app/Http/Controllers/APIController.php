@@ -334,13 +334,13 @@ class APIController extends Controller
                 //     $doctorstoreturn->push($doctormedicalsymptom);
                 //     // dd($doctorstoreturn);
                 // }
-                return $doctorstoreturn;
+                return $doctors;
             });
             
             // dd($courses);
             return response()->json([
                 'success' => true,
-                'medicalsymptoms' => $medicalsymptoms,
+                'doctors' => $doctors,
             ]);
         } else {
             return response()->json([
