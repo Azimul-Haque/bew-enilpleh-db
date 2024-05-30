@@ -321,7 +321,6 @@ class APIController extends Controller
             $doctors = Cache::remember('hospitaldoctors'.$hospital_id, 30 * 24 * 60 * 60, function () use ($hospital_id) {
                 $doctors = Doctor::whereHas('doctor', function($q) use ($hospital_id){
                                         $q->where('hospital_id', $hospital_id);
-                                        $q->where('upazilla_id', $upazilla_id);
                                     })->get();
                 $doctorstoreturn = collect();
                 foreach($doctormedicalsymptoms as $doctormedicalsymptom) {
