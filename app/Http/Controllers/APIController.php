@@ -327,7 +327,7 @@ class APIController extends Controller
                     $medicaldepartments = [];
                     $medicalsymptoms = [];
                     foreach($doctor->doctormedicaldepartments as $doctormedicaldepartment) {
-                        $medicaldepartments[] = $doctormedicaldepartment->name;
+                        $medicaldepartments[] = $doctormedicaldepartment->medicaldepartment->name;
                     }
                     foreach($doctor->doctormedicalsymptoms as $doctormedicalsymptom) {
                         $medicalsymptoms[] = $doctormedicalsymptom->medicalsymptom->name;
