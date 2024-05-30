@@ -323,17 +323,17 @@ class APIController extends Controller
                                         $q->where('hospital_id', $hospital_id);
                                     })->get();
                 // dd($doctors);
-                // foreach($doctormedicalsymptoms as $doctormedicalsymptom) {
-                //     $doctormedicalsymptom->id = $doctormedicalsymptom->doctor->id;
-                //     $doctormedicalsymptom->name = $doctormedicalsymptom->doctor->name;
-                //     $doctormedicalsymptom->degree = $doctormedicalsymptom->doctor->degree;
-                //     $doctormedicalsymptom->serial = $doctormedicalsymptom->doctor->serial;
-                //     $doctormedicalsymptom->helpline = $doctormedicalsymptom->doctor->helpline;
-                //     $doctormedicalsymptom->image = $doctormedicalsymptom->doctor->doctorimage ? $doctormedicalsymptom->doctor->doctorimage->image : '';
-                //     $doctormedicalsymptom->makeHidden('doctor', 'medicaldepartment_id', 'doctor_id', 'created_at', 'updated_at');
-                //     $doctorstoreturn->push($doctormedicalsymptom);
-                //     // dd($doctorstoreturn);
-                // }
+                foreach($doctors as $doctor) {
+                    $doctormedicalsymptom->id = $doctormedicalsymptom->doctor->id;
+                    $doctormedicalsymptom->name = $doctormedicalsymptom->doctor->name;
+                    $doctormedicalsymptom->degree = $doctormedicalsymptom->doctor->degree;
+                    $doctormedicalsymptom->serial = $doctormedicalsymptom->doctor->serial;
+                    $doctormedicalsymptom->helpline = $doctormedicalsymptom->doctor->helpline;
+                    $doctormedicalsymptom->image = $doctormedicalsymptom->doctor->doctorimage ? $doctormedicalsymptom->doctor->doctorimage->image : '';
+                    $doctormedicalsymptom->makeHidden('doctor', 'medicaldepartment_id', 'doctor_id', 'created_at', 'updated_at');
+                    $doctorstoreturn->push($doctormedicalsymptom);
+                    // dd($doctorstoreturn);
+                }
                 return $doctors;
             });
             
