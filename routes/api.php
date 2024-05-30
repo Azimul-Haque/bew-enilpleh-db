@@ -28,7 +28,7 @@ Route::get('/getmedicaldepartments/{softtoken}', 'APIController@getMedicalDepart
 Route::get('/getmedicalsymptoms/{softtoken}', 'APIController@getMedicalSymptoms')->name('api.getmedicalsymptoms');
 Route::get('/getdoctors/{softtoken}/{medicalitemid}/{datatype}/{district_id}', 'APIController@getDoctorsDistrict')->name('api.getdoctorsdistrict');
 Route::get('/getdoctors/{softtoken}/{medicalitemid}/{datatype}/{district_id}/{upazilla_id}', 'APIController@getDoctorsUpazilla')->name('api.getdoctorsupazilla');
-Route::get('/gethospitaldoctors/{softtoken}/hospital_type}', 'APIController@getHospitalDoctors')->name('api.gethospitaldoctors');
+Route::get('/gethospitaldoctors/{softtoken}/{hospital_id}', 'APIController@getHospitalDoctors')->name('api.gethospitaldoctors');
 
 
 Route::post('/generateotp', 'APIController@generateOTP')->name('api.generateotp');
