@@ -324,12 +324,12 @@ class APIController extends Controller
                                     })->get();
                 // dd($doctors);
                 foreach($doctors as $doctor) {
-                    $doctor->id = $doctor->doctor->id;
-                    $doctor->name = $doctor->doctor->name;
-                    $doctor->degree = $doctor->doctor->degree;
-                    $doctor->serial = $doctor->doctor->serial;
-                    $doctor->helpline = $doctor->doctor->helpline;
-                    $doctor->image = $doctor->doctor->doctorimage ? $doctor->doctor->doctorimage->image : '';
+                    $doctor->id = $doctor->id;
+                    $doctor->name = $doctor->name;
+                    $doctor->degree = $doctor->degree;
+                    $doctor->serial = $doctor->serial;
+                    $doctor->helpline = $doctor->helpline;
+                    $doctor->image = $doctorimage ? $doctor->doctorimage->image : '';
                     $doctor->makeHidden('doctor', 'medicaldepartment_id', 'doctor_id', 'created_at', 'updated_at');
                     // dd($doctorstoreturn);
                 }
