@@ -314,7 +314,8 @@ class APIController extends Controller
         }
     }
 
-    public function getHospitalDoctors($hospital_id) {
+    public function getHospitalDoctors($hospital_id)
+    {
         
     }
 
