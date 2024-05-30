@@ -319,7 +319,7 @@ class APIController extends Controller
         if($softtoken == env('SOFT_TOKEN'))
         {
             $doctors = Cache::remember('hospitaldoctors'.$hospital_id, 30 * 24 * 60 * 60, function () use ($hospital_id) {
-                $doctors = Doctor::whereHas('hospitaldoctors', function($q) use ($hospital_id){
+                $doctors = Doctor::whereHas('doctorhospitals', function($q) use ($hospital_id){
                                         $q->where('hospital_id', $hospital_id);
                                     })->get();
                 dd($doctors);
