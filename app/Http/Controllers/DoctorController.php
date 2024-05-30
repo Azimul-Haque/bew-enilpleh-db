@@ -130,6 +130,8 @@ class DoctorController extends Controller
                 $doctormedicaldepartment->doctor_id = $doctor->id;
                 $doctormedicaldepartment->medicaldepartment_id = $medicaldepartment_id;
                 $doctormedicaldepartment->save();
+
+                Cache::forget('hospitaldoctors'. $$doctor->id);
             }            
         }
 
