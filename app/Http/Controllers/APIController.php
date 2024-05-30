@@ -322,18 +322,18 @@ class APIController extends Controller
                 $doctors = Doctor::whereHas('doctor', function($q) use ($hospital_id){
                                         $q->where('hospital_id', $hospital_id);
                                     })->get();
-                $doctorstoreturn = collect();
-                foreach($doctormedicalsymptoms as $doctormedicalsymptom) {
-                    $doctormedicalsymptom->id = $doctormedicalsymptom->doctor->id;
-                    $doctormedicalsymptom->name = $doctormedicalsymptom->doctor->name;
-                    $doctormedicalsymptom->degree = $doctormedicalsymptom->doctor->degree;
-                    $doctormedicalsymptom->serial = $doctormedicalsymptom->doctor->serial;
-                    $doctormedicalsymptom->helpline = $doctormedicalsymptom->doctor->helpline;
-                    $doctormedicalsymptom->image = $doctormedicalsymptom->doctor->doctorimage ? $doctormedicalsymptom->doctor->doctorimage->image : '';
-                    $doctormedicalsymptom->makeHidden('doctor', 'medicaldepartment_id', 'doctor_id', 'created_at', 'updated_at');
-                    $doctorstoreturn->push($doctormedicalsymptom);
-                    // dd($doctorstoreturn);
-                }
+                dd($doctors);
+                // foreach($doctormedicalsymptoms as $doctormedicalsymptom) {
+                //     $doctormedicalsymptom->id = $doctormedicalsymptom->doctor->id;
+                //     $doctormedicalsymptom->name = $doctormedicalsymptom->doctor->name;
+                //     $doctormedicalsymptom->degree = $doctormedicalsymptom->doctor->degree;
+                //     $doctormedicalsymptom->serial = $doctormedicalsymptom->doctor->serial;
+                //     $doctormedicalsymptom->helpline = $doctormedicalsymptom->doctor->helpline;
+                //     $doctormedicalsymptom->image = $doctormedicalsymptom->doctor->doctorimage ? $doctormedicalsymptom->doctor->doctorimage->image : '';
+                //     $doctormedicalsymptom->makeHidden('doctor', 'medicaldepartment_id', 'doctor_id', 'created_at', 'updated_at');
+                //     $doctorstoreturn->push($doctormedicalsymptom);
+                //     // dd($doctorstoreturn);
+                // }
                 return $doctorstoreturn;
             });
             
