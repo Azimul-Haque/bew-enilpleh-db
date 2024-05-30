@@ -316,7 +316,24 @@ class APIController extends Controller
 
     public function getHospitalDoctors($hospital_id)
     {
-        
+        if($softtoken == env('SOFT_TOKEN'))
+        {
+            $doctors = Cache::remember('medicalsymptoms', 30 * 24 * 60 * 60, function () {
+                 $medicalsymptoms = Medicalsymptom::orderBy('id', 'asc')->get();
+                             
+                 return $medicalsymptoms;
+            });
+            
+            // dd($courses);
+            return response()->json([
+                'success' => true,
+                'medicalsymptoms' => $medicalsymptoms,
+            ]);
+        } else {
+            return response()->json([
+                'success' => false
+            ]);
+        }
     }
 
 
