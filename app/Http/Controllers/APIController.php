@@ -327,6 +327,9 @@ class APIController extends Controller
                     $doctor->medicaldepartments = $doctor->doctormedicaldepartments;
                     $medicaldepartments = [];
                     $medicalsymptoms = [];
+                    foreach($doctor->doctormedicaldepartments as $doctormedicaldepartment) {
+                        $medicaldepartments[] = $doctormedicaldepartment->name;
+                    }
                     $doctor->medicalsymptoms = $doctor->doctormedicalsymptom;
                     $doctor->image = $doctor->doctorimage ? $doctor->doctorimage->image : '';
                     $doctor->makeHidden('id', 'district_id', 'upazilla_id', 'created_at', 'updated_at');
