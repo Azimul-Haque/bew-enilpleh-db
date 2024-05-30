@@ -322,7 +322,7 @@ class APIController extends Controller
                 $doctors = Doctor::whereHas('doctorhospitals', function($q) use ($hospital_id){
                                         $q->where('hospital_id', $hospital_id);
                                     })->get();
-                dd($doctors);
+                // dd($doctors);
                 // foreach($doctormedicalsymptoms as $doctormedicalsymptom) {
                 //     $doctormedicalsymptom->id = $doctormedicalsymptom->doctor->id;
                 //     $doctormedicalsymptom->name = $doctormedicalsymptom->doctor->name;
