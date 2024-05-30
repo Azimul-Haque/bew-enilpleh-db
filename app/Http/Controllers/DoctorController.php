@@ -145,6 +145,12 @@ class DoctorController extends Controller
                 $doctormedicalsymptom->doctor_id = $doctor->id;
                 $doctormedicalsymptom->medicalsymptom_id = $medicalsymptom_id;
                 $doctormedicalsymptom->save();
+
+                Cache::forget('doctors'. $medicalsymptom_id . 'departmentwise' . $request->district_id);
+                Cache::forget('doctors'. $medicalsymptom_id . 'departmentwise' . $request->district_id . $request->upazilla_id);
+
+                Cache::forget('doctors'. $medicalsymptom_id . 'symptomwise' . $request->district_id);
+                Cache::forget('doctors'. $medicalsymptom_id . 'symptomwise' . $request->district_id . $request->upazilla_id);
             }            
         }
 
