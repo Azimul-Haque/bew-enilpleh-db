@@ -319,25 +319,25 @@ class APIController extends Controller
         if($softtoken == env('SOFT_TOKEN'))
         {
             $doctors = Cache::remember('doctors'.$medicalitemid . $datatype . $district_id . $upazilla_id, 30 * 24 * 60 * 60, function () use ($medicalitemid, $datatype, $district_id, $upazilla_id) {
-                    $doctormedicalsymptoms = Doctormedicalsymptom::where('medicalsymptom_id', $medicalitemid)
-                                                    ->whereHas('doctor', function($q) use ($district_id, $upazilla_id){
-                                                        $q->where('district_id', $district_id);
-                                                        $q->where('upazilla_id', $upazilla_id);
-                                                    })->get();
-                    $doctorstoreturn = collect();
-                    foreach($doctormedicalsymptoms as $doctormedicalsymptom) {
-                        $doctormedicalsymptom->id = $doctormedicalsymptom->doctor->id;
-                        $doctormedicalsymptom->name = $doctormedicalsymptom->doctor->name;
-                        $doctormedicalsymptom->degree = $doctormedicalsymptom->doctor->degree;
-                        $doctormedicalsymptom->serial = $doctormedicalsymptom->doctor->serial;
-                        $doctormedicalsymptom->helpline = $doctormedicalsymptom->doctor->helpline;
-                        $doctormedicalsymptom->image = $doctormedicalsymptom->doctor->doctorimage ? $doctormedicalsymptom->doctor->doctorimage->image : '';
-                        $doctormedicalsymptom->makeHidden('doctor', 'medicaldepartment_id', 'doctor_id', 'created_at', 'updated_at');
-                        $doctorstoreturn->push($doctormedicalsymptom);
-                        // dd($doctorstoreturn);
-                    }
-                    return $doctorstoreturn;
-                });
+                $doctormedicalsymptoms = Doctormedicalsymptom::where('medicalsymptom_id', $medicalitemid)
+                                                ->whereHas('doctor', function($q) use ($district_id, $upazilla_id){
+                                                    $q->where('district_id', $district_id);
+                                                    $q->where('upazilla_id', $upazilla_id);
+                                                })->get();
+                $doctorstoreturn = collect();
+                foreach($doctormedicalsymptoms as $doctormedicalsymptom) {
+                    $doctormedicalsymptom->id = $doctormedicalsymptom->doctor->id;
+                    $doctormedicalsymptom->name = $doctormedicalsymptom->doctor->name;
+                    $doctormedicalsymptom->degree = $doctormedicalsymptom->doctor->degree;
+                    $doctormedicalsymptom->serial = $doctormedicalsymptom->doctor->serial;
+                    $doctormedicalsymptom->helpline = $doctormedicalsymptom->doctor->helpline;
+                    $doctormedicalsymptom->image = $doctormedicalsymptom->doctor->doctorimage ? $doctormedicalsymptom->doctor->doctorimage->image : '';
+                    $doctormedicalsymptom->makeHidden('doctor', 'medicaldepartment_id', 'doctor_id', 'created_at', 'updated_at');
+                    $doctorstoreturn->push($doctormedicalsymptom);
+                    // dd($doctorstoreturn);
+                }
+                return $doctorstoreturn;
+            });
             
             // dd($courses);
             return response()->json([
