@@ -131,7 +131,7 @@ class DoctorController extends Controller
                 $doctormedicaldepartment->medicaldepartment_id = $medicaldepartment_id;
                 $doctormedicaldepartment->save();
 
-                Cache::forget('doctors'. $$doctor->id);
+                Cache::forget('doctors'. $$medicaldepartment_id);
             }            
         }
 
@@ -167,7 +167,7 @@ class DoctorController extends Controller
 
         Cache::forget('doctors'. $request->district_id);
         Cache::forget('doctors'. $request->district_id . $request->upazilla_id);
-        Cache::forget('hospitaldoctors'. $$doctor->id);
+        Cache::forget('hospitaldoctors'. $doctor->id);
         Session::flash('success', 'Doctors added successfully!');
         return redirect()->route('dashboard.doctors');
     }
