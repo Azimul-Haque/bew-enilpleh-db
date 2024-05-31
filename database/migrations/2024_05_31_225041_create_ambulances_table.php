@@ -18,7 +18,6 @@ class CreateAmbulancesTable extends Migration
             $table->integer('district_id')->unsigned();
             $table->integer('upazilla_id')->unsigned();
             $table->string('name');
-            $table->string('category');
             $table->string('mobile');
             $table->timestamps();
         });
