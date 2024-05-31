@@ -37,7 +37,7 @@ class AmbulanceController extends Controller
 
         $districts = District::all();
                 
-        return view('dashboard.ambulances.index')
+        return view('dashboard.eshebas.index')
                             ->withEshebascount($eshebascount)
                             ->withEshebas($eshebas)
                             ->withDistricts($districts);
