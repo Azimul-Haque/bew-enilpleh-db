@@ -119,8 +119,8 @@
                                     <div class="input-group mb-3">
                                       <select name="category" class="form-control" required>
                                           <option selected="" disabled="" value="">রক্তদাতা প্রতিষ্ঠানের ধরন</option>
-                                          <option value="1">ব্লাড ব্যাংক</option>
-                                          <option value="2">রক্তদাতা সংগঠন</option>
+                                          <option value="1" @if($blooddonor->category == 1) selected @endif>ব্লাড ব্যাংক</option>
+                                          <option value="2" @if($blooddonor->category == 2) selected @endif>রক্তদাতা সংগঠন</option>
                                       </select>
                                       <div class="input-group-append">
                                           <div class="input-group-text"><span class="fas fa-star-half-alt"></span></div>
