@@ -104,16 +104,7 @@
                                             <div class="input-group-text"><span class="fas fa-hospital"></span></div>
                                         </div>
                                     </div>
-                                    <div class="input-group mb-3">
-                                      <select name="category" class="form-control" required>
-                                          <option selected="" disabled="" value="">অ্যাম্বুলেন্স প্রতিষ্ঠানের ধরন</option>
-                                          <option value="1" @if($ambulance->category == 1) selected @endif>ব্লাড ব্যাংক</option>
-                                          <option value="2" @if($ambulance->category == 2) selected @endif>অ্যাম্বুলেন্স সংগঠন</option>
-                                      </select>
-                                      <div class="input-group-append">
-                                          <div class="input-group-text"><span class="fas fa-star-half-alt"></span></div>
-                                      </div>
-                                    </div>
+                                    
                                     <div class="input-group mb-3">
                                         <input type="number"
                                                name="mobile"
@@ -124,7 +115,14 @@
                                         <div class="input-group-append">
                                             <div class="input-group-text"><span class="fas fa-mobile"></span></div>
                                         </div>
-                                    </div>           
+                                    </div>  
+                                    <div class="form-group ">
+                                        <label for="image">ছবি (প্রয়োজনে, ৩০০ x ৩০০ সাইজের, ২ মেগাবাইটের মধ্যে)</label>
+                                        <input type="file" id="image" name="image" accept="image/*">
+                                    </div>
+                                    <center>
+                                        <img src="{{ asset('images/placeholder.png')}}" id='img-upload' style="width: 250px; height: auto;" class="img-responsive" />
+                                    </center>            
                                 
                               </div>
                               <div class="modal-footer">
