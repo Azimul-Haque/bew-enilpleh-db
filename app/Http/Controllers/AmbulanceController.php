@@ -104,8 +104,8 @@ class AmbulanceController extends Controller
             $ambulanceimage->save();
         }
         
-        Cache::forget('ambulances'. $request->category . $request->district_id);
-        Cache::forget('ambulances'. $request->category . $request->district_id. $request->upazilla_id);
+        Cache::forget('ambulances' . $request->district_id);
+        Cache::forget('ambulances' . $request->district_id. $request->upazilla_id);
         Session::flash('success', 'Ambulance added successfully!');
         return redirect()->route('dashboard.ambulances');
     }
