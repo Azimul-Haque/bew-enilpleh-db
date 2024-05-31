@@ -6,7 +6,8 @@ use Illuminate\Http\Request;
 
 use App\District;
 use App\Upazilla;
-use App\Blooddonor;
+use App\Ambulance;
+use App\Ambulanceimage;
 
 use Carbon\Carbon;
 use DB;
@@ -32,13 +33,13 @@ class AmbulanceController extends Controller
     public function index()
     {
         $ambulancescount = Blooddonor::count();
-        $blooddonors = Blooddonor::orderBy('id', 'desc')->paginate(10);
+        $ambulances = Blooddonor::orderBy('id', 'desc')->paginate(10);
 
         $districts = District::all();
                 
-        return view('dashboard.blooddonors.index')
+        return view('dashboard.ambulances.index')
                             ->withAmbulancescount($ambulancescount)
-                            ->withBlooddonors($blooddonors)
+                            ->withAmbulances($ambulances)
                             ->withDistricts($districts);
     }
 
@@ -68,7 +69,7 @@ class AmbulanceController extends Controller
 
         $districts = District::all();
         
-        return view('dashboard.blooddonors.index')
+        return view('dashboard.ambulances.index')
                             ->withAmbulancescount($ambulancescount)
                             ->withAmbulances($ambulances)
                             ->withDistricts($districts);
