@@ -99,7 +99,7 @@ class AmbulanceController extends Controller
             $location = public_path('images/eshebas/'. $filename);
             Image::make($image)->fit(200, 200)->save($location);
             $eshebaimage              = new Eshebaimage;
-            $eshebaimage->ambulance_id   = $esheba->id;
+            $eshebaimage->esheba_id   = $esheba->id;
             $eshebaimage->image       = $filename;
             $eshebaimage->save();
         }
@@ -138,7 +138,7 @@ class AmbulanceController extends Controller
             $filename = random_string(5) . time() .'.' . "webp";
             $location = public_path('images/eshebas/'. $filename);
             Image::make($image)->fit(200, 200)->save($location);
-            $eshebaimage              = Eshebaimage::where('ambulance_id', $esheba->id)->first();
+            $eshebaimage              = Eshebaimage::where('esheba_id', $esheba->id)->first();
             $eshebaimage->image       = $filename;
             $eshebaimage->save();
         }
