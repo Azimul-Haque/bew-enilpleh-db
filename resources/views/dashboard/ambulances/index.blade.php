@@ -247,7 +247,14 @@
                       <div class="input-group-append">
                           <div class="input-group-text"><span class="fas fa-mobile"></span></div>
                       </div>
-                  </div>           
+                  </div>
+                  <div class="form-group ">
+                      <label for="image">ছবি/ ভিজিটিং কার্ড/ ব্যানার (প্রয়োজনে, 300h x 175w সাইজের, ২ মেগাবাইটের মধ্যে)</label>
+                      <input type="file" id="image" name="image" accept="image/*">
+                  </div>
+                  <center>
+                      <img src="{{ asset('images/placeholder.png')}}" id='img-upload' style="width: 250px; height: auto;" class="img-responsive" />
+                  </center>        
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-dismiss="modal">ফিরে যান</button>
