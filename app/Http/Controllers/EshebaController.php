@@ -60,16 +60,12 @@ class EshebaController extends Controller
     public function storeEsheba(Request $request)
     {
         $this->validate($request,array(
-            'district_id'            => 'required',
-            'upazilla_id'            => 'required',
             'name'                => 'required|string|max:191',
             'ur;'                 => 'required|string|max:191',
             'image'               => 'sometimes',
         ));
 
         $esheba = new Esheba;
-        $esheba->district_id = $request->district_id;
-        $esheba->upazilla_id = $request->upazilla_id;
         $esheba->name = $request->name;
         $esheba->mobile = $request->mobile;
         $esheba->save();
@@ -95,16 +91,12 @@ class EshebaController extends Controller
     public function updateEsheba(Request $request, $id)
     {
         $this->validate($request,array(
-            'district_id'            => 'required',
-            'upazilla_id'            => 'required',
             'name'                => 'required|string|max:191',
             'mobile'              => 'required|string|max:191',
             'image'               => 'sometimes',
         ));
 
         $esheba = Esheba::find($id);
-        $esheba->district_id = $request->district_id;
-        $esheba->upazilla_id = $request->upazilla_id;
         $esheba->name = $request->name;
         $esheba->url = $request->url;
         $esheba->save();
