@@ -80,7 +80,7 @@ class BlooddonorsController extends Controller
             'district_id'            => 'required',
             'upazilla_id'            => 'required',
             'name'                => 'required|string|max:191',
-            'degree'                => 'required|string|max:191',
+            'mobile'              => 'required|string|max:191',
             'serial'           => 'required',
             'helpline'              => 'required',
             'image'       => 'sometimes|image|mimes:jpeg,png,jpg,gif,svg,webp|max:2000',
