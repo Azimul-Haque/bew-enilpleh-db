@@ -481,9 +481,8 @@ class APIController extends Controller
                $eshebas = Esheba::get();
                foreach($eshebas as $esheba) {
                    $esheba->image = $esheba->eshebaimage ? $esheba->eshebaimage->image : '';
-                   $esheba->makeHidden('district', 'upazilla', 'ambulanceimage', 'created_at', 'updated_at');
+                   $esheba->makeHidden('eshebaimage', 'created_at', 'updated_at');
                }
-               $eshebas->makeHidden('created_at', 'updated_at');
 
                return $eshebas;
             });
