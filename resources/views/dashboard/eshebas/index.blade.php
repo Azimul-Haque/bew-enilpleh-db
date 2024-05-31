@@ -100,8 +100,8 @@
                                         <input type="file" id="image" name="image" accept="image/*">
                                     </div>
                                     <center>
-                                      @if($esheba->ambulanceimage != null)
-                                        <img src="{{ asset('images/eshebas/' . $esheba->ambulanceimage->image)}}" id='img-upload' style="width: 250px; height: auto;" class="img-responsive" />
+                                      @if($esheba->eshebaimage != null)
+                                        <img src="{{ asset('images/eshebas/' . $esheba->eshebaimage->image)}}" id='img-upload' style="width: 250px; height: auto;" class="img-responsive" />
                                       @else
                                         <img src="{{ asset('images/placeholder.png')}}" id='img-upload' style="width: 250px; height: auto;" class="img-responsive" />
                                       @endif
