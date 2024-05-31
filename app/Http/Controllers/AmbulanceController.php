@@ -89,13 +89,12 @@ class AmbulanceController extends Controller
         $ambulance->district_id = $request->district_id;
         $ambulance->upazilla_id = $request->upazilla_id;
         $ambulance->name = $request->name;
-        $ambulance->category = $request->category;
         $ambulance->mobile = $request->mobile;
         $ambulance->save();
 
         
-        Cache::forget('blooddonors'. $request->category . $request->district_id);
-        Cache::forget('blooddonors'. $request->category . $request->district_id. $request->upazilla_id);
+        // Cache::forget('blooddonors'. $request->category . $request->district_id);
+        // Cache::forget('blooddonors'. $request->category . $request->district_id. $request->upazilla_id);
         Session::flash('success', 'Blood Donor added successfully!');
         return redirect()->route('dashboard.ambulances');
     }
