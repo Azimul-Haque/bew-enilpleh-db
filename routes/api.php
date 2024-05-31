@@ -31,6 +31,13 @@ Route::get('/getdoctors/{softtoken}/{medicalitemid}/{datatype}/{district_id}/{up
 Route::get('/gethospitaldoctors/{softtoken}/{hospital_id}', 'APIController@getHospitalDoctors')->name('api.gethospitaldoctors');
 
 
+
+
+
+
+
+
+
 Route::post('/generateotp', 'APIController@generateOTP')->name('api.generateotp');
 Route::post('/loginorcreate', 'APIController@loginOrCreate')->name('api.loginorcreate');
 
