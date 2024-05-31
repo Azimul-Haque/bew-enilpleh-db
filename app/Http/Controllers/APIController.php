@@ -32,6 +32,7 @@ use App\Medicalsymptom;
 use App\Doctormedicaldepartment;
 use App\Doctormedicalsymptom;
 use App\Blooddonor;
+use App\Ambulance;
 
 use Hash;
 use Carbon\Carbon;
