@@ -128,18 +128,6 @@ class AmbulanceController extends Controller
 
         // image upload
         if($request->hasFile('image')) {
-            $image    = $request->file('image');
-            $filename = random_string(5) . time() .'.' . "webp";
-            $location = public_path('images/ambulances/'. $filename);
-            Image::make($image)->fit(200, 200)->save($location);
-            $ambulanceimage              = new Ambulanceimage;
-            $ambulanceimage->ambulance_id   = $ambulance->id;
-            $ambulanceimage->image       = $filename;
-            $ambulanceimage->save();
-        }
-
-        // image upload
-        if($request->hasFile('image')) {
             $image_path = public_path('images/ambulances/'. $blooddonor->ambulanceimage->image);
             if(File::exists($image_path)) {
                 File::delete($image_path);
