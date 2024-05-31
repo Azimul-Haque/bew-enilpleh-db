@@ -234,7 +234,7 @@
                              value="{{ old('name') }}"
                              placeholder="ই-সেবার নাম" required>
                       <div class="input-group-append">
-                          <div class="input-group-text"><span class="fas fa-hospital"></span></div>
+                          <div class="input-group-text"><span class="fas fa-hand-holding-medical"></span></div>
                       </div>
                   </div>
                   <div class="input-group mb-3">
