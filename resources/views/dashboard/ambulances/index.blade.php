@@ -232,7 +232,7 @@
                              name="name"
                              class="form-control"
                              value="{{ old('name') }}"
-                             placeholder="অ্যাম্বুলেন্স প্রতিষ্ঠানের নাম" required>
+                             placeholder="অ্যাম্বুলেন্সের নাম" required>
                       <div class="input-group-append">
                           <div class="input-group-text"><span class="fas fa-hospital"></span></div>
                       </div>
