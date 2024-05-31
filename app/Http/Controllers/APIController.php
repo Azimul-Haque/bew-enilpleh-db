@@ -473,8 +473,28 @@ class APIController extends Controller
         }
     }
 
-    public function getEshebas() {
-        
+    public function getEshebas($softtoken)
+    {
+        if($softtoken == env('SOFT_TOKEN')) {
+            try {
+              $districts = Cache::remember('districts', 365 * 24 * 60 * 60, function ()  {
+                   $districts = District::get();
+                   return $districts;
+              });
+              // return $districts;
+              // return view('dashboard.hospitals.print')->withDistricts($districts);
+
+              return response()->json($districts, 200, ['Content-Type' => 'application/json;charset=UTF-8', 'Charset' => 'utf-8'],
+        JSON_UNESCAPED_UNICODE);
+            }
+            catch (\Exception $e) {
+              return $e->getMessage();
+            }
+        } else {
+            return response()->json([
+                'success' => false
+            ]);
+        }
     }
 
 
