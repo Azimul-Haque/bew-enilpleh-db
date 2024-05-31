@@ -120,6 +120,7 @@ class AmbulanceController extends Controller
             'image'              => 'sometimes',
         ));
 
+        $ambulance = Ambulance::find($id);
         $ambulance->district_id = $request->district_id;
         $ambulance->upazilla_id = $request->upazilla_id;
         $ambulance->name = $request->name;
