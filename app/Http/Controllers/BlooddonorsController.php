@@ -99,7 +99,7 @@ class BlooddonorsController extends Controller
         return redirect()->route('dashboard.blooddonors');
     }
 
-    public function storeBloodDonor(Request $request, $id)
+    public function updateBloodDonor(Request $request, $id)
     {
         $this->validate($request,array(
             'district_id'         => 'required',
