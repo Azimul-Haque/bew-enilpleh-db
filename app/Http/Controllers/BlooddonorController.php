@@ -21,7 +21,7 @@ use OneSignal;
 use Purifier;
 use Cache;
 
-class BlooddonorsController extends Controller
+class BlooddonorController extends Controller
 {
     public function __construct()
     {
