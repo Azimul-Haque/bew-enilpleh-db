@@ -103,8 +103,7 @@
                                       @if($esheba->eshebaimage != null)
                                         <img src="{{ asset('images/eshebas/' . $esheba->eshebaimage->image)}}" id='img-upload' style="width: 250px; height: auto;" class="img-responsive" />
                                       @else
-                                        <img src="{{ asset('images/placeholder.png')}}" style="width: 250px; height: auto;" class="img-responsive" />
-                                        {{-- id='img-upload' --}}
+                                        <img src="{{ asset('images/placeholder.png')}}" id='img-upload' style="width: 250px; height: auto;" class="img-responsive" />
                                       @endif
                                     </center>            
                                 
