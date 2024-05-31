@@ -39,9 +39,6 @@ class BlooddonorsController extends Controller
         return view('dashboard.doctors.index')
                             ->withBlooddonorscount($blooddonorscount)
                             ->withBlooddonors($blooddonors)
-                            ->withDistricts($districts)
-                            ->withMedicaldepartments($medicaldepartments)
-                            ->withMedicalsymptoms($medicalsymptoms)
-                            ->withHospitals($hospitals);
+                            ->withDistricts($districts);
     }
 }
