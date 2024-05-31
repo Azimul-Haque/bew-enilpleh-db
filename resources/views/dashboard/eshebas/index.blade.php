@@ -46,10 +46,9 @@
                   <tr>
                     <td>
                       {{ $esheba->name }}<br/>
-                      <span class="badge bg-success"><i class="fas fa-phone"></i> {{ $esheba->mobile }}</span>
                     </td>
                     <td>
-                      <a href="{{ $esheba->url }}" target="_blank">{{ $esheba->mobile }} (ক্লিক করুন)</a>
+                      <a href="{{ $esheba->url }}" target="_blank">{{ $esheba->name }} (ক্লিক করুন)</a>
                     </td>
                     <td align="right" width="40%">
                       {{-- <button type="button" class="btn btn-warning btn-sm" data-toggle="modal" data-target="#notifModal{{ $esheba->id }}">
