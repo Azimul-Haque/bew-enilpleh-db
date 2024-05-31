@@ -362,7 +362,7 @@ class APIController extends Controller
                  foreach($blooddonors as $blooddonor) {
                      $blooddonor->district = $blooddonor->district->name_bangla;
                      $blooddonor->upazilla = $blooddonor->upazilla->name_bangla;
-                     $blooddonor->makeHidden('district', 'upazilla');
+                     $blooddonor->makeHidden('district', 'upazilla', 'created_at', 'updated_at');
                  }
                  return $blooddonors;
             });
