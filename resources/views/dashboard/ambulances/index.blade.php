@@ -202,7 +202,7 @@
               <span aria-hidden="true">&times;</span>
             </button>
           </div>
-          <form method="post" action="{{ route('dashboard.ambulances.store') }}">
+          <form method="post" action="{{ route('dashboard.ambulances.store') }}" enctype='multipart/form-data'>
             <div class="modal-body">
               
                   @csrf
