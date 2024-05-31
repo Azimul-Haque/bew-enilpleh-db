@@ -6,8 +6,8 @@ use Illuminate\Http\Request;
 
 use App\District;
 use App\Upazilla;
-use App\Ambulance;
-use App\Ambulanceimage;
+use App\Esheba;
+use App\Eshebaimage;
 
 use Carbon\Carbon;
 use DB;
