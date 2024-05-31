@@ -74,7 +74,7 @@ class AmbulanceController extends Controller
                             ->withDistricts($districts);
     }
 
-    public function storeBloodDonor(Request $request)
+    public function storeAmbulance(Request $request)
     {
         $this->validate($request,array(
             'district_id'            => 'required',
@@ -99,7 +99,7 @@ class AmbulanceController extends Controller
         return redirect()->route('dashboard.blooddonors');
     }
 
-    public function updateBloodDonor(Request $request, $id)
+    public function updateAmbulance(Request $request, $id)
     {
         $this->validate($request,array(
             'district_id'         => 'required',
