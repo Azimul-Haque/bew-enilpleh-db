@@ -1,5 +1,5 @@
 @extends('layouts.app')
-@section('title') ড্যাশবোর্ড | অ্যাম্বুলেন্স তালিকা @endsection
+@section('title') ড্যাশবোর্ড | ই-সেবা তালিকা @endsection
 
 @section('third_party_stylesheets')
    {{--  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/icheck-bootstrap@3.0.1/icheck-bootstrap.min.css">
@@ -7,16 +7,16 @@
 @endsection
 
 @section('content')
-  @section('page-header') অ্যাম্বুলেন্স তালিকা (মোট {{ bangla($ambulancescount) }} টি) @endsection
+  @section('page-header') ই-সেবা তালিকা (মোট {{ bangla($ambulancescount) }} টি) @endsection
     <div class="container-fluid">
     <div class="card">
           <div class="card-header">
-            <h3 class="card-title">অ্যাম্বুলেন্স তালিকা</h3>
+            <h3 class="card-title">ই-সেবা তালিকা</h3>
 
             <div class="card-tools">
               <form class="form-inline form-group-lg" action="">
                 <div class="form-group">
-                  <input type="search-param" class="form-control form-control-sm" placeholder="অ্যাম্বুলেন্স খুঁজুন" id="search-param" required>
+                  <input type="search-param" class="form-control form-control-sm" placeholder="ই-সেবা খুঁজুন" id="search-param" required>
                 </div>
                 <button type="button" id="search-button" class="btn btn-default btn-sm" style="margin-left: 5px;">
                   <i class="fas fa-search"></i> খুঁজুন
@@ -65,7 +65,7 @@
                         <div class="modal-dialog" role="document">
                           <div class="modal-content">
                             <div class="modal-header bg-primary">
-                              <h5 class="modal-title" id="editUserModalLabel">অ্যাম্বুলেন্স তথ্য হালনাগাদ</h5>
+                              <h5 class="modal-title" id="editUserModalLabel">ই-সেবা তথ্য হালনাগাদ</h5>
                               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                 <span aria-hidden="true">&times;</span>
                               </button>
@@ -99,7 +99,7 @@
                                                name="name"
                                                class="form-control"
                                                value="{{ $ambulance->name }}"
-                                               placeholder="অ্যাম্বুলেন্সের নাম" required>
+                                               placeholder="ই-সেবার নাম" required>
                                         <div class="input-group-append">
                                             <div class="input-group-text"><span class="fas fa-hospital"></span></div>
                                         </div>
@@ -150,13 +150,13 @@
                           <div class="modal-dialog" role="document">
                             <div class="modal-content">
                               <div class="modal-header bg-danger">
-                                <h5 class="modal-title" id="deleteUserModalLabel">অ্যাম্বুলেন্স ডিলেট</h5>
+                                <h5 class="modal-title" id="deleteUserModalLabel">ই-সেবা ডিলেট</h5>
                                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                   <span aria-hidden="true">&times;</span>
                                 </button>
                               </div>
                               <div class="modal-body">
-                                আপনি কি নিশ্চিতভাবে এই অ্যাম্বুলেন্সকে ডিলেট করতে চান?<br/>
+                                আপনি কি নিশ্চিতভাবে এই ই-সেবাকে ডিলেট করতে চান?<br/>
                                 <center>
                                     <big><b>{{ $ambulance->name }}</b></big><br/>
                                     <small><i class="fas fa-phone"></i> {{ $ambulance->mobile }}</small>
@@ -198,7 +198,7 @@
       <div class="modal-dialog" role="document">
         <div class="modal-content">
           <div class="modal-header bg-success">
-            <h5 class="modal-title" id="addUserModalLabel">নতুন অ্যাম্বুলেন্স যোগ</h5>
+            <h5 class="modal-title" id="addUserModalLabel">নতুন ই-সেবা যোগ</h5>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
@@ -232,7 +232,7 @@
                              name="name"
                              class="form-control"
                              value="{{ old('name') }}"
-                             placeholder="অ্যাম্বুলেন্সের নাম" required>
+                             placeholder="ই-সেবার নাম" required>
                       <div class="input-group-append">
                           <div class="input-group-text"><span class="fas fa-hospital"></span></div>
                       </div>
