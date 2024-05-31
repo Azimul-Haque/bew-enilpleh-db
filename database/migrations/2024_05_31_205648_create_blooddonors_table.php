@@ -15,6 +15,11 @@ class CreateBlooddonorsTable extends Migration
     {
         Schema::create('blooddonors', function (Blueprint $table) {
             $table->id();
+            $table->integer('district_id')->unsigned();
+            $table->integer('upazilla_id')->unsigned();
+            $table->string('name');
+            $table->string('category');
+            $table->string('mobile');
             $table->timestamps();
         });
     }
