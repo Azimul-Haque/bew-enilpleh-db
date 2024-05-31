@@ -46,7 +46,7 @@
 <li class="nav-item">
     <a href="{{ route('dashboard.ambulances') }}" class="nav-link {{ Request::is('dashboard/ambulances') ? 'active' : '' }} {{ Request::is('dashboard/ambulances/*') ? 'active' : '' }}">
         <i class="nav-icon fas fa-tint"></i>
-        <p>রক্তদাতা তালিকা</p>
+        <p>অ্যাম্বুলেন্স</p>
     </a>
 </li>
 @endif
