@@ -115,7 +115,7 @@
                                             <div class="input-group-text"><span class="fas fa-mobile"></span></div>
                                         </div>
                                     </div>  
-                                    <div class="form-group ">
+                                    <div class="">
                                         <label for="image">ছবি (প্রয়োজনে, ৩০০ x ৩০০ সাইজের, ২ মেগাবাইটের মধ্যে)</label>
                                         <input type="file" id="image" name="image" accept="image/*">
                                     </div>
