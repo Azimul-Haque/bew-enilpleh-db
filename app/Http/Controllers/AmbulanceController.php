@@ -120,13 +120,24 @@ class AmbulanceController extends Controller
             'image'              => 'sometimes',
         ));
 
-        $blooddonor = Ambulance::find($id);;
-        $blooddonor->district_id = $request->district_id;
-        $blooddonor->upazilla_id = $request->upazilla_id;
-        $blooddonor->name = $request->name;
-        $blooddonor->category = $request->category;
-        $blooddonor->mobile = $request->mobile;
-        $blooddonor->save();
+        $ambulance->district_id = $request->district_id;
+        $ambulance->upazilla_id = $request->upazilla_id;
+        $ambulance->name = $request->name;
+        $ambulance->mobile = $request->mobile;
+        $ambulance->save();
+
+        // image upload
+        if($request->hasFile('image')) {
+            $image    = $request->file('image');
+            $filename = random_string(5) . time() .'.' . "webp";
+            $location = public_path('images/ambulances/'. $filename);
+            Image::make($image)->fit(200, 200)->save($location);
+            $ambulanceimage              = new Ambulanceimage;
+            $ambulanceimage->ambulance_id   = $ambulance->id;
+            $ambulanceimage->image       = $filename;
+            $ambulanceimage->save();
+        }
+        
 
         // image upload
         if($request->hasFile('image')) {
