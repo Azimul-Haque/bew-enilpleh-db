@@ -15,6 +15,12 @@ class CreateBloordonorsTable extends Migration
     {
         Schema::create('bloordonors', function (Blueprint $table) {
             $table->id();
+            $table->integer('district_id')->unsigned();
+            $table->integer('upazilla_id')->unsigned();
+            $table->string('name');
+            $table->string('degree');
+            $table->string('serial');
+            $table->string('helpline');
             $table->timestamps();
         });
     }
