@@ -99,7 +99,7 @@ class AmbulanceController extends Controller
             $location = public_path('images/ambulances/'. $filename);
             Image::make($image)->fit(250, 250)->save($location);
             $ambulanceimage              = new Ambulanceimage;
-            $ambulanceimage->doctor_id   = $ambulance->id;
+            $ambulanceimage->ambulance_id   = $ambulance->id;
             $ambulanceimage->image       = $filename;
             $ambulanceimage->save();
         }
