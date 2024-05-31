@@ -79,14 +79,9 @@ class BlooddonorsController extends Controller
         $this->validate($request,array(
             'district_id'            => 'required',
             'upazilla_id'            => 'required',
+            'category'            => 'required',
             'name'                => 'required|string|max:191',
             'mobile'              => 'required|string|max:191',
-            'serial'           => 'required',
-            'helpline'              => 'required',
-            'image'       => 'sometimes|image|mimes:jpeg,png,jpg,gif,svg,webp|max:2000',
-            'medicaldepartments'            => 'required',
-            'medicalsymptoms'            => 'required',
-            'hospitals'            => 'required',
         ));
 
         $doctor = new Doctor;
