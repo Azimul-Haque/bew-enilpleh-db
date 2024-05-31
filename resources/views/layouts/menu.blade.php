@@ -36,7 +36,7 @@
 @if(Auth::user()->role == 'admin')
 <li class="nav-item">
     <a href="{{ route('dashboard.blooddonors') }}" class="nav-link {{ Request::is('dashboard/blooddonors') ? 'active' : '' }} {{ Request::is('dashboard/blooddonors/*') ? 'active' : '' }}">
-        <i class="nav-icon fas fa-user-md"></i>
+        <i class="nav-icon fas fa-tint"></i>
         <p>রক্তদাতা তালিকা</p>
     </a>
 </li>
