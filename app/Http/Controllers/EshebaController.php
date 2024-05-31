@@ -117,8 +117,7 @@ class EshebaController extends Controller
         }
 
         
-        Cache::forget('eshebas'. $request->district_id);
-        Cache::forget('eshebas'. $request->district_id. $request->upazilla_id);
+        Cache::forget('eshebas');
         Session::flash('success', 'E-sheba updated successfully!');
         return redirect()->route('dashboard.eshebas');
     }
