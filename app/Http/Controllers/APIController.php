@@ -348,12 +348,12 @@ class APIController extends Controller
         }
     }
 
-    public function getBloodDonorsDistrict($softtoken, $district_id)
+    public function getBloodDonorsDistrict($softtoken, $category, $district_id)
     {
         if($softtoken == env('SOFT_TOKEN'))
         {
-            $blooddonors = Cache::remember('blooddonors' . $district_id, 30 * 24 * 60 * 60, function () use ($district_id) {
-                 $blooddonors = Hospital::where('hospital_type', $hospital_type)
+            $blooddonors = Cache::remember('blooddonors'.$category . $district_id, 30 * 24 * 60 * 60, function () use ($category, $district_id) {
+                 $blooddonors = Hospital::where('category', $category)
                              ->where('district_id', $district_id)
                              ->orderBy('id', 'desc')
                              ->get();
