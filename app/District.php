@@ -15,4 +15,8 @@ class District extends Model
     public function doctors(){
         return $this->hasMany('App\Doctor');
     }
+
+    public function blooddonors(){
+        return $this->hasMany('App\Blooddonor');
+    }
 }
