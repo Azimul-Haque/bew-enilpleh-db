@@ -120,7 +120,7 @@ class BlooddonorsController extends Controller
         
         // Cache::forget('doctors'. $request->district_id);
         // Cache::forget('doctors'. $request->district_id . $request->upazilla_id);
-        Session::flash('success', 'Blood Donor added successfully!');
+        Session::flash('success', 'Blood Donor updated successfully!');
         return redirect()->route('dashboard.blooddonors');
     }
 
