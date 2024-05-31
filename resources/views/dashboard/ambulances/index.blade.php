@@ -71,7 +71,7 @@
                                 <span aria-hidden="true">&times;</span>
                               </button>
                             </div>
-                            <form method="post" action="{{ route('dashboard.blooddonors.update', $ambulance->id) }}">
+                            <form method="post" action="{{ route('dashboard.ambulances.update', $ambulance->id) }}">
                               <div class="modal-body">
                                 
                                     @csrf
@@ -164,7 +164,7 @@
                               </div>
                               <div class="modal-footer">
                                 <button type="button" class="btn btn-secondary" data-dismiss="modal">ফিরে যান</button>
-                                <a href="{{ route('dashboard.blooddonors.delete', $ambulance->id) }}" class="btn btn-danger">ডিলেট করুন</a>
+                                <a href="{{ route('dashboard.ambulances.delete', $ambulance->id) }}" class="btn btn-danger">ডিলেট করুন</a>
                               </div>
                             </div>
                           </div>
@@ -203,7 +203,7 @@
               <span aria-hidden="true">&times;</span>
             </button>
           </div>
-          <form method="post" action="{{ route('dashboard.blooddonors.store') }}">
+          <form method="post" action="{{ route('dashboard.ambulances.store') }}">
             <div class="modal-body">
               
                   @csrf
@@ -298,7 +298,7 @@
 
         $(document).on('click', '#search-button', function() {
           if($('#search-param').val() != '') {
-            var urltocall = '{{ route('dashboard.blooddonors') }}' +  '/' + $('#search-param').val();
+            var urltocall = '{{ route('dashboard.ambulances') }}' +  '/' + $('#search-param').val();
             location.href= urltocall;
           } else {
             $('#search-param').css({ "border": '#FF0000 2px solid'});
@@ -311,7 +311,7 @@
         $("#search-param").keyup(function(e) {
           if(e.which == 13) {
             if($('#search-param').val() != '') {
-              var urltocall = '{{ route('dashboard.blooddonors') }}' +  '/' + $('#search-param').val();
+              var urltocall = '{{ route('dashboard.ambulances') }}' +  '/' + $('#search-param').val();
               location.href= urltocall;
             } else {
               $('#search-param').css({ "border": '#FF0000 2px solid'});
