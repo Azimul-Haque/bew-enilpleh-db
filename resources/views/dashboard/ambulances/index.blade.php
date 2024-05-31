@@ -249,7 +249,7 @@
                       </div>
                   </div>
                   <div class="form-group ">
-                      <label for="image">ছবি/ ভিজিটিং কার্ড/ ব্যানার (প্রয়োজনে, 300h x 175w সাইজের, ২ মেগাবাইটের মধ্যে)</label>
+                      <label for="image">ছবি (প্রয়োজনে, ৩০০ x ৩০০ সাইজের, ২ মেগাবাইটের মধ্যে)</label>
                       <input type="file" id="image" name="image" accept="image/*">
                   </div>
                   <center>
