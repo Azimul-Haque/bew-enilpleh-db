@@ -354,10 +354,10 @@ class APIController extends Controller
         {
             $blooddonors = Cache::remember('blooddonors'.$category . $district_id, 30 * 24 * 60 * 60, function () use ($category, $district_id) {
                  $blooddonors = Blooddonor::where('category', $category)
-                             ->where('district_id', $district_id)
-                             ->orderBy('id', 'desc')
-                             ->get();
-                             // dd($blooddonors);
+                                 ->where('district_id', $district_id)
+                                 ->orderBy('id', 'desc')
+                                 ->get();
+                                 // dd($blooddonors);
                  foreach($blooddonors as $blooddonor) {
                      $blooddonor->district = $blooddonor->district->name_bangla;
                      $blooddonor->upazilla = $blooddonor->upazilla->name_bangla;
@@ -384,11 +384,11 @@ class APIController extends Controller
         {
             $blooddonors = Cache::remember('blooddonors'.$category . $district_id . $upazilla_id, 30 * 24 * 60 * 60, function () use ($category, $district_id, $upazilla_id) {
                  $blooddonors = Blooddonor::where('category', $category)
-                             ->where('district_id', $district_id)
-                             ->where('upazilla_id', $upazilla_id)
-                             ->orderBy('id', 'desc')
-                             ->get();
-                             // dd($blooddonors);
+                                 ->where('district_id', $district_id)
+                                 ->where('upazilla_id', $upazilla_id)
+                                 ->orderBy('id', 'desc')
+                                 ->get();
+                                 // dd($blooddonors);
                  foreach($blooddonors as $blooddonor) {
                      $blooddonor->district = $blooddonor->district->name_bangla;
                      $blooddonor->upazilla = $blooddonor->upazilla->name_bangla;
