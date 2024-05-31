@@ -81,8 +81,8 @@ class AmbulanceController extends Controller
             'district_id'            => 'required',
             'upazilla_id'            => 'required',
             'name'                => 'required|string|max:191',
-            'category'            => 'required',
             'mobile'              => 'required|string|max:191',
+            'mobile'              => 'sometimes',
         ));
 
         $blooddonor = new Ambulance;
