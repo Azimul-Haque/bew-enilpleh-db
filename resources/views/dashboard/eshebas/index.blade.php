@@ -78,23 +78,23 @@
                                         <input type="text"
                                                name="name"
                                                class="form-control"
-                                               value="{{ $esheba->name }}"
+                                               value="{{ old('name') }}"
                                                placeholder="ই-সেবার নাম" required>
                                         <div class="input-group-append">
-                                            <div class="input-group-text"><span class="fas fa-hospital"></span></div>
+                                            <div class="input-group-text"><span class="fas fa-hand-holding-medical"></span></div>
                                         </div>
                                     </div>
                                     <div class="input-group mb-3">
-                                        <input type="number"
-                                               name="mobile"
-                                               value="{{ $esheba->mobile }}"
-                                               autocomplete="off"
+                                        <input type="text"
+                                               name="url"
+                                               value="{{ old('url') }}"
                                                class="form-control"
-                                               placeholder="মোবাইল নম্বর" required>
+                                               placeholder="ই-সেবা লিংক (URL)" required>
                                         <div class="input-group-append">
-                                            <div class="input-group-text"><span class="fas fa-mobile"></span></div>
+                                            <div class="input-group-text"><span class="fas fa-external-link-alt"></span></div>
                                         </div>
-                                    </div>  
+                                    </div>
+                                     
                                     <div class="form-group">
                                         <label for="image">ছবি (প্রয়োজনে, ৩০০ x ৩০০ সাইজের, ২ মেগাবাইটের মধ্যে)</label>
                                         <input type="file" id="image" name="image" accept="image/*">
