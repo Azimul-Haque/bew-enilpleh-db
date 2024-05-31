@@ -444,14 +444,14 @@ class APIController extends Controller
     {
         if($softtoken == env('SOFT_TOKEN'))
         {
-            $blooddonors = Cache::remember('blooddonors' . $category . $district_id . $upazilla_id, 30 * 24 * 60 * 60, function () use ($category, $district_id, $upazilla_id) {
-                 $blooddonors = Blooddonor::where('category', $category)
+            $ambulances = Cache::remember('ambulances' . $category . $district_id . $upazilla_id, 30 * 24 * 60 * 60, function () use ($category, $district_id, $upazilla_id) {
+                 $ambulances = Blooddonor::where('category', $category)
                                  ->where('district_id', $district_id)
                                  ->where('upazilla_id', $upazilla_id)
                                  ->orderBy('id', 'desc')
                                  ->get();
-                                 // dd($blooddonors);
-                 foreach($blooddonors as $ambulance) {
+                                 // dd($ambulances);
+                 foreach($ambulances as $ambulance) {
                      $ambulance->districtname = $ambulance->district->name_bangla;
                      $ambulance->upazillaname = $ambulance->upazilla->name_bangla;
                      $ambulance->makeHidden('district', 'upazilla', 'ambulanceimage', 'created_at', 'updated_at');
@@ -462,7 +462,7 @@ class APIController extends Controller
             // dd($courses);
             return response()->json([
                 'success' => true,
-                'blooddonors' => $blooddonors,
+                'ambulances' => $ambulances,
             ]);
         } else {
             return response()->json([
