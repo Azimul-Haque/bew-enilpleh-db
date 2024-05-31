@@ -99,4 +99,29 @@ class BlooddonorsController extends Controller
         return redirect()->route('dashboard.blooddonors');
     }
 
+    public function storeBloodDonor(Request $request)
+    {
+        $this->validate($request,array(
+            'district_id'            => 'required',
+            'upazilla_id'            => 'required',
+            'name'                => 'required|string|max:191',
+            'category'            => 'required',
+            'mobile'              => 'required|string|max:191',
+        ));
+
+        $blooddonor = new Blooddonor;
+        $blooddonor->district_id = $request->district_id;
+        $blooddonor->upazilla_id = $request->upazilla_id;
+        $blooddonor->name = $request->name;
+        $blooddonor->category = $request->category;
+        $blooddonor->mobile = $request->mobile;
+        $blooddonor->save();
+
+        
+        // Cache::forget('doctors'. $request->district_id);
+        // Cache::forget('doctors'. $request->district_id . $request->upazilla_id);
+        Session::flash('success', 'Blood Donor added successfully!');
+        return redirect()->route('dashboard.blooddonors');
+    }
+
 }
