@@ -99,10 +99,10 @@ class AmbulanceController extends Controller
             $location = public_path('images/ambulances/'. $filename);
             // Image::make($image)->resize(350, null, function ($constraint) { $constraint->aspectRatio(); })->save($location);
             Image::make($image)->crop(250, 250)->save($location);
-            $doctorimage              = new Doctorimage;
-            $doctorimage->doctor_id = $doctor->id;
-            $doctorimage->image       = $filename;
-            $doctorimage->save();
+            $ambulanceimage              = new Ambulanceimage;
+            $ambulanceimage->doctor_id   = $ambulance->id;
+            $ambulanceimage->image       = $filename;
+            $ambulanceimage->save();
         }
 
 
