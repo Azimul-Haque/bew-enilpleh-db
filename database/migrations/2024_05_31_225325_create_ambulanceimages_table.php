@@ -17,7 +17,6 @@ class CreateAmbulanceimagesTable extends Migration
             $table->id();
             $table->integer('doctor_id');
             $table->string('image');
-            $table->timestamps();
         });
     }
 
