@@ -64,8 +64,6 @@
         $text = "ব্রাড ব্যাংক";
       } elseif($category == 2) {
         $text = "রক্তদাতা সংগঠন";
-      } elseif($category == 3) {
-        $text = "স্বাস্থ্য কমপ্লেক্স";
       }
       return $text;
   }
