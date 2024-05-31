@@ -79,8 +79,8 @@ class BlooddonorsController extends Controller
         $this->validate($request,array(
             'district_id'            => 'required',
             'upazilla_id'            => 'required',
-            'category'            => 'required',
             'name'                => 'required|string|max:191',
+            'category'            => 'required',
             'mobile'              => 'required|string|max:191',
         ));
 
@@ -88,9 +88,7 @@ class BlooddonorsController extends Controller
         $blooddonor->district_id = $request->district_id;
         $blooddonor->upazilla_id = $request->upazilla_id;
         $blooddonor->name = $request->name;
-        $blooddonor->degree = $request->degree;
-        $blooddonor->serial = $request->serial;
-        $blooddonor->helpline = $request->helpline;
+        $blooddonor->name = $request->name;
         $blooddonor->save();
 
         if(isset($request->medicaldepartments)){
