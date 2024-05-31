@@ -229,7 +229,7 @@
                   </div>
                   <div class="form-group ">
                       <label for="image">ছবি (প্রয়োজনে, ৩০০ x ৩০০ সাইজের, ২ মেগাবাইটের মধ্যে)</label><br/>
-                      <input type="file"  name="image" accept="image/*"> 
+                      <input type="file" name="image" accept="image/*"> 
                       {{-- id="image" --}}
                   </div>
                   <center>
