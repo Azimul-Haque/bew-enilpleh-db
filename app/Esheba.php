@@ -14,7 +14,7 @@ class Esheba extends Model
         return $this->belongsTo('App\Upazilla');
     }
 
-    public function ambulanceimage(){
-        return $this->hasOne('App\Ambulanceimage');
+    public function eshebaimage(){
+        return $this->hasOne('App\Eshebaimage');
     }
 }
