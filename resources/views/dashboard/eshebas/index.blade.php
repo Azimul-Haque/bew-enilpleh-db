@@ -78,7 +78,7 @@
                                         <input type="text"
                                                name="name"
                                                class="form-control"
-                                               value="{{ old('name') }}"
+                                               value="{{ $esheba->name }}"
                                                placeholder="ই-সেবার নাম" required>
                                         <div class="input-group-append">
                                             <div class="input-group-text"><span class="fas fa-hand-holding-medical"></span></div>
@@ -87,7 +87,7 @@
                                     <div class="input-group mb-3">
                                         <input type="text"
                                                name="url"
-                                               value="{{ old('url') }}"
+                                               value="{{ $esheba->url }}"
                                                class="form-control"
                                                placeholder="ই-সেবা লিংক (URL)" required>
                                         <div class="input-group-append">
