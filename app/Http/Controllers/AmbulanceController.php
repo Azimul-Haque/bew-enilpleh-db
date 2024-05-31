@@ -134,6 +134,8 @@ class AmbulanceController extends Controller
             if(File::exists($image_path)) {
                 File::delete($image_path);
                 dd($image_path);
+            } else {
+                return $image_path;
             }
             $image    = $request->file('image');
             $filename = random_string(5) . time() .'.' . "webp";
