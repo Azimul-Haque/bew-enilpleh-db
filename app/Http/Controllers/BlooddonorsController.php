@@ -47,15 +47,7 @@ class BlooddonorsController extends Controller
         $blooddonorscount = Doctor::where('name', 'LIKE', "%$search%")
                                   ->orWhere('degree', 'LIKE', "%$search%")
                                   ->orWhere('serial', 'LIKE', "%$search%")
-                                  ->orWhere('helpline', 'LIKE', "%$search%")
-                                  ->orWhereHas('district', function ($query) use ($search){
-                                      $query->where('name', 'like', '%'.$search.'%');
-                                      $query->orWhere('name_bangla', 'like', '%'.$search.'%');
-                                  })->orWhereHas('upazilla', function ($query) use ($search){
-                                      $query->where('name', 'like', '%'.$search.'%');
-                                      $query->orWhere('name_bangla', 'like', '%'.$search.'%');
-                                  })
-                                  ->count();
+                                  ->orWhere('helpline', 'LIKE', "%$search%")>count();
         $doctors = Doctor::where('name', 'LIKE', "%$search%")
                               ->orWhere('degree', 'LIKE', "%$search%")
                               ->orWhere('serial', 'LIKE', "%$search%")
