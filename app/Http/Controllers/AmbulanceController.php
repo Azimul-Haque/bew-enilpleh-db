@@ -130,7 +130,6 @@ class AmbulanceController extends Controller
         // image upload
         if($request->hasFile('image')) {
             $image_path = public_path('images/ambulances/'. $ambulance->ambulanceimage->image);
-            dd($image_path);
             if(File::exists($image_path)) {
                 File::delete($image_path);
             }
