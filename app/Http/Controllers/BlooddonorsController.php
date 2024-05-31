@@ -68,8 +68,6 @@ class BlooddonorsController extends Controller
 
         $districts = District::all();
         
-
-        
         return view('dashboard.blooddonors.index')
                             ->withBlooddonorscount($blooddonorscount)
                             ->withBlooddonors($blooddonors)
