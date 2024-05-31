@@ -69,7 +69,7 @@ class AmbulanceController extends Controller
 
         $districts = District::all();
         
-        return view('dashboard.ambulances.index')
+        return view('dashboard.eshebas.index')
                             ->withEshebascount($eshebascount)
                             ->withEshebas($eshebas)
                             ->withDistricts($districts);
@@ -96,7 +96,7 @@ class AmbulanceController extends Controller
         if($request->hasFile('image')) {
             $image    = $request->file('image');
             $filename = random_string(5) . time() .'.' . "webp";
-            $location = public_path('images/ambulances/'. $filename);
+            $location = public_path('images/eshebas/'. $filename);
             Image::make($image)->fit(200, 200)->save($location);
             $eshebaimage              = new Eshebaimage;
             $eshebaimage->ambulance_id   = $esheba->id;
@@ -104,10 +104,10 @@ class AmbulanceController extends Controller
             $eshebaimage->save();
         }
         
-        Cache::forget('ambulances' . $request->district_id);
-        Cache::forget('ambulances' . $request->district_id. $request->upazilla_id);
+        Cache::forget('eshebas' . $request->district_id);
+        Cache::forget('eshebas' . $request->district_id. $request->upazilla_id);
         Session::flash('success', 'Ambulance added successfully!');
-        return redirect()->route('dashboard.ambulances');
+        return redirect()->route('dashboard.eshebas');
     }
 
     public function updateEsheba(Request $request, $id)
