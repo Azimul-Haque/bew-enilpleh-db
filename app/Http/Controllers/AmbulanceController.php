@@ -91,6 +91,16 @@ class AmbulanceController extends Controller
         $ambulance->name = $request->name;
         $ambulance->mobile = $request->mobile;
 
+        if(isset($request->hospitals)){
+            foreach($request->hospitals as $hospital_id) {
+                $doctorhospital = new Doctorhospital;
+                $doctorhospital->doctor_id = $doctor->id;
+                $doctorhospital->hospital_id = $hospital_id;
+                $doctorhospital->save();
+
+                Cache::forget('hospitaldoctors'. $hospital_id);
+            }            
+        }
         
         $ambulance->save();
 
