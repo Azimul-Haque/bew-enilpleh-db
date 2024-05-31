@@ -262,9 +262,8 @@
                   <div class="input-group mb-3">
                     <select name="hospital_type" class="form-control" required>
                         <option selected="" disabled="" value="">রক্তদাতা প্রতিষ্ঠানের ধরন</option>
-                        <option value="1">মেডিকেল কলেজ ও রক্তদাতা</option>
-                        <option value="2">প্রাইভেট রক্তদাতা</option>
-                        <option value="3">স্বাস্থ্য কমপ্লেক্স</option>
+                        <option value="1">ব্লাড ব্যাংক</option>
+                        <option value="2">রক্তদাতা সংগঠন</option>
                     </select>
                     <div class="input-group-append">
                         <div class="input-group-text"><span class="fas fa-star-half-alt"></span></div>
