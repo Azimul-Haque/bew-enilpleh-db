@@ -22,7 +22,7 @@ use OneSignal;
 use Purifier;
 use Cache;
 
-class AmbulanceController extends Controller
+class EshebaController extends Controller
 {
     public function __construct()
     {
