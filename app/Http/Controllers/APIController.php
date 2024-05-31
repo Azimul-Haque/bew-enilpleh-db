@@ -395,6 +395,7 @@ class APIController extends Controller
                      $blooddonor->district = $blooddonor->district->name_bangla;
                      $blooddonor->upazilla = $blooddonor->upazilla->name_bangla;
                      $blooddonor->makeHidden('district', 'upazilla');
+                     $blooddonor->push($blooddonor);
                  }
                  return $blooddonors;
             });
