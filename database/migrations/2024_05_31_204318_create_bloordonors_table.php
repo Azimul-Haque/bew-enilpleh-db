@@ -19,9 +19,7 @@ class CreateBloordonorsTable extends Migration
             $table->integer('upazilla_id')->unsigned();
             $table->string('name');
             $table->string('category');
-            $table->string('degree');
-            $table->string('serial');
-            $table->string('helpline');
+            $table->string('mobile');
             $table->timestamps();
         });
     }
