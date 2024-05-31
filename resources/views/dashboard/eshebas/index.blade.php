@@ -42,26 +42,26 @@
                 </tr>
               </thead>
               <tbody>
-                @foreach($eshebas as $ambulance)
+                @foreach($eshebas as $esheba)
                   <tr>
                     <td>
-                      {{ $ambulance->name }}<br/>
-                      <span class="badge bg-success"><i class="fas fa-phone"></i> {{ $ambulance->mobile }}</span>
+                      {{ $esheba->name }}<br/>
+                      <span class="badge bg-success"><i class="fas fa-phone"></i> {{ $esheba->mobile }}</span>
                     </td>
                     <td>
-                      {{ $ambulance->upazilla->name_bangla }}, {{ $ambulance->district->name_bangla }}
+                      {{ $esheba->upazilla->name_bangla }}, {{ $esheba->district->name_bangla }}
                     </td>
                     <td align="right" width="40%">
-                      {{-- <button type="button" class="btn btn-warning btn-sm" data-toggle="modal" data-target="#notifModal{{ $ambulance->id }}">
+                      {{-- <button type="button" class="btn btn-warning btn-sm" data-toggle="modal" data-target="#notifModal{{ $esheba->id }}">
                         <i class="fas fa-bell"></i>
                       </button> --}}
-                      <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#editUserModal{{ $ambulance->id }}">
+                      <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#editUserModal{{ $esheba->id }}">
                         <i class="fas fa-edit"></i>
                       </button>
                       {{-- Edit User Modal Code --}}
                       {{-- Edit User Modal Code --}}
                       <!-- Modal -->
-                      <div class="modal fade" id="editUserModal{{ $ambulance->id }}" tabindex="-1" role="dialog" aria-labelledby="editUserModalLabel" aria-hidden="true" data-backdrop="static">
+                      <div class="modal fade" id="editUserModal{{ $esheba->id }}" tabindex="-1" role="dialog" aria-labelledby="editUserModalLabel" aria-hidden="true" data-backdrop="static">
                         <div class="modal-dialog" role="document">
                           <div class="modal-content">
                             <div class="modal-header bg-primary">
@@ -70,7 +70,7 @@
                                 <span aria-hidden="true">&times;</span>
                               </button>
                             </div>
-                            <form method="post" action="{{ route('dashboard.ambulances.update', $ambulance->id) }}" enctype="multipart/form-data">
+                            <form method="post" action="{{ route('dashboard.ambulances.update', $esheba->id) }}" enctype="multipart/form-data">
                               <div class="modal-body">
                                 
                                     @csrf
@@ -79,7 +79,7 @@
                                       <select name="district_id" id="district" class="form-control district" required>
                                           <option selected="" disabled="" value="">জেলা নির্বাচন করুন</option>
                                           @foreach($districts as $district)
-                                            <option value="{{ $district->id }}" @if($district->id == $ambulance->district_id) selected @endif>{{ $district->name_bangla }}</option>
+                                            <option value="{{ $district->id }}" @if($district->id == $esheba->district_id) selected @endif>{{ $district->name_bangla }}</option>
                                           @endforeach
                                       </select>
                                       <div class="input-group-append">
@@ -88,7 +88,7 @@
                                     </div>
                                     <div class="input-group mb-3">
                                       <select name="upazilla_id" id="upazilla" class="form-control upazilla" required>
-                                          <option selected="" value="{{ $ambulance->upazilla_id }}">{{ $ambulance->upazilla->name_bangla }}</option>
+                                          <option selected="" value="{{ $esheba->upazilla_id }}">{{ $esheba->upazilla->name_bangla }}</option>
                                       </select>
                                       <div class="input-group-append">
                                           <div class="input-group-text"><span class="fas fa-map-marked-alt"></span></div>
@@ -98,7 +98,7 @@
                                         <input type="text"
                                                name="name"
                                                class="form-control"
-                                               value="{{ $ambulance->name }}"
+                                               value="{{ $esheba->name }}"
                                                placeholder="ই-সেবার নাম" required>
                                         <div class="input-group-append">
                                             <div class="input-group-text"><span class="fas fa-hospital"></span></div>
@@ -107,7 +107,7 @@
                                     <div class="input-group mb-3">
                                         <input type="number"
                                                name="mobile"
-                                               value="{{ $ambulance->mobile }}"
+                                               value="{{ $esheba->mobile }}"
                                                autocomplete="off"
                                                class="form-control"
                                                placeholder="মোবাইল নম্বর" required>
@@ -120,8 +120,8 @@
                                         <input type="file" id="image" name="image" accept="image/*">
                                     </div>
                                     <center>
-                                      @if($ambulance->ambulanceimage != null)
-                                        <img src="{{ asset('images/ambulances/' . $ambulance->ambulanceimage->image)}}" id='img-upload' style="width: 250px; height: auto;" class="img-responsive" />
+                                      @if($esheba->ambulanceimage != null)
+                                        <img src="{{ asset('images/ambulances/' . $esheba->ambulanceimage->image)}}" id='img-upload' style="width: 250px; height: auto;" class="img-responsive" />
                                       @else
                                         <img src="{{ asset('images/placeholder.png')}}" id='img-upload' style="width: 250px; height: auto;" class="img-responsive" />
                                       @endif
@@ -139,14 +139,14 @@
                       {{-- Edit User Modal Code --}}
                       {{-- Edit User Modal Code --}}
 
-                      <button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#deleteUserModal{{ $ambulance->id }}">
+                      <button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#deleteUserModal{{ $esheba->id }}">
                         <i class="fas fa-trash-alt"></i>
                       </button>
                     </td>
                         {{-- Delete User Modal Code --}}
                         {{-- Delete User Modal Code --}}
                         <!-- Modal -->
-                        <div class="modal fade" id="deleteUserModal{{ $ambulance->id }}" tabindex="-1" role="dialog" aria-labelledby="deleteUserModalLabel" aria-hidden="true" data-backdrop="static">
+                        <div class="modal fade" id="deleteUserModal{{ $esheba->id }}" tabindex="-1" role="dialog" aria-labelledby="deleteUserModalLabel" aria-hidden="true" data-backdrop="static">
                           <div class="modal-dialog" role="document">
                             <div class="modal-content">
                               <div class="modal-header bg-danger">
@@ -158,13 +158,13 @@
                               <div class="modal-body">
                                 আপনি কি নিশ্চিতভাবে এই ই-সেবাকে ডিলেট করতে চান?<br/>
                                 <center>
-                                    <big><b>{{ $ambulance->name }}</b></big><br/>
-                                    <small><i class="fas fa-phone"></i> {{ $ambulance->mobile }}</small>
+                                    <big><b>{{ $esheba->name }}</b></big><br/>
+                                    <small><i class="fas fa-phone"></i> {{ $esheba->mobile }}</small>
                                 </center>
                               </div>
                               <div class="modal-footer">
                                 <button type="button" class="btn btn-secondary" data-dismiss="modal">ফিরে যান</button>
-                                <a href="{{ route('dashboard.ambulances.delete', $ambulance->id) }}" class="btn btn-danger">ডিলেট করুন</a>
+                                <a href="{{ route('dashboard.ambulances.delete', $esheba->id) }}" class="btn btn-danger">ডিলেট করুন</a>
                               </div>
                             </div>
                           </div>
@@ -176,7 +176,7 @@
                   <script type="text/javascript" src="{{ asset('js/bootstrap-datepicker.min.js') }}"></script>
                   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
                   <script>
-                    $("#packageexpirydate{{ $ambulance->id }}").datepicker({
+                    $("#packageexpirydate{{ $esheba->id }}").datepicker({
                       format: 'MM dd, yyyy',
                       todayHighlight: true,
                       autoclose: true,
