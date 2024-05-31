@@ -113,10 +113,11 @@ class AmbulanceController extends Controller
     public function updateAmbulance(Request $request, $id)
     {
         $this->validate($request,array(
-            'district_id'         => 'required',
-            'upazilla_id'         => 'required',
+            'district_id'            => 'required',
+            'upazilla_id'            => 'required',
             'name'                => 'required|string|max:191',
             'mobile'              => 'required|string|max:191',
+            'image'              => 'sometimes',
         ));
 
         $blooddonor = Ambulance::find($id);;
