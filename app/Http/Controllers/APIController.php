@@ -352,7 +352,7 @@ class APIController extends Controller
     {
         if($softtoken == env('SOFT_TOKEN'))
         {
-            $blooddonors = Cache::remember('blooddonors'.$hospital_type . $district_id, 30 * 24 * 60 * 60, function () use ($hospital_type, $district_id) {
+            $blooddonors = Cache::remember('blooddonors' . $district_id, 30 * 24 * 60 * 60, function () use ($hospital_type, $district_id) {
                  $blooddonors = Hospital::where('hospital_type', $hospital_type)
                              ->where('district_id', $district_id)
                              ->orderBy('id', 'desc')
