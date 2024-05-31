@@ -34,13 +34,10 @@ class EshebaController extends Controller
     {
         $eshebascount = Esheba::count();
         $eshebas = Esheba::orderBy('id', 'desc')->paginate(10);
-
-        $districts = District::all();
                 
         return view('dashboard.eshebas.index')
                             ->withEshebascount($eshebascount)
-                            ->withEshebas($eshebas)
-                            ->withDistricts($districts);
+                            ->withEshebas($eshebas);
     }
 
     public function indexSearch($search)
