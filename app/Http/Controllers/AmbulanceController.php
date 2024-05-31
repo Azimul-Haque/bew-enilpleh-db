@@ -90,6 +90,7 @@ class AmbulanceController extends Controller
         $ambulance->upazilla_id = $request->upazilla_id;
         $ambulance->name = $request->name;
         $ambulance->mobile = $request->mobile;
+        $ambulance->save();
 
         if(isset($request->hospitals)){
             foreach($request->hospitals as $hospital_id) {
@@ -102,7 +103,6 @@ class AmbulanceController extends Controller
             }            
         }
         
-        $ambulance->save();
 
         
         // Cache::forget('blooddonors'. $request->category . $request->district_id);
