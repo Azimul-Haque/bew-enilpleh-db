@@ -47,7 +47,7 @@
                     <td>
                       {{ $ambulance->name }}
                       <small class="text-black-50"><i class="fas fa-phone"></i> {{ $ambulance->mobile }}</small><br/>
-                      <span class="badge bg-success">{{ blooddonor_category($ambulance->category) }}</span>
+                      <span class="badge bg-success"><i class="fas fa-phone"></i> {{ $ambulance->mobile }}</span>
                     </td>
                     <td>
                       {{ $ambulance->upazilla->name_bangla }}, {{ $ambulance->district->name_bangla }}
