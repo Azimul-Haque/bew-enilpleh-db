@@ -440,7 +440,7 @@ class APIController extends Controller
         }
     }
 
-    public function getBloodDonorsUpazilla($softtoken, $district_id, $upazilla_id)
+    public function getAmbulancesUpazilla($softtoken, $district_id, $upazilla_id)
     {
         if($softtoken == env('SOFT_TOKEN'))
         {
