@@ -481,8 +481,10 @@ class APIController extends Controller
                    $districts = District::get();
                    return $districts;
               });
-              // return $districts;
-              // return view('dashboard.hospitals.print')->withDistricts($districts);
+              return response()->json([
+                'success' => true,
+                'ambulances' => $ambulances,
+              ]);
 
               
             }
