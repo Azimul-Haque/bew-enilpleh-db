@@ -31,20 +31,20 @@ class AmbulanceController extends Controller
 
     public function index()
     {
-        $blooddonorscount = Blooddonor::count();
+        $ambulancescount = Blooddonor::count();
         $blooddonors = Blooddonor::orderBy('id', 'desc')->paginate(10);
 
         $districts = District::all();
                 
         return view('dashboard.blooddonors.index')
-                            ->withBlooddonorscount($blooddonorscount)
+                            ->withAmbulancescount($ambulancescount)
                             ->withBlooddonors($blooddonors)
                             ->withDistricts($districts);
     }
 
     public function indexSearch($search)
     {
-        $blooddonorscount = Blooddonor::where('name', 'LIKE', "%$search%")
+        $ambulancescount = Blooddonor::where('name', 'LIKE', "%$search%")
                                   ->orWhere('mobile', 'LIKE', "%$search%")
                                   ->orWhereHas('district', function ($query) use ($search){
                                       $query->where('name', 'like', '%'.$search.'%');
@@ -69,7 +69,7 @@ class AmbulanceController extends Controller
         $districts = District::all();
         
         return view('dashboard.blooddonors.index')
-                            ->withBlooddonorscount($blooddonorscount)
+                            ->withAmbulancescount($ambulancescount)
                             ->withBlooddonors($blooddonors)
                             ->withDistricts($districts);
     }
