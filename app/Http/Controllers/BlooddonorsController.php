@@ -31,8 +31,8 @@ class BlooddonorsController extends Controller
 
     public function index()
     {
-        $blooddonorscount = Doctor::count();
-        $blooddonors = Doctor::orderBy('id', 'desc')->paginate(10);
+        $blooddonorscount = Blooddonor::count();
+        $blooddonors = Blooddonor::orderBy('id', 'desc')->paginate(10);
 
         $districts = District::all();
         $medicaldepartments = Medicaldepartment::all();
