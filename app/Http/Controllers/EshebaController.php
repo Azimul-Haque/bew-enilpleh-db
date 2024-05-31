@@ -144,9 +144,9 @@ class AmbulanceController extends Controller
         }
 
         
-        Cache::forget('ambulances'. $request->district_id);
-        Cache::forget('ambulances'. $request->district_id. $request->upazilla_id);
+        Cache::forget('eshebas'. $request->district_id);
+        Cache::forget('eshebas'. $request->district_id. $request->upazilla_id);
         Session::flash('success', 'Ambulance updated successfully!');
-        return redirect()->route('dashboard.ambulances');
+        return redirect()->route('dashboard.eshebas');
     }
 }
