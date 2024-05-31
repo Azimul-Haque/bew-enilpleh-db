@@ -44,15 +44,9 @@ class EshebaController extends Controller
     {
         $eshebascount = Esheba::where('name', 'LIKE', "%$search%")
                                   ->orWhere('url', 'LIKE', "%$search%")->count();
+
         $eshebas = Esheba::where('name', 'LIKE', "%$search%")
                                   ->orWhere('url', 'LIKE', "%$search%")
-                                  ->orWhereHas('district', function ($query) use ($search){
-                                      $query->where('name', 'like', '%'.$search.'%');
-                                      $query->orWhere('name_bangla', 'like', '%'.$search.'%');
-                                  })->orWhereHas('upazilla', function ($query) use ($search){
-                                      $query->where('name', 'like', '%'.$search.'%');
-                                      $query->orWhere('name_bangla', 'like', '%'.$search.'%');
-                                  })
                                   ->orderBy('id', 'desc')
                                   ->paginate(10);
 
@@ -60,8 +54,7 @@ class EshebaController extends Controller
         
         return view('dashboard.eshebas.index')
                             ->withEshebascount($eshebascount)
-                            ->withEshebas($eshebas)
-                            ->withDistricts($districts);
+                            ->withEshebas($eshebas);
     }
 
     public function storeEsheba(Request $request)
