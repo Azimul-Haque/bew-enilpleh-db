@@ -85,7 +85,7 @@ class AmbulanceController extends Controller
             'mobile'              => 'required|string|max:191',
         ));
 
-        $blooddonor = new Blooddonor;
+        $blooddonor = new Ambulance;
         $blooddonor->district_id = $request->district_id;
         $blooddonor->upazilla_id = $request->upazilla_id;
         $blooddonor->name = $request->name;
