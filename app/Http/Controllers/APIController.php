@@ -440,7 +440,7 @@ class APIController extends Controller
         }
     }
 
-    public function getBloodDonorsUpazilla($softtoken, $district_id, $upazilla_id)
+    public function getAmbulancesUpazilla($softtoken, $district_id, $upazilla_id)
     {
         if($softtoken == env('SOFT_TOKEN'))
         {
@@ -453,6 +453,7 @@ class APIController extends Controller
                  foreach($ambulances as $ambulance) {
                      $ambulance->districtname = $ambulance->district->name_bangla;
                      $ambulance->upazillaname = $ambulance->upazilla->name_bangla;
+                     $ambulance->image = $ambulance->ambulanceimage->image;
                      $ambulance->makeHidden('district', 'upazilla', 'ambulanceimage', 'created_at', 'updated_at');
                  }
                  return $ambulances;
