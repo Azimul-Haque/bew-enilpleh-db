@@ -84,14 +84,14 @@ class BlooddonorsController extends Controller
             'mobile'              => 'required|string|max:191',
         ));
 
-        $doctor = new Doctor;
-        $doctor->district_id = $request->district_id;
-        $doctor->upazilla_id = $request->upazilla_id;
-        $doctor->name = $request->name;
-        $doctor->degree = $request->degree;
-        $doctor->serial = $request->serial;
-        $doctor->helpline = $request->helpline;
-        $doctor->save();
+        $blooddonor = new Blooddonor;
+        $blooddonor->district_id = $request->district_id;
+        $blooddonor->upazilla_id = $request->upazilla_id;
+        $blooddonor->name = $request->name;
+        $blooddonor->degree = $request->degree;
+        $blooddonor->serial = $request->serial;
+        $blooddonor->helpline = $request->helpline;
+        $blooddonor->save();
 
         if(isset($request->medicaldepartments)){
             foreach($request->medicaldepartments as $medicaldepartment_id) {
