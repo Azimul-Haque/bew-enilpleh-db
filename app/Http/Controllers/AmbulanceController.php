@@ -130,6 +130,9 @@ class AmbulanceController extends Controller
 
         // image upload
         if($request->hasFile('image')) {
+            if(File::exists($image_path)) {
+                File::delete($image_path);
+            }
             $image    = $request->file('image');
             $filename = random_string(5) . time() .'.' . "webp";
             $location = public_path('images/ambulances/'. $filename);
