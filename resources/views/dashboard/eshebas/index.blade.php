@@ -97,8 +97,7 @@
                                      
                                     <div class="form-group">
                                         <label for="image">ছবি (প্রয়োজনে, ৩০০ x ৩০০ সাইজের, ২ মেগাবাইটের মধ্যে)</label><br/>
-                                        <input type="file" name="image" accept="image/*">
-                                        {{-- id="image" --}}
+                                        <input type="file" id="image" name="image" accept="image/*">
                                     </div>
                                     <center>
                                       @if($esheba->eshebaimage != null)
