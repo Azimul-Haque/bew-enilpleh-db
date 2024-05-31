@@ -42,6 +42,15 @@
 </li>
 @endif
 
+@if(Auth::user()->role == 'admin')
+<li class="nav-item">
+    <a href="{{ route('dashboard.ambulances') }}" class="nav-link {{ Request::is('dashboard/ambulances') ? 'active' : '' }} {{ Request::is('dashboard/ambulances/*') ? 'active' : '' }}">
+        <i class="nav-icon fas fa-tint"></i>
+        <p>রক্তদাতা তালিকা</p>
+    </a>
+</li>
+@endif
+
 {{-- @if(Auth::user()->role == 'admin')
 <li class="nav-item">
     <a href="{{ route('dashboard.payments') }}" class="nav-link {{ Request::is('dashboard/payments') ? 'active' : '' }} {{ Request::is('dashboard/payments/*') ? 'active' : '' }}">
