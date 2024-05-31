@@ -106,7 +106,7 @@ class EshebaController extends Controller
         
         Cache::forget('eshebas' . $request->district_id);
         Cache::forget('eshebas' . $request->district_id. $request->upazilla_id);
-        Session::flash('success', 'Ambulance added successfully!');
+        Session::flash('success', 'E-sheba added successfully!');
         return redirect()->route('dashboard.eshebas');
     }
 
@@ -129,7 +129,7 @@ class EshebaController extends Controller
 
         // image upload
         if($request->hasFile('image')) {
-            $image_path = public_path('images/eshebas/'. $esheba->ambulanceimage->image);
+            $image_path = public_path('images/eshebas/'. $esheba->eshebaimage->image);
             // dd($image_path);
             if(File::exists($image_path)) {
                 File::delete($image_path);
@@ -146,7 +146,7 @@ class EshebaController extends Controller
         
         Cache::forget('eshebas'. $request->district_id);
         Cache::forget('eshebas'. $request->district_id. $request->upazilla_id);
-        Session::flash('success', 'Ambulance updated successfully!');
+        Session::flash('success', 'E-sheba updated successfully!');
         return redirect()->route('dashboard.eshebas');
     }
 }
