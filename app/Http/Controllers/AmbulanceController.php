@@ -32,8 +32,8 @@ class AmbulanceController extends Controller
 
     public function index()
     {
-        $ambulancescount = Blooddonor::count();
-        $ambulances = Blooddonor::orderBy('id', 'desc')->paginate(10);
+        $ambulancescount = Ambulance::count();
+        $ambulances = Ambulance::orderBy('id', 'desc')->paginate(10);
 
         $districts = District::all();
                 
@@ -45,7 +45,7 @@ class AmbulanceController extends Controller
 
     public function indexSearch($search)
     {
-        $ambulancescount = Blooddonor::where('name', 'LIKE', "%$search%")
+        $ambulancescount = Ambulance::where('name', 'LIKE', "%$search%")
                                   ->orWhere('mobile', 'LIKE', "%$search%")
                                   ->orWhereHas('district', function ($query) use ($search){
                                       $query->where('name', 'like', '%'.$search.'%');
@@ -55,7 +55,7 @@ class AmbulanceController extends Controller
                                       $query->orWhere('name_bangla', 'like', '%'.$search.'%');
                                   })
                                   ->count();
-        $ambulances = Blooddonor::where('name', 'LIKE', "%$search%")
+        $ambulances = Ambulance::where('name', 'LIKE', "%$search%")
                                   ->orWhere('mobile', 'LIKE', "%$search%")
                                   ->orWhereHas('district', function ($query) use ($search){
                                       $query->where('name', 'like', '%'.$search.'%');
@@ -110,7 +110,7 @@ class AmbulanceController extends Controller
             'mobile'              => 'required|string|max:191',
         ));
 
-        $blooddonor = Blooddonor::find($id);;
+        $blooddonor = Ambulance::find($id);;
         $blooddonor->district_id = $request->district_id;
         $blooddonor->upazilla_id = $request->upazilla_id;
         $blooddonor->name = $request->name;
