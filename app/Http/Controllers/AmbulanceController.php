@@ -54,7 +54,7 @@ class AmbulanceController extends Controller
                                       $query->orWhere('name_bangla', 'like', '%'.$search.'%');
                                   })
                                   ->count();
-        $blooddonors = Blooddonor::where('name', 'LIKE', "%$search%")
+        $ambulances = Blooddonor::where('name', 'LIKE', "%$search%")
                                   ->orWhere('mobile', 'LIKE', "%$search%")
                                   ->orWhereHas('district', function ($query) use ($search){
                                       $query->where('name', 'like', '%'.$search.'%');
@@ -70,7 +70,7 @@ class AmbulanceController extends Controller
         
         return view('dashboard.blooddonors.index')
                             ->withAmbulancescount($ambulancescount)
-                            ->withBlooddonors($blooddonors)
+                            ->withAmbulances($ambulances)
                             ->withDistricts($districts);
     }
 
