@@ -424,7 +424,7 @@ class APIController extends Controller
                  foreach($ambulances as $ambulance) {
                      $ambulance->districtname = $ambulance->district->name_bangla;
                      $ambulance->upazillaname = $ambulance->upazilla->name_bangla;
-                     $ambulance->image = $ambulance->ambulanceimage->image;
+                     $ambulance->image = $ambulance->ambulanceimage ? $ambulance->ambulanceimage->image : '';
                      $ambulance->makeHidden('district', 'upazilla', 'ambulanceimage', 'created_at', 'updated_at');
                  }
                  return $ambulances;
