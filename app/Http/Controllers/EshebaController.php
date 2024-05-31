@@ -4,8 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-use App\District;
-use App\Upazilla;
+// use App\District;
+// use App\Upazilla;
 use App\Esheba;
 use App\Eshebaimage;
 
