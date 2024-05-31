@@ -101,9 +101,9 @@ class APIController extends Controller
                              ->get();
                              // dd($hospitals);
                  foreach($hospitals as $hospital) {
-                     $hospital->district = $hospital->district->name_bangla;
-                     $hospital->upazilla = $hospital->upazilla->name_bangla;
-                     // $hospital->makeHidden('district', 'upazilla');
+                     $hospital->districtname = $hospital->district->name_bangla;
+                     $hospital->upazillaname = $hospital->upazilla->name_bangla;
+                     $hospital->makeHidden('district', 'upazilla');
                  }
                  return $hospitals;
             });
@@ -132,8 +132,8 @@ class APIController extends Controller
                              ->get();
                              // dd($hospitals);
                  foreach($hospitals as $hospital) {
-                     $hospital->district = $hospital->district->name_bangla;
-                     $hospital->upazilla = $hospital->upazilla->name_bangla;
+                     $hospital->districtname = $hospital->district->name_bangla;
+                     $hospital->upazillaname = $hospital->upazilla->name_bangla;
                      $hospital->makeHidden('district', 'upazilla');
                  }
                  return $hospitals;
