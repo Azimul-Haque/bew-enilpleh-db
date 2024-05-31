@@ -34,6 +34,7 @@ use App\Doctormedicalsymptom;
 use App\Blooddonor;
 use App\Ambulance;
 use App\Ambulanceimage;
+use App\Esheba;
 
 use Hash;
 use Carbon\Carbon;
