@@ -85,13 +85,13 @@ class AmbulanceController extends Controller
             'image'              => 'sometimes',
         ));
 
-        $blooddonor = new Ambulance;
-        $blooddonor->district_id = $request->district_id;
-        $blooddonor->upazilla_id = $request->upazilla_id;
-        $blooddonor->name = $request->name;
-        $blooddonor->category = $request->category;
-        $blooddonor->mobile = $request->mobile;
-        $blooddonor->save();
+        $ambulance = new Ambulance;
+        $ambulance->district_id = $request->district_id;
+        $ambulance->upazilla_id = $request->upazilla_id;
+        $ambulance->name = $request->name;
+        $ambulance->category = $request->category;
+        $ambulance->mobile = $request->mobile;
+        $ambulance->save();
 
         
         Cache::forget('blooddonors'. $request->category . $request->district_id);
