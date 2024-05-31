@@ -33,13 +33,13 @@ class AmbulanceController extends Controller
     public function index()
     {
         $eshebascount = Esheba::count();
-        $ambulances = Esheba::orderBy('id', 'desc')->paginate(10);
+        $eshebas = Esheba::orderBy('id', 'desc')->paginate(10);
 
         $districts = District::all();
                 
         return view('dashboard.ambulances.index')
                             ->withEshebascount($eshebascount)
-                            ->withAmbulances($ambulances)
+                            ->withEshebas($eshebas)
                             ->withDistricts($districts);
     }
 
