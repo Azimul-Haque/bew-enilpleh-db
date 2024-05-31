@@ -15,6 +15,11 @@ class CreateAmbulancesTable extends Migration
     {
         Schema::create('ambulances', function (Blueprint $table) {
             $table->id();
+            $table->integer('district_id')->unsigned();
+            $table->integer('upazilla_id')->unsigned();
+            $table->string('name');
+            $table->string('category');
+            $table->string('mobile');
             $table->timestamps();
         });
     }
