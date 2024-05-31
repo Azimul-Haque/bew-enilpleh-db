@@ -18,6 +18,7 @@ class CreateEshebasTable extends Migration
             // $table->integer('upazilla_id')->unsigned();
             $table->string('name');
             $table->string('url');
+            $table->timestamps();
         });
     }
 
