@@ -128,9 +128,21 @@ class AmbulanceController extends Controller
         $blooddonor->mobile = $request->mobile;
         $blooddonor->save();
 
+        // image upload
+        if($request->hasFile('image')) {
+            $image    = $request->file('image');
+            $filename = random_string(5) . time() .'.' . "webp";
+            $location = public_path('images/ambulances/'. $filename);
+            Image::make($image)->fit(200, 200)->save($location);
+            $ambulanceimage              = new Ambulanceimage;
+            $ambulanceimage->ambulance_id   = $ambulance->id;
+            $ambulanceimage->image       = $filename;
+            $ambulanceimage->save();
+        }
+
         
-        Cache::forget('blooddonors'. $request->category . $request->district_id);
-        Cache::forget('blooddonors'. $request->category . $request->district_id. $request->upazilla_id);
+        // Cache::forget('blooddonors'. $request->category . $request->district_id);
+        // Cache::forget('blooddonors'. $request->category . $request->district_id. $request->upazilla_id);
         Session::flash('success', 'Blood Donor updated successfully!');
         return redirect()->route('dashboard.ambulances');
     }
