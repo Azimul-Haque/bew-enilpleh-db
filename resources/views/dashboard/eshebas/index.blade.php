@@ -42,7 +42,7 @@
                 </tr>
               </thead>
               <tbody>
-                @foreach($ambulances as $ambulance)
+                @foreach($eshebas as $ambulance)
                   <tr>
                     <td>
                       {{ $ambulance->name }}<br/>
@@ -188,7 +188,7 @@
           </div>
           <!-- /.card-body -->
         </div>
-        {{ $ambulances->links() }}
+        {{ $eshebas->links() }}
     </div>
 
     {{-- Add User Modal Code --}}
