@@ -422,7 +422,8 @@ class APIController extends Controller
                  foreach($ambulances as $ambulance) {
                      $ambulance->districtname = $ambulance->district->name_bangla;
                      $ambulance->upazillaname = $ambulance->upazilla->name_bangla;
-                     $ambulance->makeHidden('district', 'upazilla', 'created_at', 'updated_at');
+                     $ambulance->image = $ambulance->ambulanceimage->image;
+                     $ambulance->makeHidden('district', 'upazilla', 'ambulanceimage', 'created_at', 'updated_at');
                  }
                  return $ambulances;
             });
@@ -453,7 +454,7 @@ class APIController extends Controller
                  foreach($blooddonors as $blooddonor) {
                      $blooddonor->districtname = $blooddonor->district->name_bangla;
                      $blooddonor->upazillaname = $blooddonor->upazilla->name_bangla;
-                     $blooddonor->makeHidden('district', 'upazilla', 'created_at', 'updated_at');
+                     $ambulance->makeHidden('district', 'upazilla', 'ambulanceimage', 'created_at', 'updated_at');
                  }
                  return $blooddonors;
             });
