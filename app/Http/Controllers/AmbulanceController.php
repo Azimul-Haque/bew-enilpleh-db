@@ -82,7 +82,7 @@ class AmbulanceController extends Controller
             'upazilla_id'            => 'required',
             'name'                => 'required|string|max:191',
             'mobile'              => 'required|string|max:191',
-            'mobile'              => 'sometimes',
+            'image'              => 'sometimes',
         ));
 
         $blooddonor = new Ambulance;
