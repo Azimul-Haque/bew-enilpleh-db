@@ -55,7 +55,7 @@
 <li class="nav-item">
     <a href="{{ route('dashboard.eshebas') }}" class="nav-link {{ Request::is('dashboard/eshebas') ? 'active' : '' }} {{ Request::is('dashboard/eshebas/*') ? 'active' : '' }}">
         <i class="nav-icon fas fa-ambulance"></i>
-        <p>অ্যাম্বুলেন্স</p>
+        <p>ই-সেবা তালিকা</p>
     </a>
 </li>
 @endif
