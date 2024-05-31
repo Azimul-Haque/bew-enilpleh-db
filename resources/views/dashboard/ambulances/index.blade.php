@@ -7,7 +7,7 @@
 @endsection
 
 @section('content')
-  @section('page-header') রক্তদাতা তালিকা (মোট {{ bangla($blooddonorscount) }} টি) @endsection
+  @section('page-header') রক্তদাতা তালিকা (মোট {{ bangla($ambulancescount) }} টি) @endsection
     <div class="container-fluid">
     <div class="card">
           <div class="card-header">
