@@ -45,10 +45,10 @@ Route::get('/dashboard/doctors/{id}/delete', 'DoctorController@deleteDoctor')->n
 
 // Blood Donor
 Route::get('/dashboard/blooddonors', 'DoctorController@index')->name('dashboard.blooddonors');
-Route::get('/dashboard/doctors/{search}', 'DoctorController@indexSearch')->name('dashboard.blooddonors.search');
-Route::post('/dashboard/doctors/store', 'DoctorController@storeDoctor')->name('dashboard.blooddonors.store');
-Route::post('/dashboard/doctors/{id}/update', 'DoctorController@updateDoctor')->name('dashboard.blooddonors.update');
-Route::get('/dashboard/doctors/{id}/delete', 'DoctorController@deleteDoctor')->name('dashboard.blooddonors.delete');
+Route::get('/dashboard/blooddonors/{search}', 'DoctorController@indexSearch')->name('dashboard.blooddonors.search');
+Route::post('/dashboard/blooddonors/store', 'DoctorController@storeDoctor')->name('dashboard.blooddonors.store');
+Route::post('/dashboard/blooddonors/{id}/update', 'DoctorController@updateDoctor')->name('dashboard.blooddonors.update');
+Route::get('/dashboard/blooddonors/{id}/delete', 'DoctorController@deleteDoctor')->name('dashboard.blooddonors.delete');
 
 
 
