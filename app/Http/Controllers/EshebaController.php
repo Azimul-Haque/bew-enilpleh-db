@@ -85,12 +85,12 @@ class AmbulanceController extends Controller
             'image'               => 'sometimes',
         ));
 
-        $ambulance = new Esheba;
-        $ambulance->district_id = $request->district_id;
-        $ambulance->upazilla_id = $request->upazilla_id;
-        $ambulance->name = $request->name;
-        $ambulance->mobile = $request->mobile;
-        $ambulance->save();
+        $esheba = new Esheba;
+        $esheba->district_id = $request->district_id;
+        $esheba->upazilla_id = $request->upazilla_id;
+        $esheba->name = $request->name;
+        $esheba->mobile = $request->mobile;
+        $esheba->save();
 
         // image upload
         if($request->hasFile('image')) {
@@ -98,10 +98,10 @@ class AmbulanceController extends Controller
             $filename = random_string(5) . time() .'.' . "webp";
             $location = public_path('images/ambulances/'. $filename);
             Image::make($image)->fit(200, 200)->save($location);
-            $ambulanceimage              = new Eshebaimage;
-            $ambulanceimage->ambulance_id   = $ambulance->id;
-            $ambulanceimage->image       = $filename;
-            $ambulanceimage->save();
+            $eshebaimage              = new Eshebaimage;
+            $eshebaimage->ambulance_id   = $esheba->id;
+            $eshebaimage->image       = $filename;
+            $eshebaimage->save();
         }
         
         Cache::forget('ambulances' . $request->district_id);
@@ -117,19 +117,19 @@ class AmbulanceController extends Controller
             'upazilla_id'            => 'required',
             'name'                => 'required|string|max:191',
             'mobile'              => 'required|string|max:191',
-            'image'              => 'sometimes',
+            'image'               => 'sometimes',
         ));
 
-        $ambulance = Esheba::find($id);
-        $ambulance->district_id = $request->district_id;
-        $ambulance->upazilla_id = $request->upazilla_id;
-        $ambulance->name = $request->name;
-        $ambulance->mobile = $request->mobile;
-        $ambulance->save();
+        $esheba = Esheba::find($id);
+        $esheba->district_id = $request->district_id;
+        $esheba->upazilla_id = $request->upazilla_id;
+        $esheba->name = $request->name;
+        $esheba->url = $request->url;
+        $esheba->save();
 
         // image upload
         if($request->hasFile('image')) {
-            $image_path = public_path('images/ambulances/'. $ambulance->ambulanceimage->image);
+            $image_path = public_path('images/ambulances/'. $esheba->ambulanceimage->image);
             // dd($image_path);
             if(File::exists($image_path)) {
                 File::delete($image_path);
@@ -138,9 +138,9 @@ class AmbulanceController extends Controller
             $filename = random_string(5) . time() .'.' . "webp";
             $location = public_path('images/ambulances/'. $filename);
             Image::make($image)->fit(200, 200)->save($location);
-            $ambulanceimage              = Eshebaimage::where('ambulance_id', $ambulance->id)->first();
-            $ambulanceimage->image       = $filename;
-            $ambulanceimage->save();
+            $eshebaimage              = Eshebaimage::where('ambulance_id', $esheba->id)->first();
+            $eshebaimage->image       = $filename;
+            $eshebaimage->save();
         }
 
         
