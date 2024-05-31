@@ -117,14 +117,14 @@
                                       </div>
                                     </div>
                                     <div class="input-group mb-3">
-                                        <input type="number"
-                                               name="telephone"
-                                               class="form-control"
-                                               value="{{ $blooddonor->telephone }}"
-                                               placeholder="টেলিফোন নং" required>
-                                        <div class="input-group-append">
-                                            <div class="input-group-text"><span class="fas fa-phone"></span></div>
-                                        </div>
+                                      <select name="category" class="form-control" required>
+                                          <option selected="" disabled="" value="">রক্তদাতা প্রতিষ্ঠানের ধরন</option>
+                                          <option value="1">ব্লাড ব্যাংক</option>
+                                          <option value="2">রক্তদাতা সংগঠন</option>
+                                      </select>
+                                      <div class="input-group-append">
+                                          <div class="input-group-text"><span class="fas fa-star-half-alt"></span></div>
+                                      </div>
                                     </div>
                                     <div class="input-group mb-3">
                                         <input type="number"
@@ -136,18 +136,7 @@
                                         <div class="input-group-append">
                                             <div class="input-group-text"><span class="fas fa-mobile"></span></div>
                                         </div>
-                                    </div>
-                                    <div class="input-group mb-3">
-                                        <input type="text"
-                                               name="location"
-                                               value="{{ $blooddonor->location }}"
-                                               autocomplete="off"
-                                               class="form-control"
-                                               placeholder="গুগল ম্যাপ লোকেশন লিংক" required>
-                                        <div class="input-group-append">
-                                            <div class="input-group-text"><span class="fas fa-map-marker-alt"></span></div>
-                                        </div>
-                                    </div>            
+                                    </div>           
                                 
                               </div>
                               <div class="modal-footer">
