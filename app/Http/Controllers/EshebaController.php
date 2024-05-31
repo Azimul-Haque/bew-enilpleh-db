@@ -61,13 +61,13 @@ class EshebaController extends Controller
     {
         $this->validate($request,array(
             'name'                => 'required|string|max:191',
-            'ur;'                 => 'required|string|max:191',
+            'url'                 => 'required|string|max:191',
             'image'               => 'sometimes',
         ));
 
         $esheba = new Esheba;
         $esheba->name = $request->name;
-        $esheba->mobile = $request->mobile;
+        $esheba->url = $request->url;
         $esheba->save();
 
         // image upload
@@ -91,7 +91,7 @@ class EshebaController extends Controller
     {
         $this->validate($request,array(
             'name'                => 'required|string|max:191',
-            'mobile'              => 'required|string|max:191',
+            'url'              => 'required|string|max:191',
             'image'               => 'sometimes',
         ));
 
