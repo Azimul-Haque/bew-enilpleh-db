@@ -360,8 +360,8 @@ class APIController extends Controller
                                  ->get();
                                  // dd($blooddonors);
                  foreach($blooddonors as $blooddonor) {
-                     $blooddonor->district = $blooddonor->district->name_bangla;
-                     $blooddonor->upazilla = $blooddonor->upazilla->name_bangla;
+                     $blooddonor->districtname = $blooddonor->district->name_bangla;
+                     $blooddonor->upazillaname = $blooddonor->upazilla->name_bangla;
                      $blooddonor->makeHidden('district', 'upazilla', 'created_at', 'updated_at');
                  }
                  return $blooddonors;
@@ -391,8 +391,8 @@ class APIController extends Controller
                                  ->get();
                                  // dd($blooddonors);
                  foreach($blooddonors as $blooddonor) {
-                     $blooddonor->district = $blooddonor->district->name_bangla;
-                     $blooddonor->upazilla = $blooddonor->upazilla->name_bangla;
+                     $blooddonor->districtname = $blooddonor->district->name_bangla;
+                     $blooddonor->upazillaname = $blooddonor->upazilla->name_bangla;
                      $blooddonor->makeHidden('district', 'upazilla', 'created_at', 'updated_at');
                  }
                  return $blooddonors;
