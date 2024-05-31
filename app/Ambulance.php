@@ -13,4 +13,8 @@ class Ambulance extends Model
     public function upazilla(){
         return $this->belongsTo('App\Upazilla');
     }
+
+    public function ambulanceimage(){
+        return $this->hasOne('App\Ambulanceimage');
+    }
 }
