@@ -479,6 +479,7 @@ class APIController extends Controller
         if($softtoken == env('SOFT_TOKEN')) {
             $eshebas = Cache::remember('eshebas', 365 * 24 * 60 * 60, function ()  {
                $eshebas = Esheba::get();
+               $eshebas->makeHidden('created_at', 'updated_at');
                return $eshebas;
             });
             return response()->json([
