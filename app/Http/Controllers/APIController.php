@@ -420,7 +420,7 @@ class APIController extends Controller
                  $ambulances = Ambulance::where('district_id', $district_id)
                                  ->orderBy('id', 'desc')
                                  ->get();
-                                 dd($ambulances);
+                                 // dd($ambulances);
                  foreach($ambulances as $ambulance) {
                      $ambulance->districtname = $ambulance->district->name_bangla;
                      $ambulance->upazillaname = $ambulance->upazilla->name_bangla;
