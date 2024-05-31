@@ -451,12 +451,12 @@ class APIController extends Controller
                                  ->orderBy('id', 'desc')
                                  ->get();
                                  // dd($blooddonors);
-                 foreach($blooddonors as $blooddonor) {
-                     $blooddonor->districtname = $blooddonor->district->name_bangla;
-                     $blooddonor->upazillaname = $blooddonor->upazilla->name_bangla;
+                 foreach($blooddonors as $ambulance) {
+                     $ambulance->districtname = $ambulance->district->name_bangla;
+                     $ambulance->upazillaname = $ambulance->upazilla->name_bangla;
                      $ambulance->makeHidden('district', 'upazilla', 'ambulanceimage', 'created_at', 'updated_at');
                  }
-                 return $blooddonors;
+                 return $ambulances;
             });
             
             // dd($courses);
