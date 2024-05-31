@@ -241,7 +241,6 @@
                       <input type="text"
                              name="url"
                              value="{{ old('url') }}"
-                             autocomplete="off"
                              class="form-control"
                              placeholder="ই-সেবা লিংক (URL)" required>
                       <div class="input-group-append">
