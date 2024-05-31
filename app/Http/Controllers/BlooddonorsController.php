@@ -102,8 +102,8 @@ class BlooddonorsController extends Controller
     public function storeBloodDonor(Request $request, $id)
     {
         $this->validate($request,array(
-            'district_id'            => 'required',
-            'upazilla_id'            => 'required',
+            'district_id'         => 'required',
+            'upazilla_id'         => 'required',
             'name'                => 'required|string|max:191',
             'category'            => 'required',
             'mobile'              => 'required|string|max:191',
