@@ -25,7 +25,7 @@
                   <i class="fas fa-calendar-alt"></i> বাল্ক মেয়াদ বাড়ান
                 </button> --}}
                 <button type="button" class="btn btn-success btn-sm"  data-toggle="modal" data-target="#addUserModal" style="margin-left: 5px;">
-                  <i class="fas fa-user-plus"></i> নতুন
+                  <i class="fas fa-plus-square"></i> নতুন
                 </button>
               </form>
               
