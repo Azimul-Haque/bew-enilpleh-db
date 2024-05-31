@@ -14,8 +14,10 @@ class CreateEshebasTable extends Migration
     public function up()
     {
         Schema::create('eshebas', function (Blueprint $table) {
-            $table->id();
-            $table->timestamps();
+            $table->integer('district_id')->unsigned();
+            $table->integer('upazilla_id')->unsigned();
+            $table->string('name');
+            $table->string('mobile');
         });
     }
 
