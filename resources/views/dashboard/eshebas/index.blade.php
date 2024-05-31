@@ -70,7 +70,7 @@
                                 <span aria-hidden="true">&times;</span>
                               </button>
                             </div>
-                            <form method="post" action="{{ route('dashboard.ambulances.update', $esheba->id) }}" enctype="multipart/form-data">
+                            <form method="post" action="{{ route('dashboard.eshebas.update', $esheba->id) }}" enctype="multipart/form-data">
                               <div class="modal-body">
                                 
                                     @csrf
@@ -121,7 +121,7 @@
                                     </div>
                                     <center>
                                       @if($esheba->ambulanceimage != null)
-                                        <img src="{{ asset('images/ambulances/' . $esheba->ambulanceimage->image)}}" id='img-upload' style="width: 250px; height: auto;" class="img-responsive" />
+                                        <img src="{{ asset('images/eshebas/' . $esheba->ambulanceimage->image)}}" id='img-upload' style="width: 250px; height: auto;" class="img-responsive" />
                                       @else
                                         <img src="{{ asset('images/placeholder.png')}}" id='img-upload' style="width: 250px; height: auto;" class="img-responsive" />
                                       @endif
@@ -164,7 +164,7 @@
                               </div>
                               <div class="modal-footer">
                                 <button type="button" class="btn btn-secondary" data-dismiss="modal">ফিরে যান</button>
-                                <a href="{{ route('dashboard.ambulances.delete', $esheba->id) }}" class="btn btn-danger">ডিলেট করুন</a>
+                                <a href="{{ route('dashboard.eshebas.delete', $esheba->id) }}" class="btn btn-danger">ডিলেট করুন</a>
                               </div>
                             </div>
                           </div>
@@ -203,7 +203,7 @@
               <span aria-hidden="true">&times;</span>
             </button>
           </div>
-          <form method="post" action="{{ route('dashboard.ambulances.store') }}" enctype='multipart/form-data'>
+          <form method="post" action="{{ route('dashboard.eshebas.store') }}" enctype='multipart/form-data'>
             <div class="modal-body">
               
                   @csrf
@@ -298,7 +298,7 @@
 
         $(document).on('click', '#search-button', function() {
           if($('#search-param').val() != '') {
-            var urltocall = '{{ route('dashboard.ambulances') }}' +  '/' + $('#search-param').val();
+            var urltocall = '{{ route('dashboard.eshebas') }}' +  '/' + $('#search-param').val();
             location.href= urltocall;
           } else {
             $('#search-param').css({ "border": '#FF0000 2px solid'});
@@ -311,7 +311,7 @@
         $("#search-param").keyup(function(e) {
           if(e.which == 13) {
             if($('#search-param').val() != '') {
-              var urltocall = '{{ route('dashboard.ambulances') }}' +  '/' + $('#search-param').val();
+              var urltocall = '{{ route('dashboard.eshebas') }}' +  '/' + $('#search-param').val();
               location.href= urltocall;
             } else {
               $('#search-param').css({ "border": '#FF0000 2px solid'});
