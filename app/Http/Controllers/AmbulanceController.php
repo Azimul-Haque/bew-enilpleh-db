@@ -106,7 +106,7 @@ class AmbulanceController extends Controller
         
         // Cache::forget('blooddonors'. $request->category . $request->district_id);
         // Cache::forget('blooddonors'. $request->category . $request->district_id. $request->upazilla_id);
-        Session::flash('success', 'Blood Donor added successfully!');
+        Session::flash('success', 'Ambulance added successfully!');
         return redirect()->route('dashboard.ambulances');
     }
 
@@ -147,7 +147,7 @@ class AmbulanceController extends Controller
         
         // Cache::forget('blooddonors'. $request->category . $request->district_id);
         // Cache::forget('blooddonors'. $request->category . $request->district_id. $request->upazilla_id);
-        Session::flash('success', 'Blood Donor updated successfully!');
+        Session::flash('success', 'Ambulance updated successfully!');
         return redirect()->route('dashboard.ambulances');
     }
 }
