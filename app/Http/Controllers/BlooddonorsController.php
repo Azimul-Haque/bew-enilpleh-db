@@ -44,7 +44,7 @@ class BlooddonorsController extends Controller
 
     public function indexSearch($search)
     {
-        $blooddonorscount = Doctor::where('name', 'LIKE', "%$search%")
+        $blooddonorscount = Blooddonor::where('name', 'LIKE', "%$search%")
                                   ->orWhere('mobile', 'LIKE', "%$search%")
                                   ->orWhereHas('district', function ($query) use ($search){
                                       $query->where('name', 'like', '%'.$search.'%');
@@ -54,7 +54,7 @@ class BlooddonorsController extends Controller
                                       $query->orWhere('name_bangla', 'like', '%'.$search.'%');
                                   })
                                   ->count();
-        $doctors = Doctor::where('name', 'LIKE', "%$search%")
+        $blooddonors = Blooddonor::where('name', 'LIKE', "%$search%")
                               ->orWhere('degree', 'LIKE', "%$search%")
                               ->orWhere('serial', 'LIKE', "%$search%")
                               ->orWhere('helpline', 'LIKE', "%$search%")
