@@ -33,6 +33,8 @@ Route::get('/getblooddonors/{softtoken}/{category}/{district_id}', 'APIControlle
 Route::get('/getblooddonors/{softtoken}/{category}/{district_id}/{upazilla_id}', 'APIController@getBloodDonorsUpazilla')->name('api.getblooddonorsupazilla');
 Route::get('/getambulances/{softtoken}/{district_id}', 'APIController@getAmbulancesDistrict')->name('api.getambulancesdistrict');
 Route::get('/getambulances/{softtoken}/{district_id}/{upazilla_id}', 'APIController@getAmbulancesUpazilla')->name('api.getambulancesupazilla');
+Route::get('/geteshebas/{softtoken}/{district_id}', 'APIController@getEshebasDistrict')->name('api.geteshebasdistrict');
+Route::get('/geteshebas/{softtoken}/{district_id}/{upazilla_id}', 'APIController@getEshebasUpazilla')->name('api.geteshebasupazilla');
 
 
 
