@@ -243,7 +243,7 @@
                              value="{{ old('url') }}"
                              autocomplete="off"
                              class="form-control"
-                             placeholder="মোবাইল নম্বর" required>
+                             placeholder="ই-সেবা লিংক (URL)" required>
                       <div class="input-group-append">
                           <div class="input-group-text"><span class="fas fa-external-link-alt"></span></div>
                       </div>
