@@ -32,20 +32,20 @@ class AmbulanceController extends Controller
 
     public function index()
     {
-        $ambulancescount = Esheba::count();
+        $eshebascount = Esheba::count();
         $ambulances = Esheba::orderBy('id', 'desc')->paginate(10);
 
         $districts = District::all();
                 
         return view('dashboard.ambulances.index')
-                            ->withAmbulancescount($ambulancescount)
+                            ->withEshebascount($eshebascount)
                             ->withAmbulances($ambulances)
                             ->withDistricts($districts);
     }
 
     public function indexSearch($search)
     {
-        $ambulancescount = Esheba::where('name', 'LIKE', "%$search%")
+        $eshebascount = Esheba::where('name', 'LIKE', "%$search%")
                                   ->orWhere('url', 'LIKE', "%$search%")
                                   ->orWhereHas('district', function ($query) use ($search){
                                       $query->where('name', 'like', '%'.$search.'%');
@@ -70,7 +70,7 @@ class AmbulanceController extends Controller
         $districts = District::all();
         
         return view('dashboard.ambulances.index')
-                            ->withAmbulancescount($ambulancescount)
+                            ->withEshebascount($eshebascount)
                             ->withAmbulances($ambulances)
                             ->withDistricts($districts);
     }
