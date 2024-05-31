@@ -137,7 +137,6 @@ class AmbulanceController extends Controller
             $ambulanceimage->image       = $filename;
             $ambulanceimage->save();
         }
-        
 
         // image upload
         if($request->hasFile('image')) {
