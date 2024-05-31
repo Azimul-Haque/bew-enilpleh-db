@@ -15,7 +15,7 @@ class CreateAmbulanceimagesTable extends Migration
     {
         Schema::create('ambulanceimages', function (Blueprint $table) {
             $table->id();
-            $table->integer('doctor_id');
+            $table->integer('ambulance_id');
             $table->string('image');
         });
     }
