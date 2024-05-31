@@ -389,10 +389,10 @@ class APIController extends Controller
                              ->orderBy('id', 'desc')
                              ->get();
                              // dd($blooddonors);
-                 foreach($blooddonors as $hospital) {
-                     $hospital->district = $hospital->district->name_bangla;
-                     $hospital->upazilla = $hospital->upazilla->name_bangla;
-                     $hospital->makeHidden('district', 'upazilla');
+                 foreach($blooddonors as $blooddonor) {
+                     $blooddonor->district = $blooddonor->district->name_bangla;
+                     $blooddonor->upazilla = $blooddonor->upazilla->name_bangla;
+                     $blooddonor->makeHidden('district', 'upazilla');
                  }
                  return $blooddonors;
             });
