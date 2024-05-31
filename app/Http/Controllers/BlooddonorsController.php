@@ -42,4 +42,47 @@ class BlooddonorsController extends Controller
                             ->withDistricts($districts);
     }
 
+    public function indexSearch($search)
+    {
+        $doctorscount = Doctor::where('name', 'LIKE', "%$search%")
+                                  ->orWhere('degree', 'LIKE', "%$search%")
+                                  ->orWhere('serial', 'LIKE', "%$search%")
+                                  ->orWhere('helpline', 'LIKE', "%$search%")
+                                  ->orWhereHas('district', function ($query) use ($search){
+                                      $query->where('name', 'like', '%'.$search.'%');
+                                      $query->orWhere('name_bangla', 'like', '%'.$search.'%');
+                                  })->orWhereHas('upazilla', function ($query) use ($search){
+                                      $query->where('name', 'like', '%'.$search.'%');
+                                      $query->orWhere('name_bangla', 'like', '%'.$search.'%');
+                                  })
+                                  ->count();
+        $doctors = Doctor::where('name', 'LIKE', "%$search%")
+                              ->orWhere('degree', 'LIKE', "%$search%")
+                              ->orWhere('serial', 'LIKE', "%$search%")
+                              ->orWhere('helpline', 'LIKE', "%$search%")
+                              ->orWhereHas('district', function ($query) use ($search){
+                                  $query->where('name', 'like', '%'.$search.'%');
+                                  $query->orWhere('name_bangla', 'like', '%'.$search.'%');
+                              })->orWhereHas('upazilla', function ($query) use ($search){
+                                  $query->where('name', 'like', '%'.$search.'%');
+                                  $query->orWhere('name_bangla', 'like', '%'.$search.'%');
+                              })
+                              ->orderBy('id', 'desc')
+                              ->paginate(10);
+
+        $districts = District::all();
+        $medicaldepartments = Medicaldepartment::all();
+        $medicalsymptoms = Medicalsymptom::all();
+        $hospitals = Hospital::all();
+
+        
+        return view('dashboard.doctors.index')
+                            ->withDoctorscount($doctorscount)
+                            ->withDoctors($doctors)
+                            ->withDistricts($districts)
+                            ->withMedicaldepartments($medicaldepartments)
+                            ->withMedicalsymptoms($medicalsymptoms)
+                            ->withHospitals($hospitals);
+    }
+
 }
