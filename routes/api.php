@@ -30,7 +30,7 @@ Route::get('/getdoctors/{softtoken}/{medicalitemid}/{datatype}/{district_id}', '
 Route::get('/getdoctors/{softtoken}/{medicalitemid}/{datatype}/{district_id}/{upazilla_id}', 'APIController@getDoctorsUpazilla')->name('api.getdoctorsupazilla');
 Route::get('/gethospitaldoctors/{softtoken}/{hospital_id}', 'APIController@getHospitalDoctors')->name('api.gethospitaldoctors');
 Route::get('/getblooddonors/{softtoken}/{district_id}', 'APIController@getBloodDonorsDistrict')->name('api.getblooddonors');
-Route::get('/getblooddonors/{softtoken}/{district_id}', 'APIController@getBloodDonorsDistrict')->name('api.getblooddonors');
+Route::get('/getblooddonors/{softtoken}/{district_id}/{upazilla_id}', 'APIController@getBloodDonorsDistrict')->name('api.getblooddonors');
 
 
 
