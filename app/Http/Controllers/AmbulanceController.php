@@ -97,7 +97,7 @@ class AmbulanceController extends Controller
             $image    = $request->file('image');
             $filename = random_string(5) . time() .'.' . "webp";
             $location = public_path('images/ambulances/'. $filename);
-            Image::make($image)->fit(250, 250)->save($location);
+            Image::make($image)->fit(200, 200)->save($location);
             $ambulanceimage              = new Ambulanceimage;
             $ambulanceimage->ambulance_id   = $ambulance->id;
             $ambulanceimage->image       = $filename;
