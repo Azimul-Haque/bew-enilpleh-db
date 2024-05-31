@@ -88,7 +88,8 @@ class BlooddonorsController extends Controller
         $blooddonor->district_id = $request->district_id;
         $blooddonor->upazilla_id = $request->upazilla_id;
         $blooddonor->name = $request->name;
-        $blooddonor->name = $request->name;
+        $blooddonor->category = $request->category;
+        $blooddonor->mobile = $request->mobile;
         $blooddonor->save();
 
         if(isset($request->medicaldepartments)){
