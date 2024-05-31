@@ -71,7 +71,7 @@ class AmbulanceController extends Controller
         
         return view('dashboard.ambulances.index')
                             ->withEshebascount($eshebascount)
-                            ->withAmbulances($ambulances)
+                            ->withEshebas($eshebas)
                             ->withDistricts($districts);
     }
 
@@ -81,8 +81,8 @@ class AmbulanceController extends Controller
             'district_id'            => 'required',
             'upazilla_id'            => 'required',
             'name'                => 'required|string|max:191',
-            'mobile'              => 'required|string|max:191',
-            'image'              => 'sometimes',
+            'ur;'                 => 'required|string|max:191',
+            'image'               => 'sometimes',
         ));
 
         $ambulance = new Ambulance;
