@@ -15,7 +15,8 @@ class CreateEshebaimagesTable extends Migration
     {
         Schema::create('eshebaimages', function (Blueprint $table) {
             $table->id();
-            $table->timestamps();
+            $table->integer('esheba_id');
+            $table->string('image');
         });
     }
 
