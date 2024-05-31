@@ -23,5 +23,9 @@ use Cache;
 
 class AmbulanceController extends Controller
 {
-    //
+    public function __construct()
+    {
+        parent::__construct();
+        $this->middleware(['admin'])->only('index', 'indexSearch');
+    }
 }
