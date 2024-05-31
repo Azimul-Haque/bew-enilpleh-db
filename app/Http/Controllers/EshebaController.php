@@ -32,8 +32,8 @@ class AmbulanceController extends Controller
 
     public function index()
     {
-        $ambulancescount = Ambulance::count();
-        $ambulances = Ambulance::orderBy('id', 'desc')->paginate(10);
+        $ambulancescount = Esheba::count();
+        $ambulances = Esheba::orderBy('id', 'desc')->paginate(10);
 
         $districts = District::all();
                 
@@ -45,7 +45,7 @@ class AmbulanceController extends Controller
 
     public function indexSearch($search)
     {
-        $ambulancescount = Ambulance::where('name', 'LIKE', "%$search%")
+        $ambulancescount = Esheba::where('name', 'LIKE', "%$search%")
                                   ->orWhere('mobile', 'LIKE', "%$search%")
                                   ->orWhereHas('district', function ($query) use ($search){
                                       $query->where('name', 'like', '%'.$search.'%');
@@ -55,7 +55,7 @@ class AmbulanceController extends Controller
                                       $query->orWhere('name_bangla', 'like', '%'.$search.'%');
                                   })
                                   ->count();
-        $ambulances = Ambulance::where('name', 'LIKE', "%$search%")
+        $ambulances = Esheba::where('name', 'LIKE', "%$search%")
                                   ->orWhere('mobile', 'LIKE', "%$search%")
                                   ->orWhereHas('district', function ($query) use ($search){
                                       $query->where('name', 'like', '%'.$search.'%');
@@ -98,7 +98,7 @@ class AmbulanceController extends Controller
             $filename = random_string(5) . time() .'.' . "webp";
             $location = public_path('images/ambulances/'. $filename);
             Image::make($image)->fit(200, 200)->save($location);
-            $ambulanceimage              = new Ambulanceimage;
+            $ambulanceimage              = new Eshebaimage;
             $ambulanceimage->ambulance_id   = $ambulance->id;
             $ambulanceimage->image       = $filename;
             $ambulanceimage->save();
@@ -120,7 +120,7 @@ class AmbulanceController extends Controller
             'image'              => 'sometimes',
         ));
 
-        $ambulance = Ambulance::find($id);
+        $ambulance = Esheba::find($id);
         $ambulance->district_id = $request->district_id;
         $ambulance->upazilla_id = $request->upazilla_id;
         $ambulance->name = $request->name;
@@ -138,7 +138,7 @@ class AmbulanceController extends Controller
             $filename = random_string(5) . time() .'.' . "webp";
             $location = public_path('images/ambulances/'. $filename);
             Image::make($image)->fit(200, 200)->save($location);
-            $ambulanceimage              = Ambulanceimage::where('ambulance_id', $ambulance->id)->first();
+            $ambulanceimage              = Eshebaimage::where('ambulance_id', $ambulance->id)->first();
             $ambulanceimage->image       = $filename;
             $ambulanceimage->save();
         }
