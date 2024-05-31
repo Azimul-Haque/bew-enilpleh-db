@@ -42,7 +42,7 @@
                 </tr>
               </thead>
               <tbody>
-                @foreach($blooddonors as $hospital)
+                @foreach($blooddonors as $blooddonor)
                   <tr>
                     <td>
                       {{ $hospital->name }}
