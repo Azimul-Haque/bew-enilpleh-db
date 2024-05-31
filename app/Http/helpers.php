@@ -59,12 +59,12 @@
       return $text;
   }
 
-  function blooddonor_category($hospital_type) {
-      if ($hospital_type == 1) {
+  function blooddonor_category($category) {
+      if ($category == 1) {
         $text = "মেডিকেল কলেজ ও হাসপাতাল";
-      } elseif($hospital_type == 2) {
+      } elseif($category == 2) {
         $text = "প্রাইভেট হাসপাতাল";
-      } elseif($hospital_type == 3) {
+      } elseif($category == 3) {
         $text = "স্বাস্থ্য কমপ্লেক্স";
       }
       return $text;
