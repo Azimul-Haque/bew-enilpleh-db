@@ -46,7 +46,6 @@
                   <tr>
                     <td>
                       {{ $blooddonor->name }}
-                      <small class="text-black-50"><i class="fas fa-phone"></i> {{ $blooddonor->telephone }}</small>
                       <small class="text-black-50"><i class="fas fa-mobile"></i> {{ $blooddonor->mobile }}</small><br/>
                       <span class="badge bg-success">{{ hospital_type($blooddonor->hospital_type) }}</span>
                     </td>
