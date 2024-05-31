@@ -70,7 +70,7 @@
                                 <span aria-hidden="true">&times;</span>
                               </button>
                             </div>
-                            <form method="post" action="{{ route('dashboard.ambulances.update', $ambulance->id) }}">
+                            <form method="post" action="{{ route('dashboard.ambulances.update', $ambulance->id) }}" enctype="multipart/form-data">
                               <div class="modal-body">
                                 
                                     @csrf
