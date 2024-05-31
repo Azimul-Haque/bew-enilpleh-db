@@ -61,7 +61,7 @@
 
   function blooddonor_category($category) {
       if ($category == 1) {
-        $text = "মেডিকেল কলেজ ও হাসপাতাল";
+        $text = "ব্রাড ব্যাংক";
       } elseif($category == 2) {
         $text = "প্রাইভেট হাসপাতাল";
       } elseif($category == 3) {
