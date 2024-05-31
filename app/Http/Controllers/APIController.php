@@ -476,21 +476,14 @@ class APIController extends Controller
     public function getEshebas($softtoken)
     {
         if($softtoken == env('SOFT_TOKEN')) {
-            try {
-              $eshebas = Cache::remember('eshebas', 365 * 24 * 60 * 60, function ()  {
-                   $eshebas = District::get();
-                   return $eshebas;
-              });
-              return response()->json([
-                'success' => true,
-                'eshebas' => $eshebas,
-              ]);
-
-              
-            }
-            catch (\Exception $e) {
-              return $e->getMessage();
-            }
+            $eshebas = Cache::remember('eshebas', 365 * 24 * 60 * 60, function ()  {
+               $eshebas = District::get();
+               return $eshebas;
+            });
+            return response()->json([
+            'success' => true,
+            'eshebas' => $eshebas,
+            ]);
         } else {
             return response()->json([
                 'success' => false
