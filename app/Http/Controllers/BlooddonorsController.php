@@ -35,13 +35,9 @@ class BlooddonorsController extends Controller
         $blooddonors = Blooddonor::orderBy('id', 'desc')->paginate(10);
 
         $districts = District::all();
-        $medicaldepartments = Medicaldepartment::all();
-        $medicalsymptoms = Medicalsymptom::all();
-        $hospitals = Hospital::all();
-
-        
+                
         return view('dashboard.doctors.index')
-                            ->withDoctorscount($doctorscount)
+                            ->withBlooddonorscount($blooddonorscount)
                             ->withDoctors($doctors)
                             ->withDistricts($districts)
                             ->withMedicaldepartments($medicaldepartments)
