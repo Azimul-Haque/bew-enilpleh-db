@@ -484,10 +484,7 @@ class APIController extends Controller
               // return $districts;
               // return view('dashboard.hospitals.print')->withDistricts($districts);
 
-              return response()->json([
-                'success' => true,
-                'ambulances' => $ambulances,
-            ]);
+              
             }
             catch (\Exception $e) {
               return $e->getMessage();
