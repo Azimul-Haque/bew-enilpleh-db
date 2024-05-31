@@ -42,5 +42,4 @@ class BlooddonorsController extends Controller
                             ->withDistricts($districts);
     }
 
-    
 }
