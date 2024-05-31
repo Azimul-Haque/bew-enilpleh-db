@@ -133,7 +133,6 @@ class AmbulanceController extends Controller
             // dd($image_path);
             if(File::exists($image_path)) {
                 File::delete($image_path);
-                dd($image_path);
             } else {
                 return $image_path;
             }
