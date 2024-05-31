@@ -43,15 +43,7 @@ class EshebaController extends Controller
     public function indexSearch($search)
     {
         $eshebascount = Esheba::where('name', 'LIKE', "%$search%")
-                                  ->orWhere('url', 'LIKE', "%$search%")
-                                  ->orWhereHas('district', function ($query) use ($search){
-                                      $query->where('name', 'like', '%'.$search.'%');
-                                      $query->orWhere('name_bangla', 'like', '%'.$search.'%');
-                                  })->orWhereHas('upazilla', function ($query) use ($search){
-                                      $query->where('name', 'like', '%'.$search.'%');
-                                      $query->orWhere('name_bangla', 'like', '%'.$search.'%');
-                                  })
-                                  ->count();
+                                  ->orWhere('url', 'LIKE', "%$search%")->count();
         $eshebas = Esheba::where('name', 'LIKE', "%$search%")
                                   ->orWhere('url', 'LIKE', "%$search%")
                                   ->orWhereHas('district', function ($query) use ($search){
