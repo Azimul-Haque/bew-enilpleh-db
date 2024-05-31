@@ -57,6 +57,13 @@ Route::post('/dashboard/ambulances/store', 'AmbulanceController@storeAmbulance')
 Route::post('/dashboard/ambulances/{id}/update', 'AmbulanceController@updateAmbulance')->name('dashboard.ambulances.update');
 Route::get('/dashboard/ambulances/{id}/delete', 'AmbulanceController@deleteAmbulance')->name('dashboard.ambulances.delete');
 
+// Ambulances
+Route::get('/dashboard/eshebas', 'AmbulanceController@index')->name('dashboard.ambulances');
+Route::get('/dashboard/ambulances/{search}', 'AmbulanceController@indexSearch')->name('dashboard.ambulances.search');
+Route::post('/dashboard/ambulances/store', 'AmbulanceController@storeAmbulance')->name('dashboard.ambulances.store');
+Route::post('/dashboard/ambulances/{id}/update', 'AmbulanceController@updateAmbulance')->name('dashboard.ambulances.update');
+Route::get('/dashboard/ambulances/{id}/delete', 'AmbulanceController@deleteAmbulance')->name('dashboard.ambulances.delete');
+
 
 
 
