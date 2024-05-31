@@ -75,7 +75,7 @@ class AmbulanceController extends Controller
                             ->withDistricts($districts);
     }
 
-    public function storeAmbulance(Request $request)
+    public function storeEsheba(Request $request)
     {
         $this->validate($request,array(
             'district_id'            => 'required',
@@ -110,7 +110,7 @@ class AmbulanceController extends Controller
         return redirect()->route('dashboard.ambulances');
     }
 
-    public function updateAmbulance(Request $request, $id)
+    public function updateEsheba(Request $request, $id)
     {
         $this->validate($request,array(
             'district_id'            => 'required',
