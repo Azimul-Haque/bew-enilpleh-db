@@ -43,19 +43,19 @@ Route::post('/dashboard/doctors/store', 'DoctorController@storeDoctor')->name('d
 Route::post('/dashboard/doctors/{id}/update', 'DoctorController@updateDoctor')->name('dashboard.doctors.update');
 Route::get('/dashboard/doctors/{id}/delete', 'DoctorController@deleteDoctor')->name('dashboard.doctors.delete');
 
-// Blood Donor
+// Blood Donors
 Route::get('/dashboard/blooddonors', 'BlooddonorsController@index')->name('dashboard.blooddonors');
 Route::get('/dashboard/blooddonors/{search}', 'BlooddonorsController@indexSearch')->name('dashboard.blooddonors.search');
 Route::post('/dashboard/blooddonors/store', 'BlooddonorsController@storeBloodDonor')->name('dashboard.blooddonors.store');
 Route::post('/dashboard/blooddonors/{id}/update', 'BlooddonorsController@updateBloodDonor')->name('dashboard.blooddonors.update');
 Route::get('/dashboard/blooddonors/{id}/delete', 'BlooddonorsController@deleteBloodDonor')->name('dashboard.blooddonors.delete');
 
-// Ambulance
-Route::get('/dashboard/blooddonors', 'BlooddonorsController@index')->name('dashboard.blooddonors');
-Route::get('/dashboard/blooddonors/{search}', 'BlooddonorsController@indexSearch')->name('dashboard.blooddonors.search');
-Route::post('/dashboard/blooddonors/store', 'BlooddonorsController@storeBloodDonor')->name('dashboard.blooddonors.store');
-Route::post('/dashboard/blooddonors/{id}/update', 'BlooddonorsController@updateBloodDonor')->name('dashboard.blooddonors.update');
-Route::get('/dashboard/blooddonors/{id}/delete', 'BlooddonorsController@deleteBloodDonor')->name('dashboard.blooddonors.delete');
+// Ambulances
+Route::get('/dashboard/ambulances', 'BlooddonorsController@index')->name('dashboard.blooddonors');
+Route::get('/dashboard/ambulances/{search}', 'BlooddonorsController@indexSearch')->name('dashboard.blooddonors.search');
+Route::post('/dashboard/ambulances/store', 'BlooddonorsController@storeBloodDonor')->name('dashboard.blooddonors.store');
+Route::post('/dashboard/ambulances/{id}/update', 'BlooddonorsController@updateBloodDonor')->name('dashboard.blooddonors.update');
+Route::get('/dashboard/ambulances/{id}/delete', 'BlooddonorsController@deleteBloodDonor')->name('dashboard.blooddonors.delete');
 
 
 
