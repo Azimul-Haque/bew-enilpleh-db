@@ -96,14 +96,14 @@ class AmbulanceController extends Controller
         if($request->hasFile('image')) {
             $image    = $request->file('image');
             $filename = random_string(5) . time() .'.' . "webp";
-            $location = public_path('images/doctors/'. $filename);
+            $location = public_path('images/ambulances/'. $filename);
             Image::make($image)->resize(350, null, function ($constraint) { $constraint->aspectRatio(); })->save($location);
             $doctorimage              = new Doctorimage;
             $doctorimage->doctor_id = $doctor->id;
             $doctorimage->image       = $filename;
             $doctorimage->save();
         }
-        
+
 
         
         // Cache::forget('blooddonors'. $request->category . $request->district_id);
