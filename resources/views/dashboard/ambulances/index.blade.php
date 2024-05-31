@@ -45,8 +45,7 @@
                 @foreach($ambulances as $ambulance)
                   <tr>
                     <td>
-                      {{ $ambulance->name }}
-                      <small class="text-black-50"><i class="fas fa-phone"></i> {{ $ambulance->mobile }}</small><br/>
+                      {{ $ambulance->name }}<br/>
                       <span class="badge bg-success"><i class="fas fa-phone"></i> {{ $ambulance->mobile }}</span>
                     </td>
                     <td>
