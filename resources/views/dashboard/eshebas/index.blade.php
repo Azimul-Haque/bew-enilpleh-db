@@ -209,7 +209,7 @@
                   @csrf
 
                   <div class="input-group mb-3">
-                    <select name="district_id" id="district" class="form-control district" required>
+                    {{-- <select name="district_id" id="district" class="form-control district" required>
                         <option selected="" disabled="" value="">জেলা নির্বাচন করুন</option>
                         @foreach($districts as $district)
                           <option value="{{ $district->id }}">{{ $district->name_bangla }}</option>
@@ -226,7 +226,7 @@
                     <div class="input-group-append">
                         <div class="input-group-text"><span class="fas fa-map-marked-alt"></span></div>
                     </div>
-                  </div>
+                  </div> --}}
                   <div class="input-group mb-3">
                       <input type="text"
                              name="name"
