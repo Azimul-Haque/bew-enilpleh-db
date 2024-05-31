@@ -61,7 +61,7 @@
 
   function blooddonor_category($category) {
       if ($category == 1) {
-        $text = "ব্রাড ব্যাংক";
+        $text = "ব্লাড ব্যাংক";
       } elseif($category == 2) {
         $text = "রক্তদাতা সংগঠন";
       }
