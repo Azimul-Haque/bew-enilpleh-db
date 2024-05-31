@@ -118,8 +118,8 @@ class BlooddonorsController extends Controller
         $blooddonor->save();
 
         
-        // Cache::forget('doctors'. $request->district_id);
-        // Cache::forget('doctors'. $request->district_id . $request->upazilla_id);
+        Cache::forget('blooddonors'. $request->category . $request->district_id);
+        Cache::forget('blooddonors'. $request->category . $request->district_id. $request->upazilla_id);
         Session::flash('success', 'Blood Donor updated successfully!');
         return redirect()->route('dashboard.blooddonors');
     }
