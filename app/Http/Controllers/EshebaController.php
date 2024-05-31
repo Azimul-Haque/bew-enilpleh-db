@@ -46,7 +46,7 @@ class AmbulanceController extends Controller
     public function indexSearch($search)
     {
         $ambulancescount = Esheba::where('name', 'LIKE', "%$search%")
-                                  ->orWhere('mobile', 'LIKE', "%$search%")
+                                  ->orWhere('url', 'LIKE', "%$search%")
                                   ->orWhereHas('district', function ($query) use ($search){
                                       $query->where('name', 'like', '%'.$search.'%');
                                       $query->orWhere('name_bangla', 'like', '%'.$search.'%');
@@ -56,7 +56,7 @@ class AmbulanceController extends Controller
                                   })
                                   ->count();
         $ambulances = Esheba::where('name', 'LIKE', "%$search%")
-                                  ->orWhere('mobile', 'LIKE', "%$search%")
+                                  ->orWhere('url', 'LIKE', "%$search%")
                                   ->orWhereHas('district', function ($query) use ($search){
                                       $query->where('name', 'like', '%'.$search.'%');
                                       $query->orWhere('name_bangla', 'like', '%'.$search.'%');
