@@ -103,8 +103,6 @@ class AmbulanceController extends Controller
             $ambulanceimage->image       = $filename;
             $ambulanceimage->save();
         }
-
-
         
         // Cache::forget('blooddonors'. $request->category . $request->district_id);
         // Cache::forget('blooddonors'. $request->category . $request->district_id. $request->upazilla_id);
