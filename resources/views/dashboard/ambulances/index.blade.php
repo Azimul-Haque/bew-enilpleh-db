@@ -42,27 +42,27 @@
                 </tr>
               </thead>
               <tbody>
-                @foreach($ambulances as $blooddonor)
+                @foreach($ambulances as $ambulance)
                   <tr>
                     <td>
-                      {{ $blooddonor->name }}
-                      <small class="text-black-50"><i class="fas fa-phone"></i> {{ $blooddonor->mobile }}</small><br/>
-                      <span class="badge bg-success">{{ blooddonor_category($blooddonor->category) }}</span>
+                      {{ $ambulance->name }}
+                      <small class="text-black-50"><i class="fas fa-phone"></i> {{ $ambulance->mobile }}</small><br/>
+                      <span class="badge bg-success">{{ blooddonor_category($ambulance->category) }}</span>
                     </td>
                     <td>
-                      {{ $blooddonor->upazilla->name_bangla }}, {{ $blooddonor->district->name_bangla }}
+                      {{ $ambulance->upazilla->name_bangla }}, {{ $ambulance->district->name_bangla }}
                     </td>
                     <td align="right" width="40%">
-                      {{-- <button type="button" class="btn btn-warning btn-sm" data-toggle="modal" data-target="#notifModal{{ $blooddonor->id }}">
+                      {{-- <button type="button" class="btn btn-warning btn-sm" data-toggle="modal" data-target="#notifModal{{ $ambulance->id }}">
                         <i class="fas fa-bell"></i>
                       </button> --}}
-                      <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#editUserModal{{ $blooddonor->id }}">
+                      <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#editUserModal{{ $ambulance->id }}">
                         <i class="fas fa-edit"></i>
                       </button>
                       {{-- Edit User Modal Code --}}
                       {{-- Edit User Modal Code --}}
                       <!-- Modal -->
-                      <div class="modal fade" id="editUserModal{{ $blooddonor->id }}" tabindex="-1" role="dialog" aria-labelledby="editUserModalLabel" aria-hidden="true" data-backdrop="static">
+                      <div class="modal fade" id="editUserModal{{ $ambulance->id }}" tabindex="-1" role="dialog" aria-labelledby="editUserModalLabel" aria-hidden="true" data-backdrop="static">
                         <div class="modal-dialog" role="document">
                           <div class="modal-content">
                             <div class="modal-header bg-primary">
@@ -71,7 +71,7 @@
                                 <span aria-hidden="true">&times;</span>
                               </button>
                             </div>
-                            <form method="post" action="{{ route('dashboard.blooddonors.update', $blooddonor->id) }}">
+                            <form method="post" action="{{ route('dashboard.blooddonors.update', $ambulance->id) }}">
                               <div class="modal-body">
                                 
                                     @csrf
@@ -80,7 +80,7 @@
                                       <select name="district_id" id="district" class="form-control district" required>
                                           <option selected="" disabled="" value="">জেলা নির্বাচন করুন</option>
                                           @foreach($districts as $district)
-                                            <option value="{{ $district->id }}" @if($district->id == $blooddonor->district_id) selected @endif>{{ $district->name_bangla }}</option>
+                                            <option value="{{ $district->id }}" @if($district->id == $ambulance->district_id) selected @endif>{{ $district->name_bangla }}</option>
                                           @endforeach
                                       </select>
                                       <div class="input-group-append">
@@ -89,7 +89,7 @@
                                     </div>
                                     <div class="input-group mb-3">
                                       <select name="upazilla_id" id="upazilla" class="form-control upazilla" required>
-                                          <option selected="" value="{{ $blooddonor->upazilla_id }}">{{ $blooddonor->upazilla->name_bangla }}</option>
+                                          <option selected="" value="{{ $ambulance->upazilla_id }}">{{ $ambulance->upazilla->name_bangla }}</option>
                                       </select>
                                       <div class="input-group-append">
                                           <div class="input-group-text"><span class="fas fa-map-marked-alt"></span></div>
@@ -99,7 +99,7 @@
                                         <input type="text"
                                                name="name"
                                                class="form-control"
-                                               value="{{ $blooddonor->name }}"
+                                               value="{{ $ambulance->name }}"
                                                placeholder="রক্তদাতাের নাম" required>
                                         <div class="input-group-append">
                                             <div class="input-group-text"><span class="fas fa-hospital"></span></div>
@@ -108,8 +108,8 @@
                                     <div class="input-group mb-3">
                                       <select name="category" class="form-control" required>
                                           <option selected="" disabled="" value="">রক্তদাতা প্রতিষ্ঠানের ধরন</option>
-                                          <option value="1" @if($blooddonor->category == 1) selected @endif>ব্লাড ব্যাংক</option>
-                                          <option value="2" @if($blooddonor->category == 2) selected @endif>রক্তদাতা সংগঠন</option>
+                                          <option value="1" @if($ambulance->category == 1) selected @endif>ব্লাড ব্যাংক</option>
+                                          <option value="2" @if($ambulance->category == 2) selected @endif>রক্তদাতা সংগঠন</option>
                                       </select>
                                       <div class="input-group-append">
                                           <div class="input-group-text"><span class="fas fa-star-half-alt"></span></div>
@@ -118,7 +118,7 @@
                                     <div class="input-group mb-3">
                                         <input type="number"
                                                name="mobile"
-                                               value="{{ $blooddonor->mobile }}"
+                                               value="{{ $ambulance->mobile }}"
                                                autocomplete="off"
                                                class="form-control"
                                                placeholder="মোবাইল নম্বর" required>
@@ -139,14 +139,14 @@
                       {{-- Edit User Modal Code --}}
                       {{-- Edit User Modal Code --}}
 
-                      <button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#deleteUserModal{{ $blooddonor->id }}">
+                      <button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#deleteUserModal{{ $ambulance->id }}">
                         <i class="fas fa-trash-alt"></i>
                       </button>
                     </td>
                         {{-- Delete User Modal Code --}}
                         {{-- Delete User Modal Code --}}
                         <!-- Modal -->
-                        <div class="modal fade" id="deleteUserModal{{ $blooddonor->id }}" tabindex="-1" role="dialog" aria-labelledby="deleteUserModalLabel" aria-hidden="true" data-backdrop="static">
+                        <div class="modal fade" id="deleteUserModal{{ $ambulance->id }}" tabindex="-1" role="dialog" aria-labelledby="deleteUserModalLabel" aria-hidden="true" data-backdrop="static">
                           <div class="modal-dialog" role="document">
                             <div class="modal-content">
                               <div class="modal-header bg-danger">
@@ -158,13 +158,13 @@
                               <div class="modal-body">
                                 আপনি কি নিশ্চিতভাবে এই রক্তদাতাকে ডিলেট করতে চান?<br/>
                                 <center>
-                                    <big><b>{{ $blooddonor->name }}</b></big><br/>
-                                    <small><i class="fas fa-phone"></i> {{ $blooddonor->mobile }}</small>
+                                    <big><b>{{ $ambulance->name }}</b></big><br/>
+                                    <small><i class="fas fa-phone"></i> {{ $ambulance->mobile }}</small>
                                 </center>
                               </div>
                               <div class="modal-footer">
                                 <button type="button" class="btn btn-secondary" data-dismiss="modal">ফিরে যান</button>
-                                <a href="{{ route('dashboard.blooddonors.delete', $blooddonor->id) }}" class="btn btn-danger">ডিলেট করুন</a>
+                                <a href="{{ route('dashboard.blooddonors.delete', $ambulance->id) }}" class="btn btn-danger">ডিলেট করুন</a>
                               </div>
                             </div>
                           </div>
@@ -176,7 +176,7 @@
                   <script type="text/javascript" src="{{ asset('js/bootstrap-datepicker.min.js') }}"></script>
                   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
                   <script>
-                    $("#packageexpirydate{{ $blooddonor->id }}").datepicker({
+                    $("#packageexpirydate{{ $ambulance->id }}").datepicker({
                       format: 'MM dd, yyyy',
                       todayHighlight: true,
                       autoclose: true,
