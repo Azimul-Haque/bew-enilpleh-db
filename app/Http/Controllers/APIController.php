@@ -477,13 +477,13 @@ class APIController extends Controller
     {
         if($softtoken == env('SOFT_TOKEN')) {
             try {
-              $districts = Cache::remember('districts', 365 * 24 * 60 * 60, function ()  {
-                   $districts = District::get();
-                   return $districts;
+              $eshebas = Cache::remember('eshebas', 365 * 24 * 60 * 60, function ()  {
+                   $eshebas = District::get();
+                   return $eshebas;
               });
               return response()->json([
                 'success' => true,
-                'ambulances' => $ambulances,
+                'eshebas' => $eshebas,
               ]);
 
               
