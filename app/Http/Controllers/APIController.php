@@ -506,17 +506,9 @@ class APIController extends Controller
                  $admins = Admin::where('district_id', $district_id)
                                  ->orderBy('id', 'desc')
                                  ->get();
-                                 // dd($admins);
-                 foreach($admins as $ambulance) {
-                     // $ambulance->districtname = $ambulance->district->name_bangla;
-                     // $ambulance->upazillaname = $ambulance->upazilla->name_bangla;
-                     $ambulance->image = $ambulance->ambulanceimage ? $ambulance->ambulanceimage->image : '';
-                     $ambulance->makeHidden('district', 'upazilla', 'ambulanceimage', 'created_at', 'updated_at');
-                 }
                  return $admins;
             });
             
-            // dd($courses);
             return response()->json([
                 'success' => true,
                 'admins' => $admins,
