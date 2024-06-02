@@ -26,7 +26,7 @@
               <tbody>
                 @foreach($districts as $district)
                   <tr>
-                    <td style="font-size: 12px;">
+                    <td style="font-size: 14px;">
                       {{ $district->name }}
                     </td>
                   </tr>
