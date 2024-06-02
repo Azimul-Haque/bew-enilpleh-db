@@ -70,10 +70,11 @@ class AdminandothersController extends Controller
             'mobile'              => 'required|string|max:191',
         ));
 
-        $esheba = new Admin;
-        $esheba->name = $request->name;
-        $esheba->url = $request->url;
-        $esheba->save();
+        $admin = new Admin;
+        $admin->district_id = $district_id;
+        $admin->name = $request->name;
+        $admin->url = $request->url;
+        $admin->save();
 
         // image upload
         if($request->hasFile('image')) {
