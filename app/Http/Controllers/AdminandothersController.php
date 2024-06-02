@@ -76,7 +76,7 @@ class AdminandothersController extends Controller
         $admin->mobile = $request->mobile;
         $admin->save();
 
-        Cache::forget('eshebas');
+        Cache::forget('admins' . $district_id);
         Session::flash('success', 'E-sheba added successfully!');
         return redirect()->route('dashboard.eshebas');
     }
