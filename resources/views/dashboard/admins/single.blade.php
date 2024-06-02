@@ -178,7 +178,7 @@
                       </div>
                   </div>
                   <div class="input-group mb-3">
-                      <input type="text"
+                      <input type="number"
                              name="mobile"
                              value="{{ old('mobile') }}"
                              class="form-control"
