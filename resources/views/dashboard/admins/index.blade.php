@@ -28,10 +28,7 @@
                 @foreach($districts as $district)
                   <tr>
                     <td>
-                      {{ $district->name }}<br/>
-                    </td>
-                    <td>
-                      <a href="{{ $district->url }}" target="_blank">{{ $district->name }} (ক্লিক করুন)</a>
+                      {{ $district->name }}
                     </td>
                   </tr>
                   
