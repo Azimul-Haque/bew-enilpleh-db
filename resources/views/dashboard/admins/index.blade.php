@@ -24,13 +24,13 @@
                 </tr>
               </thead> --}}
               <tbody>
-                @foreach($districts as $district)
+                {{-- @foreach($districts as $district)
                   <tr>
                     <td style="font-size: 14px;">
                       {{ $district->name }}
                     </td>
                   </tr>
-                @endforeach
+                @endforeach --}}
 
                 @foreach ($districts->chunk(4) as $chunk)
                     <tr>
