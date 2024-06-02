@@ -25,7 +25,7 @@
                 </tr>
               </thead>
               <tbody>
-                @foreach($eshebas as $esheba)
+                @foreach($districts as $esheba)
                   <tr>
                     <td>
                       {{ $esheba->name }}<br/>
@@ -52,7 +52,7 @@
                                 <span aria-hidden="true">&times;</span>
                               </button>
                             </div>
-                            <form method="post" action="{{ route('dashboard.eshebas.update', $esheba->id) }}" enctype="multipart/form-data">
+                            <form method="post" action="{{ route('dashboard.districts.update', $esheba->id) }}" enctype="multipart/form-data">
                               <div class="modal-body">
                                 
                                     @csrf
@@ -115,7 +115,7 @@
                               </div>
                               <div class="modal-footer">
                                 <button type="button" class="btn btn-secondary" data-dismiss="modal">ফিরে যান</button>
-                                <a href="{{ route('dashboard.eshebas.delete', $esheba->id) }}" class="btn btn-danger">ডিলেট করুন</a>
+                                <a href="{{ route('dashboard.districts.delete', $esheba->id) }}" class="btn btn-danger">ডিলেট করুন</a>
                               </div>
                             </div>
                           </div>
@@ -139,7 +139,7 @@
           </div>
           <!-- /.card-body -->
         </div>
-        {{ $eshebas->links() }}
+        {{ $districts->links() }}
     </div>
 
     {{-- Add User Modal Code --}}
