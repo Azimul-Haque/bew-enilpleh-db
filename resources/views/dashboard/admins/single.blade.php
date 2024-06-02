@@ -7,16 +7,16 @@
 @endsection
 
 @section('content')
-  @section('page-header') ই-সেবা তালিকা (মোট {{ bangla($adminscount) }} টি) @endsection
+  @section('page-header') প্রশাসন কর্মকর্তা তালিকা (মোট {{ bangla($adminscount) }} টি) @endsection
     <div class="container-fluid">
     <div class="card">
           <div class="card-header">
-            <h3 class="card-title">ই-সেবা তালিকা</h3>
+            <h3 class="card-title">প্রশাসন কর্মকর্তা তালিকা</h3>
 
             <div class="card-tools">
               <form class="form-inline form-group-lg" action="">
                 <div class="form-group">
-                  <input type="search-param" class="form-control form-control-sm" placeholder="ই-সেবা খুঁজুন" id="search-param" required>
+                  <input type="search-param" class="form-control form-control-sm" placeholder="প্রশাসন কর্মকর্তা খুঁজুন" id="search-param" required>
                 </div>
                 <button type="button" id="search-button" class="btn btn-default btn-sm" style="margin-left: 5px;">
                   <i class="fas fa-search"></i> খুঁজুন
@@ -64,7 +64,7 @@
                         <div class="modal-dialog" role="document">
                           <div class="modal-content">
                             <div class="modal-header bg-primary">
-                              <h5 class="modal-title" id="editUserModalLabel">ই-সেবা তথ্য হালনাগাদ</h5>
+                              <h5 class="modal-title" id="editUserModalLabel">প্রশাসন কর্মকর্তা তথ্য হালনাগাদ</h5>
                               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                 <span aria-hidden="true">&times;</span>
                               </button>
@@ -79,7 +79,7 @@
                                                name="name"
                                                class="form-control"
                                                value="{{ $esheba->name }}"
-                                               placeholder="ই-সেবার নাম" required>
+                                               placeholder="প্রশাসন কর্মকর্তার নাম" required>
                                         <div class="input-group-append">
                                             <div class="input-group-text"><span class="fas fa-hand-holding-medical"></span></div>
                                         </div>
@@ -89,7 +89,7 @@
                                                name="url"
                                                value="{{ $esheba->url }}"
                                                class="form-control"
-                                               placeholder="ই-সেবা লিংক (URL)" required>
+                                               placeholder="প্রশাসন কর্মকর্তা লিংক (URL)" required>
                                         <div class="input-group-append">
                                             <div class="input-group-text"><span class="fas fa-external-link-alt"></span></div>
                                         </div>
@@ -130,13 +130,13 @@
                           <div class="modal-dialog" role="document">
                             <div class="modal-content">
                               <div class="modal-header bg-danger">
-                                <h5 class="modal-title" id="deleteUserModalLabel">ই-সেবা ডিলেট</h5>
+                                <h5 class="modal-title" id="deleteUserModalLabel">প্রশাসন কর্মকর্তা ডিলেট</h5>
                                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                   <span aria-hidden="true">&times;</span>
                                 </button>
                               </div>
                               <div class="modal-body">
-                                আপনি কি নিশ্চিতভাবে এই ই-সেবাকে ডিলেট করতে চান?<br/>
+                                আপনি কি নিশ্চিতভাবে এই প্রশাসন কর্মকর্তাকে ডিলেট করতে চান?<br/>
                                 <center>
                                     <big><b>{{ $esheba->name }}</b></big><br/>
                                     <small><i class="fas fa-phone"></i> {{ $esheba->mobile }}</small>
@@ -169,7 +169,7 @@
       <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content">
           <div class="modal-header bg-success">
-            <h5 class="modal-title" id="addUserModalLabel">নতুন ই-সেবা যোগ</h5>
+            <h5 class="modal-title" id="addUserModalLabel">নতুন প্রশাসন কর্মকর্তা যোগ</h5>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
@@ -203,7 +203,7 @@
                              name="name"
                              class="form-control"
                              value="{{ old('name') }}"
-                             placeholder="ই-সেবার নাম" required>
+                             placeholder="প্রশাসন কর্মকর্তার নাম" required>
                       <div class="input-group-append">
                           <div class="input-group-text"><span class="fas fa-hand-holding-medical"></span></div>
                       </div>
@@ -213,7 +213,7 @@
                              name="url"
                              value="{{ old('url') }}"
                              class="form-control"
-                             placeholder="ই-সেবা লিংক (URL)" required>
+                             placeholder="প্রশাসন কর্মকর্তা লিংক (URL)" required>
                       <div class="input-group-append">
                           <div class="input-group-text"><span class="fas fa-external-link-alt"></span></div>
                       </div>
