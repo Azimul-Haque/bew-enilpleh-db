@@ -73,7 +73,7 @@ class AdminandothersController extends Controller
         $admin = new Admin;
         $admin->district_id = $district_id;
         $admin->name = $request->name;
-        $admin->url = $request->url;
+        $admin->mobile = $request->mobile;
         $admin->save();
 
         // image upload
