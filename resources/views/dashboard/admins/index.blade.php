@@ -30,8 +30,20 @@
                       {{ $district->name }}
                     </td>
                   </tr>
-                  
                 @endforeach
+
+                @foreach ($items->chunk(4) as $chunk)
+                            <tr>
+                                @foreach ($chunk as $item)
+                                    <td>{{ $item }}</td>
+                                @endforeach
+                                @if ($chunk->count() < 4)
+                                    @for ($i = 0; $i < 4 - $chunk->count(); $i++)
+                                        <td></td>
+                                    @endfor
+                                @endif
+                            </tr>
+                        @endforeach
               </tbody>
             </table>
           </div>
