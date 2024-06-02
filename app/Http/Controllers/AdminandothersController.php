@@ -60,7 +60,7 @@ class AdminandothersController extends Controller
         
         $district = District::find($district_id);
         $adminscount = Admin::where('name', 'LIKE', "%$search%")
-                                  ->orWhere('url', 'LIKE', "%$search%")->count();
+                            ->orWhere('mobile', 'LIKE', "%$search%")->count();
         $admins = Admin::where('district_id', $district_id)->orderBy('id', 'desc')->paginate(10);
                 
         return view('dashboard.admins.single')
