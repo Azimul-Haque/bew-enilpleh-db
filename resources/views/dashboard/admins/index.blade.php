@@ -35,11 +35,11 @@
                 @foreach ($districts->chunk(4) as $chunk)
                     <tr>
                         @foreach ($chunk as $district)
-                            <td>{{ $district->name_bangla }}</td>
+                            <td style="font-size: 14px;">{{ $district->name_bangla }}</td>
                         @endforeach
                         @if ($chunk->count() < 4)
                             @for ($i = 0; $i < 4 - $chunk->count(); $i++)
-                                <td></td>
+                                <td style="font-size: 14px;"></td>
                             @endfor
                         @endif
                     </tr>
