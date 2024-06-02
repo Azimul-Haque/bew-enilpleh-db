@@ -110,7 +110,7 @@ class AdminandothersController extends Controller
         }
 
         
-        Cache::forget('eshebas');
+        Cache::forget('admins' . $district_id);
         Session::flash('success', 'E-sheba updated successfully!');
         return redirect()->route('dashboard.eshebas');
     }
