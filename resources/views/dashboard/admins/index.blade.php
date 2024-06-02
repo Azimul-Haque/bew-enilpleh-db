@@ -7,7 +7,7 @@
 @endsection
 
 @section('content')
-  @section('page-header') প্রশাসন কর্মকর্তা তালিকা  @endsection
+  @section('page-header') জেলা তালিকা তালিকা  @endsection
     <div class="container-fluid">
     <div class="card">
           <div class="card-header">
