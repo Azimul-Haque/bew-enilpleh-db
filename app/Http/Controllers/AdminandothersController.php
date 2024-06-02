@@ -41,7 +41,7 @@ class AdminandothersController extends Controller
         $adminscount = Admin::count();
         $admins = Admin::orderBy('id', 'desc')->paginate(10);
                 
-        return view('dashboard.admins.index')
+        return view('dashboard.admins.single')
                             ->withAdminscount($adminscount)
                             ->withAdmins($admins);
     }
