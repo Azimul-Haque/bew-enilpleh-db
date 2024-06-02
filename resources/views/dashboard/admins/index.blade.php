@@ -139,7 +139,6 @@
           </div>
           <!-- /.card-body -->
         </div>
-        {{ $districts->links() }}
     </div>
 
     {{-- Add User Modal Code --}}
