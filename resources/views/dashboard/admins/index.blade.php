@@ -17,7 +17,7 @@
           </div>
           <!-- /.card-header -->
           <div class="card-body p-0">
-            <table class="table table-condensed">
+            <table class="table table-condenced">
               <thead>
                 <tr>
                   <th>জেলার নাম</th>
