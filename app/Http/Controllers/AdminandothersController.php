@@ -58,9 +58,14 @@ class AdminandothersController extends Controller
                                   ->orderBy('id', 'desc')
                                   ->paginate(10);
         
-        return view('dashboard.eshebas.index')
-                            ->withEshebascount($eshebascount)
-                            ->withEshebas($eshebas);
+        $district = District::find($district_id);
+        $adminscount = Admin::where('district_id', $district_id)->count();
+        $admins = Admin::where('district_id', $district_id)->orderBy('id', 'desc')->paginate(10);
+                
+        return view('dashboard.admins.single')
+                            ->withDistrict($district)
+                            ->withAdminscount($adminscount)
+                            ->withAdmins($admins);
     }
 
     public function storeAdmin(Request $request, $district_id)
