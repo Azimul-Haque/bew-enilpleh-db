@@ -93,9 +93,9 @@ class AdminandothersController extends Controller
         $admin->name = $request->name;
         $admin->mobile = $request->mobile;
         $admin->save();
-        
+
         Cache::forget('admins' . $district_id);
         Session::flash('success', 'Admin officer updated successfully!');
-        return redirect()->route('dashboard.admins.districtwise');
+        return redirect()->route('dashboard.admins.districtwise', $district_id);
     }
 }
