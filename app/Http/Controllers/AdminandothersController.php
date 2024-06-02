@@ -50,14 +50,6 @@ class AdminandothersController extends Controller
 
     public function indexSearch($search)
     {
-        $eshebascount = Esheba::where('name', 'LIKE', "%$search%")
-                                  ->orWhere('url', 'LIKE', "%$search%")->count();
-
-        $eshebas = Esheba::where('name', 'LIKE', "%$search%")
-                                  ->orWhere('url', 'LIKE', "%$search%")
-                                  ->orderBy('id', 'desc')
-                                  ->paginate(10);
-        
         $district = District::find($district_id);
         $adminscount = Admin::where('name', 'LIKE', "%$search%")
                             ->orWhere('mobile', 'LIKE', "%$search%")->count()
