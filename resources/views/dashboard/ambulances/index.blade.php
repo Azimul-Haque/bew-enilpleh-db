@@ -101,7 +101,7 @@
                                                value="{{ $ambulance->name }}"
                                                placeholder="অ্যাম্বুলেন্সের নাম" required>
                                         <div class="input-group-append">
-                                            <div class="input-group-text"><span class="fas fa-hospital"></span></div>
+                                            <div class="input-group-text"><span class="fas fa-ambulance"></span></div>
                                         </div>
                                     </div>
                                     <div class="input-group mb-3">
@@ -224,7 +224,7 @@
                              value="{{ old('name') }}"
                              placeholder="অ্যাম্বুলেন্সের নাম" required>
                       <div class="input-group-append">
-                          <div class="input-group-text"><span class="fas fa-hospital"></span></div>
+                          <div class="input-group-text"><span class="fas fa-ambulance"></span></div>
                       </div>
                   </div>
                   <div class="input-group mb-3">
