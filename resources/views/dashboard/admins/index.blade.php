@@ -35,7 +35,9 @@
                 @foreach ($districts->chunk(5) as $chunk)
                     <tr>
                         @foreach ($chunk as $district)
-                            <td>{{ $district->name_bangla }}</td>
+                            <td>
+                              <a href="{{ route('dashboard.admins.districtwise', $district->id) }}">{{ $district->name_bangla }}</a>
+                            </td>
                         @endforeach
                         @if ($chunk->count() < 5)
                             @for ($i = 0; $i < 5 - $chunk->count(); $i++)
