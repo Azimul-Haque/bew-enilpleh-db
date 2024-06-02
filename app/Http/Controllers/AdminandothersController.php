@@ -38,6 +38,7 @@ class AdminandothersController extends Controller
 
     public function indexSingle($district_id)
     {
+        $district = District::find($district_id);
         $adminscount = Admin::where('district_id', $district_id)->count();
         $admins = Admin::where('district_id', $district_id)->orderBy('id', 'desc')->paginate(10);
                 
