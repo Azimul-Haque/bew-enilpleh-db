@@ -76,18 +76,6 @@ class AdminandothersController extends Controller
         $admin->mobile = $request->mobile;
         $admin->save();
 
-        // image upload
-        if($request->hasFile('image')) {
-            $image    = $request->file('image');
-            $filename = random_string(5) . time() .'.' . "webp";
-            $location = public_path('images/eshebas/'. $filename);
-            Image::make($image)->fit(200, 200)->save($location);
-            $eshebaimage              = new Eshebaimage;
-            $eshebaimage->esheba_id   = $esheba->id;
-            $eshebaimage->image       = $filename;
-            $eshebaimage->save();
-        }
-        
         Cache::forget('eshebas');
         Session::flash('success', 'E-sheba added successfully!');
         return redirect()->route('dashboard.eshebas');
