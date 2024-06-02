@@ -64,7 +64,7 @@
 <li class="nav-item">
     <a href="{{ route('dashboard.admins') }}" class="nav-link {{ Request::is('dashboard/admins') ? 'active' : '' }} {{ Request::is('dashboard/admins/*') ? 'active' : '' }}">
         <i class="nav-icon fas fa-external-link-alt"></i>
-        <p>ই-সেবা তালিকা</p>
+        <p>প্রশাসন কর্মকর্তাগণ</p>
     </a>
 </li>
 @endif
