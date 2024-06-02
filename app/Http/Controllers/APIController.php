@@ -506,7 +506,9 @@ class APIController extends Controller
                  $admins = Admin::where('district_id', $district_id)
                                  ->orderBy('id', 'desc')
                                  ->get();
-                 $admins->makeHidden('created_at', 'updated_at');
+                 foreach($admins as $admin) {
+                       $admin->makeHidden('created_at', 'updated_at');
+                   }
                  return $admins;
             });
             
