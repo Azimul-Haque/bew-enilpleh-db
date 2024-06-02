@@ -25,13 +25,13 @@
                 </tr>
               </thead>
               <tbody>
-                @foreach($districts as $esheba)
+                @foreach($districts as $district)
                   <tr>
                     <td>
-                      {{ $esheba->name }}<br/>
+                      {{ $district->name }}<br/>
                     </td>
                     <td>
-                      <a href="{{ $esheba->url }}" target="_blank">{{ $esheba->name }} (ক্লিক করুন)</a>
+                      <a href="{{ $district->url }}" target="_blank">{{ $district->name }} (ক্লিক করুন)</a>
                     </td>
                   </tr>
                   
