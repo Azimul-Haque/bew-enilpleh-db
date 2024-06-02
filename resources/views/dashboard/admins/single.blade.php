@@ -69,7 +69,7 @@
                                 <span aria-hidden="true">&times;</span>
                               </button>
                             </div>
-                            <form method="post" action="{{ route('dashboard.admins.update', $district->id, $admin->id) }}" enctype="multipart/form-data">
+                            <form method="post" action="{{ route('dashboard.admins.update', [$district->id, $admin->id]) }}" enctype="multipart/form-data">
                               <div class="modal-body">
                                 
                                     @csrf
