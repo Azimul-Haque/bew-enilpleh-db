@@ -4,6 +4,22 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use App\Esheba;
+use App\Eshebaimage;
+
+use Carbon\Carbon;
+use DB;
+use Hash;
+use Auth;
+use Image;
+use File;
+use Session;
+use Artisan;
+// use Redirect;
+use OneSignal;
+use Purifier;
+use Cache;
+
 class AdminandothersController extends Controller
 {
     public function __construct()
