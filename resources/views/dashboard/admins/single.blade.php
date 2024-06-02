@@ -192,8 +192,8 @@
                   </div>
                   <div class="input-group mb-3">
                       <input type="text"
-                             name="url"
-                             value="{{ old('url') }}"
+                             name="mobile"
+                             value="{{ old('mobile') }}"
                              class="form-control"
                              placeholder="প্রশাসন কর্মকর্তা লিংক (URL)" required>
                       <div class="input-group-append">
