@@ -18,11 +18,11 @@
           <!-- /.card-header -->
           <div class="card-body p-0">
             <table class="table table-condensed">
-              <thead>
+              {{-- <thead>
                 <tr>
                   <th>জেলার নাম</th>
                 </tr>
-              </thead>
+              </thead> --}}
               <tbody>
                 @foreach($districts as $district)
                   <tr>
