@@ -81,12 +81,11 @@ class AdminandothersController extends Controller
         return redirect()->route('dashboard.eshebas');
     }
 
-    public function updateEsheba(Request $request, $id)
+    public function updateEsheba(Request $request, $district_id, $id)
     {
         $this->validate($request,array(
             'name'                => 'required|string|max:191',
-            'url'              => 'required|string|max:191',
-            'image'               => 'sometimes',
+            'mobile'              => 'required|string|max:191',
         ));
 
         $esheba = Esheba::find($id);
