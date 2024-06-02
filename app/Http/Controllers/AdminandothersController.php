@@ -37,6 +37,16 @@ class AdminandothersController extends Controller
                             ->withAdmins($admins);
     }
 
+    public function indexSingle($district_id)
+    {
+        $adminscount = Admin::count();
+        $admins = Admin::orderBy('id', 'desc')->paginate(10);
+                
+        return view('dashboard.admins.index')
+                            ->withAdminscount($adminscount)
+                            ->withAdmins($admins);
+    }
+
     public function indexSearch($search)
     {
         $eshebascount = Esheba::where('name', 'LIKE', "%$search%")
