@@ -64,6 +64,13 @@ Route::post('/dashboard/eshebas/store', 'EshebaController@storeEsheba')->name('d
 Route::post('/dashboard/eshebas/{id}/update', 'EshebaController@updateEsheba')->name('dashboard.eshebas.update');
 Route::get('/dashboard/eshebas/{id}/delete', 'EshebaController@deleteEsheba')->name('dashboard.eshebas.delete');
 
+// Ambulances
+Route::get('/dashboard/eshebas', 'EshebaController@index')->name('dashboard.eshebas');
+Route::get('/dashboard/eshebas/{search}', 'EshebaController@indexSearch')->name('dashboard.eshebas.search');
+Route::post('/dashboard/eshebas/store', 'EshebaController@storeEsheba')->name('dashboard.eshebas.store');
+Route::post('/dashboard/eshebas/{id}/update', 'EshebaController@updateEsheba')->name('dashboard.eshebas.update');
+Route::get('/dashboard/eshebas/{id}/delete', 'EshebaController@deleteEsheba')->name('dashboard.eshebas.delete');
+
 
 
 
