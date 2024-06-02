@@ -7,7 +7,7 @@
 @endsection
 
 @section('content')
-  @section('page-header') প্রশাসন কর্মকর্তা তালিকা (মোট {{ bangla($adminscount) }} টি) @endsection
+  @section('page-header') প্রশাসন কর্মকর্তা তালিকা / {{ $$district->name_bangla }} জেলা (মোট {{ bangla($adminscount) }} টি) @endsection
     <div class="container-fluid">
     <div class="card">
           <div class="card-header">
