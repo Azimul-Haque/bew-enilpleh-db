@@ -185,7 +185,7 @@
                              name="name"
                              class="form-control"
                              value="{{ old('name') }}"
-                             placeholder="প্রশাসন কর্মকর্তার নাম" required>
+                             placeholder="প্রশাসন কর্মকর্তার পদবি" required>
                       <div class="input-group-append">
                           <div class="input-group-text"><span class="fas fa-hand-holding-medical"></span></div>
                       </div>
