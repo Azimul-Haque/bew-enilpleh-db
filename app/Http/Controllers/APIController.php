@@ -503,7 +503,7 @@ class APIController extends Controller
         if($softtoken == env('SOFT_TOKEN'))
         {
             $admins = Cache::remember('admins'  . $district_id, 30 * 24 * 60 * 60, function () use ($district_id) {
-                 $admins = Ambulance::where('district_id', $district_id)
+                 $admins = Admin::where('district_id', $district_id)
                                  ->orderBy('id', 'desc')
                                  ->get();
                                  // dd($admins);
