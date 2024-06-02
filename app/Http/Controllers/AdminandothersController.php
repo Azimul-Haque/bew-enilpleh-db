@@ -38,8 +38,8 @@ class AdminandothersController extends Controller
 
     public function indexSingle($district_id)
     {
-        $adminscount = Admin::count();
-        $admins = Admin::orderBy('id', 'desc')->paginate(10);
+        $adminscount = Admin::where('district_id', $district_id)->count();
+        $admins = Admin::where('district_id', $district_id)->orderBy('id', 'desc')->paginate(10);
                 
         return view('dashboard.admins.single')
                             ->withAdminscount($adminscount)
