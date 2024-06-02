@@ -47,9 +47,7 @@
                     <td>
                       {{ $admin->name }}<br/>
                     </td>
-                    <td>
-                      <a href="{{ $admin->url }}" target="_blank">{{ $admin->name }} (ক্লিক করুন)</a>
-                    </td>
+                    <td>{{ $admin->mobile }}</td>
                     <td align="right" width="40%">
                       {{-- <button type="button" class="btn btn-warning btn-sm" data-toggle="modal" data-target="#notifModal{{ $admin->id }}">
                         <i class="fas fa-bell"></i>
