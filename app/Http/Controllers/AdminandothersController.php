@@ -27,14 +27,12 @@ class AdminandothersController extends Controller
         $this->middleware(['admin'])->only('index', 'indexSearch');
     }
 
-    public function indexSingle($district_id)
+    public function index()
     {
-        $adminscount = Admin::count();
-        $admins = Admin::orderBy('id', 'desc')->paginate(10);
+        $districts = District::all();
                 
         return view('dashboard.admins.index')
-                            ->withAdminscount($adminscount)
-                            ->withAdmins($admins);
+                            ->withDistricts($districts);
     }
 
     public function indexSingle($district_id)
