@@ -60,6 +60,15 @@
 </li>
 @endif
 
+@if(Auth::user()->role == 'admin')
+<li class="nav-item">
+    <a href="{{ route('dashboard.admins') }}" class="nav-link {{ Request::is('dashboard/admins') ? 'active' : '' }} {{ Request::is('dashboard/admins/*') ? 'active' : '' }}">
+        <i class="nav-icon fas fa-external-link-alt"></i>
+        <p>ই-সেবা তালিকা</p>
+    </a>
+</li>
+@endif
+
 {{-- @if(Auth::user()->role == 'admin')
 <li class="nav-item">
     <a href="{{ route('dashboard.payments') }}" class="nav-link {{ Request::is('dashboard/payments') ? 'active' : '' }} {{ Request::is('dashboard/payments/*') ? 'active' : '' }}">
