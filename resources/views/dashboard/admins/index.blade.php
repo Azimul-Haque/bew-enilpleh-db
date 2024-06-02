@@ -34,8 +34,8 @@
 
                 @foreach ($districts->chunk(4) as $chunk)
                     <tr>
-                        @foreach ($chunk as $item)
-                            <td>{{ $item }}</td>
+                        @foreach ($chunk as $district)
+                            <td>{{ $district }}</td>
                         @endforeach
                         @if ($chunk->count() < 4)
                             @for ($i = 0; $i < 4 - $chunk->count(); $i++)
