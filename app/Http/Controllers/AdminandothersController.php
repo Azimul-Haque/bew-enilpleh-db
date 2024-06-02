@@ -27,7 +27,7 @@ class AdminandothersController extends Controller
         $this->middleware(['admin'])->only('index', 'indexSearch');
     }
 
-    public function index()
+    public function indexSingle($district_id)
     {
         $adminscount = Admin::count();
         $admins = Admin::orderBy('id', 'desc')->paginate(10);
