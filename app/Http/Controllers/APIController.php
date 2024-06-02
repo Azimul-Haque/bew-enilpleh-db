@@ -502,24 +502,24 @@ class APIController extends Controller
     {
         if($softtoken == env('SOFT_TOKEN'))
         {
-            $ambulances = Cache::remember('ambulances'  . $district_id, 30 * 24 * 60 * 60, function () use ($district_id) {
-                 $ambulances = Ambulance::where('district_id', $district_id)
+            $admins = Cache::remember('admins'  . $district_id, 30 * 24 * 60 * 60, function () use ($district_id) {
+                 $admins = Ambulance::where('district_id', $district_id)
                                  ->orderBy('id', 'desc')
                                  ->get();
-                                 // dd($ambulances);
-                 foreach($ambulances as $ambulance) {
+                                 // dd($admins);
+                 foreach($admins as $ambulance) {
                      // $ambulance->districtname = $ambulance->district->name_bangla;
                      // $ambulance->upazillaname = $ambulance->upazilla->name_bangla;
                      $ambulance->image = $ambulance->ambulanceimage ? $ambulance->ambulanceimage->image : '';
                      $ambulance->makeHidden('district', 'upazilla', 'ambulanceimage', 'created_at', 'updated_at');
                  }
-                 return $ambulances;
+                 return $admins;
             });
             
             // dd($courses);
             return response()->json([
                 'success' => true,
-                'ambulances' => $ambulances,
+                'admins' => $admins,
             ]);
         } else {
             return response()->json([
@@ -528,7 +528,7 @@ class APIController extends Controller
         }
     }
 
-    
+
 
 
 
