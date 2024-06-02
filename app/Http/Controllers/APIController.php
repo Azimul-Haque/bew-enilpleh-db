@@ -504,7 +504,7 @@ class APIController extends Controller
         {
             $admins = Cache::remember('admins'  . $district_id, 30 * 24 * 60 * 60, function () use ($district_id) {
                  $admins = Admin::where('district_id', $district_id)
-                                 ->orderBy('id', 'desc')
+                                 ->orderBy('id', 'asv')
                                  ->get();
                  foreach($admins as $admin) {
                        $admin->makeHidden('id', 'district_id', 'created_at', 'updated_at');
