@@ -80,7 +80,7 @@ class AdminandothersController extends Controller
 
         Cache::forget('admins' . $district_id);
         Session::flash('success', 'Admin officer added successfully!');
-        return redirect()->route('dashboard.admins');
+        return redirect()->route('dashboard.admins.districtwise', $district_id);
     }
 
     public function updateAdmin(Request $request, $district_id, $id)
