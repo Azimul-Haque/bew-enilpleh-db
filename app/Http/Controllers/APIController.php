@@ -507,7 +507,7 @@ class APIController extends Controller
                                  ->orderBy('id', 'desc')
                                  ->get();
                  foreach($admins as $admin) {
-                       $admin->makeHidden('created_at', 'updated_at');
+                       $admin->makeHidden('id', 'created_at', 'updated_at');
                    }
                  return $admins;
             });
