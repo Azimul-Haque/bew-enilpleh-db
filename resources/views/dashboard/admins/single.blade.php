@@ -42,25 +42,25 @@
                 </tr>
               </thead>
               <tbody>
-                @foreach($admins as $esheba)
+                @foreach($admins as $admin)
                   <tr>
                     <td>
-                      {{ $esheba->name }}<br/>
+                      {{ $admin->name }}<br/>
                     </td>
                     <td>
-                      <a href="{{ $esheba->url }}" target="_blank">{{ $esheba->name }} (ক্লিক করুন)</a>
+                      <a href="{{ $admin->url }}" target="_blank">{{ $admin->name }} (ক্লিক করুন)</a>
                     </td>
                     <td align="right" width="40%">
-                      {{-- <button type="button" class="btn btn-warning btn-sm" data-toggle="modal" data-target="#notifModal{{ $esheba->id }}">
+                      {{-- <button type="button" class="btn btn-warning btn-sm" data-toggle="modal" data-target="#notifModal{{ $admin->id }}">
                         <i class="fas fa-bell"></i>
                       </button> --}}
-                      <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#editUserModal{{ $esheba->id }}">
+                      <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#editUserModal{{ $admin->id }}">
                         <i class="fas fa-edit"></i>
                       </button>
                       {{-- Edit User Modal Code --}}
                       {{-- Edit User Modal Code --}}
                       <!-- Modal -->
-                      <div class="modal fade" id="editUserModal{{ $esheba->id }}" tabindex="-1" role="dialog" aria-labelledby="editUserModalLabel" aria-hidden="true" data-backdrop="static">
+                      <div class="modal fade" id="editUserModal{{ $admin->id }}" tabindex="-1" role="dialog" aria-labelledby="editUserModalLabel" aria-hidden="true" data-backdrop="static">
                         <div class="modal-dialog" role="document">
                           <div class="modal-content">
                             <div class="modal-header bg-primary">
@@ -69,7 +69,7 @@
                                 <span aria-hidden="true">&times;</span>
                               </button>
                             </div>
-                            <form method="post" action="{{ route('dashboard.admins.update', $esheba->id) }}" enctype="multipart/form-data">
+                            <form method="post" action="{{ route('dashboard.admins.update', $admin->id) }}" enctype="multipart/form-data">
                               <div class="modal-body">
                                 
                                     @csrf
@@ -78,7 +78,7 @@
                                         <input type="text"
                                                name="name"
                                                class="form-control"
-                                               value="{{ $esheba->name }}"
+                                               value="{{ $admin->name }}"
                                                placeholder="প্রশাসন কর্মকর্তার নাম" required>
                                         <div class="input-group-append">
                                             <div class="input-group-text"><span class="fas fa-hand-holding-medical"></span></div>
@@ -87,7 +87,7 @@
                                     <div class="input-group mb-3">
                                         <input type="text"
                                                name="url"
-                                               value="{{ $esheba->url }}"
+                                               value="{{ $admin->url }}"
                                                class="form-control"
                                                placeholder="প্রশাসন কর্মকর্তা লিংক (URL)" required>
                                         <div class="input-group-append">
@@ -100,8 +100,8 @@
                                         <input type="file" id="image" name="image" accept="image/*">
                                     </div>
                                     <center>
-                                      @if($esheba->eshebaimage != null)
-                                        <img src="{{ asset('images/admins/' . $esheba->eshebaimage->image)}}" id='img-upload' style="width: 250px; height: auto;" class="img-responsive" />
+                                      @if($admin->eshebaimage != null)
+                                        <img src="{{ asset('images/admins/' . $admin->eshebaimage->image)}}" id='img-upload' style="width: 250px; height: auto;" class="img-responsive" />
                                       @else
                                         <img src="{{ asset('images/placeholder.png')}}" id='img-upload' style="width: 250px; height: auto;" class="img-responsive" />
                                       @endif
@@ -119,14 +119,14 @@
                       {{-- Edit User Modal Code --}}
                       {{-- Edit User Modal Code --}}
 
-                      <button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#deleteUserModal{{ $esheba->id }}">
+                      <button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#deleteUserModal{{ $admin->id }}">
                         <i class="fas fa-trash-alt"></i>
                       </button>
                     </td>
                         {{-- Delete User Modal Code --}}
                         {{-- Delete User Modal Code --}}
                         <!-- Modal -->
-                        <div class="modal fade" id="deleteUserModal{{ $esheba->id }}" tabindex="-1" role="dialog" aria-labelledby="deleteUserModalLabel" aria-hidden="true" data-backdrop="static">
+                        <div class="modal fade" id="deleteUserModal{{ $admin->id }}" tabindex="-1" role="dialog" aria-labelledby="deleteUserModalLabel" aria-hidden="true" data-backdrop="static">
                           <div class="modal-dialog" role="document">
                             <div class="modal-content">
                               <div class="modal-header bg-danger">
@@ -138,13 +138,13 @@
                               <div class="modal-body">
                                 আপনি কি নিশ্চিতভাবে এই প্রশাসন কর্মকর্তাকে ডিলেট করতে চান?<br/>
                                 <center>
-                                    <big><b>{{ $esheba->name }}</b></big><br/>
-                                    <small><i class="fas fa-phone"></i> {{ $esheba->mobile }}</small>
+                                    <big><b>{{ $admin->name }}</b></big><br/>
+                                    <small><i class="fas fa-phone"></i> {{ $admin->mobile }}</small>
                                 </center>
                               </div>
                               <div class="modal-footer">
                                 <button type="button" class="btn btn-secondary" data-dismiss="modal">ফিরে যান</button>
-                                <a href="{{ route('dashboard.admins.delete', $esheba->id) }}" class="btn btn-danger">ডিলেট করুন</a>
+                                <a href="{{ route('dashboard.admins.delete', $admin->id) }}" class="btn btn-danger">ডিলেট করুন</a>
                               </div>
                             </div>
                           </div>
