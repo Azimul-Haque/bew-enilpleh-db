@@ -77,8 +77,8 @@ class AdminandothersController extends Controller
         $admin->save();
 
         Cache::forget('admins' . $district_id);
-        Session::flash('success', 'E-sheba added successfully!');
-        return redirect()->route('dashboard.eshebas');
+        Session::flash('success', 'Admin officer added successfully!');
+        return redirect()->route('dashboard.admins');
     }
 
     public function updateAdmin(Request $request, $district_id, $id)
@@ -95,14 +95,14 @@ class AdminandothersController extends Controller
 
         // image upload
         if($request->hasFile('image')) {
-            $image_path = public_path('images/eshebas/'. $esheba->eshebaimage->image);
+            $image_path = public_path('images/admins/'. $esheba->eshebaimage->image);
             // dd($image_path);
             if(File::exists($image_path)) {
                 File::delete($image_path);
             }
             $image    = $request->file('image');
             $filename = random_string(5) . time() .'.' . "webp";
-            $location = public_path('images/eshebas/'. $filename);
+            $location = public_path('images/admins/'. $filename);
             Image::make($image)->fit(200, 200)->save($location);
             $eshebaimage              = Eshebaimage::where('esheba_id', $esheba->id)->first();
             $eshebaimage->image       = $filename;
@@ -111,7 +111,7 @@ class AdminandothersController extends Controller
 
         
         Cache::forget('admins' . $district_id);
-        Session::flash('success', 'E-sheba updated successfully!');
-        return redirect()->route('dashboard.eshebas');
+        Session::flash('success', 'Admin officer updated successfully!');
+        return redirect()->route('dashboard.admins');
     }
 }
