@@ -29,8 +29,8 @@ class AdminandothersController extends Controller
 
     public function index()
     {
-        $eshebascount = Esheba::count();
-        $eshebas = Esheba::orderBy('id', 'desc')->paginate(10);
+        $eshebascount = Admin::count();
+        $eshebas = Admin::orderBy('id', 'desc')->paginate(10);
                 
         return view('dashboard.eshebas.index')
                             ->withEshebascount($eshebascount)
