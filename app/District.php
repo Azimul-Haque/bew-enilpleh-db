@@ -23,4 +23,8 @@ class District extends Model
     public function ambulances(){
         return $this->hasMany('App\Ambulance');
     }
+
+    public function admins(){
+        return $this->hasMany('App\Admin');
+    }
 }
