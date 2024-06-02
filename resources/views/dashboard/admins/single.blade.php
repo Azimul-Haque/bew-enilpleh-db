@@ -179,7 +179,7 @@
               
                   @csrf
 
-                  <div class="input-group mb-3">
+                  {{-- <div class="input-group mb-3"> --}}
                     {{-- <select name="district_id" id="district" class="form-control district" required>
                         <option selected="" disabled="" value="">জেলা নির্বাচন করুন</option>
                         @foreach($districts as $district)
