@@ -21,7 +21,6 @@
               <thead>
                 <tr>
                   <th>জেলার নাম</th>
-                  <th align="right">কার্যক্রম</th>
                 </tr>
               </thead>
               <tbody>
