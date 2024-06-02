@@ -43,6 +43,7 @@ class AdminandothersController extends Controller
         $admins = Admin::where('district_id', $district_id)->orderBy('id', 'desc')->paginate(10);
                 
         return view('dashboard.admins.single')
+                            ->withDistrict($district)
                             ->withAdminscount($adminscount)
                             ->withAdmins($admins);
     }
