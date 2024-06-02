@@ -96,6 +96,6 @@ class AdminandothersController extends Controller
         
         Cache::forget('admins' . $district_id);
         Session::flash('success', 'Admin officer updated successfully!');
-        return redirect()->route('dashboard.admins');
+        return redirect()->route('dashboard.admins.districtwise');
     }
 }
