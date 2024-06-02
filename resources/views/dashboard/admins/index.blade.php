@@ -20,8 +20,7 @@
             <table class="table">
               <thead>
                 <tr>
-                  <th>নাম</th>
-                  <th>লিংক</th>
+                  <th>জেলার নাম</th>
                   <th align="right">কার্যক্রম</th>
                 </tr>
               </thead>
