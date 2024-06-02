@@ -182,7 +182,7 @@
                              name="mobile"
                              value="{{ old('mobile') }}"
                              class="form-control"
-                             placeholder="প্রশাসন কর্মকর্তা মোবাইল নম্বর" required>
+                             placeholder="প্রশাসন কর্মকর্তার মোবাইল নম্বর" required>
                       <div class="input-group-append">
                           <div class="input-group-text"><span class="fas fa-mobile"></span></div>
                       </div>
