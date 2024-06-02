@@ -67,10 +67,10 @@ Route::get('/dashboard/eshebas/{id}/delete', 'EshebaController@deleteEsheba')->n
 // Ambulances
 Route::get('/dashboard/admins', 'AdminandothersController@index')->name('dashboard.admins');
 Route::get('/dashboard/admins/{district_id}', 'AdminandothersController@index')->name('dashboard.admins.districtwise');
-Route::get('/dashboard/admins/{district_id}/{search}', 'AdminandothersController@indexSearch')->name('dashboard.eshebas.districtwise.search');
-Route::post('/dashboard/admins/store', 'AdminandothersController@storeEsheba')->name('dashboard.eshebas.store');
-Route::post('/dashboard/admins/{id}/update', 'AdminandothersController@updateEsheba')->name('dashboard.eshebas.update');
-Route::get('/dashboard/admins/{id}/delete', 'AdminandothersController@deleteEsheba')->name('dashboard.eshebas.delete');
+Route::get('/dashboard/admins/{district_id}/{search}', 'AdminandothersController@indexSearch')->name('dashboard.admins.districtwise.search');
+Route::post('/dashboard/admins/store', 'AdminandothersController@storeAdmin')->name('dashboard.admins.store');
+Route::post('/dashboard/admins/{id}/update', 'AdminandothersController@updateAdmin')->name('dashboard.admins.update');
+Route::get('/dashboard/admins/{id}/delete', 'AdminandothersController@deleteAdmin')->name('dashboard.admins.delete');
 
 
 
