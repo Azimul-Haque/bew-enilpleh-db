@@ -63,7 +63,7 @@
 @if(Auth::user()->role == 'admin')
 <li class="nav-item">
     <a href="{{ route('dashboard.admins') }}" class="nav-link {{ Request::is('dashboard/admins') ? 'active' : '' }} {{ Request::is('dashboard/admins/*') ? 'active' : '' }}">
-        <i class="nav-icon fas fa-external-link-alt"></i>
+        <i class="nav-icon fas fa-user-tie"></i>
         <p>প্রশাসন কর্মকর্তাগণ</p>
     </a>
 </li>
