@@ -63,14 +63,14 @@ class AdminandothersController extends Controller
                             ->withEshebas($eshebas);
     }
 
-    public function storeAdmin(Request $request)
+    public function storeAdmin(Request $request, $district_id)
     {
         $this->validate($request,array(
             'name'                => 'required|string|max:191',
             'mobile'              => 'required|string|max:191',
         ));
 
-        $esheba = new Esheba;
+        $esheba = new Admin;
         $esheba->name = $request->name;
         $esheba->url = $request->url;
         $esheba->save();
