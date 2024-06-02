@@ -7,7 +7,7 @@
 @endsection
 
 @section('content')
-  @section('page-header') ই-সেবা তালিকা (মোট {{ bangla($eshebascount) }} টি) @endsection
+  @section('page-header') ই-সেবা তালিকা (মোট {{ bangla($adminscount) }} টি) @endsection
     <div class="container-fluid">
     <div class="card">
           <div class="card-header">
