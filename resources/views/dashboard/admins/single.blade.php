@@ -95,18 +95,6 @@
                                         </div>
                                     </div>
                                      
-                                    <div class="form-group">
-                                        <label for="image">ছবি (প্রয়োজনে, ৩০০ x ৩০০ সাইজের, ২ মেগাবাইটের মধ্যে)</label><br/>
-                                        <input type="file" id="image" name="image" accept="image/*">
-                                    </div>
-                                    <center>
-                                      @if($admin->eshebaimage != null)
-                                        <img src="{{ asset('images/admins/' . $admin->eshebaimage->image)}}" id='img-upload' style="width: 250px; height: auto;" class="img-responsive" />
-                                      @else
-                                        <img src="{{ asset('images/placeholder.png')}}" id='img-upload' style="width: 250px; height: auto;" class="img-responsive" />
-                                      @endif
-                                    </center>            
-                                
                               </div>
                               <div class="modal-footer">
                                 <button type="button" class="btn btn-secondary" data-dismiss="modal">ফিরে যান</button>
