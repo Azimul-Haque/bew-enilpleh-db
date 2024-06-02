@@ -4,8 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-use App\Esheba;
-use App\Eshebaimage;
+use App\Admin;
 
 use Carbon\Carbon;
 use DB;
