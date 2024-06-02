@@ -68,7 +68,7 @@ Route::get('/dashboard/eshebas/{id}/delete', 'EshebaController@deleteEsheba')->n
 Route::get('/dashboard/admins', 'AdminandothersController@index')->name('dashboard.admins');
 Route::get('/dashboard/admins/{district_id}', 'AdminandothersController@index')->name('dashboard.admins.districtwise');
 Route::get('/dashboard/admins/{district_id}/{search}', 'AdminandothersController@indexSearch')->name('dashboard.eshebas.districtwise.search');
-Route::post('/dashboard/eshebas/store', 'AdminandothersController@storeEsheba')->name('dashboard.eshebas.store');
+Route::post('/dashboard/admins/store', 'AdminandothersController@storeEsheba')->name('dashboard.eshebas.store');
 Route::post('/dashboard/eshebas/{id}/update', 'AdminandothersController@updateEsheba')->name('dashboard.eshebas.update');
 Route::get('/dashboard/eshebas/{id}/delete', 'AdminandothersController@deleteEsheba')->name('dashboard.eshebas.delete');
 
