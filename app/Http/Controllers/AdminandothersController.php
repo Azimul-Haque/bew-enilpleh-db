@@ -67,8 +67,7 @@ class AdminandothersController extends Controller
     {
         $this->validate($request,array(
             'name'                => 'required|string|max:191',
-            'url'                 => 'required|string|max:191',
-            'image'               => 'sometimes',
+            'mobile'              => 'required|string|max:191',
         ));
 
         $esheba = new Esheba;
