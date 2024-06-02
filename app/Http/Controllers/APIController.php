@@ -35,6 +35,7 @@ use App\Blooddonor;
 use App\Ambulance;
 use App\Ambulanceimage;
 use App\Esheba;
+use App\Admin;
 
 use Hash;
 use Carbon\Carbon;
