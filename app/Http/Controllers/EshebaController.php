@@ -49,8 +49,6 @@ class EshebaController extends Controller
                                   ->orWhere('url', 'LIKE', "%$search%")
                                   ->orderBy('id', 'desc')
                                   ->paginate(10);
-
-        $districts = District::all();
         
         return view('dashboard.eshebas.index')
                             ->withEshebascount($eshebascount)
