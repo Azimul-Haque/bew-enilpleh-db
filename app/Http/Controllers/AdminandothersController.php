@@ -149,7 +149,7 @@ class AdminandothersController extends Controller
         $police = new Police;
         $police->district_id = $district_id;
         $police->name = $request->name;
-        $police->statiion_type = $request->statiion_type;
+        $police->station_type = $request->station_type;
         $police->mobile = $request->mobile;
         $police->save();
 
@@ -169,7 +169,7 @@ class AdminandothersController extends Controller
         $police = Police::find($id);
         $police->district_id = $district_id;
         $police->name = $request->name;
-        $police->statiion_type = $request->statiion_type;
+        $police->station_type = $request->station_type;
         $police->mobile = $request->mobile;
         $police->save();
 
