@@ -511,7 +511,7 @@ class APIController extends Controller
     {
         if($softtoken == env('SOFT_TOKEN'))
         {
-            $police = Cache::remember('police'  . $district_id, 30 * 24 * 60 * 60, function () use ($station_type, $district_id) {
+            $police = Cache::remember('police'  . $station_type . $district_id, 30 * 24 * 60 * 60, function () use ($station_type, $district_id) {
                  $police = Police::where('district_id', $district_id)
                                  ->where('station_type', $station_type)
                                  ->orderBy('id', 'asc')
