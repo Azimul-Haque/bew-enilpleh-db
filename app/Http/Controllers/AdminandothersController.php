@@ -114,12 +114,12 @@ class AdminandothersController extends Controller
     {
         $district = District::find($district_id);
         $policecount = Police::where('district_id', $district_id)->count();
-        $admins = Police::where('district_id', $district_id)->orderBy('id', 'desc')->paginate(10);
+        $police = Police::where('district_id', $district_id)->orderBy('id', 'desc')->paginate(10);
                 
         return view('dashboard.police.single')
                             ->withDistrict($district)
                             ->withPolicecount($policecount)
-                            ->withAdmins($admins);
+                            ->withPolice($police);
     }
 
     public function policeIndexSearch($district_id, $search)
