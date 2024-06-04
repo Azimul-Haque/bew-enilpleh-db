@@ -64,7 +64,7 @@ Route::post('/dashboard/eshebas/store', 'EshebaController@storeEsheba')->name('d
 Route::post('/dashboard/eshebas/{id}/update', 'EshebaController@updateEsheba')->name('dashboard.eshebas.update');
 Route::get('/dashboard/eshebas/{id}/delete', 'EshebaController@deleteEsheba')->name('dashboard.eshebas.delete');
 
-// Ambulances
+// Admins
 Route::get('/dashboard/admins', 'AdminandothersController@index')->name('dashboard.admins');
 Route::get('/dashboard/admins/{district_id}', 'AdminandothersController@indexSingle')->name('dashboard.admins.districtwise');
 Route::get('/dashboard/admins/{district_id}/{search}', 'AdminandothersController@indexSearch')->name('dashboard.admins.districtwise.search');
