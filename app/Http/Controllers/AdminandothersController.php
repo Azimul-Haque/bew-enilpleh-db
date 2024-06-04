@@ -190,7 +190,7 @@ class AdminandothersController extends Controller
                             ->withDistricts($districts);
     }
 
-    public function policeIndexSingle($district_id)
+    public function fireserviceIndexSingle($district_id)
     {
         $district = District::find($district_id);
         $policecount = Police::where('district_id', $district_id)->count();
