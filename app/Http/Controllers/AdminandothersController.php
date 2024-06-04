@@ -246,13 +246,13 @@ class AdminandothersController extends Controller
             'mobile'              => 'required|string|max:191',
         ));
 
-        $police = Fireservice::find($id);
-        $police->district_id = $district_id;
-        $police->name = $request->name;
-        $police->mobile = $request->mobile;
-        $police->save();
+        $fireservice = Fireservice::find($id);
+        $fireservice->district_id = $district_id;
+        $fireservice->name = $request->name;
+        $fireservice->mobile = $request->mobile;
+        $fireservice->save();
 
-        Cache::forget('police' . $district_id);
+        Cache::forget('fireservice' . $district_id);
         Session::flash('success', 'Fireservice officer updated successfully!');
         return redirect()->route('dashboard.fireservices.districtwise', $district_id);
     }
