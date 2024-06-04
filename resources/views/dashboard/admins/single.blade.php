@@ -45,7 +45,7 @@
                 @foreach($admins as $admin)
                   <tr>
                     <td>
-                      {{ $admin->name }}<br/>
+                      {{ $admin->name }}
                     </td>
                     <td>{{ $admin->mobile }}</td>
                     <td align="right" width="40%">
