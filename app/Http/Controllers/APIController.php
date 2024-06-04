@@ -36,6 +36,7 @@ use App\Ambulance;
 use App\Ambulanceimage;
 use App\Esheba;
 use App\Admin;
+use App\Police;
 
 use Hash;
 use Carbon\Carbon;
