@@ -182,7 +182,7 @@ class AdminandothersController extends Controller
         return redirect()->route('dashboard.police.districtwise', $district_id);
     }
 
-    public function fireservcieIndex()
+    public function fireserviceIndex()
     {
         $districts = District::all();
                 
