@@ -42,7 +42,7 @@
                 </tr>
               </thead>
               <tbody>
-                @foreach($admins as $admin)
+                @foreach($police as $admin)
                   <tr>
                     <td>
                       {{ $admin->name }}<br/>
@@ -67,7 +67,7 @@
                                 <span aria-hidden="true">&times;</span>
                               </button>
                             </div>
-                            <form method="post" action="{{ route('dashboard.admins.update', [$district->id, $admin->id]) }}" enctype="multipart/form-data">
+                            <form method="post" action="{{ route('dashboard.police.update', [$district->id, $admin->id]) }}" enctype="multipart/form-data">
                               <div class="modal-body">
                                 
                                     @csrf
@@ -130,7 +130,7 @@
                               </div>
                               <div class="modal-footer">
                                 <button type="button" class="btn btn-secondary" data-dismiss="modal">ফিরে যান</button>
-                                <a href="{{ route('dashboard.admins.delete', [$district->id, $admin->id]) }}" class="btn btn-danger">ডিলেট করুন</a>
+                                <a href="{{ route('dashboard.police.delete', [$district->id, $admin->id]) }}" class="btn btn-danger">ডিলেট করুন</a>
                               </div>
                             </div>
                           </div>
@@ -145,7 +145,7 @@
           </div>
           <!-- /.card-body -->
         </div>
-        {{ $admins->links() }}
+        {{ $police->links() }}
     </div>
 
     {{-- Add User Modal Code --}}
