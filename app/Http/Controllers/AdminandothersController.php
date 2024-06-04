@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 
 use App\Admin;
 use App\Police;
+use App\Fireservice;
 use App\District;
 
 use Carbon\Carbon;
