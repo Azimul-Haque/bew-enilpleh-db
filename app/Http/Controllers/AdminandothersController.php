@@ -194,13 +194,13 @@ class AdminandothersController extends Controller
     public function fireserviceIndexSingle($district_id)
     {
         $district = District::find($district_id);
-        $policecount = Fireservice::where('district_id', $district_id)->count();
-        $police = Fireservice::where('district_id', $district_id)->orderBy('id', 'desc')->paginate(10);
+        $fireservicescount = Fireservice::where('district_id', $district_id)->count();
+        $fireservices = Fireservice::where('district_id', $district_id)->orderBy('id', 'desc')->paginate(10);
                 
         return view('dashboard.fireservices.single')
                             ->withDistrict($district)
-                            ->withPolicecount($policecount)
-                            ->withPolice($police);
+                            ->withFireservicescount($fireservicescount)
+                            ->withFireservices($fireservices);
     }
 
     public function fireserviceIndexSearch($district_id, $search)
