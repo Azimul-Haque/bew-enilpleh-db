@@ -229,7 +229,7 @@ class AdminandothersController extends Controller
             'mobile'              => 'required|string|max:191',
         ));
 
-        $police = new Police;
+        $police = new Fireservice;
         $police->district_id = $district_id;
         $police->name = $request->name;
         $police->station_type = $request->station_type;
