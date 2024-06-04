@@ -128,9 +128,9 @@ class AdminandothersController extends Controller
         $policecount = Police::where('name', 'LIKE', "%$search%")
                             ->orWhere('mobile', 'LIKE', "%$search%")->count();
         $police = Police::where('name', 'LIKE', "%$search%")
-                       ->orWhere('mobile', 'LIKE', "%$search%")
-                       ->orderBy('id', 'desc')
-                       ->paginate(10);
+                        ->orWhere('mobile', 'LIKE', "%$search%")
+                        ->orderBy('id', 'desc')
+                        ->paginate(10);
                 
         return view('dashboard.police.single')
                             ->withDistrict($district)
