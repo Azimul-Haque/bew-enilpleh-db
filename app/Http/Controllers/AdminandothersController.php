@@ -125,18 +125,18 @@ class AdminandothersController extends Controller
     public function policeIndexSearch($district_id, $search)
     {
         $district = District::find($district_id);
-        $adminscount = Police::where('name', 'LIKE', "%$search%")
+        $policecount = Police::where('name', 'LIKE', "%$search%")
                             ->orWhere('mobile', 'LIKE', "%$search%")->count()
                             ;
-        $admins = Police::where('name', 'LIKE', "%$search%")
+        $police = Police::where('name', 'LIKE', "%$search%")
                        ->orWhere('mobile', 'LIKE', "%$search%")
                        ->orderBy('id', 'desc')
                        ->paginate(10);
                 
         return view('dashboard.police.single')
                             ->withDistrict($district)
-                            ->withAdminscount($adminscount)
-                            ->withAdmins($admins);
+                            ->withPolicecount($policecount)
+                            ->withPolice($police);
     }
 
     public function storePolice(Request $request, $district_id)
