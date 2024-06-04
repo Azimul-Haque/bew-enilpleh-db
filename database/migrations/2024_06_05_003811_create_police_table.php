@@ -17,6 +17,7 @@ class CreatePoliceTable extends Migration
             $table->id();
             $table->integer('district_id')->unsigned();
             $table->string('name');
+            $table->integer('name');
             $table->string('mobile');
             $table->timestamps();
         });
