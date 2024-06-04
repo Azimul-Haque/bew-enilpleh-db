@@ -155,7 +155,7 @@
       <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content">
           <div class="modal-header bg-success">
-            <h5 class="modal-title" id="addUserModalLabel">নতুন ফায়ার সার্ভিস কর্মকর্তা যোগ (জেলা: <strong>{{ $district->name_bangla }}</strong>)</h5>
+            <h5 class="modal-title" id="addUserModalLabel">নতুন ফায়ার সার্ভিস কর্মকর্তা/স্টেশন যোগ (জেলা: <strong>{{ $district->name_bangla }}</strong>)</h5>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
@@ -170,7 +170,7 @@
                              name="name"
                              class="form-control"
                              value="{{ old('name') }}"
-                             placeholder="ফায়ার সার্ভিস কর্মকর্তার পদবি (যেমন: সহকারী পরিচালক, টাঙ্গাইল ফায়ার স্টেশন ইত্যাদি ইত্যাদি)" required>
+                             placeholder="ফায়ার সার্ভিস কর্মকর্তার/স্টেশনের পদবি (যেমন: সহকারী পরিচালক, টাঙ্গাইল ফায়ার স্টেশন ইত্যাদি ইত্যাদি)" required>
                       <div class="input-group-append">
                           <div class="input-group-text"><span class="fas fa-user-tie"></span></div>
                       </div>
@@ -180,7 +180,7 @@
                              name="mobile"
                              value="{{ old('mobile') }}"
                              class="form-control"
-                             placeholder="ফায়ার সার্ভিস কর্মকর্তার মোবাইল নম্বর" required>
+                             placeholder="ফায়ার সার্ভিস কর্মকর্তার/স্টেশনের মোবাইল নম্বর" required>
                       <div class="input-group-append">
                           <div class="input-group-text"><span class="fas fa-mobile"></span></div>
                       </div>
