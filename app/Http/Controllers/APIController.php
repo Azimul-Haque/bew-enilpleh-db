@@ -533,6 +533,31 @@ class APIController extends Controller
         }
     }
 
+    public function getFireservices($softtoken, $district_id)
+    {
+        if($softtoken == env('SOFT_TOKEN'))
+        {
+            $admins = Cache::remember('admins'  . $district_id, 30 * 24 * 60 * 60, function () use ($district_id) {
+                 $admins = Admin::where('district_id', $district_id)
+                                 ->orderBy('id', 'asc')
+                                 ->get();
+                 foreach($admins as $admin) {
+                       $admin->makeHidden('id', 'district_id', 'created_at', 'updated_at');
+                   }
+                 return $admins;
+            });
+            
+            return response()->json([
+                'success' => true,
+                'admins' => $admins,
+            ]);
+        } else {
+            return response()->json([
+                'success' => false
+            ]);
+        }
+    }
+
 
 
 
