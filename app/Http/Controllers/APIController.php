@@ -542,8 +542,8 @@ class APIController extends Controller
                  $fireservices = Fireservice::where('district_id', $district_id)
                                  ->orderBy('id', 'asc')
                                  ->get();
-                 foreach($fireservices as $admin) {
-                       $admin->makeHidden('id', 'district_id', 'created_at', 'updated_at');
+                 foreach($fireservices as $fireservice) {
+                       $fireservice->makeHidden('id', 'district_id', 'created_at', 'updated_at');
                    }
                  return $fireservices;
             });
