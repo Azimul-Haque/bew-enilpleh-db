@@ -148,6 +148,7 @@ class AdminandothersController extends Controller
         $police = new Police;
         $police->district_id = $district_id;
         $police->name = $request->name;
+        $police->statiion_type = $request->statiion_type;
         $police->mobile = $request->mobile;
         $police->save();
 
