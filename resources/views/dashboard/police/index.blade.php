@@ -1,5 +1,5 @@
 @extends('layouts.app')
-@section('title') ড্যাশবোর্ড | প্রশাসন কর্মকর্তাগণ @endsection
+@section('title') ড্যাশবোর্ড | পুলিশ কর্মকর্তাগণ @endsection
 
 @section('third_party_stylesheets')
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -35,7 +35,7 @@
                     <tr>
                         @foreach ($chunk as $district)
                             <td>
-                              <a href="{{ route('dashboard.admins.districtwise', $district->id) }}" rel="tooltip" title="" data-original-title="{{ $district->name_bangla }} জেলার প্রশাসন কর্মকর্তা তালিকা দেখতে ক্লিক করুন">{{ $district->name_bangla }} <small>({{ bangla($district->admins->count()) }} জন কর্মকর্তা)</small></a>
+                              <a href="{{ route('dashboard.admins.districtwise', $district->id) }}" rel="tooltip" title="" data-original-title="{{ $district->name_bangla }} জেলার পুলিশ কর্মকর্তা তালিকা দেখতে ক্লিক করুন">{{ $district->name_bangla }} <small>({{ bangla($district->admins->count()) }} জন কর্মকর্তা)</small></a>
                             </td>
                         @endforeach
                         @if ($chunk->count() < 5)
