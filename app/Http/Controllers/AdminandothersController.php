@@ -209,12 +209,12 @@ class AdminandothersController extends Controller
         $fireservicescount = Fireservice::where('district_id', $district_id)
                                  ->where('name', 'LIKE', "%$search%")
                                  ->orWhere('mobile', 'LIKE', "%$search%")->count();
-        $police = Fireservice::where('district_id', $district_id)
-                        ->where('name', 'LIKE', "%$search%")
-                        ->orWhere('mobile', 'LIKE', "%$search%")
-                        ->orderBy('id', 'desc')
-                        ->paginate(10);
-                
+        $fireservices = Fireservice::where('district_id', $district_id)
+                            ->where('name', 'LIKE', "%$search%")
+                            ->orWhere('mobile', 'LIKE', "%$search%")
+                            ->orderBy('id', 'desc')
+                            ->paginate(10);
+                            
         return view('dashboard.fireservices.single')
                             ->withDistrict($district)
                             ->withFireservicescount($fireservicescount)
