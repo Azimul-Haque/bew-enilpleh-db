@@ -166,11 +166,12 @@ class AdminandothersController extends Controller
             'mobile'              => 'required|string|max:191',
         ));
 
-        $admin = Police::find($id);
-        $admin->district_id = $district_id;
-        $admin->name = $request->name;
-        $admin->mobile = $request->mobile;
-        $admin->save();
+        $police = Police::find($id);
+        $police->district_id = $district_id;
+        $police->name = $request->name;
+        $police->statiion_type = $request->statiion_type;
+        $police->mobile = $request->mobile;
+        $police->save();
 
         Cache::forget('admins' . $district_id);
         Session::flash('success', 'Police officer updated successfully!');
