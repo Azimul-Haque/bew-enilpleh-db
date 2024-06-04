@@ -77,7 +77,7 @@
                                                name="name"
                                                class="form-control"
                                                value="{{ $police->name }}"
-                                               placeholder="পুলিশ কর্মকর্তার নাম" required>
+                                               placeholder="পুলিশ কর্মকর্তার পদবি (যেমন: পুলিশ সুপার, অতিরিক্ত পুলিশ সুপার, সহকারী পুলিশ সুপার, ওসি ইত্যাদি)" required>
                                         <div class="input-group-append">
                                             <div class="input-group-text"><span class="fas fa-user-tie"></span></div>
                                         </div>
