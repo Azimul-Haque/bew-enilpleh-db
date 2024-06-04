@@ -214,7 +214,7 @@ class AdminandothersController extends Controller
                             ->orWhere('mobile', 'LIKE', "%$search%")
                             ->orderBy('id', 'desc')
                             ->paginate(10);
-                            
+
         return view('dashboard.fireservices.single')
                             ->withDistrict($district)
                             ->withFireservicescount($fireservicescount)
@@ -228,13 +228,13 @@ class AdminandothersController extends Controller
             'mobile'              => 'required|string|max:191',
         ));
 
-        $police = new Fireservice;
-        $police->district_id = $district_id;
-        $police->name = $request->name;
-        $police->mobile = $request->mobile;
-        $police->save();
+        $fireservice = new Fireservice;
+        $fireservice->district_id = $district_id;
+        $fireservice->name = $request->name;
+        $fireservice->mobile = $request->mobile;
+        $fireservice->save();
 
-        Cache::forget('police' . $district_id);
+        Cache::forget('fireservice' . $district_id);
         Session::flash('success', 'Fireservice officer added successfully!');
         return redirect()->route('dashboard.fireservices.districtwise', $district_id);
     }
