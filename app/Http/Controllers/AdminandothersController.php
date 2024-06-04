@@ -153,7 +153,7 @@ class AdminandothersController extends Controller
         $admin->save();
 
         Cache::forget('admins' . $district_id);
-        Session::flash('success', 'Admin officer added successfully!');
+        Session::flash('success', 'Police officer added successfully!');
         return redirect()->route('dashboard.police.districtwise', $district_id);
     }
 
@@ -171,7 +171,7 @@ class AdminandothersController extends Controller
         $admin->save();
 
         Cache::forget('admins' . $district_id);
-        Session::flash('success', 'Admin officer updated successfully!');
+        Session::flash('success', 'Police officer updated successfully!');
         return redirect()->route('dashboard.police.districtwise', $district_id);
     }
 }
