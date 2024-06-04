@@ -42,23 +42,23 @@
                 </tr>
               </thead>
               <tbody>
-                @foreach($police as $police)
+                @foreach($police as $policesingle)
                   <tr>
                     <td>
-                      {{ $police->name }}<br/>
+                      {{ $policesingle->name }}<br/>
                     </td>
-                    <td>{{ $police->mobile }}</td>
+                    <td>{{ $policesingle->mobile }}</td>
                     <td align="right" width="40%">
-                      {{-- <button type="button" class="btn btn-warning btn-sm" data-toggle="modal" data-target="#notifModal{{ $police->id }}">
+                      {{-- <button type="button" class="btn btn-warning btn-sm" data-toggle="modal" data-target="#notifModal{{ $policesingle->id }}">
                         <i class="fas fa-bell"></i>
                       </button> --}}
-                      <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#editUserModal{{ $police->id }}">
+                      <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#editUserModal{{ $policesingle->id }}">
                         <i class="fas fa-edit"></i>
                       </button>
                       {{-- Edit User Modal Code --}}
                       {{-- Edit User Modal Code --}}
                       <!-- Modal -->
-                      <div class="modal fade" id="editUserModal{{ $police->id }}" tabindex="-1" role="dialog" aria-labelledby="editUserModalLabel" aria-hidden="true" data-backdrop="static">
+                      <div class="modal fade" id="editUserModal{{ $policesingle->id }}" tabindex="-1" role="dialog" aria-labelledby="editUserModalLabel" aria-hidden="true" data-backdrop="static">
                         <div class="modal-dialog" role="document">
                           <div class="modal-content">
                             <div class="modal-header bg-primary">
@@ -67,7 +67,7 @@
                                 <span aria-hidden="true">&times;</span>
                               </button>
                             </div>
-                            <form method="post" action="{{ route('dashboard.police.update', [$district->id, $police->id]) }}" enctype="multipart/form-data">
+                            <form method="post" action="{{ route('dashboard.police.update', [$district->id, $policesingle->id]) }}" enctype="multipart/form-data">
                               <div class="modal-body">
                                 
                                     @csrf
@@ -76,7 +76,7 @@
                                         <input type="text"
                                                name="name"
                                                class="form-control"
-                                               value="{{ $police->name }}"
+                                               value="{{ $policesingle->name }}"
                                                placeholder="পুলিশ কর্মকর্তার পদবি (যেমন: পুলিশ সুপার, অতিরিক্ত পুলিশ সুপার, সহকারী পুলিশ সুপার, ওসি ইত্যাদি)" required>
                                         <div class="input-group-append">
                                             <div class="input-group-text"><span class="fas fa-user-tie"></span></div>
@@ -85,7 +85,7 @@
                                     <div class="input-group mb-3">
                                         <input type="number"
                                                name="mobile"
-                                               value="{{ $police->mobile }}"
+                                               value="{{ $policesingle->mobile }}"
                                                class="form-control"
                                                placeholder="পুলিশ কর্মকর্তার মোবাইল নম্বর" required>
                                         <div class="input-group-append">
@@ -95,9 +95,9 @@
                                     <div class="input-group mb-3">
                                       <select name="station_type" class="form-control" required>
                                           <option selected="" disabled="" value="">স্টেশনের ধরন ধরন</option>
-                                          <option value="1" @if($police->station_type == 1) selected @endif>পুলিশ সুপারের (SP) কার্যালয়</option>
-                                          <option value="2" @if($police->station_type == 2) selected @endif>পুলিশ সার্কেল (ASP)</option>
-                                          <option value="3" @if($police->station_type == 3) selected @endif>ভারপ্রাপ্ত কর্মকর্তার (OC) কার্যালয়</option>
+                                          <option value="1" @if($policesingle->station_type == 1) selected @endif>পুলিশ সুপারের (SP) কার্যালয়</option>
+                                          <option value="2" @if($policesingle->station_type == 2) selected @endif>পুলিশ সার্কেল (ASP)</option>
+                                          <option value="3" @if($policesingle->station_type == 3) selected @endif>ভারপ্রাপ্ত কর্মকর্তার (OC) কার্যালয়</option>
                                       </select>
                                       <div class="input-group-append">
                                           <div class="input-group-text"><span class="fas fa-star-half-alt"></span></div>
@@ -116,14 +116,14 @@
                       {{-- Edit User Modal Code --}}
                       {{-- Edit User Modal Code --}}
 
-                      <button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#deleteUserModal{{ $police->id }}">
+                      <button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#deleteUserModal{{ $policesingle->id }}">
                         <i class="fas fa-trash-alt"></i>
                       </button>
                     </td>
                         {{-- Delete User Modal Code --}}
                         {{-- Delete User Modal Code --}}
                         <!-- Modal -->
-                        <div class="modal fade" id="deleteUserModal{{ $police->id }}" tabindex="-1" role="dialog" aria-labelledby="deleteUserModalLabel" aria-hidden="true" data-backdrop="static">
+                        <div class="modal fade" id="deleteUserModal{{ $policesingle->id }}" tabindex="-1" role="dialog" aria-labelledby="deleteUserModalLabel" aria-hidden="true" data-backdrop="static">
                           <div class="modal-dialog" role="document">
                             <div class="modal-content">
                               <div class="modal-header bg-danger">
@@ -135,13 +135,13 @@
                               <div class="modal-body">
                                 আপনি কি নিশ্চিতভাবে এই পুলিশ কর্মকর্তাকে ডিলেট করতে চান?<br/>
                                 <center>
-                                    <big><b>{{ $police->name }}</b></big><br/>
-                                    <small><i class="fas fa-phone"></i> {{ $police->mobile }}</small>
+                                    <big><b>{{ $policesingle->name }}</b></big><br/>
+                                    <small><i class="fas fa-phone"></i> {{ $policesingle->mobile }}</small>
                                 </center>
                               </div>
                               <div class="modal-footer">
                                 <button type="button" class="btn btn-secondary" data-dismiss="modal">ফিরে যান</button>
-                                <a href="{{ route('dashboard.police.delete', [$district->id, $police->id]) }}" class="btn btn-danger">ডিলেট করুন</a>
+                                <a href="{{ route('dashboard.police.delete', [$district->id, $policesingle->id]) }}" class="btn btn-danger">ডিলেট করুন</a>
                               </div>
                             </div>
                           </div>
