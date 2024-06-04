@@ -87,7 +87,7 @@
                                                name="mobile"
                                                value="{{ $fireservice->mobile }}"
                                                class="form-control"
-                                               placeholder="ফায়ার সার্ভিস কর্মকর্তার মোবাইল নম্বর" required>
+                                               placeholder="ফায়ার সার্ভিস কর্মকর্তার/স্টেশনের মোবাইল নম্বর" required>
                                         <div class="input-group-append">
                                             <div class="input-group-text"><span class="fas fa-mobile"></span></div>
                                         </div>
