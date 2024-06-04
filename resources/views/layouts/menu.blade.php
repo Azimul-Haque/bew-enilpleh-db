@@ -78,6 +78,15 @@
 </li>
 @endif
 
+@if(Auth::user()->role == 'admin')
+<li class="nav-item">
+    <a href="{{ route('dashboard.fireservices') }}" class="nav-link {{ Request::is('dashboard/fireservices') ? 'active' : '' }} {{ Request::is('dashboard/fireservices/*') ? 'active' : '' }}">
+        <i class="nav-icon fas fa-user-shield"></i>
+        <p>ফায়ার সার্ভিস কর্মকর্তাগণ</p>
+    </a>
+</li>
+@endif
+
 {{-- @if(Auth::user()->role == 'admin')
 <li class="nav-item">
     <a href="{{ route('dashboard.payments') }}" class="nav-link {{ Request::is('dashboard/payments') ? 'active' : '' }} {{ Request::is('dashboard/payments/*') ? 'active' : '' }}">
