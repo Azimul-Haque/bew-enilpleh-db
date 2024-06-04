@@ -46,7 +46,7 @@
                   <tr>
                     <td>
                       {{ $policesingle->name }}<br/>
-                      <small class="text-black-50"><i class="fas fa-phone"></i> {{ station_type($policesingle->station_type) }}</small>
+                      <span class="badge bg-success">{{ station_type($policesingle->station_type) }}</span>
                     </td>
                     <td>{{ $policesingle->mobile }}</td>
                     <td align="right" width="40%">
