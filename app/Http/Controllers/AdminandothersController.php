@@ -181,4 +181,84 @@ class AdminandothersController extends Controller
         Session::flash('success', 'Police officer updated successfully!');
         return redirect()->route('dashboard.police.districtwise', $district_id);
     }
+
+    public function fireservcieIndex()
+    {
+        $districts = District::all();
+                
+        return view('dashboard.police.index')
+                            ->withDistricts($districts);
+    }
+
+    public function policeIndexSingle($district_id)
+    {
+        $district = District::find($district_id);
+        $policecount = Police::where('district_id', $district_id)->count();
+        $police = Police::where('district_id', $district_id)->orderBy('id', 'desc')->paginate(10);
+                
+        return view('dashboard.police.single')
+                            ->withDistrict($district)
+                            ->withPolicecount($policecount)
+                            ->withPolice($police);
+    }
+
+    public function policeIndexSearch($district_id, $search)
+    {
+        $district = District::find($district_id);
+        $policecount = Police::where('district_id', $district_id)
+                             ->where('name', 'LIKE', "%$search%")
+                             ->orWhere('mobile', 'LIKE', "%$search%")->count();
+        $police = Police::where('district_id', $district_id)
+                        ->where('name', 'LIKE', "%$search%")
+                        ->orWhere('mobile', 'LIKE', "%$search%")
+                        ->orderBy('id', 'desc')
+                        ->paginate(10);
+                
+        return view('dashboard.police.single')
+                            ->withDistrict($district)
+                            ->withPolicecount($policecount)
+                            ->withPolice($police);
+    }
+
+    public function storePolice(Request $request, $district_id)
+    {
+        $this->validate($request,array(
+            'name'                => 'required|string|max:191',
+            'station_type'       => 'required|integer',
+            'mobile'              => 'required|string|max:191',
+        ));
+
+        $police = new Police;
+        $police->district_id = $district_id;
+        $police->name = $request->name;
+        $police->station_type = $request->station_type;
+        $police->mobile = $request->mobile;
+        $police->save();
+
+        Cache::forget('police' . $request->station_type . $district_id);
+        Session::flash('success', 'Police officer added successfully!');
+        return redirect()->route('dashboard.police.districtwise', $district_id);
+    }
+
+    public function updatePolice(Request $request, $district_id, $id)
+    {
+        $this->validate($request,array(
+            'name'                => 'required|string|max:191',
+            'station_type'       => 'required|integer',
+            'mobile'              => 'required|string|max:191',
+        ));
+
+        $police = Police::find($id);
+        $police->district_id = $district_id;
+        $police->name = $request->name;
+        $police->station_type = $request->station_type;
+        $police->mobile = $request->mobile;
+        $police->save();
+
+        Cache::forget('police' . $request->station_type . $district_id);
+        Session::flash('success', 'Police officer updated successfully!');
+        return redirect()->route('dashboard.police.districtwise', $district_id);
+    }
+
+
 }
