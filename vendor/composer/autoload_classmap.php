@@ -21,6 +21,7 @@ return array(
     'App\\Esheba' => $baseDir . '/app/Esheba.php',
     'App\\Eshebaimage' => $baseDir . '/app/Eshebaimage.php',
     'App\\Exceptions\\Handler' => $baseDir . '/app/Exceptions/Handler.php',
+    'App\\Fireservice' => $baseDir . '/app/Fireservice.php',
     'App\\Hospital' => $baseDir . '/app/Hospital.php',
     'App\\Http\\Controllers\\APIController' => $baseDir . '/app/Http/Controllers/APIController.php',
     'App\\Http\\Controllers\\AdminandothersController' => $baseDir . '/app/Http/Controllers/AdminandothersController.php',
