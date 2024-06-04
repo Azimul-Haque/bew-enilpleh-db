@@ -52,9 +52,9 @@ class AdminandothersController extends Controller
     public function indexSearch($district_id, $search)
     {
         $district = District::find($district_id);
-        $adminscount = Admin::where('name', 'LIKE', "%$search%")
+        $adminscount = Admin::where('district_id', $district_id)where('name', 'LIKE', "%$search%")
                             ->orWhere('mobile', 'LIKE', "%$search%")
-                            ->where('district_id', $district_id)->count();
+                            ->count();
         $admins = Admin::where('name', 'LIKE', "%$search%")
                        ->orWhere('mobile', 'LIKE', "%$search%")
                        ->where('district_id', $district_id)
