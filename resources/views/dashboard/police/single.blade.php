@@ -200,7 +200,7 @@
                     <select name="station_type" class="form-control" required>
                         <option selected="" disabled="" value="">স্টেশনের ধরন ধরন</option>
                         <option value="1">পুলিশ সুপারের (SP) কার্যালয়</option>
-                        <option value="2">পুলিশ সার্কেল (ASP)</option>
+                        <option value="2">পুলিশ সার্কেল (ASP) কার্যালয়</option>
                         <option value="3">ভারপ্রাপ্ত কর্মকর্তার (OC) কার্যালয়</option>
                     </select>
                     <div class="input-group-append">
