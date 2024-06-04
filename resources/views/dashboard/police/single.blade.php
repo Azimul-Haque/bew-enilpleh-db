@@ -198,7 +198,7 @@
                   <div class="input-group mb-3">
                     <select name="category" class="form-control" required>
                         <option selected="" disabled="" value="">স্টেশনের ধরন ধরন</option>
-                        <option value="1">ব্লাড ব্যাংক</option>
+                        <option value="1">পুলিশ সুপারের কার্যালয়</option>
                         <option value="2">রক্তদাতা সংগঠন</option>
                     </select>
                     <div class="input-group-append">
