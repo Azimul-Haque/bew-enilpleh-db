@@ -187,7 +187,7 @@ class AdminandothersController extends Controller
     {
         $districts = District::all();
                 
-        return view('dashboard.police.index')
+        return view('dashboard.fireservices.index')
                             ->withDistricts($districts);
     }
 
@@ -197,7 +197,7 @@ class AdminandothersController extends Controller
         $policecount = Fireservice::where('district_id', $district_id)->count();
         $police = Fireservice::where('district_id', $district_id)->orderBy('id', 'desc')->paginate(10);
                 
-        return view('dashboard.police.single')
+        return view('dashboard.fireservices.single')
                             ->withDistrict($district)
                             ->withPolicecount($policecount)
                             ->withPolice($police);
@@ -215,7 +215,7 @@ class AdminandothersController extends Controller
                         ->orderBy('id', 'desc')
                         ->paginate(10);
                 
-        return view('dashboard.police.single')
+        return view('dashboard.fireservices.single')
                             ->withDistrict($district)
                             ->withPolicecount($policecount)
                             ->withPolice($police);
@@ -238,7 +238,7 @@ class AdminandothersController extends Controller
 
         Cache::forget('police' . $request->station_type . $district_id);
         Session::flash('success', 'Fireservice officer added successfully!');
-        return redirect()->route('dashboard.police.districtwise', $district_id);
+        return redirect()->route('dashboard.fireservices.districtwise', $district_id);
     }
 
     public function updateFireservice(Request $request, $district_id, $id)
@@ -258,7 +258,7 @@ class AdminandothersController extends Controller
 
         Cache::forget('police' . $request->station_type . $district_id);
         Session::flash('success', 'Fireservice officer updated successfully!');
-        return redirect()->route('dashboard.police.districtwise', $district_id);
+        return redirect()->route('dashboard.fireservices.districtwise', $district_id);
     }
 
 
