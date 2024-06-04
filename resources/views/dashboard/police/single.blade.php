@@ -93,10 +93,11 @@
                                         </div>
                                     </div>
                                     <div class="input-group mb-3">
-                                      <select name="category" class="form-control" required>
-                                          <option selected="" disabled="" value="">রক্তদাতা প্রতিষ্ঠানের ধরন</option>
-                                          <option value="1">ব্লাড ব্যাংক</option>
-                                          <option value="2">রক্তদাতা সংগঠন</option>
+                                      <select name="station_type" class="form-control" required>
+                                          <option selected="" disabled="" value="">স্টেশনের ধরন ধরন</option>
+                                          <option value="1">পুলিশ সুপারের (SP) কার্যালয়</option>
+                                          <option value="2">পুলিশ সার্কেল (ASP)</option>
+                                          <option value="2">ভারপ্রাপ্ত কর্মকর্তার (OC) কার্যালয়</option>
                                       </select>
                                       <div class="input-group-append">
                                           <div class="input-group-text"><span class="fas fa-star-half-alt"></span></div>
