@@ -31,4 +31,8 @@ class District extends Model
     public function police(){
         return $this->hasMany('App\Police');
     }
+
+    public function fireservices(){
+        return $this->hasMany('App\Fireservice');
+    }
 }
