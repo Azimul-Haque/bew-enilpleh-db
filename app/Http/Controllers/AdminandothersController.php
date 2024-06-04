@@ -234,7 +234,7 @@ class AdminandothersController extends Controller
         $fireservice->mobile = $request->mobile;
         $fireservice->save();
 
-        Cache::forget('fireservice' . $district_id);
+        Cache::forget('fireservices' . $district_id);
         Session::flash('success', 'Fireservice officer added successfully!');
         return redirect()->route('dashboard.fireservices.districtwise', $district_id);
     }
@@ -252,7 +252,7 @@ class AdminandothersController extends Controller
         $fireservice->mobile = $request->mobile;
         $fireservice->save();
 
-        Cache::forget('fireservice' . $district_id);
+        Cache::forget('fireservices' . $district_id);
         Session::flash('success', 'Fireservice officer updated successfully!');
         return redirect()->route('dashboard.fireservices.districtwise', $district_id);
     }
