@@ -127,8 +127,9 @@ class AdminandothersController extends Controller
     public function policeIndexSearch($district_id, $search)
     {
         $district = District::find($district_id);
-        $policecount = Police::where('name', 'LIKE', "%$search%")
-                            ->orWhere('mobile', 'LIKE', "%$search%")->count();
+        $policecount = Police::where('district_id', $district_id)
+                             ->where('name', 'LIKE', "%$search%")
+                             ->orWhere('mobile', 'LIKE', "%$search%")->count();
         $police = Police::where('name', 'LIKE', "%$search%")
                         ->orWhere('mobile', 'LIKE', "%$search%")
                         ->orderBy('id', 'desc')
