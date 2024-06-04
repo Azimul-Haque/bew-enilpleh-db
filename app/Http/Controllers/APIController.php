@@ -507,11 +507,11 @@ class APIController extends Controller
         }
     }
 
-    public function getPoliceOfficers($softtoken, $district_id)
+    public function getPoliceOfficers($softtoken, $station_type, $district_id)
     {
         if($softtoken == env('SOFT_TOKEN'))
         {
-            $police = Cache::remember('police'  . $district_id, 30 * 24 * 60 * 60, function () use ($district_id) {
+            $police = Cache::remember('police'  . $district_id, 30 * 24 * 60 * 60, function () use ($station_type, $district_id) {
                  $police = Police::where('district_id', $district_id)
                                  ->orderBy('id', 'asc')
                                  ->get();
