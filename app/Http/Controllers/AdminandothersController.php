@@ -57,7 +57,7 @@ class AdminandothersController extends Controller
                             ->where('district_id', $district_id)->count();
         $admins = Admin::where('name', 'LIKE', "%$search%")
                        ->orWhere('mobile', 'LIKE', "%$search%")
-                       ->where('district_id', $district_id)->count()
+                       ->where('district_id', $district_id)
                        ->orderBy('id', 'desc')
                        ->paginate(10);
                 
