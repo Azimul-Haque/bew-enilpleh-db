@@ -513,6 +513,7 @@ class APIController extends Controller
         {
             $police = Cache::remember('police'  . $district_id, 30 * 24 * 60 * 60, function () use ($station_type, $district_id) {
                  $police = Police::where('district_id', $district_id)
+                                 ->where('station_type', $station_type)
                                  ->orderBy('id', 'asc')
                                  ->get();
                  foreach($police as $admin) {
