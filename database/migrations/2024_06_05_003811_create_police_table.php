@@ -17,7 +17,7 @@ class CreatePoliceTable extends Migration
             $table->id();
             $table->integer('district_id')->unsigned();
             $table->string('name');
-            $table->integer('name');
+            $table->integer('station_type');
             $table->string('mobile');
             $table->timestamps();
         });
