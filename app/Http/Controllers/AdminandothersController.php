@@ -139,7 +139,7 @@ class AdminandothersController extends Controller
                             ->withAdmins($admins);
     }
 
-    public function storeAdmin(Request $request, $district_id)
+    public function storePolice(Request $request, $district_id)
     {
         $this->validate($request,array(
             'name'                => 'required|string|max:191',
@@ -157,7 +157,7 @@ class AdminandothersController extends Controller
         return redirect()->route('dashboard.admins.districtwise', $district_id);
     }
 
-    public function updateAdmin(Request $request, $district_id, $id)
+    public function updatePolice(Request $request, $district_id, $id)
     {
         $this->validate($request,array(
             'name'                => 'required|string|max:191',
