@@ -36,6 +36,7 @@ Route::get('/getambulances/{softtoken}/{district_id}/{upazilla_id}', 'APIControl
 Route::get('/geteshebas/{softtoken}', 'APIController@getEshebas')->name('api.geteshebas');
 Route::get('/getadminofficers/{softtoken}/{district_id}', 'APIController@getAdminOfficers')->name('api.getadminofficers');
 Route::get('/getpoliceofficers/{softtoken}/{station_type}/{district_id}', 'APIController@getPoliceOfficers')->name('api.getpoliceofficers');
+Route::get('/getfireservices/{softtoken}/{district_id}', 'APIController@getPoliceOfficers')->name('api.getpoliceofficers');
 
 
 
