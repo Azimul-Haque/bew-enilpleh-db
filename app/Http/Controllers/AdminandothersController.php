@@ -142,7 +142,7 @@ class AdminandothersController extends Controller
     {
         $this->validate($request,array(
             'name'                => 'required|string|max:191',
-            'statiion_type'       => 'required|integer',
+            'station_type'       => 'required|integer',
             'mobile'              => 'required|string|max:191',
         ));
 
@@ -162,7 +162,7 @@ class AdminandothersController extends Controller
     {
         $this->validate($request,array(
             'name'                => 'required|string|max:191',
-            'statiion_type'       => 'required|integer',
+            'station_type'       => 'required|integer',
             'mobile'              => 'required|string|max:191',
         ));
 
