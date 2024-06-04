@@ -156,7 +156,7 @@
           </div>
           <!-- /.card-body -->
         </div>
-        {{ $polices->links() }}
+        {{ $police->links() }}
     </div>
 
     {{-- Add User Modal Code --}}
