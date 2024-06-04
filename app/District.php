@@ -27,4 +27,8 @@ class District extends Model
     public function admins(){
         return $this->hasMany('App\Admin');
     }
+
+    public function police(){
+        return $this->hasMany('App\Admin');
+    }
 }
