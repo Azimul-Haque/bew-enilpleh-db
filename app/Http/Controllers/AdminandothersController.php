@@ -243,14 +243,12 @@ class AdminandothersController extends Controller
     {
         $this->validate($request,array(
             'name'                => 'required|string|max:191',
-            'station_type'       => 'required|integer',
             'mobile'              => 'required|string|max:191',
         ));
 
         $police = Fireservice::find($id);
         $police->district_id = $district_id;
         $police->name = $request->name;
-        $police->station_type = $request->station_type;
         $police->mobile = $request->mobile;
         $police->save();
 
