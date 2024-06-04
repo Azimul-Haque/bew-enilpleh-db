@@ -237,7 +237,7 @@ class AdminandothersController extends Controller
         $police->save();
 
         Cache::forget('police' . $request->station_type . $district_id);
-        Session::flash('success', 'Police officer added successfully!');
+        Session::flash('success', 'Fireservice officer added successfully!');
         return redirect()->route('dashboard.police.districtwise', $district_id);
     }
 
@@ -257,7 +257,7 @@ class AdminandothersController extends Controller
         $police->save();
 
         Cache::forget('police' . $request->station_type . $district_id);
-        Session::flash('success', 'Police officer updated successfully!');
+        Session::flash('success', 'Fireservice officer updated successfully!');
         return redirect()->route('dashboard.police.districtwise', $district_id);
     }
 
