@@ -62,7 +62,7 @@
                         <div class="modal-dialog" role="document">
                           <div class="modal-content">
                             <div class="modal-header bg-primary">
-                              <h5 class="modal-title" id="editUserModalLabel">ফায়ার সার্ভিস কর্মকর্তা তথ্য হালনাগাদ</h5>
+                              <h5 class="modal-title" id="editUserModalLabel">ফায়ার সার্ভিস কর্মকর্তা/স্টেশন তথ্য হালনাগাদ</h5>
                               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                 <span aria-hidden="true">&times;</span>
                               </button>
@@ -77,7 +77,7 @@
                                                name="name"
                                                class="form-control"
                                                value="{{ $fireservice->name }}"
-                                               placeholder="ফায়ার সার্ভিস কর্মকর্তার পদবি (যেমন: সহকারী পরিচালক, টাঙ্গাইল ফায়ার স্টেশন ইত্যাদি ইত্যাদি)" required>
+                                               placeholder="ফায়ার সার্ভিস কর্মকর্তার/স্টেশনের পদবি (যেমন: সহকারী পরিচালক, টাঙ্গাইল ফায়ার স্টেশন ইত্যাদি ইত্যাদি)" required>
                                         <div class="input-group-append">
                                             <div class="input-group-text"><span class="fas fa-user-tie"></span></div>
                                         </div>
