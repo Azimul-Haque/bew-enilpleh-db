@@ -126,8 +126,7 @@ class AdminandothersController extends Controller
     {
         $district = District::find($district_id);
         $policecount = Police::where('name', 'LIKE', "%$search%")
-                            ->orWhere('mobile', 'LIKE', "%$search%")->count()
-                            ;
+                            ->orWhere('mobile', 'LIKE', "%$search%")->count();
         $police = Police::where('name', 'LIKE', "%$search%")
                        ->orWhere('mobile', 'LIKE', "%$search%")
                        ->orderBy('id', 'desc')
