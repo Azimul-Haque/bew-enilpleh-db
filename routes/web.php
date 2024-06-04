@@ -80,13 +80,13 @@ Route::post('/dashboard/police/{district_id}/store', 'AdminandothersController@s
 Route::post('/dashboard/police/{district_id}/{id}/update', 'AdminandothersController@updatePolice')->name('dashboard.police.update');
 Route::get('/dashboard/police/{district_id}/{id}/delete', 'AdminandothersController@deletePolice')->name('dashboard.police.delete');
 
-// Admins
-Route::get('/dashboard/admins', 'AdminandothersController@index')->name('dashboard.admins');
-Route::get('/dashboard/admins/{district_id}', 'AdminandothersController@indexSingle')->name('dashboard.admins.districtwise');
-Route::get('/dashboard/admins/{district_id}/{search}', 'AdminandothersController@indexSearch')->name('dashboard.admins.districtwise.search');
-Route::post('/dashboard/admins/{district_id}/store', 'AdminandothersController@storeAdmin')->name('dashboard.admins.store');
-Route::post('/dashboard/admins/{district_id}/{id}/update', 'AdminandothersController@updateAdmin')->name('dashboard.admins.update');
-Route::get('/dashboard/admins/{district_id}/{id}/delete', 'AdminandothersController@deleteAdmin')->name('dashboard.admins.delete');
+// Fireservices
+Route::get('/dashboard/fireservices', 'AdminandothersController@index')->name('dashboard.admins');
+Route::get('/dashboard/fireservices/{district_id}', 'AdminandothersController@indexSingle')->name('dashboard.admins.districtwise');
+Route::get('/dashboard/fireservices/{district_id}/{search}', 'AdminandothersController@indexSearch')->name('dashboard.admins.districtwise.search');
+Route::post('/dashboard/fireservices/{district_id}/store', 'AdminandothersController@storeAdmin')->name('dashboard.admins.store');
+Route::post('/dashboard/fireservices/{district_id}/{id}/update', 'AdminandothersController@updateAdmin')->name('dashboard.admins.update');
+Route::get('/dashboard/fireservices/{district_id}/{id}/delete', 'AdminandothersController@deleteAdmin')->name('dashboard.admins.delete');
 
 
 
