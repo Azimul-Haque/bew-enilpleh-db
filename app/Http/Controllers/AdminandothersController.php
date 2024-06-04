@@ -130,7 +130,8 @@ class AdminandothersController extends Controller
         $policecount = Police::where('district_id', $district_id)
                              ->where('name', 'LIKE', "%$search%")
                              ->orWhere('mobile', 'LIKE', "%$search%")->count();
-        $police = Police::where('name', 'LIKE', "%$search%")
+        $police = Police::where('district_id', $district_id)
+                        ->where('name', 'LIKE', "%$search%")
                         ->orWhere('mobile', 'LIKE', "%$search%")
                         ->orderBy('id', 'desc')
                         ->paginate(10);
