@@ -95,9 +95,9 @@
                                     <div class="input-group mb-3">
                                       <select name="station_type" class="form-control" required>
                                           <option selected="" disabled="" value="">স্টেশনের ধরন ধরন</option>
-                                          <option value="1">পুলিশ সুপারের (SP) কার্যালয়</option>
-                                          <option value="2">পুলিশ সার্কেল (ASP)</option>
-                                          <option value="2">ভারপ্রাপ্ত কর্মকর্তার (OC) কার্যালয়</option>
+                                          <option value="1" @if($police->station_type == 1) selected @endif>পুলিশ সুপারের (SP) কার্যালয়</option>
+                                          <option value="2" @if($police->station_type == 2) selected @endif>পুলিশ সার্কেল (ASP)</option>
+                                          <option value="3" @if($police->station_type == 3) selected @endif>ভারপ্রাপ্ত কর্মকর্তার (OC) কার্যালয়</option>
                                       </select>
                                       <div class="input-group-append">
                                           <div class="input-group-text"><span class="fas fa-star-half-alt"></span></div>
@@ -201,7 +201,7 @@
                         <option selected="" disabled="" value="">স্টেশনের ধরন ধরন</option>
                         <option value="1">পুলিশ সুপারের (SP) কার্যালয়</option>
                         <option value="2">পুলিশ সার্কেল (ASP)</option>
-                        <option value="2">ভারপ্রাপ্ত কর্মকর্তার (OC) কার্যালয়</option>
+                        <option value="3">ভারপ্রাপ্ত কর্মকর্তার (OC) কার্যালয়</option>
                     </select>
                     <div class="input-group-append">
                         <div class="input-group-text"><span class="fas fa-star-half-alt"></span></div>
