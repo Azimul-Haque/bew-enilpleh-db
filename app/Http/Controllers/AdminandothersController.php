@@ -212,7 +212,7 @@ class AdminandothersController extends Controller
         $fireservices = Fireservice::where('district_id', $district_id)
                             ->where('name', 'LIKE', "%$search%")
                             ->orWhere('mobile', 'LIKE', "%$search%")
-                            ->orderBy('id', 'desc')
+                            ->orderBy('id', 'asc')
                             ->paginate(10);
 
         return view('dashboard.fireservices.single')
