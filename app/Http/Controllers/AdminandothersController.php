@@ -42,7 +42,7 @@ class AdminandothersController extends Controller
     {
         $district = District::find($district_id);
         $adminscount = Admin::where('district_id', $district_id)->count();
-        $admins = Admin::where('district_id', $district_id)->orderBy('id', 'desc')->paginate(10);
+        $admins = Admin::where('district_id', $district_id)->orderBy('id', 'asc')->paginate(10);
                 
         return view('dashboard.admins.single')
                             ->withDistrict($district)
@@ -60,7 +60,7 @@ class AdminandothersController extends Controller
         $admins = Admin::where('district_id', $district_id)
                        ->where('name', 'LIKE', "%$search%")
                        ->orWhere('mobile', 'LIKE', "%$search%")
-                       ->orderBy('id', 'desc')
+                       ->orderBy('id', 'asc')
                        ->paginate(10);
                 
         return view('dashboard.admins.single')
@@ -117,7 +117,7 @@ class AdminandothersController extends Controller
     {
         $district = District::find($district_id);
         $policecount = Police::where('district_id', $district_id)->count();
-        $police = Police::where('district_id', $district_id)->orderBy('id', 'desc')->paginate(10);
+        $police = Police::where('district_id', $district_id)->orderBy('id', 'asc')->paginate(10);
                 
         return view('dashboard.police.single')
                             ->withDistrict($district)
@@ -134,7 +134,7 @@ class AdminandothersController extends Controller
         $police = Police::where('district_id', $district_id)
                         ->where('name', 'LIKE', "%$search%")
                         ->orWhere('mobile', 'LIKE', "%$search%")
-                        ->orderBy('id', 'desc')
+                        ->orderBy('id', 'asc')
                         ->paginate(10);
                 
         return view('dashboard.police.single')
