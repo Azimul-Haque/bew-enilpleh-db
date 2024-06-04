@@ -75,10 +75,10 @@ Route::get('/dashboard/admins/{district_id}/{id}/delete', 'AdminandothersControl
 // Police
 Route::get('/dashboard/police', 'AdminandothersController@policeIndex')->name('dashboard.police');
 Route::get('/dashboard/police/{district_id}', 'AdminandothersController@policeIndexSingle')->name('dashboard.police.districtwise');
-Route::get('/dashboard/police/{district_id}/{search}', 'AdminandothersController@indexSearch')->name('dashboard.police.districtwise.search');
-Route::post('/dashboard/police/{district_id}/store', 'AdminandothersController@storeAdmin')->name('dashboard.police.store');
-Route::post('/dashboard/police/{district_id}/{id}/update', 'AdminandothersController@updateAdmin')->name('dashboard.police.update');
-Route::get('/dashboard/police/{district_id}/{id}/delete', 'AdminandothersController@deleteAdmin')->name('dashboard.police.delete');
+Route::get('/dashboard/police/{district_id}/{search}', 'AdminandothersController@policeIndexSearch')->name('dashboard.police.districtwise.search');
+Route::post('/dashboard/police/{district_id}/store', 'AdminandothersController@storePolice')->name('dashboard.police.store');
+Route::post('/dashboard/police/{district_id}/{id}/update', 'AdminandothersController@updatePolice')->name('dashboard.police.update');
+Route::get('/dashboard/police/{district_id}/{id}/delete', 'AdminandothersController@deletePolice')->name('dashboard.police.delete');
 
 
 
