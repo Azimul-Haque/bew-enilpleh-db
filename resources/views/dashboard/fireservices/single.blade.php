@@ -170,7 +170,7 @@
                              name="name"
                              class="form-control"
                              value="{{ old('name') }}"
-                             placeholder="ফায়ার সার্ভিস কর্মকর্তার পদবি (যেমন: সহকারী পরিচালক, টাংগাইল ফায়ার স্টেশন ইত্যাদি ইত্যাদি)" required>
+                             placeholder="ফায়ার সার্ভিস কর্মকর্তার পদবি (যেমন: সহকারী পরিচালক, টাঙ্গাইল ফায়ার স্টেশন ইত্যাদি ইত্যাদি)" required>
                       <div class="input-group-append">
                           <div class="input-group-text"><span class="fas fa-user-tie"></span></div>
                       </div>
