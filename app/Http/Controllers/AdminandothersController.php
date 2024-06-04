@@ -202,7 +202,7 @@ class AdminandothersController extends Controller
                             ->withPolice($police);
     }
 
-    public function policeIndexSearch($district_id, $search)
+    public function fireserviceIndexSearch($district_id, $search)
     {
         $district = District::find($district_id);
         $policecount = Police::where('district_id', $district_id)
@@ -220,7 +220,7 @@ class AdminandothersController extends Controller
                             ->withPolice($police);
     }
 
-    public function storePolice(Request $request, $district_id)
+    public function storeFireservice(Request $request, $district_id)
     {
         $this->validate($request,array(
             'name'                => 'required|string|max:191',
@@ -240,7 +240,7 @@ class AdminandothersController extends Controller
         return redirect()->route('dashboard.police.districtwise', $district_id);
     }
 
-    public function updatePolice(Request $request, $district_id, $id)
+    public function updateFireservice(Request $request, $district_id, $id)
     {
         $this->validate($request,array(
             'name'                => 'required|string|max:191',
