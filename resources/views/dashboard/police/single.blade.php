@@ -195,6 +195,16 @@
                           <div class="input-group-text"><span class="fas fa-mobile"></span></div>
                       </div>
                   </div>
+                  <div class="input-group mb-3">
+                    <select name="category" class="form-control" required>
+                        <option selected="" disabled="" value="">রক্তদাতা প্রতিষ্ঠানের ধরন</option>
+                        <option value="1">ব্লাড ব্যাংক</option>
+                        <option value="2">রক্তদাতা সংগঠন</option>
+                    </select>
+                    <div class="input-group-append">
+                        <div class="input-group-text"><span class="fas fa-star-half-alt"></span></div>
+                    </div>
+                  </div>
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-dismiss="modal">ফিরে যান</button>
