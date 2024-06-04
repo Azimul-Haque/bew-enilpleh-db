@@ -113,22 +113,22 @@ class AdminandothersController extends Controller
     public function policeIndexSingle($district_id)
     {
         $district = District::find($district_id);
-        $adminscount = Admin::where('district_id', $district_id)->count();
-        $admins = Admin::where('district_id', $district_id)->orderBy('id', 'desc')->paginate(10);
+        $policecount = Police::where('district_id', $district_id)->count();
+        $admins = Police::where('district_id', $district_id)->orderBy('id', 'desc')->paginate(10);
                 
         return view('dashboard.police.single')
                             ->withDistrict($district)
-                            ->withAdminscount($adminscount)
+                            ->withPolicecount($policecount)
                             ->withAdmins($admins);
     }
 
     public function policeIndexSearch($district_id, $search)
     {
         $district = District::find($district_id);
-        $adminscount = Admin::where('name', 'LIKE', "%$search%")
+        $adminscount = Police::where('name', 'LIKE', "%$search%")
                             ->orWhere('mobile', 'LIKE', "%$search%")->count()
                             ;
-        $admins = Admin::where('name', 'LIKE', "%$search%")
+        $admins = Police::where('name', 'LIKE', "%$search%")
                        ->orWhere('mobile', 'LIKE', "%$search%")
                        ->orderBy('id', 'desc')
                        ->paginate(10);
@@ -146,7 +146,7 @@ class AdminandothersController extends Controller
             'mobile'              => 'required|string|max:191',
         ));
 
-        $admin = new Admin;
+        $admin = new Police;
         $admin->district_id = $district_id;
         $admin->name = $request->name;
         $admin->mobile = $request->mobile;
@@ -164,7 +164,7 @@ class AdminandothersController extends Controller
             'mobile'              => 'required|string|max:191',
         ));
 
-        $admin = Admin::find($id);
+        $admin = Police::find($id);
         $admin->district_id = $district_id;
         $admin->name = $request->name;
         $admin->mobile = $request->mobile;
