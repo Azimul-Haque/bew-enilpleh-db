@@ -53,8 +53,8 @@ class AdminandothersController extends Controller
     {
         $district = District::find($district_id);
         $adminscount = Admin::where('name', 'LIKE', "%$search%")
-                            ->orWhere('mobile', 'LIKE', "%$search%")->count()
-                            ;
+                            ->orWhere('mobile', 'LIKE', "%$search%")
+                            ->where('district_id', $district_id)->count();
         $admins = Admin::where('name', 'LIKE', "%$search%")
                        ->orWhere('mobile', 'LIKE', "%$search%")
                        ->orderBy('id', 'desc')
