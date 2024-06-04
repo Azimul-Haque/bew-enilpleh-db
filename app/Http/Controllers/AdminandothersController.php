@@ -231,7 +231,6 @@ class AdminandothersController extends Controller
         $police = new Fireservice;
         $police->district_id = $district_id;
         $police->name = $request->name;
-        $police->station_type = $request->station_type;
         $police->mobile = $request->mobile;
         $police->save();
 
