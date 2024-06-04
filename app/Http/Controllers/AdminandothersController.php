@@ -106,7 +106,7 @@ class AdminandothersController extends Controller
     {
         $districts = District::all();
                 
-        return view('dashboard.admins.index')
+        return view('dashboard.police.index')
                             ->withDistricts($districts);
     }
 
@@ -116,7 +116,7 @@ class AdminandothersController extends Controller
         $adminscount = Admin::where('district_id', $district_id)->count();
         $admins = Admin::where('district_id', $district_id)->orderBy('id', 'desc')->paginate(10);
                 
-        return view('dashboard.admins.single')
+        return view('dashboard.police.single')
                             ->withDistrict($district)
                             ->withAdminscount($adminscount)
                             ->withAdmins($admins);
@@ -133,7 +133,7 @@ class AdminandothersController extends Controller
                        ->orderBy('id', 'desc')
                        ->paginate(10);
                 
-        return view('dashboard.admins.single')
+        return view('dashboard.police.single')
                             ->withDistrict($district)
                             ->withAdminscount($adminscount)
                             ->withAdmins($admins);
@@ -154,7 +154,7 @@ class AdminandothersController extends Controller
 
         Cache::forget('admins' . $district_id);
         Session::flash('success', 'Admin officer added successfully!');
-        return redirect()->route('dashboard.admins.districtwise', $district_id);
+        return redirect()->route('dashboard.police.districtwise', $district_id);
     }
 
     public function updatePolice(Request $request, $district_id, $id)
@@ -172,6 +172,6 @@ class AdminandothersController extends Controller
 
         Cache::forget('admins' . $district_id);
         Session::flash('success', 'Admin officer updated successfully!');
-        return redirect()->route('dashboard.admins.districtwise', $district_id);
+        return redirect()->route('dashboard.police.districtwise', $district_id);
     }
 }
