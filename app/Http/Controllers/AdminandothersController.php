@@ -207,8 +207,8 @@ class AdminandothersController extends Controller
     {
         $district = District::find($district_id);
         $fireservicescount = Fireservice::where('district_id', $district_id)
-                             ->where('name', 'LIKE', "%$search%")
-                             ->orWhere('mobile', 'LIKE', "%$search%")->count();
+                                 ->where('name', 'LIKE', "%$search%")
+                                 ->orWhere('mobile', 'LIKE', "%$search%")->count();
         $police = Fireservice::where('district_id', $district_id)
                         ->where('name', 'LIKE', "%$search%")
                         ->orWhere('mobile', 'LIKE', "%$search%")
