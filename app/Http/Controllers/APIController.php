@@ -516,8 +516,8 @@ class APIController extends Controller
                                  ->where('station_type', $station_type)
                                  ->orderBy('id', 'asc')
                                  ->get();
-                 foreach($police as $admin) {
-                       $admin->makeHidden('id', 'district_id', 'created_at', 'updated_at');
+                 foreach($police as $police) {
+                       $police->makeHidden('id', 'district_id', 'created_at', 'updated_at');
                    }
                  return $police;
             });
