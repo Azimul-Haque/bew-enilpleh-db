@@ -46,6 +46,7 @@
                   <tr>
                     <td>
                       {{ $policesingle->name }}<br/>
+                      <small class="text-black-50"><i class="fas fa-phone"></i> {{ $doctor->serial }}</small>
                     </td>
                     <td>{{ $policesingle->mobile }}</td>
                     <td align="right" width="40%">
