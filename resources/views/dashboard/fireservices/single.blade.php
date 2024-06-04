@@ -42,23 +42,23 @@
                 </tr>
               </thead>
               <tbody>
-                @foreach($fireservices as $admin)
+                @foreach($fireservices as $fireservice)
                   <tr>
                     <td>
-                      {{ $admin->name }}
+                      {{ $fireservice->name }}
                     </td>
-                    <td>{{ $admin->mobile }}</td>
+                    <td>{{ $fireservice->mobile }}</td>
                     <td align="right" width="40%">
-                      {{-- <button type="button" class="btn btn-warning btn-sm" data-toggle="modal" data-target="#notifModal{{ $admin->id }}">
+                      {{-- <button type="button" class="btn btn-warning btn-sm" data-toggle="modal" data-target="#notifModal{{ $fireservice->id }}">
                         <i class="fas fa-bell"></i>
                       </button> --}}
-                      <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#editUserModal{{ $admin->id }}">
+                      <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#editUserModal{{ $fireservice->id }}">
                         <i class="fas fa-edit"></i>
                       </button>
                       {{-- Edit User Modal Code --}}
                       {{-- Edit User Modal Code --}}
                       <!-- Modal -->
-                      <div class="modal fade" id="editUserModal{{ $admin->id }}" tabindex="-1" role="dialog" aria-labelledby="editUserModalLabel" aria-hidden="true" data-backdrop="static">
+                      <div class="modal fade" id="editUserModal{{ $fireservice->id }}" tabindex="-1" role="dialog" aria-labelledby="editUserModalLabel" aria-hidden="true" data-backdrop="static">
                         <div class="modal-dialog" role="document">
                           <div class="modal-content">
                             <div class="modal-header bg-primary">
@@ -67,7 +67,7 @@
                                 <span aria-hidden="true">&times;</span>
                               </button>
                             </div>
-                            <form method="post" action="{{ route('dashboard.fireservices.update', [$district->id, $admin->id]) }}" enctype="multipart/form-data">
+                            <form method="post" action="{{ route('dashboard.fireservices.update', [$district->id, $fireservice->id]) }}" enctype="multipart/form-data">
                               <div class="modal-body">
                                 
                                     @csrf
@@ -76,7 +76,7 @@
                                         <input type="text"
                                                name="name"
                                                class="form-control"
-                                               value="{{ $admin->name }}"
+                                               value="{{ $fireservice->name }}"
                                                placeholder="ফায়ার সার্ভিস কর্মকর্তার পদবি (যেমন: জেলা প্রশাসক, এনডিসি ইত্যাদি)" required>
                                         <div class="input-group-append">
                                             <div class="input-group-text"><span class="fas fa-user-tie"></span></div>
@@ -85,7 +85,7 @@
                                     <div class="input-group mb-3">
                                         <input type="number"
                                                name="mobile"
-                                               value="{{ $admin->mobile }}"
+                                               value="{{ $fireservice->mobile }}"
                                                class="form-control"
                                                placeholder="ফায়ার সার্ভিস কর্মকর্তার মোবাইল নম্বর" required>
                                         <div class="input-group-append">
@@ -105,14 +105,14 @@
                       {{-- Edit User Modal Code --}}
                       {{-- Edit User Modal Code --}}
 
-                      <button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#deleteUserModal{{ $admin->id }}">
+                      <button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#deleteUserModal{{ $fireservice->id }}">
                         <i class="fas fa-trash-alt"></i>
                       </button>
                     </td>
                         {{-- Delete User Modal Code --}}
                         {{-- Delete User Modal Code --}}
                         <!-- Modal -->
-                        <div class="modal fade" id="deleteUserModal{{ $admin->id }}" tabindex="-1" role="dialog" aria-labelledby="deleteUserModalLabel" aria-hidden="true" data-backdrop="static">
+                        <div class="modal fade" id="deleteUserModal{{ $fireservice->id }}" tabindex="-1" role="dialog" aria-labelledby="deleteUserModalLabel" aria-hidden="true" data-backdrop="static">
                           <div class="modal-dialog" role="document">
                             <div class="modal-content">
                               <div class="modal-header bg-danger">
@@ -124,13 +124,13 @@
                               <div class="modal-body">
                                 আপনি কি নিশ্চিতভাবে এই ফায়ার সার্ভিস কর্মকর্তাকে ডিলেট করতে চান?<br/>
                                 <center>
-                                    <big><b>{{ $admin->name }}</b></big><br/>
-                                    <small><i class="fas fa-phone"></i> {{ $admin->mobile }}</small>
+                                    <big><b>{{ $fireservice->name }}</b></big><br/>
+                                    <small><i class="fas fa-phone"></i> {{ $fireservice->mobile }}</small>
                                 </center>
                               </div>
                               <div class="modal-footer">
                                 <button type="button" class="btn btn-secondary" data-dismiss="modal">ফিরে যান</button>
-                                <a href="{{ route('dashboard.fireservices.delete', [$district->id, $admin->id]) }}" class="btn btn-danger">ডিলেট করুন</a>
+                                <a href="{{ route('dashboard.fireservices.delete', [$district->id, $fireservice->id]) }}" class="btn btn-danger">ডিলেট করুন</a>
                               </div>
                             </div>
                           </div>
