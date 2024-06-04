@@ -72,7 +72,7 @@
 @if(Auth::user()->role == 'admin')
 <li class="nav-item">
     <a href="{{ route('dashboard.police') }}" class="nav-link {{ Request::is('dashboard/police') ? 'active' : '' }} {{ Request::is('dashboard/police/*') ? 'active' : '' }}">
-        <i class="nav-icon fas fa-user-secret"></i>
+        <i class="nav-icon fas fa-user-shield"></i>
         <p>পুলিশ কর্মকর্তাগণ</p>
     </a>
 </li>
