@@ -122,7 +122,7 @@ class AdminandothersController extends Controller
                             ->withAdmins($admins);
     }
 
-    public function indexSearch($district_id, $search)
+    public function policeIndexSearch($district_id, $search)
     {
         $district = District::find($district_id);
         $adminscount = Admin::where('name', 'LIKE', "%$search%")
