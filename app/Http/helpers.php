@@ -70,7 +70,7 @@
 
   function station_type($station_type) {
       if ($station_type == 1) {
-        $text = "ব্লাড ব্যাংক";
+        $text = "পুলিশ সুপারের (SP) কার্যালয়";
       } elseif($station_type == 2) {
         $text = "রক্তদাতা সংগঠন";
       } elseif($station_type == 3) {
