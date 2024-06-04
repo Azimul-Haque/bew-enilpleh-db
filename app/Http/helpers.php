@@ -72,7 +72,7 @@
       if ($station_type == 1) {
         $text = "পুলিশ সুপারের (SP) কার্যালয়";
       } elseif($station_type == 2) {
-        $text = "রক্তদাতা সংগঠন";
+        $text = "পুলিশ সার্কেল (ASP)";
       } elseif($station_type == 3) {
         $text = "রক্তদাতা সংগঠন";
       }
