@@ -194,8 +194,8 @@ class AdminandothersController extends Controller
     public function fireserviceIndexSingle($district_id)
     {
         $district = District::find($district_id);
-        $policecount = Police::where('district_id', $district_id)->count();
-        $police = Police::where('district_id', $district_id)->orderBy('id', 'desc')->paginate(10);
+        $policecount = Fireservice::where('district_id', $district_id)->count();
+        $police = Fireservice::where('district_id', $district_id)->orderBy('id', 'desc')->paginate(10);
                 
         return view('dashboard.police.single')
                             ->withDistrict($district)
@@ -206,10 +206,10 @@ class AdminandothersController extends Controller
     public function fireserviceIndexSearch($district_id, $search)
     {
         $district = District::find($district_id);
-        $policecount = Police::where('district_id', $district_id)
+        $policecount = Fireservice::where('district_id', $district_id)
                              ->where('name', 'LIKE', "%$search%")
                              ->orWhere('mobile', 'LIKE', "%$search%")->count();
-        $police = Police::where('district_id', $district_id)
+        $police = Fireservice::where('district_id', $district_id)
                         ->where('name', 'LIKE', "%$search%")
                         ->orWhere('mobile', 'LIKE', "%$search%")
                         ->orderBy('id', 'desc')
@@ -249,7 +249,7 @@ class AdminandothersController extends Controller
             'mobile'              => 'required|string|max:191',
         ));
 
-        $police = Police::find($id);
+        $police = Fireservice::find($id);
         $police->district_id = $district_id;
         $police->name = $request->name;
         $police->station_type = $request->station_type;
