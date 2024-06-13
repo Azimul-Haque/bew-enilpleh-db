@@ -310,7 +310,7 @@ class AdminandothersController extends Controller
         $fireservice->save();
 
         Cache::forget('lawyers' . $district_id);
-        Session::flash('success', 'Fireservice officer added successfully!');
+        Session::flash('success', 'Lawyer added successfully!');
         return redirect()->route('dashboard.lawyers.districtwise', $district_id);
     }
 
@@ -328,7 +328,7 @@ class AdminandothersController extends Controller
         $fireservice->save();
 
         Cache::forget('lawyers' . $district_id);
-        Session::flash('success', 'Lawyer officer updated successfully!');
+        Session::flash('success', 'Lawyer updated successfully!');
         return redirect()->route('dashboard.lawyers.districtwise', $district_id);
     }
 
