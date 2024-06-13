@@ -15,6 +15,9 @@ class CreateLawyersTable extends Migration
     {
         Schema::create('lawyers', function (Blueprint $table) {
             $table->id();
+            $table->integer('district_id')->unsigned();
+            $table->string('name');
+            $table->string('mobile');
             $table->timestamps();
         });
     }
