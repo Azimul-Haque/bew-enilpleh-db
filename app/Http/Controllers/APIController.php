@@ -580,7 +580,7 @@ class APIController extends Controller
                 foreach($lawyers as $lawyer) {
                     $lawyer->makeHidden('id', 'district_id', 'created_at', 'updated_at');
                 }
-                 return $lawyers;
+                return $lawyers;
             });
             
             return response()->json([
