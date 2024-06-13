@@ -52,7 +52,7 @@
                     <td>
                       {{ $blooddonor->upazilla->name_bangla }}, {{ $blooddonor->district->name_bangla }}
                     </td>
-                    <td align="right" width="40%">
+                    <td align="right">
                       {{-- <button type="button" class="btn btn-warning btn-sm" data-toggle="modal" data-target="#notifModal{{ $blooddonor->id }}">
                         <i class="fas fa-bell"></i>
                       </button> --}}
