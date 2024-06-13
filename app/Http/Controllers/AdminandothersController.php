@@ -262,7 +262,7 @@ class AdminandothersController extends Controller
     {
         $districts = District::all();
                 
-        return view('dashboard.fireservices.index')
+        return view('dashboard.lawyers.index')
                             ->withDistricts($districts);
     }
 
@@ -272,7 +272,7 @@ class AdminandothersController extends Controller
         $fireservicescount = Fireservice::where('district_id', $district_id)->count();
         $fireservices = Fireservice::where('district_id', $district_id)->orderBy('id', 'asc')->paginate(10);
                 
-        return view('dashboard.fireservices.single')
+        return view('dashboard.lawyers.single')
                             ->withDistrict($district)
                             ->withFireservicescount($fireservicescount)
                             ->withFireservices($fireservices);
@@ -290,7 +290,7 @@ class AdminandothersController extends Controller
                             ->orderBy('id', 'asc')
                             ->paginate(10);
 
-        return view('dashboard.fireservices.single')
+        return view('dashboard.lawyers.single')
                             ->withDistrict($district)
                             ->withFireservicescount($fireservicescount)
                             ->withFireservices($fireservices);
@@ -309,9 +309,9 @@ class AdminandothersController extends Controller
         $fireservice->mobile = $request->mobile;
         $fireservice->save();
 
-        Cache::forget('fireservices' . $district_id);
+        Cache::forget('lawyers' . $district_id);
         Session::flash('success', 'Fireservice officer added successfully!');
-        return redirect()->route('dashboard.fireservices.districtwise', $district_id);
+        return redirect()->route('dashboard.lawyers.districtwise', $district_id);
     }
 
     public function updateLawyer(Request $request, $district_id, $id)
@@ -327,9 +327,9 @@ class AdminandothersController extends Controller
         $fireservice->mobile = $request->mobile;
         $fireservice->save();
 
-        Cache::forget('fireservices' . $district_id);
-        Session::flash('success', 'Fireservice officer updated successfully!');
-        return redirect()->route('dashboard.fireservices.districtwise', $district_id);
+        Cache::forget('lawyers' . $district_id);
+        Session::flash('success', 'Lawyer officer updated successfully!');
+        return redirect()->route('dashboard.lawyers.districtwise', $district_id);
     }
 
 
