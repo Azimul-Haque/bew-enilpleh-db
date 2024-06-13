@@ -91,10 +91,10 @@ Route::get('/dashboard/fireservices/{district_id}/{id}/delete', 'AdminandothersC
 // Lawyers
 Route::get('/dashboard/lawyers', 'AdminandothersController@lawyerIndex')->name('dashboard.lawyers');
 Route::get('/dashboard/lawyers/{district_id}', 'AdminandothersController@lawyerIndexSingle')->name('dashboard.lawyers.districtwise');
-Route::get('/dashboard/lawyers/{district_id}/{search}', 'AdminandothersController@fireserviceIndexSearch')->name('dashboard.lawyers.districtwise.search');
-Route::post('/dashboard/lawyers/{district_id}/store', 'AdminandothersController@storeFireservice')->name('dashboard.lawyers.store');
-Route::post('/dashboard/lawyers/{district_id}/{id}/update', 'AdminandothersController@updateFireservice')->name('dashboard.lawyers.update');
-Route::get('/dashboard/lawyers/{district_id}/{id}/delete', 'AdminandothersController@deleteFireservice')->name('dashboard.lawyers.delete');
+Route::get('/dashboard/lawyers/{district_id}/{search}', 'AdminandothersController@lawyersIndexSearch')->name('dashboard.lawyers.districtwise.search');
+Route::post('/dashboard/lawyers/{district_id}/store', 'AdminandothersController@storeLawyers')->name('dashboard.lawyers.store');
+Route::post('/dashboard/lawyers/{district_id}/{id}/update', 'AdminandothersController@updateLawyers')->name('dashboard.lawyers.update');
+Route::get('/dashboard/lawyers/{district_id}/{id}/delete', 'AdminandothersController@deleteLawyers')->name('dashboard.lawyers.delete');
 
 
 
