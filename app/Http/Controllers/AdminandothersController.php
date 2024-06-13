@@ -281,10 +281,10 @@ class AdminandothersController extends Controller
     public function lawyerIndexSearch($district_id, $search)
     {
         $district = District::find($district_id);
-        $fireservicescount = Fireservice::where('district_id', $district_id)
+        $lawyerscount = Fireservice::where('district_id', $district_id)
                                  ->where('name', 'LIKE', "%$search%")
                                  ->orWhere('mobile', 'LIKE', "%$search%")->count();
-        $fireservices = Lawyer::where('district_id', $district_id)
+        $lawyers = Lawyer::where('district_id', $district_id)
                             ->where('name', 'LIKE', "%$search%")
                             ->orWhere('mobile', 'LIKE', "%$search%")
                             ->orderBy('id', 'asc')
