@@ -21,6 +21,7 @@ use App\Esheba;
 use App\Admin;
 use App\Police;
 use App\Fireservice;
+use App\Lawyer;
 
 use Hash;
 use Carbon\Carbon;
