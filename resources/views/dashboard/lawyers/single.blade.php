@@ -45,20 +45,20 @@
                 @foreach($lawyers as $lawyer)
                   <tr>
                     <td>
-                      {{ $fireservice->name }}
+                      {{ $lawyer->name }}
                     </td>
-                    <td>{{ $fireservice->mobile }}</td>
+                    <td>{{ $lawyer->mobile }}</td>
                     <td align="right" width="40%">
-                      {{-- <button type="button" class="btn btn-warning btn-sm" data-toggle="modal" data-target="#notifModal{{ $fireservice->id }}">
+                      {{-- <button type="button" class="btn btn-warning btn-sm" data-toggle="modal" data-target="#notifModal{{ $lawyer->id }}">
                         <i class="fas fa-bell"></i>
                       </button> --}}
-                      <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#editUserModal{{ $fireservice->id }}">
+                      <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#editUserModal{{ $lawyer->id }}">
                         <i class="fas fa-edit"></i>
                       </button>
                       {{-- Edit User Modal Code --}}
                       {{-- Edit User Modal Code --}}
                       <!-- Modal -->
-                      <div class="modal fade" id="editUserModal{{ $fireservice->id }}" tabindex="-1" role="dialog" aria-labelledby="editUserModalLabel" aria-hidden="true" data-backdrop="static">
+                      <div class="modal fade" id="editUserModal{{ $lawyer->id }}" tabindex="-1" role="dialog" aria-labelledby="editUserModalLabel" aria-hidden="true" data-backdrop="static">
                         <div class="modal-dialog" role="document">
                           <div class="modal-content">
                             <div class="modal-header bg-primary">
@@ -67,7 +67,7 @@
                                 <span aria-hidden="true">&times;</span>
                               </button>
                             </div>
-                            <form method="post" action="{{ route('dashboard.lawyers.update', [$district->id, $fireservice->id]) }}" enctype="multipart/form-data">
+                            <form method="post" action="{{ route('dashboard.lawyers.update', [$district->id, $lawyer->id]) }}" enctype="multipart/form-data">
                               <div class="modal-body">
                                 
                                     @csrf
@@ -76,7 +76,7 @@
                                         <input type="text"
                                                name="name"
                                                class="form-control"
-                                               value="{{ $fireservice->name }}"
+                                               value="{{ $lawyer->name }}"
                                                placeholder="আইনজীবীর পদবি (যেমন: সহকারী পরিচালক, টাঙ্গাইল ফায়ার স্টেশন ইত্যাদি ইত্যাদি)" required>
                                         <div class="input-group-append">
                                             <div class="input-group-text"><span class="fas fa-user-tie"></span></div>
@@ -85,7 +85,7 @@
                                     <div class="input-group mb-3">
                                         <input type="number"
                                                name="mobile"
-                                               value="{{ $fireservice->mobile }}"
+                                               value="{{ $lawyer->mobile }}"
                                                class="form-control"
                                                placeholder="আইনজীবীর মোবাইল নম্বর" required>
                                         <div class="input-group-append">
@@ -105,14 +105,14 @@
                       {{-- Edit User Modal Code --}}
                       {{-- Edit User Modal Code --}}
 
-                      <button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#deleteUserModal{{ $fireservice->id }}">
+                      <button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#deleteUserModal{{ $lawyer->id }}">
                         <i class="fas fa-trash-alt"></i>
                       </button>
                     </td>
                         {{-- Delete User Modal Code --}}
                         {{-- Delete User Modal Code --}}
                         <!-- Modal -->
-                        <div class="modal fade" id="deleteUserModal{{ $fireservice->id }}" tabindex="-1" role="dialog" aria-labelledby="deleteUserModalLabel" aria-hidden="true" data-backdrop="static">
+                        <div class="modal fade" id="deleteUserModal{{ $lawyer->id }}" tabindex="-1" role="dialog" aria-labelledby="deleteUserModalLabel" aria-hidden="true" data-backdrop="static">
                           <div class="modal-dialog" role="document">
                             <div class="modal-content">
                               <div class="modal-header bg-danger">
@@ -124,13 +124,13 @@
                               <div class="modal-body">
                                 আপনি কি নিশ্চিতভাবে এই আইনজীবীকে ডিলেট করতে চান?<br/>
                                 <center>
-                                    <big><b>{{ $fireservice->name }}</b></big><br/>
-                                    <small><i class="fas fa-phone"></i> {{ $fireservice->mobile }}</small>
+                                    <big><b>{{ $lawyer->name }}</b></big><br/>
+                                    <small><i class="fas fa-phone"></i> {{ $lawyer->mobile }}</small>
                                 </center>
                               </div>
                               <div class="modal-footer">
                                 <button type="button" class="btn btn-secondary" data-dismiss="modal">ফিরে যান</button>
-                                <a href="{{ route('dashboard.lawyers.delete', [$district->id, $fireservice->id]) }}" class="btn btn-danger">ডিলেট করুন</a>
+                                <a href="{{ route('dashboard.lawyers.delete', [$district->id, $lawyer->id]) }}" class="btn btn-danger">ডিলেট করুন</a>
                               </div>
                             </div>
                           </div>
