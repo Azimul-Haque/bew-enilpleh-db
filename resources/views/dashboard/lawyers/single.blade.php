@@ -106,7 +106,7 @@
                                     <div class="input-group mb-3">
                                         <input type="text"
                                                name="court"
-                                               value="{{ old('court') }}"
+                                               value="{{ $lawyer->court }}"
                                                class="form-control"
                                                placeholder="কোর্টের নাম" required>
                                         <div class="input-group-append">
