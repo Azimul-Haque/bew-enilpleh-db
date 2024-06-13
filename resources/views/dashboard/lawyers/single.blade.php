@@ -145,7 +145,7 @@
           </div>
           <!-- /.card-body -->
         </div>
-        {{ $fireservices->links() }}
+        {{ $lawyers->links() }}
     </div>
 
     {{-- Add User Modal Code --}}
