@@ -53,7 +53,7 @@
                       {{ court_type($lawyer->court_type) }}<br/>
                       {{ $lawyer->court }}
                     </td>
-                    <td align="right" width="40%">
+                    <td align="right">
                       {{-- <button type="button" class="btn btn-warning btn-sm" data-toggle="modal" data-target="#notifModal{{ $lawyer->id }}">
                         <i class="fas fa-bell"></i>
                       </button> --}}
