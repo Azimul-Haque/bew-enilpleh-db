@@ -269,8 +269,8 @@ class AdminandothersController extends Controller
     public function lawyerIndexSingle($district_id)
     {
         $district = District::find($district_id);
-        $lawyerscount = Fireservice::where('district_id', $district_id)->count();
-        $fireservices = Fireservice::where('district_id', $district_id)->orderBy('id', 'asc')->paginate(10);
+        $lawyerscount = Lawyer::where('district_id', $district_id)->count();
+        $fireservices = Lawyer::where('district_id', $district_id)->orderBy('id', 'asc')->paginate(10);
                 
         return view('dashboard.lawyers.single')
                             ->withDistrict($district)
