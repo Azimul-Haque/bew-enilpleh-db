@@ -79,6 +79,17 @@
       return $text;
   }
 
+  function court_type($court_type) {
+      if ($court_type == 1) {
+        $text = "ফৌজদারি";
+      } elseif($court_type == 2) {
+        $text = "দেওয়ানী";
+      } elseif($court_type == 3) {
+        $text = "ভারপ্রাপ্ত কর্মকর্তার (OC) কার্যালয়";
+      }
+      return $text;
+  }
+
   function local_currency($num) {
     $explrestunits = "" ;
     if(strlen($num)>3) {
