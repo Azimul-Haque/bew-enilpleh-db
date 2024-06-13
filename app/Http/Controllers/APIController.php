@@ -566,10 +566,10 @@ class APIController extends Controller
         {
             $lawyers = Cache::remember('lawyers'  . $district_id . $court_type, 30 * 24 * 60 * 60, function () use ($district_id, $court_type) {
                 $lawyers = Lawyer::where(function ($query) use ($district_id) {
-                                 return $query->where('district_id', $district_id);
+                                    return $query->where('district_id', $district_id);
                                 })->where(function ($query) use ($court_type) {
-                                 return $query->where('court_type', $court_type)
-                                              ->orWhere('court_type', 3);
+                                    return $query->where('court_type', $court_type)
+                                                 ->orWhere('court_type', 3);
                                 })
                                 ->orderBy('id', 'asc')
                                 ->get();
