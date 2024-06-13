@@ -37,6 +37,7 @@ Route::get('/geteshebas/{softtoken}', 'APIController@getEshebas')->name('api.get
 Route::get('/getadminofficers/{softtoken}/{district_id}', 'APIController@getAdminOfficers')->name('api.getadminofficers');
 Route::get('/getpoliceofficers/{softtoken}/{station_type}/{district_id}', 'APIController@getPoliceOfficers')->name('api.getpoliceofficers');
 Route::get('/getfireservices/{softtoken}/{district_id}', 'APIController@getFireservices')->name('api.getfireservices');
+Route::get('/getlawyers/{softtoken}/{district_id}', 'APIController@getLawyers')->name('api.getlawyers');
 
 
 
