@@ -332,12 +332,13 @@ class AdminandothersController extends Controller
 
         $lawyer = Lawyer::find($id);
         $lawyer->district_id = $district_id;
+        Cache::forget('lawyers' . $district_id . $lawyer->court_type);
         $lawyer->court_type = $request->court_type;
         $lawyer->name = $request->name;
         $lawyer->mobile = $request->mobile;
         $lawyer->court = $request->court;
         $lawyer->save();
-
+        
         Cache::forget('lawyers' . $district_id . $request->court);
         Session::flash('success', 'Lawyer updated successfully!');
         return redirect()->route('dashboard.lawyers.districtwise', $district_id);
