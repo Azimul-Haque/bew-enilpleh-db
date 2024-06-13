@@ -304,6 +304,8 @@ class AdminandothersController extends Controller
         $this->validate($request,array(
             'name'                => 'required|string|max:191',
             'mobile'              => 'required|string|max:191',
+            'court_type'              => 'required',
+            'court'              => 'required',
         ));
 
         $lawyer = new Lawyer;
