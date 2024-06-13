@@ -50,7 +50,7 @@
                     </td>
                     <td>{{ $lawyer->mobile }}</td>
                     <td>
-                      
+                      {{ court_type() }}
                     </td>
                     <td align="right" width="40%">
                       {{-- <button type="button" class="btn btn-warning btn-sm" data-toggle="modal" data-target="#notifModal{{ $lawyer->id }}">
