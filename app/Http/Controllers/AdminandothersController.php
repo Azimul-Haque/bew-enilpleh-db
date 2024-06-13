@@ -270,12 +270,12 @@ class AdminandothersController extends Controller
     {
         $district = District::find($district_id);
         $lawyerscount = Lawyer::where('district_id', $district_id)->count();
-        $fireservices = Lawyer::where('district_id', $district_id)->orderBy('id', 'asc')->paginate(10);
+        $lawyers = Lawyer::where('district_id', $district_id)->orderBy('id', 'asc')->paginate(10);
                 
         return view('dashboard.lawyers.single')
                             ->withDistrict($district)
-                            ->withFireservicescount($fireservicescount)
-                            ->withFireservices($fireservices);
+                            ->withLawyerscount($lawyerscount)
+                            ->withLawyers($lawyers);
     }
 
     public function lawyerIndexSearch($district_id, $search)
@@ -284,7 +284,7 @@ class AdminandothersController extends Controller
         $fireservicescount = Fireservice::where('district_id', $district_id)
                                  ->where('name', 'LIKE', "%$search%")
                                  ->orWhere('mobile', 'LIKE', "%$search%")->count();
-        $fireservices = Fireservice::where('district_id', $district_id)
+        $fireservices = Lawyer::where('district_id', $district_id)
                             ->where('name', 'LIKE', "%$search%")
                             ->orWhere('mobile', 'LIKE', "%$search%")
                             ->orderBy('id', 'asc')
