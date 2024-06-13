@@ -17,6 +17,7 @@ class CreateLawyersTable extends Migration
             $table->id();
             $table->integer('district_id')->unsigned();
             $table->string('name');
+            $table->string('court');
             $table->string('mobile');
             $table->timestamps();
         });
