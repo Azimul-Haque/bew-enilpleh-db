@@ -303,7 +303,7 @@ class AdminandothersController extends Controller
             'mobile'              => 'required|string|max:191',
         ));
 
-        $fireservice = new Fireservice;
+        $fireservice = new Lawyer;
         $fireservice->district_id = $district_id;
         $fireservice->name = $request->name;
         $fireservice->mobile = $request->mobile;
@@ -321,7 +321,7 @@ class AdminandothersController extends Controller
             'mobile'              => 'required|string|max:191',
         ));
 
-        $fireservice = Fireservice::find($id);
+        $fireservice = Lawyer::find($id);
         $fireservice->district_id = $district_id;
         $fireservice->name = $request->name;
         $fireservice->mobile = $request->mobile;
