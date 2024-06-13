@@ -575,7 +575,7 @@ class APIController extends Controller
                              return $query->where('district_id', $district_id);
                             })->where(function ($query) use ($court_type) {
                              return $query->where('court_type', $court_type)
-                                   ->orWhere('d', '=', $d);
+                                          ->orWhere('court_type', 3);
                             });
                  foreach($lawyers as $lawyer) {
                        $lawyer->makeHidden('id', 'district_id', 'created_at', 'updated_at');
