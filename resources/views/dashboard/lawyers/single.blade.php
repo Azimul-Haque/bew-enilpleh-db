@@ -90,8 +90,8 @@
                                       <select name="court_type" class="form-control" required>
                                           <option selected="" disabled="" value="">কোর্টের ধরন</option>
                                           <option value="1" @if($lawyer->court_type == 1) selected @endif>ফৌজদারি</option>
-                                          <option value="2" @if($lawyer->court_type == 2) selected @endif>দেওয়ানী</option>
-                                          <option value="3" @if($lawyer->court_type == 3) selected @endif>ফৌজদারি ও দেওয়ানী</option>
+                                          <option value="2" @if($lawyer->court_type == 2) selected @endif>দেওয়ানি</option>
+                                          <option value="3" @if($lawyer->court_type == 3) selected @endif>ফৌজদারি ও দেওয়ানি</option>
                                       </select>
                                       <div class="input-group-append">
                                           <div class="input-group-text"><span class="fas fa-star-half-alt"></span></div>
@@ -204,8 +204,8 @@
                     <select name="court_type" class="form-control" required>
                         <option selected="" disabled="" value="">কোর্টের ধরন</option>
                         <option value="1">ফৌজদারি</option>
-                        <option value="2">দেওয়ানী</option>
-                        <option value="3">ফৌজদারি ও দেওয়ানী</option>
+                        <option value="2">দেওয়ানি</option>
+                        <option value="3">ফৌজদারি ও দেওয়ানি</option>
                     </select>
                     <div class="input-group-append">
                         <div class="input-group-text"><span class="fas fa-star-half-alt"></span></div>
