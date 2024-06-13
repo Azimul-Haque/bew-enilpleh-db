@@ -220,9 +220,9 @@
                   <div class="input-group mb-3">
                       <input type="text"
                              name="court"
-                             value="{{ old('court') }}"
+                             value="জজ কোর্ট, {{ $district->name }}"
                              class="form-control"
-                             placeholder="কোর্টের নাম" value="জজ কোর্ট, {{ $district->name }}" required>
+                             placeholder="কোর্টের নাম" required>
                       <div class="input-group-append">
                           <div class="input-group-text"><span class="fas fa-university"></span></div>
                       </div>
