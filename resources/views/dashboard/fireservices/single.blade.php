@@ -48,7 +48,7 @@
                       {{ $fireservice->name }}
                     </td>
                     <td>{{ $fireservice->mobile }}</td>
-                    <td align="right" width="40%">
+                    <td align="right">
                       {{-- <button type="button" class="btn btn-warning btn-sm" data-toggle="modal" data-target="#notifModal{{ $fireservice->id }}">
                         <i class="fas fa-bell"></i>
                       </button> --}}
