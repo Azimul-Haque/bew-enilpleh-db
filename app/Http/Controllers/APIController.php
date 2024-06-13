@@ -565,18 +565,16 @@ class APIController extends Controller
         if($softtoken == env('SOFT_TOKEN'))
         {
             $lawyers = Cache::remember('lawyers'  . $district_id . $court_type, 30 * 24 * 60 * 60, function () use ($district_id, $court_type) {
-                $lawyers = Lawyer::where('district_id', $district_id)
-                                 ->where('court_type', $court_type)
-                                 ->orWhere('court_type', 3)
-                                 ->orderBy('id', 'asc')
-                                 ->get();
+                $lawyers = Lawyer::where(function ($query) use ($district_id) {
+                                 return $query->where('district_id', $district_id);
+                                })->where(function ($query) use ($court_type) {
+                                 return $query->where('court_type', $court_type)
+                                              ->orWhere('court_type', 3);
+                                })
+                                ->orderBy('id', 'asc')
+                                ->get();
 
-                            Lawyer::where(function ($query) use ($district_id) {
-                             return $query->where('district_id', $district_id);
-                            })->where(function ($query) use ($court_type) {
-                             return $query->where('court_type', $court_type)
-                                          ->orWhere('court_type', 3);
-                            });
+                            
                 foreach($lawyers as $lawyer) {
                     $lawyer->makeHidden('id', 'district_id', 'created_at', 'updated_at');
                 }
