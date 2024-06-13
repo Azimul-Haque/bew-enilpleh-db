@@ -296,7 +296,7 @@ class AdminandothersController extends Controller
                             ->withFireservices($fireservices);
     }
 
-    public function storeFireservice(Request $request, $district_id)
+    public function storeLawyer(Request $request, $district_id)
     {
         $this->validate($request,array(
             'name'                => 'required|string|max:191',
@@ -314,7 +314,7 @@ class AdminandothersController extends Controller
         return redirect()->route('dashboard.fireservices.districtwise', $district_id);
     }
 
-    public function updateFireservice(Request $request, $district_id, $id)
+    public function updateLawyer(Request $request, $district_id, $id)
     {
         $this->validate($request,array(
             'name'                => 'required|string|max:191',
