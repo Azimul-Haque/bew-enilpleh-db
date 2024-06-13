@@ -571,10 +571,10 @@ class APIController extends Controller
                                  ->orderBy('id', 'asc')
                                  ->get();
 
-                            Lawyer::where(function ($query) use ($a, $b) {
+                            Lawyer::where(function ($query) use ($district_id) {
                              return $query->where('a', '=', $a)
                                    ->orWhere('b', '=', $b);
-                            })->where(function ($query) use ($c, $d) {
+                            })->where(function ($query) use ($court_type) {
                              return $query->where('c', '=', $c)
                                    ->orWhere('d', '=', $d);
                             });
