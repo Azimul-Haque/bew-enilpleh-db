@@ -574,7 +574,7 @@ class APIController extends Controller
                             Lawyer::where(function ($query) use ($district_id) {
                              return $query->where('district_id', $district_id);
                             })->where(function ($query) use ($court_type) {
-                             return $query->where('c', '=', $c)
+                             return $query->where('court_type', $court_type)
                                    ->orWhere('d', '=', $d);
                             });
                  foreach($lawyers as $lawyer) {
