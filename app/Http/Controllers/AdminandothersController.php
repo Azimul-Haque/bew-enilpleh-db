@@ -306,11 +306,11 @@ class AdminandothersController extends Controller
             'mobile'              => 'required|string|max:191',
         ));
 
-        $fireservice = new Lawyer;
-        $fireservice->district_id = $district_id;
-        $fireservice->name = $request->name;
-        $fireservice->mobile = $request->mobile;
-        $fireservice->save();
+        $lawyer = new Lawyer;
+        $lawyer->district_id = $district_id;
+        $lawyer->name = $request->name;
+        $lawyer->mobile = $request->mobile;
+        $lawyer->save();
 
         Cache::forget('lawyers' . $district_id);
         Session::flash('success', 'Lawyer added successfully!');
