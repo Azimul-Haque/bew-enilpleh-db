@@ -220,7 +220,7 @@
                   <div class="input-group mb-3">
                       <input type="text"
                              name="court"
-                             value="জজ কোর্ট, {{ $district->name }}"
+                             value="জজ কোর্ট, {{ $district->name_bangla }}"
                              class="form-control"
                              placeholder="কোর্টের নাম" required>
                       <div class="input-group-append">
