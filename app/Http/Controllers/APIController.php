@@ -560,7 +560,7 @@ class APIController extends Controller
         }
     }
 
-    public function getLawyers($softtoken, $district_id)
+    public function getLawyers($softtoken, $district_id, $court_type)
     {
         if($softtoken == env('SOFT_TOKEN'))
         {
