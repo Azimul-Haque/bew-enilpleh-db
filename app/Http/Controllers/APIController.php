@@ -570,6 +570,14 @@ class APIController extends Controller
                                  ->orWhere('court_type', 3)
                                  ->orderBy('id', 'asc')
                                  ->get();
+
+                            Lawyer::where(function ($query) use ($a, $b) {
+                             return $query->where('a', '=', $a)
+                                   ->orWhere('b', '=', $b);
+                            })->where(function ($query) use ($c, $d) {
+                             return $query->where('c', '=', $c)
+                                   ->orWhere('d', '=', $d);
+                            });
                  foreach($lawyers as $lawyer) {
                        $lawyer->makeHidden('id', 'district_id', 'created_at', 'updated_at');
                    }
