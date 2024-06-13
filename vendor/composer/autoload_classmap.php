@@ -53,6 +53,7 @@ return array(
     'App\\Http\\Middleware\\TrimStrings' => $baseDir . '/app/Http/Middleware/TrimStrings.php',
     'App\\Http\\Middleware\\TrustProxies' => $baseDir . '/app/Http/Middleware/TrustProxies.php',
     'App\\Http\\Middleware\\VerifyCsrfToken' => $baseDir . '/app/Http/Middleware/VerifyCsrfToken.php',
+    'App\\Lawyer' => $baseDir . '/app/Lawyer.php',
     'App\\Medicaldepartment' => $baseDir . '/app/Medicaldepartment.php',
     'App\\Medicalsymptom' => $baseDir . '/app/Medicalsymptom.php',
     'App\\Message' => $baseDir . '/app/Message.php',
