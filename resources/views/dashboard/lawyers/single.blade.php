@@ -96,7 +96,7 @@
                                     <div class="input-group mb-3">
                                         <input type="number"
                                                name="mobile"
-                                               value="{{ old('mobile') }}"
+                                               value="{{ $lawyer->mobile }}"
                                                class="form-control"
                                                placeholder="আইনজীবীর মোবাইল নম্বর" required>
                                         <div class="input-group-append">
