@@ -570,8 +570,8 @@ class APIController extends Controller
                                  ->orWhere('court_type', 3)
                                  ->orderBy('id', 'asc')
                                  ->get();
-                 foreach($lawyers as $fireservice) {
-                       $fireservice->makeHidden('id', 'district_id', 'created_at', 'updated_at');
+                 foreach($lawyers as $lawyer) {
+                       $lawyer->makeHidden('id', 'district_id', 'created_at', 'updated_at');
                    }
                  return $lawyers;
             });
