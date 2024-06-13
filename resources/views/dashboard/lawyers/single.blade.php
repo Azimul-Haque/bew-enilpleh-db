@@ -222,7 +222,7 @@
                              name="court"
                              value="{{ old('court') }}"
                              class="form-control"
-                             placeholder="কোর্টের নাম" required>
+                             placeholder="কোর্টের নাম" value="জজ কোর্ট, {{ $district->name }}" required>
                       <div class="input-group-append">
                           <div class="input-group-text"><span class="fas fa-university"></span></div>
                       </div>
