@@ -49,7 +49,7 @@
                       <span class="badge bg-success">{{ station_type($policesingle->station_type) }}</span>
                     </td>
                     <td>{{ $policesingle->mobile }}</td>
-                    <td align="right" width="40%">
+                    <td align="right">
                       {{-- <button type="button" class="btn btn-warning btn-sm" data-toggle="modal" data-target="#notifModal{{ $policesingle->id }}">
                         <i class="fas fa-bell"></i>
                       </button> --}}
