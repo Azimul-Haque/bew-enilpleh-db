@@ -190,7 +190,7 @@
                              name="court"
                              value="{{ old('court') }}"
                              class="form-control"
-                             placeholder="আইনজীবীর মোবাইল নম্বর" required>
+                             placeholder="কোর্টের নাম" required>
                       <div class="input-group-append">
                           <div class="input-group-text"><span class="fas fa-university"></span></div>
                       </div>
