@@ -564,7 +564,7 @@ class APIController extends Controller
     {
         if($softtoken == env('SOFT_TOKEN'))
         {
-            $lawyers = Cache::remember('lawyers'  . $district_id, 30 * 24 * 60 * 60, function () use ($district_id) {
+            $lawyers = Cache::remember('lawyers'  . $district_id . $court_type, 30 * 24 * 60 * 60, function () use ($district_id) {
                  $lawyers = Fireservice::where('district_id', $district_id)
                                  ->orderBy('id', 'asc')
                                  ->get();
