@@ -566,6 +566,7 @@ class APIController extends Controller
         {
             $lawyers = Cache::remember('lawyers'  . $district_id . $court_type, 30 * 24 * 60 * 60, function () use ($district_id) {
                  $lawyers = Fireservice::where('district_id', $district_id)
+                                 ->where('court_type', $court_type)
                                  ->orderBy('id', 'asc')
                                  ->get();
                  foreach($lawyers as $fireservice) {
