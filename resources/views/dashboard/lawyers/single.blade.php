@@ -77,7 +77,7 @@
                                                name="name"
                                                class="form-control"
                                                value="{{ $lawyer->name }}"
-                                               placeholder="আইনজীবীর পদবি (যেমন: সহকারী পরিচালক, টাঙ্গাইল ফায়ার স্টেশন ইত্যাদি ইত্যাদি)" required>
+                                               placeholder="আইনজীবীর নাম" required>
                                         <div class="input-group-append">
                                             <div class="input-group-text"><span class="fas fa-user-tie"></span></div>
                                         </div>
@@ -170,7 +170,7 @@
                              name="name"
                              class="form-control"
                              value="{{ old('name') }}"
-                             placeholder="আইনজীবীর পদবি (যেমন: সহকারী পরিচালক, টাঙ্গাইল ফায়ার স্টেশন ইত্যাদি ইত্যাদি)" required>
+                             placeholder="আইনজীবীর নাম" required>
                       <div class="input-group-append">
                           <div class="input-group-text"><span class="fas fa-user-tie"></span></div>
                       </div>
