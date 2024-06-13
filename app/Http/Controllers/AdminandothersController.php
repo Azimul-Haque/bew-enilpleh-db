@@ -295,8 +295,8 @@ class AdminandothersController extends Controller
 
         return view('dashboard.lawyers.single')
                             ->withDistrict($district)
-                            ->withFireservicescount($fireservicescount)
-                            ->withFireservices($fireservices);
+                            ->withLawyerscount($lawyerscount)
+                            ->withLawyers($lawyers);
     }
 
     public function storeLawyer(Request $request, $district_id)
