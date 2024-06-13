@@ -108,7 +108,7 @@
                                                name="court"
                                                value="{{ $lawyer->court }}"
                                                class="form-control"
-                                               placeholder="কোর্টের নাম" required>
+                                               placeholder="কোর্টের নাম" value="{{ $ }}" required>
                                         <div class="input-group-append">
                                             <div class="input-group-text"><span class="fas fa-university"></span></div>
                                         </div>
