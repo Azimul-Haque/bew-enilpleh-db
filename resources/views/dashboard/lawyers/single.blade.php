@@ -42,7 +42,7 @@
                 </tr>
               </thead>
               <tbody>
-                @foreach($fireservices as $fireservice)
+                @foreach($lawyers as $fireservice)
                   <tr>
                     <td>
                       {{ $fireservice->name }}
