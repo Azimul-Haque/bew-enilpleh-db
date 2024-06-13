@@ -51,7 +51,7 @@
                     <td>
                       {{ $ambulance->upazilla->name_bangla }}, {{ $ambulance->district->name_bangla }}
                     </td>
-                    <td align="right" width="40%">
+                    <td align="right">
                       {{-- <button type="button" class="btn btn-warning btn-sm" data-toggle="modal" data-target="#notifModal{{ $ambulance->id }}">
                         <i class="fas fa-bell"></i>
                       </button> --}}
