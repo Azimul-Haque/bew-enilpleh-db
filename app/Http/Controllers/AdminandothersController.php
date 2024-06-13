@@ -332,7 +332,6 @@ class AdminandothersController extends Controller
 
         $lawyer = Lawyer::find($id);
         $lawyer->district_id = $district_id;
-        Cache::forget('lawyers' . $district_id . $lawyer->court_type);
         $lawyer->court_type = $request->court_type;
         $lawyer->name = $request->name;
         $lawyer->mobile = $request->mobile;
