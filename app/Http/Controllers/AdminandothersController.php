@@ -258,5 +258,79 @@ class AdminandothersController extends Controller
         return redirect()->route('dashboard.fireservices.districtwise', $district_id);
     }
 
+    public function lawyerIndex()
+    {
+        $districts = District::all();
+                
+        return view('dashboard.fireservices.index')
+                            ->withDistricts($districts);
+    }
+
+    public function lawyerIndexSingle($district_id)
+    {
+        $district = District::find($district_id);
+        $fireservicescount = Fireservice::where('district_id', $district_id)->count();
+        $fireservices = Fireservice::where('district_id', $district_id)->orderBy('id', 'asc')->paginate(10);
+                
+        return view('dashboard.fireservices.single')
+                            ->withDistrict($district)
+                            ->withFireservicescount($fireservicescount)
+                            ->withFireservices($fireservices);
+    }
+
+    public function lawyerIndexSearch($district_id, $search)
+    {
+        $district = District::find($district_id);
+        $fireservicescount = Fireservice::where('district_id', $district_id)
+                                 ->where('name', 'LIKE', "%$search%")
+                                 ->orWhere('mobile', 'LIKE', "%$search%")->count();
+        $fireservices = Fireservice::where('district_id', $district_id)
+                            ->where('name', 'LIKE', "%$search%")
+                            ->orWhere('mobile', 'LIKE', "%$search%")
+                            ->orderBy('id', 'asc')
+                            ->paginate(10);
+
+        return view('dashboard.fireservices.single')
+                            ->withDistrict($district)
+                            ->withFireservicescount($fireservicescount)
+                            ->withFireservices($fireservices);
+    }
+
+    public function storeFireservice(Request $request, $district_id)
+    {
+        $this->validate($request,array(
+            'name'                => 'required|string|max:191',
+            'mobile'              => 'required|string|max:191',
+        ));
+
+        $fireservice = new Fireservice;
+        $fireservice->district_id = $district_id;
+        $fireservice->name = $request->name;
+        $fireservice->mobile = $request->mobile;
+        $fireservice->save();
+
+        Cache::forget('fireservices' . $district_id);
+        Session::flash('success', 'Fireservice officer added successfully!');
+        return redirect()->route('dashboard.fireservices.districtwise', $district_id);
+    }
+
+    public function updateFireservice(Request $request, $district_id, $id)
+    {
+        $this->validate($request,array(
+            'name'                => 'required|string|max:191',
+            'mobile'              => 'required|string|max:191',
+        ));
+
+        $fireservice = Fireservice::find($id);
+        $fireservice->district_id = $district_id;
+        $fireservice->name = $request->name;
+        $fireservice->mobile = $request->mobile;
+        $fireservice->save();
+
+        Cache::forget('fireservices' . $district_id);
+        Session::flash('success', 'Fireservice officer updated successfully!');
+        return redirect()->route('dashboard.fireservices.districtwise', $district_id);
+    }
+
 
 }
