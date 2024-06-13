@@ -90,7 +90,7 @@
 @if(Auth::user()->role == 'admin')
 <li class="nav-item">
     <a href="{{ route('dashboard.fireservices') }}" class="nav-link {{ Request::is('dashboard/fireservices') ? 'active' : '' }} {{ Request::is('dashboard/fireservices/*') ? 'active' : '' }}">
-        <i class="nav-icon fas fa-fire-extinguisher"></i>
+        <i class="nav-icon fas fa-lawyer"></i>
         <p>আইনজীবী</p>
     </a>
 </li>
