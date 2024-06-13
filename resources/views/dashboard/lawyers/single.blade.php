@@ -49,6 +49,9 @@
                       {{ $lawyer->name }}
                     </td>
                     <td>{{ $lawyer->mobile }}</td>
+                    <td>
+                      
+                    </td>
                     <td align="right" width="40%">
                       {{-- <button type="button" class="btn btn-warning btn-sm" data-toggle="modal" data-target="#notifModal{{ $lawyer->id }}">
                         <i class="fas fa-bell"></i>
