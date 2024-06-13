@@ -85,7 +85,7 @@
                                     <div class="input-group mb-3">
                                       <select name="court_type" class="form-control" required>
                                           <option selected="" disabled="" value="">কোর্টের ধরন</option>
-                                          <option value="1" @if($lawyer->court_type == ) @endif>ফৌজদারি</option>
+                                          <option value="1" @if($lawyer->court_type == 1) selected @endif>ফৌজদারি</option>
                                           <option value="2">দেওয়ানী</option>
                                           <option value="3">ফৌজদারি ও দেওয়ানী</option>
                                       </select>
