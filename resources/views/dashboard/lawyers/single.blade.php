@@ -76,20 +76,41 @@
                                         <input type="text"
                                                name="name"
                                                class="form-control"
-                                               value="{{ $lawyer->name }}"
+                                               value="{{ old('name') }}"
                                                placeholder="আইনজীবীর নাম" required>
                                         <div class="input-group-append">
                                             <div class="input-group-text"><span class="fas fa-user-tie"></span></div>
                                         </div>
                                     </div>
                                     <div class="input-group mb-3">
+                                      <select name="court_type" class="form-control" required>
+                                          <option selected="" disabled="" value="">কোর্টের ধরন</option>
+                                          <option value="1">ফৌজদারি</option>
+                                          <option value="2">দেওয়ানী</option>
+                                          <option value="3">ফৌজদারি ও দেওয়ানী</option>
+                                      </select>
+                                      <div class="input-group-append">
+                                          <div class="input-group-text"><span class="fas fa-star-half-alt"></span></div>
+                                      </div>
+                                    </div>
+                                    <div class="input-group mb-3">
                                         <input type="number"
                                                name="mobile"
-                                               value="{{ $lawyer->mobile }}"
+                                               value="{{ old('mobile') }}"
                                                class="form-control"
                                                placeholder="আইনজীবীর মোবাইল নম্বর" required>
                                         <div class="input-group-append">
                                             <div class="input-group-text"><span class="fas fa-mobile"></span></div>
+                                        </div>
+                                    </div>
+                                    <div class="input-group mb-3">
+                                        <input type="text"
+                                               name="court"
+                                               value="{{ old('court') }}"
+                                               class="form-control"
+                                               placeholder="কোর্টের নাম" required>
+                                        <div class="input-group-append">
+                                            <div class="input-group-text"><span class="fas fa-university"></span></div>
                                         </div>
                                     </div>
                                      
