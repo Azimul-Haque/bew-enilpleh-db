@@ -192,7 +192,7 @@
                              class="form-control"
                              placeholder="আইনজীবীর মোবাইল নম্বর" required>
                       <div class="input-group-append">
-                          <div class="input-group-text"><span class="fas fa-"></span></div>
+                          <div class="input-group-text"><span class="fas fa-university"></span></div>
                       </div>
                   </div>
             </div>
