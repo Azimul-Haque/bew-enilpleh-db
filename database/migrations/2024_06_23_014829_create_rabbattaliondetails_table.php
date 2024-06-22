@@ -15,7 +15,8 @@ class CreateRabbattaliondetailsTable extends Migration
     {
         Schema::create('rabbattaliondetails', function (Blueprint $table) {
             $table->id();
-            $table->timestamps();
+            $table->integer('rentacar_id');
+            $table->string('image');
         });
     }
 
