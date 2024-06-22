@@ -187,12 +187,12 @@
                   </div>
                   <div class="input-group mb-3">
                       <input type="text"
-                             name="name"
+                             name="address"
                              class="form-control"
-                             value="{{ old('name') }}"
+                             value="{{ old('address') }}"
                              placeholder="কোচিং সেন্টারের ঠিকানা" required>
                       <div class="input-group-append">
-                          <div class="input-group-text"><span class="fas fa-user-tie"></span></div>
+                          <div class="input-group-text"><span class="fas fa-map-marked-alt"></span></div>
                       </div>
                   </div>
             </div>
