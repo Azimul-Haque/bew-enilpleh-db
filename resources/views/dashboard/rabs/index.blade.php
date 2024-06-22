@@ -66,7 +66,9 @@
                                                         @foreach($rabbattalions as $rabbattalion)
                                                           <option value="{{ $rabbattalion->id }}">
                                                             {{ $rabbattalion->name }}<br/>
-                                                            
+                                                            <div style="color: #9C9FA0; font-size: 12.5px; line-height: 90%!;">
+                                                              {{ $rabbattalion->details }}
+                                                            </div>
                                                           </option>
                                                         @endforeach
                                                     </select>
