@@ -67,7 +67,7 @@
                         <div class="modal-dialog" role="document">
                           <div class="modal-content">
                             <div class="modal-header bg-primary">
-                              <h5 class="modal-title" id="editUserModalLabel">আইনজীবী তথ্য হালনাগাদ</h5>
+                              <h5 class="modal-title" id="editUserModalLabel">রেন্ট-এ-কার তথ্য হালনাগাদ</h5>
                               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                 <span aria-hidden="true">&times;</span>
                               </button>
@@ -82,7 +82,7 @@
                                                name="name"
                                                class="form-control"
                                                value="{{ $lawyer->name }}"
-                                               placeholder="আইনজীবীর নাম" required>
+                                               placeholder="রেন্ট-এ-কারর নাম" required>
                                         <div class="input-group-append">
                                             <div class="input-group-text"><span class="fas fa-user-tie"></span></div>
                                         </div>
@@ -103,7 +103,7 @@
                                                name="mobile"
                                                value="{{ $lawyer->mobile }}"
                                                class="form-control"
-                                               placeholder="আইনজীবীর মোবাইল নম্বর" required>
+                                               placeholder="রেন্ট-এ-কারর মোবাইল নম্বর" required>
                                         <div class="input-group-append">
                                             <div class="input-group-text"><span class="fas fa-mobile"></span></div>
                                         </div>
@@ -142,13 +142,13 @@
                           <div class="modal-dialog" role="document">
                             <div class="modal-content">
                               <div class="modal-header bg-danger">
-                                <h5 class="modal-title" id="deleteUserModalLabel">আইনজীবী ডিলেট</h5>
+                                <h5 class="modal-title" id="deleteUserModalLabel">রেন্ট-এ-কার ডিলেট</h5>
                                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                   <span aria-hidden="true">&times;</span>
                                 </button>
                               </div>
                               <div class="modal-body">
-                                আপনি কি নিশ্চিতভাবে এই আইনজীবীকে ডিলেট করতে চান?<br/>
+                                আপনি কি নিশ্চিতভাবে এই রেন্ট-এ-কারকে ডিলেট করতে চান?<br/>
                                 <center>
                                     <big><b>{{ $lawyer->name }}</b></big><br/>
                                     <small><i class="fas fa-phone"></i> {{ $lawyer->mobile }}</small>
@@ -181,7 +181,7 @@
       <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content">
           <div class="modal-header bg-success">
-            <h5 class="modal-title" id="addUserModalLabel">নতুন আইনজীবী যোগ (জেলা: <strong>{{ $district->name_bangla }}</strong>)</h5>
+            <h5 class="modal-title" id="addUserModalLabel">নতুন রেন্ট-এ-কার যোগ (জেলা: <strong>{{ $district->name_bangla }}</strong>)</h5>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
@@ -196,7 +196,7 @@
                              name="name"
                              class="form-control"
                              value="{{ old('name') }}"
-                             placeholder="আইনজীবীর নাম" required>
+                             placeholder="রেন্ট-এ-কারর নাম" required>
                       <div class="input-group-append">
                           <div class="input-group-text"><span class="fas fa-user-tie"></span></div>
                       </div>
@@ -217,7 +217,7 @@
                              name="mobile"
                              value="{{ old('mobile') }}"
                              class="form-control"
-                             placeholder="আইনজীবীর মোবাইল নম্বর" required>
+                             placeholder="রেন্ট-এ-কারর মোবাইল নম্বর" required>
                       <div class="input-group-append">
                           <div class="input-group-text"><span class="fas fa-mobile"></span></div>
                       </div>
