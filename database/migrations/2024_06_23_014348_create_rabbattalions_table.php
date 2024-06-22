@@ -17,6 +17,7 @@ class CreateRabbattalionsTable extends Migration
             $table->id();
             $table->string('name');
             $table->string('details');
+            $table->string('map');
             $table->timestamps();
         });
     }
