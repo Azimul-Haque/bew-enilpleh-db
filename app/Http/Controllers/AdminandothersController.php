@@ -566,7 +566,7 @@ class AdminandothersController extends Controller
         return redirect()->route('dashboard.coachings.districtwise', $district_id);
     }
 
-    public function updateCoaching(Request $request, $district_id, $id)
+    public function updateRabbattalion(Request $request, $id)
     {
         $this->validate($request,array(
             'name'                => 'required|string|max:191',
