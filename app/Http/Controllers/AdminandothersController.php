@@ -701,17 +701,17 @@ class AdminandothersController extends Controller
 
         }
 
-        $rabbattaliondetail = Rabbattaliondetail::findOrFail($id);
-        $rabbattaliondetail->rabbattalion_id = $battalion_id;
-        $rabbattaliondetail->designation = $request->designation;
-        $rabbattaliondetail->area = $request->area;
-        $rabbattaliondetail->mobile = $request->mobile;
-        if($request->telephone != '') {
-            $rabbattaliondetail->telephone = $request->telephone;
-        } else {
-            $rabbattaliondetail->telephone = '';
-        }
-        $rabbattaliondetail->save();
+        // $rabbattaliondetail = Rabbattaliondetail::findOrFail($id);
+        // $rabbattaliondetail->rabbattalion_id = $battalion_id;
+        // $rabbattaliondetail->designation = $request->designation;
+        // $rabbattaliondetail->area = $request->area;
+        // $rabbattaliondetail->mobile = $request->mobile;
+        // if($request->telephone != '') {
+        //     $rabbattaliondetail->telephone = $request->telephone;
+        // } else {
+        //     $rabbattaliondetail->telephone = '';
+        // }
+        // $rabbattaliondetail->save();
 
         Cache::forget('rabs' . $district_id);
         Session::flash('success', 'District and RAB Battalion updated successfully!');
