@@ -114,6 +114,15 @@
 </li>
 @endif
 
+@if(Auth::user()->role == 'admin')
+<li class="nav-item">
+    <a href="{{ route('dashboard.rabs') }}" class="nav-link {{ Request::is('dashboard/rabs') ? 'active' : '' }} {{ Request::is('dashboard/rabs/*') ? 'active' : '' }}">
+        <i class="nav-icon fas fa-chalkboard-teacher"></i>
+        <p>র‍্যাব</p>
+    </a>
+</li>
+@endif
+
 {{-- @if(Auth::user()->role == 'admin')
 <li class="nav-item">
     <a href="{{ route('dashboard.payments') }}" class="nav-link {{ Request::is('dashboard/payments') ? 'active' : '' }} {{ Request::is('dashboard/payments/*') ? 'active' : '' }}">
