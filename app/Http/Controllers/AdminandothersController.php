@@ -460,7 +460,7 @@ class AdminandothersController extends Controller
                             ->withDistricts($districts);
     }
 
-    public function coacingIndexSingle($district_id)
+    public function coachingIndexSingle($district_id)
     {
         $district = District::find($district_id);
         $coachingscount = Coaching::where('district_id', $district_id)->count();
@@ -472,7 +472,7 @@ class AdminandothersController extends Controller
                             ->withCoachings($coachings);
     }
 
-    public function coacingIndexSearch($district_id, $search)
+    public function coachingIndexSearch($district_id, $search)
     {
         $district = District::find($district_id);
         $coachingscount = Coaching::where('district_id', $district_id)
@@ -493,7 +493,7 @@ class AdminandothersController extends Controller
                             ->withcoachings($coachings);
     }
 
-    public function storeCoacing(Request $request, $district_id)
+    public function storeCoaching(Request $request, $district_id)
     {
         $this->validate($request,array(
             'name'                => 'required|string|max:191',
@@ -513,7 +513,7 @@ class AdminandothersController extends Controller
         return redirect()->route('dashboard.coachings.districtwise', $district_id);
     }
 
-    public function updateCoacing(Request $request, $district_id, $id)
+    public function updateCoaching(Request $request, $district_id, $id)
     {
         $this->validate($request,array(
             'name'                => 'required|string|max:191',
