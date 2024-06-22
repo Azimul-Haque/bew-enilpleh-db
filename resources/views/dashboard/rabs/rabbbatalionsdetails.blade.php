@@ -99,7 +99,7 @@
                                     <div class="input-group mb-3">
                                         <input type="number"
                                                name="mobile"
-                                               value="{{ old('mobile') }}"
+                                               value="{{ $rabbattallionofficer->mobile }}"
                                                class="form-control"
                                                placeholder="র‍্যাব অফিসারের মোবাইল নম্বর" required>
                                         <div class="input-group-append">
@@ -110,7 +110,7 @@
                                     <div class="input-group mb-3">
                                         <input type="number"
                                                name="mobile"
-                                               value="{{ old('mobile') }}"
+                                               value="{{ $rabbattallionofficer->telephone }}"
                                                class="form-control"
                                                placeholder="র‍্যাব অফিসারের টেলিফোন নম্বর (যদি থাকে)">
                                         <div class="input-group-append">
