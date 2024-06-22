@@ -227,7 +227,7 @@
                              name="mobile"
                              value="{{ old('mobile') }}"
                              class="form-control"
-                             placeholder="কোচিং সেন্টারের মোবাইল নম্বর" required>
+                             placeholder="ব্যাটালিয়নের বিস্তারিত" required>
                       <div class="input-group-append">
                           <div class="input-group-text"><span class="fas fa-mobile"></span></div>
                       </div>
