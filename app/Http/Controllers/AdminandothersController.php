@@ -346,11 +346,11 @@ class AdminandothersController extends Controller
         return redirect()->route('dashboard.lawyers.districtwise', $district_id);
     }
 
-    public function lawyerIndex()
+    public function rentacarIndex()
     {
         $districts = District::all();
                 
-        return view('dashboard.lawyers.index')
+        return view('dashboard.rentacars.index')
                             ->withDistricts($districts);
     }
 
