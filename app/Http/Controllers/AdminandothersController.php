@@ -676,7 +676,7 @@ class AdminandothersController extends Controller
         $coaching->save();
 
         Cache::forget('rabbattaliondetail' . $battalion_id);
-        Session::flash('success', 'RAB Officer added successfully!');
+        Session::flash('success', 'RAB Officer updated successfully!');
         return redirect()->route('dashboard.rabbattalions.details', $battalion_id);
     }
 }
