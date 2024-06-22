@@ -606,6 +606,13 @@ class AdminandothersController extends Controller
 
     public function detailsRabbattalion($id)
     {
-        rabbbatalionsdetails
+        $coachingscount = Coaching::where('district_id', $district_id)->count();
+        $coachings = Coaching::where('district_id', $district_id)->orderBy('id', 'asc')->paginate(10);
+                
+        return view('dashboard.rabs.rabbbatalionsdetails')
+                            ->withDistrict($district)
+                            ->withCoachingscount($coachingscount)
+                            ->withCoachings($coachings);
+        
     }
 }
