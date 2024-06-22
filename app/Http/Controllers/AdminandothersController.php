@@ -610,7 +610,6 @@ class AdminandothersController extends Controller
         $battallionofficers = Coaching::where('district_id', $district_id)->orderBy('id', 'asc')->paginate(10);
                 
         return view('dashboard.rabs.rabbbatalionsdetails')
-                            ->withDistrict($district)
                             ->withCoachingscount($battallionofficerscount)
                             ->withCoachings($battallionofficers);
         
