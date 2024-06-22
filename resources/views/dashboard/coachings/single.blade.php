@@ -7,7 +7,7 @@
 @endsection
 
 @section('content')
-  @section('page-header') ফায়ার সার্ভিস কর্মকর্তা/স্টেশন তালিকা / {{ $district->name_bangla }} জেলা (মোট {{ bangla($fireservicescount) }} টি) @endsection
+  @section('page-header') ফায়ার সার্ভিস কর্মকর্তা/স্টেশন তালিকা / {{ $district->name_bangla }} জেলা (মোট {{ bangla($coachingscount) }} টি) @endsection
     <div class="container-fluid">
     <div class="card">
           <div class="card-header">
