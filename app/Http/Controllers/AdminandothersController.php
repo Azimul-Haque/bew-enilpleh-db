@@ -430,6 +430,22 @@ class AdminandothersController extends Controller
         $rentacar->mobile = $request->mobile;
         $rentacar->save();
 
+        // image upload
+        if($request->hasFile('image')) {
+            $image_path = public_path('images/ambulances/'. $ambulance->ambulanceimage->image);
+            // dd($image_path);
+            if(File::exists($image_path)) {
+                File::delete($image_path);
+            }
+            $image    = $request->file('image');
+            $filename = random_string(5) . time() .'.' . "webp";
+            $location = public_path('images/ambulances/'. $filename);
+            Image::make($image)->fit(200, 200)->save($location);
+            $ambulanceimage              = Ambulanceimage::where('ambulance_id', $ambulance->id)->first();
+            $ambulanceimage->image       = $filename;
+            $ambulanceimage->save();
+        }
+
         Cache::forget('rentacars' . $district_id);
         Session::flash('success', 'Rent-a-Car updated successfully!');
         return redirect()->route('dashboard.rentacar.districtwise', $district_id);
