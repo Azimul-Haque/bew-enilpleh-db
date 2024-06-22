@@ -190,7 +190,7 @@
                              name="name"
                              class="form-control"
                              value="{{ old('name') }}"
-                             placeholder="কোচিং সেন্টারের নাম" required>
+                             placeholder="কোচিং সেন্টারের ঠিকানা" required>
                       <div class="input-group-append">
                           <div class="input-group-text"><span class="fas fa-user-tie"></span></div>
                       </div>
