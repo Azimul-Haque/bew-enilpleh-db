@@ -15,6 +15,10 @@ class CreateCoachingsTable extends Migration
     {
         Schema::create('coachings', function (Blueprint $table) {
             $table->id();
+            $table->integer('district_id')->unsigned();
+            $table->string('name');
+            $table->string('address');
+            $table->string('mobile');
             $table->timestamps();
         });
     }
