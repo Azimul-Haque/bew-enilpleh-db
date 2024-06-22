@@ -223,11 +223,11 @@
                       </div>
                   </div>
                   <div class="input-group mb-3">
-                      <input type="text"
+                      <textarea type="text"
                              name="details"
                              value="{{ old('details') }}"
                              class="form-control"
-                             placeholder="ব্যাটালিয়নের বিস্তারিত" required>
+                             placeholder="ব্যাটালিয়নের বিস্তারিত" required></textarea>
                       <div class="input-group-append">
                           <div class="input-group-text"><span class="fas fa-info-circle"></span></div>
                       </div>
