@@ -659,7 +659,7 @@ class APIController extends Controller
                 foreach($rabs as $fireservice) {
                     $fireservice->makeHidden('id', 'district_id', 'created_at', 'updated_at');
                 }
-                
+                dd($rabs);
                 return $rabs;
             });
             
