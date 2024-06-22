@@ -644,7 +644,7 @@ class AdminandothersController extends Controller
         $query = Rabbattaliondetail::where('rabbattalion_id', $battalion_id);
 
         // If the search parameter is provided, apply it to designation, area, mobile, and telephone fields
-        if ($request->filled('search')) {
+        if ($search) {
             $search = $request->search;
             $query->where(function($q) use ($search) {
                 $q->where('designation', 'LIKE', '%' . $search . '%')
