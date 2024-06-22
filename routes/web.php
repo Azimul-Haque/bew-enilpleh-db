@@ -106,7 +106,7 @@ Route::get('/dashboard/rentacars/{district_id}/{id}/delete', 'AdminandothersCont
 
 // Coaching
 Route::get('/dashboard/coachings', 'AdminandothersController@coachingIndex')->name('dashboard.coachings');
-Route::get('/dashboard/coachings/{district_id}', 'AdminandothersController@rentacarIndexSingle')->name('dashboard.coachings.districtwise');
+Route::get('/dashboard/coachings/{district_id}', 'AdminandothersController@coachingIndexSingle')->name('dashboard.coachings.districtwise');
 Route::get('/dashboard/coachings/{district_id}/{search}', 'AdminandothersController@coachingsIndexSearch')->name('dashboard.coachings.districtwise.search');
 Route::post('/dashboard/coachings/{district_id}/store', 'AdminandothersController@storeRentacar')->name('dashboard.coachings.store');
 Route::post('/dashboard/coachings/{district_id}/{id}/update', 'AdminandothersController@updateRentacar')->name('dashboard.coachings.update');
