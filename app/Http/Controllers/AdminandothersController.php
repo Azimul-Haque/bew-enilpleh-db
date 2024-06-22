@@ -424,13 +424,11 @@ class AdminandothersController extends Controller
             'image'          => 'sometimes',
         ));
 
-        $lawyer = Lawyer::find($id);
-        $lawyer->district_id = $district_id;
-        $lawyer->court_type = $request->court_type;
-        $lawyer->name = $request->name;
-        $lawyer->mobile = $request->mobile;
-        $lawyer->court = $request->court;
-        $lawyer->save();
+        $rentacar = Lawyer::find($id);
+        $rentacar->district_id = $district_id;
+        $rentacar->name = $request->name;
+        $rentacar->mobile = $request->mobile;
+        $rentacar->save();
 
         Cache::forget('lawyers' . $district_id . 1);
         Cache::forget('lawyers' . $district_id . 2);
