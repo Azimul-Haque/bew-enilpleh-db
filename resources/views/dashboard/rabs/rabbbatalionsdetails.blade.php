@@ -187,6 +187,17 @@
                           <div class="input-group-text"><span class="fas fa-user-tie"></span></div>
                       </div>
                   </div>
+
+                  <div class="input-group mb-3">
+                      <input type="text"
+                             name="designation"
+                             class="form-control"
+                             value="{{ old('designation') }}"
+                             placeholder="র‍্যাব অফিসারের ডেসিগনেশন" required>
+                      <div class="input-group-append">
+                          <div class="input-group-text"><span class="fas fa-user-tie"></span></div>
+                      </div>
+                  </div>
                   
                   <div class="input-group mb-3">
                       <input type="number"
