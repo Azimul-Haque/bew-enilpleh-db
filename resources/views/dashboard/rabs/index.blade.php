@@ -43,6 +43,67 @@
                                     <button type="button" class="btn btn-warning btn-sm"  data-toggle="modal" data-target="#updateDistrictRabBattalion" style="margin-left: 5px;" rel="tooltip" title="" data-original-title="র‍্যাব ব্যাটালিয়ন সংযুক্ত করুন">
                                       <i class="fas fa-link"></i> আপডেট
                                     </button>
+                                    {{-- Edit Rab Battalion Code --}}
+                                    {{-- Edit Rab Battalion Code --}}
+                                    <!-- Modal -->
+                                    <div class="modal fade" id="updateDistrictRabBattalion{{ $rabbattalion->id }}" tabindex="-1" role="dialog" aria-labelledby="updateDistrictRabBattalionLabel" aria-hidden="true" data-backdrop="static">
+                                      <div class="modal-dialog modal-lg" role="document">
+                                        <div class="modal-content">
+                                          <div class="modal-header bg-primary">
+                                            <h5 class="modal-title" id="updateDistrictRabBattalionLabel">র‍্যাব ব্যাটালিয়নের তথ্য হালনাগাদ</h5>
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                              <span aria-hidden="true">&times;</span>
+                                            </button>
+                                          </div>
+                                          <form method="post" action="{{ route('dashboard.rabbattalions.update', $rabbattalion->id) }}" enctype="multipart/form-data">
+                                            <div class="modal-body">
+                                              
+                                                  @csrf
+
+                                                  <div class="input-group mb-3">
+                                                      <input type="text"
+                                                             name="name"
+                                                             class="form-control"
+                                                             value="{{ $rabbattalion->name }}"
+                                                             placeholder="র‍্যাব ব্যাটালিয়নের নাম" required>
+                                                      <div class="input-group-append">
+                                                          <div class="input-group-text"><span class="fas fa-user-shield"></span></div>
+                                                      </div>
+                                                  </div>
+                                                  <div class="input-group mb-3">
+                                                      <textarea type="text"
+                                                             name="details"
+                                                             class="form-control"
+                                                             style="min-height:100px;" 
+                                                             placeholder="ব্যাটালিয়নের বিস্তারিত" required>{{ $rabbattalion->details }}</textarea>
+                                                      <div class="input-group-append">
+                                                          <div class="input-group-text"><span class="fas fa-info-circle"></span></div>
+                                                      </div>
+                                                  </div>
+                                                  
+                                                  <div class="form-group">
+                                                      <label for="image{{ $rabbattalion->id }}">ম্যাপ (প্রয়োজনে, ২ মেগাবাইটের মধ্যে)</label>
+                                                      <input type="file" id="image{{ $rabbattalion->id }}" name="map" accept="image/*">
+                                                  </div>
+                                                  <center>
+                                                    @if($rabbattalion->map != null)
+                                                      <img src="{{ asset('images/rabbattalions/' . $rabbattalion->map)}}" id='img-upload{{ $rabbattalion->id }}' style="width: 250px; height: auto;" class="img-responsive" />
+                                                    @else
+                                                      <img src="{{ asset('images/placeholder.png')}}" id='img-upload{{ $rabbattalion->id }}' style="width: 250px; height: auto;" class="img-responsive" />
+                                                    @endif
+                                                  </center>    
+                                                   
+                                            </div>
+                                            <div class="modal-footer">
+                                              <button type="button" class="btn btn-secondary" data-dismiss="modal">ফিরে যান</button>
+                                              <button type="submit" class="btn btn-primary">দাখিল করুন</button>
+                                            </div>
+                                          </form>
+                                        </div>
+                                      </div>
+                                    </div>
+                                    {{-- Edit Rab Battalion Code --}}
+                                    {{-- Edit Rab Battalion Code --}}
                                   </td>
                               @endforeach
                               @if ($chunk->count() < 3)
