@@ -606,6 +606,6 @@ class AdminandothersController extends Controller
 
     public function detailsRabbattalion($id)
     {
-        // code...
+        rabbbatalionsdetails
     }
 }
