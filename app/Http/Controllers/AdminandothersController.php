@@ -612,8 +612,9 @@ class AdminandothersController extends Controller
         $battallionofficers = Rabbattaliondetail::where('rabbattalion_id', $id)->orderBy('id', 'asc')->paginate(10);
                 
         return view('dashboard.rabs.rabbbatalionsdetails')
-                            ->withCoachingscount($battallionofficerscount)
-                            ->withCoachings($battallionofficers);
+                            ->withBattallion($battallion)
+                            ->withBattallionofficerscount($battallionofficerscount)
+                            ->withBattallionofficers($battallionofficers);
         
     }
 }
