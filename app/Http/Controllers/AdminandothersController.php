@@ -607,14 +607,14 @@ class AdminandothersController extends Controller
 
     public function detailsRabbattalion($id)
     {
-        $battallion = Rabbattalion::findOrFail($id);
-        $battallionofficerscount = Rabbattaliondetail::where('rabbattalion_id', $id)->count();
-        $battallionofficers = Rabbattaliondetail::where('rabbattalion_id', $id)->orderBy('id', 'asc')->paginate(10);
+        $rabbattallion = Rabbattalion::findOrFail($id);
+        $rabbattallionofficerscount = Rabbattaliondetail::where('rabbattalion_id', $id)->count();
+        $rabbattallionofficers = Rabbattaliondetail::where('rabbattalion_id', $id)->orderBy('id', 'asc')->paginate(10);
                 
         return view('dashboard.rabs.rabbbatalionsdetails')
-                            ->withBattallion($battallion)
-                            ->withBattallionofficerscount($battallionofficerscount)
-                            ->withBattallionofficers($battallionofficers);
+                            ->withRabbattallion($rabbattallion)
+                            ->withRabbattallionofficerscount($rabbattallionofficerscount)
+                            ->withRabbattallionofficers($rabbattallionofficers);
         
     }
 }
