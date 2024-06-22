@@ -698,7 +698,7 @@ class AdminandothersController extends Controller
 
         
         if($checkdistrictrab != null) {
-            dd($checkdistrictrab);
+            $checkdistrictrab->rabbattalion_id = $request->rabbattalion_id;
         }
 
         // $rabbattaliondetail = Rabbattaliondetail::findOrFail($id);
