@@ -7,7 +7,7 @@
 @endsection
 
 @section('content')
-  @section('page-header') র‍্যাব ব্যাটালিয়ন / {{ $rabbattallion->name }} জেলা (মোট {{ bangla($rabbattallion->rabbattaliondetails->count()) }} টি) @endsection
+  @section('page-header') র‍্যাব ব্যাটালিয়ন / {{ $rabbattallion->name }} (মোট অফিসার {{ bangla($rabbattallion->rabbattaliondetails->count()) }} টি) @endsection
     <div class="container-fluid">
     <div class="card">
           <div class="card-header">
