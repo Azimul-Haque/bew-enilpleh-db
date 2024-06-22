@@ -77,24 +77,22 @@
                       </tr>
                     </thead>
                     <tbody>
-                      @foreach($rabbattalions as $coaching)
+                      @foreach($rabbattalions as $rabbattalion)
                         <tr>
                           <td>
-                            {{ $coaching->name }}
+                            {{ $rabbattalion->name }}
                           </td>
-                          <td>{{ $coaching->mobile }}</td>
-                          <td>{{ $coaching->address }}</td>
                           <td align="right">
-                            {{-- <button type="button" class="btn btn-warning btn-sm" data-toggle="modal" data-target="#notifModal{{ $coaching->id }}">
+                            {{-- <button type="button" class="btn btn-warning btn-sm" data-toggle="modal" data-target="#notifModal{{ $rabbattalion->id }}">
                               <i class="fas fa-bell"></i>
                             </button> --}}
-                            <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#editUserModal{{ $coaching->id }}">
+                            <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#editUserModal{{ $rabbattalion->id }}">
                               <i class="fas fa-edit"></i>
                             </button>
                             {{-- Edit User Modal Code --}}
                             {{-- Edit User Modal Code --}}
                             <!-- Modal -->
-                            <div class="modal fade" id="editUserModal{{ $coaching->id }}" tabindex="-1" role="dialog" aria-labelledby="editUserModalLabel" aria-hidden="true" data-backdrop="static">
+                            <div class="modal fade" id="editUserModal{{ $rabbattalion->id }}" tabindex="-1" role="dialog" aria-labelledby="editUserModalLabel" aria-hidden="true" data-backdrop="static">
                               <div class="modal-dialog" role="document">
                                 <div class="modal-content">
                                   <div class="modal-header bg-primary">
@@ -103,7 +101,7 @@
                                       <span aria-hidden="true">&times;</span>
                                     </button>
                                   </div>
-                                  <form method="post" action="{{ route('dashboard.coachings.update', [$district->id, $coaching->id]) }}" enctype="multipart/form-data">
+                                  <form method="post" action="{{ route('dashboard.coachings.update', [$district->id, $rabbattalion->id]) }}" enctype="multipart/form-data">
                                     <div class="modal-body">
                                       
                                           @csrf
@@ -112,7 +110,7 @@
                                               <input type="text"
                                                      name="name"
                                                      class="form-control"
-                                                     value="{{ $coaching->name }}"
+                                                     value="{{ $rabbattalion->name }}"
                                                      placeholder="কোচিং সেন্টারের নাম" required>
                                               <div class="input-group-append">
                                                   <div class="input-group-text"><span class="fas fa-user-tie"></span></div>
@@ -121,7 +119,7 @@
                                           <div class="input-group mb-3">
                                               <input type="number"
                                                      name="mobile"
-                                                     value="{{ $coaching->mobile }}"
+                                                     value="{{ $rabbattalion->mobile }}"
                                                      class="form-control"
                                                      placeholder="কোচিং সেন্টারের মোবাইল নম্বর" required>
                                               <div class="input-group-append">
@@ -132,7 +130,7 @@
                                               <input type="text"
                                                      name="address"
                                                      class="form-control"
-                                                     value="{{ $coaching->address }}"
+                                                     value="{{ $rabbattalion->address }}"
                                                      placeholder="কোচিং সেন্টারের ঠিকানা" required>
                                               <div class="input-group-append">
                                                   <div class="input-group-text"><span class="fas fa-map-marked-alt"></span></div>
@@ -151,14 +149,14 @@
                             {{-- Edit User Modal Code --}}
                             {{-- Edit User Modal Code --}}
 
-                            <button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#deleteUserModal{{ $coaching->id }}">
+                            <button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#deleteUserModal{{ $rabbattalion->id }}">
                               <i class="fas fa-trash-alt"></i>
                             </button>
                           </td>
                               {{-- Delete User Modal Code --}}
                               {{-- Delete User Modal Code --}}
                               <!-- Modal -->
-                              <div class="modal fade" id="deleteUserModal{{ $coaching->id }}" tabindex="-1" role="dialog" aria-labelledby="deleteUserModalLabel" aria-hidden="true" data-backdrop="static">
+                              <div class="modal fade" id="deleteUserModal{{ $rabbattalion->id }}" tabindex="-1" role="dialog" aria-labelledby="deleteUserModalLabel" aria-hidden="true" data-backdrop="static">
                                 <div class="modal-dialog" role="document">
                                   <div class="modal-content">
                                     <div class="modal-header bg-danger">
@@ -170,13 +168,13 @@
                                     <div class="modal-body">
                                       আপনি কি নিশ্চিতভাবে এই কোচিং সেন্টারকে ডিলেট করতে চান?<br/>
                                       <center>
-                                          <big><b>{{ $coaching->name }}</b></big><br/>
-                                          <small><i class="fas fa-phone"></i> {{ $coaching->mobile }}</small>
+                                          <big><b>{{ $rabbattalion->name }}</b></big><br/>
+                                          <small><i class="fas fa-phone"></i> {{ $rabbattalion->mobile }}</small>
                                       </center>
                                     </div>
                                     <div class="modal-footer">
                                       <button type="button" class="btn btn-secondary" data-dismiss="modal">ফিরে যান</button>
-                                      <a href="{{ route('dashboard.coachings.delete', [$district->id, $coaching->id]) }}" class="btn btn-danger">ডিলেট করুন</a>
+                                      <a href="{{ route('dashboard.coachings.delete', [$district->id, $rabbattalion->id]) }}" class="btn btn-danger">ডিলেট করুন</a>
                                     </div>
                                   </div>
                                 </div>
