@@ -99,7 +99,7 @@
                               <div class="modal-dialog modal-lg" role="document">
                                 <div class="modal-content">
                                   <div class="modal-header bg-primary">
-                                    <h5 class="modal-title" id="editUserModalLabel">কোচিং সেন্টার তথ্য হালনাগাদ</h5>
+                                    <h5 class="modal-title" id="editUserModalLabel">র‍্যাব ব্যাটালিয়নের তথ্য হালনাগাদ</h5>
                                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                       <span aria-hidden="true">&times;</span>
                                     </button>
