@@ -16,7 +16,8 @@ class CreateRabbattaliondetailsTable extends Migration
         Schema::create('rabbattaliondetails', function (Blueprint $table) {
             $table->id();
             $table->integer('rabbattalion_id');
-            $table->string('image');
+            $table->string('designation');
+            $table->string('designation');
         });
     }
 
