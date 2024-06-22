@@ -623,7 +623,30 @@ class APIController extends Controller
         }
     }
 
-
+    public function getCoachings($softtoken, $district_id)
+    {
+        if($softtoken == env('SOFT_TOKEN'))
+        {
+            $fireservices = Cache::remember('fireservices'  . $district_id, 30 * 24 * 60 * 60, function () use ($district_id) {
+                 $fireservices = Fireservice::where('district_id', $district_id)
+                                 ->orderBy('id', 'asc')
+                                 ->get();
+                 foreach($fireservices as $fireservice) {
+                       $fireservice->makeHidden('id', 'district_id', 'created_at', 'updated_at');
+                   }
+                 return $fireservices;
+            });
+            
+            return response()->json([
+                'success' => true,
+                'fireservices' => $fireservices,
+            ]);
+        } else {
+            return response()->json([
+                'success' => false
+            ]);
+        }
+    }
 
 
 
