@@ -686,6 +686,7 @@ class APIController extends Controller
                     return response()->json([
                         'success' => false
                     ]);
+                    break;
                 }
             });
             
