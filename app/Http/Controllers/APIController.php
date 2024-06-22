@@ -666,10 +666,10 @@ class APIController extends Controller
                 $rabdata->battalion_map = $rab->rabbattalion->map;
                 
                 foreach($rab->rabbattalion->rabbattaliondetails as $rabbattaliondetail) {
-                    $rabbattaliondetail->designation = $rabbattaliondetail->designation;
-                    $rabbattaliondetail->area = $rabbattaliondetail->area;
-                    $rabbattaliondetail->mobile = $rabbattaliondetail->mobile;
-                    $rabbattaliondetail->telephone = $rabbattaliondetail->telephone;
+                    // $rabbattaliondetail->designation = $rabbattaliondetail->designation;
+                    // $rabbattaliondetail->area = $rabbattaliondetail->area;
+                    // $rabbattaliondetail->mobile = $rabbattaliondetail->mobile;
+                    // $rabbattaliondetail->telephone = $rabbattaliondetail->telephone;
                     $rabdata->push($rabbattaliondetail);
                     $rabbattaliondetail->makeHidden('id', 'rabbattalion_id', 'created_at', 'updated_at');
                 }
