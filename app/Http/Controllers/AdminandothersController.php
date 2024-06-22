@@ -557,8 +557,6 @@ class AdminandothersController extends Controller
         $rabbattalion = new Rabbattalion;
         $rabbattalion->name = $request->name;
         $rabbattalion->detalis = $request->detalis;
-        $rabbattalion->save();
-
         // image upload
         if($request->hasFile('image')) {
             $image    = $request->file('image');
@@ -570,6 +568,9 @@ class AdminandothersController extends Controller
             $rabbattalionimage->image       = $filename;
             $rabbattalionimage->save();
         }
+        $rabbattalion->save();
+
+        
 
         Cache::forget('coachings' . $district_id);
         Session::flash('success', 'Coaching added successfully!');
