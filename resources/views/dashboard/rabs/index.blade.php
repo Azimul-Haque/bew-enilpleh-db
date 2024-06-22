@@ -235,7 +235,7 @@
                   
                   <div class="form-group ">
                       <label for="image">ম্যাপ (২ মেগাবাইটের মধ্যে)</label>
-                      <input type="file" id="image" name="image" accept="image/*" required>
+                      <input type="file" id="image" name="map " accept="image/*" required>
                   </div>
                   <center>
                       <img src="{{ asset('images/placeholder.png')}}" id='img-upload' style="width: 250px; height: auto;" class="img-responsive" />
