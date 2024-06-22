@@ -534,4 +534,12 @@ class AdminandothersController extends Controller
         return redirect()->route('dashboard.coachings.districtwise', $district_id);
     }
 
+    public function rabIndex()
+    {
+        $districts = District::all();
+                
+        return view('dashboard.coachings.index')
+                            ->withDistricts($districts);
+    }
+
 }
