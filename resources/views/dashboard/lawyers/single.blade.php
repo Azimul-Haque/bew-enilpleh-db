@@ -254,7 +254,7 @@
 
         $(document).on('click', '#search-button', function() {
           if($('#search-param').val() != '') {
-            var urltocall = '{{ route('dashboard.fireservices.districtwise', $district->id) }}' +  '/' + $('#search-param').val();
+            var urltocall = '{{ route('dashboard.lawyers.districtwise', $district->id) }}' +  '/' + $('#search-param').val();
             location.href= urltocall;
           } else {
             $('#search-param').css({ "border": '#FF0000 2px solid'});
@@ -267,7 +267,7 @@
         $("#search-param").keyup(function(e) {
           if(e.which == 13) {
             if($('#search-param').val() != '') {
-              var urltocall = '{{ route('dashboard.fireservices.districtwise', $district->id) }}' +  '/' + $('#search-param').val();
+              var urltocall = '{{ route('dashboard.lawyers.districtwise', $district->id) }}' +  '/' + $('#search-param').val();
               location.href= urltocall;
             } else {
               $('#search-param').css({ "border": '#FF0000 2px solid'});
