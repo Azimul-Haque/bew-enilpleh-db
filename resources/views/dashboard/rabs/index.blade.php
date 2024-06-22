@@ -100,7 +100,7 @@
                                 <div class="modal-content">
                                   <div class="modal-header bg-primary">
                                     <h5 class="modal-title" id="editRabBattalionModalLabel">র‍্যাব ব্যাটালিয়নের তথ্য হালনাগাদ</h5>
-                                    <button type="button btn-sm" class="close" data-dismiss="modal" aria-label="Close">
+                                    <button type="button small" class="close" data-dismiss="modal" aria-label="Close">
                                       <span aria-hidden="true">&times;</span>
                                     </button>
                                   </div>
