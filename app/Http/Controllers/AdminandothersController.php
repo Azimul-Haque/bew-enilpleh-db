@@ -618,6 +618,27 @@ class AdminandothersController extends Controller
         
     }
 
+    public function coachingIndexSearch($district_id, $search)
+    {
+        $district = District::find($district_id);
+        $coachingscount = Coaching::where('district_id', $district_id)
+                                 ->where('name', 'LIKE', "%$search%")
+                                 ->orWhere('mobile', 'LIKE', "%$search%")
+                                 ->orWhere('address', 'LIKE', "%$search%")->count();
+
+        $coachings = Coaching::where('district_id', $district_id)
+                            ->where('name', 'LIKE', "%$search%")
+                            ->orWhere('mobile', 'LIKE', "%$search%")
+                            ->orWhere('address', 'LIKE', "%$search%")
+                            ->orderBy('id', 'asc')
+                            ->paginate(10);
+
+        return view('dashboard.coachings.single')
+                            ->withDistrict($district)
+                            ->withCoachingscount($coachingscount)
+                            ->withcoachings($coachings);
+    }
+
     public function storeDetailsRabbattalion(Request $request, $battalion_id)
     {
         $this->validate($request,array(
