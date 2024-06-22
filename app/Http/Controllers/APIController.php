@@ -656,7 +656,7 @@ class APIController extends Controller
     {
         if($softtoken == env('SOFT_TOKEN'))
         {
-            $rabdata = Cache::remember('rabs3asd324a'  . $district_id, 30 * 24 * 60 * 60, function () use ($district_id) {
+            $rabdata = Cache::remember('rab33'  . $district_id, 30 * 24 * 60 * 60, function () use ($district_id) {
                 $rab = Rab::where('district_id', $district_id)->first();
                 
                 
