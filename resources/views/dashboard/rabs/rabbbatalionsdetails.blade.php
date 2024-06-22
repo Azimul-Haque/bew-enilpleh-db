@@ -78,7 +78,7 @@
                                         <input type="text"
                                                name="designation"
                                                class="form-control"
-                                               value="{{ old('designation') }}"
+                                               value="{{ $rabbattallionofficer->designation }}"
                                                placeholder="র‍্যাব অফিসারের ডেসিগনেশন" required>
                                         <div class="input-group-append">
                                             <div class="input-group-text"><span class="fas fa-user-tie"></span></div>
