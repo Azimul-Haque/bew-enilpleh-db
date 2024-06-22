@@ -626,12 +626,11 @@ class AdminandothersController extends Controller
                                  ->where('name', 'LIKE', "%$search%")
                                  ->orWhere('details', 'LIKE', "%$search%")->count();
 
-        $coachings = Coaching::where('battalion_id', $battalion_id)
-                            ->where('name', 'LIKE', "%$search%")
-                            ->orWhere('mobile', 'LIKE', "%$search%")
-                            ->orWhere('address', 'LIKE', "%$search%")
-                            ->orderBy('id', 'asc')
-                            ->paginate(10);
+        $rabbattallionofficers = Rabbattaliondetail::where('battalion_id', $battalion_id)
+                                 ->where('name', 'LIKE', "%$search%")
+                                 ->orWhere('details', 'LIKE', "%$search%")
+                                 ->orderBy('id', 'asc')
+                                 ->paginate(10);
 
         return view('dashboard.rabs.rabbbatalionsdetails')
                             ->withRabbattallion($rabbattallion)
