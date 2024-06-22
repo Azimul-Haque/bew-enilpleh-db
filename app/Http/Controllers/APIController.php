@@ -659,9 +659,10 @@ class APIController extends Controller
             $rabdata = Cache::remember('rabs'  . $district_id, 30 * 24 * 60 * 60, function () use ($district_id) {
                 $rab = Rab::where('district_id', $district_id)->first();
                 
-                dd($rab);
+                
                 $rabdata = collect();
                 $rabdata->battalion = $rab->rabbattalion->name;
+                dd($rabdata);
                 foreach($rabs as $fireservice) {
                     $fireservice->makeHidden('id', 'district_id', 'created_at', 'updated_at');
                 }
