@@ -697,7 +697,7 @@ class AdminandothersController extends Controller
         $checkdistrictrab = Rab::where('district_id', $district_id)->first();
 
         
-        if($checkdistrictrab != null || count($checkdistrictrab)) {
+        if($checkdistrictrab != null) {
             dd($checkdistrictrab);
         }
 
