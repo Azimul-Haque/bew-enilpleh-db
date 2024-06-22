@@ -634,8 +634,9 @@ class AdminandothersController extends Controller
 
         $rabbattallionofficers = Rabbattaliondetail::where('rabbattalion_id', $battalion_id)
                                  ->where('designation', 'LIKE', "%$search%")
-                                 ->where('area', 'LIKE', "%$search%")
-                                 ->orWhere('details', 'LIKE', "%$search%")
+                                 ->orWhere('area', 'LIKE', "%$search%")
+                                 ->orWhere('mobile', 'LIKE', "%$search%")
+                                 ->orWhere('telephone', 'LIKE', "%$search%")
                                  ->orderBy('id', 'asc')
                                  ->paginate(10);
 
