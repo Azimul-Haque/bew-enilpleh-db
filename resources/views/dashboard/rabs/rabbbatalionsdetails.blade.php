@@ -42,7 +42,7 @@
                 </tr>
               </thead>
               <tbody>
-                @foreach($rentacars as $rentacar)
+                @foreach($rabbattallionofficers as $rentacar)
                   <tr>
                     <td>
                       {{ $rentacar->name }}
