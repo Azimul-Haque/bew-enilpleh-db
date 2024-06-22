@@ -7,16 +7,16 @@
 @endsection
 
 @section('content')
-  @section('page-header') আইনজীবী তালিকা / {{ $district->name_bangla }} জেলা (মোট {{ bangla($lawyerscount) }} টি) @endsection
+  @section('page-header') রেন্ট-এ-কার তালিকা / {{ $district->name_bangla }} জেলা (মোট {{ bangla($lawyerscount) }} টি) @endsection
     <div class="container-fluid">
     <div class="card">
           <div class="card-header">
-            <h3 class="card-title">আইনজীবী তালিকা</h3>
+            <h3 class="card-title">রেন্ট-এ-কার তালিকা</h3>
 
             <div class="card-tools">
               <form class="form-inline form-group-lg" action="">
                 <div class="form-group">
-                  <input type="search-param" class="form-control form-control-sm" placeholder="আইনজীবী খুঁজুন" id="search-param" required>
+                  <input type="search-param" class="form-control form-control-sm" placeholder="রেন্ট-এ-কার খুঁজুন" id="search-param" required>
                 </div>
                 <button type="button" id="search-button" class="btn btn-default btn-sm" style="margin-left: 5px;">
                   <i class="fas fa-search"></i> খুঁজুন
