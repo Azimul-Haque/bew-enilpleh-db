@@ -229,7 +229,7 @@
                              class="form-control"
                              placeholder="ব্যাটালিয়নের বিস্তারিত" required>
                       <div class="input-group-append">
-                          <div class="input-group-text"><span class="fas fa-details"></span></div>
+                          <div class="input-group-text"><span class="fas fa-text"></span></div>
                       </div>
                   </div>
                   <div class="input-group mb-3">
