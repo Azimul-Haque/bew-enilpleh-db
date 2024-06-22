@@ -666,7 +666,7 @@ class APIController extends Controller
                 $rabdata->battalion_map = $rab->rabbattalion->map;
                 dd($rabdata);
                 foreach($$rab->rabbattalion->rabbattaliondetails as $rabbattaliondetail) {
-                    $rabbattaliondetail->designation = 
+                    $rabbattaliondetail->designation = $rabbattaliondetail->designation
 
 
                     $fireservice->makeHidden('id', 'district_id', 'created_at', 'updated_at');
