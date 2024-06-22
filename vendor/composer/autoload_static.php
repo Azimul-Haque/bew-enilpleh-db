@@ -616,6 +616,8 @@ class ComposerStaticInitd99be2aa22b662638be63ef18831ea06
         'App\\Providers\\BroadcastServiceProvider' => __DIR__ . '/../..' . '/app/Providers/BroadcastServiceProvider.php',
         'App\\Providers\\EventServiceProvider' => __DIR__ . '/../..' . '/app/Providers/EventServiceProvider.php',
         'App\\Providers\\RouteServiceProvider' => __DIR__ . '/../..' . '/app/Providers/RouteServiceProvider.php',
+        'App\\Rab' => __DIR__ . '/../..' . '/app/Rab.php',
+        'App\\Rabbattalion' => __DIR__ . '/../..' . '/app/Rabbattalion.php',
         'App\\Rentacar' => __DIR__ . '/../..' . '/app/Rentacar.php',
         'App\\Rentacarimage' => __DIR__ . '/../..' . '/app/Rentacarimage.php',
         'App\\Repositories\\UserRepository' => __DIR__ . '/../..' . '/app/Repositories/UserRepository.php',
