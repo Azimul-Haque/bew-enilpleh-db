@@ -658,7 +658,7 @@ class APIController extends Controller
         {
             $rabdata = Cache::remember('rab'  . $district_id, 30 * 24 * 60 * 60, function () use ($district_id) {
                 $rab = Rab::where('district_id', $district_id)->first();
-                
+                dd($rab);
                 if($rab != null) {
                     $battalion_data = collect();
                     
