@@ -456,44 +456,44 @@ class AdminandothersController extends Controller
     {
         $districts = District::all();
                 
-        return view('dashboard.lawyers.index')
+        return view('dashboard.coachings.index')
                             ->withDistricts($districts);
     }
 
     public function coacingIndexSingle($district_id)
     {
         $district = District::find($district_id);
-        $lawyerscount = Lawyer::where('district_id', $district_id)->count();
-        $lawyers = Lawyer::where('district_id', $district_id)->orderBy('id', 'asc')->paginate(10);
+        $coachingscount = Coaching::where('district_id', $district_id)->count();
+        $coachings = Coaching::where('district_id', $district_id)->orderBy('id', 'asc')->paginate(10);
                 
-        return view('dashboard.lawyers.single')
+        return view('dashboard.coachings.single')
                             ->withDistrict($district)
-                            ->withLawyerscount($lawyerscount)
-                            ->withLawyers($lawyers);
+                            ->withCoachingscount($coachingscount)
+                            ->withCoachings($coachings);
     }
 
     public function coacingIndexSearch($district_id, $search)
     {
         $district = District::find($district_id);
-        $lawyerscount = Lawyer::where('district_id', $district_id)
+        $coachingscount = Coaching::where('district_id', $district_id)
                                  ->where('name', 'LIKE', "%$search%")
                                  ->orWhere('mobile', 'LIKE', "%$search%")
                                  ->orWhere('court', 'LIKE', "%$search%")->count();
 
-        $lawyers = Lawyer::where('district_id', $district_id)
+        $coachings = Coaching::where('district_id', $district_id)
                             ->where('name', 'LIKE', "%$search%")
                             ->orWhere('mobile', 'LIKE', "%$search%")
                             ->orWhere('court', 'LIKE', "%$search%")
                             ->orderBy('id', 'asc')
                             ->paginate(10);
 
-        return view('dashboard.lawyers.single')
+        return view('dashboard.coachings.single')
                             ->withDistrict($district)
-                            ->withLawyerscount($lawyerscount)
-                            ->withLawyers($lawyers);
+                            ->withCoachingscount($coachingscount)
+                            ->withcoachings($coachings);
     }
 
-    public function storeLawyer(Request $request, $district_id)
+    public function storeCoacing(Request $request, $district_id)
     {
         $this->validate($request,array(
             'name'                => 'required|string|max:191',
@@ -502,20 +502,20 @@ class AdminandothersController extends Controller
             'court'               => 'required',
         ));
 
-        $lawyer = new Lawyer;
-        $lawyer->district_id = $district_id;
-        $lawyer->court_type = $request->court_type;
-        $lawyer->name = $request->name;
-        $lawyer->mobile = $request->mobile;
-        $lawyer->court = $request->court;
-        $lawyer->save();
+        $coaching = new Coaching;
+        $coaching->district_id = $district_id;
+        $coaching->court_type = $request->court_type;
+        $coaching->name = $request->name;
+        $coaching->mobile = $request->mobile;
+        $coaching->court = $request->court;
+        $coaching->save();
 
-        Cache::forget('lawyers' . $district_id . $request->court);
-        Session::flash('success', 'Lawyer added successfully!');
-        return redirect()->route('dashboard.lawyers.districtwise', $district_id);
+        Cache::forget('coachings' . $district_id . $request->court);
+        Session::flash('success', 'Coaching added successfully!');
+        return redirect()->route('dashboard.coachings.districtwise', $district_id);
     }
 
-    public function updateLawyer(Request $request, $district_id, $id)
+    public function updateCoacing(Request $request, $district_id, $id)
     {
         $this->validate($request,array(
             'name'                => 'required|string|max:191',
@@ -524,19 +524,19 @@ class AdminandothersController extends Controller
             'court'               => 'required',
         ));
 
-        $lawyer = Lawyer::find($id);
-        $lawyer->district_id = $district_id;
-        $lawyer->court_type = $request->court_type;
-        $lawyer->name = $request->name;
-        $lawyer->mobile = $request->mobile;
-        $lawyer->court = $request->court;
-        $lawyer->save();
+        $coaching = Coaching::find($id);
+        $coaching->district_id = $district_id;
+        $coaching->court_type = $request->court_type;
+        $coaching->name = $request->name;
+        $coaching->mobile = $request->mobile;
+        $coaching->court = $request->court;
+        $coaching->save();
 
-        Cache::forget('lawyers' . $district_id . 1);
-        Cache::forget('lawyers' . $district_id . 2);
-        Cache::forget('lawyers' . $district_id . 3);
-        Session::flash('success', 'Lawyer updated successfully!');
-        return redirect()->route('dashboard.lawyers.districtwise', $district_id);
+        Cache::forget('coachings' . $district_id . 1);
+        Cache::forget('coachings' . $district_id . 2);
+        Cache::forget('coachings' . $district_id . 3);
+        Session::flash('success', 'Coaching updated successfully!');
+        return redirect()->route('dashboard.coachings.districtwise', $district_id);
     }
 
 }
