@@ -399,6 +399,18 @@ class AdminandothersController extends Controller
         $rentacar->mobile = $request->mobile;
         $rentacar->save();
 
+        // image upload
+        if($request->hasFile('image')) {
+            $image    = $request->file('image');
+            $filename = random_string(5) . time() .'.' . "webp";
+            $location = public_path('images/ambulances/'. $filename);
+            Image::make($image)->fit(200, 200)->save($location);
+            $ambulanceimage              = new Ambulanceimage;
+            $ambulanceimage->ambulance_id   = $ambulance->id;
+            $ambulanceimage->image       = $filename;
+            $ambulanceimage->save();
+        }
+
         Cache::forget('lawyers' . $district_id . $request->court);
         Session::flash('success', 'Lawyer added successfully!');
         return redirect()->route('dashboard.lawyers.districtwise', $district_id);
