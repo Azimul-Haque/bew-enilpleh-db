@@ -503,10 +503,9 @@ class AdminandothersController extends Controller
 
         $coaching = new Coaching;
         $coaching->district_id = $district_id;
-        $coaching->court_type = $request->court_type;
         $coaching->name = $request->name;
         $coaching->mobile = $request->mobile;
-        $coaching->court = $request->court;
+        $coaching->address = $request->court;
         $coaching->save();
 
         Cache::forget('coachings' . $district_id . $request->court);
@@ -524,15 +523,12 @@ class AdminandothersController extends Controller
 
         $coaching = Coaching::find($id);
         $coaching->district_id = $district_id;
-        $coaching->court_type = $request->court_type;
         $coaching->name = $request->name;
         $coaching->mobile = $request->mobile;
-        $coaching->court = $request->court;
+        $coaching->address = $request->court;
         $coaching->save();
 
-        Cache::forget('coachings' . $district_id . 1);
-        Cache::forget('coachings' . $district_id . 2);
-        Cache::forget('coachings' . $district_id . 3);
+        Cache::forget('coachings' . $district_id);
         Session::flash('success', 'Coaching updated successfully!');
         return redirect()->route('dashboard.coachings.districtwise', $district_id);
     }
