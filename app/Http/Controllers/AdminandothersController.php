@@ -648,6 +648,7 @@ class AdminandothersController extends Controller
         ));
 
         $rabbattaliondetail = new Rabbattaliondetail;
+        $rabbattaliondetail->rabbattalion_id = $battalion_id;
         $rabbattaliondetail->designation = $designation;
         $rabbattaliondetail->name = $request->name;
         $rabbattaliondetail->mobile = $request->mobile;
