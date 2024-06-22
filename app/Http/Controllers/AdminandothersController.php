@@ -581,11 +581,17 @@ class AdminandothersController extends Controller
         ));
 
         $rabbattalion = Rabbattalion::find($id);
-        $coaching->district_id = $district_id;
-        $coaching->name = $request->name;
-        $coaching->mobile = $request->mobile;
-        $coaching->address = $request->address;
-        $coaching->save();
+        $rabbattalion->name = $request->name;
+        $rabbattalion->detalis = $request->detalis;
+        // image upload
+        if($request->hasFile('image')) {
+            $image    = $request->file('image');
+            $filename = random_string(5) . time() .'.' . "webp";
+            $location = public_path('images/rabbattalions/'. $filename);
+            Image::make($image)->resize(300, null, function ($constraint) { $constraint->aspectRatio(); })->save($location);
+            $rabbattalion->image       = $filename;
+        }
+        $rabbattalion->save();
 
         Cache::forget('rabbattalions');
         Session::flash('success', 'RAB Battalion updated successfully!');
