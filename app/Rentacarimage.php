@@ -8,7 +8,7 @@ class Rentacarimage extends Model
 {
     public $timestamps = false;
 
-    public function ambulance(){
-        return $this->belongsTo('App\Ambulance');
+    public function rentacar(){
+        return $this->belongsTo('App\Rentacar');
     }
 }
