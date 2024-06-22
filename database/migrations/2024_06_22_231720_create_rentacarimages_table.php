@@ -15,7 +15,8 @@ class CreateRentacarimagesTable extends Migration
     {
         Schema::create('rentacarimages', function (Blueprint $table) {
             $table->id();
-            $table->timestamps();
+            $table->integer('ambulance_id');
+            $table->string('image');
         });
     }
 
