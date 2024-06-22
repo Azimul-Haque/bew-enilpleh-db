@@ -62,7 +62,7 @@
                   <h3 class="card-title">র‍্যাব ব্যাটালিয়ন তালিকা</h3>
 
                   <div class="card-tools">
-                    <button type="button" class="btn btn-success btn-sm"  data-toggle="modal" data-target="#addUserModal" style="margin-left: 5px;">
+                    <button type="button" class="btn btn-success btn-sm"  data-toggle="modal" data-target="#addRabBattalionModal" style="margin-left: 5px;">
                       <i class="fas fa-plus-square"></i> নতুন ব্যাটালিয়ন
                     </button>
                   </div>
@@ -198,11 +198,11 @@
     {{-- Add Rab Battalion Code --}}
     {{-- Add Rab Battalion Code --}}
     <!-- Modal -->
-    <div class="modal fade" id="addUserModal" tabindex="-1" role="dialog" aria-labelledby="addUserModalLabel" aria-hidden="true" data-backdrop="static">
+    <div class="modal fade" id="addRabBattalionModal" tabindex="-1" role="dialog" aria-labelledby="addRabBattalionModalLabel" aria-hidden="true" data-backdrop="static">
       <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content">
           <div class="modal-header bg-success">
-            <h5 class="modal-title" id="addUserModalLabel">নতুন কোচিং সেন্টার যোগ (জেলা: <strong>{{ $district->name_bangla }}</strong>)</h5>
+            <h5 class="modal-title" id="addRabBattalionModalLabel">নতুন কোচিং সেন্টার যোগ (জেলা: <strong>{{ $district->name_bangla }}</strong>)</h5>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
