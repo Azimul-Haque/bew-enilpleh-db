@@ -506,7 +506,7 @@ class AdminandothersController extends Controller
         $coaching->district_id = $district_id;
         $coaching->name = $request->name;
         $coaching->mobile = $request->mobile;
-        $coaching->address = $request->court;
+        $coaching->address = $request->address;
         $coaching->save();
 
         Cache::forget('coachings' . $district_id);
@@ -526,7 +526,7 @@ class AdminandothersController extends Controller
         $coaching->district_id = $district_id;
         $coaching->name = $request->name;
         $coaching->mobile = $request->mobile;
-        $coaching->address = $request->court;
+        $coaching->address = $request->address;
         $coaching->save();
 
         Cache::forget('coachings' . $district_id);
