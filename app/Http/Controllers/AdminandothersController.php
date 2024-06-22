@@ -393,13 +393,13 @@ class AdminandothersController extends Controller
             'image'          => 'sometimes',
         ));
 
-        $lawyer = new Lawyer;
-        $lawyer->district_id = $district_id;
-        $lawyer->court_type = $request->court_type;
-        $lawyer->name = $request->name;
-        $lawyer->mobile = $request->mobile;
-        $lawyer->court = $request->court;
-        $lawyer->save();
+        $rentacar = new Rentacar;
+        $rentacar->district_id = $district_id;
+        $rentacar->court_type = $request->court_type;
+        $rentacar->name = $request->name;
+        $rentacar->mobile = $request->mobile;
+        $rentacar->court = $request->court;
+        $rentacar->save();
 
         Cache::forget('lawyers' . $district_id . $request->court);
         Session::flash('success', 'Lawyer added successfully!');
