@@ -668,9 +668,9 @@ class APIController extends Controller
                 foreach($$rab->rabbattalion->rabbattaliondetails as $rabbattaliondetail) {
                     $rabbattaliondetail->designation = $rabbattaliondetail->designation;
                     $rabbattaliondetail->area = $rabbattaliondetail->area;
-
-
-                    $fireservice->makeHidden('id', 'district_id', 'created_at', 'updated_at');
+                    $rabbattaliondetail->mobile = $rabbattaliondetail->mobile;
+                    $rabbattaliondetail->telephone = $rabbattaliondetail->telephone;
+                    $rabbattaliondetail->makeHidden('id', 'district_id', 'created_at', 'updated_at');
                 }
                 
                 return $rabdata;
