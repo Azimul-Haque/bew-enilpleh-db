@@ -603,5 +603,4 @@ class AdminandothersController extends Controller
         Session::flash('success', 'RAB Battalion updated successfully!');
         return redirect()->route('dashboard.rabs');
     }
-
 }
