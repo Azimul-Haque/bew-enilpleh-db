@@ -155,7 +155,7 @@
           </div>
           <!-- /.card-body -->
         </div>
-        {{ $rentacars->links() }}
+        {{ $rabbattallionofficers->links() }}
     </div>
 
     {{-- Add User Modal Code --}}
