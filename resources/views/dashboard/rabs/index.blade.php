@@ -61,37 +61,16 @@
                                                   @csrf
 
                                                   <div class="input-group mb-3">
-                                                      <input type="text"
-                                                             name="name"
-                                                             class="form-control"
-                                                             value="{{ $rabbattalion->name }}"
-                                                             placeholder="র‍্যাব ব্যাটালিয়নের নাম" required>
-                                                      <div class="input-group-append">
-                                                          <div class="input-group-text"><span class="fas fa-user-shield"></span></div>
-                                                      </div>
-                                                  </div>
-                                                  <div class="input-group mb-3">
-                                                      <textarea type="text"
-                                                             name="details"
-                                                             class="form-control"
-                                                             style="min-height:100px;" 
-                                                             placeholder="ব্যাটালিয়নের বিস্তারিত" required>{{ $rabbattalion->details }}</textarea>
-                                                      <div class="input-group-append">
-                                                          <div class="input-group-text"><span class="fas fa-info-circle"></span></div>
-                                                      </div>
-                                                  </div>
-                                                  
-                                                  <div class="form-group">
-                                                      <label for="image{{ $rabbattalion->id }}">ম্যাপ (প্রয়োজনে, ২ মেগাবাইটের মধ্যে)</label>
-                                                      <input type="file" id="image{{ $rabbattalion->id }}" name="map" accept="image/*">
-                                                  </div>
-                                                  <center>
-                                                    @if($rabbattalion->map != null)
-                                                      <img src="{{ asset('images/rabbattalions/' . $rabbattalion->map)}}" id='img-upload{{ $rabbattalion->id }}' style="width: 250px; height: auto;" class="img-responsive" />
-                                                    @else
-                                                      <img src="{{ asset('images/placeholder.png')}}" id='img-upload{{ $rabbattalion->id }}' style="width: 250px; height: auto;" class="img-responsive" />
-                                                    @endif
-                                                  </center>    
+                                                    <select name="district_id" id="district" class="form-control district" required>
+                                                        <option selected="" disabled="" value="">জেলা নির্বাচন করুন</option>
+                                                        {{-- @foreach($districts as $district)
+                                                          <option value="{{ $district->id }}" @if($district->id == $doctor->district_id) selected @endif>{{ $district->name_bangla }}</option>
+                                                        @endforeach --}}
+                                                    </select>
+                                                    <div class="input-group-append">
+                                                        <div class="input-group-text"><span class="fas fa-map"></span></div>
+                                                    </div>
+                                                  </div> 
                                                    
                                             </div>
                                             <div class="modal-footer">
