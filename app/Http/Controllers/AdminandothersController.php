@@ -452,4 +452,91 @@ class AdminandothersController extends Controller
         return redirect()->route('dashboard.rentacars.districtwise', $district_id);
     }
 
+    public function lawyerIndex()
+    {
+        $districts = District::all();
+                
+        return view('dashboard.lawyers.index')
+                            ->withDistricts($districts);
+    }
+
+    public function lawyerIndexSingle($district_id)
+    {
+        $district = District::find($district_id);
+        $lawyerscount = Lawyer::where('district_id', $district_id)->count();
+        $lawyers = Lawyer::where('district_id', $district_id)->orderBy('id', 'asc')->paginate(10);
+                
+        return view('dashboard.lawyers.single')
+                            ->withDistrict($district)
+                            ->withLawyerscount($lawyerscount)
+                            ->withLawyers($lawyers);
+    }
+
+    public function lawyerIndexSearch($district_id, $search)
+    {
+        $district = District::find($district_id);
+        $lawyerscount = Lawyer::where('district_id', $district_id)
+                                 ->where('name', 'LIKE', "%$search%")
+                                 ->orWhere('mobile', 'LIKE', "%$search%")
+                                 ->orWhere('court', 'LIKE', "%$search%")->count();
+
+        $lawyers = Lawyer::where('district_id', $district_id)
+                            ->where('name', 'LIKE', "%$search%")
+                            ->orWhere('mobile', 'LIKE', "%$search%")
+                            ->orWhere('court', 'LIKE', "%$search%")
+                            ->orderBy('id', 'asc')
+                            ->paginate(10);
+
+        return view('dashboard.lawyers.single')
+                            ->withDistrict($district)
+                            ->withLawyerscount($lawyerscount)
+                            ->withLawyers($lawyers);
+    }
+
+    public function storeLawyer(Request $request, $district_id)
+    {
+        $this->validate($request,array(
+            'name'                => 'required|string|max:191',
+            'mobile'              => 'required|string|max:191',
+            'court_type'          => 'required',
+            'court'               => 'required',
+        ));
+
+        $lawyer = new Lawyer;
+        $lawyer->district_id = $district_id;
+        $lawyer->court_type = $request->court_type;
+        $lawyer->name = $request->name;
+        $lawyer->mobile = $request->mobile;
+        $lawyer->court = $request->court;
+        $lawyer->save();
+
+        Cache::forget('lawyers' . $district_id . $request->court);
+        Session::flash('success', 'Lawyer added successfully!');
+        return redirect()->route('dashboard.lawyers.districtwise', $district_id);
+    }
+
+    public function updateLawyer(Request $request, $district_id, $id)
+    {
+        $this->validate($request,array(
+            'name'                => 'required|string|max:191',
+            'mobile'              => 'required|string|max:191',
+            'court_type'          => 'required',
+            'court'               => 'required',
+        ));
+
+        $lawyer = Lawyer::find($id);
+        $lawyer->district_id = $district_id;
+        $lawyer->court_type = $request->court_type;
+        $lawyer->name = $request->name;
+        $lawyer->mobile = $request->mobile;
+        $lawyer->court = $request->court;
+        $lawyer->save();
+
+        Cache::forget('lawyers' . $district_id . 1);
+        Cache::forget('lawyers' . $district_id . 2);
+        Cache::forget('lawyers' . $district_id . 3);
+        Session::flash('success', 'Lawyer updated successfully!');
+        return redirect()->route('dashboard.lawyers.districtwise', $district_id);
+    }
+
 }
