@@ -682,7 +682,7 @@ class APIController extends Controller
                 
                 return $battalion_info;
             });
-            dd($battalion_info);
+            dd($rabdata);
             return response()->json([
                 'success' => true,
                 'battalion_info' => $rabdata,
