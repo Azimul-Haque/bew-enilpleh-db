@@ -112,6 +112,14 @@ Route::post('/dashboard/coachings/{district_id}/store', 'AdminandothersControlle
 Route::post('/dashboard/coachings/{district_id}/{id}/update', 'AdminandothersController@updateCoaching')->name('dashboard.coachings.update');
 Route::get('/dashboard/coachings/{district_id}/{id}/delete', 'AdminandothersController@deleteCoaching')->name('dashboard.coachings.delete');
 
+// Coaching
+Route::get('/dashboard/rabs', 'AdminandothersController@rabIndex')->name('dashboard.rabs');
+Route::get('/dashboard/coachings/{district_id}', 'AdminandothersController@coachingIndexSingle')->name('dashboard.coachings.districtwise');
+Route::get('/dashboard/coachings/{district_id}/{search}', 'AdminandothersController@coachingIndexSearch')->name('dashboard.coachings.districtwise.search');
+Route::post('/dashboard/coachings/{district_id}/store', 'AdminandothersController@storeCoaching')->name('dashboard.coachings.store');
+Route::post('/dashboard/coachings/{district_id}/{id}/update', 'AdminandothersController@updateCoaching')->name('dashboard.coachings.update');
+Route::get('/dashboard/coachings/{district_id}/{id}/delete', 'AdminandothersController@deleteCoaching')->name('dashboard.coachings.delete');
+
 
 
 
