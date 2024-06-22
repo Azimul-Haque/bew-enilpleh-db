@@ -54,9 +54,6 @@
                       {{ $rabbattallionofficer->telephone }}
                     </td>
                     <td align="right">
-                      {{-- <button type="button" class="btn btn-warning btn-sm" data-toggle="modal" data-target="#notifModal{{ $rabbattallionofficer->id }}">
-                        <i class="fas fa-bell"></i>
-                      </button> --}}
                       <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#editUserModal{{ $rabbattallionofficer->id }}">
                         <i class="fas fa-edit"></i>
                       </button>
