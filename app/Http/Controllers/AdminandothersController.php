@@ -357,8 +357,8 @@ class AdminandothersController extends Controller
     public function rentacarIndexSingle($district_id)
     {
         $district = District::find($district_id);
-        $rentacarscount = Lawyer::where('district_id', $district_id)->count();
-        $rentacars = Lawyer::where('district_id', $district_id)->orderBy('id', 'asc')->paginate(10);
+        $rentacarscount = Rentacar::where('district_id', $district_id)->count();
+        $rentacars = Rentacar::where('district_id', $district_id)->orderBy('id', 'asc')->paginate(10);
                 
         return view('dashboard.rentacars.single')
                             ->withDistrict($district)
@@ -369,12 +369,11 @@ class AdminandothersController extends Controller
     public function rentacarIndexSearch($district_id, $search)
     {
         $district = District::find($district_id);
-        $rentacarscount = Lawyer::where('district_id', $district_id)
+        $rentacarscount = Rentacar::where('district_id', $district_id)
                                  ->where('name', 'LIKE', "%$search%")
-                                 ->orWhere('mobile', 'LIKE', "%$search%")
-                                 ->orWhere('court', 'LIKE', "%$search%")->count();
+                                 ->orWhere('mobile', 'LIKE', "%$search%")->count();
 
-        $rentacars = Lawyer::where('district_id', $district_id)
+        $rentacars = Rentacar::where('district_id', $district_id)
                             ->where('name', 'LIKE', "%$search%")
                             ->orWhere('mobile', 'LIKE', "%$search%")
                             ->orWhere('court', 'LIKE', "%$search%")
