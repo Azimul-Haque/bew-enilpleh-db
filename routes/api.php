@@ -40,6 +40,7 @@ Route::get('/getfireservices/{softtoken}/{district_id}', 'APIController@getFires
 Route::get('/getlawyers/{softtoken}/{court_type}/{district_id}', 'APIController@getLawyers')->name('api.getlawyers');
 Route::get('/getrentacars/{softtoken}/{district_id}', 'APIController@getRentacars')->name('api.getrentacars');
 Route::get('/getcoachings/{softtoken}/{district_id}', 'APIController@getCoachings')->name('api.getcoachings');
+Route::get('/getcoachings/{softtoken}/{district_id}', 'APIController@getCoachings')->name('api.getcoachings');
 
 
 
