@@ -557,8 +557,19 @@ class AdminandothersController extends Controller
         $rabbattalion = new Rabbattalion;
         $rabbattalion->name = $request->name;
         $rabbattalion->detalis = $request->detalis;
-        $rabbattalion->address = $request->address;
         $rabbattalion->save();
+
+        // image upload
+        if($request->hasFile('image')) {
+            $image    = $request->file('image');
+            $filename = random_string(5) . time() .'.' . "webp";
+            $location = public_path('images/rabbattalions/'. $filename);
+            Image::make($image)->fit(200, 200)->save($location);
+            $rentacarimage              = new Rentacarimage;
+            $rentacarimage->rentacar_id   = $rentacar->id;
+            $rentacarimage->image       = $filename;
+            $rentacarimage->save();
+        }
 
         Cache::forget('coachings' . $district_id);
         Session::flash('success', 'Coaching added successfully!');
