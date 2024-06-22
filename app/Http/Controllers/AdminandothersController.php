@@ -629,7 +629,9 @@ class AdminandothersController extends Controller
         $rabbattallionofficerscount = Rabbattaliondetail::where('rabbattalion_id', $battalion_id)
                                  ->where('designation', 'LIKE', "%$search%")
                                  ->where('area', 'LIKE', "%$search%")
-                                 ->orWhere('details', 'LIKE', "%$search%")->count();
+                                 ->orWhere('mobile', 'LIKE', "%$search%")
+                                 ->orWhere('telephone', 'LIKE', "%$search%")
+                                 ->count();
 
         $rabbattallionofficers = Rabbattaliondetail::where('rabbattalion_id', $battalion_id)
                                  ->where('designation', 'LIKE', "%$search%")
