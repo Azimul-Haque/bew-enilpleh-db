@@ -37,8 +37,7 @@
                           <tr>
                               @foreach ($chunk as $district)
                                   <td>
-                                    {{ $district->name_bangla }} <small>@if($district->rabs->count() > 0)(যুক্ত করা নেই) @else ({{ $district->rabs }}) @endif</small>
-                                    {{ $district->rabs }}
+                                    {{ $district->name_bangla }} <small>@if($district->rabs->count() > 0)({{ $district->rabs }}) @else (যুক্ত করা নেই) @endif</small>
                                   </td>
                                   <td>
                                     <button type="button" class="btn btn-warning btn-sm"  data-toggle="modal" data-target="#updateDistrictRabBattalion{{ $district->id }}" style="margin-left: 5px;" rel="tooltip" title="" data-original-title="র‍্যাব ব্যাটালিয়ন সংযুক্ত করুন">
