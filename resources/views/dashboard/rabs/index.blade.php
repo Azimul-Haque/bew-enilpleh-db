@@ -37,7 +37,9 @@
                             <td>
                               <a href="{{ route('dashboard.coachings.districtwise', $district->id) }}" rel="tooltip" title="" data-original-title="{{ $district->name_bangla }} জেলার কোচিং সেন্টারের তালিকা দেখতে ক্লিক করুন">{{ $district->name_bangla }} <small>({{ bangla($district->coachings->count()) }} টি কোচিং সেন্টার)</small></a>
                             </td>
-                            <td></td>
+                            <td>
+                              বাটন
+                            </td>
                         @endforeach
                         @if ($chunk->count() < 3)
                             @for ($i = 0; $i < 3 - $chunk->count(); $i++)
