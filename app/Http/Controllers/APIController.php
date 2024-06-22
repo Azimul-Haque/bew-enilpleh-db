@@ -661,7 +661,7 @@ class APIController extends Controller
                 
                 $battalion_data = collect();
                 
-                $battalion_name = $rab->rabbattalion->name != null ? $rab->rabbattalion->name : '';
+                $battalion_name = $rab->rabbattalion != null ? $rab->rabbattalion->name : '';
                 $battalion_details = $rab->rabbattalion->details;
                 $battalion_map = $rab->rabbattalion->map;
                 foreach($rab->rabbattalion->rabbattaliondetails as $rabbattaliondetail) {
