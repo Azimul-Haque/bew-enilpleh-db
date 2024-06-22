@@ -43,27 +43,27 @@
                 </tr>
               </thead>
               <tbody>
-                @foreach($rentacars as $lawyer)
+                @foreach($rentacars as $rentacar)
                   <tr>
                     <td>
-                      {{ $lawyer->name }}
+                      {{ $rentacar->name }}
                     </td>
-                    <td>{{ $lawyer->mobile }}</td>
+                    <td>{{ $rentacar->mobile }}</td>
                     <td>
-                      {{ court_type($lawyer->court_type) }}<br/>
-                      {{ $lawyer->court }}
+                      {{ court_type($rentacar->court_type) }}<br/>
+                      {{ $rentacar->court }}
                     </td>
                     <td align="right">
-                      {{-- <button type="button" class="btn btn-warning btn-sm" data-toggle="modal" data-target="#notifModal{{ $lawyer->id }}">
+                      {{-- <button type="button" class="btn btn-warning btn-sm" data-toggle="modal" data-target="#notifModal{{ $rentacar->id }}">
                         <i class="fas fa-bell"></i>
                       </button> --}}
-                      <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#editUserModal{{ $lawyer->id }}">
+                      <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#editUserModal{{ $rentacar->id }}">
                         <i class="fas fa-edit"></i>
                       </button>
                       {{-- Edit User Modal Code --}}
                       {{-- Edit User Modal Code --}}
                       <!-- Modal -->
-                      <div class="modal fade" id="editUserModal{{ $lawyer->id }}" tabindex="-1" role="dialog" aria-labelledby="editUserModalLabel" aria-hidden="true" data-backdrop="static">
+                      <div class="modal fade" id="editUserModal{{ $rentacar->id }}" tabindex="-1" role="dialog" aria-labelledby="editUserModalLabel" aria-hidden="true" data-backdrop="static">
                         <div class="modal-dialog" role="document">
                           <div class="modal-content">
                             <div class="modal-header bg-primary">
@@ -72,7 +72,7 @@
                                 <span aria-hidden="true">&times;</span>
                               </button>
                             </div>
-                            <form method="post" action="{{ route('dashboard.rentacars.update', [$district->id, $lawyer->id]) }}" enctype="multipart/form-data">
+                            <form method="post" action="{{ route('dashboard.rentacars.update', [$district->id, $rentacar->id]) }}" enctype="multipart/form-data">
                               <div class="modal-body">
                                 
                                     @csrf
@@ -81,7 +81,7 @@
                                         <input type="text"
                                                name="name"
                                                class="form-control"
-                                               value="{{ $lawyer->name }}"
+                                               value="{{ $rentacar->name }}"
                                                placeholder="রেন্ট-এ-কারের নাম" required>
                                         <div class="input-group-append">
                                             <div class="input-group-text"><span class="fas fa-user-tie"></span></div>
@@ -90,9 +90,9 @@
                                     <div class="input-group mb-3">
                                       <select name="court_type" class="form-control" required>
                                           <option selected="" disabled="" value="">কোর্টের ধরন</option>
-                                          <option value="1" @if($lawyer->court_type == 1) selected @endif>ফৌজদারি</option>
-                                          <option value="2" @if($lawyer->court_type == 2) selected @endif>দেওয়ানি</option>
-                                          <option value="3" @if($lawyer->court_type == 3) selected @endif>ফৌজদারি ও দেওয়ানি</option>
+                                          <option value="1" @if($rentacar->court_type == 1) selected @endif>ফৌজদারি</option>
+                                          <option value="2" @if($rentacar->court_type == 2) selected @endif>দেওয়ানি</option>
+                                          <option value="3" @if($rentacar->court_type == 3) selected @endif>ফৌজদারি ও দেওয়ানি</option>
                                       </select>
                                       <div class="input-group-append">
                                           <div class="input-group-text"><span class="fas fa-star-half-alt"></span></div>
@@ -101,7 +101,7 @@
                                     <div class="input-group mb-3">
                                         <input type="number"
                                                name="mobile"
-                                               value="{{ $lawyer->mobile }}"
+                                               value="{{ $rentacar->mobile }}"
                                                class="form-control"
                                                placeholder="রেন্ট-এ-কারের মোবাইল নম্বর" required>
                                         <div class="input-group-append">
@@ -111,7 +111,7 @@
                                     <div class="input-group mb-3">
                                         <input type="text"
                                                name="court"
-                                               value="{{ $lawyer->court }}"
+                                               value="{{ $rentacar->court }}"
                                                class="form-control"
                                                placeholder="কোর্টের নাম" required>
                                         <div class="input-group-append">
@@ -131,14 +131,14 @@
                       {{-- Edit User Modal Code --}}
                       {{-- Edit User Modal Code --}}
 
-                      <button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#deleteUserModal{{ $lawyer->id }}">
+                      <button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#deleteUserModal{{ $rentacar->id }}">
                         <i class="fas fa-trash-alt"></i>
                       </button>
                     </td>
                         {{-- Delete User Modal Code --}}
                         {{-- Delete User Modal Code --}}
                         <!-- Modal -->
-                        <div class="modal fade" id="deleteUserModal{{ $lawyer->id }}" tabindex="-1" role="dialog" aria-labelledby="deleteUserModalLabel" aria-hidden="true" data-backdrop="static">
+                        <div class="modal fade" id="deleteUserModal{{ $rentacar->id }}" tabindex="-1" role="dialog" aria-labelledby="deleteUserModalLabel" aria-hidden="true" data-backdrop="static">
                           <div class="modal-dialog" role="document">
                             <div class="modal-content">
                               <div class="modal-header bg-danger">
@@ -150,13 +150,13 @@
                               <div class="modal-body">
                                 আপনি কি নিশ্চিতভাবে এই রেন্ট-এ-কারকে ডিলেট করতে চান?<br/>
                                 <center>
-                                    <big><b>{{ $lawyer->name }}</b></big><br/>
-                                    <small><i class="fas fa-phone"></i> {{ $lawyer->mobile }}</small>
+                                    <big><b>{{ $rentacar->name }}</b></big><br/>
+                                    <small><i class="fas fa-phone"></i> {{ $rentacar->mobile }}</small>
                                 </center>
                               </div>
                               <div class="modal-footer">
                                 <button type="button" class="btn btn-secondary" data-dismiss="modal">ফিরে যান</button>
-                                <a href="{{ route('dashboard.rentacars.delete', [$district->id, $lawyer->id]) }}" class="btn btn-danger">ডিলেট করুন</a>
+                                <a href="{{ route('dashboard.rentacars.delete', [$district->id, $rentacar->id]) }}" class="btn btn-danger">ডিলেট করুন</a>
                               </div>
                             </div>
                           </div>
