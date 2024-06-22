@@ -602,6 +602,8 @@ class AdminandothersController extends Controller
         }
         $rabbattalion->save();
 
+        // RAB cache niye kaaj ache
+        // RAB cache niye kaaj ache
         Cache::forget('rabbattalions');
         Session::flash('success', 'RAB Battalion updated successfully!');
         return redirect()->route('dashboard.rabs');
