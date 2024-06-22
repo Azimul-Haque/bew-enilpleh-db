@@ -20,6 +20,7 @@ class CreateRabbattaliondetailsTable extends Migration
             $table->text('area');
             $table->string('mobile');
             $table->string('telephone');
+            $table->timestamps();
         });
     }
 
