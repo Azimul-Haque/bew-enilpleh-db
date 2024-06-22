@@ -609,7 +609,7 @@ class AdminandothersController extends Controller
     {
         $battallion = Rabbattalion::findOrFail($id);
         $battallionofficerscount = Rabbattaliondetail::where('rabbattalion_id', $id)->count();
-        $battallionofficers = Coaching::where('district_id', $district_id)->orderBy('id', 'asc')->paginate(10);
+        $battallionofficers = Rabbattaliondetail::where('rabbattalion_id', $id)->orderBy('id', 'asc')->paginate(10);
                 
         return view('dashboard.rabs.rabbbatalionsdetails')
                             ->withCoachingscount($battallionofficerscount)
