@@ -65,7 +65,8 @@
                                                         <option selected="" disabled="" value="">র‍্যাব ব্যাটালিয়ন নির্বাচন করুন</option>
                                                         @foreach($rabbattalions as $rabbattalion)
                                                           <option value="{{ $rabbattalion->id }}">
-                                                            {{ $rabbattalion->name }}
+                                                            {{ $rabbattalion->name }}<br/>
+                                                            
                                                           </option>
                                                         @endforeach
                                                     </select>
