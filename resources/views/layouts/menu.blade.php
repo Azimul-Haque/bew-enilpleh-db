@@ -99,7 +99,7 @@
 @if(Auth::user()->role == 'admin')
 <li class="nav-item">
     <a href="{{ route('dashboard.rentacars') }}" class="nav-link {{ Request::is('dashboard/rentacars') ? 'active' : '' }} {{ Request::is('dashboard/rentacars/*') ? 'active' : '' }}">
-        <i class="nav-icon fas fa-gavel"></i>
+        <i class="nav-icon fas fa-car"></i>
         <p>রেন্ট-এ-কার</p>
     </a>
 </li>
