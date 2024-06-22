@@ -81,9 +81,9 @@
                         <tr>
                           <td>
                             {{ $rabbattalion->name }}<br/>
-                            <span style="color: #9C9FA0; ">
+                            <small style="color: #9C9FA0; ">
                               {{ $rabbattalion->details }}
-                            </span>
+                            </small>
                           </td>
                           <td align="right">
                             {{-- <button type="button" class="btn btn-warning btn-sm" data-toggle="modal" data-target="#notifModal{{ $rabbattalion->id }}">
