@@ -430,10 +430,8 @@ class AdminandothersController extends Controller
         $rentacar->mobile = $request->mobile;
         $rentacar->save();
 
-        Cache::forget('lawyers' . $district_id . 1);
-        Cache::forget('lawyers' . $district_id . 2);
-        Cache::forget('lawyers' . $district_id . 3);
-        Session::flash('success', 'Lawyer updated successfully!');
+        Cache::forget('rentacars' . $district_id);
+        Session::flash('success', 'Rent-a-Car updated successfully!');
         return redirect()->route('dashboard.lawyers.districtwise', $district_id);
     }
 
