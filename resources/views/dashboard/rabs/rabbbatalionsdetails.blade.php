@@ -215,7 +215,7 @@
                              name="mobile"
                              value="{{ old('mobile') }}"
                              class="form-control"
-                             placeholder="র‍্যাব অফিসারের মোবাইল নম্বর">
+                             placeholder="র‍্যাব অফিসারের টেলিফোন নম্বর (যদি থাকে)">
                       <div class="input-group-append">
                           <div class="input-group-text"><span class="fas fa-mobile"></span></div>
                       </div>
