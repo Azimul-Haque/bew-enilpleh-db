@@ -46,7 +46,7 @@
                                     {{-- Edit Rab Battalion Code --}}
                                     {{-- Edit Rab Battalion Code --}}
                                     <!-- Modal -->
-                                    <div class="modal fade" id="updateDistrictRabBattalion{{ $rabbattalion->id }}" tabindex="-1" role="dialog" aria-labelledby="updateDistrictRabBattalionLabel" aria-hidden="true" data-backdrop="static">
+                                    <div class="modal fade" id="updateDistrictRabBattalion{{ $district->id }}" tabindex="-1" role="dialog" aria-labelledby="updateDistrictRabBattalionLabel" aria-hidden="true" data-backdrop="static">
                                       <div class="modal-dialog modal-lg" role="document">
                                         <div class="modal-content">
                                           <div class="modal-header bg-primary">
@@ -55,7 +55,7 @@
                                               <span aria-hidden="true">&times;</span>
                                             </button>
                                           </div>
-                                          <form method="post" action="{{ route('dashboard.rabbattalions.update', $rabbattalion->id) }}" enctype="multipart/form-data">
+                                          <form method="post" action="{{ route('dashboard.rabbattalions.update', $district->id) }}" enctype="multipart/form-data">
                                             <div class="modal-body">
                                               
                                                   @csrf
