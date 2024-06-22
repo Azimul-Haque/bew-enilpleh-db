@@ -59,7 +59,7 @@
         <div class="col-md-4">
           <div class="card">
                 <div class="card-header">
-                  <h3 class="card-title">কোচিং সেন্টার তালিকা</h3>
+                  <h3 class="card-title">র‍্যাব ব্যাটালিয়ন তালিকা</h3>
 
                   <div class="card-tools">
                     <form class="form-inline form-group-lg" action="">
