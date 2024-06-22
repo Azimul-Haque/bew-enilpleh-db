@@ -10,6 +10,7 @@ use App\Fireservice;
 use App\Lawyer;
 use App\Rentacar;
 use App\Rentacarimage;
+use App\Coaching;
 use App\District;
 
 use Carbon\Carbon;
