@@ -81,7 +81,7 @@
                         <tr>
                           <td>
                             {{ $rabbattalion->name }}<br/>
-                            <small>
+                            <small style="color: #9C9FA0;">
                               {{ $rabbattalion->details }}
                             </small>
                           </td>
