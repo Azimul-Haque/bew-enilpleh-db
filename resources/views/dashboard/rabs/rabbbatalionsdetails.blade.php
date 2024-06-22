@@ -46,20 +46,20 @@
                 @foreach($rabbattallionofficers as $rabbattallionofficer)
                   <tr>
                     <td>
-                      {{ $rentacar->name }}
+                      {{ $rabbattallionofficer->name }}
                     </td>
-                    <td>{{ $rentacar->mobile }}</td>
+                    <td>{{ $rabbattallionofficer->mobile }}</td>
                     <td align="right">
-                      {{-- <button type="button" class="btn btn-warning btn-sm" data-toggle="modal" data-target="#notifModal{{ $rentacar->id }}">
+                      {{-- <button type="button" class="btn btn-warning btn-sm" data-toggle="modal" data-target="#notifModal{{ $rabbattallionofficer->id }}">
                         <i class="fas fa-bell"></i>
                       </button> --}}
-                      <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#editUserModal{{ $rentacar->id }}">
+                      <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#editUserModal{{ $rabbattallionofficer->id }}">
                         <i class="fas fa-edit"></i>
                       </button>
                       {{-- Edit User Modal Code --}}
                       {{-- Edit User Modal Code --}}
                       <!-- Modal -->
-                      <div class="modal fade" id="editUserModal{{ $rentacar->id }}" tabindex="-1" role="dialog" aria-labelledby="editUserModalLabel" aria-hidden="true" data-backdrop="static">
+                      <div class="modal fade" id="editUserModal{{ $rabbattallionofficer->id }}" tabindex="-1" role="dialog" aria-labelledby="editUserModalLabel" aria-hidden="true" data-backdrop="static">
                         <div class="modal-dialog" role="document">
                           <div class="modal-content">
                             <div class="modal-header bg-primary">
@@ -68,7 +68,7 @@
                                 <span aria-hidden="true">&times;</span>
                               </button>
                             </div>
-                            <form method="post" action="{{ route('dashboard.rentacars.update', [$district->id, $rentacar->id]) }}" enctype="multipart/form-data">
+                            <form method="post" action="{{ route('dashboard.rentacars.update', [$district->id, $rabbattallionofficer->id]) }}" enctype="multipart/form-data">
                               <div class="modal-body">
                                 
                                     @csrf
@@ -77,7 +77,7 @@
                                         <input type="text"
                                                name="name"
                                                class="form-control"
-                                               value="{{ $rentacar->name }}"
+                                               value="{{ $rabbattallionofficer->name }}"
                                                placeholder="র‍্যাব অফিসারের ডেসিগ্নেশন" required>
                                         <div class="input-group-append">
                                             <div class="input-group-text"><span class="fas fa-user-tie"></span></div>
@@ -86,7 +86,7 @@
                                     <div class="input-group mb-3">
                                         <input type="number"
                                                name="mobile"
-                                               value="{{ $rentacar->mobile }}"
+                                               value="{{ $rabbattallionofficer->mobile }}"
                                                class="form-control"
                                                placeholder="র‍্যাব অফিসারের মোবাইল নম্বর" required>
                                         <div class="input-group-append">
@@ -98,8 +98,8 @@
                                         <input type="file" id="image" name="image" accept="image/*">
                                     </div>
                                     <center>
-                                      @if($rentacar->rentacarimage != null)
-                                        <img src="{{ asset('images/rentacars/' . $rentacar->rentacarimage->image)}}" id='img-upload' style="width: 250px; height: auto;" class="img-responsive" />
+                                      @if($rabbattallionofficer->rentacarimage != null)
+                                        <img src="{{ asset('images/rentacars/' . $rabbattallionofficer->rentacarimage->image)}}" id='img-upload' style="width: 250px; height: auto;" class="img-responsive" />
                                       @else
                                         <img src="{{ asset('images/placeholder.png')}}" id='img-upload' style="width: 250px; height: auto;" class="img-responsive" />
                                       @endif
@@ -116,14 +116,14 @@
                       {{-- Edit User Modal Code --}}
                       {{-- Edit User Modal Code --}}
 
-                      <button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#deleteUserModal{{ $rentacar->id }}">
+                      <button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#deleteUserModal{{ $rabbattallionofficer->id }}">
                         <i class="fas fa-trash-alt"></i>
                       </button>
                     </td>
                         {{-- Delete User Modal Code --}}
                         {{-- Delete User Modal Code --}}
                         <!-- Modal -->
-                        <div class="modal fade" id="deleteUserModal{{ $rentacar->id }}" tabindex="-1" role="dialog" aria-labelledby="deleteUserModalLabel" aria-hidden="true" data-backdrop="static">
+                        <div class="modal fade" id="deleteUserModal{{ $rabbattallionofficer->id }}" tabindex="-1" role="dialog" aria-labelledby="deleteUserModalLabel" aria-hidden="true" data-backdrop="static">
                           <div class="modal-dialog" role="document">
                             <div class="modal-content">
                               <div class="modal-header bg-danger">
@@ -135,13 +135,13 @@
                               <div class="modal-body">
                                 আপনি কি নিশ্চিতভাবে এই র‍্যাব অফিসারকে ডিলেট করতে চান?<br/>
                                 <center>
-                                    <big><b>{{ $rentacar->name }}</b></big><br/>
-                                    <small><i class="fas fa-phone"></i> {{ $rentacar->mobile }}</small>
+                                    <big><b>{{ $rabbattallionofficer->name }}</b></big><br/>
+                                    <small><i class="fas fa-phone"></i> {{ $rabbattallionofficer->mobile }}</small>
                                 </center>
                               </div>
                               <div class="modal-footer">
                                 <button type="button" class="btn btn-secondary" data-dismiss="modal">ফিরে যান</button>
-                                <a href="{{ route('dashboard.rentacars.delete', [$district->id, $rentacar->id]) }}" class="btn btn-danger">ডিলেট করুন</a>
+                                <a href="{{ route('dashboard.rentacars.delete', [$district->id, $rabbattallionofficer->id]) }}" class="btn btn-danger">ডিলেট করুন</a>
                               </div>
                             </div>
                           </div>
