@@ -63,7 +63,7 @@
 
                   <div class="card-tools">
                     <button type="button" class="btn btn-success btn-sm"  data-toggle="modal" data-target="#addUserModal" style="margin-left: 5px;">
-                      <i class="fas fa-plus-square"></i> নতুন
+                      <i class="fas fa-plus-square"></i> নতুন ব্যাটালিয়ন
                     </button>
                   </div>
                 </div>
