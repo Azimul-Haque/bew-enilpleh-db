@@ -217,7 +217,7 @@
                              name="name"
                              class="form-control"
                              value="{{ old('name') }}"
-                             placeholder="কোচিং সেন্টারের নাম" required>
+                             placeholder="র‍্যাব ব্যাটালিয়নের নাম" required>
                       <div class="input-group-append">
                           <div class="input-group-text"><span class="fas fa-user-tie"></span></div>
                       </div>
