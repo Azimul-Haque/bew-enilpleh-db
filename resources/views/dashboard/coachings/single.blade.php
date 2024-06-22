@@ -7,11 +7,11 @@
 @endsection
 
 @section('content')
-  @section('page-header') ফায়ার সার্ভিস কর্মকর্তা/স্টেশন তালিকা / {{ $district->name_bangla }} জেলা (মোট {{ bangla($coachingscount) }} টি) @endsection
+  @section('page-header') কোচিং সেন্টার তালিকা / {{ $district->name_bangla }} জেলা (মোট {{ bangla($coachingscount) }} টি) @endsection
     <div class="container-fluid">
     <div class="card">
           <div class="card-header">
-            <h3 class="card-title">ফায়ার সার্ভিস কর্মকর্তা/স্টেশন তালিকা</h3>
+            <h3 class="card-title">কোচিং সেন্টার তালিকা</h3>
 
             <div class="card-tools">
               <form class="form-inline form-group-lg" action="">
@@ -62,7 +62,7 @@
                         <div class="modal-dialog" role="document">
                           <div class="modal-content">
                             <div class="modal-header bg-primary">
-                              <h5 class="modal-title" id="editUserModalLabel">ফায়ার সার্ভিস কর্মকর্তা/স্টেশন তথ্য হালনাগাদ</h5>
+                              <h5 class="modal-title" id="editUserModalLabel">কোচিং সেন্টার তথ্য হালনাগাদ</h5>
                               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                 <span aria-hidden="true">&times;</span>
                               </button>
@@ -155,7 +155,7 @@
       <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content">
           <div class="modal-header bg-success">
-            <h5 class="modal-title" id="addUserModalLabel">নতুন ফায়ার সার্ভিস কর্মকর্তা/স্টেশন যোগ (জেলা: <strong>{{ $district->name_bangla }}</strong>)</h5>
+            <h5 class="modal-title" id="addUserModalLabel">নতুন কোচিং সেন্টার যোগ (জেলা: <strong>{{ $district->name_bangla }}</strong>)</h5>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
