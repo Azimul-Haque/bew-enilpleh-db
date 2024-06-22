@@ -666,11 +666,11 @@ class APIController extends Controller
                 $battalion_details = $rab->rabbattalion->details;
                 $battalion_map = $rab->rabbattalion->map;
                 foreach($rab->rabbattalion->rabbattaliondetails as $rabbattaliondetail) {
-                    // $rabbattaliondetail->designation = $rabbattaliondetail->designation;
-                    // $rabbattaliondetail->area = $rabbattaliondetail->area;
-                    // $rabbattaliondetail->mobile = $rabbattaliondetail->mobile;
-                    // $rabbattaliondetail->telephone = $rabbattaliondetail->telephone;
-                    // $rabdata->push($rabbattaliondetail);
+                    $rabbattaliondetail->designation = $rabbattaliondetail->designation;
+                    $rabbattaliondetail->area = $rabbattaliondetail->area;
+                    $rabbattaliondetail->mobile = $rabbattaliondetail->mobile;
+                    $rabbattaliondetail->telephone = $rabbattaliondetail->telephone;
+                    $rabdata->push($rabbattaliondetail);
                     $rabbattaliondetail->makeHidden('id', 'rabbattalion_id', 'created_at', 'updated_at');
                 }
                 
@@ -681,7 +681,8 @@ class APIController extends Controller
             return response()->json([
                 'success' => true,
                 'battalion_name' => $battalion_name,
-                'battalion_details' => $battalion_name,
+                'battalion_details' => $battalion_details,
+                'battalion_map' => $battalion_map,
                 'rabdata' => $rabdata,
             ]);
         } else {
