@@ -81,7 +81,7 @@
                         <tr>
                           <td>
                             {{ $rabbattalion->name }}<br/>
-                            <span style="color: #9C9FA0; font-size: 11px; line-height: 95%;">
+                            <span style="color: #9C9FA0; font-size: 11px; line-height: 95%!;">
                               {{ $rabbattalion->details }}
                             </span>
                           </td>
