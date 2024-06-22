@@ -229,7 +229,7 @@
                              class="form-control"
                              placeholder="র‍্যাব অফিসারের টেলিফোন নম্বর (যদি থাকে)">
                       <div class="input-group-append">
-                          <div class="input-group-text"><span class="fas fa-mobile"></span></div>
+                          <div class="input-group-text"><span class="fas fa-phone"></span></div>
                       </div>
                   </div>
             </div>
