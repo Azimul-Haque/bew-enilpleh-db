@@ -97,12 +97,12 @@ Route::post('/dashboard/lawyers/{district_id}/{id}/update', 'AdminandothersContr
 Route::get('/dashboard/lawyers/{district_id}/{id}/delete', 'AdminandothersController@deleteLawyer')->name('dashboard.lawyers.delete');
 
 // Rent-a-Car
-Route::get('/dashboard/lawyers', 'AdminandothersController@lawyerIndex')->name('dashboard.lawyers');
-Route::get('/dashboard/lawyers/{district_id}', 'AdminandothersController@lawyerIndexSingle')->name('dashboard.lawyers.districtwise');
-Route::get('/dashboard/lawyers/{district_id}/{search}', 'AdminandothersController@lawyersIndexSearch')->name('dashboard.lawyers.districtwise.search');
-Route::post('/dashboard/lawyers/{district_id}/store', 'AdminandothersController@storeLawyer')->name('dashboard.lawyers.store');
-Route::post('/dashboard/lawyers/{district_id}/{id}/update', 'AdminandothersController@updateLawyer')->name('dashboard.lawyers.update');
-Route::get('/dashboard/lawyers/{district_id}/{id}/delete', 'AdminandothersController@deleteLawyer')->name('dashboard.lawyers.delete');
+Route::get('/dashboard/rentacars', 'AdminandothersController@lawyerIndex')->name('dashboard.lawyers');
+Route::get('/dashboard/rentacars/{district_id}', 'AdminandothersController@lawyerIndexSingle')->name('dashboard.lawyers.districtwise');
+Route::get('/dashboard/rentacars/{district_id}/{search}', 'AdminandothersController@lawyersIndexSearch')->name('dashboard.lawyers.districtwise.search');
+Route::post('/dashboard/rentacars/{district_id}/store', 'AdminandothersController@storeLawyer')->name('dashboard.lawyers.store');
+Route::post('/dashboard/rentacars/{district_id}/{id}/update', 'AdminandothersController@updateLawyer')->name('dashboard.lawyers.update');
+Route::get('/dashboard/rentacars/{district_id}/{id}/delete', 'AdminandothersController@deleteLawyer')->name('dashboard.lawyers.delete');
 
 
 
