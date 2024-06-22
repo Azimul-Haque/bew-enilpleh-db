@@ -80,10 +80,10 @@
                       @foreach($rabbattalions as $rabbattalion)
                         <tr>
                           <td>
-                            <a href="{{ route('dashboard.rabbattalions.details', $rabbattalion->id) }}">{{ $rabbattalion->name }}</a><br/>
+                            <a href="{{ route('dashboard.rabbattalions.details', $rabbattalion->id) }}">{{ $rabbattalion->name }}<br/>
                             <div style="color: #9C9FA0; font-size: 12.5px; line-height: 90%!;">
                               {{ $rabbattalion->details }}
-                            </div>
+                            </div></a>
                           </td>
                           <td align="right">
                             {{-- <button type="button" class="btn btn-warning btn-sm" data-toggle="modal" data-target="#notifModal{{ $rabbattalion->id }}">
