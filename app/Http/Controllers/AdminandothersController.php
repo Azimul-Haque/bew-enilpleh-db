@@ -395,10 +395,8 @@ class AdminandothersController extends Controller
 
         $rentacar = new Rentacar;
         $rentacar->district_id = $district_id;
-        $rentacar->court_type = $request->court_type;
         $rentacar->name = $request->name;
         $rentacar->mobile = $request->mobile;
-        $rentacar->court = $request->court;
         $rentacar->save();
 
         Cache::forget('lawyers' . $district_id . $request->court);
