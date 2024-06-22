@@ -77,7 +77,7 @@
                                                name="name"
                                                class="form-control"
                                                value="{{ $fireservice->name }}"
-                                               placeholder="কোচিং সেন্টারর/স্টেশনের পদবি (যেমন: সহকারী পরিচালক, টাঙ্গাইল ফায়ার স্টেশন ইত্যাদি ইত্যাদি)" required>
+                                               placeholder="কোচিং সেন্টারের নাম" required>
                                         <div class="input-group-append">
                                             <div class="input-group-text"><span class="fas fa-user-tie"></span></div>
                                         </div>
@@ -87,7 +87,7 @@
                                                name="mobile"
                                                value="{{ $fireservice->mobile }}"
                                                class="form-control"
-                                               placeholder="কোচিং সেন্টারর/স্টেশনের মোবাইল নম্বর" required>
+                                               placeholder="কোচিং সেন্টারের মোবাইল নম্বর" required>
                                         <div class="input-group-append">
                                             <div class="input-group-text"><span class="fas fa-mobile"></span></div>
                                         </div>
@@ -170,7 +170,7 @@
                              name="name"
                              class="form-control"
                              value="{{ old('name') }}"
-                             placeholder="কোচিং সেন্টারর/স্টেশনের পদবি (যেমন: সহকারী পরিচালক, টাঙ্গাইল ফায়ার স্টেশন ইত্যাদি ইত্যাদি)" required>
+                             placeholder="কোচিং সেন্টারের নাম" required>
                       <div class="input-group-append">
                           <div class="input-group-text"><span class="fas fa-user-tie"></span></div>
                       </div>
@@ -180,7 +180,7 @@
                              name="mobile"
                              value="{{ old('mobile') }}"
                              class="form-control"
-                             placeholder="কোচিং সেন্টারর/স্টেশনের মোবাইল নম্বর" required>
+                             placeholder="কোচিং সেন্টারের মোবাইল নম্বর" required>
                       <div class="input-group-append">
                           <div class="input-group-text"><span class="fas fa-mobile"></span></div>
                       </div>
