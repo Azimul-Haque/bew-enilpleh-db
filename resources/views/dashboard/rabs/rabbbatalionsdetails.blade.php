@@ -76,35 +76,47 @@
 
                                     <div class="input-group mb-3">
                                         <input type="text"
-                                               name="name"
+                                               name="designation"
                                                class="form-control"
-                                               value="{{ $rabbattallionofficer->name }}"
-                                               placeholder="র‍্যাব অফিসারের ডেসিগ্নেশন" required>
+                                               value="{{ old('designation') }}"
+                                               placeholder="র‍্যাব অফিসারের ডেসিগনেশন" required>
                                         <div class="input-group-append">
                                             <div class="input-group-text"><span class="fas fa-user-tie"></span></div>
                                         </div>
                                     </div>
+
+                                    <div class="input-group mb-3">
+                                        <input type="text"
+                                               name="area"
+                                               class="form-control"
+                                               value="{{ old('area') }}"
+                                               placeholder="র‍্যাব অফিসারের দায়িত্বপূর্ণ এলাকা" required>
+                                        <div class="input-group-append">
+                                            <div class="input-group-text"><span class="fas fa-user-tie"></span></div>
+                                        </div>
+                                    </div>
+                                    
                                     <div class="input-group mb-3">
                                         <input type="number"
                                                name="mobile"
-                                               value="{{ $rabbattallionofficer->mobile }}"
+                                               value="{{ old('mobile') }}"
                                                class="form-control"
                                                placeholder="র‍্যাব অফিসারের মোবাইল নম্বর" required>
                                         <div class="input-group-append">
                                             <div class="input-group-text"><span class="fas fa-mobile"></span></div>
                                         </div>
                                     </div>
-                                    <div class="form-group">
-                                        <label for="image">ছবি (প্রয়োজনে, ৩০০ x ৩০০ সাইজের, ২ মেগাবাইটের মধ্যে)</label>
-                                        <input type="file" id="image" name="image" accept="image/*">
-                                    </div>
-                                    <center>
-                                      @if($rabbattallionofficer->rentacarimage != null)
-                                        <img src="{{ asset('images/rentacars/' . $rabbattallionofficer->rentacarimage->image)}}" id='img-upload' style="width: 250px; height: auto;" class="img-responsive" />
-                                      @else
-                                        <img src="{{ asset('images/placeholder.png')}}" id='img-upload' style="width: 250px; height: auto;" class="img-responsive" />
-                                      @endif
-                                    </center>                                               
+
+                                    <div class="input-group mb-3">
+                                        <input type="number"
+                                               name="mobile"
+                                               value="{{ old('mobile') }}"
+                                               class="form-control"
+                                               placeholder="র‍্যাব অফিসারের টেলিফোন নম্বর (যদি থাকে)">
+                                        <div class="input-group-append">
+                                            <div class="input-group-text"><span class="fas fa-mobile"></span></div>
+                                        </div>
+                                    </div>                                              
                               </div>
                               <div class="modal-footer">
                                 <button type="button" class="btn btn-secondary" data-dismiss="modal">ফিরে যান</button>
