@@ -224,8 +224,8 @@
 
                   <div class="input-group mb-3">
                       <input type="number"
-                             name="mobile"
-                             value="{{ old('mobile') }}"
+                             name="telephone"
+                             value="{{ old('telephone') }}"
                              class="form-control"
                              placeholder="র‍্যাব অফিসারের টেলিফোন নম্বর (যদি থাকে)">
                       <div class="input-group-append">
