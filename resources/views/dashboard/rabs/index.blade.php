@@ -41,7 +41,7 @@
                                   </td>
                                   <td>
                                     <button type="button" class="btn btn-success btn-sm"  data-toggle="modal" data-target="#addRabBattalionModal" style="margin-left: 5px;">
-                                      <i class="fas fa-plus-square"></i> নতুন ব্যাটালিয়ন
+                                      <i class="fas fa-plus-square"></i> র‍্যাব ব্যাটালিয়ন সংযুক্ত করুন
                                     </button>
                                   </td>
                               @endforeach
