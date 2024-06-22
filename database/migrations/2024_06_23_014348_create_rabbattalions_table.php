@@ -15,6 +15,8 @@ class CreateRabbattalionsTable extends Migration
     {
         Schema::create('rabbattalions', function (Blueprint $table) {
             $table->id();
+            $table->string('name');
+            $table->string('details');
             $table->timestamps();
         });
     }
