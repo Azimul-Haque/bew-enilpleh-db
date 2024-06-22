@@ -554,7 +554,7 @@ class AdminandothersController extends Controller
             'map'             => 'required|string|max:191',
         ));
 
-        $coaching = new Coaching;
+        $coaching = new Rabbattalion;
         $coaching->district_id = $district_id;
         $coaching->name = $request->name;
         $coaching->mobile = $request->mobile;
