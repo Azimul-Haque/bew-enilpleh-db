@@ -16,7 +16,7 @@
             <div class="card-tools">
               <form class="form-inline form-group-lg" action="">
                 <div class="form-group">
-                  <input type="search-param" class="form-control form-control-sm" placeholder="ফায়ার সার্ভিস কর্মকর্তা খুঁজুন" id="search-param" required>
+                  <input type="search-param" class="form-control form-control-sm" placeholder="কোচিং সেন্টার খুঁজুন" id="search-param" required>
                 </div>
                 <button type="button" id="search-button" class="btn btn-default btn-sm" style="margin-left: 5px;">
                   <i class="fas fa-search"></i> খুঁজুন
@@ -77,7 +77,7 @@
                                                name="name"
                                                class="form-control"
                                                value="{{ $fireservice->name }}"
-                                               placeholder="ফায়ার সার্ভিস কর্মকর্তার/স্টেশনের পদবি (যেমন: সহকারী পরিচালক, টাঙ্গাইল ফায়ার স্টেশন ইত্যাদি ইত্যাদি)" required>
+                                               placeholder="কোচিং সেন্টারর/স্টেশনের পদবি (যেমন: সহকারী পরিচালক, টাঙ্গাইল ফায়ার স্টেশন ইত্যাদি ইত্যাদি)" required>
                                         <div class="input-group-append">
                                             <div class="input-group-text"><span class="fas fa-user-tie"></span></div>
                                         </div>
@@ -87,7 +87,7 @@
                                                name="mobile"
                                                value="{{ $fireservice->mobile }}"
                                                class="form-control"
-                                               placeholder="ফায়ার সার্ভিস কর্মকর্তার/স্টেশনের মোবাইল নম্বর" required>
+                                               placeholder="কোচিং সেন্টারর/স্টেশনের মোবাইল নম্বর" required>
                                         <div class="input-group-append">
                                             <div class="input-group-text"><span class="fas fa-mobile"></span></div>
                                         </div>
@@ -116,13 +116,13 @@
                           <div class="modal-dialog" role="document">
                             <div class="modal-content">
                               <div class="modal-header bg-danger">
-                                <h5 class="modal-title" id="deleteUserModalLabel">ফায়ার সার্ভিস কর্মকর্তা ডিলেট</h5>
+                                <h5 class="modal-title" id="deleteUserModalLabel">কোচিং সেন্টার ডিলেট</h5>
                                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                   <span aria-hidden="true">&times;</span>
                                 </button>
                               </div>
                               <div class="modal-body">
-                                আপনি কি নিশ্চিতভাবে এই ফায়ার সার্ভিস কর্মকর্তাকে ডিলেট করতে চান?<br/>
+                                আপনি কি নিশ্চিতভাবে এই কোচিং সেন্টারকে ডিলেট করতে চান?<br/>
                                 <center>
                                     <big><b>{{ $fireservice->name }}</b></big><br/>
                                     <small><i class="fas fa-phone"></i> {{ $fireservice->mobile }}</small>
@@ -170,7 +170,7 @@
                              name="name"
                              class="form-control"
                              value="{{ old('name') }}"
-                             placeholder="ফায়ার সার্ভিস কর্মকর্তার/স্টেশনের পদবি (যেমন: সহকারী পরিচালক, টাঙ্গাইল ফায়ার স্টেশন ইত্যাদি ইত্যাদি)" required>
+                             placeholder="কোচিং সেন্টারর/স্টেশনের পদবি (যেমন: সহকারী পরিচালক, টাঙ্গাইল ফায়ার স্টেশন ইত্যাদি ইত্যাদি)" required>
                       <div class="input-group-append">
                           <div class="input-group-text"><span class="fas fa-user-tie"></span></div>
                       </div>
@@ -180,7 +180,7 @@
                              name="mobile"
                              value="{{ old('mobile') }}"
                              class="form-control"
-                             placeholder="ফায়ার সার্ভিস কর্মকর্তার/স্টেশনের মোবাইল নম্বর" required>
+                             placeholder="কোচিং সেন্টারর/স্টেশনের মোবাইল নম্বর" required>
                       <div class="input-group-append">
                           <div class="input-group-text"><span class="fas fa-mobile"></span></div>
                       </div>
