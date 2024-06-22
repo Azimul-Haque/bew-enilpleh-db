@@ -478,12 +478,12 @@ class AdminandothersController extends Controller
         $coachingscount = Coaching::where('district_id', $district_id)
                                  ->where('name', 'LIKE', "%$search%")
                                  ->orWhere('mobile', 'LIKE', "%$search%")
-                                 ->orWhere('court', 'LIKE', "%$search%")->count();
+                                 ->orWhere('address', 'LIKE', "%$search%")->count();
 
         $coachings = Coaching::where('district_id', $district_id)
                             ->where('name', 'LIKE', "%$search%")
                             ->orWhere('mobile', 'LIKE', "%$search%")
-                            ->orWhere('court', 'LIKE', "%$search%")
+                            ->orWhere('address', 'LIKE', "%$search%")
                             ->orderBy('id', 'asc')
                             ->paginate(10);
 
