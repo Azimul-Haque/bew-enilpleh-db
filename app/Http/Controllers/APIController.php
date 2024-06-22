@@ -603,8 +603,6 @@ class APIController extends Controller
                                  ->get();
                                  // dd($rentacars);
                  foreach($rentacars as $rentacar) {
-                     // $rentacar->districtname = $rentacar->district->name_bangla;
-                     // $rentacar->upazillaname = $rentacar->upazilla->name_bangla;
                      $rentacar->image = $rentacar->rentacarimage ? $rentacar->rentacarimage->image : '';
                      $rentacar->makeHidden('district', 'upazilla', 'ambulanceimage', 'created_at', 'updated_at');
                  }
