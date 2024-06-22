@@ -615,6 +615,7 @@ class ComposerStaticInitd99be2aa22b662638be63ef18831ea06
         'App\\Providers\\BroadcastServiceProvider' => __DIR__ . '/../..' . '/app/Providers/BroadcastServiceProvider.php',
         'App\\Providers\\EventServiceProvider' => __DIR__ . '/../..' . '/app/Providers/EventServiceProvider.php',
         'App\\Providers\\RouteServiceProvider' => __DIR__ . '/../..' . '/app/Providers/RouteServiceProvider.php',
+        'App\\Rentacar' => __DIR__ . '/../..' . '/app/Rentacar.php',
         'App\\Repositories\\UserRepository' => __DIR__ . '/../..' . '/app/Repositories/UserRepository.php',
         'App\\Upazilla' => __DIR__ . '/../..' . '/app/Upazilla.php',
         'App\\User' => __DIR__ . '/../..' . '/app/User.php',
