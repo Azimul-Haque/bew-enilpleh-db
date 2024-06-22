@@ -555,9 +555,8 @@ class AdminandothersController extends Controller
         ));
 
         $rabbattalion = new Rabbattalion;
-        $rabbattalion->district_id = $district_id;
         $rabbattalion->name = $request->name;
-        $rabbattalion->mobile = $request->mobile;
+        $rabbattalion->detalis = $request->detalis;
         $rabbattalion->address = $request->address;
         $rabbattalion->save();
 
