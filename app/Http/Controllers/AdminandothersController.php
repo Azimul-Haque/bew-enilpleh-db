@@ -618,7 +618,7 @@ class AdminandothersController extends Controller
         
     }
 
-    public function storeDetailsRabbattalion(Request $request, $district_id)
+    public function storeDetailsRabbattalion(Request $request, $battalion_id)
     {
         $this->validate($request,array(
             'name'                => 'required|string|max:191',
