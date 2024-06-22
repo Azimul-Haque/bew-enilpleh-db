@@ -653,7 +653,7 @@ class APIController extends Controller
     {
         if($softtoken == env('SOFT_TOKEN'))
         {
-            $rabs = Cache::remember('coachings'  . $district_id, 30 * 24 * 60 * 60, function () use ($district_id) {
+            $rabs = Cache::remember('rabs'  . $district_id, 30 * 24 * 60 * 60, function () use ($district_id) {
                  $rabs = Coaching::where('district_id', $district_id)
                                  ->orderBy('id', 'asc')
                                  ->get();
