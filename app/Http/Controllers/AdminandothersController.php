@@ -650,9 +650,9 @@ class AdminandothersController extends Controller
         $rabbattaliondetail = new Rabbattaliondetail;
         $rabbattaliondetail->rabbattalion_id = $battalion_id;
         $rabbattaliondetail->designation = $designation;
-        $rabbattaliondetail->name = $request->name;
+        $rabbattaliondetail->area = $request->area;
         $rabbattaliondetail->mobile = $request->mobile;
-        $rabbattaliondetail->address = $request->address;
+        $rabbattaliondetail->telephone = $request->telephone;
         $rabbattaliondetail->save();
 
         Cache::forget('coachings' . $district_id);
