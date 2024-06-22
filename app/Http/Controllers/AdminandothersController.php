@@ -563,14 +563,9 @@ class AdminandothersController extends Controller
             $filename = random_string(5) . time() .'.' . "webp";
             $location = public_path('images/rabbattalions/'. $filename);
             Image::make($image)->resize(300, null, function ($constraint) { $constraint->aspectRatio(); })->save($location);
-            $rabbattalionimage              = new rabbattalionimage;
-            $rabbattalionimage->rabbattalion_id   = $rabbattalion->id;
-            $rabbattalionimage->image       = $filename;
-            $rabbattalionimage->save();
+            $rabbattalion->image       = $filename;
         }
         $rabbattalion->save();
-
-        
 
         Cache::forget('coachings' . $district_id);
         Session::flash('success', 'Coaching added successfully!');
