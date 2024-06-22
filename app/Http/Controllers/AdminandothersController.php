@@ -405,10 +405,10 @@ class AdminandothersController extends Controller
             $filename = random_string(5) . time() .'.' . "webp";
             $location = public_path('images/rentacars/'. $filename);
             Image::make($image)->fit(200, 200)->save($location);
-            $ambulanceimage              = new Ambulanceimage;
-            $ambulanceimage->ambulance_id   = $ambulance->id;
-            $ambulanceimage->image       = $filename;
-            $ambulanceimage->save();
+            $rentacarimage              = new Rentacarimage;
+            $rentacarimage->rentacar_id   = $rentacar->id;
+            $rentacarimage->image       = $filename;
+            $rentacarimage->save();
         }
 
         Cache::forget('lawyers' . $district_id . $request->court);
