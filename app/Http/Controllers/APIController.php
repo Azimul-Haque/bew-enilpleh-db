@@ -670,7 +670,7 @@ class APIController extends Controller
             
             return response()->json([
                 'success' => true,
-                'rabs' => $rabs,
+                'rabdata' => $rabdata,
             ]);
         } else {
             return response()->json([
