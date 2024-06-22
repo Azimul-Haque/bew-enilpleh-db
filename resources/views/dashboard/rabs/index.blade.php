@@ -195,6 +195,65 @@
       </div>
     </div>
 
+    {{-- Add User Modal Code --}}
+    {{-- Add User Modal Code --}}
+    <!-- Modal -->
+    <div class="modal fade" id="addUserModal" tabindex="-1" role="dialog" aria-labelledby="addUserModalLabel" aria-hidden="true" data-backdrop="static">
+      <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+          <div class="modal-header bg-success">
+            <h5 class="modal-title" id="addUserModalLabel">নতুন কোচিং সেন্টার যোগ (জেলা: <strong>{{ $district->name_bangla }}</strong>)</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <form method="post" action="{{ route('dashboard.coachings.store', $district->id) }}" enctype='multipart/form-data'>
+            <div class="modal-body">
+              
+                  @csrf
+                  
+                  <div class="input-group mb-3">
+                      <input type="text"
+                             name="name"
+                             class="form-control"
+                             value="{{ old('name') }}"
+                             placeholder="কোচিং সেন্টারের নাম" required>
+                      <div class="input-group-append">
+                          <div class="input-group-text"><span class="fas fa-user-tie"></span></div>
+                      </div>
+                  </div>
+                  <div class="input-group mb-3">
+                      <input type="number"
+                             name="mobile"
+                             value="{{ old('mobile') }}"
+                             class="form-control"
+                             placeholder="কোচিং সেন্টারের মোবাইল নম্বর" required>
+                      <div class="input-group-append">
+                          <div class="input-group-text"><span class="fas fa-mobile"></span></div>
+                      </div>
+                  </div>
+                  <div class="input-group mb-3">
+                      <input type="text"
+                             name="address"
+                             class="form-control"
+                             value="{{ old('address') }}"
+                             placeholder="কোচিং সেন্টারের ঠিকানা" required>
+                      <div class="input-group-append">
+                          <div class="input-group-text"><span class="fas fa-map-marked-alt"></span></div>
+                      </div>
+                  </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">ফিরে যান</button>
+              <button type="submit" class="btn btn-success">দাখিল করুন</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    {{-- Add User Modal Code --}}
+    {{-- Add User Modal Code --}}
+
 @endsection
 
 @section('third_party_scripts')
