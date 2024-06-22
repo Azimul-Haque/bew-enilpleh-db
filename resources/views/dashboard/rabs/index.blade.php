@@ -226,7 +226,7 @@
                       <textarea type="text"
                              name="details"
                              class="form-control"
-                             style="min-height:150px;" 
+                             style="min-height:100px;" 
                              placeholder="ব্যাটালিয়নের বিস্তারিত" required>{{ old('details') }}</textarea>
                       <div class="input-group-append">
                           <div class="input-group-text"><span class="fas fa-info-circle"></span></div>
