@@ -38,6 +38,7 @@
                 <tr>
                   <th>নাম</th>
                   <th>মোবাইল নম্বর</th>
+                  <th>ঠিকানা</th>
                   <th align="right">কার্যক্রম</th>
                 </tr>
               </thead>
