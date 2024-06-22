@@ -37,7 +37,7 @@
                           <tr>
                               @foreach ($chunk as $district)
                                   <td>
-                                    {{ $district->name_bangla }} <small>@if($district->rabs->count() == 0)(যুক্ত করা নেই) @else ({{ $district->rabs }}) @endif</small>
+                                    {{ $district->name_bangla }} <small>@if($district->rabs->count() > 0)(যুক্ত করা নেই) @else ({{ $district->rabs }}) @endif</small>
                                     {{ $district->rabs }}
                                   </td>
                                   <td>
