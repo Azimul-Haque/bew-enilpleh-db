@@ -565,10 +565,10 @@ class AdminandothersController extends Controller
             $filename = random_string(5) . time() .'.' . "webp";
             $location = public_path('images/rabbattalions/'. $filename);
             Image::make($image)->resize(300, null, function ($constraint) { $constraint->aspectRatio(); })->save($location);
-            $rentacarimage              = new Rentacarimage;
-            $rentacarimage->rentacar_id   = $rentacar->id;
-            $rentacarimage->image       = $filename;
-            $rentacarimage->save();
+            $rabbattalionimage              = new rabbattalionimage;
+            $rabbattalionimage->rabbattalion_id   = $rabbattalion->id;
+            $rabbattalionimage->image       = $filename;
+            $rabbattalionimage->save();
         }
 
         Cache::forget('coachings' . $district_id);
