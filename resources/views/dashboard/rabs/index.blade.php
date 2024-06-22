@@ -80,7 +80,10 @@
                       @foreach($rabbattalions as $rabbattalion)
                         <tr>
                           <td>
-                            {{ $rabbattalion->name }}
+                            {{ $rabbattalion->name }}<br/>
+                            <small>
+                              {{ $rabbattalion->details }}
+                            </small>
                           </td>
                           <td align="right">
                             {{-- <button type="button" class="btn btn-warning btn-sm" data-toggle="modal" data-target="#notifModal{{ $rabbattalion->id }}">
