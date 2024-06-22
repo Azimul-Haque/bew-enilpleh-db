@@ -363,7 +363,7 @@ class AdminandothersController extends Controller
         return view('dashboard.rentacars.single')
                             ->withDistrict($district)
                             ->withRentacarscount($rentacarscount)
-                            ->withLawyers($rentacars);
+                            ->withRentacars($rentacars);
     }
 
     public function rentacarIndexSearch($district_id, $search)
@@ -384,7 +384,7 @@ class AdminandothersController extends Controller
         return view('dashboard.rentacars.single')
                             ->withDistrict($district)
                             ->withRentacarscount($rentacarscount)
-                            ->withLawyers($rentacars);
+                            ->withRentacars($rentacars);
     }
 
     public function storeRentacar(Request $request, $district_id)
