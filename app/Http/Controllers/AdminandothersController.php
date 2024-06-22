@@ -550,8 +550,8 @@ class AdminandothersController extends Controller
     {
         $this->validate($request,array(
             'name'                => 'required|string|max:191',
-            'mobile'              => 'required|string|max:191',
-            'address'             => 'required|string|max:191',
+            'detalis'              => 'required|string|max:191',
+            'map'             => 'required|string|max:191',
         ));
 
         $coaching = new Coaching;
