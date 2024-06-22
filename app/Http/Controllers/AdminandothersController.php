@@ -647,12 +647,12 @@ class AdminandothersController extends Controller
             'telephone'         => 'sometimes',
         ));
 
-        $coaching = new Coaching;
-        $coaching->district_id = $district_id;
-        $coaching->name = $request->name;
-        $coaching->mobile = $request->mobile;
-        $coaching->address = $request->address;
-        $coaching->save();
+        $rabbattaliondetail = new Rabbattaliondetail;
+        $rabbattaliondetail->district_id = $district_id;
+        $rabbattaliondetail->name = $request->name;
+        $rabbattaliondetail->mobile = $request->mobile;
+        $rabbattaliondetail->address = $request->address;
+        $rabbattaliondetail->save();
 
         Cache::forget('coachings' . $district_id);
         Session::flash('success', 'Coaching added successfully!');
