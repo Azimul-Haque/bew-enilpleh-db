@@ -577,7 +577,7 @@ class AdminandothersController extends Controller
         $this->validate($request,array(
             'name'            => 'required|string|max:191',
             'details'         => 'required',
-            'map'             => 'required|image',
+            'map'             => 'sometimes|image',
         ));
 
         $rabbattalion = Rabbattalion::find($id);
