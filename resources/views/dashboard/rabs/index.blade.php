@@ -135,8 +135,8 @@
                                               <input type="file" id="image" name="map" accept="image/*">
                                           </div>
                                           <center>
-                                            @if($rentacar->rentacarimage != null)
-                                              <img src="{{ asset('images/rabbattalions/' . $rentacar->rentacarimage->image)}}" id='img-upload' style="width: 250px; height: auto;" class="img-responsive" />
+                                            @if($rabbattalion->map != null)
+                                              <img src="{{ asset('images/rabbattalions/' . $rabbattalion->map)}}" id='img-upload' style="width: 250px; height: auto;" class="img-responsive" />
                                             @else
                                               <img src="{{ asset('images/placeholder.png')}}" id='img-upload' style="width: 250px; height: auto;" class="img-responsive" />
                                             @endif
