@@ -64,7 +64,7 @@
                                                     <select name="district_id" id="district" class="form-control district" required>
                                                         <option selected="" disabled="" value="">র‍্যাব ব্যাটালিয়ন নির্বাচন করুন</option>
                                                         @foreach($rabbattalions as $rabbattalion)
-                                                          <option value="{{ $rabbattalion->id }}" @if($rabbattalion->id == $district->rabbattalion->id) selected @endif>{{ $rabbattalion->name_bangla }}</option>
+                                                          <option value="{{ $rabbattalion->id }}">{{ $rabbattalion->name_bangla }}</option>
                                                         @endforeach
                                                     </select>
                                                     <div class="input-group-append">
