@@ -678,6 +678,8 @@ class AdminandothersController extends Controller
         $rabbattaliondetail->mobile = $request->mobile;
         if($request->telephone != '') {
             $rabbattaliondetail->telephone = $request->telephone;
+        } else {
+            $rabbattaliondetail->telephone = '';
         }
         $rabbattaliondetail->save();
 
