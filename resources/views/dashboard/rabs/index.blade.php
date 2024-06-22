@@ -40,7 +40,9 @@
                                     <a href="{{ route('dashboard.coachings.districtwise', $district->id) }}" rel="tooltip" title="" data-original-title="{{ $district->name_bangla }} জেলার কোচিং সেন্টারের তালিকা দেখতে ক্লিক করুন">{{ $district->name_bangla }} <small>({{ bangla($district->rabs->count()) }} টি কোচিং সেন্টার)</small></a>
                                   </td>
                                   <td>
-                                    বাটন
+                                    <button type="button" class="btn btn-success btn-sm"  data-toggle="modal" data-target="#addRabBattalionModal" style="margin-left: 5px;">
+                                      <i class="fas fa-plus-square"></i> নতুন ব্যাটালিয়ন
+                                    </button>
                                   </td>
                               @endforeach
                               @if ($chunk->count() < 3)
