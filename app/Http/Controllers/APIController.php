@@ -24,6 +24,7 @@ use App\Fireservice;
 use App\Lawyer;
 use App\Rentacar;
 use App\Rentacarimage;
+use App\Coaching;
 
 use Hash;
 use Carbon\Carbon;
