@@ -82,7 +82,7 @@
                                                name="name"
                                                class="form-control"
                                                value="{{ $lawyer->name }}"
-                                               placeholder="রেন্ট-এ-কারর নাম" required>
+                                               placeholder="রেন্ট-এ-কারের নাম" required>
                                         <div class="input-group-append">
                                             <div class="input-group-text"><span class="fas fa-user-tie"></span></div>
                                         </div>
@@ -103,7 +103,7 @@
                                                name="mobile"
                                                value="{{ $lawyer->mobile }}"
                                                class="form-control"
-                                               placeholder="রেন্ট-এ-কারর মোবাইল নম্বর" required>
+                                               placeholder="রেন্ট-এ-কারের মোবাইল নম্বর" required>
                                         <div class="input-group-append">
                                             <div class="input-group-text"><span class="fas fa-mobile"></span></div>
                                         </div>
@@ -196,7 +196,7 @@
                              name="name"
                              class="form-control"
                              value="{{ old('name') }}"
-                             placeholder="রেন্ট-এ-কারর নাম" required>
+                             placeholder="রেন্ট-এ-কারের নাম" required>
                       <div class="input-group-append">
                           <div class="input-group-text"><span class="fas fa-user-tie"></span></div>
                       </div>
@@ -217,7 +217,7 @@
                              name="mobile"
                              value="{{ old('mobile') }}"
                              class="form-control"
-                             placeholder="রেন্ট-এ-কারর মোবাইল নম্বর" required>
+                             placeholder="রেন্ট-এ-কারের মোবাইল নম্বর" required>
                       <div class="input-group-append">
                           <div class="input-group-text"><span class="fas fa-mobile"></span></div>
                       </div>
