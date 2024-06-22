@@ -697,7 +697,7 @@ class AdminandothersController extends Controller
         $checkdistrictrab = Rab::where('district_id', $district_id)->first();
 
         
-        if(!$checkdistrictrab->isEmpty() || $checkdistrictrab != null) {
+        if($checkdistrictrab != null || !$checkdistrictrab->isEmpty()) {
             dd($checkdistrictrab);
         }
 
