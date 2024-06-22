@@ -80,7 +80,7 @@
                       @foreach($rabbattalions as $rabbattalion)
                         <tr>
                           <td>
-                            {{ $rabbattalion->name }}<br/>
+                            <a href="">{{ $rabbattalion->name }}</a><br/>
                             <div style="color: #9C9FA0; font-size: 12.5px; line-height: 90%!;">
                               {{ $rabbattalion->details }}
                             </div>
