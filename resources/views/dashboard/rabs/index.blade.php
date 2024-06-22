@@ -92,8 +92,8 @@
                             <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#editUserModal{{ $rabbattalion->id }}">
                               <i class="fas fa-edit"></i>
                             </button>
-                            {{-- Edit User Modal Code --}}
-                            {{-- Edit User Modal Code --}}
+                            {{-- Edit Rab Battalion Code --}}
+                            {{-- Edit Rab Battalion Code --}}
                             <!-- Modal -->
                             <div class="modal fade" id="editUserModal{{ $rabbattalion->id }}" tabindex="-1" role="dialog" aria-labelledby="editUserModalLabel" aria-hidden="true" data-backdrop="static">
                               <div class="modal-dialog" role="document">
@@ -149,8 +149,8 @@
                                 </div>
                               </div>
                             </div>
-                            {{-- Edit User Modal Code --}}
-                            {{-- Edit User Modal Code --}}
+                            {{-- Edit Rab Battalion Code --}}
+                            {{-- Edit Rab Battalion Code --}}
 
                             <button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#deleteUserModal{{ $rabbattalion->id }}">
                               <i class="fas fa-trash-alt"></i>
