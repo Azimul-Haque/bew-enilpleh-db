@@ -424,7 +424,7 @@ class AdminandothersController extends Controller
             'image'          => 'sometimes',
         ));
 
-        $rentacar = Lawyer::find($id);
+        $rentacar = Rentacar::find($id);
         $rentacar->district_id = $district_id;
         $rentacar->name = $request->name;
         $rentacar->mobile = $request->mobile;
