@@ -670,7 +670,7 @@ class APIController extends Controller
                     $rabbattaliondetail->area = $rabbattaliondetail->area;
                     $rabbattaliondetail->mobile = $rabbattaliondetail->mobile;
                     $rabbattaliondetail->telephone = $rabbattaliondetail->telephone;
-                    $rabbattaliondetail->makeHidden('id', 'district_id', 'created_at', 'updated_at');
+                    $rabbattaliondetail->makeHidden('id', 'rabbattalion_id', 'created_at', 'updated_at');
                 }
                 
                 return $rabdata;
