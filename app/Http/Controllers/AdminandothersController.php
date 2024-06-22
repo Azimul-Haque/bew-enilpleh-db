@@ -657,7 +657,7 @@ class AdminandothersController extends Controller
 
         Cache::forget('rabbattaliondetail' . $battalion_id);
         Session::flash('success', 'RAB Officer added successfully!');
-        return redirect()->route('dashboard.coachings.districtwise', $district_id);
+        return redirect()->route('dashboard.rabbattalions.details', $battalion_id);
     }
 
     public function updateDetailsRabbattalion(Request $request, $battalion_id, $id)
@@ -675,8 +675,8 @@ class AdminandothersController extends Controller
         $coaching->address = $request->address;
         $coaching->save();
 
-        Cache::forget('coachings' . $district_id);
-        Session::flash('success', 'Coaching added successfully!');
-        return redirect()->route('dashboard.coachings.districtwise', $district_id);
+        Cache::forget('rabbattaliondetail' . $battalion_id);
+        Session::flash('success', 'RAB Officer added successfully!');
+        return redirect()->route('dashboard.rabbattalions.details', $battalion_id);
     }
 }
