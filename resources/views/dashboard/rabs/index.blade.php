@@ -91,7 +91,7 @@
                       </tr>
                     </thead>
                     <tbody>
-                      @foreach($coachings as $coaching)
+                      @foreach($rabbattalions as $coaching)
                         <tr>
                           <td>
                             {{ $coaching->name }}
