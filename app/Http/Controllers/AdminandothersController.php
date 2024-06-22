@@ -699,6 +699,7 @@ class AdminandothersController extends Controller
         
         if($checkdistrictrab != null) {
             $checkdistrictrab->rabbattalion_id = $request->rabbattalion_id;
+            $checkdistrictrab->save();
         }
 
         // $rabbattaliondetail = Rabbattaliondetail::findOrFail($id);
