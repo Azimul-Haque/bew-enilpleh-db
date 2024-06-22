@@ -43,4 +43,8 @@ class District extends Model
     public function rentacars(){
         return $this->hasMany('App\Rentacar');
     }
+
+    public function coachings(){
+        return $this->hasMany('App\Coaching');
+    }
 }
