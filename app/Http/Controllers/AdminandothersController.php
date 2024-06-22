@@ -620,7 +620,7 @@ class AdminandothersController extends Controller
 
     public function detailsRabbattalionSearch($district_id, $search)
     {
-        $district = District::find($district_id);
+        $rabbattallion = Rabbattalion::findOrFail($id);
         $coachingscount = Coaching::where('district_id', $district_id)
                                  ->where('name', 'LIKE', "%$search%")
                                  ->orWhere('mobile', 'LIKE', "%$search%")
@@ -633,10 +633,10 @@ class AdminandothersController extends Controller
                             ->orderBy('id', 'asc')
                             ->paginate(10);
 
-        return view('dashboard.coachings.single')
-                            ->withDistrict($district)
-                            ->withCoachingscount($coachingscount)
-                            ->withcoachings($coachings);
+        return view('dashboard.rabs.rabbbatalionsdetails')
+                            ->withRabbattallion($rabbattallion)
+                            ->withRabbattallionofficerscount($rabbattallionofficerscount)
+                            ->withRabbattallionofficers($rabbattallionofficers);
     }
 
     public function storeDetailsRabbattalion(Request $request, $battalion_id)
