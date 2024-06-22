@@ -688,7 +688,7 @@ class AdminandothersController extends Controller
         return redirect()->route('dashboard.rabbattalions.details', $battalion_id);
     }
 
-    public function updateDistrictRabbattalion(Request $request, $battalion_id, $id)
+    public function updateDistrictRabbattalion(Request $request, $district_id)
     {
         $this->validate($request,array(
             'designation'       => 'required|string|max:191',
