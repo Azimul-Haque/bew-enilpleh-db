@@ -170,7 +170,7 @@
               <span aria-hidden="true">&times;</span>
             </button>
           </div>
-          <form method="post" action="{{ route('dashboard.rentacars.store', $district->id) }}" enctype='multipart/form-data'>
+          <form method="post" action="{{ route('dashboard.rentacars.store', $rabbattallion->id) }}" enctype='multipart/form-data'>
             <div class="modal-body">
               
                   @csrf
