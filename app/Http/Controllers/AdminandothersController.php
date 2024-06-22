@@ -627,11 +627,13 @@ class AdminandothersController extends Controller
         $rabbattallion = Rabbattalion::findOrFail($battalion_id);
         
         $rabbattallionofficerscount = Rabbattaliondetail::where('rabbattalion_id', $battalion_id)
-                                 ->where('name', 'LIKE', "%$search%")
+                                 ->where('designation', 'LIKE', "%$search%")
+                                 ->where('area', 'LIKE', "%$search%")
                                  ->orWhere('details', 'LIKE', "%$search%")->count();
 
         $rabbattallionofficers = Rabbattaliondetail::where('rabbattalion_id', $battalion_id)
-                                 ->where('name', 'LIKE', "%$search%")
+                                 ->where('designation', 'LIKE', "%$search%")
+                                 ->where('area', 'LIKE', "%$search%")
                                  ->orWhere('details', 'LIKE', "%$search%")
                                  ->orderBy('id', 'asc')
                                  ->paginate(10);
