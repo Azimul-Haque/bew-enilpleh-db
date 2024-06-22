@@ -691,10 +691,7 @@ class AdminandothersController extends Controller
     public function updateDistrictRabbattalion(Request $request, $district_id)
     {
         $this->validate($request,array(
-            'designation'       => 'required|string|max:191',
-            'area'              => 'required',
-            'mobile'            => 'required|string|max:191',
-            'telephone'         => 'sometimes',
+            'rabbattalion_id'       => 'required'
         ));
 
         $rabbattaliondetail = Rabbattaliondetail::findOrFail($id);
