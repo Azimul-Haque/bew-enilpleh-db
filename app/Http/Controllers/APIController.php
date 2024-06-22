@@ -664,7 +664,7 @@ class APIController extends Controller
                 $rabdata->battalion_name = $rab->rabbattalion->name;
                 $rabdata->battalion_details = $rab->rabbattalion->details;
                 $rabdata->battalion_map = $rab->rabbattalion->map;
-                dd($rabdata);
+                
                 foreach($$rab->rabbattalion->rabbattaliondetails as $rabbattaliondetail) {
                     $rabbattaliondetail->designation = $rabbattaliondetail->designation;
                     $rabbattaliondetail->area = $rabbattaliondetail->area;
@@ -673,7 +673,7 @@ class APIController extends Controller
                     $rabbattaliondetail->makeHidden('id', 'rabbattalion_id', 'created_at', 'updated_at');
                     $rabdata->push($rabbattaliondetail);
                 }
-                
+                dd($rabdata);
                 return $rabdata;
             });
             
