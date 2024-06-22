@@ -432,7 +432,7 @@ class AdminandothersController extends Controller
 
         // image upload
         if($request->hasFile('image')) {
-            $image_path = public_path('images/rentacars/'. $ambulance->ambulanceimage->image);
+            $image_path = public_path('images/rentacars/'. $rentacar->rentacarimage->image);
             // dd($image_path);
             if(File::exists($image_path)) {
                 File::delete($image_path);
@@ -441,9 +441,9 @@ class AdminandothersController extends Controller
             $filename = random_string(5) . time() .'.' . "webp";
             $location = public_path('images/rentacars/'. $filename);
             Image::make($image)->fit(200, 200)->save($location);
-            $ambulanceimage              = Ambulanceimage::where('ambulance_id', $ambulance->id)->first();
-            $ambulanceimage->image       = $filename;
-            $ambulanceimage->save();
+            $rentacarimage              = Rentacarimage::where('rentacar_id', $rentacar->id)->first();
+            $rentacarimage->image       = $filename;
+            $rentacarimage->save();
         }
 
         Cache::forget('rentacars' . $district_id);
