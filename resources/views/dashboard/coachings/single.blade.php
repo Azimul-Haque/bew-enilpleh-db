@@ -49,6 +49,7 @@
                       {{ $coaching->name }}
                     </td>
                     <td>{{ $coaching->mobile }}</td>
+                    <td>{{ $coaching->address }}</td>
                     <td align="right">
                       {{-- <button type="button" class="btn btn-warning btn-sm" data-toggle="modal" data-target="#notifModal{{ $coaching->id }}">
                         <i class="fas fa-bell"></i>
