@@ -649,7 +649,7 @@ class AdminandothersController extends Controller
 
         $rabbattaliondetail = new Rabbattaliondetail;
         $rabbattaliondetail->rabbattalion_id = $battalion_id;
-        $rabbattaliondetail->designation = $designation;
+        $rabbattaliondetail->designation = $request->designation;
         $rabbattaliondetail->area = $request->area;
         $rabbattaliondetail->mobile = $request->mobile;
         $rabbattaliondetail->telephone = $request->telephone;
@@ -671,7 +671,7 @@ class AdminandothersController extends Controller
 
         $rabbattaliondetail = Rabbattaliondetail::findOrFail($id);
         $rabbattaliondetail->rabbattalion_id = $battalion_id;
-        $rabbattaliondetail->designation = $designation;
+        $rabbattaliondetail->designation = $request->designation;
         $rabbattaliondetail->area = $request->area;
         $rabbattaliondetail->mobile = $request->mobile;
         $rabbattaliondetail->telephone = $request->telephone;
