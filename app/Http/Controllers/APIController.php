@@ -665,7 +665,7 @@ class APIController extends Controller
                 $rabdata->battalion_details = $rab->rabbattalion->details;
                 $rabdata->battalion_map = $rab->rabbattalion->map;
                 
-                foreach($$rab->rabbattalion->rabbattaliondetails as $rabbattaliondetail) {
+                foreach($rab->rabbattalion->rabbattaliondetails as $rabbattaliondetail) {
                     $rabbattaliondetail->designation = $rabbattaliondetail->designation;
                     $rabbattaliondetail->area = $rabbattaliondetail->area;
                     $rabbattaliondetail->mobile = $rabbattaliondetail->mobile;
