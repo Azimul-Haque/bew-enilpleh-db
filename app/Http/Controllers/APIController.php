@@ -649,6 +649,31 @@ class APIController extends Controller
         }
     }
 
+    public function getRabs($softtoken, $district_id)
+    {
+        if($softtoken == env('SOFT_TOKEN'))
+        {
+            $coachings = Cache::remember('coachings'  . $district_id, 30 * 24 * 60 * 60, function () use ($district_id) {
+                 $coachings = Coaching::where('district_id', $district_id)
+                                 ->orderBy('id', 'asc')
+                                 ->get();
+                 foreach($coachings as $fireservice) {
+                       $fireservice->makeHidden('id', 'district_id', 'created_at', 'updated_at');
+                   }
+                 return $coachings;
+            });
+            
+            return response()->json([
+                'success' => true,
+                'coachings' => $coachings,
+            ]);
+        } else {
+            return response()->json([
+                'success' => false
+            ]);
+        }
+    }
+
 
 
 
