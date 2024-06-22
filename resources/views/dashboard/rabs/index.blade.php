@@ -41,7 +41,7 @@
                                   </td>
                                   <td>
                                     <button type="button" class="btn btn-warning btn-sm"  data-toggle="modal" data-target="#addRabBattalionModal" style="margin-left: 5px;" rel="tooltip" title="" data-original-title="র‍্যাব ব্যাটালিয়ন সংযুক্ত করুন">
-                                      <i class="fas fa-plus-square"></i> আপডেট করুন
+                                      <i class="fas fa-link"></i> আপডেট
                                     </button>
                                   </td>
                               @endforeach
