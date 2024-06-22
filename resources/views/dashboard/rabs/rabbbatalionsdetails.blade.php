@@ -51,7 +51,7 @@
                     <td>{{ $rabbattallionofficer->area }}</td>
                     <td>
                       <i class="fas fa-mobile"></i> {{ $rabbattallionofficer->mobile }}<br/>
-                      <i class="fas fa-phone"></i> {{ $rabbattallionofficer->telephone }}
+                      @if($rabbattallionofficer->telephone != '')<i class="fas fa-phone"></i> {{ $rabbattallionofficer->telephone }}@endif
                     </td>
                     <td align="right">
                       <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#editUserModal{{ $rabbattallionofficer->id }}">
