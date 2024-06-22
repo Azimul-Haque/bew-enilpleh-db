@@ -51,7 +51,7 @@
                     <td>{{ $rabbattallionofficer->area }}</td>
                     <td>
                       <i class="fa fas-mobile"></i>{{ $rabbattallionofficer->mobile }}<br/>
-                      {{ $rabbattallionofficer->telephone }}
+                      <i class="fa fas-phone"></i>{{ $rabbattallionofficer->telephone }}
                     </td>
                     <td align="right">
                       <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#editUserModal{{ $rabbattallionofficer->id }}">
