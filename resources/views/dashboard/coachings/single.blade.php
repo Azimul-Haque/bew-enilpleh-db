@@ -1,5 +1,5 @@
 @extends('layouts.app')
-@section('title') ড্যাশবোর্ড | ফায়ার সার্ভিস কর্মকর্তাগণমকর্তা তালিকা @endsection
+@section('title') ড্যাশবোর্ড | কোচিং সেন্টার তালিকা @endsection
 
 @section('third_party_stylesheets')
    {{--  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/icheck-bootstrap@3.0.1/icheck-bootstrap.min.css">
