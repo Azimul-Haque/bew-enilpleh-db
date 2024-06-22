@@ -563,7 +563,7 @@ class AdminandothersController extends Controller
             $filename = random_string(5) . time() .'.' . "webp";
             $location = public_path('images/rabbattalions/'. $filename);
             Image::make($image)->resize(300, null, function ($constraint) { $constraint->aspectRatio(); })->save($location);
-            $rabbattalion->image       = $filename;
+            $rabbattalion->map       = $filename;
         }
         $rabbattalion->save();
 
@@ -585,7 +585,7 @@ class AdminandothersController extends Controller
         $rabbattalion->detalis = $request->detalis;
         // image upload
         if($request->hasFile('image')) {
-            $image_path = public_path('images/rentacars/'. $rentacar->rentacarimage->image);
+            $image_path = public_path('images/rabbattalions/'. $rabbattalion->map);
             // dd($image_path);
             if(File::exists($image_path)) {
                 File::delete($image_path);
