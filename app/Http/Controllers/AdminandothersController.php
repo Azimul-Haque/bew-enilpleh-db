@@ -624,7 +624,7 @@ class AdminandothersController extends Controller
 
     public function detailsRabbattalionSearch($battalion_id, $search)
     {
-        $rabbattallion = Rabbattalion::findOrFail($id);
+        $rabbattallion = Rabbattalion::findOrFail($battalion_id);
         
         $rabbattallionofficerscount = Rabbattaliondetail::where('battalion_id', $battalion_id)
                                  ->where('name', 'LIKE', "%$search%")
