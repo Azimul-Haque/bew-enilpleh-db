@@ -640,6 +640,23 @@ class AdminandothersController extends Controller
                                  ->orderBy('id', 'asc')
                                  ->paginate(10);
 
+        // Initialize query
+        $query = Rabbattaliondetail::where('rabbattalion_id', $battalion_id);
+
+        // If the search parameter is provided, apply it to designation, area, mobile, and telephone fields
+        if ($request->filled('search')) {
+            $search = $request->search;
+            $query->where(function($q) use ($search) {
+                $q->where('designation', 'LIKE', '%' . $search . '%')
+                  ->orWhere('area', 'LIKE', '%' . $search . '%')
+                  ->orWhere('mobile', 'LIKE', '%' . $search . '%')
+                  ->orWhere('telephone', 'LIKE', '%' . $search . '%');
+            });
+        }
+
+        // Get the results
+        $results = $query->get();
+
         return view('dashboard.rabs.rabbbatalionsdetails')
                             ->withRabbattallion($rabbattallion)
                             ->withRabbattallionofficerscount($rabbattallionofficerscount)
