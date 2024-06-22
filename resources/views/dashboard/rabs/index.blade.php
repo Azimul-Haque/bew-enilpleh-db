@@ -73,7 +73,7 @@
                     <thead>
                       <tr>
                         <th>নাম</th>
-                        <th align="right">কার্যক্রম</th>
+                        <th width="20%">কার্যক্রম</th>
                       </tr>
                     </thead>
                     <tbody>
