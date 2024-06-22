@@ -694,7 +694,7 @@ class AdminandothersController extends Controller
             'rabbattalion_id'       => 'required'
         ));
 
-        $checkdistrictrab = Rab::where(district_id, $district_id)->first();
+        $checkdistrictrab = Rab::where('district_id', $district_id)->first();
 
         dd(!$checkdistrictrab->isEmpty());
         if(!$checkdistrictrab->isEmpty()) {
