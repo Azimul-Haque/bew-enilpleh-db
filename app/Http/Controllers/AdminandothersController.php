@@ -604,7 +604,7 @@ class AdminandothersController extends Controller
         return redirect()->route('dashboard.rabs');
     }
 
-    public function detailsRabbattalion($value='')
+    public function detailsRabbattalion($id)
     {
         // code...
     }
