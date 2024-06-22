@@ -50,7 +50,7 @@
                     </td>
                     <td>{{ $rabbattallionofficer->area }}</td>
                     <td>
-                      {{ $rabbattallionofficer->mobile }}<br/>
+                      <i class="fa fas-mobile"></i>{{ $rabbattallionofficer->mobile }}<br/>
                       {{ $rabbattallionofficer->telephone }}
                     </td>
                     <td align="right">
