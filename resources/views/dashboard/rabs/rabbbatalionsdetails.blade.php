@@ -89,7 +89,7 @@
                                         <input type="text"
                                                name="area"
                                                class="form-control"
-                                               value="{{ old('area') }}"
+                                               value="{{ $rabbattallionofficer->area }}"
                                                placeholder="র‍্যাব অফিসারের দায়িত্বপূর্ণ এলাকা" required>
                                         <div class="input-group-append">
                                             <div class="input-group-text"><span class="fas fa-user-tie"></span></div>
