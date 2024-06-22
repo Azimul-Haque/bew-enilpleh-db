@@ -103,17 +103,17 @@
                                             <div class="input-group-text"><span class="fas fa-mobile"></span></div>
                                         </div>
                                     </div>
-                                    <div class="input-group mb-3">
-                                        <input type="text"
-                                               name="court"
-                                               value="{{ $rentacar->court }}"
-                                               class="form-control"
-                                               placeholder="কোর্টের নাম" required>
-                                        <div class="input-group-append">
-                                            <div class="input-group-text"><span class="fas fa-university"></span></div>
-                                        </div>
+                                    <div class="form-group">
+                                        <label for="image">ছবি (প্রয়োজনে, ৩০০ x ৩০০ সাইজের, ২ মেগাবাইটের মধ্যে)</label>
+                                        <input type="file" id="image" name="image" accept="image/*">
                                     </div>
-                                     
+                                    <center>
+                                      @if($ambulance->ambulanceimage != null)
+                                        <img src="{{ asset('images/ambulances/' . $ambulance->ambulanceimage->image)}}" id='img-upload' style="width: 250px; height: auto;" class="img-responsive" />
+                                      @else
+                                        <img src="{{ asset('images/placeholder.png')}}" id='img-upload' style="width: 250px; height: auto;" class="img-responsive" />
+                                      @endif
+                                    </center>                                               
                               </div>
                               <div class="modal-footer">
                                 <button type="button" class="btn btn-secondary" data-dismiss="modal">ফিরে যান</button>
