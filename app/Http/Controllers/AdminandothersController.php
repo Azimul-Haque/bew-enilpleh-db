@@ -358,12 +358,12 @@ class AdminandothersController extends Controller
     {
         $district = District::find($district_id);
         $lawyerscount = Lawyer::where('district_id', $district_id)->count();
-        $lawyers = Lawyer::where('district_id', $district_id)->orderBy('id', 'asc')->paginate(10);
+        $rentacars = Lawyer::where('district_id', $district_id)->orderBy('id', 'asc')->paginate(10);
                 
-        return view('dashboard.lawyers.single')
+        return view('dashboard.rentacars.single')
                             ->withDistrict($district)
                             ->withLawyerscount($lawyerscount)
-                            ->withLawyers($lawyers);
+                            ->withLawyers($rentacars);
     }
 
     public function rentacarIndexSearch($district_id, $search)
@@ -374,17 +374,17 @@ class AdminandothersController extends Controller
                                  ->orWhere('mobile', 'LIKE', "%$search%")
                                  ->orWhere('court', 'LIKE', "%$search%")->count();
 
-        $lawyers = Lawyer::where('district_id', $district_id)
+        $rentacars = Lawyer::where('district_id', $district_id)
                             ->where('name', 'LIKE', "%$search%")
                             ->orWhere('mobile', 'LIKE', "%$search%")
                             ->orWhere('court', 'LIKE', "%$search%")
                             ->orderBy('id', 'asc')
                             ->paginate(10);
 
-        return view('dashboard.lawyers.single')
+        return view('dashboard.rentacars.single')
                             ->withDistrict($district)
                             ->withLawyerscount($lawyerscount)
-                            ->withLawyers($lawyers);
+                            ->withLawyers($rentacars);
     }
 
     public function storeLawyer(Request $request, $district_id)
