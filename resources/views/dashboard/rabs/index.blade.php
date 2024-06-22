@@ -113,7 +113,7 @@
                                               <input type="text"
                                                      name="name"
                                                      class="form-control"
-                                                     value="{{ old('name') }}"
+                                                     value="{{ $rabbattalion->name }}"
                                                      placeholder="র‍্যাব ব্যাটালিয়নের নাম" required>
                                               <div class="input-group-append">
                                                   <div class="input-group-text"><span class="fas fa-user-shield"></span></div>
