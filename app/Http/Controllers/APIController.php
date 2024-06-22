@@ -654,7 +654,7 @@ class APIController extends Controller
         if($softtoken == env('SOFT_TOKEN'))
         {
             $rabs = Cache::remember('rabs'  . $district_id, 30 * 24 * 60 * 60, function () use ($district_id) {
-                $rabs = Rab::where('district_id', $district_id)->first();
+                $battalion = Rab::where('district_id', $district_id)->first();
                     foreach($rabs as $fireservice) {
                         $fireservice->makeHidden('id', 'district_id', 'created_at', 'updated_at');
                     }
