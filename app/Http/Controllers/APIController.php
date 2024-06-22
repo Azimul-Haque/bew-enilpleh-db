@@ -675,7 +675,6 @@ class APIController extends Controller
                    } 
                 }
                 
-                
                 $battalion_info = [
                     'battalion_name' => $battalion_name,
                     'battalion_details' => $battalion_details,
