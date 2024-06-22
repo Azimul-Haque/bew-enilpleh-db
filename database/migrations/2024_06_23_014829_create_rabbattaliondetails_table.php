@@ -17,7 +17,7 @@ class CreateRabbattaliondetailsTable extends Migration
             $table->id();
             $table->integer('rabbattalion_id');
             $table->string('designation');
-            $table->string('area');
+            $table->text('area');
             $table->string('mobile');
             $table->string('telephone');
         });
