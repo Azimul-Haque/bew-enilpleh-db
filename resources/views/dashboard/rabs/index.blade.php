@@ -136,7 +136,7 @@
                                           </div>
                                           <center>
                                             @if($rentacar->rentacarimage != null)
-                                              <img src="{{ asset('images/rentacars/' . $rentacar->rentacarimage->image)}}" id='img-upload' style="width: 250px; height: auto;" class="img-responsive" />
+                                              <img src="{{ asset('images/rabbattalions/' . $rentacar->rentacarimage->image)}}" id='img-upload' style="width: 250px; height: auto;" class="img-responsive" />
                                             @else
                                               <img src="{{ asset('images/placeholder.png')}}" id='img-upload' style="width: 250px; height: auto;" class="img-responsive" />
                                             @endif
