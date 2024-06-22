@@ -357,19 +357,19 @@ class AdminandothersController extends Controller
     public function rentacarIndexSingle($district_id)
     {
         $district = District::find($district_id);
-        $lawyerscount = Lawyer::where('district_id', $district_id)->count();
+        $rentacarscount = Lawyer::where('district_id', $district_id)->count();
         $rentacars = Lawyer::where('district_id', $district_id)->orderBy('id', 'asc')->paginate(10);
                 
         return view('dashboard.rentacars.single')
                             ->withDistrict($district)
-                            ->withLawyerscount($lawyerscount)
+                            ->withRentacarscount($rentacarscount)
                             ->withLawyers($rentacars);
     }
 
     public function rentacarIndexSearch($district_id, $search)
     {
         $district = District::find($district_id);
-        $lawyerscount = Lawyer::where('district_id', $district_id)
+        $rentacarscount = Lawyer::where('district_id', $district_id)
                                  ->where('name', 'LIKE', "%$search%")
                                  ->orWhere('mobile', 'LIKE', "%$search%")
                                  ->orWhere('court', 'LIKE', "%$search%")->count();
@@ -383,7 +383,7 @@ class AdminandothersController extends Controller
 
         return view('dashboard.rentacars.single')
                             ->withDistrict($district)
-                            ->withLawyerscount($lawyerscount)
+                            ->withRentacarscount($rentacarscount)
                             ->withLawyers($rentacars);
     }
 
