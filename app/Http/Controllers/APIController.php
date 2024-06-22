@@ -660,11 +660,11 @@ class APIController extends Controller
                 $rab = Rab::where('district_id', $district_id)->first();
                 
                 
-                $rabdata = collect();
+                $battalion_data = collect();
                 
-                $rabdata->battalion_name = $rab->rabbattalion->name;
-                $rabdata->battalion_details = $rab->rabbattalion->details;
-                $rabdata->battalion_map = $rab->rabbattalion->map;
+                $battalion_name = $rab->rabbattalion->name;
+                $battalion_details = $rab->rabbattalion->details;
+                $battalion_map = $rab->rabbattalion->map;
                 foreach($rab->rabbattalion->rabbattaliondetails as $rabbattaliondetail) {
                     // $rabbattaliondetail->designation = $rabbattaliondetail->designation;
                     // $rabbattaliondetail->area = $rabbattaliondetail->area;
