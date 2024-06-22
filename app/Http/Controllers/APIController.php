@@ -681,14 +681,6 @@ class APIController extends Controller
                 ];
                 
                 return $battalion_info;
-                
-                if($rab != null) {
-                    
-                } else {
-                    return response()->json([
-                        'success' => false
-                    ]);
-                }
             });
             
             return response()->json([
