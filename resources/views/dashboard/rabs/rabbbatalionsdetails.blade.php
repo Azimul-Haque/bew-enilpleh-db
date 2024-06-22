@@ -109,7 +109,7 @@
 
                                     <div class="input-group mb-3">
                                         <input type="number"
-                                               name="mobile"
+                                               name="telephone"
                                                value="{{ $rabbattallionofficer->telephone }}"
                                                class="form-control"
                                                placeholder="র‍্যাব অফিসারের টেলিফোন নম্বর (যদি থাকে)">
