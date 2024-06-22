@@ -40,7 +40,7 @@
                                     {{ $district->name_bangla }} 
                                     <small>
                                       @if($district->rabs->count() == 0)(যুক্ত করা নেই)@endif
-                                      @if($district->rabs->count() > 0)(<strong>{{ $district->rabs->first()->rabbattalion->name }}</strong>)@endif
+                                      @if($district->rabs->count() > 0)<strong>({{ $district->rabs->first()->rabbattalion->name }})</strong>@endif
                                     </small>
                                   </td>
                                   <td>
