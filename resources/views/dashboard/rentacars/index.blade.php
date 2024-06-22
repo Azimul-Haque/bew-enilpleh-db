@@ -35,7 +35,7 @@
                     <tr>
                         @foreach ($chunk as $district)
                             <td>
-                              <a href="{{ route('dashboard.lawyers.districtwise', $district->id) }}" rel="tooltip" title="" data-original-title="{{ $district->name_bangla }} জেলার আইনজীবী তালিকা দেখতে ক্লিক করুন">{{ $district->name_bangla }} <small>({{ bangla($district->lawyers->count()) }} জন কর্মকর্তা)</small></a>
+                              <a href="{{ route('dashboard.rentacars.districtwise', $district->id) }}" rel="tooltip" title="" data-original-title="{{ $district->name_bangla }} জেলার আইনজীবী তালিকা দেখতে ক্লিক করুন">{{ $district->name_bangla }} <small>({{ bangla($district->rentacars->count()) }} জন কর্মকর্তা)</small></a>
                             </td>
                         @endforeach
                         @if ($chunk->count() < 5)
