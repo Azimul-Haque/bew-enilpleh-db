@@ -452,7 +452,7 @@ class AdminandothersController extends Controller
         return redirect()->route('dashboard.rentacars.districtwise', $district_id);
     }
 
-    public function coacingIndex()
+    public function coachingIndex()
     {
         $districts = District::all();
                 
