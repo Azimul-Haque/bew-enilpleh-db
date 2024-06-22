@@ -113,32 +113,30 @@
                                               <input type="text"
                                                      name="name"
                                                      class="form-control"
-                                                     value="{{ $rabbattalion->name }}"
-                                                     placeholder="কোচিং সেন্টারের নাম" required>
+                                                     value="{{ old('name') }}"
+                                                     placeholder="র‍্যাব ব্যাটালিয়নের নাম" required>
                                               <div class="input-group-append">
-                                                  <div class="input-group-text"><span class="fas fa-user-tie"></span></div>
+                                                  <div class="input-group-text"><span class="fas fa-user-shield"></span></div>
                                               </div>
                                           </div>
                                           <div class="input-group mb-3">
-                                              <input type="number"
-                                                     name="mobile"
-                                                     value="{{ $rabbattalion->mobile }}"
+                                              <textarea type="text"
+                                                     name="details"
                                                      class="form-control"
-                                                     placeholder="কোচিং সেন্টারের মোবাইল নম্বর" required>
+                                                     style="min-height:100px;" 
+                                                     placeholder="ব্যাটালিয়নের বিস্তারিত" required>{{ old('details') }}</textarea>
                                               <div class="input-group-append">
-                                                  <div class="input-group-text"><span class="fas fa-mobile"></span></div>
+                                                  <div class="input-group-text"><span class="fas fa-info-circle"></span></div>
                                               </div>
                                           </div>
-                                          <div class="input-group mb-3">
-                                              <input type="text"
-                                                     name="address"
-                                                     class="form-control"
-                                                     value="{{ $rabbattalion->address }}"
-                                                     placeholder="কোচিং সেন্টারের ঠিকানা" required>
-                                              <div class="input-group-append">
-                                                  <div class="input-group-text"><span class="fas fa-map-marked-alt"></span></div>
-                                              </div>
+                                          
+                                          <div class="form-group ">
+                                              <label for="image">ম্যাপ (২ মেগাবাইটের মধ্যে)</label>
+                                              <input type="file" id="image" name="map" accept="image/*" required>
                                           </div>
+                                          <center>
+                                              <img src="{{ asset('images/placeholder.png')}}" id='img-upload' style="width: 250px; height: auto;" class="img-responsive" />
+                                          </center> 
                                            
                                     </div>
                                     <div class="modal-footer">
