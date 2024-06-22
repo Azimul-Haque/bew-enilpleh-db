@@ -1,5 +1,5 @@
 @extends('layouts.app')
-@section('title') ড্যাশবোর্ড | রেন্ট-এ-কার তালিকা @endsection
+@section('title') ড্যাশবোর্ড | র‍্যাব ব্যাটালিয়ন বিস্তারিত @endsection
 
 @section('third_party_stylesheets')
    {{--  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/icheck-bootstrap@3.0.1/icheck-bootstrap.min.css">
