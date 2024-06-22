@@ -554,12 +554,12 @@ class AdminandothersController extends Controller
             'map'             => 'required|string|max:191',
         ));
 
-        $coaching = new Rabbattalion;
-        $coaching->district_id = $district_id;
-        $coaching->name = $request->name;
-        $coaching->mobile = $request->mobile;
-        $coaching->address = $request->address;
-        $coaching->save();
+        $rabbattalion = new Rabbattalion;
+        $rabbattalion->district_id = $district_id;
+        $rabbattalion->name = $request->name;
+        $rabbattalion->mobile = $request->mobile;
+        $rabbattalion->address = $request->address;
+        $rabbattalion->save();
 
         Cache::forget('coachings' . $district_id);
         Session::flash('success', 'Coaching added successfully!');
