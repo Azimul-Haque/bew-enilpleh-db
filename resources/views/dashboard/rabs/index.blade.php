@@ -132,7 +132,7 @@
                                           
                                           <div class="form-group">
                                               <label for="image">ম্যাপ (প্রয়োজনে, ২ মেগাবাইটের মধ্যে)</label>
-                                              <input type="file" id="image" name="image" accept="image/*">
+                                              <input type="file" id="image" name="map" accept="image/*">
                                           </div>
                                           <center>
                                             @if($rentacar->rentacarimage != null)
