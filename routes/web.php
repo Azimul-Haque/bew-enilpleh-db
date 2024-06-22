@@ -120,6 +120,7 @@ Route::get('/dashboard/rabs/battalion/details/{id}', 'AdminandothersController@d
 Route::get('/dashboard/rabs/battalion/details/{id}/{search}', 'AdminandothersController@detailsRabbattalionSearch')->name('dashboard.rabbattalions.details.search');
 Route::post('/dashboard/rabs/battalion/details/{battalion_id}/store', 'AdminandothersController@storeDetailsRabbattalion')->name('dashboard.rabbattalionsdetails.store');
 Route::post('/dashboard/rabs/battalion/details/{battalion_id}/{id}/update', 'AdminandothersController@updateDetailsRabbattalion')->name('dashboard.rabbattalionsdetails.update');
+Route::post('/dashboard/rabs/battalion/district/{district_id}/{battalion_id}/update', 'AdminandothersController@updateRabbattalion')->name('dashboard.rabbattalions.update');
 // Route::get('/dashboard/coachings/{district_id}', 'AdminandothersController@coachingIndexSingle')->name('dashboard.coachings.districtwise');
 // Route::get('/dashboard/coachings/{district_id}/{search}', 'AdminandothersController@coachingIndexSearch')->name('dashboard.coachings.districtwise.search');
 // Route::post('/dashboard/coachings/{district_id}/store', 'AdminandothersController@storeCoaching')->name('dashboard.coachings.store');
