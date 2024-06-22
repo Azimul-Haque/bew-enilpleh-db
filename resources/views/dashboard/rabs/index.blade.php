@@ -63,8 +63,8 @@
                                                   <div class="input-group mb-3">
                                                     <select name="district_id" id="district" class="form-control district" required>
                                                         <option selected="" disabled="" value="">র‍্যাব ব্যাটালিয়ন নির্বাচন করুন</option>
-                                                        @foreach($districts as $district)
-                                                          <option value="{{ $district->id }}" @if($district->id == $doctor->district_id) selected @endif>{{ $district->name_bangla }}</option>
+                                                        @foreach($rabbattalions as $rabbattalion)
+                                                          <option value="{{ $rabbattalion->id }}" @if($rabbattalion->id == $doctor->rabbattalion_id) selected @endif>{{ $rabbattalion->name_bangla }}</option>
                                                         @endforeach
                                                     </select>
                                                     <div class="input-group-append">
