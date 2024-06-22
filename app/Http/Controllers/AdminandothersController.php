@@ -558,8 +558,8 @@ class AdminandothersController extends Controller
         $rabbattalion->name = $request->name;
         $rabbattalion->details = $request->details;
         // image upload
-        if($request->hasFile('image')) {
-            $image    = $request->file('image');
+        if($request->hasFile('map')) {
+            $image    = $request->file('map');
             $filename = random_string(5) . time() .'.' . "webp";
             $location = public_path('images/rabbattalions/'. $filename);
             Image::make($image)->resize(300, null, function ($constraint) { $constraint->aspectRatio(); })->save($location);
