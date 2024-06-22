@@ -641,9 +641,10 @@ class AdminandothersController extends Controller
     public function storeDetailsRabbattalion(Request $request, $battalion_id)
     {
         $this->validate($request,array(
-            'name'                => 'required|string|max:191',
-            'mobile'              => 'required|string|max:191',
-            'address'             => 'required|string|max:191',
+            'designation'       => 'required|string|max:191',
+            'area'              => 'required',
+            'mobile'            => 'required|string|max:191',
+            'telephone'         => 'sometimes',
         ));
 
         $coaching = new Coaching;
@@ -661,7 +662,7 @@ class AdminandothersController extends Controller
     public function updateDetailsRabbattalion(Request $request, $battalion_id, $id)
     {
         $this->validate($request,array(
-            'name'                => 'required|string|max:191',
+            'designation'                => 'required|string|max:191',
             'mobile'              => 'required|string|max:191',
             'address'             => 'required|string|max:191',
         ));
