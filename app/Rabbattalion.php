@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Rabbattalion extends Model
 {
-    public function coachings(){
-        return $this->hasMany('App\Coaching');
+    public function rabbattaliondetails(){
+        return $this->hasMany('App\Rabbattaliondetail');
     }
 }
