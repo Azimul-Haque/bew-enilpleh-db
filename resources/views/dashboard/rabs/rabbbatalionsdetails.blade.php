@@ -11,12 +11,12 @@
     <div class="container-fluid">
     <div class="card">
           <div class="card-header">
-            <h3 class="card-title">রেন্ট-এ-কার তালিকা</h3>
+            <h3 class="card-title">র‍্যাব অফিসার তালিকা</h3>
 
             <div class="card-tools">
               <form class="form-inline form-group-lg" action="">
                 <div class="form-group">
-                  <input type="search-param" class="form-control form-control-sm" placeholder="রেন্ট-এ-কার খুঁজুন" id="search-param" required>
+                  <input type="search-param" class="form-control form-control-sm" placeholder="র‍্যাব অফিসার খুঁজুন" id="search-param" required>
                 </div>
                 <button type="button" id="search-button" class="btn btn-default btn-sm" style="margin-left: 5px;">
                   <i class="fas fa-search"></i> খুঁজুন
@@ -62,7 +62,7 @@
                         <div class="modal-dialog" role="document">
                           <div class="modal-content">
                             <div class="modal-header bg-primary">
-                              <h5 class="modal-title" id="editUserModalLabel">রেন্ট-এ-কার তথ্য হালনাগাদ</h5>
+                              <h5 class="modal-title" id="editUserModalLabel">র‍্যাব অফিসার তথ্য হালনাগাদ</h5>
                               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                 <span aria-hidden="true">&times;</span>
                               </button>
@@ -77,7 +77,7 @@
                                                name="name"
                                                class="form-control"
                                                value="{{ $rentacar->name }}"
-                                               placeholder="রেন্ট-এ-কারের নাম" required>
+                                               placeholder="র‍্যাব অফিসারের ডেসিগ্নেশন" required>
                                         <div class="input-group-append">
                                             <div class="input-group-text"><span class="fas fa-user-tie"></span></div>
                                         </div>
@@ -87,7 +87,7 @@
                                                name="mobile"
                                                value="{{ $rentacar->mobile }}"
                                                class="form-control"
-                                               placeholder="রেন্ট-এ-কারের মোবাইল নম্বর" required>
+                                               placeholder="র‍্যাব অফিসারের মোবাইল নম্বর" required>
                                         <div class="input-group-append">
                                             <div class="input-group-text"><span class="fas fa-mobile"></span></div>
                                         </div>
@@ -126,13 +126,13 @@
                           <div class="modal-dialog" role="document">
                             <div class="modal-content">
                               <div class="modal-header bg-danger">
-                                <h5 class="modal-title" id="deleteUserModalLabel">রেন্ট-এ-কার ডিলেট</h5>
+                                <h5 class="modal-title" id="deleteUserModalLabel">র‍্যাব অফিসার ডিলেট</h5>
                                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                   <span aria-hidden="true">&times;</span>
                                 </button>
                               </div>
                               <div class="modal-body">
-                                আপনি কি নিশ্চিতভাবে এই রেন্ট-এ-কারকে ডিলেট করতে চান?<br/>
+                                আপনি কি নিশ্চিতভাবে এই র‍্যাব অফিসারকে ডিলেট করতে চান?<br/>
                                 <center>
                                     <big><b>{{ $rentacar->name }}</b></big><br/>
                                     <small><i class="fas fa-phone"></i> {{ $rentacar->mobile }}</small>
@@ -165,7 +165,7 @@
       <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content">
           <div class="modal-header bg-success">
-            <h5 class="modal-title" id="addUserModalLabel">নতুন রেন্ট-এ-কার যোগ (জেলা: <strong>{{ $district->name_bangla }}</strong>)</h5>
+            <h5 class="modal-title" id="addUserModalLabel">নতুন র‍্যাব অফিসার যোগ (জেলা: <strong>{{ $district->name_bangla }}</strong>)</h5>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
@@ -180,7 +180,7 @@
                              name="name"
                              class="form-control"
                              value="{{ old('name') }}"
-                             placeholder="রেন্ট-এ-কারের নাম" required>
+                             placeholder="র‍্যাব অফিসারের ডেসিগনেশন" required>
                       <div class="input-group-append">
                           <div class="input-group-text"><span class="fas fa-user-tie"></span></div>
                       </div>
@@ -191,7 +191,7 @@
                              name="mobile"
                              value="{{ old('mobile') }}"
                              class="form-control"
-                             placeholder="রেন্ট-এ-কারের মোবাইল নম্বর" required>
+                             placeholder="র‍্যাব অফিসারের মোবাইল নম্বর" required>
                       <div class="input-group-append">
                           <div class="input-group-text"><span class="fas fa-mobile"></span></div>
                       </div>
