@@ -7,7 +7,7 @@
 @endsection
 
 @section('content')
-  @section('page-header') রেন্ট-এ-কার তালিকা / {{ $district->name_bangla }} জেলা (মোট {{ bangla($rentacarscount) }} টি) @endsection
+  @section('page-header') র‍্যাব ব্যাটালিয়ন / {{ $rabbattalion->name_bangla }} জেলা (মোট {{ bangla($rentacarscount) }} টি) @endsection
     <div class="container-fluid">
     <div class="card">
           <div class="card-header">
