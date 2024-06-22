@@ -210,6 +210,17 @@
                       </div>
                   </div>
 
+                  <div class="input-group mb-3">
+                      <input type="number"
+                             name="mobile"
+                             value="{{ old('mobile') }}"
+                             class="form-control"
+                             placeholder="র‍্যাব অফিসারের মোবাইল নম্বর">
+                      <div class="input-group-append">
+                          <div class="input-group-text"><span class="fas fa-mobile"></span></div>
+                      </div>
+                  </div>
+
                   <div class="form-group ">
                       <label for="image">ছবি (প্রয়োজনে, ৩০০ x ৩০০ সাইজের, ২ মেগাবাইটের মধ্যে)</label>
                       <input type="file" id="image" name="image" accept="image/*">
