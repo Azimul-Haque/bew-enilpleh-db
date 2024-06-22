@@ -550,13 +550,13 @@ class AdminandothersController extends Controller
     {
         $this->validate($request,array(
             'name'            => 'required|string|max:191',
-            'detalis'         => 'required',
+            'details'         => 'required',
             'map'             => 'required|image',
         ));
 
         $rabbattalion = new Rabbattalion;
         $rabbattalion->name = $request->name;
-        $rabbattalion->detalis = $request->detalis;
+        $rabbattalion->details = $request->details;
         // image upload
         if($request->hasFile('image')) {
             $image    = $request->file('image');
@@ -576,13 +576,13 @@ class AdminandothersController extends Controller
     {
         $this->validate($request,array(
             'name'            => 'required|string|max:191',
-            'detalis'         => 'required',
+            'details'         => 'required',
             'map'             => 'required|image',
         ));
 
         $rabbattalion = Rabbattalion::find($id);
         $rabbattalion->name = $request->name;
-        $rabbattalion->detalis = $request->detalis;
+        $rabbattalion->details = $request->details;
         // image upload
         if($request->hasFile('image')) {
             $image_path = public_path('images/rabbattalions/'. $rabbattalion->map);
