@@ -42,23 +42,23 @@
                 </tr>
               </thead>
               <tbody>
-                @foreach($fireservices as $fireservice)
+                @foreach($coachings as $coaching)
                   <tr>
                     <td>
-                      {{ $fireservice->name }}
+                      {{ $coaching->name }}
                     </td>
-                    <td>{{ $fireservice->mobile }}</td>
+                    <td>{{ $coaching->mobile }}</td>
                     <td align="right">
-                      {{-- <button type="button" class="btn btn-warning btn-sm" data-toggle="modal" data-target="#notifModal{{ $fireservice->id }}">
+                      {{-- <button type="button" class="btn btn-warning btn-sm" data-toggle="modal" data-target="#notifModal{{ $coaching->id }}">
                         <i class="fas fa-bell"></i>
                       </button> --}}
-                      <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#editUserModal{{ $fireservice->id }}">
+                      <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#editUserModal{{ $coaching->id }}">
                         <i class="fas fa-edit"></i>
                       </button>
                       {{-- Edit User Modal Code --}}
                       {{-- Edit User Modal Code --}}
                       <!-- Modal -->
-                      <div class="modal fade" id="editUserModal{{ $fireservice->id }}" tabindex="-1" role="dialog" aria-labelledby="editUserModalLabel" aria-hidden="true" data-backdrop="static">
+                      <div class="modal fade" id="editUserModal{{ $coaching->id }}" tabindex="-1" role="dialog" aria-labelledby="editUserModalLabel" aria-hidden="true" data-backdrop="static">
                         <div class="modal-dialog" role="document">
                           <div class="modal-content">
                             <div class="modal-header bg-primary">
@@ -67,7 +67,7 @@
                                 <span aria-hidden="true">&times;</span>
                               </button>
                             </div>
-                            <form method="post" action="{{ route('dashboard.fireservices.update', [$district->id, $fireservice->id]) }}" enctype="multipart/form-data">
+                            <form method="post" action="{{ route('dashboard.coachings.update', [$district->id, $coaching->id]) }}" enctype="multipart/form-data">
                               <div class="modal-body">
                                 
                                     @csrf
@@ -76,7 +76,7 @@
                                         <input type="text"
                                                name="name"
                                                class="form-control"
-                                               value="{{ $fireservice->name }}"
+                                               value="{{ $coaching->name }}"
                                                placeholder="কোচিং সেন্টারের নাম" required>
                                         <div class="input-group-append">
                                             <div class="input-group-text"><span class="fas fa-user-tie"></span></div>
@@ -85,7 +85,7 @@
                                     <div class="input-group mb-3">
                                         <input type="number"
                                                name="mobile"
-                                               value="{{ $fireservice->mobile }}"
+                                               value="{{ $coaching->mobile }}"
                                                class="form-control"
                                                placeholder="কোচিং সেন্টারের মোবাইল নম্বর" required>
                                         <div class="input-group-append">
@@ -105,14 +105,14 @@
                       {{-- Edit User Modal Code --}}
                       {{-- Edit User Modal Code --}}
 
-                      <button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#deleteUserModal{{ $fireservice->id }}">
+                      <button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#deleteUserModal{{ $coaching->id }}">
                         <i class="fas fa-trash-alt"></i>
                       </button>
                     </td>
                         {{-- Delete User Modal Code --}}
                         {{-- Delete User Modal Code --}}
                         <!-- Modal -->
-                        <div class="modal fade" id="deleteUserModal{{ $fireservice->id }}" tabindex="-1" role="dialog" aria-labelledby="deleteUserModalLabel" aria-hidden="true" data-backdrop="static">
+                        <div class="modal fade" id="deleteUserModal{{ $coaching->id }}" tabindex="-1" role="dialog" aria-labelledby="deleteUserModalLabel" aria-hidden="true" data-backdrop="static">
                           <div class="modal-dialog" role="document">
                             <div class="modal-content">
                               <div class="modal-header bg-danger">
@@ -124,13 +124,13 @@
                               <div class="modal-body">
                                 আপনি কি নিশ্চিতভাবে এই কোচিং সেন্টারকে ডিলেট করতে চান?<br/>
                                 <center>
-                                    <big><b>{{ $fireservice->name }}</b></big><br/>
-                                    <small><i class="fas fa-phone"></i> {{ $fireservice->mobile }}</small>
+                                    <big><b>{{ $coaching->name }}</b></big><br/>
+                                    <small><i class="fas fa-phone"></i> {{ $coaching->mobile }}</small>
                                 </center>
                               </div>
                               <div class="modal-footer">
                                 <button type="button" class="btn btn-secondary" data-dismiss="modal">ফিরে যান</button>
-                                <a href="{{ route('dashboard.fireservices.delete', [$district->id, $fireservice->id]) }}" class="btn btn-danger">ডিলেট করুন</a>
+                                <a href="{{ route('dashboard.coachings.delete', [$district->id, $coaching->id]) }}" class="btn btn-danger">ডিলেট করুন</a>
                               </div>
                             </div>
                           </div>
@@ -145,7 +145,7 @@
           </div>
           <!-- /.card-body -->
         </div>
-        {{ $fireservices->links() }}
+        {{ $coachings->links() }}
     </div>
 
     {{-- Add User Modal Code --}}
@@ -160,7 +160,7 @@
               <span aria-hidden="true">&times;</span>
             </button>
           </div>
-          <form method="post" action="{{ route('dashboard.fireservices.store', $district->id) }}" enctype='multipart/form-data'>
+          <form method="post" action="{{ route('dashboard.coachings.store', $district->id) }}" enctype='multipart/form-data'>
             <div class="modal-body">
               
                   @csrf
@@ -207,7 +207,7 @@
 
         $(document).on('click', '#search-button', function() {
           if($('#search-param').val() != '') {
-            var urltocall = '{{ route('dashboard.fireservices.districtwise', $district->id) }}' +  '/' + $('#search-param').val();
+            var urltocall = '{{ route('dashboard.coachings.districtwise', $district->id) }}' +  '/' + $('#search-param').val();
             location.href= urltocall;
           } else {
             $('#search-param').css({ "border": '#FF0000 2px solid'});
@@ -220,7 +220,7 @@
         $("#search-param").keyup(function(e) {
           if(e.which == 13) {
             if($('#search-param').val() != '') {
-              var urltocall = '{{ route('dashboard.fireservices.districtwise', $district->id) }}' +  '/' + $('#search-param').val();
+              var urltocall = '{{ route('dashboard.coachings.districtwise', $district->id) }}' +  '/' + $('#search-param').val();
               location.href= urltocall;
             } else {
               $('#search-param').css({ "border": '#FF0000 2px solid'});
