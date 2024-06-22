@@ -694,6 +694,10 @@ class AdminandothersController extends Controller
             'rabbattalion_id'       => 'required'
         ));
 
+        $checkdistrictrab = Rab::where(district_id, $district_id)->first();
+
+        if($checkdistrictrab != null)
+
         $rabbattaliondetail = Rabbattaliondetail::findOrFail($id);
         $rabbattaliondetail->rabbattalion_id = $battalion_id;
         $rabbattaliondetail->designation = $request->designation;
