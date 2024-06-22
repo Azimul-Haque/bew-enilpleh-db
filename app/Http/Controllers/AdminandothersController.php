@@ -411,7 +411,7 @@ class AdminandothersController extends Controller
             $rentacarimage->save();
         }
 
-        Cache::forget('lawyers' . $district_id . $request->court);
+        Cache::forget('lawyers' . $district_id);
         Session::flash('success', 'Lawyer added successfully!');
         return redirect()->route('dashboard.lawyers.districtwise', $district_id);
     }
