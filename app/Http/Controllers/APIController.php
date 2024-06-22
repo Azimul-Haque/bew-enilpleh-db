@@ -674,8 +674,8 @@ class APIController extends Controller
                     $rabbattaliondetail->makeHidden('id', 'rabbattalion_id', 'created_at', 'updated_at');
                 }
                 
-                dd($rabdata);
-                return $rabdata;
+                dd($battalion_data);
+                return $battalion_data;
             });
             
             return response()->json([
