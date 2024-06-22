@@ -618,21 +618,21 @@ class AdminandothersController extends Controller
         
     }
 
-    public function detailsRabbattalionSearch($district_id, $search)
+    public function detailsRabbattalionSearch($battalion_id, $search)
     {
         $rabbattallion = Rabbattalion::findOrFail($id);
         
-        $rabbattallionofficerscount = Rabbattaliondetail::where('district_id', $district_id)
-                                 ->where('name', 'LIKE', "%$search%")
-                                 ->orWhere('mobile', 'LIKE', "%$search%")
-                                 ->orWhere('address', 'LIKE', "%$search%")->count();
-                                 
-        $coachingscount = Coaching::where('district_id', $district_id)
+        $rabbattallionofficerscount = Rabbattaliondetail::where('battalion_id', $battalion_id)
                                  ->where('name', 'LIKE', "%$search%")
                                  ->orWhere('mobile', 'LIKE', "%$search%")
                                  ->orWhere('address', 'LIKE', "%$search%")->count();
 
-        $coachings = Coaching::where('district_id', $district_id)
+        $coachingscount = Coaching::where('battalion_id', $battalion_id)
+                                 ->where('name', 'LIKE', "%$search%")
+                                 ->orWhere('mobile', 'LIKE', "%$search%")
+                                 ->orWhere('address', 'LIKE', "%$search%")->count();
+
+        $coachings = Coaching::where('battalion_id', $battalion_id)
                             ->where('name', 'LIKE', "%$search%")
                             ->orWhere('mobile', 'LIKE', "%$search%")
                             ->orWhere('address', 'LIKE', "%$search%")
