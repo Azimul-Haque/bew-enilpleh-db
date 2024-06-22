@@ -687,4 +687,30 @@ class AdminandothersController extends Controller
         Session::flash('success', 'RAB Officer updated successfully!');
         return redirect()->route('dashboard.rabbattalions.details', $battalion_id);
     }
+
+    public function updateDistrictRabbattalion(Request $request, $battalion_id, $id)
+    {
+        $this->validate($request,array(
+            'designation'       => 'required|string|max:191',
+            'area'              => 'required',
+            'mobile'            => 'required|string|max:191',
+            'telephone'         => 'sometimes',
+        ));
+
+        $rabbattaliondetail = Rabbattaliondetail::findOrFail($id);
+        $rabbattaliondetail->rabbattalion_id = $battalion_id;
+        $rabbattaliondetail->designation = $request->designation;
+        $rabbattaliondetail->area = $request->area;
+        $rabbattaliondetail->mobile = $request->mobile;
+        if($request->telephone != '') {
+            $rabbattaliondetail->telephone = $request->telephone;
+        } else {
+            $rabbattaliondetail->telephone = '';
+        }
+        $rabbattaliondetail->save();
+
+        Cache::forget('rabbattaliondetail' . $battalion_id);
+        Session::flash('success', 'RAB Officer updated successfully!');
+        return redirect()->route('dashboard.rabbattalions.details', $battalion_id);
+    }
 }
