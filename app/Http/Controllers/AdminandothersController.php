@@ -700,6 +700,11 @@ class AdminandothersController extends Controller
         if($checkdistrictrab != null) {
             $checkdistrictrab->rabbattalion_id = $request->rabbattalion_id;
             $checkdistrictrab->save();
+        } else {
+            $rab = new Rab;
+            $rab->district_id = $district_id;
+            $rab->rabbattalion_id = $request->rabbattalion_id;
+            $rab->save();
         }
 
         // $rabbattaliondetail = Rabbattaliondetail::findOrFail($id);
