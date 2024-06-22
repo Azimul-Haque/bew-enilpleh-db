@@ -47,4 +47,8 @@ class District extends Model
     public function coachings(){
         return $this->hasMany('App\Coaching');
     }
+
+    public function rabs(){
+        return $this->hasMany('App\Rab');
+    }
 }
