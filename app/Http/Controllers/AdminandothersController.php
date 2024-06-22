@@ -655,7 +655,7 @@ class AdminandothersController extends Controller
         }
 
         // Get the results
-        $results = $query->get();
+        $rabbattallionofficers = $query->orderBy('id', 'asc')->paginate(10);
 
         return view('dashboard.rabs.rabbbatalionsdetails')
                             ->withRabbattallion($rabbattallion)
