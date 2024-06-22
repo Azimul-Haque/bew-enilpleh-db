@@ -49,7 +49,10 @@
                       {{ $rabbattallionofficer->designation }}
                     </td>
                     <td>{{ $rabbattallionofficer->area }}</td>
-                    <td>{{ $rabbattallionofficer->area }}</td>
+                    <td>
+                      {{ $rabbattallionofficer->mobile }}<br/>
+                      {{ $rabbattallionofficer->telephone }}
+                    </td>
                     <td align="right">
                       {{-- <button type="button" class="btn btn-warning btn-sm" data-toggle="modal" data-target="#notifModal{{ $rabbattallionofficer->id }}">
                         <i class="fas fa-bell"></i>
