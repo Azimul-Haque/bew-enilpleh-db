@@ -211,7 +211,7 @@
                   <div class="form-group ">
                       <label for="image">ছবি (প্রয়োজনে, ৩০০ x ৩০০ সাইজের, ২ মেগাবাইটের মধ্যে)</label>
                       <input type="file" id="image" name="image" accept="image/*">
-                  </div>
+                  </div><br/>
                   <center>
                       <img src="{{ asset('images/placeholder.png')}}" id='img-upload' style="width: 250px; height: auto;" class="img-responsive" />
                   </center> 
