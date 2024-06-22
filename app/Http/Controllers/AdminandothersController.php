@@ -661,6 +661,8 @@ class AdminandothersController extends Controller
         }
         $rabbattaliondetail->save();
 
+        // RAB cache niye kaaj ache
+        // RAB cache niye kaaj ache
         Cache::forget('rabbattaliondetail' . $battalion_id);
         Session::flash('success', 'RAB Officer added successfully!');
         return redirect()->route('dashboard.rabbattalions.details', $battalion_id);
@@ -687,6 +689,8 @@ class AdminandothersController extends Controller
         }
         $rabbattaliondetail->save();
 
+        // RAB cache niye kaaj ache
+        // RAB cache niye kaaj ache
         Cache::forget('rabbattaliondetail' . $battalion_id);
         Session::flash('success', 'RAB Officer updated successfully!');
         return redirect()->route('dashboard.rabbattalions.details', $battalion_id);
