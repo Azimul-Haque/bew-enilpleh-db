@@ -652,7 +652,9 @@ class AdminandothersController extends Controller
         $rabbattaliondetail->designation = $request->designation;
         $rabbattaliondetail->area = $request->area;
         $rabbattaliondetail->mobile = $request->mobile;
-        $rabbattaliondetail->telephone = $request->telephone;
+        if($request->telephone != '') {
+            $rabbattaliondetail->telephone = $request->telephone;
+        }
         $rabbattaliondetail->save();
 
         Cache::forget('rabbattaliondetail' . $battalion_id);
@@ -674,7 +676,9 @@ class AdminandothersController extends Controller
         $rabbattaliondetail->designation = $request->designation;
         $rabbattaliondetail->area = $request->area;
         $rabbattaliondetail->mobile = $request->mobile;
-        $rabbattaliondetail->telephone = $request->telephone;
+        if($request->telephone != '') {
+            $rabbattaliondetail->telephone = $request->telephone;
+        }
         $rabbattaliondetail->save();
 
         Cache::forget('rabbattaliondetail' . $battalion_id);
