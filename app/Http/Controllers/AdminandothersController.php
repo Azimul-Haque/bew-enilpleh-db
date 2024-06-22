@@ -632,13 +632,13 @@ class AdminandothersController extends Controller
                                  ->orWhere('mobile', 'LIKE', "%$search%")
                                  ->orWhere('telephone', 'LIKE', "%$search%")->count();
 
-        $rabbattallionofficers = Rabbattaliondetail::where('rabbattalion_id', $battalion_id)
-                                 ->where('designation', 'LIKE', "%$search%")
-                                 ->orWhere('area', 'LIKE', "%$search%")
-                                 ->orWhere('mobile', 'LIKE', "%$search%")
-                                 ->orWhere('telephone', 'LIKE', "%$search%")
-                                 ->orderBy('id', 'asc')
-                                 ->paginate(10);
+        // $rabbattallionofficers = Rabbattaliondetail::where('rabbattalion_id', $battalion_id)
+        //                          ->where('designation', 'LIKE', "%$search%")
+        //                          ->orWhere('area', 'LIKE', "%$search%")
+        //                          ->orWhere('mobile', 'LIKE', "%$search%")
+        //                          ->orWhere('telephone', 'LIKE', "%$search%")
+        //                          ->orderBy('id', 'asc')
+        //                          ->paginate(10);
 
         // Initialize query
         $query = Rabbattaliondetail::where('rabbattalion_id', $battalion_id);
