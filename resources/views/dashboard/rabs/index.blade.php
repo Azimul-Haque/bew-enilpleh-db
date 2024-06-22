@@ -31,7 +31,7 @@
                   </tr>
                 @endforeach --}}
 
-                @foreach ($districts->chunk(5) as $chunk)
+                @foreach ($districts->chunk(৩) as $chunk)
                     <tr>
                         @foreach ($chunk as $district)
                             <td>
