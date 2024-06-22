@@ -65,7 +65,6 @@
                     <button type="button" class="btn btn-success btn-sm"  data-toggle="modal" data-target="#addUserModal" style="margin-left: 5px;">
                       <i class="fas fa-plus-square"></i> নতুন
                     </button>
-                    
                   </div>
                 </div>
                 <!-- /.card-header -->
