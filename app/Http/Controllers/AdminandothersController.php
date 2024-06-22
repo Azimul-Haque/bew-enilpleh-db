@@ -626,11 +626,6 @@ class AdminandothersController extends Controller
                                  ->where('name', 'LIKE', "%$search%")
                                  ->orWhere('details', 'LIKE', "%$search%")->count();
 
-        $coachingscount = Coaching::where('battalion_id', $battalion_id)
-                                 ->where('name', 'LIKE', "%$search%")
-                                 ->orWhere('mobile', 'LIKE', "%$search%")
-                                 ->orWhere('address', 'LIKE', "%$search%")->count();
-
         $coachings = Coaching::where('battalion_id', $battalion_id)
                             ->where('name', 'LIKE', "%$search%")
                             ->orWhere('mobile', 'LIKE', "%$search%")
