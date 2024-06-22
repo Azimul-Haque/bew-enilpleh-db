@@ -597,7 +597,7 @@ class AdminandothersController extends Controller
             $image    = $request->file('map');
             $filename = random_string(5) . time() .'.' . "webp";
             $location = public_path('images/rabbattalions/'. $filename);
-            Image::make($image)->resize(300, null, function ($constraint) { $constraint->aspectRatio(); })->save($location);
+            Image::make($image)->resize(400, null, function ($constraint) { $constraint->aspectRatio(); })->save($location);
             $rabbattalion->map       = $filename;
         }
         $rabbattalion->save();
