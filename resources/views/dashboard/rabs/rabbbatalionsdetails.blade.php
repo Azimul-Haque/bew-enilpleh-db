@@ -46,7 +46,7 @@
                 @foreach($rabbattallionofficers as $rabbattallionofficer)
                   <tr>
                     <td>
-                      {{ $rabbattallionofficer->name }}
+                      {{ $rabbattallionofficer->designation }}
                     </td>
                     <td>{{ $rabbattallionofficer->mobile }}</td>
                     <td align="right">
