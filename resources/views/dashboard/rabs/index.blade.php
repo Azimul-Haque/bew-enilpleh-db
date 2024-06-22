@@ -219,7 +219,7 @@
                              value="{{ old('name') }}"
                              placeholder="র‍্যাব ব্যাটালিয়নের নাম" required>
                       <div class="input-group-append">
-                          <div class="input-group-text"><span class="fas fa-user-tie"></span></div>
+                          <div class="input-group-text"><span class="fas fa-user-shield"></span></div>
                       </div>
                   </div>
                   <div class="input-group mb-3">
