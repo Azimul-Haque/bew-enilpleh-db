@@ -687,7 +687,6 @@ class APIController extends Controller
                         'success' => false
                     ]);
                 }
-                
             });
             
             return response()->json([
