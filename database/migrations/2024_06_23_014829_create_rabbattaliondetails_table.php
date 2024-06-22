@@ -19,6 +19,7 @@ class CreateRabbattaliondetailsTable extends Migration
             $table->string('designation');
             $table->string('area');
             $table->string('mobile');
+            $table->string('telephone');
         });
     }
 
