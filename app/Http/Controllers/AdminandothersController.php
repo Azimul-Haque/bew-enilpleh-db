@@ -33,6 +33,7 @@ class AdminandothersController extends Controller
     public function __construct()
     {
         parent::__construct();
+        ini_set('memory_limit', '-1');
         $this->middleware(['admin'])->only('index', 'indexSearch');
     }
 
