@@ -689,10 +689,7 @@ class APIController extends Controller
                 }
             });
             
-            return response()->json([
-                'success' => true,
-                'battalion_info' => $rabdata,
-            ]);
+            
         } else {
             return response()->json([
                 'success' => false
