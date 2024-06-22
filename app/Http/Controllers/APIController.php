@@ -664,14 +664,17 @@ class APIController extends Controller
                 $battalion_name = $rab != null ? $rab->rabbattalion->name : '';
                 $battalion_details = $rab != null ? $rab->rabbattalion->details : '';
                 $battalion_map = $rab != null ? $rab->rabbattalion->map : '';
-                foreach($rab->rabbattalion->rabbattaliondetails as $rabbattaliondetail) {
-                    $rabbattaliondetail->designation = $rabbattaliondetail->designation;
-                    $rabbattaliondetail->area = $rabbattaliondetail->area;
-                    $rabbattaliondetail->mobile = $rabbattaliondetail->mobile;
-                    $rabbattaliondetail->telephone = $rabbattaliondetail->telephone;
-                    $battalion_data->push($rabbattaliondetail);
-                    $rabbattaliondetail->makeHidden('id', 'rabbattalion_id', 'created_at', 'updated_at');
+                if($rab != null) {
+                   foreach($rab->rabbattalion->rabbattaliondetails as $rabbattaliondetail) {
+                       $rabbattaliondetail->designation = $rabbattaliondetail->designation;
+                       $rabbattaliondetail->area = $rabbattaliondetail->area;
+                       $rabbattaliondetail->mobile = $rabbattaliondetail->mobile;
+                       $rabbattaliondetail->telephone = $rabbattaliondetail->telephone;
+                       $battalion_data->push($rabbattaliondetail);
+                       $rabbattaliondetail->makeHidden('id', 'rabbattalion_id', 'created_at', 'updated_at');
+                   } 
                 }
+                
                 
                 $battalion_info = [
                     'battalion_name' => $battalion_name,
