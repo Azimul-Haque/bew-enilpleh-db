@@ -104,7 +104,7 @@
                                       <span aria-hidden="true">&times;</span>
                                     </button>
                                   </div>
-                                  <form method="post" action="{{ route('dashboard.rabbattalions.update', [$district->id, $rabbattalion->id]) }}" enctype="multipart/form-data">
+                                  <form method="post" action="{{ route('dashboard.rabbattalions.update', $rabbattalion->id) }}" enctype="multipart/form-data">
                                     <div class="modal-body">
                                       
                                           @csrf
