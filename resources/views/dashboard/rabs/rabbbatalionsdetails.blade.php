@@ -190,10 +190,10 @@
 
                   <div class="input-group mb-3">
                       <input type="text"
-                             name="designation"
+                             name="area"
                              class="form-control"
-                             value="{{ old('designation') }}"
-                             placeholder="র‍্যাব অফিসারের ডেসিগনেশন" required>
+                             value="{{ old('area') }}"
+                             placeholder="র‍্যাব অফিসারের দায়িত্বপূর্ণ এলাকা" required>
                       <div class="input-group-append">
                           <div class="input-group-text"><span class="fas fa-user-tie"></span></div>
                       </div>
