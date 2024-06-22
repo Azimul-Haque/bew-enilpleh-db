@@ -659,29 +659,35 @@ class APIController extends Controller
             $rabdata = Cache::remember('rab33'  . $district_id, 30 * 24 * 60 * 60, function () use ($district_id) {
                 $rab = Rab::where('district_id', $district_id)->first();
                 
-                
-                $battalion_data = collect();
-                
-                $battalion_name = $rab->rabbattalion->name;
-                $battalion_details = $rab->rabbattalion->details;
-                $battalion_map = $rab->rabbattalion->map;
-                foreach($rab->rabbattalion->rabbattaliondetails as $rabbattaliondetail) {
-                    $rabbattaliondetail->designation = $rabbattaliondetail->designation;
-                    $rabbattaliondetail->area = $rabbattaliondetail->area;
-                    $rabbattaliondetail->mobile = $rabbattaliondetail->mobile;
-                    $rabbattaliondetail->telephone = $rabbattaliondetail->telephone;
-                    $battalion_data->push($rabbattaliondetail);
-                    $rabbattaliondetail->makeHidden('id', 'rabbattalion_id', 'created_at', 'updated_at');
+                if($rab != null) {
+                    $battalion_data = collect();
+                    
+                    $battalion_name = $rab->rabbattalion->name;
+                    $battalion_details = $rab->rabbattalion->details;
+                    $battalion_map = $rab->rabbattalion->map;
+                    foreach($rab->rabbattalion->rabbattaliondetails as $rabbattaliondetail) {
+                        $rabbattaliondetail->designation = $rabbattaliondetail->designation;
+                        $rabbattaliondetail->area = $rabbattaliondetail->area;
+                        $rabbattaliondetail->mobile = $rabbattaliondetail->mobile;
+                        $rabbattaliondetail->telephone = $rabbattaliondetail->telephone;
+                        $battalion_data->push($rabbattaliondetail);
+                        $rabbattaliondetail->makeHidden('id', 'rabbattalion_id', 'created_at', 'updated_at');
+                    }
+                    
+                    $battalion_info = [
+                        'battalion_name' => $battalion_name,
+                        'battalion_details' => $battalion_details,
+                        'battalion_map' => $battalion_map,
+                        'battalion_data' => $battalion_data
+                    ];
+                    
+                    return $battalion_info;
+                } else {
+                    return response()->json([
+                        'success' => false
+                    ]);
                 }
                 
-                $battalion_info = [
-                    'battalion_name' => $battalion_name,
-                    'battalion_details' => $battalion_details,
-                    'battalion_map' => $battalion_map,
-                    'battalion_data' => $battalion_data
-                ];
-                
-                return $battalion_info;
             });
             
             return response()->json([
