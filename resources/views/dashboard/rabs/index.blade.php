@@ -234,7 +234,7 @@
                   </div>
                   
                   <div class="form-group ">
-                      <label for="image">ছবি (প্রয়োজনে, ৩০০ x ৩০০ সাইজের, ২ মেগাবাইটের মধ্যে)</label>
+                      <label for="image">ম্যাপ (২ মেগাবাইটের মধ্যে)</label>
                       <input type="file" id="image" name="image" accept="image/*">
                   </div>
                   <center>
