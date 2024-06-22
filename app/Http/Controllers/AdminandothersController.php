@@ -403,7 +403,7 @@ class AdminandothersController extends Controller
         if($request->hasFile('image')) {
             $image    = $request->file('image');
             $filename = random_string(5) . time() .'.' . "webp";
-            $location = public_path('images/ambulances/'. $filename);
+            $location = public_path('images/rentacars/'. $filename);
             Image::make($image)->fit(200, 200)->save($location);
             $ambulanceimage              = new Ambulanceimage;
             $ambulanceimage->ambulance_id   = $ambulance->id;
