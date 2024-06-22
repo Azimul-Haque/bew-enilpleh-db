@@ -15,7 +15,8 @@ class CreateRabsTable extends Migration
     {
         Schema::create('rabs', function (Blueprint $table) {
             $table->id();
-            $table->integer('rabbattalion_id');
+            $table->integer('district_id')->unsigned();
+            $table->integer('rabbattalion_id')->unsigned();
             $table->timestamps();
         });
     }
