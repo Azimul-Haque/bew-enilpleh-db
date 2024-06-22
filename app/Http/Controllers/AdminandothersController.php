@@ -617,4 +617,24 @@ class AdminandothersController extends Controller
                             ->withRabbattallionofficers($rabbattallionofficers);
         
     }
+
+    public function storeDetailsRabbattalion(Request $request, $district_id)
+    {
+        $this->validate($request,array(
+            'name'                => 'required|string|max:191',
+            'mobile'              => 'required|string|max:191',
+            'address'             => 'required|string|max:191',
+        ));
+
+        $coaching = new Coaching;
+        $coaching->district_id = $district_id;
+        $coaching->name = $request->name;
+        $coaching->mobile = $request->mobile;
+        $coaching->address = $request->address;
+        $coaching->save();
+
+        Cache::forget('coachings' . $district_id);
+        Session::flash('success', 'Coaching added successfully!');
+        return redirect()->route('dashboard.coachings.districtwise', $district_id);
+    }
 }
