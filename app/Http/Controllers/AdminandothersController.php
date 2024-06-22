@@ -580,7 +580,7 @@ class AdminandothersController extends Controller
             'map'             => 'required|string|max:191',
         ));
 
-        $coaching = Coaching::find($id);
+        $rabbattalion = Rabbattalion::find($id);
         $coaching->district_id = $district_id;
         $coaching->name = $request->name;
         $coaching->mobile = $request->mobile;
