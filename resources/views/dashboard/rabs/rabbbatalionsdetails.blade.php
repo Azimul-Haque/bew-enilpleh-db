@@ -39,7 +39,7 @@
                   <th width="25%">পদবি</th>
                   <th width="25%">দায়িত্বপূর্ণ এলাকা</th>
                   <th>মোবাইল / টেলিফোন</th>
-                  <th align="right">কার্যক্রম</th>
+                  <th align="right" width="15%">কার্যক্রম</th>
                 </tr>
               </thead>
               <tbody>
