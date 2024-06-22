@@ -69,7 +69,7 @@
                                 <span aria-hidden="true">&times;</span>
                               </button>
                             </div>
-                            <form method="post" action="{{ route('dashboard.rabbattalionsdetails.update', [$district->id, $rabbattallionofficer->id]) }}" enctype="multipart/form-data">
+                            <form method="post" action="{{ route('dashboard.rabbattalionsdetails.update', [$rabbattallion->id, $rabbattallionofficer->id]) }}" enctype="multipart/form-data">
                               <div class="modal-body">
                                 
                                     @csrf
@@ -154,7 +154,7 @@
                               </div>
                               <div class="modal-footer">
                                 <button type="button" class="btn btn-secondary" data-dismiss="modal">ফিরে যান</button>
-                                <a href="{{ route('dashboard.rentacars.delete', [$district->id, $rabbattallionofficer->id]) }}" class="btn btn-danger">ডিলেট করুন</a>
+                                <a href="{{ route('dashboard.rentacars.delete', [$rabbattallion->id, $rabbattallionofficer->id]) }}" class="btn btn-danger">ডিলেট করুন</a>
                               </div>
                             </div>
                           </div>
