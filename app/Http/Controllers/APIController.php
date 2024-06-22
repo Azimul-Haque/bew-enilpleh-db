@@ -660,6 +660,7 @@ class APIController extends Controller
                 $rab = Rab::where('district_id', $district_id)->first();
                 
                 dd($rab);
+                $rabdata = collect();
                 foreach($rabs as $fireservice) {
                     $fireservice->makeHidden('id', 'district_id', 'created_at', 'updated_at');
                 }
