@@ -539,9 +539,11 @@ class AdminandothersController extends Controller
     public function rabIndex()
     {
         $districts = District::all();
+        $rabbattalions = Rabbattalion::all();
                 
-        return view('dashboard.coachings.index')
-                            ->withDistricts($districts);
+        return view('dashboard.rabs.index')
+                            ->withDistricts($districts)
+                            ->withRabbattalions($rabbattalions);
     }
 
 }
