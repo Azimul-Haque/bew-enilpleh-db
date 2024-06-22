@@ -105,6 +105,15 @@
 </li>
 @endif
 
+@if(Auth::user()->role == 'admin')
+<li class="nav-item">
+    <a href="{{ route('dashboard.coachings') }}" class="nav-link {{ Request::is('dashboard/coachings') ? 'active' : '' }} {{ Request::is('dashboard/coachings/*') ? 'active' : '' }}">
+        <i class="nav-icon fas fa-car"></i>
+        <p>কোচিং</p>
+    </a>
+</li>
+@endif
+
 {{-- @if(Auth::user()->role == 'admin')
 <li class="nav-item">
     <a href="{{ route('dashboard.payments') }}" class="nav-link {{ Request::is('dashboard/payments') ? 'active' : '' }} {{ Request::is('dashboard/payments/*') ? 'active' : '' }}">
