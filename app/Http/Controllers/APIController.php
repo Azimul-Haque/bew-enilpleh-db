@@ -673,7 +673,7 @@ class APIController extends Controller
                     $rabdata->push($rabbattaliondetail);
                     $rabbattaliondetail->makeHidden('id', 'rabbattalion_id', 'created_at', 'updated_at');
                 }
-                dd($rabdata);
+                // dd($rabdata);
                 return $rabdata;
             });
             
