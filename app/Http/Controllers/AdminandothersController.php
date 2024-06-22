@@ -460,7 +460,7 @@ class AdminandothersController extends Controller
                             ->withDistricts($districts);
     }
 
-    public function lawyerIndexSingle($district_id)
+    public function coacingIndexSingle($district_id)
     {
         $district = District::find($district_id);
         $lawyerscount = Lawyer::where('district_id', $district_id)->count();
@@ -472,7 +472,7 @@ class AdminandothersController extends Controller
                             ->withLawyers($lawyers);
     }
 
-    public function lawyerIndexSearch($district_id, $search)
+    public function coacingIndexSearch($district_id, $search)
     {
         $district = District::find($district_id);
         $lawyerscount = Lawyer::where('district_id', $district_id)
