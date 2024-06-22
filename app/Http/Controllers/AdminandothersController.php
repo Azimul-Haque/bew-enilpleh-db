@@ -618,7 +618,7 @@ class AdminandothersController extends Controller
         
     }
 
-    public function coachingIndexSearch($district_id, $search)
+    public function detailsRabbattalionSearch($district_id, $search)
     {
         $district = District::find($district_id);
         $coachingscount = Coaching::where('district_id', $district_id)
