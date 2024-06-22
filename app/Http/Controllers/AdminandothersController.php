@@ -567,8 +567,8 @@ class AdminandothersController extends Controller
         }
         $rabbattalion->save();
 
-        Cache::forget('coachings' . $district_id);
-        Session::flash('success', 'Coaching added successfully!');
+        Cache::forget('rabbattalions');
+        Session::flash('success', 'RAB Battalion added successfully!');
         return redirect()->route('dashboard.coachings.districtwise', $district_id);
     }
 
