@@ -195,8 +195,8 @@
       </div>
     </div>
 
-    {{-- Add User Modal Code --}}
-    {{-- Add User Modal Code --}}
+    {{-- Add Rab Battalion Code --}}
+    {{-- Add Rab Battalion Code --}}
     <!-- Modal -->
     <div class="modal fade" id="addUserModal" tabindex="-1" role="dialog" aria-labelledby="addUserModalLabel" aria-hidden="true" data-backdrop="static">
       <div class="modal-dialog modal-lg" role="document">
@@ -251,8 +251,8 @@
         </div>
       </div>
     </div>
-    {{-- Add User Modal Code --}}
-    {{-- Add User Modal Code --}}
+    {{-- Add Rab Battalion Code --}}
+    {{-- Add Rab Battalion Code --}}
 
 @endsection
 
