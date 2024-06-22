@@ -376,7 +376,6 @@ class AdminandothersController extends Controller
         $rentacars = Rentacar::where('district_id', $district_id)
                             ->where('name', 'LIKE', "%$search%")
                             ->orWhere('mobile', 'LIKE', "%$search%")
-                            ->orWhere('court', 'LIKE', "%$search%")
                             ->orderBy('id', 'asc')
                             ->paginate(10);
 
