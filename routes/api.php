@@ -39,6 +39,7 @@ Route::get('/getpoliceofficers/{softtoken}/{station_type}/{district_id}', 'APICo
 Route::get('/getfireservices/{softtoken}/{district_id}', 'APIController@getFireservices')->name('api.getfireservices');
 Route::get('/getlawyers/{softtoken}/{court_type}/{district_id}', 'APIController@getLawyers')->name('api.getlawyers');
 Route::get('/getrentacars/{softtoken}/{district_id}', 'APIController@getRentacars')->name('api.getrentacars');
+Route::get('/getcoachings/{softtoken}/{district_id}', 'APIController@getCoachings')->name('api.getcoachings');
 
 
 
