@@ -575,9 +575,9 @@ class AdminandothersController extends Controller
     public function updateRabbattalion(Request $request, $id)
     {
         $this->validate($request,array(
-            'name'                => 'required|string|max:191',
-            'mobile'              => 'required|string|max:191',
-            'address'             => 'required|string|max:191',
+            'name'            => 'required|string|max:191',
+            'detalis'         => 'required|string|max:191',
+            'map'             => 'required|string|max:191',
         ));
 
         $coaching = Coaching::find($id);
