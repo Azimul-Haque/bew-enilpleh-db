@@ -131,8 +131,8 @@
                                           </div>
                                           
                                           <div class="form-group">
-                                              <label for="image">ম্যাপ (প্রয়োজনে, ২ মেগাবাইটের মধ্যে)</label>
-                                              <input type="file" id="image" name="map" accept="image/*">
+                                              <label for="image{{ $rabbattalion->id }}">ম্যাপ (প্রয়োজনে, ২ মেগাবাইটের মধ্যে)</label>
+                                              <input type="file" id="image{{ $rabbattalion->id }}" name="map" accept="image/*">
                                           </div>
                                           <center>
                                             @if($rabbattalion->map != null)
