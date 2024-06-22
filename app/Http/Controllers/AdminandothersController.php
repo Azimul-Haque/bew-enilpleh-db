@@ -669,12 +669,13 @@ class AdminandothersController extends Controller
             'telephone'         => 'sometimes',
         ));
 
-        $coaching = new Coaching;
-        $coaching->district_id = $district_id;
-        $coaching->name = $request->name;
-        $coaching->mobile = $request->mobile;
-        $coaching->address = $request->address;
-        $coaching->save();
+        $rabbattaliondetail = Rabbattaliondetail::findOrFail($id);
+        $rabbattaliondetail->rabbattalion_id = $battalion_id;
+        $rabbattaliondetail->designation = $designation;
+        $rabbattaliondetail->area = $request->area;
+        $rabbattaliondetail->mobile = $request->mobile;
+        $rabbattaliondetail->telephone = $request->telephone;
+        $rabbattaliondetail->save();
 
         Cache::forget('rabbattaliondetail' . $battalion_id);
         Session::flash('success', 'RAB Officer updated successfully!');
