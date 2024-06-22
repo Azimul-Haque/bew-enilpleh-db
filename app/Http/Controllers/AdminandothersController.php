@@ -546,7 +546,7 @@ class AdminandothersController extends Controller
                             ->withRabbattalions($rabbattalions);
     }
 
-    public function storeCoaching(Request $request, $district_id)
+    public function storeRabbattalion(Request $request, $district_id)
     {
         $this->validate($request,array(
             'name'                => 'required|string|max:191',
