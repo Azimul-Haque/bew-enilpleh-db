@@ -21,7 +21,7 @@
                 <div class="contact-content">
                   <h4>Contact</h4>
                   <p>+8801837409842</p>
-                  <p>bcsexamaid@gmail.com</p>
+                  <p>rkpharma.bd@gmail.com</p>
                 </div>
               </div>
             </div>
