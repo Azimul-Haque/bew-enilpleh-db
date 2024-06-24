@@ -57,6 +57,11 @@ class IndexController extends Controller
         // return view('index.index')->withPackages($packages);
     }
 
+    public function getContact ()
+    {
+        return view('index.contact');
+    }
+
     public function termsAndConditions()
     {
         return view('index.termsandconditions');
