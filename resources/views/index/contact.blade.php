@@ -20,7 +20,7 @@
                 </div>
                 <div class="contact-content">
                   <h4>Contact</h4>
-                  <p>+8801837409842</p>
+                  <p> +8801722924995</p>
                   <p>rkpharma.bd@gmail.com</p>
                 </div>
               </div>
