@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', 'IndexController@index')->name('index.index');
-Route::get('/contact', 'IndexController@termsAndConditions')->name('index.terms-and-conditions');
+Route::get('/contact', 'IndexController@getContact')->name('index.get-contact');
 Route::get('/terms-and-conditions', 'IndexController@termsAndConditions')->name('index.terms-and-conditions');
 Route::get('/privacy-policy', 'IndexController@privacyPolicy')->name('index.privacy-policy');
 Route::get('/refund-policy', 'IndexController@refundPolicy')->name('index.refund-policy');
