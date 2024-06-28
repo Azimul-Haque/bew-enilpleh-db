@@ -52,7 +52,7 @@
 
             <div class="collapse navbar-collapse sub-menu-bar" id="navbarNine">
               <ul class="navbar-nav me-auto">
-                <li class="nav-item">
+                {{-- <li class="nav-item">
                   <a class=" active" href="{{ route('index.index')  }}/#hero-area">Home</a>
                 </li>
                 <li class="nav-item">
@@ -61,10 +61,10 @@
                 <li class="nav-item">
                   <a class="" href="{{ route('blogs.index')  }}">Blogs</a>
                 </li>
-
                 <li class="nav-item">
                   <a class="" href="{{ route('index.index')  }}/#pricing">Pricing</a>
-                </li>
+                </li> --}}
+
                 <li class="nav-item">
                   <a class="" href="{{ route('index.get-contact')  }}">Contact</a>
                 </li>
