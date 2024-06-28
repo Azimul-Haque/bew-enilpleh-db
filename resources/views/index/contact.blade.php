@@ -32,7 +32,7 @@
                 </div>
                 <div class="contact-content">
                   <h4>Address</h4>
-                  <p>31/13, Block C, Tajmahal Road, Mohammadpur, Dhaka</p>
+                  <p>Dhaka</p>
                   <p>Bangladesh</p>
                 </div>
               </div>
