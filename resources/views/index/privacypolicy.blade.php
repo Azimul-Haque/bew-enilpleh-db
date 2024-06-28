@@ -1,5 +1,5 @@
 @extends('layouts.index')
-@section('title') Privacy Policy | BCS Exam AID | বিসিএস-সহ সরকারি চাকরির পরীক্ষার প্রস্তুতির জন্য সেরা অনলাইন প্ল্যাটফর্ম @endsection
+@section('title') Privacy Policy | BD Helpline | বিসিএস-সহ সরকারি চাকরির পরীক্ষার প্রস্তুতির জন্য সেরা অনলাইন প্ল্যাটফর্ম @endsection
 
 @section('third_party_stylesheets')
 
@@ -12,7 +12,7 @@
 	      <div class="col-md-12 col-12">
 			<h4>Privacy Policy</h4><br/>
 			<p>
-			<strong>App Lab IT</strong> built the <strong>BCS Exam AID</strong> app as
+			<strong>App Lab IT</strong> built the <strong>BD Helpline</strong> app as
 			a Commercial app. This SERVICE is provided by
 			<strong>App Lab IT</strong>  and is intended for use as
 			is.
@@ -29,7 +29,7 @@
 			</p><br/> <p>
 			The terms used in this Privacy Policy have the same meanings
 			as in our Terms and Conditions, which are accessible at
-			<strong>BCS Exam AID</strong> unless otherwise defined in this Privacy Policy.
+			<strong>BD Helpline</strong> unless otherwise defined in this Privacy Policy.
 			</p><br/> <p><strong>Information Collection and Use</strong></p> <p>
 			For a better experience, while using our Service, we
 			may require you to provide us with certain personally
