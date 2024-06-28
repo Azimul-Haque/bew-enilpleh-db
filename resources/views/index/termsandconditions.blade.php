@@ -143,7 +143,7 @@
 		</p>
 		<br/>
 		<p>
-		  These terms and conditions are effective as of <u>July 01, 2022</u>.
+		  These terms and conditions are effective as of <u>July 01, 2024</u>.
 		</p>
 		<br/>
 		<p><strong>Contact Us</strong></p> <p>
