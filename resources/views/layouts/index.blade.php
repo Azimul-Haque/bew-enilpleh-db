@@ -40,7 +40,7 @@
       <div class="row">
         <div class="col-lg-12">
           <nav class="navbar navbar-expand-lg">
-            <a class="navbar-brand" href="/">
+            <a class="navbar-brand" href="javascript:void(0)">
               <img src="{{ asset('/') }}images/white-logo.png" alt="Logo" />
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNine"
@@ -99,7 +99,7 @@
     </div>
     <div class="sidebar-content">
       <div class="sidebar-logo">
-        <a href="/"><img src="{{ asset('/') }}images/logo.png" alt="Logo" /></a>
+        <a href="javascript:void(0)"><img src="{{ asset('/') }}images/logo.png" alt="Logo" /></a>
       </div>
       <p class="text">BCS Exam Aid</p>
       <!-- logo -->
@@ -154,7 +154,7 @@
               <!-- Single Widget -->
               <div class="footer-widget f-about">
                 <div class="logo">
-                  <a href="/">
+                  <a href="javascript:void(0)">
                     <img src="{{ asset('/') }}images/logo.png" alt="#" class="img-fluid" />
                   </a>
                 </div>
