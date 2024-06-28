@@ -72,7 +72,7 @@
                   <a class="" href="{{ route('index.get-contact')  }}">Terms & Conditions</a>
                 </li>
                 <li class="nav-item">
-                  <a class="" href="{{ route('index.get-contact')  }}">Contact</a>
+                  <a class="" href="{{ route('index.get-contact')  }}">Privacy Policy</a>
                 </li>
               </ul>
             </div>
