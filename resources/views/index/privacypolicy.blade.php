@@ -1,5 +1,5 @@
 @extends('layouts.index')
-@section('title') Privacy Policy | BD Helpline | বিসিএস-সহ সরকারি চাকরির পরীক্ষার প্রস্তুতির জন্য সেরা অনলাইন প্ল্যাটফর্ম @endsection
+@section('title') Privacy Policy | BD Helpline | সকল জেলার তথ্যসংবলিত সার্ভিস অ্যাপ @endsection
 
 @section('third_party_stylesheets')
 
