@@ -1,5 +1,5 @@
 @extends('layouts.index')
-@section('title') Terms & Conditions | BD Helpline @endsection
+@section('title') Terms & Conditions | BD Helpline | সকল জেলার তথ্যসংবলিত সার্ভিস অ্যাপ @endsection
 
 @section('third_party_stylesheets')
 
