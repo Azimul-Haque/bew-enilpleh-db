@@ -68,6 +68,12 @@
                 <li class="nav-item">
                   <a class="" href="{{ route('index.get-contact')  }}">Contact</a>
                 </li>
+                <li class="nav-item">
+                  <a class="" href="{{ route('index.get-contact')  }}">Terms & Conditions</a>
+                </li>
+                <li class="nav-item">
+                  <a class="" href="{{ route('index.get-contact')  }}">Contact</a>
+                </li>
               </ul>
             </div>
 
