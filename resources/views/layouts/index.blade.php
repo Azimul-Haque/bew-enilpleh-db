@@ -153,7 +153,7 @@
                   </a>
                 </div>
                 <p>
-                  BCS EXAM AID is a dedicated online platform to take the best preparation for the Bangladesh Civil Service (BCS) Exam and Other Govt Job Exam.
+                  BD Helpline" বাংলাদেশের সকল জেলার জরুরী তথ্যসেবা সংবলিত একটি মোবাইল অ্যাপ। যে কোন ব্যক্তি এই অ্যাপ ব্যবহার করে বিশ্বের যে কোন প্রান্ত থেকে বাংলাদেশের যেকোন জেলার প্রাথমিক ও জরুরী তথ্যসেবা পেতে পারেন।
                 </p>
                 <p class="copyright-text">
                   <span>© {{ date('Y') }} App Lab IT.</span>Designed and Developed by
