@@ -733,7 +733,7 @@ class AdminandothersController extends Controller
 
     public function busIndex()
     {
-        $districts = District::with('busesFrom')->all();
+        $districts = District::with('busesFrom')->get();
                 
         return view('dashboard.buses.index')
                             ->withDistricts($districts);
