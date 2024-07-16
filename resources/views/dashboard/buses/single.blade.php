@@ -58,7 +58,7 @@
                 @foreach($buses as $bus)
                   <tr>
                     <td>
-                      {{ $bus->name }}
+                      {{ $bus->bus_name }}
                     </td>
                     <td>{{ $bus->mobile }}</td>
                     <td align="right">
