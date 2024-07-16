@@ -190,7 +190,7 @@
                   <div class="input-group mb-3">
                       <input type="text"
                              name="bus_name"
-                             class="form-control"
+                             class="form-control select2"
                              value="{{ old('bus_name') }}"
                              placeholder="বাসের নাম" required>
                       <div class="input-group-append">
