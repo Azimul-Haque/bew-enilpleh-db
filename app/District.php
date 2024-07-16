@@ -54,7 +54,7 @@ class District extends Model
 
     public function buses()
     {
-        return $this->hasMany('App\Bus', 'from_district', 'district_id');
+        return $this->hasMany('App\Bus', 'district_id', 'district_id');
     }
 
     public function busesTo()
