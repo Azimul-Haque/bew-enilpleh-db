@@ -59,7 +59,7 @@
                   <tr>
                     <td>
                       {{ $bus->bus_name }}<br/>
-                      <span>{{ $bus->bus_type }}</span>
+                      <span class="label">{{ $bus->bus_type }}</span>
                     </td>
                     <td>{{ $bus->mobile }}</td>
                     <td align="right">
