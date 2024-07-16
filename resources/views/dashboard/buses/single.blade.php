@@ -156,7 +156,7 @@
                                     <input type="text"
                                            name="starting_time"
                                            class="form-control"
-                                           value="{{ old('starting_time') }}"
+                                           value="{{ $bus->starting_time }}"
                                            placeholder="ছাড়ার সময়/ সময়সমূহ (একাধিক হলে কমা দিয়ে লিখুন)" required>
                                     <div class="input-group-append">
                                         <div class="input-group-text"><span class="fas fa-bus"></span></div>
