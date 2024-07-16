@@ -801,7 +801,8 @@ class AdminandothersController extends Controller
         $bus->to_district = $request->to_district;
         $bus->bus_name = $request->bus_name;
         $bus->route_info = $request->route_info;
-        $bus->bus_name = $request->bus_name;
+        $bus->bus_type = $request->bus_type;
+        $bus->bus_type = $request->bus_type;
         $bus->save();
 
         // image upload
