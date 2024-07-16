@@ -127,7 +127,7 @@ Route::post('/dashboard/rabs/battalion/district/{district_id}/update', 'Adminand
 
 
 // Bus
-Route::get('/dashboard/buses', 'AdminandothersController@busesIndex')->name('dashboard.buses');
+Route::get('/dashboard/buses', 'AdminandothersController@busIndex')->name('dashboard.buses');
 Route::get('/dashboard/buses/{district_id}', 'AdminandothersController@busIndexSingle')->name('dashboard.buses.districtwise');
 Route::get('/dashboard/buses/{district_id}/{search}', 'AdminandothersController@busIndexSearch')->name('dashboard.buses.districtwise.search');
 Route::post('/dashboard/buses/{district_id}/store', 'AdminandothersController@storeBus')->name('dashboard.buses.store');
