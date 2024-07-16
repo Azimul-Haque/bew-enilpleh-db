@@ -64,6 +64,7 @@
                     <td>
                       {{ $bus->bus_name }}<br/>
                       <span class="badge bg-success">{{ $bus->bus_type }}</span>
+                      <span class="badge bg-warning">{{ $bus->contact }}</span>
                     </td>
                     <td>{{ $bus->district->name_bangla }}</td>
                     <td>{{ $bus->toDistrict->name_bangla }}</td>
