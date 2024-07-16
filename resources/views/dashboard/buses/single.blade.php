@@ -182,7 +182,7 @@
               
                   @csrf
                   <h5>হতে জেলা: {{ $district->name_bangla }}</h5>
-                  <div class="">
+                  <div class="" style="margin-bottom: 15px;">
                     <select name="from_district" class="form-control select2" required>
                         <option selected="" disabled="" value="">গন্তব্য জেলা নির্বাচন করুন</option>
                         @foreach($districts as $todistrict)
