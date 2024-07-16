@@ -136,7 +136,7 @@
                                     <input type="text"
                                            name="bus_type"
                                            class="form-control"
-                                           value="{{ old('bus_type') }}"
+                                           value="{{ $bus->bus_type }}"
                                            placeholder="AC/ Non-AC/ Volvo/ স্ক্যানিয়া/ ডাবল ডেকার ইত্যাদি" required>
                                     <div class="input-group-append">
                                         <div class="input-group-text"><span class="fas fa-bus"></span></div>
@@ -146,7 +146,7 @@
                                     <input type="text"
                                            name="fare"
                                            class="form-control"
-                                           value="{{ old('fare') }}"
+                                           value="{{ $bus->fare }}"
                                            placeholder="বাস ভাড়া" required>
                                     <div class="input-group-append">
                                         <div class="input-group-text"><span class="fas fa-bus"></span></div>
