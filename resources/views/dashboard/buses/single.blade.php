@@ -225,7 +225,7 @@
                              name="bus_type"
                              class="form-control"
                              value="{{ old('bus_type') }}"
-                             placeholder="AC/ Non-AC/ স্ক্যানিয়া/ ডাবল ডেকার ইত্যাদি" required>
+                             placeholder="AC/ Non-AC/ Volvo/ স্ক্যানিয়া/ ডাবল ডেকার ইত্যাদি" required>
                       <div class="input-group-append">
                           <div class="input-group-text"><span class="fas fa-bus"></span></div>
                       </div>
