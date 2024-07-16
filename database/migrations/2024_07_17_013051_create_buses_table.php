@@ -20,7 +20,7 @@ class CreateBusesTable extends Migration
             $table->string('bus_name');
             $table->string('route_info');
             $table->string('bus_type');
-            $table->string('fair');
+            $table->string('fare');
             $table->timestamps();
 
             $table->foreign('from_district')->references('district_id')->on('districts');
