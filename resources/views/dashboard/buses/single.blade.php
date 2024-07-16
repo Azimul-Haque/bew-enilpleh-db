@@ -50,7 +50,10 @@
               <thead>
                 <tr>
                   <th>নাম</th>
-                  <th>মোবাইল নম্বর</th>
+                  <th>হতে</th>
+                  <th>পর্যন্ত</th>
+                  <th>রুটের তথ্য</th>
+                  <th>যোগাযোগ</th>
                   <th align="right">কার্যক্রম</th>
                 </tr>
               </thead>
