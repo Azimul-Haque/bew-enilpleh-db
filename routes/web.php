@@ -128,6 +128,11 @@ Route::post('/dashboard/rabs/battalion/district/{district_id}/update', 'Adminand
 
 // Bus
 Route::get('/dashboard/buses', 'AdminandothersController@busesIndex')->name('dashboard.buses');
+Route::get('/dashboard/rentacars/{district_id}', 'AdminandothersController@rentacarIndexSingle')->name('dashboard.buses.districtwise');
+Route::get('/dashboard/rentacars/{district_id}/{search}', 'AdminandothersController@rentacarIndexSearch')->name('dashboard.buses.districtwise.search');
+Route::post('/dashboard/rentacars/{district_id}/store', 'AdminandothersController@storeRentacar')->name('dashboard.buses.store');
+Route::post('/dashboard/rentacars/{district_id}/{id}/update', 'AdminandothersController@updateRentacar')->name('dashboard.buses.update');
+Route::get('/dashboard/rentacars/{district_id}/{id}/delete', 'AdminandothersController@deleteRentacar')->name('dashboard.buses.delete');
 
 
 
