@@ -174,9 +174,8 @@
             <div class="modal-body">
               
                   @csrf
-
+                  <h4>হতে জেলা: {{ $district->name_bangla }}</h4>
                   <div class="input-group mb-3">
-                    <h4>হতে জেলা: {{ $district->name_bangla }}</h4>
                     <select name="from_district" class="form-control district" required>
                         <option selected="" disabled="" value="">জেলা নির্বাচন করুন</option>
                         @foreach($districts as $todistrict)
