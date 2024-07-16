@@ -1,5 +1,5 @@
 @extends('layouts.app')
-@section('title') ড্যাশবোর্ড | রেন্ট-এ-কার @endsection
+@section('title') ড্যাশবোর্ড | বাস @endsection
 
 @section('third_party_stylesheets')
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -35,7 +35,7 @@
                     <tr>
                         @foreach ($chunk as $district)
                             <td>
-                              <a href="{{ route('dashboard.rentacars.districtwise', $district->id) }}" rel="tooltip" title="" data-original-title="{{ $district->name_bangla }} রেন্ট-এ-কার তালিকা দেখতে ক্লিক করুন">{{ $district->name_bangla }} <small>({{ bangla($district->rentacars->count()) }} টি গাড়ি)</small></a>
+                              <a href="{{ route('dashboard.rentacars.districtwise', $district->id) }}" rel="tooltip" title="" data-original-title="{{ $district->name_bangla }} বাস তালিকা দেখতে ক্লিক করুন">{{ $district->name_bangla }} <small>({{ bangla($district->rentacars->count()) }} টি গাড়ি)</small></a>
                             </td>
                         @endforeach
                         @if ($chunk->count() < 5)
