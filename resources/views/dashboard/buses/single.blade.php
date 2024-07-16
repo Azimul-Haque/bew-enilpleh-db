@@ -94,40 +94,81 @@
                             </div>
                             <form method="post" action="{{ route('dashboard.buses.update', [$district->id, $bus->id]) }}" enctype="multipart/form-data">
                               <div class="modal-body">
-                                
-                                    @csrf
-
-                                    <div class="input-group mb-3">
-                                        <input type="text"
-                                               name="name"
-                                               class="form-control"
-                                               value="{{ $bus->name }}"
-                                               placeholder="বাসের নাম" required>
-                                        <div class="input-group-append">
-                                            <div class="input-group-text"><span class="fas fa-bus"></span></div>
-                                        </div>
-                                    </div>
-                                    <div class="input-group mb-3">
-                                        <input type="number"
-                                               name="mobile"
-                                               value="{{ $bus->mobile }}"
-                                               class="form-control"
-                                               placeholder="বাসের মোবাইল নম্বর" required>
-                                        <div class="input-group-append">
-                                            <div class="input-group-text"><span class="fas fa-mobile"></span></div>
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="image">ছবি (প্রয়োজনে, ৩০০ x ৩০০ সাইজের, ২ মেগাবাইটের মধ্যে)</label>
-                                        <input type="file" id="image" name="image" accept="image/*">
-                                    </div>
-                                    <center>
-                                      @if($bus->rentacarimage != null)
-                                        <img src="{{ asset('images/buses/' . $bus->rentacarimage->image)}}" id='img-upload' style="width: 250px; height: auto;" class="img-responsive" />
-                                      @else
-                                        <img src="{{ asset('images/placeholder.png')}}" id='img-upload' style="width: 250px; height: auto;" class="img-responsive" />
-                                      @endif
-                                    </center>                                               
+                                  @csrf
+                                  <h5>হতে জেলা: {{ $district->name_bangla }}</h5>
+                                  <div class="" style="margin-bottom: 15px;">
+                                    <select name="to_district" class="form-control select2" required>
+                                        <option selected="" disabled="" value="">গন্তব্য জেলা নির্বাচন করুন</option>
+                                        @foreach($districts as $todistrict)
+                                          <option value="{{ $todistrict->id }}">{{ $todistrict->name_bangla }} - {{ $todistrict->name }}</option>
+                                        @endforeach
+                                    </select>
+                                    {{-- <div class="input-group-append">
+                                        <div class="input-group-text"><span class="fas fa-map"></span></div>
+                                    </div> --}}
+                                  </div>
+                                  
+                                  <div class="input-group mb-3">
+                                      <input type="text"
+                                             name="bus_name"
+                                             class="form-control"
+                                             value="{{ old('bus_name') }}"
+                                             placeholder="বাসের নাম" required>
+                                      <div class="input-group-append">
+                                          <div class="input-group-text"><span class="fas fa-bus"></span></div>
+                                      </div>
+                                  </div>
+                                  <div class="input-group mb-3">
+                                      <input type="text"
+                                             name="route_info"
+                                             class="form-control"
+                                             value="{{ old('route_info') }}"
+                                             placeholder="রুটের তথ্য (যেমন: টাঙ্গাইল হতে দর্শনা ভায়া সিরাজগঞ্জ, উল্লাপাড়া, শাহজাদপুর, কাশিনাথপুর, পাবনা, কুষ্টিয়া, ঝিনাইদহ, চুয়াডাঙ্গা)" required>
+                                      <div class="input-group-append">
+                                          <div class="input-group-text"><span class="fas fa-bus"></span></div>
+                                      </div>
+                                  </div>
+                                  <div class="input-group mb-3">
+                                      <input type="text"
+                                             name="bus_type"
+                                             class="form-control"
+                                             value="{{ old('bus_type') }}"
+                                             placeholder="AC/ Non-AC/ Volvo/ স্ক্যানিয়া/ ডাবল ডেকার ইত্যাদি" required>
+                                      <div class="input-group-append">
+                                          <div class="input-group-text"><span class="fas fa-bus"></span></div>
+                                      </div>
+                                  </div>
+                                  <div class="input-group mb-3">
+                                      <input type="text"
+                                             name="fare"
+                                             class="form-control"
+                                             value="{{ old('fare') }}"
+                                             placeholder="বাস ভাড়া" required>
+                                      <div class="input-group-append">
+                                          <div class="input-group-text"><span class="fas fa-bus"></span></div>
+                                      </div>
+                                  </div>
+                                  <div class="input-group mb-3">
+                                      <input type="text"
+                                             name="starting_time"
+                                             class="form-control"
+                                             value="{{ old('starting_time') }}"
+                                             placeholder="ছাড়ার সময়/ সময়সমূহ (একাধিক হলে কমা দিয়ে লিখুন)" required>
+                                      <div class="input-group-append">
+                                          <div class="input-group-text"><span class="fas fa-bus"></span></div>
+                                      </div>
+                                  </div>
+                                  
+                                  <div class="input-group mb-3">
+                                      <input type="text"
+                                             name="contact"
+                                             value="{{ old('contact') }}"
+                                             class="form-control"
+                                             placeholder="যোগাযোগ" required>
+                                      <div class="input-group-append">
+                                          <div class="input-group-text"><span class="fas fa-mobile"></span></div>
+                                      </div>
+                                  </div>                                              
                               </div>
                               <div class="modal-footer">
                                 <button type="button" class="btn btn-secondary" data-dismiss="modal">ফিরে যান</button>
