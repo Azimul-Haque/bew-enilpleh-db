@@ -179,8 +179,8 @@
                     <h4>হতে জেলা: {{ $district->name_bangla }}</h4>
                     <select name="from_district" class="form-control district" required>
                         <option selected="" disabled="" value="">জেলা নির্বাচন করুন</option>
-                        @foreach($districts as $district)
-                          <option value="{{ $district->id }}" @if($district->id == $ambulance->district_id) selected @endif>{{ $district->name_bangla }}</option>
+                        @foreach($districts as $todistrict)
+                          <option value="{{ $todistrict->id }}">{{ $todistricttodistrict->name_bangla }}</option>
                         @endforeach
                     </select>
                     <div class="input-group-append">
