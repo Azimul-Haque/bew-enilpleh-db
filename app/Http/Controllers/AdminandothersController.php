@@ -821,27 +821,16 @@ class AdminandothersController extends Controller
             'image'          => 'sometimes',
         ));
 
-        $rentacar = Bus::find($id);
-        $rentacar->district_id = $district_id;
-        $rentacar->name = $request->name;
-        $rentacar->mobile = $request->mobile;
-        $rentacar->save();
-
-        // image upload
-        if($request->hasFile('image')) {
-            $image_path = public_path('images/rentacars/'. $rentacar->rentacarimage->image);
-            // dd($image_path);
-            if(File::exists($image_path)) {
-                File::delete($image_path);
-            }
-            $image    = $request->file('image');
-            $filename = random_string(5) . time() .'.' . "webp";
-            $location = public_path('images/rentacars/'. $filename);
-            Image::make($image)->fit(200, 200)->save($location);
-            $rentacarimage              = Rentacarimage::where('rentacar_id', $rentacar->id)->first();
-            $rentacarimage->image       = $filename;
-            $rentacarimage->save();
-        }
+        $bus = Bus::find($id);
+        $bus->from_district = $district_id;
+        $bus->to_district = $request->to_district;
+        $bus->bus_name = $request->bus_name;
+        $bus->route_info = $request->route_info;
+        $bus->bus_type = $request->bus_type;
+        $bus->fare = $request->fare;
+        $bus->starting_time = $request->starting_time;
+        $bus->contact = $request->contact;
+        $bus->save();
 
         Cache::forget('buses' . $district_id);
         Session::flash('success', 'Bus added successfully!');
