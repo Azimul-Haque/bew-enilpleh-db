@@ -722,6 +722,32 @@ class APIController extends Controller
         }
     }
 
+    public function getBusesTo($softtoken, $district_id)
+    {
+        if($softtoken == env('SOFT_TOKEN'))
+        {
+            $buses = Cache::remember('buses'  . $district_id, 30 * 24 * 60 * 60, function () use ($district_id) {
+                 $buses = Bus::where('district_id', $district_id)
+                                 ->orderBy('id', 'asc')
+                                 ->get();
+                 foreach($buses as $bus) {
+                       $bus->district_to = $bus->toDistrict->name_bangla;
+                       $bus->makeHidden('district', 'toDistrict', 'id', 'district_id', 'to_district', 'created_at', 'updated_at');
+                 }
+                 return $buses;
+            });
+            
+            return response()->json([
+                'success' => true,
+                'buses' => $buses,
+            ]);
+        } else {
+            return response()->json([
+                'success' => false
+            ]);
+        }
+    }
+
 
 
 
