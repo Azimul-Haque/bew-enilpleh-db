@@ -17,6 +17,8 @@ class CreateBusesTable extends Migration
             $table->id();
             $table->integer('from_district')->unsigned();
             $table->integer('to_district')->unsigned();
+            $table->string('bus_name');
+            $table->string('bus_name');
             $table->timestamps();
 
             $table->foreign('from_district')->references('district_id')->on('districts');
