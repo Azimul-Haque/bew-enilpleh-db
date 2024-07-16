@@ -703,7 +703,7 @@ class APIController extends Controller
                  $buses = Coaching::where('district_id', $district_id)
                                  ->orderBy('id', 'asc')
                                  ->get();
-                 foreach($buses as $fireservice) {
+                 foreach($buses as $bus) {
                        $fireservice->makeHidden('id', 'district_id', 'created_at', 'updated_at');
                    }
                  return $buses;
