@@ -758,7 +758,19 @@ class AdminandothersController extends Controller
                                  ->where('name', 'LIKE', "%$search%")
                                  ->orWhere('mobile', 'LIKE', "%$search%")->count();
 
+        // Initialize query
+        $query = Rabbattaliondetail::where('rabbattalion_id', $battalion_id);
 
+        // If the search parameter is provided, apply it to designation, area, mobile, and telephone fields
+        $query->where(function($q) use ($search) {
+            $q->where('designation', 'LIKE', '%' . $search . '%')
+              ->orWhere('area', 'LIKE', '%' . $search . '%')
+              ->orWhere('mobile', 'LIKE', '%' . $search . '%')
+              ->orWhere('telephone', 'LIKE', '%' . $search . '%');
+        });
+
+        // Get the results
+        $rabbattallionofficers = $query->orderBy('id', 'asc')->paginate(10);
         $buses = Bus::where('district_id', $district_id)
                             ->where('name', 'LIKE', "%$search%")
                             ->orWhere('mobile', 'LIKE', "%$search%")
