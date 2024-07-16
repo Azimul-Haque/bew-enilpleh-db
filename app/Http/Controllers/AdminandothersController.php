@@ -799,7 +799,9 @@ class AdminandothersController extends Controller
         $bus = new Bus;
         $bus->from_district = $district_id;
         $bus->to_district = $request->to_district;
-        $bus->mobile = $request->mobile;
+        $bus->bus_name = $request->bus_name;
+        $bus->route_info = $request->route_info;
+        $bus->bus_name = $request->bus_name;
         $bus->save();
 
         // image upload
