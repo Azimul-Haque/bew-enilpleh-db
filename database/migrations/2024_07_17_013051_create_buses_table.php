@@ -25,8 +25,7 @@ class CreateBusesTable extends Migration
             $table->string('contact');
             $table->timestamps();
 
-            $table->foreign('from_district')->references('district_id')->on('districts');
-            $table->foreign('to_district')->references('district_id')->on('districts');
+            $table->foreign('district_id')->references('district_id')->on('districts');
         });
     }
 
