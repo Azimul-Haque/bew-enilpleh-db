@@ -189,9 +189,9 @@
                           <option value="{{ $todistrict->id }}">{{ $todistrict->name_bangla }}</option>
                         @endforeach
                     </select>
-                    <div class="input-group-append">
+                    {{-- <div class="input-group-append">
                         <div class="input-group-text"><span class="fas fa-map"></span></div>
-                    </div>
+                    </div> --}}
                   </div>
                   
                   <div class="input-group mb-3">
