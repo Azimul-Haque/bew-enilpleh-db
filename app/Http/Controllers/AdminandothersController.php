@@ -789,7 +789,7 @@ class AdminandothersController extends Controller
         $this->validate($request,array(
             'to_district'    => 'required',
             'bus_name'         => 'required|string|max:191',
-            'image'          => 'sometimes',
+            'bus_name'         => 'required|string|max:191',
         ));
 
         $rentacar = new Bus;
