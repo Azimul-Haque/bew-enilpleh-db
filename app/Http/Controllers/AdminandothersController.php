@@ -14,8 +14,8 @@ use App\Coaching;
 use App\Rab;
 use App\Rabbattalion;
 use App\Rabbattaliondetail;
-use App\District;
 use App\Bus;
+use App\District;
 
 use Carbon\Carbon;
 use DB;
