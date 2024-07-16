@@ -751,7 +751,7 @@ class AdminandothersController extends Controller
                             ->withRentacars($rentacars);
     }
 
-    public function rentacarIndexSearch($district_id, $search)
+    public function busIndexSearch($district_id, $search)
     {
         $district = District::find($district_id);
         $rentacarscount = Rentacar::where('district_id', $district_id)
@@ -770,7 +770,7 @@ class AdminandothersController extends Controller
                             ->withRentacars($rentacars);
     }
 
-    public function storeRentacar(Request $request, $district_id)
+    public function storeBus(Request $request, $district_id)
     {
         $this->validate($request,array(
             'name'           => 'required|string|max:191',
