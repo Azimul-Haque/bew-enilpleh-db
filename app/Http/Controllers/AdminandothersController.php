@@ -742,7 +742,7 @@ class AdminandothersController extends Controller
     public function busIndexSingle($district_id)
     {
         $district = District::find($district_id);
-        $busescount = Bus::where('district_id', $district_id)->count();
+        $busescount = Bus::where('from_district', $district_id)->count();
         $buses = Bus::where('from_district', $district_id)->orderBy('id', 'asc')->paginate(10);
                 
         return view('dashboard.buses.single')
