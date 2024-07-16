@@ -304,11 +304,11 @@
                   </div>
                   
                   <div class="input-group mb-3">
-                      <input type="text"
+                      <input type="number"
                              name="contact"
                              value="{{ old('contact') }}"
                              class="form-control"
-                             placeholder="যোগাযোগ" required>
+                             placeholder="মোবাইল নং (১১ ডিজিট, ইংরেজিতে)" required>
                       <div class="input-group-append">
                           <div class="input-group-text"><span class="fas fa-mobile"></span></div>
                       </div>
