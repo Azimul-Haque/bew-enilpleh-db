@@ -180,7 +180,7 @@
                     <select name="from_district" class="form-control district" required>
                         <option selected="" disabled="" value="">জেলা নির্বাচন করুন</option>
                         @foreach($districts as $todistrict)
-                          <option value="{{ $todistrict->id }}">{{ $todistricttodistrict->name_bangla }}</option>
+                          <option value="{{ $todistrict->id }}">{{ $todistrict->name_bangla }}</option>
                         @endforeach
                     </select>
                     <div class="input-group-append">
