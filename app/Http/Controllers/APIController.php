@@ -696,7 +696,7 @@ class APIController extends Controller
         }
     }
 
-    public function getBuses($softtoken, $district_id)
+    public function getBusesFrom($softtoken, $district_id)
     {
         if($softtoken == env('SOFT_TOKEN'))
         {
