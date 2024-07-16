@@ -127,7 +127,7 @@ Route::post('/dashboard/rabs/battalion/district/{district_id}/update', 'Adminand
 
 
 // Bus
-Route::get('/dashboard/rentacars', 'AdminandothersController@rentacarIndex')->name('dashboard.rentacars');
+Route::get('/dashboard/buses', 'AdminandothersController@busesIndex')->name('dashboard.rentacars');
 
 
 
