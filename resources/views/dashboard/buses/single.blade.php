@@ -227,6 +227,16 @@
                           <div class="input-group-text"><span class="fas fa-user-tie"></span></div>
                       </div>
                   </div>
+                  <div class="input-group mb-3">
+                      <input type="text"
+                             name="fare"
+                             class="form-control"
+                             value="{{ old('fare') }}"
+                             placeholder="বাস ভাড়া" required>
+                      <div class="input-group-append">
+                          <div class="input-group-text"><span class="fas fa-user-tie"></span></div>
+                      </div>
+                  </div>
                   
                   <div class="input-group mb-3">
                       <input type="number"
