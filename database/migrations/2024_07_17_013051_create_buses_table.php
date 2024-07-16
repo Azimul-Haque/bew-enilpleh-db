@@ -22,6 +22,7 @@ class CreateBusesTable extends Migration
             $table->string('bus_type');
             $table->string('fare');
             $table->string('starting_time');
+            $table->string('counter_address');
             $table->string('contact');
             $table->timestamps();
 
