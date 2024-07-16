@@ -700,7 +700,7 @@ class APIController extends Controller
         if($softtoken == env('SOFT_TOKEN'))
         {
             $buses = Cache::remember('buses'  . $district_id, 30 * 24 * 60 * 60, function () use ($district_id) {
-                 $buses = Coaching::where('district_id', $district_id)
+                 $buses = Bus::where('district_id', $district_id)
                                  ->orderBy('id', 'asc')
                                  ->get();
                  foreach($buses as $bus) {
