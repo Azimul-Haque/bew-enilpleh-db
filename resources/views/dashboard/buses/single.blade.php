@@ -202,7 +202,7 @@
                              name="route_info"
                              class="form-control"
                              value="{{ old('route_info') }}"
-                             placeholder="বাসের নাম" required>
+                             placeholder="রুটের তথ্য" required>
                       <div class="input-group-append">
                           <div class="input-group-text"><span class="fas fa-user-tie"></span></div>
                       </div>
