@@ -735,7 +735,7 @@ class AdminandothersController extends Controller
     {
         $districts = District::all();
                 
-        return view('dashboard.rentacars.index')
+        return view('dashboard.buses.index')
                             ->withDistricts($districts);
     }
 
