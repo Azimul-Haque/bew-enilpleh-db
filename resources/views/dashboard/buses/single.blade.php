@@ -207,6 +207,16 @@
                           <div class="input-group-text"><span class="fas fa-user-tie"></span></div>
                       </div>
                   </div>
+                  <div class="input-group mb-3">
+                      <input type="text"
+                             name="bus_type"
+                             class="form-control"
+                             value="{{ old('route_info') }}"
+                             placeholder="রুটের তথ্য (যেমন: টাঙ্গাইল হতে দর্শনা ভায়া সিরাজগঞ্জ, উল্লাপাড়া, শাহজাদপুর, কাশিনাথপুর, পাবনা, কুষ্টিয়া, ঝিনাইদহ, চুয়াডাঙ্গা)" required>
+                      <div class="input-group-append">
+                          <div class="input-group-text"><span class="fas fa-user-tie"></span></div>
+                      </div>
+                  </div>
                   
                   <div class="input-group mb-3">
                       <input type="number"
