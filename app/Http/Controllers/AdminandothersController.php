@@ -742,8 +742,8 @@ class AdminandothersController extends Controller
     public function busIndexSingle($district_id)
     {
         $district = District::find($district_id);
-        $busescount = Rentacar::where('district_id', $district_id)->count();
-        $buses = Rentacar::where('district_id', $district_id)->orderBy('id', 'asc')->paginate(10);
+        $busescount = Bus::where('district_id', $district_id)->count();
+        $buses = Bus::where('district_id', $district_id)->orderBy('id', 'asc')->paginate(10);
                 
         return view('dashboard.buses.single')
                             ->withDistrict($district)
@@ -754,11 +754,12 @@ class AdminandothersController extends Controller
     public function busIndexSearch($district_id, $search)
     {
         $district = District::find($district_id);
-        $busescount = Rentacar::where('district_id', $district_id)
+        $busescount = Bus::where('district_id', $district_id)
                                  ->where('name', 'LIKE', "%$search%")
                                  ->orWhere('mobile', 'LIKE', "%$search%")->count();
 
-        $buses = Rentacar::where('district_id', $district_id)
+
+        $buses = Bus::where('district_id', $district_id)
                             ->where('name', 'LIKE', "%$search%")
                             ->orWhere('mobile', 'LIKE', "%$search%")
                             ->orderBy('id', 'asc')
