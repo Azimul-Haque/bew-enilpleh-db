@@ -759,7 +759,7 @@ class AdminandothersController extends Controller
                                  ->orWhere('mobile', 'LIKE', "%$search%")->count();
 
         // Initialize query
-        $query = Bus::where('rabbattalion_id', $battalion_id);
+        $query = Bus::where('from_district', $district_id);
 
         // If the search parameter is provided, apply it to designation, area, mobile, and telephone fields
         $query->where(function($q) use ($search) {
