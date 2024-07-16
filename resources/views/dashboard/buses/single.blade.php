@@ -162,7 +162,16 @@
                                         <div class="input-group-text"><span class="fas fa-bus"></span></div>
                                     </div>
                                 </div>
-                                
+                                <div class="input-group mb-3">
+                                    <input type="text"
+                                           name="counter_address"
+                                           class="form-control"
+                                           value="{{ old('counter_address') }}"
+                                           placeholder="কাউন্টার/ কাউন্টারসমূহ (একাধিক হলে কমা দিয়ে লিখুন)" required>
+                                    <div class="input-group-append">
+                                        <div class="input-group-text"><span class="fas fa-bus"></span></div>
+                                    </div>
+                                </div>                                
                                 <div class="input-group mb-3">
                                     <input type="text"
                                            name="contact"
