@@ -742,32 +742,32 @@ class AdminandothersController extends Controller
     public function busIndexSingle($district_id)
     {
         $district = District::find($district_id);
-        $rentacarscount = Rentacar::where('district_id', $district_id)->count();
-        $rentacars = Rentacar::where('district_id', $district_id)->orderBy('id', 'asc')->paginate(10);
+        $busescount = Rentacar::where('district_id', $district_id)->count();
+        $buses = Rentacar::where('district_id', $district_id)->orderBy('id', 'asc')->paginate(10);
                 
-        return view('dashboard.rentacars.single')
+        return view('dashboard.buses.single')
                             ->withDistrict($district)
-                            ->withRentacarscount($rentacarscount)
-                            ->withRentacars($rentacars);
+                            ->withBusescount($busescount)
+                            ->withBuses($buses);
     }
 
     public function busIndexSearch($district_id, $search)
     {
         $district = District::find($district_id);
-        $rentacarscount = Rentacar::where('district_id', $district_id)
+        $busescount = Rentacar::where('district_id', $district_id)
                                  ->where('name', 'LIKE', "%$search%")
                                  ->orWhere('mobile', 'LIKE', "%$search%")->count();
 
-        $rentacars = Rentacar::where('district_id', $district_id)
+        $buses = Rentacar::where('district_id', $district_id)
                             ->where('name', 'LIKE', "%$search%")
                             ->orWhere('mobile', 'LIKE', "%$search%")
                             ->orderBy('id', 'asc')
                             ->paginate(10);
 
-        return view('dashboard.rentacars.single')
+        return view('dashboard.buses.single')
                             ->withDistrict($district)
-                            ->withRentacarscount($rentacarscount)
-                            ->withRentacars($rentacars);
+                            ->withBusescount($busescount)
+                            ->withBuses($buses);
     }
 
     public function storeBus(Request $request, $district_id)
