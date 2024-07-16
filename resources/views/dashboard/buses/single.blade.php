@@ -2,8 +2,8 @@
 @section('title') ড্যাশবোর্ড | বাস তালিকা @endsection
 
 @section('third_party_stylesheets')
-   <link href="{{ asset('css/select2.min.css') }}" rel="stylesheet" />
-    <link href="{{ asset('css/select2-bootstrap4.min.css') }}" rel="stylesheet" />
+  <link href="{{ asset('css/select2.min.css') }}" rel="stylesheet" />
+  <link href="{{ asset('css/select2-bootstrap4.min.css') }}" rel="stylesheet" />
 @endsection
 
 @section('content')
