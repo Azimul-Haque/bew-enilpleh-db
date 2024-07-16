@@ -202,7 +202,7 @@
                              name="route_info"
                              class="form-control"
                              value="{{ old('route_info') }}"
-                             placeholder="রুটের তথ্য (যেমন: টাঙ্গাইল হতে দর্শনা ভায়া সিরাজগঞ্জ, উল্লাপাড়া, শাহজাদপুর, কাশিনাথপুর, পাবনা, )" required>
+                             placeholder="রুটের তথ্য (যেমন: টাঙ্গাইল হতে দর্শনা ভায়া সিরাজগঞ্জ, উল্লাপাড়া, শাহজাদপুর, কাশিনাথপুর, পাবনা, কুষ্টিয়া, ঝিনাইদহ, চুয়াডাঙ্গা)" required>
                       <div class="input-group-append">
                           <div class="input-group-text"><span class="fas fa-user-tie"></span></div>
                       </div>
