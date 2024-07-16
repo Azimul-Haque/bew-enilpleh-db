@@ -219,10 +219,10 @@
                   </div>
                   <div class="input-group mb-3">
                       <input type="text"
-                             name=fare"
+                             name="fare"
                              class="form-control"
                              value="{{ old('fare') }}"
-                             placeholder="AC/ Non-AC/ " required>
+                             placeholder="বাস ভাড়া" required>
                       <div class="input-group-append">
                           <div class="input-group-text"><span class="fas fa-user-tie"></span></div>
                       </div>
