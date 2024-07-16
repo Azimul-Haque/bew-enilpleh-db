@@ -704,7 +704,7 @@ class APIController extends Controller
                                  ->orderBy('id', 'asc')
                                  ->get();
                  foreach($buses as $bus) {
-                       $fireservice->makeHidden('id', 'district_id', 'created_at', 'updated_at');
+                       $bus->makeHidden('id', 'district_id', 'created_at', 'updated_at');
                  }
                  return $buses;
             });
