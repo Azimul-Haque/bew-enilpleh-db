@@ -84,7 +84,7 @@
                       {{-- Edit User Modal Code --}}
                       <!-- Modal -->
                       <div class="modal fade" id="editUserModal{{ $bus->id }}" tabindex="-1" role="dialog" aria-labelledby="editUserModalLabel" aria-hidden="true" data-backdrop="static">
-                        <div class="modal-dialog" role="document">
+                        <div class="modal-dialog modal-lg" role="document">
                           <div class="modal-content">
                             <div class="modal-header bg-primary">
                               <h5 class="modal-title" id="editUserModalLabel">বাস তথ্য হালনাগাদ</h5>
