@@ -808,8 +808,8 @@ class AdminandothersController extends Controller
         $bus->save();
 
 
-        Cache::forget('rentacars' . $district_id);
-        Session::flash('success', 'Rent-a-Car added successfully!');
+        Cache::forget('buses' . $district_id);
+        Session::flash('success', 'Bus added successfully!');
         return redirect()->route('dashboard.rentacars.districtwise', $district_id);
     }
 
