@@ -743,8 +743,8 @@ class AdminandothersController extends Controller
     {
         $districts = District::all();
         $district = District::find($district_id);
-        $busescount = Bus::where('from_district', $district_id)->count();
-        $buses = Bus::where('from_district', $district_id)->orderBy('id', 'asc')->paginate(10);
+        $busescount = Bus::where('district_id', $district_id)->count();
+        $buses = Bus::where('district_id', $district_id)->orderBy('id', 'asc')->paginate(10);
                 
         return view('dashboard.buses.single')
                             ->withDistricts($districts)
@@ -757,14 +757,14 @@ class AdminandothersController extends Controller
     {
         $districts = District::all();
         $district = District::find($district_id);
-        $busescount = Bus::where('from_district', $district_id)
+        $busescount = Bus::where('district_id', $district_id)
                                  ->where('bus_name', 'LIKE', "%$search%")
                                  ->orWhere('route_info', 'LIKE', "%$search%")
                                  ->orWhere('contact', 'LIKE', "%$search%")
                                  ->orWhere('bus_type', 'LIKE', "%$search%")->count();
 
         // Initialize query
-        $query = Bus::where('from_district', $district_id);
+        $query = Bus::where('district_id', $district_id);
 
         // If the search parameter is provided, apply it to rest of the fields
         $query->where(function($q) use ($search) {
@@ -797,7 +797,7 @@ class AdminandothersController extends Controller
         ));
 
         $bus = new Bus;
-        $bus->from_district = $district_id;
+        $bus->district_id = $district_id;
         $bus->to_district = $request->to_district;
         $bus->bus_name = $request->bus_name;
         $bus->route_info = $request->route_info;
@@ -826,7 +826,7 @@ class AdminandothersController extends Controller
         ));
 
         $bus = Bus::find($id);
-        // $bus->from_district = $district_id; // dorkar nai
+        // $bus->district_id = $district_id; // dorkar nai
         $bus->to_district = $request->to_district;
         $bus->bus_name = $request->bus_name;
         $bus->route_info = $request->route_info;
