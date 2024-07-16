@@ -704,6 +704,7 @@ class APIController extends Controller
                                  ->orderBy('id', 'asc')
                                  ->get();
                  foreach($buses as $bus) {
+                    dd($bus);
                        $bus->from_district = $bus->district->name_bangla;
                        $bus->to_district = $bus->toDistrict->name_bangla;
                        $bus->makeHidden('toDistrict', 'id', 'district_id', 'created_at', 'updated_at');
