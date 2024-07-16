@@ -826,6 +826,7 @@ class AdminandothersController extends Controller
         ));
 
         $bus = Bus::find($id);
+        // $bus->from_district = $district_id; // dorkar nai
         $bus->to_district = $request->to_district;
         $bus->bus_name = $request->bus_name;
         $bus->route_info = $request->route_info;
