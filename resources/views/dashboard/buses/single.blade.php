@@ -239,11 +239,11 @@
                   </div>
                   
                   <div class="input-group mb-3">
-                      <input type="number"
-                             name="mobile"
-                             value="{{ old('mobile') }}"
+                      <input type="text"
+                             name="contact"
+                             value="{{ old('contact') }}"
                              class="form-control"
-                             placeholder="বাসের মোবাইল নম্বর" required>
+                             placeholder="যোগাযোগ" required>
                       <div class="input-group-append">
                           <div class="input-group-text"><span class="fas fa-mobile"></span></div>
                       </div>
