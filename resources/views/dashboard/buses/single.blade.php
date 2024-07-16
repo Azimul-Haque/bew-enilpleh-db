@@ -67,6 +67,7 @@
                     </td>
                     <td>{{ $bus->district->name_bangla }}</td>
                     <td>{{ $bus->toDistrict->name_bangla }}</td>
+                    <td>{{ $bus->starting_time }}</td>
                     <td width="15%"><small>{{ $bus->route_info }}</small></td>
                     <td>
                       <span class="badge bg-primary">ভাড়া: ৳ {{ $bus->fare }}/-</span><br/>
