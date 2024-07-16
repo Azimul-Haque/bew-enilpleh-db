@@ -67,6 +67,9 @@
                     <td>{{ $bus->district->name_bangla }}</td>
                     <td>{{ $bus->toDistrict->name_bangla }}</td>
                     <td width="15%"><small>{{ $bus->route_info }}</small></td>
+                    <td>
+                      
+                    </td>
                     <td align="right">
                       {{-- <button type="button" class="btn btn-warning btn-sm" data-toggle="modal" data-target="#notifModal{{ $bus->id }}">
                         <i class="fas fa-bell"></i>
