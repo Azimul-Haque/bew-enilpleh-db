@@ -14,7 +14,7 @@
           background-color: #fff;
           border: 1px solid #aaa;
           border-radius: 4px;
-          height: 36px;
+          height: 37px;
       }
     </style>
 @endsection
