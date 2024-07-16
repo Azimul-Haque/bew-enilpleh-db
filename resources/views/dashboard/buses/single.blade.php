@@ -166,7 +166,7 @@
                                 <div class="input-group mb-3">
                                     <input type="text"
                                            name="contact"
-                                           value="{{ old('contact') }}"
+                                           value="{{ $bus->contact }}"
                                            class="form-control"
                                            placeholder="যোগাযোগ" required>
                                     <div class="input-group-append">
