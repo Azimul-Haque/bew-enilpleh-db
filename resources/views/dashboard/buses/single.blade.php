@@ -229,10 +229,10 @@
                   </div>
                   <div class="input-group mb-3">
                       <input type="text"
-                             name="fare"
+                             name="starting_time"
                              class="form-control"
-                             value="{{ old('fare') }}"
-                             placeholder="বাস ভাড়া" required>
+                             value="{{ old('starting_time') }}"
+                             placeholder="ছাড়ার সময়/ সময়সমূহ (একাধিক হলে কমা দিয়ে লিখুন)" required>
                       <div class="input-group-append">
                           <div class="input-group-text"><span class="fas fa-user-tie"></span></div>
                       </div>
