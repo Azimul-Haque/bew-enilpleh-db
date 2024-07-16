@@ -126,6 +126,10 @@ Route::post('/dashboard/rabs/battalion/district/{district_id}/update', 'Adminand
 // Route::get('/dashboard/coachings/{district_id}/{id}/delete', 'AdminandothersController@deleteCoaching')->name('dashboard.coachings.delete');
 
 
+// Bus
+Route::get('/dashboard/rentacars', 'AdminandothersController@rentacarIndex')->name('dashboard.rentacars');
+
+
 
 
 
