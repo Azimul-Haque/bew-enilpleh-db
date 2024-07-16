@@ -816,9 +816,13 @@ class AdminandothersController extends Controller
     public function updateBus(Request $request, $district_id, $id)
     {
         $this->validate($request,array(
-            'name'           => 'required|string|max:191',
-            'mobile'         => 'required|string|max:191',
-            'image'          => 'sometimes',
+            'to_district'      => 'required',
+            'bus_name'         => 'required|string|max:191',
+            'route_info'       => 'required|string|max:191',
+            'bus_type'         => 'required|string|max:191',
+            'fare'             => 'required|string|max:191',
+            'starting_time'    => 'required|string|max:191',
+            'contact'          => 'required|string|max:191',
         ));
 
         $bus = Bus::find($id);
