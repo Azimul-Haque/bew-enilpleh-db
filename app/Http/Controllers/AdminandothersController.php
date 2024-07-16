@@ -808,7 +808,7 @@ class AdminandothersController extends Controller
         $bus->save();
 
 
-        Cache::forget('buses' . $district_id);
+        Cache::forget('busesfrom' . $district_id);
         Session::flash('success', 'Bus added successfully!');
         return redirect()->route('dashboard.buses.districtwise', $district_id);
     }
