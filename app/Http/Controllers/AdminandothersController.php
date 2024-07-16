@@ -797,8 +797,8 @@ class AdminandothersController extends Controller
         ));
 
         $bus = new Bus;
-        $bus->district_id = $district_id;
-        $bus->name = $request->name;
+        $bus->from_district = $district_id;
+        $bus->to_district = $request->to_district;
         $bus->mobile = $request->mobile;
         $bus->save();
 
