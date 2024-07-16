@@ -730,4 +730,109 @@ class AdminandothersController extends Controller
         Session::flash('success', 'District and RAB Battalion updated successfully!');
         return redirect()->route('dashboard.rabs');
     }
+
+    public function busIndex()
+    {
+        $districts = District::all();
+                
+        return view('dashboard.rentacars.index')
+                            ->withDistricts($districts);
+    }
+
+    public function busIndexSingle($district_id)
+    {
+        $district = District::find($district_id);
+        $rentacarscount = Rentacar::where('district_id', $district_id)->count();
+        $rentacars = Rentacar::where('district_id', $district_id)->orderBy('id', 'asc')->paginate(10);
+                
+        return view('dashboard.rentacars.single')
+                            ->withDistrict($district)
+                            ->withRentacarscount($rentacarscount)
+                            ->withRentacars($rentacars);
+    }
+
+    public function rentacarIndexSearch($district_id, $search)
+    {
+        $district = District::find($district_id);
+        $rentacarscount = Rentacar::where('district_id', $district_id)
+                                 ->where('name', 'LIKE', "%$search%")
+                                 ->orWhere('mobile', 'LIKE', "%$search%")->count();
+
+        $rentacars = Rentacar::where('district_id', $district_id)
+                            ->where('name', 'LIKE', "%$search%")
+                            ->orWhere('mobile', 'LIKE', "%$search%")
+                            ->orderBy('id', 'asc')
+                            ->paginate(10);
+
+        return view('dashboard.rentacars.single')
+                            ->withDistrict($district)
+                            ->withRentacarscount($rentacarscount)
+                            ->withRentacars($rentacars);
+    }
+
+    public function storeRentacar(Request $request, $district_id)
+    {
+        $this->validate($request,array(
+            'name'           => 'required|string|max:191',
+            'mobile'         => 'required|string|max:191',
+            'image'          => 'sometimes',
+        ));
+
+        $rentacar = new Rentacar;
+        $rentacar->district_id = $district_id;
+        $rentacar->name = $request->name;
+        $rentacar->mobile = $request->mobile;
+        $rentacar->save();
+
+        // image upload
+        if($request->hasFile('image')) {
+            $image    = $request->file('image');
+            $filename = random_string(5) . time() .'.' . "webp";
+            $location = public_path('images/rentacars/'. $filename);
+            Image::make($image)->fit(200, 200)->save($location);
+            $rentacarimage              = new Rentacarimage;
+            $rentacarimage->rentacar_id   = $rentacar->id;
+            $rentacarimage->image       = $filename;
+            $rentacarimage->save();
+        }
+
+        Cache::forget('rentacars' . $district_id);
+        Session::flash('success', 'Rent-a-Car added successfully!');
+        return redirect()->route('dashboard.rentacars.districtwise', $district_id);
+    }
+
+    public function updateRentacar(Request $request, $district_id, $id)
+    {
+        $this->validate($request,array(
+            'name'           => 'required|string|max:191',
+            'mobile'         => 'required|string|max:191',
+            'image'          => 'sometimes',
+        ));
+
+        $rentacar = Rentacar::find($id);
+        $rentacar->district_id = $district_id;
+        $rentacar->name = $request->name;
+        $rentacar->mobile = $request->mobile;
+        $rentacar->save();
+
+        // image upload
+        if($request->hasFile('image')) {
+            $image_path = public_path('images/rentacars/'. $rentacar->rentacarimage->image);
+            // dd($image_path);
+            if(File::exists($image_path)) {
+                File::delete($image_path);
+            }
+            $image    = $request->file('image');
+            $filename = random_string(5) . time() .'.' . "webp";
+            $location = public_path('images/rentacars/'. $filename);
+            Image::make($image)->fit(200, 200)->save($location);
+            $rentacarimage              = Rentacarimage::where('rentacar_id', $rentacar->id)->first();
+            $rentacarimage->image       = $filename;
+            $rentacarimage->save();
+        }
+
+        Cache::forget('rentacars' . $district_id);
+        Session::flash('success', 'Rent-a-Car updated successfully!');
+        return redirect()->route('dashboard.rentacars.districtwise', $district_id);
+    }
 }
