@@ -810,7 +810,7 @@ class AdminandothersController extends Controller
 
         Cache::forget('buses' . $district_id);
         Session::flash('success', 'Bus added successfully!');
-        return redirect()->route('dashboard.rentacars.districtwise', $district_id);
+        return redirect()->route('dashboard.buses.districtwise', $district_id);
     }
 
     public function updateBus(Request $request, $district_id, $id)
