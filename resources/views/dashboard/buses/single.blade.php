@@ -10,12 +10,12 @@
       .select2-selection__choice{
           background-color: rgba(0, 123, 255) !important;
       }
-      /*.select2-container--default .select2-selection--single {
+      .select2-container--default .select2-selection--single {
           background-color: #fff;
           border: 1px solid #aaa;
           border-radius: 4px;
           height: 36px;
-      }*/
+      }
     </style>
 @endsection
 
