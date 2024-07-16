@@ -772,7 +772,7 @@ class AdminandothersController extends Controller
         });
 
         // Get the results
-        $rabbattallionofficers = $query->orderBy('id', 'asc')->paginate(10);
+        $buses = $query->orderBy('id', 'asc')->paginate(10);
         $buses = Bus::where('district_id', $district_id)
                             ->where('name', 'LIKE', "%$search%")
                             ->orWhere('mobile', 'LIKE', "%$search%")
