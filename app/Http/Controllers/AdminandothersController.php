@@ -779,7 +779,7 @@ class AdminandothersController extends Controller
             'image'          => 'sometimes',
         ));
 
-        $rentacar = new Rentacar;
+        $rentacar = new Bus;
         $rentacar->district_id = $district_id;
         $rentacar->name = $request->name;
         $rentacar->mobile = $request->mobile;
@@ -810,7 +810,7 @@ class AdminandothersController extends Controller
             'image'          => 'sometimes',
         ));
 
-        $rentacar = Rentacar::find($id);
+        $rentacar = Bus::find($id);
         $rentacar->district_id = $district_id;
         $rentacar->name = $request->name;
         $rentacar->mobile = $request->mobile;
