@@ -79,7 +79,7 @@
                                                value="{{ $bus->name }}"
                                                placeholder="বাসের নাম" required>
                                         <div class="input-group-append">
-                                            <div class="input-group-text"><span class="fas fa-user-tie"></span></div>
+                                            <div class="input-group-text"><span class="fas fa-bus"></span></div>
                                         </div>
                                     </div>
                                     <div class="input-group mb-3">
@@ -194,7 +194,7 @@
                              value="{{ old('bus_name') }}"
                              placeholder="বাসের নাম" required>
                       <div class="input-group-append">
-                          <div class="input-group-text"><span class="fas fa-user-tie"></span></div>
+                          <div class="input-group-text"><span class="fas fa-bus"></span></div>
                       </div>
                   </div>
                   <div class="input-group mb-3">
@@ -204,7 +204,7 @@
                              value="{{ old('route_info') }}"
                              placeholder="রুটের তথ্য (যেমন: টাঙ্গাইল হতে দর্শনা ভায়া সিরাজগঞ্জ, উল্লাপাড়া, শাহজাদপুর, কাশিনাথপুর, পাবনা, কুষ্টিয়া, ঝিনাইদহ, চুয়াডাঙ্গা)" required>
                       <div class="input-group-append">
-                          <div class="input-group-text"><span class="fas fa-user-tie"></span></div>
+                          <div class="input-group-text"><span class="fas fa-bus"></span></div>
                       </div>
                   </div>
                   <div class="input-group mb-3">
@@ -214,7 +214,7 @@
                              value="{{ old('bus_type') }}"
                              placeholder="AC/ Non-AC/ স্ক্যানিয়া/ ডাবল ডেকার ইত্যাদি" required>
                       <div class="input-group-append">
-                          <div class="input-group-text"><span class="fas fa-user-tie"></span></div>
+                          <div class="input-group-text"><span class="fas fa-bus"></span></div>
                       </div>
                   </div>
                   <div class="input-group mb-3">
@@ -224,7 +224,7 @@
                              value="{{ old('fare') }}"
                              placeholder="বাস ভাড়া" required>
                       <div class="input-group-append">
-                          <div class="input-group-text"><span class="fas fa-user-tie"></span></div>
+                          <div class="input-group-text"><span class="fas fa-bus"></span></div>
                       </div>
                   </div>
                   <div class="input-group mb-3">
@@ -234,7 +234,7 @@
                              value="{{ old('starting_time') }}"
                              placeholder="ছাড়ার সময়/ সময়সমূহ (একাধিক হলে কমা দিয়ে লিখুন)" required>
                       <div class="input-group-append">
-                          <div class="input-group-text"><span class="fas fa-user-tie"></span></div>
+                          <div class="input-group-text"><span class="fas fa-bus"></span></div>
                       </div>
                   </div>
                   
