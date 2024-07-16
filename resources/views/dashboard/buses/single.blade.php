@@ -212,7 +212,7 @@
                              name="bus_type"
                              class="form-control"
                              value="{{ old('bus_type') }}"
-                             placeholder="রুটের তথ্য (যেমন: টাঙ্গাইল হতে দর্শনা ভায়া সিরাজগঞ্জ, উল্লাপাড়া, শাহজাদপুর, কাশিনাথপুর, পাবনা, কুষ্টিয়া, ঝিনাইদহ, চুয়াডাঙ্গা)" required>
+                             placeholder="AC/ Non-AC/ " required>
                       <div class="input-group-append">
                           <div class="input-group-text"><span class="fas fa-user-tie"></span></div>
                       </div>
