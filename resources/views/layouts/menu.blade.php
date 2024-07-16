@@ -105,20 +105,29 @@
 </li>
 @endif
 
-@if(Auth::user()->role == 'admin')
+{{-- @if(Auth::user()->role == 'admin')
 <li class="nav-item">
     <a href="{{ route('dashboard.coachings') }}" class="nav-link {{ Request::is('dashboard/coachings') ? 'active' : '' }} {{ Request::is('dashboard/coachings/*') ? 'active' : '' }}">
         <i class="nav-icon fas fa-chalkboard-teacher"></i>
         <p>কোচিং সেন্টার</p>
     </a>
 </li>
-@endif
+@endif --}}
 
 @if(Auth::user()->role == 'admin')
 <li class="nav-item">
     <a href="{{ route('dashboard.rabs') }}" class="nav-link {{ Request::is('dashboard/rabs') ? 'active' : '' }} {{ Request::is('dashboard/rabs/*') ? 'active' : '' }}">
         <i class="nav-icon fas fa-user-shield"></i>
         <p>র‍্যাব</p>
+    </a>
+</li>
+@endif
+
+@if(Auth::user()->role == 'admin')
+<li class="nav-item">
+    <a href="{{ route('dashboard.buses') }}" class="nav-link {{ Request::is('dashboard/buses') ? 'active' : '' }} {{ Request::is('dashboard/buses/*') ? 'active' : '' }}">
+        <i class="nav-icon fas fa-user-shield"></i>
+        <p>বাস</p>
     </a>
 </li>
 @endif
