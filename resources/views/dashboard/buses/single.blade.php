@@ -68,7 +68,7 @@
                     <td>{{ $bus->toDistrict->name_bangla }}</td>
                     <td width="15%"><small>{{ $bus->route_info }}</small></td>
                     <td>
-                      
+                      <span class="badge bg-success">ভাড়া: ৳ {{ $bus->bus_type }}</span>
                     </td>
                     <td align="right">
                       {{-- <button type="button" class="btn btn-warning btn-sm" data-toggle="modal" data-target="#notifModal{{ $bus->id }}">
