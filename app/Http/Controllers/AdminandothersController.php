@@ -796,11 +796,11 @@ class AdminandothersController extends Controller
             'contact'          => 'required|string|max:191',
         ));
 
-        $rentacar = new Bus;
-        $rentacar->district_id = $district_id;
-        $rentacar->name = $request->name;
-        $rentacar->mobile = $request->mobile;
-        $rentacar->save();
+        $bus = new Bus;
+        $bus->district_id = $district_id;
+        $bus->name = $request->name;
+        $bus->mobile = $request->mobile;
+        $bus->save();
 
         // image upload
         if($request->hasFile('image')) {
