@@ -28,6 +28,7 @@ use App\Coaching;
 use App\Rab;
 use App\Rabbattalion;
 use App\Rabbattaliondetail;
+use App\Bus;
 
 use Hash;
 use Carbon\Carbon;
