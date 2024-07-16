@@ -787,7 +787,7 @@ class AdminandothersController extends Controller
     public function storeBus(Request $request, $district_id)
     {
         $this->validate($request,array(
-            'name'           => 'required|string|max:191',
+            'to_district'           => 'required',
             'mobile'         => 'required|string|max:191',
             'image'          => 'sometimes',
         ));
