@@ -807,17 +807,6 @@ class AdminandothersController extends Controller
         $bus->contact = $request->contact;
         $bus->save();
 
-        // image upload
-        if($request->hasFile('image')) {
-            $image    = $request->file('image');
-            $filename = random_string(5) . time() .'.' . "webp";
-            $location = public_path('images/rentacars/'. $filename);
-            Image::make($image)->fit(200, 200)->save($location);
-            $rentacarimage              = new Rentacarimage;
-            $rentacarimage->rentacar_id   = $rentacar->id;
-            $rentacarimage->image       = $filename;
-            $rentacarimage->save();
-        }
 
         Cache::forget('rentacars' . $district_id);
         Session::flash('success', 'Rent-a-Car added successfully!');
