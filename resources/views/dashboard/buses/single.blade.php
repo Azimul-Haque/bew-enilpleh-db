@@ -64,7 +64,7 @@
                       {{ $bus->bus_name }}<br/>
                       <span class="badge bg-success">{{ $bus->bus_type }}</span>
                     </td>
-                    <td>{{ $bus->mobile }}</td>
+                    <td>{{ $bus->fromDistrict }}</td>
                     <td align="right">
                       {{-- <button type="button" class="btn btn-warning btn-sm" data-toggle="modal" data-target="#notifModal{{ $bus->id }}">
                         <i class="fas fa-bell"></i>
