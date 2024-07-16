@@ -793,6 +793,7 @@ class AdminandothersController extends Controller
             'bus_type'         => 'required|string|max:191',
             'fare'             => 'required|string|max:191',
             'starting_time'    => 'required|string|max:191',
+            'counter_address'    => 'required|string|max:191',
             'contact'          => 'required|string|max:191',
         ));
 
@@ -804,6 +805,7 @@ class AdminandothersController extends Controller
         $bus->bus_type = $request->bus_type;
         $bus->fare = $request->fare;
         $bus->starting_time = $request->starting_time;
+        $bus->counter_address = $request->counter_address;
         $bus->contact = $request->contact;
         $bus->save();
 
@@ -823,6 +825,7 @@ class AdminandothersController extends Controller
             'bus_type'         => 'required|string|max:191',
             'fare'             => 'required|string|max:191',
             'starting_time'    => 'required|string|max:191',
+            'counter_address'    => 'required|string|max:191',
             'contact'          => 'required|string|max:191',
         ));
 
