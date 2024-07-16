@@ -8,7 +8,7 @@ class Bus extends Model
 {
     public function fromDistrict()
     {
-        return $this->belongsTo('App\District', 'district_id', 'from_district');
+        return $this->belongsTo('App\District');
     }
 
     public function toDistrict()
