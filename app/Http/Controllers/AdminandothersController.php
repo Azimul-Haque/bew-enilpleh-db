@@ -15,6 +15,7 @@ use App\Rab;
 use App\Rabbattalion;
 use App\Rabbattaliondetail;
 use App\District;
+use App\Bus;
 
 use Carbon\Carbon;
 use DB;
