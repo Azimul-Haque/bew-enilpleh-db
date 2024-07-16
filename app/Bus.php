@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Bus extends Model
 {
-    public function fromDistrict()
+    public function district()
     {
         return $this->belongsTo('App\District', 'from_district', 'district_id');
     }
