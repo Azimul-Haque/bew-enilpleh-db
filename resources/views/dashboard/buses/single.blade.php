@@ -97,7 +97,7 @@
                                   @csrf
                                   <h5>হতে জেলা: {{ $district->name_bangla }}</h5>
                                   <div class="" style="margin-bottom: 15px;">
-                                    <select name="to_district" class="form-control select2" required>
+                                    <select name="to_district" class="form-control " required>
                                         <option selected="" disabled="" value="">গন্তব্য জেলা নির্বাচন করুন</option>
                                         @foreach($districts as $todistrict)
                                           <option value="{{ $todistrict->id }}" @if($todistrict->id == $bus->toDistrict->id) selected @endif >{{ $todistrict->name_bangla }} - {{ $todistrict->name }}</option>
