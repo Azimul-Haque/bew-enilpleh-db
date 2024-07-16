@@ -2,8 +2,8 @@
 @section('title') ড্যাশবোর্ড | বাস তালিকা @endsection
 
 @section('third_party_stylesheets')
-   {{--  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/icheck-bootstrap@3.0.1/icheck-bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="{{ asset('css/bootstrap-datepicker.min.css') }}"> --}}
+   <link href="{{ asset('css/select2.min.css') }}" rel="stylesheet" />
+    <link href="{{ asset('css/select2-bootstrap4.min.css') }}" rel="stylesheet" />
 @endsection
 
 @section('content')
