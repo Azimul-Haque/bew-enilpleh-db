@@ -837,7 +837,8 @@ class AdminandothersController extends Controller
         $bus->contact = $request->contact;
         $bus->save();
 
-        Cache::forget('buses' . $district_id);
+        Cache::forget('busesfrom' . $district_id);
+        Cache::forget('busesto' . $request->to_district);
         Session::flash('success', 'Bus added successfully!');
         return redirect()->route('dashboard.buses.districtwise', $district_id);
     }
