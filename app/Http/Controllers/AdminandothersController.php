@@ -756,12 +756,12 @@ class AdminandothersController extends Controller
         $district = District::find($district_id);
         $busescount = Bus::where('from_district', $district_id)
                                  ->where('bus_name', 'LIKE', "%$search%")
-                                 ->orWhere('mobile', 'LIKE', "%$search%")->count();
+                                 ->orWhere('route_info', 'LIKE', "%$search%")->count();
 
         // Initialize query
         $query = Bus::where('from_district', $district_id);
 
-        // If the search parameter is provided, apply it to designation, area, mobile, and telephone fields
+        // If the search parameter is provided, apply it to rest of the fields
         $query->where(function($q) use ($search) {
             $q->where('bus_name', 'LIKE', '%' . $search . '%')
               ->orWhere('area', 'LIKE', '%' . $search . '%')
