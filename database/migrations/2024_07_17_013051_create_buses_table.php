@@ -15,8 +15,8 @@ class CreateBusesTable extends Migration
     {
         Schema::create('buses', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('from_district');
-            $table->unsignedBigInteger('to_district');
+            $table->integer('from_district');
+            $table->integer('to_district');
             $table->timestamps();
 
             $table->foreign('from_district')->references('district_id')->on('districts');
