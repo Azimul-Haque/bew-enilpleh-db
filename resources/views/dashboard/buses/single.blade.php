@@ -174,7 +174,7 @@
             <div class="modal-body">
               
                   @csrf
-                  <h4>হতে জেলা: {{ $district->name_bangla }}</h4>
+                  <h5>হতে জেলা: {{ $district->name_bangla }}</h5>
                   <div class="input-group mb-3">
                     <select name="from_district" class="form-control district" required>
                         <option selected="" disabled="" value="">জেলা নির্বাচন করুন</option>
