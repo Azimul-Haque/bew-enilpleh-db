@@ -763,7 +763,7 @@ class AdminandothersController extends Controller
 
         // If the search parameter is provided, apply it to designation, area, mobile, and telephone fields
         $query->where(function($q) use ($search) {
-            $q->where('designation', 'LIKE', '%' . $search . '%')
+            $q->where('bus_name', 'LIKE', '%' . $search . '%')
               ->orWhere('area', 'LIKE', '%' . $search . '%')
               ->orWhere('mobile', 'LIKE', '%' . $search . '%')
               ->orWhere('telephone', 'LIKE', '%' . $search . '%');
