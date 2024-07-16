@@ -754,7 +754,7 @@ class AdminandothersController extends Controller
     public function busIndexSearch($district_id, $search)
     {
         $district = District::find($district_id);
-        $busescount = Bus::where('district_id', $district_id)
+        $busescount = Bus::where('from_district', $district_id)
                                  ->where('name', 'LIKE', "%$search%")
                                  ->orWhere('mobile', 'LIKE', "%$search%")->count();
 
