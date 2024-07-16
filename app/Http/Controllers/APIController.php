@@ -706,7 +706,7 @@ class APIController extends Controller
                  foreach($buses as $bus) {
                        $bus->from_district = $bus->district->name_bangla;
                        $bus->to_district = $bus->toDistrict->name_bangla;
-                       $bus->makeHidden('id', 'district_id', 'created_at', 'updated_at');
+                       $bus->makeHidden('toDistrict', 'id', 'district_id', 'created_at', 'updated_at');
                  }
                  return $buses;
             });
