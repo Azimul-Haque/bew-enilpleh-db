@@ -307,7 +307,7 @@
                              name="counter_address"
                              class="form-control"
                              value="{{ old('counter_address') }}"
-                             placeholder="ছাড়ার সময়/ সময়সমূহ (একাধিক হলে কমা দিয়ে লিখুন)" required>
+                             placeholder="কাউন্টার/ কাউন্টারসমূহ (একাধিক হলে কমা দিয়ে লিখুন)" required>
                       <div class="input-group-append">
                           <div class="input-group-text"><span class="fas fa-bus"></span></div>
                       </div>
