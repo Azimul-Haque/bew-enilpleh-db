@@ -42,23 +42,23 @@
                 </tr>
               </thead>
               <tbody>
-                @foreach($rentacars as $rentacar)
+                @foreach($buses as $bus)
                   <tr>
                     <td>
-                      {{ $rentacar->name }}
+                      {{ $bus->name }}
                     </td>
-                    <td>{{ $rentacar->mobile }}</td>
+                    <td>{{ $bus->mobile }}</td>
                     <td align="right">
-                      {{-- <button type="button" class="btn btn-warning btn-sm" data-toggle="modal" data-target="#notifModal{{ $rentacar->id }}">
+                      {{-- <button type="button" class="btn btn-warning btn-sm" data-toggle="modal" data-target="#notifModal{{ $bus->id }}">
                         <i class="fas fa-bell"></i>
                       </button> --}}
-                      <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#editUserModal{{ $rentacar->id }}">
+                      <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#editUserModal{{ $bus->id }}">
                         <i class="fas fa-edit"></i>
                       </button>
                       {{-- Edit User Modal Code --}}
                       {{-- Edit User Modal Code --}}
                       <!-- Modal -->
-                      <div class="modal fade" id="editUserModal{{ $rentacar->id }}" tabindex="-1" role="dialog" aria-labelledby="editUserModalLabel" aria-hidden="true" data-backdrop="static">
+                      <div class="modal fade" id="editUserModal{{ $bus->id }}" tabindex="-1" role="dialog" aria-labelledby="editUserModalLabel" aria-hidden="true" data-backdrop="static">
                         <div class="modal-dialog" role="document">
                           <div class="modal-content">
                             <div class="modal-header bg-primary">
@@ -67,7 +67,7 @@
                                 <span aria-hidden="true">&times;</span>
                               </button>
                             </div>
-                            <form method="post" action="{{ route('dashboard.rentacars.update', [$district->id, $rentacar->id]) }}" enctype="multipart/form-data">
+                            <form method="post" action="{{ route('dashboard.buses.update', [$district->id, $bus->id]) }}" enctype="multipart/form-data">
                               <div class="modal-body">
                                 
                                     @csrf
@@ -76,7 +76,7 @@
                                         <input type="text"
                                                name="name"
                                                class="form-control"
-                                               value="{{ $rentacar->name }}"
+                                               value="{{ $bus->name }}"
                                                placeholder="রেন্ট-এ-কারের নাম" required>
                                         <div class="input-group-append">
                                             <div class="input-group-text"><span class="fas fa-user-tie"></span></div>
@@ -85,7 +85,7 @@
                                     <div class="input-group mb-3">
                                         <input type="number"
                                                name="mobile"
-                                               value="{{ $rentacar->mobile }}"
+                                               value="{{ $bus->mobile }}"
                                                class="form-control"
                                                placeholder="রেন্ট-এ-কারের মোবাইল নম্বর" required>
                                         <div class="input-group-append">
@@ -97,8 +97,8 @@
                                         <input type="file" id="image" name="image" accept="image/*">
                                     </div>
                                     <center>
-                                      @if($rentacar->rentacarimage != null)
-                                        <img src="{{ asset('images/rentacars/' . $rentacar->rentacarimage->image)}}" id='img-upload' style="width: 250px; height: auto;" class="img-responsive" />
+                                      @if($bus->rentacarimage != null)
+                                        <img src="{{ asset('images/buses/' . $bus->rentacarimage->image)}}" id='img-upload' style="width: 250px; height: auto;" class="img-responsive" />
                                       @else
                                         <img src="{{ asset('images/placeholder.png')}}" id='img-upload' style="width: 250px; height: auto;" class="img-responsive" />
                                       @endif
@@ -115,14 +115,14 @@
                       {{-- Edit User Modal Code --}}
                       {{-- Edit User Modal Code --}}
 
-                      <button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#deleteUserModal{{ $rentacar->id }}">
+                      <button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#deleteUserModal{{ $bus->id }}">
                         <i class="fas fa-trash-alt"></i>
                       </button>
                     </td>
                         {{-- Delete User Modal Code --}}
                         {{-- Delete User Modal Code --}}
                         <!-- Modal -->
-                        <div class="modal fade" id="deleteUserModal{{ $rentacar->id }}" tabindex="-1" role="dialog" aria-labelledby="deleteUserModalLabel" aria-hidden="true" data-backdrop="static">
+                        <div class="modal fade" id="deleteUserModal{{ $bus->id }}" tabindex="-1" role="dialog" aria-labelledby="deleteUserModalLabel" aria-hidden="true" data-backdrop="static">
                           <div class="modal-dialog" role="document">
                             <div class="modal-content">
                               <div class="modal-header bg-danger">
@@ -134,13 +134,13 @@
                               <div class="modal-body">
                                 আপনি কি নিশ্চিতভাবে এই রেন্ট-এ-কারকে ডিলেট করতে চান?<br/>
                                 <center>
-                                    <big><b>{{ $rentacar->name }}</b></big><br/>
-                                    <small><i class="fas fa-phone"></i> {{ $rentacar->mobile }}</small>
+                                    <big><b>{{ $bus->name }}</b></big><br/>
+                                    <small><i class="fas fa-phone"></i> {{ $bus->mobile }}</small>
                                 </center>
                               </div>
                               <div class="modal-footer">
                                 <button type="button" class="btn btn-secondary" data-dismiss="modal">ফিরে যান</button>
-                                <a href="{{ route('dashboard.rentacars.delete', [$district->id, $rentacar->id]) }}" class="btn btn-danger">ডিলেট করুন</a>
+                                <a href="{{ route('dashboard.buses.delete', [$district->id, $bus->id]) }}" class="btn btn-danger">ডিলেট করুন</a>
                               </div>
                             </div>
                           </div>
@@ -155,7 +155,7 @@
           </div>
           <!-- /.card-body -->
         </div>
-        {{ $rentacars->links() }}
+        {{ $buses->links() }}
     </div>
 
     {{-- Add User Modal Code --}}
@@ -170,7 +170,7 @@
               <span aria-hidden="true">&times;</span>
             </button>
           </div>
-          <form method="post" action="{{ route('dashboard.rentacars.store', $district->id) }}" enctype='multipart/form-data'>
+          <form method="post" action="{{ route('dashboard.buses.store', $district->id) }}" enctype='multipart/form-data'>
             <div class="modal-body">
               
                   @csrf
@@ -226,7 +226,7 @@
 
         $(document).on('click', '#search-button', function() {
           if($('#search-param').val() != '') {
-            var urltocall = '{{ route('dashboard.rentacars.districtwise', $district->id) }}' +  '/' + $('#search-param').val();
+            var urltocall = '{{ route('dashboard.buses.districtwise', $district->id) }}' +  '/' + $('#search-param').val();
             location.href= urltocall;
           } else {
             $('#search-param').css({ "border": '#FF0000 2px solid'});
@@ -239,7 +239,7 @@
         $("#search-param").keyup(function(e) {
           if(e.which == 13) {
             if($('#search-param').val() != '') {
-              var urltocall = '{{ route('dashboard.rentacars.districtwise', $district->id) }}' +  '/' + $('#search-param').val();
+              var urltocall = '{{ route('dashboard.buses.districtwise', $district->id) }}' +  '/' + $('#search-param').val();
               location.href= urltocall;
             } else {
               $('#search-param').css({ "border": '#FF0000 2px solid'});
