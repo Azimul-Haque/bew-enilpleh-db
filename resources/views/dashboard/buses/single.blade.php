@@ -177,7 +177,7 @@
                   <h5>হতে জেলা: {{ $district->name_bangla }}</h5>
                   <div class="input-group mb-3">
                     <select name="from_district" class="form-control district" required>
-                        <option selected="" disabled="" value="">জেলা নির্বাচন করুন</option>
+                        <option selected="" disabled="" value="">গন্তব্য জেলা নির্বাচন করুন</option>
                         @foreach($districts as $todistrict)
                           <option value="{{ $todistrict->id }}">{{ $todistrict->name_bangla }}</option>
                         @endforeach
