@@ -21,7 +21,7 @@
 				<strong>
 					Disclaimer: This App does not represent any Government Entity or Government Agency.
 				</strong>
-			</p>
+			</p><br/>
 			<p>
 			This page is used to inform visitors regarding our
 			policies with the collection, use, and disclosure of Personal
