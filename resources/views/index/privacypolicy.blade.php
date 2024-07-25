@@ -16,7 +16,13 @@
 			a Commercial app. This SERVICE is provided by
 			<strong>App Lab IT</strong>  and is intended for use as
 			is.
-			</p><br/> <p>
+			</p><br/>
+			<p>
+				<strong>
+					Disclaimer: This App does not represent any Government Entity or Government Agency.
+				</strong>
+			</p>
+			<p>
 			This page is used to inform visitors regarding our
 			policies with the collection, use, and disclosure of Personal
 			Information if anyone decided to use our Service.
