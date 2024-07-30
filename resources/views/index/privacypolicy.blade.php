@@ -19,6 +19,11 @@
 			</p><br/>
 			<p>
 				<strong>
+					Data Source: Government Websites & Local Sourcing.
+				</strong>
+			</p><br/>
+			<p>
+				<strong>
 					Disclaimer: This App does not represent any Government Entity or Government Agency.
 				</strong>
 			</p><br/>
