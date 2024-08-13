@@ -231,9 +231,10 @@ class DoctorController extends Controller
 
         if(isset($request->medicalsymptoms)){
 
-            foreach($doctor->doctormedicalsymptoms as $medicaldepartment) {
-                $medicaldepartment->delete();
+            foreach($doctor->doctormedicalsymptoms as $medicalsymptom) {
+                $medicalsymptom->delete();
             }
+            
             foreach($request->medicalsymptoms as $medicalsymptom_id) {
                 $doctormedicalsymptom = new Doctormedicalsymptom;
                 $doctormedicalsymptom->doctor_id = $doctor->id;
