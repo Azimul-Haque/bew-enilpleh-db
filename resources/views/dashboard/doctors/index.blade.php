@@ -162,7 +162,7 @@
                                                   <input type="number"
                                                          name="serial"
                                                          class="form-control"
-                                                         value="{{ old('serial') }}"
+                                                         value="{{ $doctor->serial }}"
                                                          placeholder="সিরিয়াল নেওয়ার ফোন নং" required>
                                                   <div class="input-group-append">
                                                       <div class="input-group-text"><span class="fas fa-phone"></span></div>
@@ -173,7 +173,7 @@
                                               <div class="input-group mb-3">
                                                   <input type="number"
                                                          name="helpline"
-                                                         value="{{ old('helpline') }}"
+                                                         value="{{ $doctor->helpline }}"
                                                          
                                                          class="form-control"
                                                          placeholder="হেল্পলাইন নম্বর (যদি থাকে)">
