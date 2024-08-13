@@ -200,7 +200,7 @@ class DoctorController extends Controller
             'hospitals'            => 'required',
         ));
 
-        $doctor = new Doctor;
+        $doctor = Doctor::findOrFail($id);
         $doctor->district_id = $request->district_id;
         $doctor->upazilla_id = $request->upazilla_id;
         $doctor->name = $request->name;
