@@ -108,7 +108,7 @@ class EshebaController extends Controller
                }
                $eshebaimage              = Eshebaimage::where('esheba_id', $esheba->id)->first();
             } else {
-               $eshebaimage              = newm Eshebaimage;
+               $eshebaimage              = new Eshebaimage;
             }
             $image    = $request->file('image');
             $filename = random_string(5) . time() .'.' . "webp";
