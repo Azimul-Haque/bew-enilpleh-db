@@ -215,7 +215,11 @@
                                               <input type="file" name="image" accept="image/*">
                                           </div>
                                           <center>
-                                              <img src="{{ asset('images/placeholder.png')}}" id='img-upload' style="width: 250px; height: auto;" class="img-responsive" />
+                                              @if($ambulance->ambulanceimage != null)
+                                                                                      <img src="{{ asset('images/ambulances/' . $ambulance->ambulanceimage->image)}}" style="width: 250px; height: auto;" class="img-responsive" />
+                                                                                    @else
+                                                                                      <img src="{{ asset('images/placeholder.png')}}" style="width: 250px; height: auto;" class="img-responsive" />
+                                                                                    @endif
                                           </center>     
                                       
                                     </div>
