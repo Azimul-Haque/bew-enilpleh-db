@@ -92,7 +92,7 @@
                             <div class="modal fade" id="editUserModal{{ $doctor->id }}" tabindex="-1" role="dialog" aria-labelledby="editUserModalLabel" aria-hidden="true" data-backdrop="static">
                               <div class="modal-dialog modal-lg" role="document">
                                 <div class="modal-content">
-                                  <div class="modal-header bg-primary">
+                                  <div class="modal-header bg-success">
                                     <h5 class="modal-title" id="editUserModalLabel">ডাক্তার তথ্য হালনাগাদ</h5>
                                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                       <span aria-hidden="true">&times;</span>
