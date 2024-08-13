@@ -311,7 +311,7 @@
                   <h3 class="card-title">লক্ষণ তালিকা</h3>
 
                   <div class="card-tools">
-                    <button type="button" class="btn btn-warning btn-sm"  data-toggle="modal" data-target="#addDeptModal" style="margin-left: 5px;">
+                    <button type="button" class="btn btn-warning btn-sm"  data-toggle="modal" data-target="#addSymptomModal" style="margin-left: 5px;">
                       <i class="fas fa-user-plus"></i> নতুন
                     </button>
                   </div>
