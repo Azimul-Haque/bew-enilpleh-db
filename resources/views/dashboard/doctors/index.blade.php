@@ -215,8 +215,8 @@
                                               <input type="file" name="image" accept="image/*">
                                           </div>
                                           <center>
-                                              @if($ambulance->ambulanceimage != null)
-                                                <img src="{{ asset('images/doctors/' . $ambulance->ambulanceimage->image)}}" style="width: 250px; height: auto;" class="img-responsive" />
+                                              @if($doctor->ambulanceimage != null)
+                                                <img src="{{ asset('images/doctors/' . $doctor->ambulanceimage->image)}}" style="width: 250px; height: auto;" class="img-responsive" />
                                               @else
                                                 <img src="{{ asset('images/placeholder.png')}}" style="width: 250px; height: auto;" class="img-responsive" />
                                               @endif
