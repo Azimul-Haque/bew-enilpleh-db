@@ -257,7 +257,7 @@
                             {{-- <button type="button" class="btn btn-warning btn-sm" data-toggle="modal" data-target="#notifModal{{ $medicaldepartment->id }}">
                               <i class="fas fa-bell"></i>
                             </button> --}}
-                            <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#editDeptModal{{ $medicaldepartment->id }}">
+                            <button type="button" class="btn btn-warning btn-sm" data-toggle="modal" data-target="#editDeptModal{{ $medicaldepartment->id }}">
                               <i class="fas fa-edit"></i>
                             </button>
                             {{-- Edit Dept Modal Code --}}
@@ -266,7 +266,7 @@
                             <div class="modal fade" id="editDeptModal{{ $medicaldepartment->id }}" tabindex="-1" role="dialog" aria-labelledby="editDeptModalLabel" aria-hidden="true" data-backdrop="static">
                               <div class="modal-dialog" role="document">
                                 <div class="modal-content">
-                                  <div class="modal-header bg-primary">
+                                  <div class="modal-header bg-warning">
                                     <h5 class="modal-title" id="editDeptModalLabel">বিভাগ তথ্য হালনাগাদ</h5>
                                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                       <span aria-hidden="true">&times;</span>
