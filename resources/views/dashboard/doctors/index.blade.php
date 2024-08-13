@@ -276,9 +276,16 @@
                                     <div class="modal-body">
                                       
                                           @csrf
-
-                                                     
-                                      
+                                          <div class="input-group mb-3">
+                                              <input type="text"
+                                                     name="name"
+                                                     class="form-control"
+                                                     value="{{ old('name') }}"
+                                                     placeholder="বিভাগের নাম" required>
+                                              <div class="input-group-append">
+                                                  <div class="input-group-text"><span class="fas fa-user-md"></span></div>
+                                              </div>
+                                          </div>
                                     </div>
                                     <div class="modal-footer">
                                       <button type="button" class="btn btn-secondary" data-dismiss="modal">ফিরে যান</button>
