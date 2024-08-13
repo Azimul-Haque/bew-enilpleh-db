@@ -210,6 +210,11 @@ class DoctorController extends Controller
         $doctor->save();
 
         if(isset($request->medicaldepartments)){
+
+            foreach($doctor->doctormedicaldepartments as $medicaldepartment) {
+                $medicaldepartment->delete();
+            }
+
             foreach($request->medicaldepartments as $medicaldepartment_id) {
                 $doctormedicaldepartment = new Doctormedicaldepartment;
                 $doctormedicaldepartment->doctor_id = $doctor->id;
