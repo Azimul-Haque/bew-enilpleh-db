@@ -191,14 +191,9 @@ class DoctorController extends Controller
             'name'                => 'required|string|max:191',
         ));
 
-        $doctor = new Doctor;
-        $doctor->district_id = $request->district_id;
-        $doctor->upazilla_id = $request->upazilla_id;
-        $doctor->name = $request->name;
-        $doctor->degree = $request->degree;
-        $doctor->serial = $request->serial;
-        $doctor->helpline = $request->helpline;
-        $doctor->save();
+        $medicaldepartment = new Medicaldepartment;
+        $medicaldepartment->name = $request->name;
+        $medicaldepartment->save();
 
         if(isset($request->medicaldepartments)){
             foreach($request->medicaldepartments as $medicaldepartment_id) {
