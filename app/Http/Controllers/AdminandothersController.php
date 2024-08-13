@@ -453,7 +453,7 @@ class AdminandothersController extends Controller
             $filename = random_string(5) . time() .'.' . "webp";
             $location = public_path('images/rentacars/'. $filename);
             Image::make($image)->fit(200, 200)->save($location);
-            
+            $rentacarimage->rentacar_id = $rentacar->id;
             $rentacarimage->image       = $filename;
             $rentacarimage->save();
         }
