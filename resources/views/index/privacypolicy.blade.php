@@ -22,8 +22,9 @@
 					DISCLAIMER: THIS APP DOES NOT REPRESENT ANY GOVERNMENT ENTITY OR GOVERNMENT AGENCY.
 				</strong>
 			</p><br/>
+			<p>Last updated: August 13, 2024</p>
 			<p>This Privacy Policy describes Our policies and procedures on the collection, use and disclosure of Your information when You use the Service and tells You about Your privacy rights and how the law protects You.</p>
-			<p>We use Your Personal data to provide and improve the Service. By using the Service, You agree to the collection and use of information in accordance with this Privacy Policy.</p><br/>
+			<p>We use Your Personal data to provide and improve the Service. By using the Service, You agree to the collection and use of information in accordance with this Privacy Policy. This Privacy Policy has been created with the help of the <a href="https://www.freeprivacypolicy.com/free-privacy-policy-generator/" target="_blank">Free Privacy Policy Generator</a>.</p>
 			<h2>Interpretation and Definitions</h2>
 			<h3>Interpretation</h3>
 			<p>The words of which the initial letter is capitalized have meanings defined under the following conditions. The following definitions shall have the same meaning regardless of whether they appear in singular or in plural.</p>
@@ -37,13 +38,13 @@
 			<p><strong>Affiliate</strong> means an entity that controls, is controlled by or is under common control with a party, where &quot;control&quot; means ownership of 50% or more of the shares, equity interest or other securities entitled to vote for election of directors or other managing authority.</p>
 			</li>
 			<li>
-			<p><strong>Application</strong> refers to Tangail Sheba, the software program provided by the Company.</p>
+			<p><strong>Application</strong> refers to BD Helpline - Health&amp;Lifestyle, the software program provided by the Company.</p>
 			</li>
 			<li>
-			<p><strong>Company</strong> (referred to as either &quot;the Company&quot;, &quot;We&quot;, &quot;Us&quot; or &quot;Our&quot; in this Agreement) refers to Tangail Sheba.</p>
+			<p><strong>Company</strong> (referred to as either &quot;the Company&quot;, &quot;We&quot;, &quot;Us&quot; or &quot;Our&quot; in this Agreement) refers to App Lab IT, House 31/13,  Block C, Tajmahal Road, Mohammadpur, Dhaka-1207.</p>
 			</li>
 			<li>
-			<p><strong>Country</strong> refers to: Bangladesh</p>
+			<p><strong>Country</strong> refers to:  Bangladesh</p>
 			</li>
 			<li>
 			<p><strong>Device</strong> means any device that can access the Service such as a computer, a cellphone or a digital tablet.</p>
@@ -106,7 +107,7 @@
 			</ul>
 			<p>We may share Your personal information in the following situations:</p>
 			<ul>
-			<li><strong>With Service Providers:</strong> We may share Your personal information with Service Providers to monitor and analyze the use of our Service, to contact You.</li>
+			<li><strong>With Service Providers:</strong> We may share Your personal information with Service Providers to monitor and analyze the use of our Service,  to contact You.</li>
 			<li><strong>For business transfers:</strong> We may share or transfer Your personal information in connection with, or during negotiations of, any merger, sale of Company assets, financing, or acquisition of all or a portion of Our business to another company.</li>
 			<li><strong>With Affiliates:</strong> We may share Your information with Our affiliates, in which case we will require those affiliates to honor this Privacy Policy. Affiliates include Our parent company and any other subsidiaries, joint venture partners or other companies that We control or that are under common control with Us.</li>
 			<li><strong>With business partners:</strong> We may share Your information with Our business partners to offer You certain products, services or promotions.</li>
@@ -151,14 +152,19 @@
 			<p>We may update Our Privacy Policy from time to time. We will notify You of any changes by posting the new Privacy Policy on this page.</p>
 			<p>We will let You know via email and/or a prominent notice on Our Service, prior to the change becoming effective and update the &quot;Last updated&quot; date at the top of this Privacy Policy.</p>
 			<p>You are advised to review this Privacy Policy periodically for any changes. Changes to this Privacy Policy are effective when they are posted on this page.</p>
-			<p>
-				These privacy policies are effective as of <u>July 01, 2024</u>.
-			</p>
-			<br/>
-		    <p><strong>Contact Us</strong></p> <p>
-			If you have any questions or suggestions about our
-			Privacy Policy, do not hesitate to contact us at <strong>rkpharma.bd@gmail.com</strong>.
-			</p>
+			<h2>Contact Us</h2>
+			<p>If you have any questions about this Privacy Policy, You can contact us:</p>
+			<ul>
+			<li>
+			<p>By email: rkpharma.bd@gmail.com</p>
+			</li>
+			<li>
+			<p>By visiting this page on our website: <a href="https://bdhelpline.info/contact" rel="external nofollow noopener" target="_blank">https://bdhelpline.info/contact</a></p>
+			</li>
+			<li>
+			<p>By phone number: +8801722924995</p>
+			</li>
+			</ul>
 	      </div>
 	  	</div>
   	</div>
