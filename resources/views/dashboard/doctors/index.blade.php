@@ -209,7 +209,6 @@
                                                   <option value="{{ $hospital->id }}">{{ $hospital->name }} - ({{ $hospital->upazilla->name_bangla }}, {{ $hospital->district->name_bangla }})</option>
 
                                                   <option value="{{ $medicalsymptom->id }}" @if(in_array($medicalsymptom->id, $doctor->doctormedicalsymptoms->pluck('medicalsymptom_id')->toArray())) selected @endif>{{ $medicalsymptom->name }}</option>
-                                                  <option value="{{ $medicalsymptom->id }}">{{ $medicalsymptom->name }}</option>
                                                 @endforeach
                                             </select>
                                           </div>
