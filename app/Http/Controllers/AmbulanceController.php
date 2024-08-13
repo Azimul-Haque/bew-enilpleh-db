@@ -135,12 +135,15 @@ class AmbulanceController extends Controller
                 if(File::exists($image_path)) {
                     File::delete($image_path);
                 }
+                $ambulanceimage              = Ambulanceimage::where('ambulance_id', $ambulance->id)->first();
+            } else {
+                $ambulanceimage              = new Ambulanceimage;
             }
             $image    = $request->file('image');
             $filename = random_string(5) . time() .'.' . "webp";
             $location = public_path('images/ambulances/'. $filename);
             Image::make($image)->fit(200, 200)->save($location);
-            $ambulanceimage              = Ambulanceimage::where('ambulance_id', $ambulance->id)->first();
+            
             $ambulanceimage->image       = $filename;
             $ambulanceimage->save();
         }
