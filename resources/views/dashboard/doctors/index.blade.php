@@ -335,17 +335,17 @@
                             {{-- <button type="button" class="btn btn-warning btn-sm" data-toggle="modal" data-target="#notifModal{{ $medicaldepartment->id }}">
                               <i class="fas fa-bell"></i>
                             </button> --}}
-                            <button type="button" class="btn btn-warning btn-sm" data-toggle="modal" data-target="#editDeptModal{{ $medicaldepartment->id }}">
+                            <button type="button" class="btn btn-warning btn-sm" data-toggle="modal" data-target="#editSymptomModal{{ $medicaldepartment->id }}">
                               <i class="fas fa-edit"></i>
                             </button>
                             {{-- Edit Dept Modal Code --}}
                             {{-- Edit Dept Modal Code --}}
                             <!-- Modal -->
-                            <div class="modal fade" id="editDeptModal{{ $medicaldepartment->id }}" tabindex="-1" role="dialog" aria-labelledby="editDeptModalLabel" aria-hidden="true" data-backdrop="static">
+                            <div class="modal fade" id="editSymptomModal{{ $medicaldepartment->id }}" tabindex="-1" role="dialog" aria-labelledby="editSymptomModalLabel" aria-hidden="true" data-backdrop="static">
                               <div class="modal-dialog" role="document">
                                 <div class="modal-content">
                                   <div class="modal-header bg-warning">
-                                    <h5 class="modal-title" id="editDeptModalLabel">লক্ষণ তথ্য হালনাগাদ</h5>
+                                    <h5 class="modal-title" id="editSymptomModalLabel">লক্ষণ তথ্য হালনাগাদ</h5>
                                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                       <span aria-hidden="true">&times;</span>
                                     </button>
