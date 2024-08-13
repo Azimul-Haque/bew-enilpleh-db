@@ -298,34 +298,6 @@
                             {{-- Edit Dept Modal Code --}}
                             {{-- Edit Dept Modal Code --}}
                           </td>
-                              {{-- Delete User Modal Code --}}
-                              {{-- Delete User Modal Code --}}
-                              <!-- Modal -->
-                              <div class="modal fade" id="deleteUserModal{{ $doctor->id }}" tabindex="-1" role="dialog" aria-labelledby="deleteUserModalLabel" aria-hidden="true" data-backdrop="static">
-                                <div class="modal-dialog" role="document">
-                                  <div class="modal-content">
-                                    <div class="modal-header bg-danger">
-                                      <h5 class="modal-title" id="deleteUserModalLabel">ডাক্তার ডিলেট</h5>
-                                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                        <span aria-hidden="true">&times;</span>
-                                      </button>
-                                    </div>
-                                    <div class="modal-body">
-                                      আপনি কি নিশ্চিতভাবে এই ডাক্তারকে ডিলেট করতে চান?<br/>
-                                      <center>
-                                          <big><b>{{ $doctor->name }}</b></big><br/>
-                                          <small><i class="fas fa-phone"></i> {{ $doctor->mobile }}</small>
-                                      </center>
-                                    </div>
-                                    <div class="modal-footer">
-                                      <button type="button" class="btn btn-secondary" data-dismiss="modal">ফিরে যান</button>
-                                      <a href="{{ route('dashboard.doctors.delete', $doctor->id) }}" class="btn btn-danger">ডিলেট করুন</a>
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>
-                              {{-- Delete User Modal Code --}}
-                              {{-- Delete User Modal Code --}}
                         </tr>
                       @endforeach
                     </tbody>
