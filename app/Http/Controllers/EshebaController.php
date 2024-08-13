@@ -100,10 +100,12 @@ class EshebaController extends Controller
 
         // image upload
         if($request->hasFile('image')) {
-            $image_path = public_path('images/eshebas/'. $esheba->eshebaimage->image);
-            // dd($image_path);
-            if(File::exists($image_path)) {
-                File::delete($image_path);
+            if($esheba->eshebaimage !=null) {
+               $image_path = public_path('images/eshebas/'. $esheba->eshebaimage->image);
+               // dd($image_path);
+               if(File::exists($image_path)) {
+                   File::delete($image_path);
+               } 
             }
             $image    = $request->file('image');
             $filename = random_string(5) . time() .'.' . "webp";
