@@ -215,13 +215,13 @@ class DoctorController extends Controller
         return redirect()->route('dashboard.doctors');
     }
 
-    public function updateDoctorDept(Request $request)
+    public function updateDoctorDept(Request $request, $id)
     {
         $this->validate($request,array(
             'name'                => 'required|string|max:191',
         ));
 
-        $medicaldepartment = new Medicaldepartment;
+        $medicaldepartment = Medicaldepartment::findOrFail($id);
         $medicaldepartment->name = $request->name;
         $medicaldepartment->save();
 
