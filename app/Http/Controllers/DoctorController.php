@@ -272,6 +272,9 @@ class DoctorController extends Controller
                 if(File::exists($image_path)) {
                     File::delete($image_path);
                 }
+                $doctorimage              = Doctorimage::where('doctor_id', $doctor->id)->first();
+            } else {
+                $doctorimage              = new Doctorimage;
             }
             $image    = $request->file('image');
             $filename = random_string(5) . time() .'.' . "webp";
@@ -279,7 +282,7 @@ class DoctorController extends Controller
             // Image::make($image)->resize(350, null, function ($constraint) { $constraint->aspectRatio(); })->save($location);
             Image::make($image)->fit(300, 175)->save($location);
             // Image::make($image)->crop(300, 175)->save($location);
-            $doctorimage              = Doctorimage::where('doctor_id', $doctor->id)->first();
+            
             $doctorimage->doctor_id = $doctor->id;
             $doctorimage->image       = $filename;
             $doctorimage->save();
