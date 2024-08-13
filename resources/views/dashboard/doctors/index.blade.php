@@ -350,7 +350,7 @@
                                       <span aria-hidden="true">&times;</span>
                                     </button>
                                   </div>
-                                  <form method="post" action="{{ route('dashboard.doctorsdept.update', $medicalsymptom->id) }}">
+                                  <form method="post" action="{{ route('dashboard.doctorssymp.update', $medicalsymptom->id) }}">
                                     <div class="modal-body">
                                       
                                           @csrf
@@ -582,7 +582,7 @@
               <span aria-hidden="true">&times;</span>
             </button>
           </div>
-          <form method="post" action="{{ route('dashboard.doctorsdept.store') }}" enctype='multipart/form-data'>
+          <form method="post" action="{{ route('dashboard.doctorssymp.store') }}" enctype='multipart/form-data'>
             <div class="modal-body">
               
                   @csrf
