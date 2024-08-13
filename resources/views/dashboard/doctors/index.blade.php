@@ -216,7 +216,7 @@
                                           </div>
                                           <center>
                                               @if($ambulance->ambulanceimage != null)
-                                                <img src="{{ asset('images/ambulances/' . $ambulance->ambulanceimage->image)}}" style="width: 250px; height: auto;" class="img-responsive" />
+                                                <img src="{{ asset('images/doctors/' . $ambulance->ambulanceimage->image)}}" style="width: 250px; height: auto;" class="img-responsive" />
                                               @else
                                                 <img src="{{ asset('images/placeholder.png')}}" style="width: 250px; height: auto;" class="img-responsive" />
                                               @endif
