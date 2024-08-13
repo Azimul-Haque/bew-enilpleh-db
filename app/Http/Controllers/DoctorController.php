@@ -184,4 +184,80 @@ class DoctorController extends Controller
         Session::flash('success', 'Doctors added successfully!');
         return redirect()->route('dashboard.doctors');
     }
+
+    public function storeDoctorDept(Request $request)
+    {
+        $this->validate($request,array(
+            'name'            => 'required',
+        ));
+
+        $doctor = new Doctor;
+        $doctor->district_id = $request->district_id;
+        $doctor->upazilla_id = $request->upazilla_id;
+        $doctor->name = $request->name;
+        $doctor->degree = $request->degree;
+        $doctor->serial = $request->serial;
+        $doctor->helpline = $request->helpline;
+        $doctor->save();
+
+        if(isset($request->medicaldepartments)){
+            foreach($request->medicaldepartments as $medicaldepartment_id) {
+                $doctormedicaldepartment = new Doctormedicaldepartment;
+                $doctormedicaldepartment->doctor_id = $doctor->id;
+                $doctormedicaldepartment->medicaldepartment_id = $medicaldepartment_id;
+                $doctormedicaldepartment->save();
+
+                Cache::forget('doctors'. $medicaldepartment_id . 'departmentwise' . $request->district_id);
+                Cache::forget('doctors'. $medicaldepartment_id . 'departmentwise' . $request->district_id . $request->upazilla_id);
+
+                Cache::forget('doctors'. $medicaldepartment_id . 'symptomwise' . $request->district_id);
+                Cache::forget('doctors'. $medicaldepartment_id . 'symptomwise' . $request->district_id . $request->upazilla_id);
+            }            
+        }
+
+        if(isset($request->medicalsymptoms)){
+            foreach($request->medicalsymptoms as $medicalsymptom_id) {
+                $doctormedicalsymptom = new Doctormedicalsymptom;
+                $doctormedicalsymptom->doctor_id = $doctor->id;
+                $doctormedicalsymptom->medicalsymptom_id = $medicalsymptom_id;
+                $doctormedicalsymptom->save();
+
+                Cache::forget('doctors'. $medicalsymptom_id . 'departmentwise' . $request->district_id);
+                Cache::forget('doctors'. $medicalsymptom_id . 'departmentwise' . $request->district_id . $request->upazilla_id);
+
+                Cache::forget('doctors'. $medicalsymptom_id . 'symptomwise' . $request->district_id);
+                Cache::forget('doctors'. $medicalsymptom_id . 'symptomwise' . $request->district_id . $request->upazilla_id);
+            }            
+        }
+
+        if(isset($request->hospitals)){
+            foreach($request->hospitals as $hospital_id) {
+                $doctorhospital = new Doctorhospital;
+                $doctorhospital->doctor_id = $doctor->id;
+                $doctorhospital->hospital_id = $hospital_id;
+                $doctorhospital->save();
+
+                Cache::forget('hospitaldoctors'. $hospital_id);
+            }            
+        }
+
+        // image upload
+        if($request->hasFile('image')) {
+            $image    = $request->file('image');
+            $filename = random_string(5) . time() .'.' . "webp";
+            $location = public_path('images/doctors/'. $filename);
+            // Image::make($image)->resize(350, null, function ($constraint) { $constraint->aspectRatio(); })->save($location);
+            Image::make($image)->fit(300, 175)->save($location);
+            // Image::make($image)->crop(300, 175)->save($location);
+            $doctorimage              = new Doctorimage;
+            $doctorimage->doctor_id = $doctor->id;
+            $doctorimage->image       = $filename;
+            $doctorimage->save();
+        }
+
+        Cache::forget('doctors'. $request->district_id);
+        Cache::forget('doctors'. $request->district_id . $request->upazilla_id);
+        Session::flash('success', 'Doctors added successfully!');
+        return redirect()->route('dashboard.doctors');
+    }
 }
