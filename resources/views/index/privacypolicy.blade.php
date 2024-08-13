@@ -13,7 +13,7 @@
 			<h4>Privacy Policy</h4><br/>
 			<p>
 			<strong>App Lab IT</strong> built the <strong>BD Helpline</strong> app as
-			a Commercial app. This SERVICE is provided by
+			a Service app. This SERVICE is provided by
 			<strong>App Lab IT</strong>  and is intended for use as
 			is.
 			</p><br/>
