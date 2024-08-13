@@ -72,7 +72,7 @@
 			<ol>
 			<li>Usage Data</li>
 			</ol>
-			Disclaimer: WE DO NOT COLLECT ANY OF YOUR PERSONAL DATA.
+			<p>Disclaimer: WE DO NOT COLLECT ANY OF YOUR PERSONAL DATA.</p>
 			<h4>Usage Data</h4>
 			<p>Usage Data is collected automatically when using the Service.</p>
 			<p>Usage Data may include information such as Your Device's Internet Protocol address (e.g. IP address), browser type, browser version, the pages of our Service that You visit, the time and date of Your visit, the time spent on those pages, unique device identifiers and other diagnostic data.</p>
