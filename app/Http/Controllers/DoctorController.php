@@ -214,4 +214,19 @@ class DoctorController extends Controller
         Session::flash('success', 'medical Department added successfully!');
         return redirect()->route('dashboard.doctors');
     }
+
+    public function updateDoctorDept(Request $request)
+    {
+        $this->validate($request,array(
+            'name'                => 'required|string|max:191',
+        ));
+
+        $medicaldepartment = new Medicaldepartment;
+        $medicaldepartment->name = $request->name;
+        $medicaldepartment->save();
+
+        Cache::forget('medicaldepartments');
+        Session::flash('success', 'medical Department added successfully!');
+        return redirect()->route('dashboard.doctors');
+    }
 }
