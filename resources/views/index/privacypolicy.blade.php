@@ -70,7 +70,7 @@
 			<h4>Personal Data</h4>
 			<p>While using Our Service, We may ask You to provide Us with certain personally identifiable information that can be used to contact or identify You. Personally identifiable information may include, but is not limited to:</p>
 			<ol>
-			<li>1. Usage Data</li>
+			<li> 1. Usage Data</li>
 			</ol>
 			<p>Disclaimer: WE DO NOT COLLECT ANY OF YOUR PERSONAL DATA.</p>
 			<h4>Usage Data</h4>
