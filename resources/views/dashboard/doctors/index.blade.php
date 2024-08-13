@@ -569,6 +569,150 @@
     {{-- Add User Modal Code --}}
     {{-- Add User Modal Code --}}
 
+
+    {{-- Add Dept Modal Code --}}
+    {{-- Add Dept Modal Code --}}
+    <!-- Modal -->
+    <div class="modal fade" id="addDeptModal" tabindex="-1" role="dialog" aria-labelledby="addDeptModalLabel" aria-hidden="true" data-backdrop="static">
+      <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+          <div class="modal-header bg-warning">
+            <h5 class="modal-title" id="addDeptModalLabel">নতুন বিভাগ যোগ</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <form method="post" action="{{ route('dashboard.doctors.store') }}" enctype='multipart/form-data'>
+            <div class="modal-body">
+              
+                  @csrf
+
+                  <div class="row">
+                    <div class="col-md-6">
+                      <div class="input-group mb-3">
+                        <select name="district_id" id="district" class="form-control district" required>
+                            <option selected="" disabled="" value="">জেলা নির্বাচন করুন</option>
+                            @foreach($districts as $district)
+                              <option value="{{ $district->id }}">{{ $district->name_bangla }}</option>
+                            @endforeach
+                        </select>
+                        <div class="input-group-append">
+                            <div class="input-group-text"><span class="fas fa-map"></span></div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="input-group mb-3">
+                        <select name="upazilla_id" id="upazilla" class="form-control upazilla" required>
+                            <option selected="" disabled="" value="">উপজেলা নির্বাচন করুন</option>
+                        </select>
+                        <div class="input-group-append">
+                            <div class="input-group-text"><span class="fas fa-map-marked-alt"></span></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="row">
+                    <div class="col-md-6">
+                      <div class="input-group mb-3">
+                          <input type="text"
+                                 name="name"
+                                 class="form-control"
+                                 value="{{ old('name') }}"
+                                 placeholder="ডাক্তারের নাম" required>
+                          <div class="input-group-append">
+                              <div class="input-group-text"><span class="fas fa-user-md"></span></div>
+                          </div>
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="input-group mb-3">
+                          <input type="text"
+                                 name="degree"
+                                 value="{{ old('degree') }}"
+                                 
+                                 class="form-control"
+                                 placeholder="ডাক্তারের ডিগ্রি/ ডিগ্রিসমূহ (যেমন: MBBS, FCPS, MD)" required>
+                          <div class="input-group-append">
+                              <div class="input-group-text"><span class="fas fa-certificate"></span></div>
+                          </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-6">
+                      <div class="input-group mb-3">
+                          <input type="number"
+                                 name="serial"
+                                 class="form-control"
+                                 value="{{ old('serial') }}"
+                                 placeholder="সিরিয়াল নেওয়ার ফোন নং" required>
+                          <div class="input-group-append">
+                              <div class="input-group-text"><span class="fas fa-phone"></span></div>
+                          </div>
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="input-group mb-3">
+                          <input type="number"
+                                 name="helpline"
+                                 value="{{ old('helpline') }}"
+                                 
+                                 class="form-control"
+                                 placeholder="হেল্পলাইন নম্বর (যদি থাকে)">
+                          <div class="input-group-append">
+                              <div class="input-group-text"><span class="fas fa-mobile"></span></div>
+                          </div>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <div style="margin-bottom: 15px;">
+                    <select name="medicaldepartments[]" class="form-control multiple-select" multiple="multiple" data-placeholder="বিভাগ (প্রয়োজনে একাধিক সিলেক্ট করা যাবে)" required>
+                        
+                        @foreach($medicaldepartments as $medicaldepartment)
+                          <option value="{{ $medicaldepartment->id }}">{{ $medicaldepartment->name }}</option>
+                        @endforeach
+                    </select>
+                  </div> 
+                  
+                  <div style="margin-bottom: 15px;">
+                    <select name="medicalsymptoms[]" class="form-control multiple-select" multiple="multiple" data-placeholder="লক্ষণ (প্রয়োজনে একাধিক সিলেক্ট করা যাবে)" required>
+                        
+                        @foreach($medicalsymptoms as $medicalsymptom)
+                          <option value="{{ $medicalsymptom->id }}">{{ $medicalsymptom->name }}</option>
+                        @endforeach
+                    </select>
+                  </div>
+                  
+                  <div style="margin-bottom: 15px;">
+                    <select name="hospitals[]" class="form-control multiple-select" multiple="multiple" data-placeholder="ডাক্তার যে হাসপাতালের সাথে সম্পৃক্ত (প্রয়োজনে একাধিক সিলেক্ট করা যাবে)" required>
+                        @foreach($hospitals as $hospital)
+                          <option value="{{ $hospital->id }}">{{ $hospital->name }} - ({{ $hospital->upazilla->name_bangla }}, {{ $hospital->district->name_bangla }})</option>
+                        @endforeach
+                    </select>
+                  </div>
+
+                  <div class="form-group ">
+                      <label for="image">ছবি/ ভিজিটিং কার্ড/ ব্যানার (প্রয়োজনে, ৩০০ h x ১৭৫ w সাইজের, ২ মেগাবাইটের মধ্যে)</label>
+                      <input type="file" id="image" name="image" accept="image/*">
+                  </div>
+                  <center>
+                      <img src="{{ asset('images/placeholder.png')}}" id='img-upload' style="width: 250px; height: auto;" class="img-responsive" />
+                  </center>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">ফিরে যান</button>
+              <button type="submit" class="btn btn-success">দাখিল করুন</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    {{-- Add Dept Modal Code --}}
+    {{-- Add Dept Modal Code --}}
+
 @endsection
 
 @section('third_party_scripts')
