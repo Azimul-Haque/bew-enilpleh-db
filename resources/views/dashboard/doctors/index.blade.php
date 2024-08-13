@@ -272,7 +272,7 @@
                                       <span aria-hidden="true">&times;</span>
                                     </button>
                                   </div>
-                                  <form method="post" action="{{ route('dashboard.hospitals.update', $medicaldepartment->id) }}">
+                                  <form method="post" action="{{ route('dashboard.doctorsdept.update', $medicaldepartment->id) }}">
                                     <div class="modal-body">
                                       
                                           @csrf
