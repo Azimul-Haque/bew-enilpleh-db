@@ -98,7 +98,7 @@
                                       <span aria-hidden="true">&times;</span>
                                     </button>
                                   </div>
-                                  <form method="post" action="{{ route('dashboard.hospitals.update', $doctor->id) }}" enctype="multipart/form-data">
+                                  <form method="post" action="{{ route('dashboard.hospitals.update', $doctor->id) }}">
                                     <div class="modal-body">
                                       
                                           @csrf
@@ -215,7 +215,7 @@
                                               <input type="file" name="image" accept="image/*">
                                           </div>
                                           <center>
-                                              @if($doctor->doctorimage != null)
+                                              @if($doctor->doctorimage->image != null)
                                                 <img src="{{ asset('images/doctors/' . $doctor->doctorimage->image)}}" style="width: 250px; height: auto;" class="img-responsive" />
                                               @else
                                                 <img src="{{ asset('images/placeholder.png')}}" style="width: 250px; height: auto;" class="img-responsive" />
