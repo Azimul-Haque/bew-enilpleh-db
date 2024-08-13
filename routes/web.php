@@ -42,6 +42,8 @@ Route::post('/dashboard/doctors/{id}/update', 'DoctorController@updateDoctor')->
 Route::get('/dashboard/doctors/{id}/delete', 'DoctorController@deleteDoctor')->name('dashboard.doctors.delete');
 Route::post('/dashboard/doctors/departments/store', 'DoctorController@storeDoctorDept')->name('dashboard.doctorsdept.store');
 Route::post('/dashboard/doctors/departments/{id}/update', 'DoctorController@updateDoctorDept')->name('dashboard.doctorsdept.update');
+Route::post('/dashboard/doctors/symptom/store', 'DoctorController@storeDoctorSymp')->name('dashboard.doctorssymp.store');
+Route::post('/dashboard/doctors/symptom/{id}/update', 'DoctorController@updateDoctorSymp')->name('dashboard.doctorssymp.update');
 
 // Blood Donors
 Route::get('/dashboard/blooddonors', 'BlooddonorController@index')->name('dashboard.blooddonors');
