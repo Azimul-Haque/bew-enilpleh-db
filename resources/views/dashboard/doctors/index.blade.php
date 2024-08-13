@@ -187,9 +187,9 @@
                                           <div style="margin-bottom: 15px;">
                                             <select name="medicaldepartments[]" class="form-control multiple-select" multiple="multiple" data-placeholder="বিভাগ (প্রয়োজনে একাধিক সিলেক্ট করা যাবে)" required>
                                                 
-                                                @foreach($medicaldepartments as $medicaldepartment)
+                                                {{-- @foreach($medicaldepartments as $medicaldepartment)
                                                   <option value="{{ $medicaldepartment->id }}" @if(in_array($medicaldepartment->id, $doctor->medicaldepartments->pluck('id')->toArray())) selected @endif>{{ $medicaldepartment->name }}</option>
-                                                @endforeach
+                                                @endforeach --}}
                                             </select>
                                           </div> 
                                           
