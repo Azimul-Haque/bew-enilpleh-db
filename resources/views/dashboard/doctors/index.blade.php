@@ -135,7 +135,7 @@
                                                   <input type="text"
                                                          name="name"
                                                          class="form-control"
-                                                         value="{{ old('name') }}"
+                                                         value="{{ $doctor->name }}"
                                                          placeholder="ডাক্তারের নাম" required>
                                                   <div class="input-group-append">
                                                       <div class="input-group-text"><span class="fas fa-user-md"></span></div>
