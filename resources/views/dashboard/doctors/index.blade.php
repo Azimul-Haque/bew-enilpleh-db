@@ -573,11 +573,11 @@
     {{-- Add Symptom Modal Code --}}
     {{-- Add Symptom Modal Code --}}
     <!-- Modal -->
-    <div class="modal fade" id="addSymptomModal" tabindex="-1" role="dialog" aria-labelledby="addDeptModalLabel" aria-hidden="true" data-backdrop="static">
+    <div class="modal fade" id="addSymptomModal" tabindex="-1" role="dialog" aria-labelledby="addSymptomModalLabel" aria-hidden="true" data-backdrop="static">
       <div class="modal-dialog" role="document">
         <div class="modal-content">
           <div class="modal-header bg-warning">
-            <h5 class="modal-title" id="addDeptModalLabel">নতুন বিভাগ যোগ</h5>
+            <h5 class="modal-title" id="addSymptomModalLabel">নতুন বিভাগ যোগ</h5>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
