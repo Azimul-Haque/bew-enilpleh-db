@@ -251,27 +251,8 @@
                       @foreach($medicaldepartments as $medicaldepartment)
                         <tr>
                           <td>
-                            {{ $medicaldepartment->name }} <span class="badge bg-success">{{ $doctor->degree }}</span><br/>
-                            <small class="text-black-50"><i class="fas fa-phone"></i> {{ $doctor->serial }}</small>
-                            <small class="text-black-50"><i class="fas fa-mobile"></i> {{ $doctor->helpline }}</small>
-                            
+                            {{ $medicaldepartment->name }}
                           </td>
-                          <td>
-                            @foreach($doctor->doctormedicaldepartments as $medicaldepartment)
-                              <span class="badge bg-primary">{{ $medicaldepartment->medicaldepartment->name }}</span>
-                            @endforeach
-                          </td>
-                          <td>
-                            @foreach($doctor->doctormedicalsymptoms as $medicalsymptom)
-                              <span class="badge bg-info">{{ $medicalsymptom->medicalsymptom->name }}</span>
-                            @endforeach
-                          </td>
-                          <td>
-                            @foreach($doctor->doctorhospitals as $hospital)
-                              <span class="badge bg-warning">{{ $hospital->hospital->name }}</span>
-                            @endforeach
-                          </td>
-                          <td>{{ $doctor->upazilla->name_bangla }}, {{ $doctor->district->name_bangla }}</td>
                           <td align="right">
                             {{-- <button type="button" class="btn btn-warning btn-sm" data-toggle="modal" data-target="#notifModal{{ $doctor->id }}">
                               <i class="fas fa-bell"></i>
