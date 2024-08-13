@@ -198,7 +198,6 @@
                                                 
                                                 @foreach($medicalsymptoms as $medicalsymptom)
                                                   <option value="{{ $medicalsymptom->id }}" @if(in_array($medicalsymptom->id, $doctor->doctormedicalsymptoms->pluck('medicalsymptom_id')->toArray())) selected @endif>{{ $medicalsymptom->name }}</option>
-                                                  <option value="{{ $medicalsymptom->id }}">{{ $medicalsymptom->name }}</option>
                                                 @endforeach
                                             </select>
                                           </div>
