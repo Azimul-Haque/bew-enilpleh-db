@@ -257,17 +257,17 @@
                             {{-- <button type="button" class="btn btn-warning btn-sm" data-toggle="modal" data-target="#notifModal{{ $doctor->id }}">
                               <i class="fas fa-bell"></i>
                             </button> --}}
-                            <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#editUserModal{{ $doctor->id }}">
+                            <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#editDeptModal{{ $doctor->id }}">
                               <i class="fas fa-edit"></i>
                             </button>
                             {{-- Edit Dept Modal Code --}}
                             {{-- Edit Dept Modal Code --}}
                             <!-- Modal -->
-                            <div class="modal fade" id="editUserModal{{ $doctor->id }}" tabindex="-1" role="dialog" aria-labelledby="editUserModalLabel" aria-hidden="true" data-backdrop="static">
+                            <div class="modal fade" id="editDeptModal{{ $doctor->id }}" tabindex="-1" role="dialog" aria-labelledby="editDeptModalLabel" aria-hidden="true" data-backdrop="static">
                               <div class="modal-dialog" role="document">
                                 <div class="modal-content">
                                   <div class="modal-header bg-primary">
-                                    <h5 class="modal-title" id="editUserModalLabel">ডাক্তার তথ্য হালনাগাদ</h5>
+                                    <h5 class="modal-title" id="editDeptModalLabel">ডাক্তার তথ্য হালনাগাদ</h5>
                                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                       <span aria-hidden="true">&times;</span>
                                     </button>
