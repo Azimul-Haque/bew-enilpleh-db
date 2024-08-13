@@ -98,7 +98,7 @@
                                       <span aria-hidden="true">&times;</span>
                                     </button>
                                   </div>
-                                  <form method="post" action="{{ route('dashboard.hospitals.update', $doctor->id) }}">
+                                  <form method="post" action="{{ route('dashboard.hospitals.update', $doctor->id) }}" accept="image">
                                     <div class="modal-body">
                                       
                                           @csrf
