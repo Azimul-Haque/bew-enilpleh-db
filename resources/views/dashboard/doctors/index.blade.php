@@ -146,7 +146,7 @@
                                               <div class="input-group mb-3">
                                                   <input type="text"
                                                          name="degree"
-                                                         value="{{ old('degree') }}"
+                                                         value="{{ $doctor->degree }}"
                                                          
                                                          class="form-control"
                                                          placeholder="ডাক্তারের ডিগ্রি/ ডিগ্রিসমূহ (যেমন: MBBS, FCPS, MD)" required>
