@@ -444,13 +444,16 @@ class AdminandothersController extends Controller
               // dd($image_path);
               if(File::exists($image_path)) {
                   File::delete($image_path);
-              }  
+              }
+              $rentacarimage              = Rentacarimage::where('rentacar_id', $rentacar->id)->first();
+            } else {
+                $rentacarimage            = new Rentacarimage;
             }
             $image    = $request->file('image');
             $filename = random_string(5) . time() .'.' . "webp";
             $location = public_path('images/rentacars/'. $filename);
             Image::make($image)->fit(200, 200)->save($location);
-            $rentacarimage              = Rentacarimage::where('rentacar_id', $rentacar->id)->first();
+            
             $rentacarimage->image       = $filename;
             $rentacarimage->save();
         }
