@@ -308,7 +308,7 @@
 
               <div class="card">
                 <div class="card-header">
-                  <h3 class="card-title">বিভাগ তালিকা</h3>
+                  <h3 class="card-title">লক্ষণ তালিকা</h3>
 
                   <div class="card-tools">
                     <button type="button" class="btn btn-warning btn-sm"  data-toggle="modal" data-target="#addDeptModal" style="margin-left: 5px;">
@@ -321,7 +321,7 @@
                   <table class="table">
                     <thead>
                       <tr>
-                        <th>বিভাগ</th>
+                        <th>লক্ষণ</th>
                         <th align="right" width="20%">কার্যক্রম</th>
                       </tr>
                     </thead>
@@ -345,7 +345,7 @@
                               <div class="modal-dialog" role="document">
                                 <div class="modal-content">
                                   <div class="modal-header bg-warning">
-                                    <h5 class="modal-title" id="editDeptModalLabel">বিভাগ তথ্য হালনাগাদ</h5>
+                                    <h5 class="modal-title" id="editDeptModalLabel">লক্ষণ তথ্য হালনাগাদ</h5>
                                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                       <span aria-hidden="true">&times;</span>
                                     </button>
@@ -359,7 +359,7 @@
                                                      name="name"
                                                      class="form-control"
                                                      value="{{ $medicaldepartment->name }}"
-                                                     placeholder="বিভাগের নাম" required>
+                                                     placeholder="লক্ষণের নাম" required>
                                               <div class="input-group-append">
                                                   <div class="input-group-text"><span class="fas fa-user-md"></span></div>
                                               </div>
