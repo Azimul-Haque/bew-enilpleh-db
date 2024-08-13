@@ -297,10 +297,6 @@
                             </div>
                             {{-- Edit Dept Modal Code --}}
                             {{-- Edit Dept Modal Code --}}
-
-                            <button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#deleteUserModal{{ $doctor->id }}">
-                              <i class="fas fa-trash-alt"></i>
-                            </button>
                           </td>
                               {{-- Delete User Modal Code --}}
                               {{-- Delete User Modal Code --}}
