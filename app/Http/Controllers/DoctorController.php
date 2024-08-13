@@ -226,7 +226,7 @@ class DoctorController extends Controller
         $medicaldepartment->save();
 
         Cache::forget('medicaldepartments');
-        Session::flash('success', 'medical Department added successfully!');
+        Session::flash('success', 'medical Department updated successfully!');
         return redirect()->route('dashboard.doctors');
     }
 }
