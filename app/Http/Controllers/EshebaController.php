@@ -105,13 +105,16 @@ class EshebaController extends Controller
                // dd($image_path);
                if(File::exists($image_path)) {
                    File::delete($image_path);
-               } 
+               }
+               $eshebaimage              = Eshebaimage::where('esheba_id', $esheba->id)->first();
+            } else {
+               $eshebaimage              = newm Eshebaimage;
             }
             $image    = $request->file('image');
             $filename = random_string(5) . time() .'.' . "webp";
             $location = public_path('images/eshebas/'. $filename);
             Image::make($image)->fit(200, 200)->save($location);
-            $eshebaimage              = Eshebaimage::where('esheba_id', $esheba->id)->first();
+            
             $eshebaimage->image       = $filename;
             $eshebaimage->save();
         }
