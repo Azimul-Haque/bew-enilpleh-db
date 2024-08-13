@@ -197,6 +197,8 @@
                                             <select name="medicalsymptoms[]" class="form-control multiple-select" multiple="multiple" data-placeholder="লক্ষণ (প্রয়োজনে একাধিক সিলেক্ট করা যাবে)" required>
                                                 
                                                 @foreach($medicalsymptoms as $medicalsymptom)
+                                                
+                                                  <option value="{{ $medicaldepartment->id }}" @if(in_array($medicaldepartment->id, $doctor->doctormedicaldepartments->pluck('medicaldepartment_id')->toArray())) selected @endif>{{ $medicaldepartment->name }}</option>
                                                   <option value="{{ $medicalsymptom->id }}">{{ $medicalsymptom->name }}</option>
                                                 @endforeach
                                             </select>
