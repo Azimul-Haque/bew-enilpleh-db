@@ -248,10 +248,10 @@
                       </tr>
                     </thead>
                     <tbody>
-                      @foreach($doctors as $doctor)
+                      @foreach($medicaldepartments as $medicaldepartment)
                         <tr>
                           <td>
-                            {{ $doctor->name }} <span class="badge bg-success">{{ $doctor->degree }}</span><br/>
+                            {{ $medicaldepartment->name }} <span class="badge bg-success">{{ $doctor->degree }}</span><br/>
                             <small class="text-black-50"><i class="fas fa-phone"></i> {{ $doctor->serial }}</small>
                             <small class="text-black-50"><i class="fas fa-mobile"></i> {{ $doctor->helpline }}</small>
                             
