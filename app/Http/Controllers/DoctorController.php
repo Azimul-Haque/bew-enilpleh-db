@@ -240,7 +240,7 @@ class DoctorController extends Controller
         $medicalsymptom->name = $request->name;
         $medicalsymptom->save();
 
-        Cache::forget('medicaldepartments');
+        Cache::forget('medicalsymptoms');
         Session::flash('success', 'medical Department updated successfully!');
         return redirect()->route('dashboard.doctors');
     }
