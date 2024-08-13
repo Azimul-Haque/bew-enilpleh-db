@@ -114,7 +114,7 @@ class EshebaController extends Controller
             $filename = random_string(5) . time() .'.' . "webp";
             $location = public_path('images/eshebas/'. $filename);
             Image::make($image)->fit(200, 200)->save($location);
-            
+            $eshebaimage->esheba_id   = $esheba->id;
             $eshebaimage->image       = $filename;
             $eshebaimage->save();
         }
