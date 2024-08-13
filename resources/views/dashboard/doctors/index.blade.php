@@ -243,12 +243,8 @@
                   <table class="table">
                     <thead>
                       <tr>
-                        <th>নাম</th>
                         <th>বিভাগ</th>
-                        <th>লক্ষণ</th>
-                        <th>হাসপাতাল</th>
-                        <th>ঠিকানা</th>
-                        <th align="right" width="15%">কার্যক্রম</th>
+                        <th align="right" width="20%">কার্যক্রম</th>
                       </tr>
                     </thead>
                     <tbody>
