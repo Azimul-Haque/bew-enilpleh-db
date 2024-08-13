@@ -577,7 +577,7 @@
       <div class="modal-dialog" role="document">
         <div class="modal-content">
           <div class="modal-header bg-warning">
-            <h5 class="modal-title" id="addSymptomModalLabel">নতুন বিভাগ যোগ</h5>
+            <h5 class="modal-title" id="addSymptomModalLabel">নতুন লক্ষণ যোগ</h5>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
@@ -591,7 +591,7 @@
                              name="name"
                              class="form-control"
                              value="{{ old('name') }}"
-                             placeholder="বিভাগের নাম" required>
+                             placeholder="লক্ষণের নাম" required>
                       <div class="input-group-append">
                           <div class="input-group-text"><span class="fas fa-user-md"></span></div>
                       </div>
