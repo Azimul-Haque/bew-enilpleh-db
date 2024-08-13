@@ -196,7 +196,7 @@ class DoctorController extends Controller
         $medicaldepartment->save();
 
         Cache::forget('medicaldepartments');
-        Session::flash('success', 'medical Department added successfully!');
+        Session::flash('success', 'Medical Department added successfully!');
         return redirect()->route('dashboard.doctors');
     }
 
@@ -211,7 +211,7 @@ class DoctorController extends Controller
         $medicaldepartment->save();
 
         Cache::forget('medicaldepartments');
-        Session::flash('success', 'medical Department updated successfully!');
+        Session::flash('success', 'Medical Department updated successfully!');
         return redirect()->route('dashboard.doctors');
     }
 
@@ -226,7 +226,7 @@ class DoctorController extends Controller
         $medicalsymptom->save();
 
         Cache::forget('medicalsymptoms');
-        Session::flash('success', 'medical Department added successfully!');
+        Session::flash('success', 'Medical Symptom added successfully!');
         return redirect()->route('dashboard.doctors');
     }
 
@@ -241,7 +241,7 @@ class DoctorController extends Controller
         $medicalsymptom->save();
 
         Cache::forget('medicalsymptoms');
-        Session::flash('success', 'medical Department updated successfully!');
+        Session::flash('success', 'Medical Symptom updated successfully!');
         return redirect()->route('dashboard.doctors');
     }
 }
