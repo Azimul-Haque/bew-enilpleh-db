@@ -418,7 +418,7 @@ class APIController extends Controller
                                                       ->get();
                                  // dd($blooddonormembers);
                  foreach($blooddonormembers as $blooddonormember) {
-                     $blooddonormember->makeHidden('blooddonor', 'upazilla', 'created_at', 'updated_at');
+                     $blooddonormember->makeHidden('upazilla', 'created_at', 'updated_at');
                  }
                  return $blooddonormembers;
             });
