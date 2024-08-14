@@ -15,6 +15,7 @@ use App\Medicalsymptom;
 use App\Doctormedicaldepartment;
 use App\Doctormedicalsymptom;
 use App\Blooddonor;
+use App\Blooddonormember;
 use App\Ambulance;
 use App\Ambulanceimage;
 use App\Esheba;
@@ -347,6 +348,36 @@ class APIController extends Controller
     }
 
     public function getBloodDonorsDistrict($softtoken, $category, $district_id)
+    {
+        if($softtoken == env('SOFT_TOKEN'))
+        {
+            $blooddonors = Cache::remember('blooddonors' . $category . $district_id, 30 * 24 * 60 * 60, function () use ($category, $district_id) {
+                 $blooddonors = Blooddonor::where('category', $category)
+                                 ->where('district_id', $district_id)
+                                 ->orderBy('id', 'desc')
+                                 ->get();
+                                 // dd($blooddonors);
+                 foreach($blooddonors as $blooddonor) {
+                     $blooddonor->districtname = $blooddonor->district->name_bangla;
+                     $blooddonor->upazillaname = $blooddonor->upazilla->name_bangla;
+                     $blooddonor->makeHidden('district', 'upazilla', 'created_at', 'updated_at');
+                 }
+                 return $blooddonors;
+            });
+            
+            // dd($courses);
+            return response()->json([
+                'success' => true,
+                'blooddonors' => $blooddonors,
+            ]);
+        } else {
+            return response()->json([
+                'success' => false
+            ]);
+        }
+    }
+
+    public function getBloodDonorsUpazilla($softtoken, $category, $district_id)
     {
         if($softtoken == env('SOFT_TOKEN'))
         {
