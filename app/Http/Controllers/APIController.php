@@ -419,7 +419,7 @@ class APIController extends Controller
                                  // dd($blooddonormembers);
                  foreach($blooddonormembers as $blooddonormember) {
                      $blooddonormember->donororgname = $blooddonormember->blooddonor->name;
-                     $blooddonor->makeHidden('district', 'upazilla', 'created_at', 'updated_at');
+                     $blooddonormember->makeHidden('blooddonor', 'upazilla', 'created_at', 'updated_at');
                  }
                  return $blooddonormembers;
             });
