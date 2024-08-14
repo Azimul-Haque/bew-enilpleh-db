@@ -1,22 +1,33 @@
 @extends('layouts.app')
-@section('title') ড্যাশবোর্ড | রক্তদাতা তালিকা @endsection
+@section('title') ড্যাশবোর্ড | রক্তদাতা প্রতিষ্ঠান/ব্লাড ব্যাংক @endsection
 
 @section('third_party_stylesheets')
    {{--  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/icheck-bootstrap@3.0.1/icheck-bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="{{ asset('css/bootstrap-datepicker.min.css') }}"> --}}
+    <style type="text/css">
+      .blink_me {
+        animation: blinker 1.5s linear infinite;
+      }
+
+      @keyframes blinker {
+        50% {
+          opacity: 0;
+        }
+      }
+    </style>
 @endsection
 
 @section('content')
-  @section('page-header') রক্তদাতা তালিকা (মোট {{ bangla($blooddonorscount) }} টি) @endsection
+  @section('page-header') রক্তদাতা প্রতিষ্ঠান/ব্লাড ব্যাংক (মোট {{ bangla($blooddonorscount) }} টি) @endsection
     <div class="container-fluid">
     <div class="card">
           <div class="card-header">
-            <h3 class="card-title">রক্তদাতা তালিকা</h3>
+            <h3 class="card-title">রক্তদাতা প্রতিষ্ঠান/ব্লাড ব্যাংক</h3>
 
             <div class="card-tools">
               <form class="form-inline form-group-lg" action="">
                 <div class="form-group">
-                  <input type="search-param" class="form-control form-control-sm" placeholder="রক্তদাতা খুঁজুন" id="search-param" required>
+                  <input type="search-param" class="form-control form-control-sm" placeholder="রক্তদাতা প্রতিষ্ঠান খুঁজুন" id="search-param" required>
                 </div>
                 <button type="button" id="search-button" class="btn btn-default btn-sm" style="margin-left: 5px;">
                   <i class="fas fa-search"></i> খুঁজুন
@@ -37,6 +48,7 @@
               <thead>
                 <tr>
                   <th>নাম</th>
+                  <th>সদস্য</th>
                   <th>লোকেশন</th>
                   <th align="right">কার্যক্রম</th>
                 </tr>
@@ -48,6 +60,11 @@
                       {{ $blooddonor->name }}
                       <small class="text-black-50"><i class="fas fa-phone"></i> {{ $blooddonor->mobile }}</small><br/>
                       <span class="badge bg-success">{{ blooddonor_category($blooddonor->category) }}</span>
+                    </td>
+                    <td>
+                      @if($blooddonor->category == 2)
+                        <a href="{{ route('dashboard.blooddonormembers', $blooddonor->id) }}" title="সদস্য যোগ করতে বা এডিট করতে ক্লিক করুন" class=""><strong>সদস্য তালিকা দেখুন</strong></a>
+                      @endif
                     </td>
                     <td>
                       {{ $blooddonor->upazilla->name_bangla }}, {{ $blooddonor->district->name_bangla }}
@@ -66,7 +83,7 @@
                         <div class="modal-dialog" role="document">
                           <div class="modal-content">
                             <div class="modal-header bg-primary">
-                              <h5 class="modal-title" id="editUserModalLabel">রক্তদাতা তথ্য হালনাগাদ</h5>
+                              <h5 class="modal-title" id="editUserModalLabel">রক্তদাতা প্রতিষ্ঠান/ব্লাড ব্যাংক তথ্য হালনাগাদ</h5>
                               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                 <span aria-hidden="true">&times;</span>
                               </button>
@@ -150,13 +167,13 @@
                           <div class="modal-dialog" role="document">
                             <div class="modal-content">
                               <div class="modal-header bg-danger">
-                                <h5 class="modal-title" id="deleteUserModalLabel">রক্তদাতা ডিলেট</h5>
+                                <h5 class="modal-title" id="deleteUserModalLabel">রক্তদাতা প্রতিষ্ঠান ডিলেট</h5>
                                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                   <span aria-hidden="true">&times;</span>
                                 </button>
                               </div>
                               <div class="modal-body">
-                                আপনি কি নিশ্চিতভাবে এই রক্তদাতাকে ডিলেট করতে চান?<br/>
+                                আপনি কি নিশ্চিতভাবে এই রক্তদাতা প্রতিষ্ঠানকে ডিলেট করতে চান?<br/>
                                 <center>
                                     <big><b>{{ $blooddonor->name }}</b></big><br/>
                                     <small><i class="fas fa-phone"></i> {{ $blooddonor->mobile }}</small>
@@ -188,7 +205,7 @@
       <div class="modal-dialog" role="document">
         <div class="modal-content">
           <div class="modal-header bg-success">
-            <h5 class="modal-title" id="addUserModalLabel">নতুন রক্তদাতা যোগ</h5>
+            <h5 class="modal-title" id="addUserModalLabel">নতুন রক্তদাতা প্রতিষ্ঠান/ব্লাড ব্যাংক যোগ</h5>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>

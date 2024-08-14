@@ -10,6 +10,7 @@ return array(
     'App\\Ambulance' => $baseDir . '/app/Ambulance.php',
     'App\\Ambulanceimage' => $baseDir . '/app/Ambulanceimage.php',
     'App\\Blooddonor' => $baseDir . '/app/Blooddonor.php',
+    'App\\Blooddonormember' => $baseDir . '/app/Blooddonormember.php',
     'App\\Bus' => $baseDir . '/app/Bus.php',
     'App\\Coaching' => $baseDir . '/app/Coaching.php',
     'App\\Console\\Kernel' => $baseDir . '/app/Console/Kernel.php',

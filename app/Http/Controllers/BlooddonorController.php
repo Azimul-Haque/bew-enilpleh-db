@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\District;
 use App\Upazilla;
 use App\Blooddonor;
+use App\Blooddonormember;
 
 use Carbon\Carbon;
 use DB;
@@ -109,7 +110,7 @@ class BlooddonorController extends Controller
             'mobile'              => 'required|string|max:191',
         ));
 
-        $blooddonor = Blooddonor::find($id);;
+        $blooddonor = Blooddonor::find($id);
         $blooddonor->district_id = $request->district_id;
         $blooddonor->upazilla_id = $request->upazilla_id;
         $blooddonor->name = $request->name;
@@ -122,6 +123,113 @@ class BlooddonorController extends Controller
         Cache::forget('blooddonors'. $request->category . $request->district_id. $request->upazilla_id);
         Session::flash('success', 'Blood Donor updated successfully!');
         return redirect()->route('dashboard.blooddonors');
+    }
+
+    public function getBloodDonorMembers($id)
+    {
+        $blooddonor = Blooddonor::find($id);
+        $blooddonormemberscount = Blooddonormember::count();
+        $blooddonormembers = Blooddonormember::orderBy('id', 'desc')->paginate(10);
+                
+        return view('dashboard.blooddonors.members')
+                            ->withBlooddonor($blooddonor)
+                            ->withBlooddonormemberscount($blooddonormemberscount)
+                            ->withBlooddonormembers($blooddonormembers);
+    }
+
+    public function bloodDonorMemberSearch($id, $search)
+    {
+        $blooddonor = Blooddonor::find($id);
+        $blooddonormemberscount = Blooddonormember::where('name', 'LIKE', "%$search%")
+                                  ->orWhere('designation', 'LIKE', "%$search%")
+                                  ->orWhere('blood_group', 'LIKE', "%$search%")
+                                  ->orWhere('address', 'LIKE', "%$search%")
+                                  ->orWhere('contact', 'LIKE', "%$search%")
+                                  ->orWhereHas('blooddonor', function ($query) use ($search){
+                                      $query->where('name', 'like', '%'.$search.'%');
+                                      $query->orWhere('mobile', 'like', '%'.$search.'%');
+                                  })
+                                  ->count();
+        $blooddonormembers = Blooddonormember::where('name', 'LIKE', "%$search%")
+                                  ->orWhere('designation', 'LIKE', "%$search%")
+                                  ->orWhere('blood_group', 'LIKE', "%$search%")
+                                  ->orWhere('address', 'LIKE', "%$search%")
+                                  ->orWhere('contact', 'LIKE', "%$search%")
+                                  ->orWhereHas('blooddonor', function ($query) use ($search){
+                                      $query->where('name', 'like', '%'.$search.'%');
+                                      $query->orWhere('mobile', 'like', '%'.$search.'%');
+                                  })
+                                  ->orderBy('id', 'desc')
+                                  ->paginate(10);
+
+        return view('dashboard.blooddonors.members')
+                            ->withBlooddonor($blooddonor)
+                            ->withBlooddonormemberscount($blooddonormemberscount)
+                            ->withBlooddonormembers($blooddonormembers);
+    }
+
+
+
+    public function storeBloodDonorMember(Request $request)
+    {
+        $this->validate($request,array(
+            'blooddonor_id'   => 'required',
+            'name'            => 'required|string|max:191',
+            'designation'     => 'required|string|max:191',
+            'blood_group'     => 'required|string|max:191',
+            'contact'         => 'required|string|max:191',
+            'address'         => 'required|string|max:191',
+        ));
+
+        $blooddonormember = new Blooddonormember;
+        $blooddonormember->blooddonor_id = $request->blooddonor_id;
+        $blooddonormember->name = $request->name;
+        $blooddonormember->designation = $request->designation;
+        $blooddonormember->blood_group = $request->blood_group;
+        $blooddonormember->contact = $request->contact;
+        $blooddonormember->address = $request->address;
+        $blooddonormember->save();
+
+        Cache::forget('blooddonormembers'. $request->blooddonor_id);
+        Session::flash('success', 'Blood Donor Member added successfully!');
+        return redirect()->route('dashboard.blooddonormembers', $request->blooddonor_id);
+    }
+
+
+
+    public function updateBloodDonorMember(Request $request, $id)
+    {
+        $this->validate($request,array(
+            'blooddonor_id'   => 'required',
+            'name'            => 'required|string|max:191',
+            'designation'     => 'required|string|max:191',
+            'blood_group'     => 'required|string|max:191',
+            'contact'         => 'required|string|max:191',
+            'address'         => 'required|string|max:191',
+        ));
+
+        $blooddonormember = Blooddonormember::findOrFail($id);
+        $blooddonormember->blooddonor_id = $request->blooddonor_id;
+        $blooddonormember->name = $request->name;
+        $blooddonormember->designation = $request->designation;
+        $blooddonormember->blood_group = $request->blood_group;
+        $blooddonormember->contact = $request->contact;
+        $blooddonormember->address = $request->address;
+        $blooddonormember->save();
+
+        Cache::forget('blooddonormembers'. $request->blooddonor_id);
+        Session::flash('success', 'Blood Donor Member updated successfully!');
+        return redirect()->back();
+    }
+
+    public function deleteBloodDonorMember($id)
+    {
+        $blooddonormember = Blooddonormember::findOrFail($id);
+        $blooddonormember->delete();
+
+        Cache::forget('blooddonormembers'. $id);
+        Session::flash('success', 'Blood Donor Member deleted successfully!');
+        return redirect()->back();
     }
 
 }

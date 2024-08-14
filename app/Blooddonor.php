@@ -13,4 +13,8 @@ class Blooddonor extends Model
     public function upazilla(){
         return $this->belongsTo('App\Upazilla');
     }
+
+    public function blooddonormembers(){
+        return $this->hasMany('App\Blooddonormember');
+    }
 }
