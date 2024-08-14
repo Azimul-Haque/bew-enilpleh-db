@@ -111,6 +111,8 @@ class BlooddonorController extends Controller
         ));
 
         $blooddonor = Blooddonor::find($id);
+        Cache::forget('blooddonors'. $request->category . $request->district_id);
+        Cache::forget('blooddonors'. $request->category . $request->district_id. $request->upazilla_id);
         $blooddonor->district_id = $request->district_id;
         $blooddonor->upazilla_id = $request->upazilla_id;
         $blooddonor->name = $request->name;
@@ -118,7 +120,6 @@ class BlooddonorController extends Controller
         $blooddonor->mobile = $request->mobile;
         $blooddonor->save();
 
-        
         Cache::forget('blooddonors'. $request->category . $request->district_id);
         Cache::forget('blooddonors'. $request->category . $request->district_id. $request->upazilla_id);
         Session::flash('success', 'Blood Donor updated successfully!');
