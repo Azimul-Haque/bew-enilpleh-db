@@ -222,12 +222,12 @@ class BlooddonorController extends Controller
         return redirect()->back();
     }
 
-    public function deleteBloodDonorMember($id)
+    public function deleteBloodDonorMember($blooddonor_id, $member_id
     {
-        $blooddonormember = Blooddonormember::findOrFail($id);
+        $blooddonormember = Blooddonormember::findOrFail($member_id);
         $blooddonormember->delete();
 
-        Cache::forget('blooddonormembers'. $id);
+        Cache::forget('blooddonormembers'. $blooddonor_id);
         Session::flash('success', 'Blood Donor Member deleted successfully!');
         return redirect()->back();
     }
