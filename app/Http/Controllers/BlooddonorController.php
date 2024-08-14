@@ -159,17 +159,7 @@ class BlooddonorController extends Controller
         });
 
         $blooddonormemberscount = $query->count();
-        $blooddonormembers = Blooddonormember::where('name', 'LIKE', "%$search%")
-                                  ->orWhere('designation', 'LIKE', "%$search%")
-                                  ->orWhere('blood_group', 'LIKE', "%$search%")
-                                  ->orWhere('address', 'LIKE', "%$search%")
-                                  ->orWhere('contact', 'LIKE', "%$search%")
-                                  ->orWhereHas('blooddonor', function ($query) use ($search){
-                                      $query->where('name', 'like', '%'.$search.'%');
-                                      $query->orWhere('mobile', 'like', '%'.$search.'%');
-                                  })
-                                  ->orderBy('id', 'desc')
-                                  ->paginate(10);
+        $blooddonormembers = $query->orderBy('id', 'desc')->paginate(10);
 
         return view('dashboard.blooddonors.members')
                             ->withBlooddonor($blooddonor)
