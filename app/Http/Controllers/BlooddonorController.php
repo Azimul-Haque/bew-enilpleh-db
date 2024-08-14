@@ -130,7 +130,7 @@ class BlooddonorController extends Controller
     {
         $blooddonor = Blooddonor::find($id);
         $blooddonormemberscount = Blooddonormember::count();
-        $blooddonormembers = Blooddonormember::orderBy('id', 'desc')->paginate(10);
+        $blooddonormembers = Blooddonormember::where('blooddonor_id', $id)->orderBy('id', 'desc')->paginate(10);
                 
         return view('dashboard.blooddonors.members')
                             ->withBlooddonor($blooddonor)
