@@ -155,7 +155,7 @@ class BlooddonorController extends Controller
               ->orWhereHas('blooddonor', function ($secquery) use ($search){
                   $secquery->where('name', 'like', '%'.$search.'%');
                   $secquery->orWhere('mobile', 'like', '%'.$search.'%');
-              })
+              });
         });
 
         $blooddonormemberscount = $query->count();
