@@ -417,10 +417,6 @@ class APIController extends Controller
                                                       ->orderBy('id', 'desc')
                                                       ->get();
                                  // dd($blooddonormembers);
-                 foreach($blooddonormembers as $blooddonormember) {
-                     $blooddonormember->donororgname = $blooddonormember->blooddonor->name;
-                     $blooddonormember->makeHidden('blooddonor', 'upazilla', 'created_at', 'updated_at');
-                 }
                  return $blooddonormembers;
             });
             
