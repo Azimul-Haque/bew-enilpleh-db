@@ -129,7 +129,7 @@ class BlooddonorController extends Controller
     public function getBloodDonorMembers($id)
     {
         $blooddonor = Blooddonor::find($id);
-        $blooddonormemberscount = Blooddonormember::count();
+        $blooddonormemberscount = Blooddonormember::where('blooddonor_id', $id)->count();
         $blooddonormembers = Blooddonormember::where('blooddonor_id', $id)->orderBy('id', 'desc')->paginate(10);
                 
         return view('dashboard.blooddonors.members')
@@ -142,8 +142,17 @@ class BlooddonorController extends Controller
     {
         $blooddonor = Blooddonor::find($id);
 
-        
-        
+        // Initialize query
+        $query = Blooddonormember::where('rabbattalion_id', $battalion_id);
+
+        // If the search parameter is provided, apply it to designation, area, mobile, and telephone fields
+        $query->where(function($q) use ($search) {
+            $q->where('designation', 'LIKE', '%' . $search . '%')
+              ->orWhere('area', 'LIKE', '%' . $search . '%')
+              ->orWhere('mobile', 'LIKE', '%' . $search . '%')
+              ->orWhere('telephone', 'LIKE', '%' . $search . '%');
+        });
+
         $blooddonormemberscount = Blooddonormember::where('name', 'LIKE', "%$search%")
                                   ->orWhere('designation', 'LIKE', "%$search%")
                                   ->orWhere('blood_group', 'LIKE', "%$search%")
