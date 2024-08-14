@@ -414,12 +414,11 @@ class APIController extends Controller
         {
             $blooddonormembers = Cache::remember('blooddonormembers' . $blooddonor_id, 30 * 24 * 60 * 60, function () use ($category, $district_id) {
                  $blooddonormembers = Blooddonormember::where('blooddonor_id', $blooddonor_id)
-                                 ->orderBy('id', 'desc')
-                                 ->get();
+                                                      ->orderBy('id', 'desc')
+                                                      ->get();
                                  // dd($blooddonormembers);
-                 foreach($blooddonormembers as $blooddonor) {
-                     $blooddonor->districtname = $blooddonor->district->name_bangla;
-                     $blooddonor->upazillaname = $blooddonor->upazilla->name_bangla;
+                 foreach($blooddonormembers as $blooddonormember) {
+                     $blooddonormember->donororgname = $blooddonormember->blooddonor->name;
                      $blooddonor->makeHidden('district', 'upazilla', 'created_at', 'updated_at');
                  }
                  return $blooddonormembers;
