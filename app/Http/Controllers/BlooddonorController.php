@@ -152,6 +152,10 @@ class BlooddonorController extends Controller
               ->orWhere('blood_group', 'LIKE', '%' . $search . '%')
               ->orWhere('address', 'LIKE', '%' . $search . '%');
               ->orWhere('contact', 'LIKE', '%' . $search . '%');
+              ->orWhereHas('blooddonor', function ($query) use ($search){
+                  $query->where('name', 'like', '%'.$search.'%');
+                  $query->orWhere('mobile', 'like', '%'.$search.'%');
+              })
         });
 
         $blooddonormemberscount = Blooddonormember::where('name', 'LIKE', "%$search%")
