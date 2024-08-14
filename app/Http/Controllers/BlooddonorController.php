@@ -111,8 +111,8 @@ class BlooddonorController extends Controller
         ));
 
         $blooddonor = Blooddonor::find($id);
-        Cache::forget('blooddonors'. $blooddonor->category . $request->district_id);
-        Cache::forget('blooddonors'. $blooddonor->category . $request->district_id. $request->upazilla_id);
+        Cache::forget('blooddonors'. $blooddonor->category . $blooddonor->district_id);
+        Cache::forget('blooddonors'. $blooddonor->category . $blooddonor->district_id. $blooddonor->upazilla_id);
         $blooddonor->district_id = $request->district_id;
         $blooddonor->upazilla_id = $request->upazilla_id;
         $blooddonor->name = $request->name;
