@@ -217,7 +217,7 @@ class BlooddonorController extends Controller
         $blooddonormember->address = $request->address;
         $blooddonormember->save();
 
-        Cache::forget('blooddonormembers'. $request->blooddonor_id);
+        Cache::forget('blooddonormembers'. $blooddonor_id);
         Session::flash('success', 'Blood Donor Member updated successfully!');
         return redirect()->back();
     }
