@@ -377,13 +377,14 @@ class APIController extends Controller
         }
     }
 
-    public function getBloodDonorMembers($softtoken, $blooddonor_id)
+    public function getBloodDonorsUpazilla($softtoken, $category, $district_id, $upazilla_id)
     {
         if($softtoken == env('SOFT_TOKEN'))
         {
-            $blooddonors = Cache::remember('blooddonors' . $category . $district_id, 30 * 24 * 60 * 60, function () use ($category, $district_id) {
+            $blooddonors = Cache::remember('blooddonors' . $category . $district_id . $upazilla_id, 30 * 24 * 60 * 60, function () use ($category, $district_id, $upazilla_id) {
                  $blooddonors = Blooddonor::where('category', $category)
                                  ->where('district_id', $district_id)
+                                 ->where('upazilla_id', $upazilla_id)
                                  ->orderBy('id', 'desc')
                                  ->get();
                                  // dd($blooddonors);
@@ -407,14 +408,13 @@ class APIController extends Controller
         }
     }
 
-    public function getBloodDonorsUpazilla($softtoken, $category, $district_id, $upazilla_id)
+    public function getBloodDonorMembers($softtoken, $blooddonor_id)
     {
         if($softtoken == env('SOFT_TOKEN'))
         {
-            $blooddonors = Cache::remember('blooddonors' . $category . $district_id . $upazilla_id, 30 * 24 * 60 * 60, function () use ($category, $district_id, $upazilla_id) {
+            $blooddonors = Cache::remember('blooddonors' . $category . $district_id, 30 * 24 * 60 * 60, function () use ($category, $district_id) {
                  $blooddonors = Blooddonor::where('category', $category)
                                  ->where('district_id', $district_id)
-                                 ->where('upazilla_id', $upazilla_id)
                                  ->orderBy('id', 'desc')
                                  ->get();
                                  // dd($blooddonors);
