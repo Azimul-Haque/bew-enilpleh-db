@@ -200,23 +200,7 @@ class BlooddonorController extends Controller
     public function updateBloodDonorMember(Request $request, $id)
     {
         $this->validate($request,array(
-            'blooddonor_id'   => 'required',
-            'name'            => 'required|string|max:191',
-            'designation'     => 'required|string|max:191',
-            'blood_group'     => 'required|string|max:191',
-            'contact'         => 'required|string|max:191',
-            'address'         => 'required|string|max:191',
-        ));
-
-        $blooddonormember = Blooddonormember::findOrFail($id);
-        $blooddonormember->blooddonor_id = $request->blooddonor_id;
-        $blooddonormember->name = $request->name;
-        $blooddonormember->designation = $request->designation;
-        $blooddonormember->blood_group = $request->blood_group;
-        $blooddonormember->contact = $request->contact;
-        $blooddonormember->address = $request->address;
-        $blooddonormember->save();
-
+            'blooddo
         Cache::forget('blooddonormembers'. $request->blooddonor_id);
         Session::flash('success', 'Blood Donor Member updated successfully!');
         return redirect()->back();
