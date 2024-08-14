@@ -377,7 +377,7 @@ class APIController extends Controller
         }
     }
 
-    public function getBloodDonorMembers($softtoken, $category, $district_id)
+    public function getBloodDonorMembers($softtoken, $blooddonor_id)
     {
         if($softtoken == env('SOFT_TOKEN'))
         {
