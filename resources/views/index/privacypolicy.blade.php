@@ -1,5 +1,5 @@
 @extends('layouts.index')
-@section('title') Privacy Policy | BD Helpline | সকল জেলার তথ্যসংবলিত সার্ভিস অ্যাপ @endsection
+@section('title') Privacy Policy | Smart BD - Health & Services | সকল জেলার তথ্যসংবলিত সার্ভিস অ্যাপ @endsection
 
 @section('third_party_stylesheets')
 
@@ -12,7 +12,7 @@
 	      <div class="col-md-12 col-12">
 			<h4>Privacy Policy</h4><br/>
 			<p>
-			<strong>App Lab IT</strong> built the <strong>BD Helpline</strong> app as
+			<strong>App Lab IT</strong> built the <strong>Smart BD - Health & Services</strong> app as
 			a Service app. This SERVICE is provided by
 			<strong>App Lab IT</strong>  and is intended for use as
 			is.
@@ -38,7 +38,7 @@
 			<p><strong>Affiliate</strong> means an entity that controls, is controlled by or is under common control with a party, where &quot;control&quot; means ownership of 50% or more of the shares, equity interest or other securities entitled to vote for election of directors or other managing authority.</p>
 			</li>
 			<li>
-			<p><strong>Application</strong> refers to BD Helpline - Health&amp;Lifestyle, the software program provided by the Company.</p>
+			<p><strong>Application</strong> refers to Smart BD - Health & Services - Health&amp;Lifestyle, the software program provided by the Company.</p>
 			</li>
 			<li>
 			<p><strong>Company</strong> (referred to as either &quot;the Company&quot;, &quot;We&quot;, &quot;Us&quot; or &quot;Our&quot; in this Agreement) refers to App Lab IT, House 31/13,  Block C, Tajmahal Road, Mohammadpur, Dhaka-1207.</p>
