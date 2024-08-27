@@ -1,5 +1,5 @@
 @extends('layouts.index')
-@section('title') Terms & Conditions | BD Helpline | সকল জেলার তথ্যসংবলিত সার্ভিস অ্যাপ @endsection
+@section('title') Terms & Conditions | Smart BD - Health & Services | সকল জেলার তথ্যসংবলিত সার্ভিস অ্যাপ @endsection
 
 @section('third_party_stylesheets')
 
@@ -35,7 +35,7 @@
 		</p>
 		<br/>
 		<p>
-		  The <strong>BD Helpline</strong> app stores and processes personal data that
+		  The <strong>Smart BD - Health & Services</strong> app stores and processes personal data that
 		  you have provided to us, to provide our
 		  Service. It’s your responsibility to keep your phone and
 		  access to the app secure. We therefore recommend that you do
@@ -44,7 +44,7 @@
 		  official operating system of your device. It could make your
 		  phone vulnerable to malware/viruses/malicious programs,
 		  compromise your phone’s security features and it could mean
-		  that the <strong>BD Helpline</strong> app won’t work properly or at all.
+		  that the <strong>Smart BD - Health & Services</strong> app won’t work properly or at all.
 		</p>
 		<br/>
 		<div>
