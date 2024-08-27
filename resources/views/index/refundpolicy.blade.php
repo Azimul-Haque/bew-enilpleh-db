@@ -1,5 +1,5 @@
 @extends('layouts.index')
-@section('title') Refund Policy | BCS Exam AID | বিসিএস-সহ সরকারি চাকরির পরীক্ষার প্রস্তুতির জন্য সেরা অনলাইন প্ল্যাটফর্ম @endsection
+@section('title') Refund Policy | Smart BD - Health & Services @endsection
 
 @section('third_party_stylesheets')
 
