@@ -119,7 +119,7 @@ Route::post('/dashboard/coachings/{district_id}/store', 'AdminandothersControlle
 Route::post('/dashboard/coachings/{district_id}/{id}/update', 'AdminandothersController@updateCoaching')->name('dashboard.coachings.update');
 Route::get('/dashboard/coachings/{district_id}/{id}/delete', 'AdminandothersController@deleteCoaching')->name('dashboard.coachings.delete');
 
-// Coaching
+// RAB
 Route::get('/dashboard/rabs', 'AdminandothersController@rabIndex')->name('dashboard.rabs');
 Route::post('/dashboard/rabs/battalion/store', 'AdminandothersController@storeRabbattalion')->name('dashboard.rabbattalions.store');
 Route::post('/dashboard/rabs/battalion/{id}/update', 'AdminandothersController@updateRabbattalion')->name('dashboard.rabbattalions.update');
@@ -128,11 +128,6 @@ Route::get('/dashboard/rabs/battalion/details/{id}/{search}', 'AdminandothersCon
 Route::post('/dashboard/rabs/battalion/details/{battalion_id}/store', 'AdminandothersController@storeDetailsRabbattalion')->name('dashboard.rabbattalionsdetails.store');
 Route::post('/dashboard/rabs/battalion/details/{battalion_id}/{id}/update', 'AdminandothersController@updateDetailsRabbattalion')->name('dashboard.rabbattalionsdetails.update');
 Route::post('/dashboard/rabs/battalion/district/{district_id}/update', 'AdminandothersController@updateDistrictRabbattalion')->name('dashboard.districtrabbattalions.update');
-// Route::get('/dashboard/coachings/{district_id}', 'AdminandothersController@coachingIndexSingle')->name('dashboard.coachings.districtwise');
-// Route::get('/dashboard/coachings/{district_id}/{search}', 'AdminandothersController@coachingIndexSearch')->name('dashboard.coachings.districtwise.search');
-// Route::post('/dashboard/coachings/{district_id}/store', 'AdminandothersController@storeCoaching')->name('dashboard.coachings.store');
-// Route::post('/dashboard/coachings/{district_id}/{id}/update', 'AdminandothersController@updateCoaching')->name('dashboard.coachings.update');
-// Route::get('/dashboard/coachings/{district_id}/{id}/delete', 'AdminandothersController@deleteCoaching')->name('dashboard.coachings.delete');
 
 
 // Bus
