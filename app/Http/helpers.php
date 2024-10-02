@@ -57,7 +57,9 @@
         $text = "ফিজিওথেরাপি সেন্টার";
       } elseif($hospital_type == 4) {
         $text = "কিডনি ডায়ালাইসিস";
-      } 
+      } else {
+        $text = $hospital_type;
+      }
       return $text;
   }
 
