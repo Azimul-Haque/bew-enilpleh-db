@@ -151,7 +151,7 @@
 			<p>If you have any questions about this Privacy Policy, You can contact us:</p>
 			<ul>
 			<li>
-			<p>By email: rkpharma.bd@gmail.com</p>
+			<p>By email: unisoft360@gmail.com</p>
 			</li>
 			<li>
 			<p>By visiting this page on our website: <a href="https://bdhelpline.info/contact" rel="external nofollow noopener" target="_blank">https://bdhelpline.info/contact</a></p>
