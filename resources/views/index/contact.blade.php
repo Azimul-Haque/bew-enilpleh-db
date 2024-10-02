@@ -32,8 +32,8 @@
                 </div>
                 <div class="contact-content">
                   <h4>Address</h4>
-                  <p>Dhaka</p>
-                  <p>Bangladesh</p>
+                  <p>Unisoft 360</p>
+                  <p>Registripara, Tangail 1900</p>
                 </div>
               </div>
             </div>
