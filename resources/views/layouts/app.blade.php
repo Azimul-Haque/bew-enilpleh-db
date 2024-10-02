@@ -133,7 +133,7 @@
     <!-- Main Footer -->
     <footer class="main-footer">
         <div class="float-right d-none d-sm-block">
-            <b>ভার্শন</b> ১.০.০
+            <b>ভার্শন</b> ২.০.০
         </div>
         <strong>Copyright &copy; {{ date('Y') }} All rights
         reserved.
