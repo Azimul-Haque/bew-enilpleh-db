@@ -6,7 +6,7 @@
   <meta charset="utf-8" />
   <meta http-equiv="x-ua-compatible" content="ie=edge" />
   <meta name="description" content="Infoline - BD Smart Seba. Developed By A. H. M. Azimul Haque.">
-    <meta name="keywords" content="Infoline - BD Smart Seba">
+    <meta name="keywords" content="Infolin, BD Smart Seba">
   <meta name="author" content="A. H. M. Azimul Haque">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
   <!--====== Title ======-->
