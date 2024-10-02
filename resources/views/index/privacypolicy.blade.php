@@ -1,5 +1,5 @@
 @extends('layouts.index')
-@section('title') Privacy Policy | Smart BD - Health & Services | সকল জেলার তথ্যসংবলিত সার্ভিস অ্যাপ @endsection
+@section('title') Privacy Policy | Infoline - BD Smart Seba | সকল জেলার তথ্যসংবলিত সার্ভিস অ্যাপ @endsection
 
 @section('third_party_stylesheets')
 
@@ -12,7 +12,7 @@
 	      <div class="col-md-12 col-12">
 			<h4>Privacy Policy</h4><br/>
 			<p>
-			<strong>Unisoft 360</strong> built the <strong>Smart BD - Health & Services</strong> app as
+			<strong>Unisoft 360</strong> built the <strong>Infoline - BD Smart Seba</strong> app as
 			a Service app. This SERVICE is provided by
 			<strong>Unisoft 360</strong>  and is intended for use as
 			is.
@@ -38,7 +38,7 @@
 			<p><strong>Affiliate</strong> means an entity that controls, is controlled by or is under common control with a party, where &quot;control&quot; means ownership of 50% or more of the shares, equity interest or other securities entitled to vote for election of directors or other managing authority.</p>
 			</li>
 			<li>
-			<p><strong>Application</strong> refers to Smart BD - Health & Services - Health&amp;Lifestyle, the software program provided by the Company.</p>
+			<p><strong>Application</strong> refers to Infoline - BD Smart Seba - Health&amp;Lifestyle, the software program provided by the Company.</p>
 			</li>
 			<li>
 			<p><strong>Company</strong> (referred to as either &quot;the Company&quot;, &quot;We&quot;, &quot;Us&quot; or &quot;Our&quot; in this Agreement) refers to Unisoft 360, Registripara, Tangail 1900</p>
