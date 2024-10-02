@@ -21,7 +21,7 @@
                 <div class="contact-content">
                   <h4>Contact</h4>
                   <p>+8801722924995</p>
-                  <p>rkpharma.bd@gmail.com</p>
+                  <p>unisoft360@gmail.com</p>
                 </div>
               </div>
             </div>
