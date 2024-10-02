@@ -54,7 +54,7 @@
       } elseif($hospital_type == 2) {
         $text = "প্রাইভেট ক্লিনিক ও হাসপাতাল";
       } elseif($hospital_type == 3) {
-        $text = "স্বাস্থ্য কমপ্লেক্স";
+        $text = "ফিজিওথেরাপি সেন্টার";
       }
       return $text;
   }
