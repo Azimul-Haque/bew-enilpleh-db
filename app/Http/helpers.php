@@ -50,7 +50,7 @@
 
   function hospital_type($hospital_type) {
       if ($hospital_type == 1) {
-        $text = "মেডিকেল কলেজ ও হাসপাতাল";
+        $text = "সরকারি হাসপাতাল";
       } elseif($hospital_type == 2) {
         $text = "প্রাইভেট হাসপাতাল";
       } elseif($hospital_type == 3) {
