@@ -1,5 +1,5 @@
 @extends('layouts.index')
-@section('title') Terms & Conditions | Smart BD - Health & Services | সকল জেলার তথ্যসংবলিত সার্ভিস অ্যাপ @endsection
+@section('title') Terms & Conditions | Infoline - BD Smart Seba | সকল জেলার তথ্যসংবলিত সার্ভিস অ্যাপ @endsection
 
 @section('third_party_stylesheets')
 
