@@ -52,7 +52,7 @@
       if ($hospital_type == 1) {
         $text = "সরকারি হাসপাতাল";
       } elseif($hospital_type == 2) {
-        $text = "প্রাইভেট হাসপাতাল";
+        $text = "প্রাইভেট ক্লিনিক ও হাসপাতাল";
       } elseif($hospital_type == 3) {
         $text = "স্বাস্থ্য কমপ্লেক্স";
       }
