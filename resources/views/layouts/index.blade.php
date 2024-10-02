@@ -162,7 +162,7 @@
                   Infoline বাংলাদেশের সকল জেলার জরুরী তথ্যসেবা সংবলিত একটি মোবাইল অ্যাপ। যে কোন ব্যক্তি এই অ্যাপ ব্যবহার করে বিশ্বের যে কোন প্রান্ত থেকে বাংলাদেশের যেকোন জেলার প্রাথমিক ও জরুরী তথ্যসেবা পেতে পারেন।
                 </p>
                 <p class="copyright-text">
-                  <span>© {{ date('Y') }} App Lab IT.</span>
+                  <span>© {{ date('Y') }} Unisoft 360</span>
                   {{-- Designed and Developed by
                   <a href="https://orbachinujbuk.com" rel="nofollow"> A. H. M. Azimul Haque</a> --}}
                 </p>
