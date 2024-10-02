@@ -1,5 +1,5 @@
 @extends('layouts.index')
-@section('title') Contact | Infoline | প্রতিটি জেলার সকল প্রকার তথ্য এবার এক প্ল্যাটফর্ম @endsection
+@section('title') Contact | Infoline - BD Smart Seba | প্রতিটি জেলার সকল প্রকার তথ্য এবার এক প্ল্যাটফর্ম @endsection
 
 @section('third_party_stylesheets')
 
