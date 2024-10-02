@@ -41,7 +41,7 @@
 			<p><strong>Application</strong> refers to Smart BD - Health & Services - Health&amp;Lifestyle, the software program provided by the Company.</p>
 			</li>
 			<li>
-			<p><strong>Company</strong> (referred to as either &quot;the Company&quot;, &quot;We&quot;, &quot;Us&quot; or &quot;Our&quot; in this Agreement) refers to Unisoft 360, House 31/13,  Block C, Tajmahal Road, Mohammadpur, Dhaka-1207.</p>
+			<p><strong>Company</strong> (referred to as either &quot;the Company&quot;, &quot;We&quot;, &quot;Us&quot; or &quot;Our&quot; in this Agreement) refers to Unisoft 360, Registripara, Tangail 1900</p>
 			</li>
 			<li>
 			<p><strong>Country</strong> refers to:  Bangladesh</p>
