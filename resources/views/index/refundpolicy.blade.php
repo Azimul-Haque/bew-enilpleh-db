@@ -1,5 +1,5 @@
 @extends('layouts.index')
-@section('title') Refund Policy | Smart BD - Health & Services @endsection
+@section('title') Refund Policy | Infoline - BD Smart Seba @endsection
 
 @section('third_party_stylesheets')
 
