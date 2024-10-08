@@ -201,7 +201,7 @@ class APIController extends Controller
                 $doctors = Cache::remember('doctors'.$medicalitemid . $datatype . $district_id, 30 * 24 * 60 * 60, function () use ($medicalitemid, $datatype, $district_id) {
                     $doctormedicaldepartments = Doctormedicaldepartment::where('medicaldepartment_id', $medicalitemid)
                                                     ->whereHas('doctor', function($q) use ($district_id){
-                                                        // $q->where('district_id', $district_id);
+                                                        // $q->where('district_id', $district_id); // COMMENTED
                                                     })->get();
                     $doctorstoreturn = collect();
                     foreach($doctormedicaldepartments as $doctormedicaldepartment) {
@@ -222,7 +222,7 @@ class APIController extends Controller
                 $doctors = Cache::remember('doctors'.$medicalitemid . $datatype . $district_id, 30 * 24 * 60 * 60, function () use ($medicalitemid, $datatype, $district_id) {
                     $doctormedicalsymptoms = Doctormedicalsymptom::where('medicalsymptom_id', $medicalitemid)
                                                     ->whereHas('doctor', function($q) use ($district_id){
-                                                        // $q->where('district_id', $district_id);
+                                                        // $q->where('district_id', $district_id); // COMMENTED
                                                     })->get();
                     $doctorstoreturn = collect();
                     foreach($doctormedicalsymptoms as $doctormedicalsymptom) {
