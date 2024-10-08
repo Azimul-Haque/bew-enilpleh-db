@@ -635,7 +635,7 @@ class APIController extends Controller
         {
             $rentacars = Cache::remember('rentacars'  . $district_id, 30 * 24 * 60 * 60, function () use ($district_id) {
                  $rentacars = Rentacar::orderBy('id', 'desc')
-                                 // ->where('district_id', $district_id)
+                                 // ->where('district_id', $district_id) // COMMENTED
                                  ->get();
                                  // dd($rentacars);
                  foreach($rentacars as $rentacar) {
@@ -663,7 +663,7 @@ class APIController extends Controller
         {
             $coachings = Cache::remember('coachings'  . $district_id, 30 * 24 * 60 * 60, function () use ($district_id) {
                  $coachings = Coaching::orderBy('id', 'asc')
-                                 // ->where('district_id', $district_id)
+                                 // ->where('district_id', $district_id) // COMMENTED
                                  ->get();
                  foreach($coachings as $fireservice) {
                        $fireservice->makeHidden('id', 'district_id', 'created_at', 'updated_at');
