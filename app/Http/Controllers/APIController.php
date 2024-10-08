@@ -730,8 +730,8 @@ class APIController extends Controller
         if($softtoken == env('SOFT_TOKEN'))
         {
             $buses = Cache::remember('busesfrom'  . $district_id, 30 * 24 * 60 * 60, function () use ($district_id) {
-                 $buses = Bus::where('district_id', $district_id)
-                                 ->orderBy('id', 'asc')
+                 $buses = Bus::orderBy('id', 'asc')
+                                 // ->where('district_id', $district_id) // COMMENTED
                                  ->get();
                  foreach($buses as $bus) {
                        $bus->district_from = $bus->district->name_bangla;
