@@ -634,8 +634,8 @@ class APIController extends Controller
         if($softtoken == env('SOFT_TOKEN'))
         {
             $rentacars = Cache::remember('rentacars'  . $district_id, 30 * 24 * 60 * 60, function () use ($district_id) {
-                 $rentacars = Rentacar::where('district_id', $district_id)
-                                 ->orderBy('id', 'desc')
+                 $rentacars = Rentacar::orderBy('id', 'desc')
+                                 // ->where('district_id', $district_id)
                                  ->get();
                                  // dd($rentacars);
                  foreach($rentacars as $rentacar) {
