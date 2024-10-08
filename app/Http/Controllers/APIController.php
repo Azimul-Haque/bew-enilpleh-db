@@ -353,7 +353,7 @@ class APIController extends Controller
         {
             $blooddonors = Cache::remember('blooddonors' . $category . $district_id, 30 * 24 * 60 * 60, function () use ($category, $district_id) {
                  $blooddonors = Blooddonor::where('category', $category)
-                                 ->where('district_id', $district_id)
+                                 // ->where('district_id', $district_id) // COMMENTED
                                  ->orderBy('id', 'desc')
                                  ->get();
                                  // dd($blooddonors);
