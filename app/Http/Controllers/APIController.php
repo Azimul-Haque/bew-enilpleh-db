@@ -758,7 +758,7 @@ class APIController extends Controller
         {
             $buses = Cache::remember('busesto'  . $district_id, 30 * 24 * 60 * 60, function () use ($district_id) {
                  $buses = Bus::orderBy('id', 'asc')
-                             ->where('to_district', $district_id)
+                             // ->where('to_district', $district_id) // COMMENTED
                              ->get();
                  foreach($buses as $bus) {
                        $bus->district_from = $bus->district->name_bangla;
