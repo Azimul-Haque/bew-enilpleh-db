@@ -662,8 +662,8 @@ class APIController extends Controller
         if($softtoken == env('SOFT_TOKEN'))
         {
             $coachings = Cache::remember('coachings'  . $district_id, 30 * 24 * 60 * 60, function () use ($district_id) {
-                 $coachings = Coaching::where('district_id', $district_id)
-                                 ->orderBy('id', 'asc')
+                 $coachings = Coaching::orderBy('id', 'asc')
+                                 // ->where('district_id', $district_id)
                                  ->get();
                  foreach($coachings as $fireservice) {
                        $fireservice->makeHidden('id', 'district_id', 'created_at', 'updated_at');
