@@ -190,9 +190,9 @@
                   <div class="input-group mb-3">
                     <select name="hospital_type" class="form-control" required>
                         <option selected="" disabled="" value="">শিক্ষা প্রতিষ্ঠানের ধরন</option>
-                        <option value="1">সরকারি হাসপাতাল</option>
-                        <option value="2">প্রাইভেট ক্লিনিক ও হাসপাতাল</option>
-                        <option value="3">ফিজিওথেরাপি সেন্টার</option>
+                        <option value="1">সরকারি শিক্ষা প্রতিষ্ঠান</option>
+                        <option value="2">সরকারি শিক্ষা প্রতিষ্ঠান</option>
+                        <option value="3">কোচিং সেন্টার</option>
                     </select>
                     <div class="input-group-append">
                         <div class="input-group-text"><span class="fas fa-star-half-alt"></span></div>
