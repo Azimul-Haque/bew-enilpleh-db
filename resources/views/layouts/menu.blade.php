@@ -96,14 +96,6 @@
 </li>
 @endif
 
-@if(Auth::user()->role == 'admin')
-<li class="nav-item">
-    <a href="{{ route('dashboard.rentacars') }}" class="nav-link {{ Request::is('dashboard/rentacars') ? 'active' : '' }} {{ Request::is('dashboard/rentacars/*') ? 'active' : '' }}">
-        <i class="nav-icon fas fa-car"></i>
-        <p>রেন্ট-এ-কার</p>
-    </a>
-</li>
-@endif
 
 @if(Auth::user()->role == 'admin')
 <li class="nav-item">
@@ -128,6 +120,15 @@
     <a href="{{ route('dashboard.buses') }}" class="nav-link {{ Request::is('dashboard/buses') ? 'active' : '' }} {{ Request::is('dashboard/buses/*') ? 'active' : '' }}">
         <i class="nav-icon fas fa-bus"></i>
         <p>বাস</p>
+    </a>
+</li>
+@endif
+
+@if(Auth::user()->role == 'admin')
+<li class="nav-item">
+    <a href="{{ route('dashboard.rentacars') }}" class="nav-link {{ Request::is('dashboard/rentacars') ? 'active' : '' }} {{ Request::is('dashboard/rentacars/*') ? 'active' : '' }}">
+        <i class="nav-icon fas fa-car"></i>
+        <p>রেন্ট-এ-কার</p>
     </a>
 </li>
 @endif
