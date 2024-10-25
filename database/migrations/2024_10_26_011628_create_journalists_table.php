@@ -13,8 +13,13 @@ class CreateJournalistsTable extends Migration
      */
     public function up()
     {
-        Schema::create('journalists', function (Blueprint $table) {
+        Schema::create('lawyers', function (Blueprint $table) {
             $table->id();
+            $table->integer('district_id')->unsigned();
+            $table->integer('court_type')->unsigned();
+            $table->string('name');
+            $table->string('court');
+            $table->string('mobile');
             $table->timestamps();
         });
     }
