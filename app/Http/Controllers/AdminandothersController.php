@@ -494,7 +494,7 @@ class AdminandothersController extends Controller
 
         $query = Journalist::query();
         $query->where('district_id', $district_id);
-        $searchParam = $request->search_param;
+        $searchParam = $search;
         $query->where(function ($q) use ($searchParam) {
             $q->where('name', 'like', '%' . $searchParam . '%')
                 ->orWhere('mobile', 'like', '%' . $searchParam . '%')
