@@ -201,17 +201,7 @@
                           <div class="input-group-text"><span class="fas fa-user-tie"></span></div>
                       </div>
                   </div>
-                  <div class="input-group mb-3">
-                    <select name="court_type" class="form-control" required>
-                        <option selected="" disabled="" value="">কোর্টের ধরন</option>
-                        <option value="1">ফৌজদারি</option>
-                        <option value="2">দেওয়ানি</option>
-                        <option value="3">ফৌজদারি ও দেওয়ানি</option>
-                    </select>
-                    <div class="input-group-append">
-                        <div class="input-group-text"><span class="fas fa-star-half-alt"></span></div>
-                    </div>
-                  </div>
+                  
                   <div class="input-group mb-3">
                       <input type="number"
                              name="mobile"
