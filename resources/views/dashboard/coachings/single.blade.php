@@ -86,11 +86,11 @@
                                     </div>
 
                                     <div class="input-group mb-3">
-                                      <select name="hospital_type" class="form-control" required>
+                                      <select name="type" class="form-control" required>
                                           <option selected="" disabled="" value="">হাসপাতালের ধরন</option>
-                                          <option value="1" @if($hospital->hospital_type == 1) selected @endif>সরকারি শিক্ষা প্রতিষ্ঠান</option>
-                                          <option value="2" @if($hospital->hospital_type == 2) selected @endif>বেসরকারি শিক্ষা প্রতিষ্ঠান</option>
-                                          <option value="3" @if($hospital->hospital_type == 3) selected @endif>কোচিং সেন্টার</option>
+                                          <option value="1" @if($hospital->type == 1) selected @endif>সরকারি শিক্ষা প্রতিষ্ঠান</option>
+                                          <option value="2" @if($hospital->type == 2) selected @endif>বেসরকারি শিক্ষা প্রতিষ্ঠান</option>
+                                          <option value="3" @if($hospital->type == 3) selected @endif>কোচিং সেন্টার</option>
                                       </select>
                                       <div class="input-group-append">
                                           <div class="input-group-text"><span class="fas fa-star-half-alt"></span></div>
