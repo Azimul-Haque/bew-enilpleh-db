@@ -524,7 +524,7 @@ class AdminandothersController extends Controller
         $lawyer->mobile = $request->mobile;
         $lawyer->save();
 
-        Cache::forget('lawyers' . $district_id . $request->court_type);
+        Cache::forget('lawyers' . $district_id);
         Session::flash('success', 'Lawyer added successfully!');
         return redirect()->route('dashboard.lawyers.districtwise', $district_id);
     }
