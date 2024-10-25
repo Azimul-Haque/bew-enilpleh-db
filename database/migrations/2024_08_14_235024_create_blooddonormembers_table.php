@@ -18,6 +18,7 @@ class CreateBlooddonormembersTable extends Migration
             $table->integer('blooddonor_id')->unsigned();
             $table->string('name');
             $table->string('designation');
+            $table->string('blood_group');
             $table->string('address');
             $table->string('contact');
             $table->timestamps();
