@@ -7,7 +7,7 @@
 @endsection
 
 @section('content')
-  @section('page-header') শিক্ষা প্রতিষ্ঠান তালিকা / {{ $district->name_bangla }} জেলা (মোট {{ bangla($coachingscount) }} টি) @endsection
+  @section('page-header') শিক্ষা প্রতিষ্ঠান তালিকা (সরকারি/বেসরকারি/কোচিং) / {{ $district->name_bangla }} জেলা (মোট {{ bangla($coachingscount) }} টি) @endsection
     <div class="container-fluid">
     <div class="card">
           <div class="card-header">
