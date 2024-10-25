@@ -503,7 +503,7 @@ class AdminandothersController extends Controller
 
         $journalists = $query->paginate(10);
 
-        return view('dashboard.lawyers.single')
+        return view('dashboard.journalists.single')
                             ->withDistrict($district)
                             ->withJournalistscount($journalistscount)
                             ->withJournalists($journalists);
