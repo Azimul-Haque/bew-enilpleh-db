@@ -503,13 +503,6 @@ class AdminandothersController extends Controller
 
         $journalists = $query->paginate(10);
 
-        $journalists = Journalist::where('district_id', $district_id)
-                            ->where('name', 'LIKE', "%$search%")
-                            ->orWhere('mobile', 'LIKE', "%$search%")
-                            ->orWhere('court', 'LIKE', "%$search%")
-                            ->orderBy('id', 'asc')
-                            ->paginate(10);
-
         return view('dashboard.lawyers.single')
                             ->withDistrict($district)
                             ->withJournalistscount($journalistscount)
