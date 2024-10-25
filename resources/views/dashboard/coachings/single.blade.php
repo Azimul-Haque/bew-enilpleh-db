@@ -49,7 +49,7 @@
                     <td>
                       {{ $coaching->name }}
                     </td>
-                    <td><span class="label label-success">{{ edu_inst_type($coaching->type) }}</span></td>
+                    <td><span class="label label-primary">{{ edu_inst_type($coaching->type) }}</span></td>
                     <td>{{ $coaching->mobile }}</td>
                     <td>{{ $coaching->address }}</td>
                     <td align="right">
