@@ -502,7 +502,7 @@ class AdminandothersController extends Controller
         return view('dashboard.lawyers.single')
                             ->withDistrict($district)
                             ->withJournalistscount($journalistscount)
-                            ->withLawyers($lawyers);
+                            ->withJournalists($journalists);
     }
 
     public function storeJournalist(Request $request, $district_id)
