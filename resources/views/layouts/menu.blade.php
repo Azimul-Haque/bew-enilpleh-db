@@ -109,7 +109,7 @@
 <li class="nav-item">
     <a href="{{ route('dashboard.coachings') }}" class="nav-link {{ Request::is('dashboard/coachings') ? 'active' : '' }} {{ Request::is('dashboard/coachings/*') ? 'active' : '' }}">
         <i class="nav-icon fas fa-chalkboard-teacher"></i>
-        <p>কোচিং সেন্টার</p>
+        <p>শিক্ষা প্রতিষ্ঠান</p>
     </a>
 </li>
 @endif
