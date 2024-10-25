@@ -201,6 +201,17 @@
                           <div class="input-group-text"><span class="fas fa-user-tie"></span></div>
                       </div>
                   </div>
+
+                  <div class="input-group mb-3">
+                      <input type="text"
+                             name="court"
+                             value="জজ কোর্ট, {{ $district->name_bangla }}"
+                             class="form-control"
+                             placeholder="কোর্টের নাম" required>
+                      <div class="input-group-append">
+                          <div class="input-group-text"><span class="fas fa-university"></span></div>
+                      </div>
+                  </div>
                   
                   <div class="input-group mb-3">
                       <input type="number"
@@ -212,16 +223,7 @@
                           <div class="input-group-text"><span class="fas fa-mobile"></span></div>
                       </div>
                   </div>
-                  <div class="input-group mb-3">
-                      <input type="text"
-                             name="court"
-                             value="জজ কোর্ট, {{ $district->name_bangla }}"
-                             class="form-control"
-                             placeholder="কোর্টের নাম" required>
-                      <div class="input-group-append">
-                          <div class="input-group-text"><span class="fas fa-university"></span></div>
-                      </div>
-                  </div>
+                  
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-dismiss="modal">ফিরে যান</button>
