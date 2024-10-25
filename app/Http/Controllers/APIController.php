@@ -784,8 +784,8 @@ class APIController extends Controller
     {
         if($softtoken == env('SOFT_TOKEN'))
         {
-            $lawyers = Cache::remember('lawyers'  . $district_id . $court_type, 30 * 24 * 60 * 60, function () use ($district_id, $court_type) {
-                $lawyers = Lawyer::where(function ($query) use ($district_id) {
+            $journalists = Cache::remember('journalists'  . $district_id . $court_type, 30 * 24 * 60 * 60, function () use ($district_id, $court_type) {
+                $journalists = Lawyer::where(function ($query) use ($district_id) {
                                     // return $query->where('district_id', $district_id);
                                     return $query->where('district_id', '<', '65');
                                 })->where(function ($query) use ($court_type) {
@@ -796,15 +796,15 @@ class APIController extends Controller
                                 ->get();
 
                             
-                foreach($lawyers as $lawyer) {
+                foreach($journalists as $lawyer) {
                     $lawyer->makeHidden('id', 'district_id', 'created_at', 'updated_at');
                 }
-                return $lawyers;
+                return $journalists;
             });
             
             return response()->json([
                 'success' => true,
-                'lawyers' => $lawyers,
+                'journalists' => $journalists,
             ]);
         } else {
             return response()->json([
