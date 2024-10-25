@@ -484,7 +484,7 @@ class AdminandothersController extends Controller
                             ->withLawyers($lawyers);
     }
 
-    public function lawyerIndexSearch($district_id, $search)
+    public function journalistIndexSearch($district_id, $search)
     {
         $district = District::find($district_id);
         $lawyerscount = Lawyer::where('district_id', $district_id)
