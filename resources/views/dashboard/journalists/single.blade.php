@@ -205,9 +205,8 @@
                   <div class="input-group mb-3">
                       <input type="text"
                              name="court"
-                             value=""
                              class="form-control"
-                             placeholder="কোর্টের নাম" required>
+                             placeholder="সংশ্লিষ্টতা" required>
                       <div class="input-group-append">
                           <div class="input-group-text"><span class="fas fa-university"></span></div>
                       </div>
