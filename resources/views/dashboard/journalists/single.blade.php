@@ -204,7 +204,7 @@
 
                   <div class="input-group mb-3">
                       <input type="text"
-                             name="court"
+                             name="affiliation"
                              class="form-control"
                              placeholder="সংশ্লিষ্টতা (পত্রিকা বা টিভি চ্যানেলের নাম)" required>
                       <div class="input-group-append">
