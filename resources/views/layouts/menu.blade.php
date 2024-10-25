@@ -137,7 +137,7 @@
 <li class="nav-item">
     <a href="{{ route('dashboard.lawyers') }}" class="nav-link {{ Request::is('dashboard/lawyers') ? 'active' : '' }} {{ Request::is('dashboard/lawyers/*') ? 'active' : '' }}">
         <i class="nav-icon fas fa-gavel"></i>
-        <p>আইনজীবী</p>
+        <p>সাংবাদিক</p>
     </a>
 </li>
 @endif
