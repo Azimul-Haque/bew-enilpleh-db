@@ -493,7 +493,7 @@ class AdminandothersController extends Controller
                                  ->orWhere('court', 'LIKE', "%$search%")->count();
 
         $query = Journalist::query();
-        $query->where('district_id', $request->district_id);
+        $query->where('district_id', $district_id);
         
         $journalists = Journalist::where('district_id', $district_id)
                             ->where('name', 'LIKE', "%$search%")
