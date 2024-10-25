@@ -16,7 +16,6 @@ class CreateJournalistsTable extends Migration
         Schema::create('lawyers', function (Blueprint $table) {
             $table->id();
             $table->integer('district_id')->unsigned();
-            $table->integer('court_type')->unsigned();
             $table->string('name');
             $table->string('court');
             $table->string('mobile');
