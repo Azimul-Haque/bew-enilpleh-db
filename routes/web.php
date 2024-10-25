@@ -119,6 +119,14 @@ Route::post('/dashboard/coachings/{district_id}/store', 'AdminandothersControlle
 Route::post('/dashboard/coachings/{district_id}/{id}/update', 'AdminandothersController@updateCoaching')->name('dashboard.coachings.update');
 Route::get('/dashboard/coachings/{district_id}/{id}/delete', 'AdminandothersController@deleteCoaching')->name('dashboard.coachings.delete');
 
+// Lawyers
+Route::get('/dashboard/journalists', 'AdminandothersController@journalistIndex')->name('dashboard.journalists');
+Route::get('/dashboard/journalists/{district_id}', 'AdminandothersController@journalistIndexSingle')->name('dashboard.journalists.districtwise');
+Route::get('/dashboard/journalists/{district_id}/{search}', 'AdminandothersController@journalistIndexSearch')->name('dashboard.journalists.districtwise.search');
+Route::post('/dashboard/journalists/{district_id}/store', 'AdminandothersController@storejournalist')->name('dashboard.journalists.store');
+Route::post('/dashboard/journalists/{district_id}/{id}/update', 'AdminandothersController@updateJournalist')->name('dashboard.journalists.update');
+Route::get('/dashboard/journalists/{district_id}/{id}/delete', 'AdminandothersController@deleteJournalist')->name('dashboard.journalists.delete');
+
 // RAB
 Route::get('/dashboard/rabs', 'AdminandothersController@rabIndex')->name('dashboard.rabs');
 Route::post('/dashboard/rabs/battalion/store', 'AdminandothersController@storeRabbattalion')->name('dashboard.rabbattalions.store');
