@@ -468,7 +468,7 @@ class AdminandothersController extends Controller
     {
         $journalists = District::all();
                 
-        return view('dashboard.lawyers.index')
+        return view('dashboard.journalists.index')
                             ->withJournalists($journalists);
     }
 
