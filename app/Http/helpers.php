@@ -107,11 +107,11 @@
 
   function edu_inst_badge($type) {
       if ($type == 1) {
-        $text = "সরকারি শিক্ষা প্রতিষ্ঠান";
+        $text = "success";
       } elseif($type == 2) {
-        $text = "বেসরকারি শিক্ষা প্রতিষ্ঠান";
+        $text = "primary";
       } elseif($type == 3) {
-        $text = "কোচিং সেন্টার";
+        $text = "warning";
       }
       return $text;
   }
