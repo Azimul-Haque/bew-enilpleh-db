@@ -206,7 +206,7 @@
                     <select name="type" class="form-control" required>
                         <option selected="" disabled="" value="">শিক্ষা প্রতিষ্ঠানের ধরন</option>
                         <option value="1">সরকারি শিক্ষা প্রতিষ্ঠান</option>
-                        <option value="2">সরকারি শিক্ষা প্রতিষ্ঠান</option>
+                        <option value="2">বেসরকারি শিক্ষা প্রতিষ্ঠান</option>
                         <option value="3">কোচিং সেন্টার</option>
                     </select>
                     <div class="input-group-append">
