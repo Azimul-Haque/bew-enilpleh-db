@@ -99,10 +99,10 @@
                                     </div>
                                     <div class="input-group mb-3">
                                         <input type="text"
-                                               name="court"
-                                               value="{{ $journalist->court }}"
+                                               name="affiliation"
+                                               value="{{ $journalist->affiliation }}"
                                                class="form-control"
-                                               placeholder="কোর্টের নাম" required>
+                                               placeholder="সংশ্লিষ্টতা (পত্রিকা বা টিভি চ্যানেলের নাম)" required>
                                         <div class="input-group-append">
                                             <div class="input-group-text"><span class="fas fa-university"></span></div>
                                         </div>
