@@ -105,6 +105,17 @@
       return $text;
   }
 
+  function edu_inst_badge($type) {
+      if ($type == 1) {
+        $text = "সরকারি শিক্ষা প্রতিষ্ঠান";
+      } elseif($type == 2) {
+        $text = "বেসরকারি শিক্ষা প্রতিষ্ঠান";
+      } elseif($type == 3) {
+        $text = "কোচিং সেন্টার";
+      }
+      return $text;
+  }
+
   function local_currency($num) {
     $explrestunits = "" ;
     if(strlen($num)>3) {
