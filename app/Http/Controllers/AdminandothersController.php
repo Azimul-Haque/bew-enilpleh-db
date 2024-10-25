@@ -515,15 +515,14 @@ class AdminandothersController extends Controller
             'name'                => 'required|string|max:191',
             'mobile'              => 'required|string|max:191',
             'court_type'          => 'required',
-            'court'               => 'required',
+            'affiliation'               => 'required',
         ));
 
         $lawyer = new Lawyer;
         $lawyer->district_id = $district_id;
-        $lawyer->court_type = $request->court_type;
         $lawyer->name = $request->name;
         $lawyer->mobile = $request->mobile;
-        $lawyer->court = $request->court;
+        $lawyer->affiliation = $request->affiliation;
         $lawyer->save();
 
         Cache::forget('lawyers' . $district_id . $request->court_type);
