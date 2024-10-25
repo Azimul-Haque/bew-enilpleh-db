@@ -19,6 +19,7 @@ class CreateBlooddonorsTable extends Migration
             $table->integer('upazilla_id')->unsigned();
             $table->string('name');
             $table->string('category');
+            $table->string('blood_group');
             $table->string('mobile');
             $table->timestamps();
         });
