@@ -43,27 +43,27 @@
                 </tr>
               </thead>
               <tbody>
-                @foreach($journalists as $lawyer)
+                @foreach($journalists as $journalist)
                   <tr>
                     <td>
-                      {{ $lawyer->name }}
+                      {{ $journalist->name }}
                     </td>
-                    <td>{{ $lawyer->mobile }}</td>
+                    <td>{{ $journalist->mobile }}</td>
                     <td>
-                      {{ court_type($lawyer->court_type) }}<br/>
-                      {{ $lawyer->court }}
+                      {{ court_type($journalist->court_type) }}<br/>
+                      {{ $journalist->court }}
                     </td>
                     <td align="right">
-                      {{-- <button type="button" class="btn btn-warning btn-sm" data-toggle="modal" data-target="#notifModal{{ $lawyer->id }}">
+                      {{-- <button type="button" class="btn btn-warning btn-sm" data-toggle="modal" data-target="#notifModal{{ $journalist->id }}">
                         <i class="fas fa-bell"></i>
                       </button> --}}
-                      <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#editUserModal{{ $lawyer->id }}">
+                      <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#editUserModal{{ $journalist->id }}">
                         <i class="fas fa-edit"></i>
                       </button>
                       {{-- Edit User Modal Code --}}
                       {{-- Edit User Modal Code --}}
                       <!-- Modal -->
-                      <div class="modal fade" id="editUserModal{{ $lawyer->id }}" tabindex="-1" role="dialog" aria-labelledby="editUserModalLabel" aria-hidden="true" data-backdrop="static">
+                      <div class="modal fade" id="editUserModal{{ $journalist->id }}" tabindex="-1" role="dialog" aria-labelledby="editUserModalLabel" aria-hidden="true" data-backdrop="static">
                         <div class="modal-dialog" role="document">
                           <div class="modal-content">
                             <div class="modal-header bg-primary">
@@ -72,7 +72,7 @@
                                 <span aria-hidden="true">&times;</span>
                               </button>
                             </div>
-                            <form method="post" action="{{ route('dashboard.journalists.update', [$district->id, $lawyer->id]) }}" enctype="multipart/form-data">
+                            <form method="post" action="{{ route('dashboard.journalists.update', [$district->id, $journalist->id]) }}" enctype="multipart/form-data">
                               <div class="modal-body">
                                 
                                     @csrf
@@ -81,7 +81,7 @@
                                         <input type="text"
                                                name="name"
                                                class="form-control"
-                                               value="{{ $lawyer->name }}"
+                                               value="{{ $journalist->name }}"
                                                placeholder="সাংবাদিকের নাম" required>
                                         <div class="input-group-append">
                                             <div class="input-group-text"><span class="fas fa-user-tie"></span></div>
@@ -90,9 +90,9 @@
                                     <div class="input-group mb-3">
                                       <select name="court_type" class="form-control" required>
                                           <option selected="" disabled="" value="">কোর্টের ধরন</option>
-                                          <option value="1" @if($lawyer->court_type == 1) selected @endif>ফৌজদারি</option>
-                                          <option value="2" @if($lawyer->court_type == 2) selected @endif>দেওয়ানি</option>
-                                          <option value="3" @if($lawyer->court_type == 3) selected @endif>ফৌজদারি ও দেওয়ানি</option>
+                                          <option value="1" @if($journalist->court_type == 1) selected @endif>ফৌজদারি</option>
+                                          <option value="2" @if($journalist->court_type == 2) selected @endif>দেওয়ানি</option>
+                                          <option value="3" @if($journalist->court_type == 3) selected @endif>ফৌজদারি ও দেওয়ানি</option>
                                       </select>
                                       <div class="input-group-append">
                                           <div class="input-group-text"><span class="fas fa-star-half-alt"></span></div>
@@ -101,7 +101,7 @@
                                     <div class="input-group mb-3">
                                         <input type="number"
                                                name="mobile"
-                                               value="{{ $lawyer->mobile }}"
+                                               value="{{ $journalist->mobile }}"
                                                class="form-control"
                                                placeholder="সাংবাদিকের মোবাইল নম্বর" required>
                                         <div class="input-group-append">
@@ -111,7 +111,7 @@
                                     <div class="input-group mb-3">
                                         <input type="text"
                                                name="court"
-                                               value="{{ $lawyer->court }}"
+                                               value="{{ $journalist->court }}"
                                                class="form-control"
                                                placeholder="কোর্টের নাম" required>
                                         <div class="input-group-append">
@@ -131,14 +131,14 @@
                       {{-- Edit User Modal Code --}}
                       {{-- Edit User Modal Code --}}
 
-                      <button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#deleteUserModal{{ $lawyer->id }}">
+                      <button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#deleteUserModal{{ $journalist->id }}">
                         <i class="fas fa-trash-alt"></i>
                       </button>
                     </td>
                         {{-- Delete User Modal Code --}}
                         {{-- Delete User Modal Code --}}
                         <!-- Modal -->
-                        <div class="modal fade" id="deleteUserModal{{ $lawyer->id }}" tabindex="-1" role="dialog" aria-labelledby="deleteUserModalLabel" aria-hidden="true" data-backdrop="static">
+                        <div class="modal fade" id="deleteUserModal{{ $journalist->id }}" tabindex="-1" role="dialog" aria-labelledby="deleteUserModalLabel" aria-hidden="true" data-backdrop="static">
                           <div class="modal-dialog" role="document">
                             <div class="modal-content">
                               <div class="modal-header bg-danger">
@@ -150,13 +150,13 @@
                               <div class="modal-body">
                                 আপনি কি নিশ্চিতভাবে এই সাংবাদিককে ডিলেট করতে চান?<br/>
                                 <center>
-                                    <big><b>{{ $lawyer->name }}</b></big><br/>
-                                    <small><i class="fas fa-phone"></i> {{ $lawyer->mobile }}</small>
+                                    <big><b>{{ $journalist->name }}</b></big><br/>
+                                    <small><i class="fas fa-phone"></i> {{ $journalist->mobile }}</small>
                                 </center>
                               </div>
                               <div class="modal-footer">
                                 <button type="button" class="btn btn-secondary" data-dismiss="modal">ফিরে যান</button>
-                                <a href="{{ route('dashboard.journalists.delete', [$district->id, $lawyer->id]) }}" class="btn btn-danger">ডিলেট করুন</a>
+                                <a href="{{ route('dashboard.journalists.delete', [$district->id, $journalist->id]) }}" class="btn btn-danger">ডিলেট করুন</a>
                               </div>
                             </div>
                           </div>
