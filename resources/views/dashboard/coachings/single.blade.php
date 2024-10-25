@@ -1,5 +1,5 @@
 @extends('layouts.app')
-@section('title') ড্যাশবোর্ড | কোচিং সেন্টার তালিকা @endsection
+@section('title') ড্যাশবোর্ড | শিক্ষা প্রতিষ্ঠান তালিকা @endsection
 
 @section('third_party_stylesheets')
    {{--  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/icheck-bootstrap@3.0.1/icheck-bootstrap.min.css">
@@ -7,16 +7,16 @@
 @endsection
 
 @section('content')
-  @section('page-header') কোচিং সেন্টার তালিকা / {{ $district->name_bangla }} জেলা (মোট {{ bangla($coachingscount) }} টি) @endsection
+  @section('page-header') শিক্ষা প্রতিষ্ঠান তালিকা / {{ $district->name_bangla }} জেলা (মোট {{ bangla($coachingscount) }} টি) @endsection
     <div class="container-fluid">
     <div class="card">
           <div class="card-header">
-            <h3 class="card-title">কোচিং সেন্টার তালিকা</h3>
+            <h3 class="card-title">শিক্ষা প্রতিষ্ঠান তালিকা</h3>
 
             <div class="card-tools">
               <form class="form-inline form-group-lg" action="">
                 <div class="form-group">
-                  <input type="search-param" class="form-control form-control-sm" placeholder="কোচিং সেন্টার খুঁজুন" id="search-param" required>
+                  <input type="search-param" class="form-control form-control-sm" placeholder="শিক্ষা প্রতিষ্ঠান খুঁজুন" id="search-param" required>
                 </div>
                 <button type="button" id="search-button" class="btn btn-default btn-sm" style="margin-left: 5px;">
                   <i class="fas fa-search"></i> খুঁজুন
@@ -64,7 +64,7 @@
                         <div class="modal-dialog" role="document">
                           <div class="modal-content">
                             <div class="modal-header bg-primary">
-                              <h5 class="modal-title" id="editUserModalLabel">কোচিং সেন্টার তথ্য হালনাগাদ</h5>
+                              <h5 class="modal-title" id="editUserModalLabel">শিক্ষা প্রতিষ্ঠান তথ্য হালনাগাদ</h5>
                               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                 <span aria-hidden="true">&times;</span>
                               </button>
@@ -79,7 +79,7 @@
                                                name="name"
                                                class="form-control"
                                                value="{{ $coaching->name }}"
-                                               placeholder="কোচিং সেন্টারের নাম" required>
+                                               placeholder="শিক্ষা প্রতিষ্ঠানের নাম" required>
                                         <div class="input-group-append">
                                             <div class="input-group-text"><span class="fas fa-user-tie"></span></div>
                                         </div>
@@ -89,7 +89,7 @@
                                                name="mobile"
                                                value="{{ $coaching->mobile }}"
                                                class="form-control"
-                                               placeholder="কোচিং সেন্টারের মোবাইল নম্বর" required>
+                                               placeholder="শিক্ষা প্রতিষ্ঠানের মোবাইল নম্বর" required>
                                         <div class="input-group-append">
                                             <div class="input-group-text"><span class="fas fa-mobile"></span></div>
                                         </div>
@@ -99,7 +99,7 @@
                                                name="address"
                                                class="form-control"
                                                value="{{ $coaching->address }}"
-                                               placeholder="কোচিং সেন্টারের ঠিকানা" required>
+                                               placeholder="শিক্ষা প্রতিষ্ঠানের ঠিকানা" required>
                                         <div class="input-group-append">
                                             <div class="input-group-text"><span class="fas fa-map-marked-alt"></span></div>
                                         </div>
@@ -128,13 +128,13 @@
                           <div class="modal-dialog" role="document">
                             <div class="modal-content">
                               <div class="modal-header bg-danger">
-                                <h5 class="modal-title" id="deleteUserModalLabel">কোচিং সেন্টার ডিলেট</h5>
+                                <h5 class="modal-title" id="deleteUserModalLabel">শিক্ষা প্রতিষ্ঠান ডিলেট</h5>
                                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                   <span aria-hidden="true">&times;</span>
                                 </button>
                               </div>
                               <div class="modal-body">
-                                আপনি কি নিশ্চিতভাবে এই কোচিং সেন্টারকে ডিলেট করতে চান?<br/>
+                                আপনি কি নিশ্চিতভাবে এই শিক্ষা প্রতিষ্ঠানকে ডিলেট করতে চান?<br/>
                                 <center>
                                     <big><b>{{ $coaching->name }}</b></big><br/>
                                     <small><i class="fas fa-phone"></i> {{ $coaching->mobile }}</small>
@@ -167,7 +167,7 @@
       <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content">
           <div class="modal-header bg-success">
-            <h5 class="modal-title" id="addUserModalLabel">নতুন কোচিং সেন্টার যোগ (জেলা: <strong>{{ $district->name_bangla }}</strong>)</h5>
+            <h5 class="modal-title" id="addUserModalLabel">নতুন শিক্ষা প্রতিষ্ঠান যোগ (জেলা: <strong>{{ $district->name_bangla }}</strong>)</h5>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
@@ -182,7 +182,7 @@
                              name="name"
                              class="form-control"
                              value="{{ old('name') }}"
-                             placeholder="কোচিং সেন্টারের নাম" required>
+                             placeholder="শিক্ষা প্রতিষ্ঠানের নাম" required>
                       <div class="input-group-append">
                           <div class="input-group-text"><span class="fas fa-user-tie"></span></div>
                       </div>
@@ -192,7 +192,7 @@
                              name="mobile"
                              value="{{ old('mobile') }}"
                              class="form-control"
-                             placeholder="কোচিং সেন্টারের মোবাইল নম্বর" required>
+                             placeholder="শিক্ষা প্রতিষ্ঠানের মোবাইল নম্বর" required>
                       <div class="input-group-append">
                           <div class="input-group-text"><span class="fas fa-mobile"></span></div>
                       </div>
@@ -202,7 +202,7 @@
                              name="address"
                              class="form-control"
                              value="{{ old('address') }}"
-                             placeholder="কোচিং সেন্টারের ঠিকানা" required>
+                             placeholder="শিক্ষা প্রতিষ্ঠানের ঠিকানা" required>
                       <div class="input-group-append">
                           <div class="input-group-text"><span class="fas fa-map-marked-alt"></span></div>
                       </div>
