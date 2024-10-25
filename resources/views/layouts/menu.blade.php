@@ -135,7 +135,7 @@
 
 @if(Auth::user()->role == 'admin')
 <li class="nav-item">
-    <a href="{{ route('dashboard.lawyers') }}" class="nav-link {{ Request::is('dashboard/lawyers') ? 'active' : '' }} {{ Request::is('dashboard/lawyers/*') ? 'active' : '' }}">
+    <a href="{{ route('dashboard.journalists') }}" class="nav-link {{ Request::is('dashboard/journalists') ? 'active' : '' }} {{ Request::is('dashboard/journalists/*') ? 'active' : '' }}">
         <i class="nav-icon fas fa-gavel"></i>
         <p>সাংবাদিকরৃন্দ</p>
     </a>
