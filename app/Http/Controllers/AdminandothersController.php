@@ -466,7 +466,7 @@ class AdminandothersController extends Controller
 
     public function journalistIndex()
     {
-        $journalists = District::all();
+        $districts = District::all();
                 
         return view('dashboard.journalists.index')
                             ->withJournalists($journalists);
