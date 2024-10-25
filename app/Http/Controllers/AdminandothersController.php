@@ -516,6 +516,7 @@ class AdminandothersController extends Controller
         $coaching = new Coaching;
         $coaching->district_id = $district_id;
         $coaching->name = $request->name;
+        $coaching->type = $request->type;
         $coaching->mobile = $request->mobile;
         $coaching->address = $request->address;
         $coaching->save();
@@ -537,6 +538,7 @@ class AdminandothersController extends Controller
         $coaching = Coaching::find($id);
         $coaching->district_id = $district_id;
         $coaching->name = $request->name;
+        $coaching->type = $request->type;
         $coaching->mobile = $request->mobile;
         $coaching->address = $request->address;
         $coaching->save();
