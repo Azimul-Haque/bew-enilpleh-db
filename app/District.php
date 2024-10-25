@@ -61,4 +61,8 @@ class District extends Model
     {
         return $this->hasMany('App\Bus', 'to_district', 'id');
     }
+
+    public function journalists(){
+        return $this->hasMany('App\Journalist');
+    }
 }
