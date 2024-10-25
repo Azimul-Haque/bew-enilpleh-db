@@ -521,8 +521,8 @@ class AdminandothersController extends Controller
         $lawyer = new Lawyer;
         $lawyer->district_id = $district_id;
         $lawyer->name = $request->name;
-        $lawyer->mobile = $request->mobile;
         $lawyer->affiliation = $request->affiliation;
+        $lawyer->mobile = $request->mobile;
         $lawyer->save();
 
         Cache::forget('lawyers' . $district_id . $request->court_type);
