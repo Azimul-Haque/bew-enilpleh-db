@@ -87,7 +87,7 @@
 
                                     <div class="input-group mb-3">
                                       <select name="type" class="form-control" required>
-                                          <option selected="" disabled="" value="">হাসপাতালের ধরন</option>
+                                          <option selected="" disabled="" value="">শিক্ষা প্রতিষ্ঠানের ধরন</option>
                                           <option value="1" @if($coaching->type == 1) selected @endif>সরকারি শিক্ষা প্রতিষ্ঠান</option>
                                           <option value="2" @if($coaching->type == 2) selected @endif>বেসরকারি শিক্ষা প্রতিষ্ঠান</option>
                                           <option value="3" @if($coaching->type == 3) selected @endif>কোচিং সেন্টার</option>
