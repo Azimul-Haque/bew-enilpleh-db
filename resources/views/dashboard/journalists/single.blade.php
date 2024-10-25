@@ -1,5 +1,5 @@
 @extends('layouts.app')
-@section('title') ড্যাশবোর্ড | আইনজীবীগণমকর্তা তালিকা @endsection
+@section('title') ড্যাশবোর্ড | সাংবাদিকগণমকর্তা তালিকা @endsection
 
 @section('third_party_stylesheets')
    {{--  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/icheck-bootstrap@3.0.1/icheck-bootstrap.min.css">
@@ -7,16 +7,16 @@
 @endsection
 
 @section('content')
-  @section('page-header') আইনজীবী তালিকা / {{ $district->name_bangla }} জেলা (মোট {{ bangla($lawyerscount) }} টি) @endsection
+  @section('page-header') সাংবাদিক তালিকা / {{ $district->name_bangla }} জেলা (মোট {{ bangla($lawyerscount) }} টি) @endsection
     <div class="container-fluid">
     <div class="card">
           <div class="card-header">
-            <h3 class="card-title">আইনজীবী তালিকা</h3>
+            <h3 class="card-title">সাংবাদিক তালিকা</h3>
 
             <div class="card-tools">
               <form class="form-inline form-group-lg" action="">
                 <div class="form-group">
-                  <input type="search-param" class="form-control form-control-sm" placeholder="আইনজীবী খুঁজুন" id="search-param" required>
+                  <input type="search-param" class="form-control form-control-sm" placeholder="সাংবাদিক খুঁজুন" id="search-param" required>
                 </div>
                 <button type="button" id="search-button" class="btn btn-default btn-sm" style="margin-left: 5px;">
                   <i class="fas fa-search"></i> খুঁজুন
@@ -67,7 +67,7 @@
                         <div class="modal-dialog" role="document">
                           <div class="modal-content">
                             <div class="modal-header bg-primary">
-                              <h5 class="modal-title" id="editUserModalLabel">আইনজীবী তথ্য হালনাগাদ</h5>
+                              <h5 class="modal-title" id="editUserModalLabel">সাংবাদিক তথ্য হালনাগাদ</h5>
                               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                 <span aria-hidden="true">&times;</span>
                               </button>
@@ -82,7 +82,7 @@
                                                name="name"
                                                class="form-control"
                                                value="{{ $lawyer->name }}"
-                                               placeholder="আইনজীবীর নাম" required>
+                                               placeholder="সাংবাদিকের নাম" required>
                                         <div class="input-group-append">
                                             <div class="input-group-text"><span class="fas fa-user-tie"></span></div>
                                         </div>
@@ -103,7 +103,7 @@
                                                name="mobile"
                                                value="{{ $lawyer->mobile }}"
                                                class="form-control"
-                                               placeholder="আইনজীবীর মোবাইল নম্বর" required>
+                                               placeholder="সাংবাদিকের মোবাইল নম্বর" required>
                                         <div class="input-group-append">
                                             <div class="input-group-text"><span class="fas fa-mobile"></span></div>
                                         </div>
@@ -142,13 +142,13 @@
                           <div class="modal-dialog" role="document">
                             <div class="modal-content">
                               <div class="modal-header bg-danger">
-                                <h5 class="modal-title" id="deleteUserModalLabel">আইনজীবী ডিলেট</h5>
+                                <h5 class="modal-title" id="deleteUserModalLabel">সাংবাদিক ডিলেট</h5>
                                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                   <span aria-hidden="true">&times;</span>
                                 </button>
                               </div>
                               <div class="modal-body">
-                                আপনি কি নিশ্চিতভাবে এই আইনজীবীকে ডিলেট করতে চান?<br/>
+                                আপনি কি নিশ্চিতভাবে এই সাংবাদিককে ডিলেট করতে চান?<br/>
                                 <center>
                                     <big><b>{{ $lawyer->name }}</b></big><br/>
                                     <small><i class="fas fa-phone"></i> {{ $lawyer->mobile }}</small>
@@ -181,7 +181,7 @@
       <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content">
           <div class="modal-header bg-success">
-            <h5 class="modal-title" id="addUserModalLabel">নতুন আইনজীবী যোগ (জেলা: <strong>{{ $district->name_bangla }}</strong>)</h5>
+            <h5 class="modal-title" id="addUserModalLabel">নতুন সাংবাদিক যোগ (জেলা: <strong>{{ $district->name_bangla }}</strong>)</h5>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
@@ -196,7 +196,7 @@
                              name="name"
                              class="form-control"
                              value="{{ old('name') }}"
-                             placeholder="আইনজীবীর নাম" required>
+                             placeholder="সাংবাদিকের নাম" required>
                       <div class="input-group-append">
                           <div class="input-group-text"><span class="fas fa-user-tie"></span></div>
                       </div>
@@ -217,7 +217,7 @@
                              name="mobile"
                              value="{{ old('mobile') }}"
                              class="form-control"
-                             placeholder="আইনজীবীর মোবাইল নম্বর" required>
+                             placeholder="সাংবাদিকের মোবাইল নম্বর" required>
                       <div class="input-group-append">
                           <div class="input-group-text"><span class="fas fa-mobile"></span></div>
                       </div>
