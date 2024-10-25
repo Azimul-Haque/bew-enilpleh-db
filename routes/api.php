@@ -40,7 +40,7 @@ Route::get('/getpoliceofficers/{softtoken}/{station_type}/{district_id}', 'APICo
 Route::get('/getfireservices/{softtoken}/{district_id}', 'APIController@getFireservices')->name('api.getfireservices');
 Route::get('/getlawyers/{softtoken}/{court_type}/{district_id}', 'APIController@getLawyers')->name('api.getlawyers');
 Route::get('/getrentacars/{softtoken}/{district_id}', 'APIController@getRentacars')->name('api.getrentacars');
-Route::get('/getcoachings/{softtoken}/{district_id}', 'APIController@getCoachings')->name('api.getcoachings');
+Route::get('/getcoachings/{softtoken}/{type}/{district_id}', 'APIController@getCoachings')->name('api.getcoachings');
 Route::get('/getrabdata/{softtoken}/{district_id}', 'APIController@getRabs')->name('api.getrabs');
 Route::get('/getbusesfrom/{softtoken}/{district_id}', 'APIController@getBusesFrom')->name('api.getbusesfrom');
 Route::get('/getbusesto/{softtoken}/{district_id}', 'APIController@getBusesTo')->name('api.getbusesto');

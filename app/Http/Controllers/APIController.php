@@ -657,13 +657,14 @@ class APIController extends Controller
         }
     }
 
-    public function getCoachings($softtoken, $district_id)
+    public function getCoachings($softtoken, $type, $district_id)
     {
         if($softtoken == env('SOFT_TOKEN'))
         {
-            $coachings = Cache::remember('coachings'  . $district_id, 30 * 24 * 60 * 60, function () use ($district_id) {
+            $coachings = Cache::remember('coachings'  . $type . $district_id, 30 * 24 * 60 * 60, function () use ($type, $district_id) {
                  $coachings = Coaching::orderBy('id', 'asc')
                                  // ->where('district_id', $district_id) // COMMENTED
+                                 ->where('type', $type) // 1 = Govt, 2 = Private, 3 = Coaching
                                  ->get();
                  foreach($coachings as $fireservice) {
                        $fireservice->makeHidden('id', 'district_id', 'created_at', 'updated_at');
