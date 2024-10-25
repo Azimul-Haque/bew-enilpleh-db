@@ -13,7 +13,7 @@ class CreateJournalistsTable extends Migration
      */
     public function up()
     {
-        Schema::create('lawyers', function (Blueprint $table) {
+        Schema::create('journalists', function (Blueprint $table) {
             $table->id();
             $table->integer('district_id')->unsigned();
             $table->string('name');
