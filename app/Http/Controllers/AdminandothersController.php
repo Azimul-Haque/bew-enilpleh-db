@@ -525,7 +525,7 @@ class AdminandothersController extends Controller
         $journalist->save();
 
         Cache::forget('lawyers' . $district_id);
-        Session::flash('success', 'Lawyer added successfully!');
+        Session::flash('success', 'Journalist added successfully!');
         return redirect()->route('dashboard.lawyers.districtwise', $district_id);
     }
 
@@ -547,7 +547,7 @@ class AdminandothersController extends Controller
         Cache::forget('lawyers' . $district_id);
         Cache::forget('lawyers' . $district_id);
         Cache::forget('lawyers' . $district_id);
-        Session::flash('success', 'Lawyer updated successfully!');
+        Session::flash('success', 'Journalist updated successfully!');
         return redirect()->route('dashboard.lawyers.districtwise', $district_id);
     }
 
