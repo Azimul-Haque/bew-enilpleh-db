@@ -513,8 +513,8 @@ class AdminandothersController extends Controller
     {
         $this->validate($request,array(
             'name'                => 'required|string|max:191',
-            'mobile'              => 'required|string|max:191',
             'affiliation'         => 'required',
+            'mobile'              => 'required|string|max:191',
         ));
 
         $lawyer = new Lawyer;
@@ -533,9 +533,8 @@ class AdminandothersController extends Controller
     {
         $this->validate($request,array(
             'name'                => 'required|string|max:191',
+            'affiliation'         => 'required',
             'mobile'              => 'required|string|max:191',
-            'court_type'          => 'required',
-            'court'               => 'required',
         ));
 
         $lawyer = Lawyer::find($id);
