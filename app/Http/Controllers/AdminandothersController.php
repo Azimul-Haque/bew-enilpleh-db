@@ -524,9 +524,9 @@ class AdminandothersController extends Controller
         $journalist->mobile = $request->mobile;
         $journalist->save();
 
-        Cache::forget('lawyers' . $district_id);
+        Cache::forget('journalists' . $district_id);
         Session::flash('success', 'Journalist added successfully!');
-        return redirect()->route('dashboard.lawyers.districtwise', $district_id);
+        return redirect()->route('dashboard.journalists.districtwise', $district_id);
     }
 
     public function updateJournalist(Request $request, $district_id, $id)
@@ -544,11 +544,11 @@ class AdminandothersController extends Controller
         $journalist->mobile = $request->mobile;
         $journalist->save();
 
-        Cache::forget('lawyers' . $district_id);
-        Cache::forget('lawyers' . $district_id);
-        Cache::forget('lawyers' . $district_id);
+        Cache::forget('journalists' . $district_id);
+        Cache::forget('journalists' . $district_id);
+        Cache::forget('journalists' . $district_id);
         Session::flash('success', 'Journalist updated successfully!');
-        return redirect()->route('dashboard.lawyers.districtwise', $district_id);
+        return redirect()->route('dashboard.journalists.districtwise', $district_id);
     }
 
     public function coachingIndex()
