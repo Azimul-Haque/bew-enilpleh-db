@@ -190,10 +190,9 @@
                   <div class="input-group mb-3">
                     <select name="hospital_type" class="form-control" required>
                         <option selected="" disabled="" value="">শিক্ষা প্রতিষ্ঠানের ধরন</option>
-                        <option value="1" @if($hospital->hospital_type == 1) selected @endif>সরকারি হাসপাতাল</option>
-                        <option value="2" @if($hospital->hospital_type == 2) selected @endif>প্রাইভেট ক্লিনিক ও হাসপাতাল</option>
-                        <option value="3" @if($hospital->hospital_type == 3) selected @endif>ফিজিওথেরাপি সেন্টার</option>
-                        <option value="4" @if($hospital->hospital_type == 4) selected @endif>কিডনি ডায়ালাইসিস</option>
+                        <option value="1">সরকারি হাসপাতাল</option>
+                        <option value="2">প্রাইভেট ক্লিনিক ও হাসপাতাল</option>
+                        <option value="3">ফিজিওথেরাপি সেন্টার</option>
                     </select>
                     <div class="input-group-append">
                         <div class="input-group-text"><span class="fas fa-star-half-alt"></span></div>
