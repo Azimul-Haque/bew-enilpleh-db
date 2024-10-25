@@ -469,7 +469,7 @@ class AdminandothersController extends Controller
         $districts = District::all();
                 
         return view('dashboard.journalists.index')
-                            ->withJournalists($journalists);
+                            ->withDistricts($districts);
     }
 
     public function journalistIndexSingle($district_id)
