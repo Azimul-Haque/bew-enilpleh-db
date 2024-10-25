@@ -521,7 +521,9 @@ class AdminandothersController extends Controller
         $coaching->address = $request->address;
         $coaching->save();
 
-        Cache::forget('coachings' . $request->type . $district_id);
+        Cache::forget('coachings' . 1 . $district_id);
+        Cache::forget('coachings' . 2 . $district_id);
+        Cache::forget('coachings' . 3 . $district_id);
         Session::flash('success', 'Coaching added successfully!');
         return redirect()->route('dashboard.coachings.districtwise', $district_id);
     }
@@ -543,7 +545,9 @@ class AdminandothersController extends Controller
         $coaching->address = $request->address;
         $coaching->save();
 
-        Cache::forget('coachings' . $request->type . $district_id);
+        Cache::forget('coachings' . 1 . $district_id);
+        Cache::forget('coachings' . 2 . $district_id);
+        Cache::forget('coachings' . 3 . $district_id);
         Session::flash('success', 'Coaching updated successfully!');
         return redirect()->route('dashboard.coachings.districtwise', $district_id);
     }
