@@ -94,6 +94,17 @@
       return $text;
   }
 
+  function edu_inst_type($type) {
+      if ($type == 1) {
+        $text = "ফৌজদারি";
+      } elseif($type == 2) {
+        $text = "দেওয়ানি";
+      } elseif($type == 3) {
+        $text = "ফৌজদারি ও দেওয়ানি";
+      }
+      return $text;
+  }
+
   function local_currency($num) {
     $explrestunits = "" ;
     if(strlen($num)>3) {
