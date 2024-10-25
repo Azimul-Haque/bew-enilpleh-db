@@ -517,12 +517,12 @@ class AdminandothersController extends Controller
             'mobile'              => 'required|string|max:191',
         ));
 
-        $lawyer = new Lawyer;
-        $lawyer->district_id = $district_id;
-        $lawyer->name = $request->name;
-        $lawyer->affiliation = $request->affiliation;
-        $lawyer->mobile = $request->mobile;
-        $lawyer->save();
+        $journalist = new Journalist;
+        $journalist->district_id = $district_id;
+        $journalist->name = $request->name;
+        $journalist->affiliation = $request->affiliation;
+        $journalist->mobile = $request->mobile;
+        $journalist->save();
 
         Cache::forget('lawyers' . $district_id);
         Session::flash('success', 'Lawyer added successfully!');
@@ -537,12 +537,12 @@ class AdminandothersController extends Controller
             'mobile'              => 'required|string|max:191',
         ));
 
-        $lawyer = Lawyer::find($id);
-        $lawyer->district_id = $district_id;
-        $lawyer->name = $request->name;
-        $lawyer->affiliation = $request->affiliation;
-        $lawyer->mobile = $request->mobile;
-        $lawyer->save();
+        $journalist = Journalist::find($id);
+        $journalist->district_id = $district_id;
+        $journalist->name = $request->name;
+        $journalist->affiliation = $request->affiliation;
+        $journalist->mobile = $request->mobile;
+        $journalist->save();
 
         Cache::forget('lawyers' . $district_id);
         Cache::forget('lawyers' . $district_id);
