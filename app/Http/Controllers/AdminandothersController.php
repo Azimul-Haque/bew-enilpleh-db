@@ -475,13 +475,13 @@ class AdminandothersController extends Controller
     public function journalistIndexSingle($district_id)
     {
         $district = District::find($district_id);
-        $journalistscount = Lawyer::where('district_id', $district_id)->count();
-        $lawyers = Lawyer::where('district_id', $district_id)->orderBy('id', 'asc')->paginate(10);
+        $journalistscount = Journalist::where('district_id', $district_id)->count();
+        $journalists = Journalist::where('district_id', $district_id)->orderBy('id', 'asc')->paginate(10);
                 
-        return view('dashboard.lawyers.single')
+        return view('dashboard.journalists.single')
                             ->withDistrict($district)
-                            ->withjournalistscount($journalistscount)
-                            ->withLawyers($lawyers);
+                            ->withJournalistscount($journalistscount)
+                            ->withJournalists($journalists);
     }
 
     public function journalistIndexSearch($district_id, $search)
@@ -501,7 +501,7 @@ class AdminandothersController extends Controller
 
         return view('dashboard.lawyers.single')
                             ->withDistrict($district)
-                            ->withjournalistscount($journalistscount)
+                            ->withJournalistscount($journalistscount)
                             ->withLawyers($lawyers);
     }
 
