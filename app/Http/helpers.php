@@ -96,7 +96,7 @@
 
   function edu_inst_type($type) {
       if ($type == 1) {
-        $text = "ফৌজদারি";
+        $text = "সরকারি শিক্ষা প্রতিষ্ঠান";
       } elseif($type == 2) {
         $text = "দেওয়ানি";
       } elseif($type == 3) {
