@@ -49,7 +49,7 @@
                     <td>
                       {{ $coaching->name }}
                     </td>
-                    <td>{{ $coaching->type }}</td>
+                    <td>{{ edu_inst_type($coaching->type) }}</td>
                     <td>{{ $coaching->mobile }}</td>
                     <td>{{ $coaching->address }}</td>
                     <td align="right">
