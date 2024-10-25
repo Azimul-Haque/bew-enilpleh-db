@@ -7,7 +7,7 @@
 @endsection
 
 @section('content')
-  @section('page-header') সাংবাদিক তালিকা / {{ $district->name_bangla }} জেলা (মোট {{ bangla($lawyerscount) }} টি) @endsection
+  @section('page-header') সাংবাদিক তালিকা / {{ $district->name_bangla }} জেলা (মোট {{ bangla($journalistscount) }} টি) @endsection
     <div class="container-fluid">
     <div class="card">
           <div class="card-header">
@@ -43,7 +43,7 @@
                 </tr>
               </thead>
               <tbody>
-                @foreach($lawyers as $lawyer)
+                @foreach($journalists as $lawyer)
                   <tr>
                     <td>
                       {{ $lawyer->name }}
@@ -72,7 +72,7 @@
                                 <span aria-hidden="true">&times;</span>
                               </button>
                             </div>
-                            <form method="post" action="{{ route('dashboard.lawyers.update', [$district->id, $lawyer->id]) }}" enctype="multipart/form-data">
+                            <form method="post" action="{{ route('dashboard.journalists.update', [$district->id, $lawyer->id]) }}" enctype="multipart/form-data">
                               <div class="modal-body">
                                 
                                     @csrf
@@ -156,7 +156,7 @@
                               </div>
                               <div class="modal-footer">
                                 <button type="button" class="btn btn-secondary" data-dismiss="modal">ফিরে যান</button>
-                                <a href="{{ route('dashboard.lawyers.delete', [$district->id, $lawyer->id]) }}" class="btn btn-danger">ডিলেট করুন</a>
+                                <a href="{{ route('dashboard.journalists.delete', [$district->id, $lawyer->id]) }}" class="btn btn-danger">ডিলেট করুন</a>
                               </div>
                             </div>
                           </div>
@@ -171,7 +171,7 @@
           </div>
           <!-- /.card-body -->
         </div>
-        {{ $lawyers->links() }}
+        {{ $journalists->links() }}
     </div>
 
     {{-- Add User Modal Code --}}
@@ -186,7 +186,7 @@
               <span aria-hidden="true">&times;</span>
             </button>
           </div>
-          <form method="post" action="{{ route('dashboard.lawyers.store', $district->id) }}" enctype='multipart/form-data'>
+          <form method="post" action="{{ route('dashboard.journalists.store', $district->id) }}" enctype='multipart/form-data'>
             <div class="modal-body">
               
                   @csrf
@@ -254,7 +254,7 @@
 
         $(document).on('click', '#search-button', function() {
           if($('#search-param').val() != '') {
-            var urltocall = '{{ route('dashboard.lawyers.districtwise', $district->id) }}' +  '/' + $('#search-param').val();
+            var urltocall = '{{ route('dashboard.journalists.districtwise', $district->id) }}' +  '/' + $('#search-param').val();
             location.href= urltocall;
           } else {
             $('#search-param').css({ "border": '#FF0000 2px solid'});
@@ -267,7 +267,7 @@
         $("#search-param").keyup(function(e) {
           if(e.which == 13) {
             if($('#search-param').val() != '') {
-              var urltocall = '{{ route('dashboard.lawyers.districtwise', $district->id) }}' +  '/' + $('#search-param').val();
+              var urltocall = '{{ route('dashboard.journalists.districtwise', $district->id) }}' +  '/' + $('#search-param').val();
               location.href= urltocall;
             } else {
               $('#search-param').css({ "border": '#FF0000 2px solid'});
