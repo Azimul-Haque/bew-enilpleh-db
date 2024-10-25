@@ -487,12 +487,12 @@ class AdminandothersController extends Controller
     public function journalistIndexSearch($district_id, $search)
     {
         $district = District::find($district_id);
-        $journalistscount = Lawyer::where('district_id', $district_id)
+        $journalistscount = Journalist::where('district_id', $district_id)
                                  ->where('name', 'LIKE', "%$search%")
                                  ->orWhere('mobile', 'LIKE', "%$search%")
                                  ->orWhere('court', 'LIKE', "%$search%")->count();
 
-        $lawyers = Lawyer::where('district_id', $district_id)
+        $journalists = Journalist::where('district_id', $district_id)
                             ->where('name', 'LIKE', "%$search%")
                             ->orWhere('mobile', 'LIKE', "%$search%")
                             ->orWhere('court', 'LIKE', "%$search%")
