@@ -472,7 +472,7 @@ class AdminandothersController extends Controller
                             ->withJournalists($journalists);
     }
 
-    public function lawyerIndexSingle($district_id)
+    public function journalistIndexSingle($district_id)
     {
         $district = District::find($district_id);
         $lawyerscount = Lawyer::where('district_id', $district_id)->count();
