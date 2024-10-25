@@ -1,5 +1,5 @@
 @extends('layouts.app')
-@section('title') ড্যাশবোর্ড | সাংবাদিকগণমকর্তা তালিকা @endsection
+@section('title') ড্যাশবোর্ড | সাংবাদিকবৃন্দের তালিকা @endsection
 
 @section('third_party_stylesheets')
    {{--  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/icheck-bootstrap@3.0.1/icheck-bootstrap.min.css">
