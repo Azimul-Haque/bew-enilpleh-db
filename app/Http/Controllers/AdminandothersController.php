@@ -466,10 +466,10 @@ class AdminandothersController extends Controller
 
     public function journalistIndex()
     {
-        $districts = District::all();
+        $journalists = District::all();
                 
         return view('dashboard.lawyers.index')
-                            ->withDistricts($districts);
+                            ->withJournalists($journalists);
     }
 
     public function lawyerIndexSingle($district_id)
