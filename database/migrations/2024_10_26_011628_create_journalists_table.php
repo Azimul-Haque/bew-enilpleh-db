@@ -17,7 +17,7 @@ class CreateJournalistsTable extends Migration
             $table->id();
             $table->integer('district_id')->unsigned();
             $table->string('name');
-            $table->string('court');
+            $table->string('affiliation');
             $table->string('mobile');
             $table->timestamps();
         });
