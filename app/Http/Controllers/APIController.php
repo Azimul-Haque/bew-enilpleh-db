@@ -787,7 +787,7 @@ class APIController extends Controller
         {
             $journalists = Cache::remember('journalists'  . $district_id, 30 * 24 * 60 * 60, function () use ($district_id) {
                 $journalists = Journalist::orderBy('id', 'asc')
-                                ->where('district_id', $district_id)
+                                // ->where('district_id', $district_id)
                                 ->get();
 
                             
