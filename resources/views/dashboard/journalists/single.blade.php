@@ -206,7 +206,7 @@
                       <input type="text"
                              name="court"
                              class="form-control"
-                             placeholder="সংশ্লিষ্টতা" required>
+                             placeholder="সংশ্লিষ্টতা (পত্রিকা বা টিভি চ্যানেলের নাম)" required>
                       <div class="input-group-append">
                           <div class="input-group-text"><span class="fas fa-university"></span></div>
                       </div>
