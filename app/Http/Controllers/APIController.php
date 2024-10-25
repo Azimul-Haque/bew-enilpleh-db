@@ -30,6 +30,7 @@ use App\Rab;
 use App\Rabbattalion;
 use App\Rabbattaliondetail;
 use App\Bus;
+use App\Journalist;
 
 use Hash;
 use Carbon\Carbon;
