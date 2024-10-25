@@ -50,7 +50,7 @@
                     </td>
                     <td>{{ $journalist->mobile }}</td>
                     <td>
-                      {{ $journalist->court }}
+                      {{ $journalist->affiliation }}
                     </td>
                     <td align="right">
                       {{-- <button type="button" class="btn btn-warning btn-sm" data-toggle="modal" data-target="#notifModal{{ $journalist->id }}">
