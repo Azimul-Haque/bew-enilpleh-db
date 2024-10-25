@@ -785,13 +785,7 @@ class APIController extends Controller
         if($softtoken == env('SOFT_TOKEN'))
         {
             $journalists = Cache::remember('journalists'  . $district_id, 30 * 24 * 60 * 60, function () use ($district_id, $court_type) {
-                $journalists = Journalist::where(function ($query) use ($district_id) {
-                                    // return $query->where('district_id', $district_id);
-                                    return $query->where('district_id', '<', '65');
-                                })->where(function ($query) use ($court_type) {
-                                    return $query->where('court_type', $court_type)
-                                                 ->orWhere('court_type', 3);
-                                })
+                $journalists = Journalist::where('district_id', $district_id)
                                 ->orderBy('id', 'asc')
                                 ->get();
 
