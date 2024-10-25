@@ -505,7 +505,7 @@ class AdminandothersController extends Controller
                             ->withLawyers($lawyers);
     }
 
-    public function storeLawyer(Request $request, $district_id)
+    public function storeJournalist(Request $request, $district_id)
     {
         $this->validate($request,array(
             'name'                => 'required|string|max:191',
@@ -527,7 +527,7 @@ class AdminandothersController extends Controller
         return redirect()->route('dashboard.lawyers.districtwise', $district_id);
     }
 
-    public function updateLawyer(Request $request, $district_id, $id)
+    public function updateJournalist(Request $request, $district_id, $id)
     {
         $this->validate($request,array(
             'name'                => 'required|string|max:191',
