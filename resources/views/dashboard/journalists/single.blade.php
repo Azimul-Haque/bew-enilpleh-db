@@ -50,7 +50,6 @@
                     </td>
                     <td>{{ $journalist->mobile }}</td>
                     <td>
-                      {{ court_type($journalist->court_type) }}<br/>
                       {{ $journalist->court }}
                     </td>
                     <td align="right">
