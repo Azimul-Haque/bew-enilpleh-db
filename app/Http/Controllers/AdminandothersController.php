@@ -545,8 +545,6 @@ class AdminandothersController extends Controller
         $journalist->save();
 
         Cache::forget('journalists' . $district_id);
-        Cache::forget('journalists' . $district_id);
-        Cache::forget('journalists' . $district_id);
         Session::flash('success', 'Journalist updated successfully!');
         return redirect()->route('dashboard.journalists.districtwise', $district_id);
     }
