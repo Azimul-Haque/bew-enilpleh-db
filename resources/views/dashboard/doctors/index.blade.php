@@ -571,13 +571,7 @@
 
                   <div class="col-md-6">
                     <div class="input-group mb-3">
-                        <input type="number"
-                               name="mobile"
-                               value="{{ $hospital->mobile }}"
-                               autocomplete="off"
-                               class="form-control"
-                               placeholder="মোবাইল নম্বর" required>
-                        <select name="time" id="timefrom" class="form-control">
+                        <select name="timefrom" id="timefrom" class="form-control">
                             @for ($hour = 6; $hour <= 23; $hour++)
                                 @php
                                     $time24 = \Carbon\Carbon::createFromTime($hour, 0);
