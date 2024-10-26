@@ -110,7 +110,7 @@ class DoctorController extends Controller
             'serial'           => 'required',
             'address'           => 'required',
             'helpline'              => 'required',
-            'image'       => 'sometimes|image|max:2000',
+            'image'                 => 'sometimes|image|max:2000',
             'medicaldepartments'            => 'required',
             'medicalsymptoms'            => 'required',
             'hospitals'            => 'required',
