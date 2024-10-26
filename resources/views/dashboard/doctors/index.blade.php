@@ -569,34 +569,6 @@
                     @endforeach
                   </div><br/>
 
-                  <div class="row">
-                    <div class="col-md-6">
-                      <div class="input-group mb-3">
-                          <input type="number"
-                                 name="serial"
-                                 class="form-control"
-                                 value="{{ old('serial') }}"
-                                 placeholder="সিরিয়াল নেওয়ার ফোন নং" required>
-                          <div class="input-group-append">
-                              <div class="input-group-text"><span class="fas fa-phone"></span></div>
-                          </div>
-                      </div>
-                    </div>
-                    <div class="col-md-6">
-                      <div class="input-group mb-3">
-                          <input type="number"
-                                 name="helpline"
-                                 value="{{ old('helpline') }}"
-                                 
-                                 class="form-control"
-                                 placeholder="হেল্পলাইন নম্বর (যদি থাকে)">
-                          <div class="input-group-append">
-                              <div class="input-group-text"><span class="fas fa-mobile"></span></div>
-                          </div>
-                      </div>
-                    </div>
-                  </div>
-
                   <div class="form-group ">
                       <label for="image">ছবি/ ভিজিটিং কার্ড/ ব্যানার (প্রয়োজনে, ৩০০ h x ১৭৫ w সাইজের, ২ মেগাবাইটের মধ্যে)</label>
                       <input type="file" id="image" name="image" accept="image/*">
