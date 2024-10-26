@@ -86,205 +86,207 @@
                             <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#editUserModal{{ $doctor->id }}">
                               <i class="fas fa-edit"></i>
                             </button>
-                            {{-- Edit User Modal Code --}}
-                            {{-- Edit User Modal Code --}}
-                            <!-- Modal -->
-                            <div class="modal fade" id="editUserModal{{ $doctor->id }}" tabindex="-1" role="dialog" aria-labelledby="editUserModalLabel" aria-hidden="true" data-backdrop="static">
-                              <div class="modal-dialog modal-lg" role="document">
-                                <div class="modal-content">
-                                  <div class="modal-header bg-success">
-                                    <h5 class="modal-title" id="editUserModalLabel">ডাক্তার তথ্য হালনাগাদ</h5>
-                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                      <span aria-hidden="true">&times;</span>
-                                    </button>
-                                  </div>
-                                  <form method="post" action="{{ route('dashboard.doctors.update', $doctor->id) }}" enctype="multipart/form-data">
-                                    <div class="modal-body">
-                                      
-                                          @csrf
-
-                                          <div class="row">
-                                            <div class="col-md-6">
-                                              <div class="input-group mb-3">
-                                                <select name="district_id" id="district" class="form-control district" required>
-                                                    <option selected="" disabled="" value="">জেলা নির্বাচন করুন</option>
-                                                    @foreach($districts as $district)
-                                                      <option value="{{ $district->id }}" @if($doctor->district->id == $district->id) selected @endif>{{ $district->name_bangla }}</option>
-                                                    @endforeach
-                                                </select>
-                                                <div class="input-group-append">
-                                                    <div class="input-group-text"><span class="fas fa-map"></span></div>
-                                                </div>
-                                              </div>
-                                            </div>
-                                            <div class="col-md-6">
-                                              <div class="input-group mb-3">
-                                                <select name="upazilla_id" id="upazilla" class="form-control upazilla" required>
-                                                    <option selected="" value="{{ $doctor->upazilla_id }}">{{ $doctor->upazilla->name_bangla }}</option>
-                                                </select>
-                                                <div class="input-group-append">
-                                                    <div class="input-group-text"><span class="fas fa-map-marked-alt"></span></div>
-                                                </div>
-                                              </div>
-                                            </div>
-                                          </div>
-
-                                          <div class="row">
-                                            <div class="col-md-6">
-                                              <div class="input-group mb-3">
-                                                  <input type="text"
-                                                         name="name"
-                                                         class="form-control"
-                                                         value="{{ $doctor->name }}"
-                                                         placeholder="ডাক্তারের নাম" required>
-                                                  <div class="input-group-append">
-                                                      <div class="input-group-text"><span class="fas fa-user-md"></span></div>
-                                                  </div>
-                                              </div>
-                                            </div>
-                                            <div class="col-md-6">
-                                              <div class="input-group mb-3">
-                                                  <input type="text"
-                                                         name="degree"
-                                                         value="{{ $doctor->degree }}"
-                                                         
-                                                         class="form-control"
-                                                         placeholder="ডাক্তারের ডিগ্রি/ ডিগ্রিসমূহ (যেমন: MBBS, FCPS, MD)" required>
-                                                  <div class="input-group-append">
-                                                      <div class="input-group-text"><span class="fas fa-certificate"></span></div>
-                                                  </div>
-                                              </div>
-                                            </div>
-                                          </div>
-                                          <div class="row">
-                                            <div class="col-md-6">
-                                              <div class="input-group mb-3">
-                                                  <input type="number"
-                                                         name="serial"
-                                                         class="form-control"
-                                                         value="{{ $doctor->serial }}"
-                                                         placeholder="সিরিয়াল নেওয়ার ফোন নং" required>
-                                                  <div class="input-group-append">
-                                                      <div class="input-group-text"><span class="fas fa-phone"></span></div>
-                                                  </div>
-                                              </div>
-                                            </div>
-                                            <div class="col-md-6">
-                                              <div class="input-group mb-3">
-                                                  <input type="number"
-                                                         name="helpline"
-                                                         value="{{ $doctor->helpline }}"
-                                                         
-                                                         class="form-control"
-                                                         placeholder="হেল্পলাইন নম্বর (যদি থাকে)">
-                                                  <div class="input-group-append">
-                                                      <div class="input-group-text"><span class="fas fa-mobile"></span></div>
-                                                  </div>
-                                              </div>
-                                            </div>
-                                          </div>
-                                          
-                                          <div style="margin-bottom: 15px;">
-                                            <select name="medicaldepartments[]" class="form-control multiple-select" multiple="multiple" data-placeholder="বিভাগ (প্রয়োজনে একাধিক সিলেক্ট করা যাবে)" required>
-                                                
-                                                @foreach($medicaldepartments as $medicaldepartment)
-                                                  <option value="{{ $medicaldepartment->id }}" @if(in_array($medicaldepartment->id, $doctor->doctormedicaldepartments->pluck('medicaldepartment_id')->toArray())) selected @endif>{{ $medicaldepartment->name }}</option>
-                                                @endforeach
-                                            </select>
-                                          </div> 
-                                          
-                                          <div style="margin-bottom: 15px;">
-                                            <select name="medicalsymptoms[]" class="form-control multiple-select" multiple="multiple" data-placeholder="লক্ষণ (প্রয়োজনে একাধিক সিলেক্ট করা যাবে)" required>
-                                                
-                                                @foreach($medicalsymptoms as $medicalsymptom)
-                                                  <option value="{{ $medicalsymptom->id }}" @if(in_array($medicalsymptom->id, $doctor->doctormedicalsymptoms->pluck('medicalsymptom_id')->toArray())) selected @endif>{{ $medicalsymptom->name }}</option>
-                                                @endforeach
-                                            </select>
-                                          </div>
-                                          
-                                          <div style="margin-bottom: 15px;">
-                                            <select name="hospitals[]" class="form-control multiple-select" multiple="multiple" data-placeholder="ডাক্তার যে হাসপাতালের সাথে সম্পৃক্ত (প্রয়োজনে একাধিক সিলেক্ট করা যাবে)" required>
-                                                @foreach($hospitals as $hospital)
-                                                  <option value="{{ $hospital->id }}" @if(in_array($hospital->id, $doctor->doctorhospitals->pluck('hospital_id')->toArray())) selected @endif>{{ $hospital->name }} - ({{ $hospital->upazilla->name_bangla }}, {{ $hospital->district->name_bangla }})</option>
-                                                @endforeach
-                                            </select>
-                                          </div>
-
-                                          <div>
-                                            সপ্তাহে যে যে দিন রোগী দেখেন<br/>
-                                            @foreach(['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'] as $day)
-                                              <div class="form-check form-check-inline">
-                                                <input class="form-check-input" type="checkbox" id="inlineCheckbox{{ $day }}" name="weekdays[]" value="{{ $day }}" {{ in_array($day, $doctor->weekdays ?? []) ? 'checked' : '' }}>
-                                                <label class="form-check-label" for="inlineCheckbox{{ $day }}">{{ $day }}</label>
-                                              </div>
-                                            @endforeach
-                                          </div>
-
-                                          <div class="row" style="margin-top: 10px;">
-                                            <div class="col-md-6">
-                                              <div class="input-group mb-3">
-                                                  <select name="timefrom" id="timefrom" class="form-control">
-                                                    <option value="" selected="" disabled="">রোগী দেখার সময় শুরু</option>
-                                                      @for ($hour = 6; $hour <= 23; $hour++)
-                                                          @php
-                                                              $time24 = \Carbon\Carbon::createFromTime($hour, 0);
-                                                              $time12 = $time24->format('g:00 A'); // Convert to 12-hour format with AM/PM
-                                                          @endphp
-                                                          <option value="{{ $time12 }}" @if($time12 == $doctor->timefrom) selected="" @endif>{{ $time12 }}</option>
-                                                      @endfor
-                                                  </select>
-                                                  <div class="input-group-append">
-                                                      <div class="input-group-text"><span class="fas fa-mobile"></span></div>
-                                                  </div>
-                                              </div>
-                                            </div>
-                                            <div class="col-md-6">
-                                              <div class="input-group mb-3">
-                                                  <select name="timeto" id="timeto" class="form-control">
-                                                    <option value="" selected="" disabled="">রোগী দেখার সময় শেষ</option>
-                                                      @for ($hour = 6; $hour <= 23; $hour++)
-                                                          @php
-                                                              $time24 = \Carbon\Carbon::createFromTime($hour, 0);
-                                                              $time12 = $time24->format('g:00 A'); // Convert to 12-hour format with AM/PM
-                                                          @endphp
-                                                          <option value="{{ $time12 }}" @if($time12 == $doctor->timeto) selected="" @endif>{{ $time12 }}</option>
-                                                      @endfor
-                                                  </select>
-                                                  <div class="input-group-append">
-                                                      <div class="input-group-text"><span class="fas fa-mobile"></span></div>
-                                                  </div>
-                                              </div>
-                                            </div>
-                                          </div>
-
-                                          <div class="form-group ">
-                                              <label for="image">ছবি/ ভিজিটিং কার্ড/ ব্যানার (প্রয়োজনে, ৩০০ h x ১৭৫ w সাইজের, ২ মেগাবাইটের মধ্যে)</label>
-                                              <input type="file" name="image" accept="image/*">
-                                          </div>
-                                          {{-- <center>
-                                              @if($doctor->doctorimage != null)
-                                                <img src="{{ asset('images/doctors/' . $doctor->doctorimage->image)}}" style="width: 250px; height: auto;" class="img-responsive" />
-                                              @else
-                                                <img src="{{ asset('images/placeholder.png')}}" style="width: 250px; height: auto;" class="img-responsive" />
-                                              @endif
-                                          </center>   --}}   
-                                      
-                                    </div>
-                                    <div class="modal-footer">
-                                      <button type="button" class="btn btn-secondary" data-dismiss="modal">ফিরে যান</button>
-                                      <button type="submit" class="btn btn-primary">দাখিল করুন</button>
-                                    </div>
-                                  </form>
-                                </div>
-                              </div>
-                            </div>
-                            {{-- Edit User Modal Code --}}
-                            {{-- Edit User Modal Code --}}
+                            
 
                             <button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#deleteUserModal{{ $doctor->id }}" disabled>
                               <i class="fas fa-trash-alt"></i>
                             </button>
                           </td>
+
+                          {{-- Edit User Modal Code --}}
+                          {{-- Edit User Modal Code --}}
+                          <!-- Modal -->
+                          <div class="modal fade" id="editUserModal{{ $doctor->id }}" tabindex="-1" role="dialog" aria-labelledby="editUserModalLabel" aria-hidden="true" data-backdrop="static">
+                            <div class="modal-dialog modal-lg" role="document">
+                              <div class="modal-content">
+                                <div class="modal-header bg-success">
+                                  <h5 class="modal-title" id="editUserModalLabel">ডাক্তার তথ্য হালনাগাদ</h5>
+                                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                  </button>
+                                </div>
+                                <form method="post" action="{{ route('dashboard.doctors.update', $doctor->id) }}" enctype="multipart/form-data">
+                                  <div class="modal-body">
+                                    
+                                        @csrf
+
+                                        <div class="row">
+                                          <div class="col-md-6">
+                                            <div class="input-group mb-3">
+                                              <select name="district_id" id="district" class="form-control district" required>
+                                                  <option selected="" disabled="" value="">জেলা নির্বাচন করুন</option>
+                                                  @foreach($districts as $district)
+                                                    <option value="{{ $district->id }}" @if($doctor->district->id == $district->id) selected @endif>{{ $district->name_bangla }}</option>
+                                                  @endforeach
+                                              </select>
+                                              <div class="input-group-append">
+                                                  <div class="input-group-text"><span class="fas fa-map"></span></div>
+                                              </div>
+                                            </div>
+                                          </div>
+                                          <div class="col-md-6">
+                                            <div class="input-group mb-3">
+                                              <select name="upazilla_id" id="upazilla" class="form-control upazilla" required>
+                                                  <option selected="" value="{{ $doctor->upazilla_id }}">{{ $doctor->upazilla->name_bangla }}</option>
+                                              </select>
+                                              <div class="input-group-append">
+                                                  <div class="input-group-text"><span class="fas fa-map-marked-alt"></span></div>
+                                              </div>
+                                            </div>
+                                          </div>
+                                        </div>
+
+                                        <div class="row">
+                                          <div class="col-md-6">
+                                            <div class="input-group mb-3">
+                                                <input type="text"
+                                                       name="name"
+                                                       class="form-control"
+                                                       value="{{ $doctor->name }}"
+                                                       placeholder="ডাক্তারের নাম" required>
+                                                <div class="input-group-append">
+                                                    <div class="input-group-text"><span class="fas fa-user-md"></span></div>
+                                                </div>
+                                            </div>
+                                          </div>
+                                          <div class="col-md-6">
+                                            <div class="input-group mb-3">
+                                                <input type="text"
+                                                       name="degree"
+                                                       value="{{ $doctor->degree }}"
+                                                       
+                                                       class="form-control"
+                                                       placeholder="ডাক্তারের ডিগ্রি/ ডিগ্রিসমূহ (যেমন: MBBS, FCPS, MD)" required>
+                                                <div class="input-group-append">
+                                                    <div class="input-group-text"><span class="fas fa-certificate"></span></div>
+                                                </div>
+                                            </div>
+                                          </div>
+                                        </div>
+                                        <div class="row">
+                                          <div class="col-md-6">
+                                            <div class="input-group mb-3">
+                                                <input type="number"
+                                                       name="serial"
+                                                       class="form-control"
+                                                       value="{{ $doctor->serial }}"
+                                                       placeholder="সিরিয়াল নেওয়ার ফোন নং" required>
+                                                <div class="input-group-append">
+                                                    <div class="input-group-text"><span class="fas fa-phone"></span></div>
+                                                </div>
+                                            </div>
+                                          </div>
+                                          <div class="col-md-6">
+                                            <div class="input-group mb-3">
+                                                <input type="number"
+                                                       name="helpline"
+                                                       value="{{ $doctor->helpline }}"
+                                                       
+                                                       class="form-control"
+                                                       placeholder="হেল্পলাইন নম্বর (যদি থাকে)">
+                                                <div class="input-group-append">
+                                                    <div class="input-group-text"><span class="fas fa-mobile"></span></div>
+                                                </div>
+                                            </div>
+                                          </div>
+                                        </div>
+                                        
+                                        <div style="margin-bottom: 15px;">
+                                          <select name="medicaldepartments[]" class="form-control multiple-select" multiple="multiple" data-placeholder="বিভাগ (প্রয়োজনে একাধিক সিলেক্ট করা যাবে)" required>
+                                              
+                                              @foreach($medicaldepartments as $medicaldepartment)
+                                                <option value="{{ $medicaldepartment->id }}" @if(in_array($medicaldepartment->id, $doctor->doctormedicaldepartments->pluck('medicaldepartment_id')->toArray())) selected @endif>{{ $medicaldepartment->name }}</option>
+                                              @endforeach
+                                          </select>
+                                        </div> 
+                                        
+                                        <div style="margin-bottom: 15px;">
+                                          <select name="medicalsymptoms[]" class="form-control multiple-select" multiple="multiple" data-placeholder="লক্ষণ (প্রয়োজনে একাধিক সিলেক্ট করা যাবে)" required>
+                                              
+                                              @foreach($medicalsymptoms as $medicalsymptom)
+                                                <option value="{{ $medicalsymptom->id }}" @if(in_array($medicalsymptom->id, $doctor->doctormedicalsymptoms->pluck('medicalsymptom_id')->toArray())) selected @endif>{{ $medicalsymptom->name }}</option>
+                                              @endforeach
+                                          </select>
+                                        </div>
+                                        
+                                        <div style="margin-bottom: 15px;">
+                                          <select name="hospitals[]" class="form-control multiple-select" multiple="multiple" data-placeholder="ডাক্তার যে হাসপাতালের সাথে সম্পৃক্ত (প্রয়োজনে একাধিক সিলেক্ট করা যাবে)" required>
+                                              @foreach($hospitals as $hospital)
+                                                <option value="{{ $hospital->id }}" @if(in_array($hospital->id, $doctor->doctorhospitals->pluck('hospital_id')->toArray())) selected @endif>{{ $hospital->name }} - ({{ $hospital->upazilla->name_bangla }}, {{ $hospital->district->name_bangla }})</option>
+                                              @endforeach
+                                          </select>
+                                        </div>
+
+                                        <div>
+                                          সপ্তাহে যে যে দিন রোগী দেখেন<br/>
+                                          @foreach(['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'] as $day)
+                                            <div class="form-check form-check-inline">
+                                              <input class="form-check-input" type="checkbox" id="inlineCheckbox{{ $day }}" name="weekdays[]" value="{{ $day }}" {{ in_array($day, $doctor->weekdays ?? []) ? 'checked' : '' }}>
+                                              <label class="form-check-label" for="inlineCheckbox{{ $day }}">{{ $day }}</label>
+                                            </div>
+                                          @endforeach
+                                        </div>
+
+                                        <div class="row" style="margin-top: 10px;">
+                                          <div class="col-md-6">
+                                            <div class="input-group mb-3">
+                                                <select name="timefrom" id="timefrom" class="form-control">
+                                                  <option value="" selected="" disabled="">রোগী দেখার সময় শুরু</option>
+                                                    @for ($hour = 6; $hour <= 23; $hour++)
+                                                        @php
+                                                            $time24 = \Carbon\Carbon::createFromTime($hour, 0);
+                                                            $time12 = $time24->format('g:00 A'); // Convert to 12-hour format with AM/PM
+                                                        @endphp
+                                                        <option value="{{ $time12 }}" @if($time12 == $doctor->timefrom) selected="" @endif>{{ $time12 }}</option>
+                                                    @endfor
+                                                </select>
+                                                <div class="input-group-append">
+                                                    <div class="input-group-text"><span class="fas fa-mobile"></span></div>
+                                                </div>
+                                            </div>
+                                          </div>
+                                          <div class="col-md-6">
+                                            <div class="input-group mb-3">
+                                                <select name="timeto" id="timeto" class="form-control">
+                                                  <option value="" selected="" disabled="">রোগী দেখার সময় শেষ</option>
+                                                    @for ($hour = 6; $hour <= 23; $hour++)
+                                                        @php
+                                                            $time24 = \Carbon\Carbon::createFromTime($hour, 0);
+                                                            $time12 = $time24->format('g:00 A'); // Convert to 12-hour format with AM/PM
+                                                        @endphp
+                                                        <option value="{{ $time12 }}" @if($time12 == $doctor->timeto) selected="" @endif>{{ $time12 }}</option>
+                                                    @endfor
+                                                </select>
+                                                <div class="input-group-append">
+                                                    <div class="input-group-text"><span class="fas fa-mobile"></span></div>
+                                                </div>
+                                            </div>
+                                          </div>
+                                        </div>
+
+                                        <div class="form-group ">
+                                            <label for="image">ছবি/ ভিজিটিং কার্ড/ ব্যানার (প্রয়োজনে, ৩০০ h x ১৭৫ w সাইজের, ২ মেগাবাইটের মধ্যে)</label>
+                                            <input type="file" name="image" accept="image/*">
+                                        </div>
+                                        {{-- <center>
+                                            @if($doctor->doctorimage != null)
+                                              <img src="{{ asset('images/doctors/' . $doctor->doctorimage->image)}}" style="width: 250px; height: auto;" class="img-responsive" />
+                                            @else
+                                              <img src="{{ asset('images/placeholder.png')}}" style="width: 250px; height: auto;" class="img-responsive" />
+                                            @endif
+                                        </center>   --}}   
+                                    
+                                  </div>
+                                  <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">ফিরে যান</button>
+                                    <button type="submit" class="btn btn-primary">দাখিল করুন</button>
+                                  </div>
+                                </form>
+                              </div>
+                            </div>
+                          </div>
+                          {{-- Edit User Modal Code --}}
+                          {{-- Edit User Modal Code --}}
                               {{-- Delete User Modal Code --}}
                               {{-- Delete User Modal Code --}}
                               <!-- Modal -->
