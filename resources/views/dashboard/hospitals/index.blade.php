@@ -92,6 +92,58 @@
                                         </div>
                                         
                                       </div>
+
+                                      <div class="input-group mb-3">
+                                        <select name="upazilla_id" id="upazilla" class="form-control upazilla" required>
+                                            <option selected="" value="{{ $hospital->upazilla_id }}">{{ $hospital->upazilla->name_bangla }}</option>
+                                        </select>
+                                        <div class="input-group-append">
+                                            <div class="input-group-text"><span class="fas fa-map-marked-alt"></span></div>
+                                        </div>
+                                      </div>
+                                      <div class="input-group mb-3">
+                                          <input type="text"
+                                                 name="name"
+                                                 class="form-control"
+                                                 value="{{ $hospital->name }}"
+                                                 placeholder="হাসপাতালের নাম" required>
+                                          <div class="input-group-append">
+                                              <div class="input-group-text"><span class="fas fa-hospital"></span></div>
+                                          </div>
+                                      </div>
+                                      <div class="input-group mb-3">
+                                        <select name="hospital_type" class="form-control" required>
+                                            <option selected="" disabled="" value="">হাসপাতালের ধরন</option>
+                                            <option value="1" @if($hospital->hospital_type == 1) selected @endif>সরকারি হাসপাতাল</option>
+                                            <option value="2" @if($hospital->hospital_type == 2) selected @endif>প্রাইভেট ক্লিনিক ও হাসপাতাল</option>
+                                            <option value="3" @if($hospital->hospital_type == 3) selected @endif>ফিজিওথেরাপি সেন্টার</option>
+                                            <option value="4" @if($hospital->hospital_type == 4) selected @endif>কিডনি ডায়ালাইসিস</option>
+                                        </select>
+                                        <div class="input-group-append">
+                                            <div class="input-group-text"><span class="fas fa-star-half-alt"></span></div>
+                                        </div>
+                                      </div>
+                                      <div class="input-group mb-3">
+                                          <input type="number"
+                                                 name="telephone"
+                                                 class="form-control"
+                                                 value="{{ $hospital->telephone }}"
+                                                 placeholder="টেলিফোন নং" required>
+                                          <div class="input-group-append">
+                                              <div class="input-group-text"><span class="fas fa-phone"></span></div>
+                                          </div>
+                                      </div>
+                                      <div class="input-group mb-3">
+                                          <input type="number"
+                                                 name="mobile"
+                                                 value="{{ $hospital->mobile }}"
+                                                 autocomplete="off"
+                                                 class="form-control"
+                                                 placeholder="মোবাইল নম্বর" required>
+                                          <div class="input-group-append">
+                                              <div class="input-group-text"><span class="fas fa-mobile"></span></div>
+                                          </div>
+                                      </div>
                                     </div>
                                     <div class="input-group mb-3">
                                         <input type="text"
