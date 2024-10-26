@@ -230,7 +230,7 @@
                                                               $time24 = \Carbon\Carbon::createFromTime($hour, 0);
                                                               $time12 = $time24->format('g:00 A'); // Convert to 12-hour format with AM/PM
                                                           @endphp
-                                                          <option value="{{ $time12 }}">{{ $time12 }}</option>
+                                                          <option value="{{ $time12 }}" @if($time12 == $doctor->timefrom) selected="" @endif>{{ $time12 }}</option>
                                                       @endfor
                                                   </select>
                                                   <div class="input-group-append">
