@@ -537,7 +537,7 @@
                              name="address"
                              value="{{ old('address') }}"
                              class="form-control"
-                             placeholder="হেল্পলাইন নম্বর (যদি থাকে)">
+                             placeholder="চেম্বারের ঠিকানা" required>
                   </div>
                   
                   <div style="margin-bottom: 15px;">
