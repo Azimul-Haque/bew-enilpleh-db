@@ -627,8 +627,8 @@
                     সপ্তাহে যে যে দিন রোগী দেখেন<br/>
                     @foreach(['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'] as $day)
                       <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="checkbox" id="inlineCheckbox{{ $day }}" name="weekdays[]" value="{{ $day }}">
-                        <label class="form-check-label" for="inlineCheckbox{{ $day }}">{{ $day }}</label>
+                        <input class="form-check-input" type="checkbox" id="inlineCheckboxCreate{{ $day }}" name="weekdays[]" value="{{ $day }}">
+                        <label class="form-check-label" for="inlineCheckboxCreate{{ $day }}">{{ $day }}</label>
                       </div>
                     @endforeach
                   </div>
