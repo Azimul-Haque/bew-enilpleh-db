@@ -168,7 +168,7 @@
                                     </div>
                                     <div class="col-md-6">
                                       <div class="input-group mb-3">
-                                        <textarea name="branch_data" class="form-control" style="min-height: 150px;" placeholder="ব্রাঞ্চের তালিকা (প্রযোজ্য ক্ষেত্রে)"></textarea>
+                                        <textarea name="branch_data" class="form-control" style="min-height: 150px;" placeholder="ব্রাঞ্চের তালিকা (প্রযোজ্য ক্ষেত্রে)">{{ $hospital->location }}</textarea>
                                       </div>
                                     </div>
                                     <div class="col-md-6">
