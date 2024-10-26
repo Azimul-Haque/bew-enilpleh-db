@@ -303,8 +303,7 @@ class DoctorController extends Controller
             $doctorimage->save();
         }
 
-        Cache::forget('doctors'. $request->district_id);
-        Cache::forget('doctors'. $request->district_id . $request->upazilla_id);
+        Cache::forget('doctors*');
         Session::flash('success', 'Doctors updated successfully!');
         return redirect()->route('dashboard.doctors');
     }
