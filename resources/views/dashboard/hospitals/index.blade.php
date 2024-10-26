@@ -311,7 +311,14 @@
                       </div>
                     </div>
                     <div class="col-md-6">
-                      
+                      @foreach(['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'] as $day)
+                          <label>
+                              <input type="checkbox" name="schedule[]" value="{{ $day }}"
+                                  {{ in_array($day, $doctor->schedule ?? []) ? 'checked' : '' }}>
+                              {{ $day }}
+                          </label>
+                          <br>
+                      @endforeach
                     </div>
                   </div>
 
