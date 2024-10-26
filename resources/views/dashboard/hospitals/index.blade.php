@@ -313,7 +313,7 @@
                     <div class="col-md-6">
                       @foreach(['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'] as $day)
                           <label>
-                              <input class="form-control" type="checkbox" name="schedule[]">
+                              <input class="form-control-sm" type="checkbox" name="schedule[]">
                               {{ $day }}
                           </label>
                           <br>
