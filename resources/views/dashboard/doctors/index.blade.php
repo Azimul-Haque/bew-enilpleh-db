@@ -523,7 +523,6 @@
                           <input type="number"
                                  name="helpline"
                                  value="{{ old('helpline') }}"
-                                 
                                  class="form-control"
                                  placeholder="হেল্পলাইন নম্বর (যদি থাকে)">
                           <div class="input-group-append">
