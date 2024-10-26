@@ -532,6 +532,18 @@
                       </div>
                     </div>
                   </div>
+
+                  <div class="input-group mb-3">
+                      <input type="number"
+                             name="helpline"
+                             value="{{ old('helpline') }}"
+                             
+                             class="form-control"
+                             placeholder="হেল্পলাইন নম্বর (যদি থাকে)">
+                      <div class="input-group-append">
+                          <div class="input-group-text"><span class="fas fa-mobile"></span></div>
+                      </div>
+                  </div>
                   
                   <div style="margin-bottom: 15px;">
                     <select name="medicaldepartments[]" class="form-control multiple-select" multiple="multiple" data-placeholder="বিভাগ (প্রয়োজনে একাধিক সিলেক্ট করা যাবে)" required>
