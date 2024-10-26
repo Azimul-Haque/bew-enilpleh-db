@@ -190,6 +190,14 @@
                                             </div>
                                           </div>
                                         </div>
+
+                                        <div class="input-group mb-3">
+                                            <input type="text"
+                                                   name="address"
+                                                   value="{{ old('address') }}"
+                                                   class="form-control"
+                                                   placeholder="চেম্বারের ঠিকানা" required>
+                                        </div>
                                         
                                         <div style="margin-bottom: 15px;">
                                           <select name="medicaldepartments[]" class="form-control multiple-select" multiple="multiple" data-placeholder="বিভাগ (প্রয়োজনে একাধিক সিলেক্ট করা যাবে)" required>
