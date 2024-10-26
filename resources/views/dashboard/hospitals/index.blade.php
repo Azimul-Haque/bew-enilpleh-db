@@ -318,7 +318,7 @@
                     </div>
                     <div class="col-md-6">
                       <div class="input-group mb-3">
-                        <textarea name="investigation_data" class="form-control" style="min-height: 150px;" placeholder="ব্রাঞ্চের তালিকা (প্রযোজ্য ক্ষেত্রে)"></textarea>
+                        <textarea name="investigation_data" class="form-control" style="min-height: 150px;" placeholder="টেস্ট ইনভেস্টিগেশন তালিকা"></textarea>
                       </div>
                     </div>
                   </div>
