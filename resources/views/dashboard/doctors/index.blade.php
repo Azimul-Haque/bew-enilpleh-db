@@ -550,6 +550,14 @@
                         @endforeach
                     </select>
                   </div>
+                  
+                  <div style="margin-bottom: 15px;">
+                    <select name="hospitals[]" class="form-control multiple-select" multiple="multiple" data-placeholder="ডাক্তার যে হাসপাতালের সাথে সম্পৃক্ত (প্রয়োজনে একাধিক সিলেক্ট করা যাবে)" required>
+                        @foreach($hospitals as $hospital)
+                          <option value="{{ $hospital->id }}">{{ $hospital->name }} - ({{ $hospital->upazilla->name_bangla }}, {{ $hospital->district->name_bangla }})</option>
+                        @endforeach
+                    </select>
+                  </div>
 
                   <div>
                     সপ্তাহে যে যে দিন রোগী দেখেন<br/>
@@ -560,14 +568,6 @@
                       </div>
                     @endforeach
                   </div><br/>
-                  
-                  <div style="margin-bottom: 15px;">
-                    <select name="hospitals[]" class="form-control multiple-select" multiple="multiple" data-placeholder="ডাক্তার যে হাসপাতালের সাথে সম্পৃক্ত (প্রয়োজনে একাধিক সিলেক্ট করা যাবে)" required>
-                        @foreach($hospitals as $hospital)
-                          <option value="{{ $hospital->id }}">{{ $hospital->name }} - ({{ $hospital->upazilla->name_bangla }}, {{ $hospital->district->name_bangla }})</option>
-                        @endforeach
-                    </select>
-                  </div>
 
                   <div class="form-group ">
                       <label for="image">ছবি/ ভিজিটিং কার্ড/ ব্যানার (প্রয়োজনে, ৩০০ h x ১৭৫ w সাইজের, ২ মেগাবাইটের মধ্যে)</label>
