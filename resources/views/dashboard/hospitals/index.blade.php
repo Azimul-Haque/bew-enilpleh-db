@@ -310,7 +310,7 @@
                     </div>
                     <div class="col-md-6">
                       <div class="input-group mb-3">
-                        <textarea name="branch_data" class="form-control"></textarea>
+                        <textarea name="branch_data" class="form-control" placeholder="ব্রাঞ্চের তালিকা (প্রযোজ্য ক্ষেত্রে)"></textarea>
                           <input type="text"
                                  name="name"
                                  class="form-control"
