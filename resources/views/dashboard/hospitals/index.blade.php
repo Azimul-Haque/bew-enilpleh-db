@@ -127,20 +127,23 @@
                                           </div>
                                         </div>
                                       </div>
+                                      <div class="col-md-6">
+                                        <div class="input-group mb-3">
+                                            <input type="number"
+                                                   name="telephone"
+                                                   class="form-control"
+                                                   value="{{ $hospital->telephone }}"
+                                                   placeholder="টেলিফোন নং" required>
+                                            <div class="input-group-append">
+                                                <div class="input-group-text"><span class="fas fa-phone"></span></div>
+                                            </div>
+                                        </div>
+                                      </div>
 
                                       
                                       
                                       
-                                      <div class="input-group mb-3">
-                                          <input type="number"
-                                                 name="telephone"
-                                                 class="form-control"
-                                                 value="{{ $hospital->telephone }}"
-                                                 placeholder="টেলিফোন নং" required>
-                                          <div class="input-group-append">
-                                              <div class="input-group-text"><span class="fas fa-phone"></span></div>
-                                          </div>
-                                      </div>
+                                      
                                       <div class="input-group mb-3">
                                           <input type="number"
                                                  name="mobile"
