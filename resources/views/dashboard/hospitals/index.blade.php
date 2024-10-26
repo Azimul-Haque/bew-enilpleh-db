@@ -246,58 +246,59 @@
                         </div>
                       </div>
                     </div>
-                  </div>
-                  <div class="col-md-6">
-                    <div class="input-group mb-3">
-                        <input type="text"
-                               name="name"
-                               class="form-control"
-                               value="{{ old('name') }}"
-                               placeholder="হাসপাতালের নাম" required>
-                        <div class="input-group-append">
-                            <div class="input-group-text"><span class="fas fa-hospital"></span></div>
-                        </div>
+                    <div class="col-md-6">
+                      <div class="input-group mb-3">
+                          <input type="text"
+                                 name="name"
+                                 class="form-control"
+                                 value="{{ old('name') }}"
+                                 placeholder="হাসপাতালের নাম" required>
+                          <div class="input-group-append">
+                              <div class="input-group-text"><span class="fas fa-hospital"></span></div>
+                          </div>
+                      </div>
                     </div>
-                  </div>
-                  <div class="col-md-6">
-                    <div class="input-group mb-3">
-                      <select name="hospital_type" class="form-control" required>
-                          <option selected="" disabled="" value="">হাসপাতালের ধরন</option>
-                          <option value="1">সরকারি হাসপাতাল</option>
-                          <option value="2">প্রাইভেট ক্লিনিক ও হাসপাতাল</option>
-                          <option value="3">ফিজিওথেরাপি সেন্টার</option>
-                          <option value="4">কিডনি ডায়ালাইসিস</option>
-                      </select>
-                      <div class="input-group-append">
-                          <div class="input-group-text"><span class="fas fa-star-half-alt"></span></div>
+                    <div class="col-md-6">
+                      <div class="input-group mb-3">
+                        <select name="hospital_type" class="form-control" required>
+                            <option selected="" disabled="" value="">হাসপাতালের ধরন</option>
+                            <option value="1">সরকারি হাসপাতাল</option>
+                            <option value="2">প্রাইভেট ক্লিনিক ও হাসপাতাল</option>
+                            <option value="3">ফিজিওথেরাপি সেন্টার</option>
+                            <option value="4">কিডনি ডায়ালাইসিস</option>
+                        </select>
+                        <div class="input-group-append">
+                            <div class="input-group-text"><span class="fas fa-star-half-alt"></span></div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="input-group mb-3">
+                          <input type="number"
+                                 name="telephone"
+                                 class="form-control"
+                                 value="{{ old('telephone') }}"
+                                 placeholder="টেলিফোন নং" required>
+                          <div class="input-group-append">
+                              <div class="input-group-text"><span class="fas fa-phone"></span></div>
+                          </div>
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="input-group mb-3">
+                          <input type="number"
+                                 name="mobile"
+                                 value="{{ old('mobile') }}"
+                                 autocomplete="off"
+                                 class="form-control"
+                                 placeholder="মোবাইল নম্বর" required>
+                          <div class="input-group-append">
+                              <div class="input-group-text"><span class="fas fa-mobile"></span></div>
+                          </div>
                       </div>
                     </div>
                   </div>
-                  <div class="col-md-6">
-                    <div class="input-group mb-3">
-                        <input type="number"
-                               name="telephone"
-                               class="form-control"
-                               value="{{ old('telephone') }}"
-                               placeholder="টেলিফোন নং" required>
-                        <div class="input-group-append">
-                            <div class="input-group-text"><span class="fas fa-phone"></span></div>
-                        </div>
-                    </div>
-                  </div>
-                  <div class="col-md-6">
-                    <div class="input-group mb-3">
-                        <input type="number"
-                               name="mobile"
-                               value="{{ old('mobile') }}"
-                               autocomplete="off"
-                               class="form-control"
-                               placeholder="মোবাইল নম্বর" required>
-                        <div class="input-group-append">
-                            <div class="input-group-text"><span class="fas fa-mobile"></span></div>
-                        </div>
-                    </div>
-                  </div>
+
                   
                   
                   <div class="input-group mb-3">
