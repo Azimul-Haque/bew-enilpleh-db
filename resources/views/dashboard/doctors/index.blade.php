@@ -230,7 +230,7 @@
                                           @foreach(['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'] as $day)
                                             <div class="form-check form-check-inline">
                                               <input class="form-check-input" type="checkbox" id="inlineCheckbox{{ $doctor->id . $day }}" name="weekdays[]" value="{{ $day }}" {{ in_array($day, $doctor->weekdays ?? []) ? 'checked' : '' }}>
-                                              <label class="form-check-label" for="inlineCheckbox{{ $day }}">{{ $day }}</label>
+                                              <label class="form-check-label" for="inlineCheckbox{{ $doctor->id . $day }}">{{ $day }}</label>
                                             </div>
                                           @endforeach
                                         </div>
