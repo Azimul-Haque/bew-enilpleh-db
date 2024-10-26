@@ -313,7 +313,7 @@
                     <div class="col-md-12">
                       <div class="form-check form-check-inline">
                         @foreach(['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'] as $day)
-                            <input class="form-check-input" type="checkbox" id="inlineCheckbox2" name="schedule[]">
+                            <input class="form-check-input" type="checkbox" id="inlineCheckbox{{ $day }}" name="schedule[]">
                             <label class="form-check-label" for="inlineCheckbox2">{{ $day }}</label>
                             <br>
                         @endforeach
