@@ -537,12 +537,8 @@
                       <input type="number"
                              name="helpline"
                              value="{{ old('helpline') }}"
-                             
                              class="form-control"
                              placeholder="হেল্পলাইন নম্বর (যদি থাকে)">
-                      <div class="input-group-append">
-                          <div class="input-group-text"><span class="fas fa-mobile"></span></div>
-                      </div>
                   </div>
                   
                   <div style="margin-bottom: 15px;">
