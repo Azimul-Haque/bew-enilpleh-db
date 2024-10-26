@@ -7,6 +7,10 @@ use Illuminate\Database\Eloquent\Model;
 class Doctor extends Model
 {
 
+    protected $casts = [
+            'schedule' => 'array',
+        ];
+
     public function district(){
         return $this->belongsTo('App\District');
     }
