@@ -552,7 +552,7 @@
                   </div>
 
                   <div>
-                    সপ্তাহে যে যে দিন রোগী দেখেন
+                    সপ্তাহে যে যে দিন রোগী দেখেন<br/>
                     @foreach(['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'] as $day)
                       <div class="form-check form-check-inline">
                         <input class="form-check-input" type="checkbox" id="inlineCheckbox{{ $day }}" name="schedule[]">
