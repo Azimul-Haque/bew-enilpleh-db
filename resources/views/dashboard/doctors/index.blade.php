@@ -533,9 +533,9 @@
                   </div>
 
                   <div class="input-group mb-3">
-                      <input type="number"
-                             name="helpline"
-                             value="{{ old('helpline') }}"
+                      <input type="text"
+                             name="address"
+                             value="{{ old('address') }}"
                              class="form-control"
                              placeholder="হেল্পলাইন নম্বর (যদি থাকে)">
                   </div>
