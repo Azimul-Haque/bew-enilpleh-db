@@ -567,7 +567,7 @@
                         <label class="form-check-label" for="inlineCheckbox{{ $day }}">{{ $day }}</label>
                       </div>
                     @endforeach
-                  </div><br/>
+                  </div>
 
                   <div class="row">
                     <div class="col-md-6">
