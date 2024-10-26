@@ -124,6 +124,8 @@ class HospitalController extends Controller
             'telephone'           => 'required',
             'mobile'              => 'required',
             'location'            => 'required',
+            'branch_data'            => 'sometimes',
+            'investigation_data'            => 'sometimes',
         ));
 
         $hospital = Hospital::findOrFail($id);
