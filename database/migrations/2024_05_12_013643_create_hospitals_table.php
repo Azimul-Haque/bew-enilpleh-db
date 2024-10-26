@@ -22,9 +22,6 @@ class CreateHospitalsTable extends Migration
             $table->string('telephone');
             $table->string('mobile');
             $table->string('location');
-            $table->string('branch_data')->nullable();
-            $table->string('investigation_data')->nullable();
-            $table->json('schedule')->nullable();
             $table->timestamps();
         });
     }
