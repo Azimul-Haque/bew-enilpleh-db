@@ -101,18 +101,21 @@
                                           </div>
                                         </div>
                                       </div>
+                                      <div class="col-md-6">
+                                        <div class="input-group mb-3">
+                                            <input type="text"
+                                                   name="name"
+                                                   class="form-control"
+                                                   value="{{ $hospital->name }}"
+                                                   placeholder="হাসপাতালের নাম" required>
+                                            <div class="input-group-append">
+                                                <div class="input-group-text"><span class="fas fa-hospital"></span></div>
+                                            </div>
+                                        </div>
+                                      </div>
 
                                       
-                                      <div class="input-group mb-3">
-                                          <input type="text"
-                                                 name="name"
-                                                 class="form-control"
-                                                 value="{{ $hospital->name }}"
-                                                 placeholder="হাসপাতালের নাম" required>
-                                          <div class="input-group-append">
-                                              <div class="input-group-text"><span class="fas fa-hospital"></span></div>
-                                          </div>
-                                      </div>
+                                      
                                       <div class="input-group mb-3">
                                         <select name="hospital_type" class="form-control" required>
                                             <option selected="" disabled="" value="">হাসপাতালের ধরন</option>
