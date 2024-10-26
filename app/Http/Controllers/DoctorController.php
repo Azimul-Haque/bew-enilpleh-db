@@ -114,6 +114,9 @@ class DoctorController extends Controller
             'medicaldepartments'            => 'required',
             'medicalsymptoms'            => 'required',
             'hospitals'            => 'required',
+            'weekdays'            => 'sometimes',
+            'timefrom'            => 'sometimes',
+            'timeto'            => 'sometimes',
         ));
 
         $doctor = new Doctor;
