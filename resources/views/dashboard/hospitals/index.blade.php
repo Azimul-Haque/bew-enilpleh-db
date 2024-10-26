@@ -310,7 +310,7 @@
                     </div>
                     <div class="col-md-6">
                       <div class="input-group mb-3">
-                        <textarea name="branch_data"></textarea>
+                        <textarea name="branch_data" class="form-control"></textarea>
                           <input type="text"
                                  name="name"
                                  class="form-control"
