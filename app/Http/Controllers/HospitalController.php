@@ -100,6 +100,7 @@ class HospitalController extends Controller
         $hospital->telephone = $request->telephone;
         $hospital->mobile = $request->mobile;
         $hospital->location = $request->location;
+        $hospital->location = nl2br($request->location);
         $hospital->save();
 
         Cache::forget('hospitals'. $request->hospital_type . $request->district_id);
