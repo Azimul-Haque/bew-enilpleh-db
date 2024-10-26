@@ -550,6 +550,16 @@
                         @endforeach
                     </select>
                   </div>
+
+                  <div>
+                    সপ্তাহে যে যে দিন রোগী দেখেন
+                    @foreach(['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'] as $day)
+                      <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="checkbox" id="inlineCheckbox{{ $day }}" name="schedule[]">
+                        <label class="form-check-label" for="inlineCheckbox{{ $day }}">{{ $day }}</label>
+                      </div>
+                    @endforeach
+                  </div>
                   
                   <div style="margin-bottom: 15px;">
                     <select name="hospitals[]" class="form-control multiple-select" multiple="multiple" data-placeholder="ডাক্তার যে হাসপাতালের সাথে সম্পৃক্ত (প্রয়োজনে একাধিক সিলেক্ট করা যাবে)" required>
