@@ -194,7 +194,7 @@
                                         <div class="input-group mb-3">
                                             <input type="text"
                                                    name="address"
-                                                   value="{{ old('address') }}"
+                                                   value="{{ $doctor->address }}"
                                                    class="form-control"
                                                    placeholder="চেম্বারের ঠিকানা" required>
                                         </div>
