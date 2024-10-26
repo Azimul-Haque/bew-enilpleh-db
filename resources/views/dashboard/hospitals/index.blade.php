@@ -175,8 +175,7 @@
                                       <div class="input-group mb-3">
                                         <textarea name="investigation_data" class="form-control" style="min-height: 150px;" placeholder="টেস্ট ইনভেস্টিগেশন তালিকা (প্রয়োজনে)">{{ $hospital->investigation_data }}</textarea>
                                       </div>
-                                    </div>         
-                                
+                                    </div>
                               </div>
                               <div class="modal-footer">
                                 <button type="button" class="btn btn-secondary" data-dismiss="modal">ফিরে যান</button>
