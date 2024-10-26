@@ -218,7 +218,11 @@ class DoctorController extends Controller
         $doctor->name = $request->name;
         $doctor->degree = $request->degree;
         $doctor->serial = $request->serial;
+        $doctor->address = $request->address;
         $doctor->helpline = $request->helpline;
+        $doctor->weekdays = $request->weekdays;
+        $doctor->timefrom = $request->timefrom;
+        $doctor->timeto = $request->timeto;
         $doctor->save();
 
         if(isset($request->medicaldepartments)){
