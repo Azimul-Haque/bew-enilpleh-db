@@ -90,17 +90,19 @@
                                               <div class="input-group-text"><span class="fas fa-map"></span></div>
                                           </div>
                                         </div>
-                                        
                                       </div>
-
-                                      <div class="input-group mb-3">
-                                        <select name="upazilla_id" id="upazilla" class="form-control upazilla" required>
-                                            <option selected="" value="{{ $hospital->upazilla_id }}">{{ $hospital->upazilla->name_bangla }}</option>
-                                        </select>
-                                        <div class="input-group-append">
-                                            <div class="input-group-text"><span class="fas fa-map-marked-alt"></span></div>
+                                      <div class="col-md-6">
+                                        <div class="input-group mb-3">
+                                          <select name="upazilla_id" id="upazilla" class="form-control upazilla" required>
+                                              <option selected="" value="{{ $hospital->upazilla_id }}">{{ $hospital->upazilla->name_bangla }}</option>
+                                          </select>
+                                          <div class="input-group-append">
+                                              <div class="input-group-text"><span class="fas fa-map-marked-alt"></span></div>
+                                          </div>
                                         </div>
                                       </div>
+
+                                      
                                       <div class="input-group mb-3">
                                           <input type="text"
                                                  name="name"
