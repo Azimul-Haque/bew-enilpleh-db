@@ -311,14 +311,6 @@
                     <div class="col-md-6">
                       <div class="input-group mb-3">
                         <textarea name="branch_data" class="form-control" placeholder="ব্রাঞ্চের তালিকা (প্রযোজ্য ক্ষেত্রে)"></textarea>
-                          <input type="text"
-                                 name="name"
-                                 class="form-control"
-                                 value="{{ old('name') }}"
-                                 placeholder="হাসপাতালের নাম" required>
-                          <div class="input-group-append">
-                              <div class="input-group-text"><span class="fas fa-hospital"></span></div>
-                          </div>
                       </div>
                     </div>
                   </div>
