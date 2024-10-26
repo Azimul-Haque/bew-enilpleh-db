@@ -168,12 +168,12 @@
                                     </div>
                                     <div class="col-md-6">
                                       <div class="input-group mb-3">
-                                        <textarea name="branch_data" class="form-control" style="min-height: 150px;" placeholder="ব্রাঞ্চের তালিকা (প্রযোজ্য ক্ষেত্রে)">{{ $hospital->location }}</textarea>
+                                        <textarea name="branch_data" class="form-control" style="min-height: 150px;" placeholder="ব্রাঞ্চের তালিকা (প্রযোজ্য ক্ষেত্রে)">{{ $hospital->branch_data }}</textarea>
                                       </div>
                                     </div>
                                     <div class="col-md-6">
                                       <div class="input-group mb-3">
-                                        <textarea name="investigation_data" class="form-control" style="min-height: 150px;" placeholder="টেস্ট ইনভেস্টিগেশন তালিকা (প্রয়োজনে)"></textarea>
+                                        <textarea name="investigation_data" class="form-control" style="min-height: 150px;" placeholder="টেস্ট ইনভেস্টিগেশন তালিকা (প্রয়োজনে)">{{ $hospital->investigation_data }}</textarea>
                                       </div>
                                     </div>         
                                 
