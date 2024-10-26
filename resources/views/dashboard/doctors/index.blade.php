@@ -210,6 +210,53 @@
                                             </select>
                                           </div>
 
+                                          <div>
+                                            সপ্তাহে যে যে দিন রোগী দেখেন<br/>
+                                            @foreach(['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'] as $day)
+                                              <div class="form-check form-check-inline">
+                                                <input class="form-check-input" type="checkbox" id="inlineCheckbox{{ $day }}" name="weekdays[]" value="{{ $day }}">
+                                                <label class="form-check-label" for="inlineCheckbox{{ $day }}">{{ $day }}</label>
+                                              </div>
+                                            @endforeach
+                                          </div>
+
+                                          <div class="row" style="margin-top: 10px;">
+                                            <div class="col-md-6">
+                                              <div class="input-group mb-3">
+                                                  <select name="timefrom" id="timefrom" class="form-control">
+                                                    <option value="" selected="" disabled="">রোগী দেখার সময় শুরু</option>
+                                                      @for ($hour = 6; $hour <= 23; $hour++)
+                                                          @php
+                                                              $time24 = \Carbon\Carbon::createFromTime($hour, 0);
+                                                              $time12 = $time24->format('g:00 A'); // Convert to 12-hour format with AM/PM
+                                                          @endphp
+                                                          <option value="{{ $time12 }}">{{ $time12 }}</option>
+                                                      @endfor
+                                                  </select>
+                                                  <div class="input-group-append">
+                                                      <div class="input-group-text"><span class="fas fa-mobile"></span></div>
+                                                  </div>
+                                              </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                              <div class="input-group mb-3">
+                                                  <select name="timeto" id="timefrom" class="form-control">
+                                                    <option value="" selected="" disabled="">রোগী দেখার সময় শেষ</option>
+                                                      @for ($hour = 6; $hour <= 23; $hour++)
+                                                          @php
+                                                              $time24 = \Carbon\Carbon::createFromTime($hour, 0);
+                                                              $time12 = $time24->format('g:00 A'); // Convert to 12-hour format with AM/PM
+                                                          @endphp
+                                                          <option value="{{ $time12 }}">{{ $time12 }}</option>
+                                                      @endfor
+                                                  </select>
+                                                  <div class="input-group-append">
+                                                      <div class="input-group-text"><span class="fas fa-mobile"></span></div>
+                                                  </div>
+                                              </div>
+                                            </div>
+                                          </div>
+
                                           <div class="form-group ">
                                               <label for="image">ছবি/ ভিজিটিং কার্ড/ ব্যানার (প্রয়োজনে, ৩০০ h x ১৭৫ w সাইজের, ২ মেগাবাইটের মধ্যে)</label>
                                               <input type="file" name="image" accept="image/*">
