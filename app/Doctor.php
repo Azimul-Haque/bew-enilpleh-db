@@ -8,8 +8,8 @@ class Doctor extends Model
 {
 
     protected $casts = [
-            'schedule' => 'array',
-        ];
+        'weekdays' => 'array',
+    ];
 
     public function district(){
         return $this->belongsTo('App\District');
