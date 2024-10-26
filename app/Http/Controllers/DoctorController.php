@@ -119,6 +119,7 @@ class DoctorController extends Controller
             'timeto'            => 'sometimes',
         ));
 
+        dd($request->all());
 
         $doctor = new Doctor;
         $doctor->district_id = $request->district_id;
