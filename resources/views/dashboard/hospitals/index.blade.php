@@ -260,23 +260,23 @@
                     </div>
                   </div>
                   <div class="col-md-6">
-                    
-                  </div>
-                  
-                  
-                  
-                  <div class="input-group mb-3">
-                    <select name="hospital_type" class="form-control" required>
-                        <option selected="" disabled="" value="">হাসপাতালের ধরন</option>
-                        <option value="1">সরকারি হাসপাতাল</option>
-                        <option value="2">প্রাইভেট ক্লিনিক ও হাসপাতাল</option>
-                        <option value="3">ফিজিওথেরাপি সেন্টার</option>
-                        <option value="4">কিডনি ডায়ালাইসিস</option>
-                    </select>
-                    <div class="input-group-append">
-                        <div class="input-group-text"><span class="fas fa-star-half-alt"></span></div>
+                    <div class="input-group mb-3">
+                      <select name="hospital_type" class="form-control" required>
+                          <option selected="" disabled="" value="">হাসপাতালের ধরন</option>
+                          <option value="1">সরকারি হাসপাতাল</option>
+                          <option value="2">প্রাইভেট ক্লিনিক ও হাসপাতাল</option>
+                          <option value="3">ফিজিওথেরাপি সেন্টার</option>
+                          <option value="4">কিডনি ডায়ালাইসিস</option>
+                      </select>
+                      <div class="input-group-append">
+                          <div class="input-group-text"><span class="fas fa-star-half-alt"></span></div>
+                      </div>
                     </div>
                   </div>
+                  
+                  
+                  
+                  
                   <div class="input-group mb-3">
                       <input type="number"
                              name="telephone"
