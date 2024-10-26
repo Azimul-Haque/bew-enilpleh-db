@@ -210,6 +210,7 @@ class APIController extends Controller
                         $doctormedicaldepartment->name = $doctormedicaldepartment->doctor->name;
                         $doctormedicaldepartment->degree = $doctormedicaldepartment->doctor->degree;
                         $doctormedicaldepartment->serial = $doctormedicaldepartment->doctor->serial;
+                        $doctormedicaldepartment->address = $doctormedicaldepartment->doctor->address;
                         $doctormedicaldepartment->helpline = $doctormedicaldepartment->doctor->helpline;
                         $doctormedicaldepartment->image = $doctormedicaldepartment->doctor->doctorimage ? $doctormedicaldepartment->doctor->doctorimage->image : '';
                         $doctormedicaldepartment->makeHidden('doctor', 'medicaldepartment_id', 'doctor_id', 'created_at', 'updated_at');
