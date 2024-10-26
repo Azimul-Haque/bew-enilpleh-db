@@ -590,7 +590,7 @@
                     <div class="col-md-6">
                       <div class="input-group mb-3">
                           <select name="timeto" id="timefrom" class="form-control">
-                            <option value="" selected="" disabled="">রোগী দেখার সময় শুরু</option>
+                            <option value="" selected="" disabled="">রোগী দেখার সময় শে ষ</option>
                               @for ($hour = 6; $hour <= 23; $hour++)
                                   @php
                                       $time24 = \Carbon\Carbon::createFromTime($hour, 0);
