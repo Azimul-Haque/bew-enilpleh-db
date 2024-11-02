@@ -88,6 +88,7 @@ class HospitalController extends Controller
             'telephone'           => 'required',
             'mobile'              => 'required',
             'location'            => 'required',
+            'address'            => 'required',
             'branch_data'            => 'sometimes',
             'investigation_data'            => 'sometimes',
         ));
@@ -100,6 +101,7 @@ class HospitalController extends Controller
         $hospital->telephone = $request->telephone;
         $hospital->mobile = $request->mobile;
         $hospital->location = $request->location;
+        $hospital->address = $request->address;
         if($request->branch_data) {
             $hospital->branch_data = nl2br($request->branch_data);
         }
@@ -124,6 +126,7 @@ class HospitalController extends Controller
             'telephone'           => 'required',
             'mobile'              => 'required',
             'location'            => 'required',
+            'address'            => 'required',
             'branch_data'            => 'sometimes',
             'investigation_data'            => 'sometimes',
         ));
@@ -138,6 +141,7 @@ class HospitalController extends Controller
         $hospital->telephone = $request->telephone;
         $hospital->mobile = $request->mobile;
         $hospital->location = $request->location;
+        $hospital->address = $request->address;
         if($request->branch_data) {
             $hospital->branch_data = nl2br($request->branch_data);
         }

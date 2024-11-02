@@ -37,7 +37,7 @@
               <thead>
                 <tr>
                   <th>নাম</th>
-                  <th>লোকেশন</th>
+                  <th>ঠিকানা</th>
                   <th align="right">কার্যক্রম</th>
                 </tr>
               </thead>
@@ -51,6 +51,7 @@
                       <span class="badge bg-success">{{ hospital_type($hospital->hospital_type) }}</span>
                     </td>
                     <td>
+                      {{ $hospital->address }}<br/>
                       {{ $hospital->upazilla->name_bangla }}, {{ $hospital->district->name_bangla }}
                     </td>
                     <td align="right">
@@ -149,6 +150,19 @@
                                                    placeholder="মোবাইল নম্বর" required>
                                             <div class="input-group-append">
                                                 <div class="input-group-text"><span class="fas fa-mobile"></span></div>
+                                            </div>
+                                        </div>
+                                      </div>
+                                      <div class="col-md-12">
+                                        <div class="input-group mb-3">
+                                            <input type="text"
+                                                   name="address"
+                                                   value="{{ $hospital->address }}"
+                                                   autocomplete="off"
+                                                   class="form-control"
+                                                   placeholder="হাসপাতাল/ক্লিনিক/প্রতিষ্ঠানের ঠিকানা লিখুন" required>
+                                            <div class="input-group-append">
+                                                <div class="input-group-text"><span class="fas fa-map-marked-alt"></span></div>
                                             </div>
                                         </div>
                                       </div>
@@ -319,6 +333,19 @@
                                  placeholder="মোবাইল নম্বর" required>
                           <div class="input-group-append">
                               <div class="input-group-text"><span class="fas fa-mobile"></span></div>
+                          </div>
+                      </div>
+                    </div>
+                    <div class="col-md-12">
+                      <div class="input-group mb-3">
+                          <input type="text"
+                                 name="address"
+                                 value="{{ old('address') }}"
+                                 autocomplete="off"
+                                 class="form-control"
+                                 placeholder="হাসপাতাল/ক্লিনিক/প্রতিষ্ঠানের ঠিকানা লিখুন" required>
+                          <div class="input-group-append">
+                              <div class="input-group-text"><span class="fas fa-map-marked-alt"></span></div>
                           </div>
                       </div>
                     </div>
