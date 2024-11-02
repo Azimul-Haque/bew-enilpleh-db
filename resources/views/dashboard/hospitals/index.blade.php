@@ -51,7 +51,7 @@
                       <span class="badge bg-success">{{ hospital_type($hospital->hospital_type) }}</span>
                     </td>
                     <td>
-                      {{ $hospital->address }}<br/>
+                      {{ $hospital->upazilla->name_bangla }}<>
                       {{ $hospital->upazilla->name_bangla }}, {{ $hospital->district->name_bangla }}
                     </td>
                     <td align="right">
