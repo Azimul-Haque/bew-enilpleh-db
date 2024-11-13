@@ -182,11 +182,11 @@
                                       <div class="col-md-12">
                                         <div class="input-group mb-3">
                                             <input type="text"
-                                                   name="location"
-                                                   value="{{ $hospital->location }}"
+                                                   name="website"
+                                                   value="{{ $hospital->website }}"
                                                    autocomplete="off"
                                                    class="form-control"
-                                                   placeholder="গুগল ম্যাপ লোকেশন লিংক" required>
+                                                   placeholder="সরকারি হাসপাতালের ক্ষেত্রে ডাক্তার তালিকার ওয়েবপেজ লিংক" required>
                                             <div class="input-group-append">
                                                 <div class="input-group-text"><span class="fas fa-globe"></span></div>
                                             </div>
