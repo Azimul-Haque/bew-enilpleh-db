@@ -186,7 +186,7 @@
                                                    value="{{ $hospital->website }}"
                                                    autocomplete="off"
                                                    class="form-control"
-                                                   placeholder="সরকারি হাসপাতালের ক্ষেত্রে ডাক্তার তালিকার ওয়েবপেজ লিংক" required>
+                                                   placeholder="সরকারি হাসপাতালের ক্ষেত্রে ডাক্তার তালিকার ওয়েবপেজ লিংক (প্রয়োজনে)">
                                             <div class="input-group-append">
                                                 <div class="input-group-text"><span class="fas fa-globe"></span></div>
                                             </div>
