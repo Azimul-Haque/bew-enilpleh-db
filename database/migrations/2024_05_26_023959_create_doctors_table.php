@@ -21,7 +21,6 @@ class CreateDoctorsTable extends Migration
             $table->string('degree');
             $table->string('serial');
             $table->string('address');
-            $table->string('chamber');
             $table->string('helpline');
             $table->json('weekdays')->nullable();
             $table->string('timefrom')->nullable();
