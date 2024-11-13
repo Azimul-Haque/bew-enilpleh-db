@@ -126,6 +126,7 @@ class HospitalController extends Controller
             'telephone'           => 'required',
             'mobile'              => 'required',
             'location'            => 'required',
+            'website'            => 'required',
             'address'            => 'required',
             'branch_data'            => 'sometimes',
             'investigation_data'            => 'sometimes',
