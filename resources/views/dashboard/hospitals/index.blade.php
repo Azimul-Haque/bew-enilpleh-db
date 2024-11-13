@@ -375,6 +375,19 @@
                           </div>
                       </div>
                     </div>
+                    <div class="col-md-12">
+                      <div class="input-group mb-3">
+                          <input type="text"
+                                 name="website"
+                                 value="{{ old('website') }}"
+                                 autocomplete="off"
+                                 class="form-control"
+                                 placeholder="সরকারি হাসপাতালের ক্ষেত্রে ডাক্তার তালিকার ওয়েবপেজ লিংক (প্রয়োজনে)">
+                          <div class="input-group-append">
+                              <div class="input-group-text"><span class="fas fa-globe"></span></div>
+                          </div>
+                      </div>
+                    </div>
                     
                     <div class="col-md-6">
                       <div class="input-group mb-3">
