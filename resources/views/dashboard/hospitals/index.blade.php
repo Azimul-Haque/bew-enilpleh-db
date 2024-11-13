@@ -179,6 +179,19 @@
                                             </div>
                                         </div>
                                       </div>
+                                      <div class="col-md-12">
+                                        <div class="input-group mb-3">
+                                            <input type="text"
+                                                   name="location"
+                                                   value="{{ $hospital->location }}"
+                                                   autocomplete="off"
+                                                   class="form-control"
+                                                   placeholder="গুগল ম্যাপ লোকেশন লিংক" required>
+                                            <div class="input-group-append">
+                                                <div class="input-group-text"><span class="fas fa-globe"></span></div>
+                                            </div>
+                                        </div>
+                                      </div>
                                       <div class="col-md-6">
                                         <div class="input-group mb-3">
                                           <textarea name="branch_data" class="form-control" style="min-height: 150px;" placeholder="ব্রাঞ্চের তালিকা (প্রযোজ্য ক্ষেত্রে)">{{ str_replace('<br />', "", $hospital->branch_data) }}</textarea>
