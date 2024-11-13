@@ -148,6 +148,8 @@ class HospitalController extends Controller
         $hospital->location = $request->location;
         if($request->website) {
             $hospital->website = $request->website;
+        } else {
+            $hospital->website = '';
         }
         $hospital->address = $request->address;
         if($request->branch_data) {
