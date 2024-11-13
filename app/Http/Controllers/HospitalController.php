@@ -142,6 +142,9 @@ class HospitalController extends Controller
         $hospital->telephone = $request->telephone;
         $hospital->mobile = $request->mobile;
         $hospital->location = $request->location;
+        if($request->branch_data) {
+            $hospital->branch_data = nl2br($request->branch_data);
+        }
         $hospital->address = $request->address;
         if($request->branch_data) {
             $hospital->branch_data = nl2br($request->branch_data);
