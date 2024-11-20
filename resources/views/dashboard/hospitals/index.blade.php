@@ -401,7 +401,7 @@
                       <div class="input-group mb-3">
                         {{-- <textarea name="branch_data" class="form-control" style="min-height: 150px;" placeholder="ব্রাঞ্চের তালিকা (প্রযোজ্য ক্ষেত্রে)"></textarea> --}}
                         <div style="margin-bottom: 15px;">
-                          <select name="medicaldepartments[]" class="form-control multiple-select" multiple="multiple" data-placeholder="বিভাগ (প্রয়োজনে একাধিক সিলেক্ট করা যাবে)" required>
+                          <select name="branch_data[]" class="form-control multiple-select" multiple="multiple" data-placeholder="বিভাগ (প্রয়োজনে একাধিক সিলেক্ট করা যাবে)" required>
                               
                               @foreach($medicaldepartments as $medicaldepartment)
                                 <option value="{{ $medicaldepartment->id }}" @if(in_array($medicaldepartment->id, $doctor->doctormedicaldepartments->pluck('medicaldepartment_id')->toArray())) selected @endif>{{ $medicaldepartment->name }}</option>
