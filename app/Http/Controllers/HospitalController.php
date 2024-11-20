@@ -113,6 +113,11 @@ class HospitalController extends Controller
         if($request->investigation_data) {
             $hospital->investigation_data = nl2br($request->investigation_data);
         }
+        if($request->branch_id) {
+            $hospital->investigation_data = nl2br($request->investigation_data);
+        }
+
+        
         $hospital->save();
 
         Cache::forget('hospitals'. $request->hospital_type . $request->district_id);
