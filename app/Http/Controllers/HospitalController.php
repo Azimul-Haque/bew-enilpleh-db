@@ -170,7 +170,7 @@ class HospitalController extends Controller
 
         foreach($hospital->allBranches() as $oldbranch) {
             $hospital->branches()->detach($oldbranch->id);
-            $oldbranch->branches()->detach($hospitalA->id);
+            $oldbranch->branches()->detach($hospital->id);
         } 
         if($request->branch_ids) {
             foreach($request->branch_ids as $brid) {
