@@ -176,7 +176,7 @@ class HospitalController extends Controller
 
         Cache::forget('hospitals'. $request->hospital_type . $request->district_id);
         Cache::forget('hospitals'. $request->hospital_type . $request->district_id . $request->upazilla_id);
-        Cache::forget('hospitalbranches'. $request->hospital_type . $request->district_id . $request->upazilla_id);
+        Cache::forget('hospitalbranches'. $hospital->id);
         Session::flash('success', 'Hospital updated successfully!');
         return redirect()->back();
     }
