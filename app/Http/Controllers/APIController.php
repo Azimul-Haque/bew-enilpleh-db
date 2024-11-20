@@ -125,7 +125,7 @@ class APIController extends Controller
         {
             $mainhospital = Hospital::findOrFail($hospital_id);
             $hospitals = Cache::remember('hospitalbranches'.$hospital_id, 30 * 24 * 60 * 60, function () use ($mainhospital) {
-                 $hospitals = mainhospital->allBranches();
+                 $hospitals = $mainhospital->allBranches();
                              // dd($hospitals);
                  foreach($hospitals as $hospital) {
                      $hospital->districtname = $hospital->district->name_bangla;
