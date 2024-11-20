@@ -113,14 +113,14 @@ class HospitalController extends Controller
         if($request->investigation_data) {
             $hospital->investigation_data = nl2br($request->investigation_data);
         }
+        
+        $hospital->save();
+
         if($request->branch_ids) {
             foreach($request->branch_ids as $brid) {
                 $this->attachBranches($brid, $id);
             }
         }
-
-
-        $hospital->save();
 
         Cache::forget('hospitals'. $request->hospital_type . $request->district_id);
         Cache::forget('hospitals'. $request->hospital_type . $request->district_id . $request->upazilla_id);
