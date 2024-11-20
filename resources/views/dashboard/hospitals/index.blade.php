@@ -438,7 +438,7 @@
     {{-- <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> --}}
     <script type="text/javascript">
       $('.multiple-select').select2({
-        // theme: 'bootstrap4',
+        theme: 'bootstrap4',
       });
 
         $('.district').on('change', function() {
