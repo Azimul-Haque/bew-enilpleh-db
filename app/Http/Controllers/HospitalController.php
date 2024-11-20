@@ -191,6 +191,7 @@ class HospitalController extends Controller
 
     function attachBranches($hospitalAID, Hospital $hospitalBID)
     {
+        $hospitalA = Hospital::findOrFail($id);
         // Attach each hospital as a branch of the other
         $hospitalA->branches()->syncWithoutDetaching([$hospitalB->id]);
         $hospitalB->branches()->syncWithoutDetaching([$hospitalA->id]);
