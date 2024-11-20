@@ -15,8 +15,8 @@ class CreateHospitalBranchesTable extends Migration
     {
         Schema::create('hospital_branches', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('hospital_id'); // Main hospital
-            $table->unsignedBigInteger('branch_id');   // Branch hospital
+            $table->Integer('hospital_id'); // Main hospital
+            $table->Integer('branch_id');   // Branch hospital
             $table->timestamps();
 
             // Foreign keys
