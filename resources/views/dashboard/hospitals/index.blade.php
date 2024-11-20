@@ -404,7 +404,7 @@
                           <select name="branch_data[]" class="form-control multiple-select" multiple="multiple" data-placeholder="বিভাগ (প্রয়োজনে একাধিক সিলেক্ট করা যাবে)" required>
                               
                               @foreach($hospitals as $hospital)
-                                <option value="{{ $hospital->id }}" @if(in_array($medicaldepartment->id, $doctor->doctormedicaldepartments->pluck('medicaldepartment_id')->toArray())) selected @endif>{{ $medicaldepartment->name }}</option>
+                                <option value="{{ $hospital->id }}">{{ $hospital->name }}</option>
                               @endforeach
                           </select>
                         </div> 
