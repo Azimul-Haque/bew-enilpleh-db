@@ -207,8 +207,8 @@
                                         <div style="margin-bottom: 15px;">
                                           <select name="branch_ids[]" class="form-control multiple-select" multiple="multiple" data-placeholder="শাখা হাসপাতাল (প্রয়োজনে একাধিক সিলেক্ট করা যাবে)" required>
                                               
-                                              @foreach($hospitals as $hospital)
-                                                <option value="{{ $hospital->id }}">{{ $hospital->name }}</option>
+                                              @foreach($hospitals->except($hospital->id) as $brhospital)
+                                                <option value="{{ $brhospital->id }}">{{ $brhospital->name }}</option>
                                               @endforeach
                                           </select>
                                         </div> 
