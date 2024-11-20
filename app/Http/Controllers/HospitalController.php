@@ -189,11 +189,11 @@ class HospitalController extends Controller
         return redirect()->route('dashboard.hospitals');
     }
 
-    function attachBranches($hospitalAID, $hospitalBID)
+    public function attachBranches($hospitalAID, $hospitalBID)
     {
         $hospitalA = Hospital::findOrFail($hospitalAID);
         $hospitalB = Hospital::findOrFail($hospitalBID);
-        
+
         // Attach each hospital as a branch of the other
         $hospitalA->branches()->syncWithoutDetaching([$hospitalB->id]);
         $hospitalB->branches()->syncWithoutDetaching([$hospitalA->id]);
