@@ -125,10 +125,7 @@ class APIController extends Controller
         {
             $mainhospital = Hospital::findOrFail($hospital_id);
             $hospitals = Cache::remember('hospitalbranches'.$hospital_id, 30 * 24 * 60 * 60, function () use ($mainhospital) {
-                 $hospitals = Hospital::where('hospital_type', $hospital_type)
-                             // ->where('district_id', $district_id) // COMMENTED
-                             ->orderBy('id', 'desc')
-                             ->get();
+                 $hospitals = mainhospital->allBranches();
                              // dd($hospitals);
                  foreach($hospitals as $hospital) {
                      $hospital->districtname = $hospital->district->name_bangla;
