@@ -168,6 +168,9 @@ class HospitalController extends Controller
             $hospital->investigation_data = nl2br($request->investigation_data);
         }
         if($request->branch_ids) {
+            foreach($hospital->allBranches as $oldbranch) {
+                $oldbranch->delete();
+            } 
             foreach($request->branch_ids as $brid) {
                 $this->attachBranches($brid, $id);
             }
