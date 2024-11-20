@@ -2,8 +2,16 @@
 @section('title') ড্যাশবোর্ড | হাসপাতাল তালিকা @endsection
 
 @section('third_party_stylesheets')
-   {{--  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/icheck-bootstrap@3.0.1/icheck-bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="{{ asset('css/bootstrap-datepicker.min.css') }}"> --}}
+   <link href="{{ asset('css/select2.min.css') }}" rel="stylesheet" />
+   <link href="{{ asset('css/select2-bootstrap4.min.css') }}" rel="stylesheet" />
+   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+   <script src="{{ asset('js/select2.full.min.js') }}"></script>
+   {{-- <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.8/js/select2.min.js" defer></script> --}}
+   <style type="text/css">
+     .select2-selection__choice{
+         background-color: rgba(0, 123, 255) !important;
+     }
+   </style>
 @endsection
 
 @section('content')
