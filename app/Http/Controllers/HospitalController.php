@@ -167,7 +167,8 @@ class HospitalController extends Controller
         }
         if($request->branch_ids) {
             foreach($request->branch_ids as $brid) {
-                
+                attachBranches($hospitalA, $hospitalB);
+                attachBranches($hospitalA, $hospitalC);
             }
         }
         $hospital->save();
