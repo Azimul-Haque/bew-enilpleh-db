@@ -24,7 +24,7 @@ Route::get('/getdistricts/{softtoken}/', 'APIController@getDistricts')->name('ap
 Route::get('/getupazillas/{softtoken}/{district_id}', 'APIController@getUpazillas')->name('api.getupazillas');
 Route::get('/gethospitals/{softtoken}/{hospital_type}/{district_id}', 'APIController@getHospitalsDistrict')->name('api.gethospitalsdistrict');
 Route::get('/gethospitals/{softtoken}/{hospital_type}/{district_id}/{upazilla_id}', 'APIController@getHospitalsUpazilla')->name('api.gethospitalsupazilla');
-Route::get('/gethospitalbranches/{softtoken}/{hospital_id}/{district_id}/{upazilla_id}', 'APIController@getHospitalsUpazilla')->name('api.gethospitalsupazilla');
+Route::get('/gethospitalbranches/{softtoken}/{hospital_id}/', 'APIController@getHospitalsUpazilla')->name('api.gethospitalsupazilla');
 Route::get('/getmedicaldepartments/{softtoken}', 'APIController@getMedicalDepartments')->name('api.getmedicaldepartments');
 Route::get('/getmedicalsymptoms/{softtoken}', 'APIController@getMedicalSymptoms')->name('api.getmedicalsymptoms');
 Route::get('/getdoctors/{softtoken}/{medicalitemid}/{datatype}/{district_id}', 'APIController@getDoctorsDistrict')->name('api.getdoctorsdistrict');
