@@ -15,15 +15,15 @@ class CreateHospitalBranchesTable extends Migration
     {
         Schema::create('hospital_branches', function (Blueprint $table) {
             $table->id();
-            $table->Integer('hospital_id'); // Main hospital
-            $table->Integer('branch_id');   // Branch hospital
+            $table->unsignedBigInteger('hospital_id');  // Hospital A
+            $table->unsignedBigInteger('branch_id');    // Hospital B (Branch of A)
             $table->timestamps();
 
             // Foreign keys
             $table->foreign('hospital_id')->references('id')->on('hospitals')->onDelete('cascade');
             $table->foreign('branch_id')->references('id')->on('hospitals')->onDelete('cascade');
 
-            // Prevent duplicate relationships
+            // Prevent duplicate bidirectional relationships
             $table->unique(['hospital_id', 'branch_id']);
         });
     }
