@@ -115,8 +115,11 @@ class HospitalController extends Controller
         }
         
         $hospital->save();
-        
+
         if($request->branch_ids) {
+            foreach($hospital->allBranches as $oldbranch) {
+                $oldbranch->delete();
+            } 
             foreach($request->branch_ids as $brid) {
                 $this->attachBranches($brid, $hospital->id);
             }
