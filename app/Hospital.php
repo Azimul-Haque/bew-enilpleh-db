@@ -38,4 +38,21 @@ class Hospital extends Model
             'hospital_id'
         );
     }
+
+    // Get all hospitals that consider this hospital as their branch
+        public function mutualBranches()
+        {
+            return $this->belongsToMany(
+                Hospital::class,
+                'hospital_branches',
+                'branch_id',
+                'hospital_id'
+            )->withTimestamps();
+        }
+
+        // Get all mutual branch relationships (both directions)
+        public function allBranches()
+        {
+            return $this->branches->merge($this->mutualBranches);
+        }
 }
