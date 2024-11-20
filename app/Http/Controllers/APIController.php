@@ -135,7 +135,7 @@ class APIController extends Controller
                  return $hospitals;
             });
             
-            dd($hospitals);
+            // dd($hospitals);
             return response()->json([
                 'success' => true,
                 'hospitals' => $hospitals,
