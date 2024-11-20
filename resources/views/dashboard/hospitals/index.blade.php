@@ -208,7 +208,7 @@
                                           <select name="branch_ids[]" class="form-control multiple-select" multiple="multiple" data-placeholder="শাখা হাসপাতাল (প্রয়োজনে একাধিক সিলেক্ট করা যাবে)" required>
                                               
                                               @foreach($hospitals->except($hospital->id) as $brhospital)
-                                                <option value="{{ $brhospital->id }}" @if(in_array($brhospital->id, $hospital->allBranches->pluck('medicaldepartment_id')->toArray())) selected @endif>{{ $brhospital->name }}</option>
+                                                <option value="{{ $brhospital->id }}" @if(in_array($brhospital->id, $hospital->allBranches->pluck('hospital_id')->toArray())) selected @endif>{{ $brhospital->name }}</option>
                                               @endforeach
                                           </select>
                                         </div> 
