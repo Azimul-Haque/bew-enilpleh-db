@@ -205,9 +205,9 @@
                                           {{-- <textarea name="branch_data" class="form-control" style="min-height: 150px;" placeholder="ব্রাঞ্চের তালিকা (প্রযোজ্য ক্ষেত্রে)">{{ str_replace('<br />', "", $hospital->branch_data) }}</textarea> --}}
                                         </div>
                                         <div style="margin-bottom: 15px;">
-                                         {{--  @php
-                                            echo($hospital->branches);
-                                          @endphp --}}
+                                          @php
+                                            echo($hospital->allBranches);
+                                          @endphp
                                           <select name="branch_ids[]" class="form-control multiple-select" multiple="multiple" data-placeholder="শাখা হাসপাতাল (প্রয়োজনে একাধিক সিলেক্ট করা যাবে)" >
                                               
                                               @foreach($hospitals->except($hospital->id) as $brhospital)
