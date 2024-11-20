@@ -114,7 +114,9 @@ class HospitalController extends Controller
             $hospital->investigation_data = nl2br($request->investigation_data);
         }
         if($request->branch_ids) {
-            $hospital->investigation_data = nl2br($request->investigation_data);
+            foreach($request->branch_ids as $brid) {
+                $this->attachBranches($brid, $id);
+            }
         }
 
 
