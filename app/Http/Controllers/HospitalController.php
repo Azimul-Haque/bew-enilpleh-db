@@ -176,4 +176,11 @@ class HospitalController extends Controller
         Session::flash('success', 'Hospital deleted successfully!');
         return redirect()->route('dashboard.hospitals');
     }
+
+    function attachBranches(Hospital $hospitalA, Hospital $hospitalB)
+    {
+        // Attach each hospital as a branch of the other
+        $hospitalA->branches()->syncWithoutDetaching([$hospitalB->id]);
+        $hospitalB->branches()->syncWithoutDetaching([$hospitalA->id]);
+    }
 }
