@@ -166,6 +166,7 @@ class HospitalController extends Controller
             $hospital->investigation_data = nl2br($request->investigation_data);
         }
         if($request->branch_ids) {
+            dd($request->branch_ids);
             $hospital->investigation_data = nl2br($request->investigation_data);
         }
         $hospital->save();
