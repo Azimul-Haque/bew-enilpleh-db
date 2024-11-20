@@ -91,7 +91,7 @@ class HospitalController extends Controller
             'website'            => 'sometimes|max:191',
             'address'            => 'required',
             'branch_data'            => 'sometimes',
-            'branch_id'            => 'sometimes',
+            'branch_ids'            => 'sometimes',
             'investigation_data'            => 'sometimes',
         ));
 
