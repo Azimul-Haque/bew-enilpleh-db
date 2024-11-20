@@ -28,17 +28,6 @@ class Hospital extends Model
         );
     }
 
-    // Get all parent hospitals of which this hospital is a branch
-    public function parentHospitals()
-    {
-        return $this->belongsToMany(
-            Hospital::class,
-            'hospital_branches',
-            'branch_id',
-            'hospital_id'
-        );
-    }
-
     // Get all hospitals that consider this hospital as their branch
     public function mutualBranches()
     {
