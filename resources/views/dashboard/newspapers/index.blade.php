@@ -42,7 +42,7 @@
                 </tr>
               </thead>
               <tbody>
-                @foreach($eshebas as $esheba)
+                @foreach($newspapers as $esheba)
                   <tr>
                     <td>
                       {{ $esheba->name }}<br/>
@@ -69,7 +69,7 @@
                                 <span aria-hidden="true">&times;</span>
                               </button>
                             </div>
-                            <form method="post" action="{{ route('dashboard.eshebas.update', $esheba->id) }}" enctype="multipart/form-data">
+                            <form method="post" action="{{ route('dashboard.newspapers.update', $esheba->id) }}" enctype="multipart/form-data">
                               <div class="modal-body">
                                 
                                     @csrf
@@ -101,7 +101,7 @@
                                     </div>
                                     <center>
                                       @if($esheba->eshebaimage != null)
-                                        <img src="{{ asset('images/eshebas/' . $esheba->eshebaimage->image)}}" id='img-upload' style="width: 250px; height: auto;" class="img-responsive" />
+                                        <img src="{{ asset('images/newspapers/' . $esheba->eshebaimage->image)}}" id='img-upload' style="width: 250px; height: auto;" class="img-responsive" />
                                       @else
                                         <img src="{{ asset('images/placeholder.png')}}" id='img-upload' style="width: 250px; height: auto;" class="img-responsive" />
                                       @endif
@@ -144,7 +144,7 @@
                               </div>
                               <div class="modal-footer">
                                 <button type="button" class="btn btn-secondary" data-dismiss="modal">ফিরে যান</button>
-                                <a href="{{ route('dashboard.eshebas.delete', $esheba->id) }}" class="btn btn-danger">ডিলেট করুন</a>
+                                <a href="{{ route('dashboard.newspapers.delete', $esheba->id) }}" class="btn btn-danger">ডিলেট করুন</a>
                               </div>
                             </div>
                           </div>
@@ -159,7 +159,7 @@
           </div>
           <!-- /.card-body -->
         </div>
-        {{ $eshebas->links() }}
+        {{ $newspapers->links() }}
     </div>
 
     {{-- Add User Modal Code --}}
@@ -174,7 +174,7 @@
               <span aria-hidden="true">&times;</span>
             </button>
           </div>
-          <form method="post" action="{{ route('dashboard.eshebas.store') }}" enctype='multipart/form-data'>
+          <form method="post" action="{{ route('dashboard.newspapers.store') }}" enctype='multipart/form-data'>
             <div class="modal-body">
               
                   @csrf
@@ -249,7 +249,7 @@
 
         $(document).on('click', '#search-button', function() {
           if($('#search-param').val() != '') {
-            var urltocall = '{{ route('dashboard.eshebas') }}' +  '/' + $('#search-param').val();
+            var urltocall = '{{ route('dashboard.newspapers') }}' +  '/' + $('#search-param').val();
             location.href= urltocall;
           } else {
             $('#search-param').css({ "border": '#FF0000 2px solid'});
@@ -262,7 +262,7 @@
         $("#search-param").keyup(function(e) {
           if(e.which == 13) {
             if($('#search-param').val() != '') {
-              var urltocall = '{{ route('dashboard.eshebas') }}' +  '/' + $('#search-param').val();
+              var urltocall = '{{ route('dashboard.newspapers') }}' +  '/' + $('#search-param').val();
               location.href= urltocall;
             } else {
               $('#search-param').css({ "border": '#FF0000 2px solid'});
