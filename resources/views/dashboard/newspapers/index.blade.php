@@ -38,6 +38,7 @@
                 <tr>
                   <th>নাম</th>
                   <th>লিংক</th>
+                  <th>লোগো</th>
                   <th align="right">কার্যক্রম</th>
                 </tr>
               </thead>
