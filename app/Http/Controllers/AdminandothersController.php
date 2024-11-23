@@ -1031,7 +1031,7 @@ class AdminandothersController extends Controller
             $image    = $request->file('image');
             $filename = random_string(5) . time() .'.' . "webp";
             $location = public_path('images/newspapers/'. $filename);
-            Image::make($image)->fit(200, 200)->save($location);
+            Image::make($image)->fit(300, 80)->save($location);
             $newspaperimage->newspaper_id   = $newspaper->id;
             $newspaperimage->image       = $filename;
             $newspaperimage->save();
