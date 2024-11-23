@@ -55,7 +55,7 @@
                       @if($newspaper->newspaperimage != null)
                         <img src="{{ asset('images/newspapers/' . $newspaper->newspaperimage->image)}}" id='img-upload' style="width: 250px; height: auto;" class="img-responsive" />
                       @else
-                        <img src="{{ asset('images/placeholder.png')}}" id='img-upload' style="width: 250px; height: auto;" class="img-responsive" />
+                        <img src="{{ asset('images/placeholder.png')}}" id='img-upload' style="height: 80px; width: auto;" class="img-responsive" />
                       @endif
                     </td>
                     <td align="right">
