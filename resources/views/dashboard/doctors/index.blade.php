@@ -578,7 +578,7 @@
                           <div class="input-group-append">
                               <div class="input-group-text"><span class="fas fa-user-md"></span></div>
                           </div>
-                      </div><br/>
+                      </div>
                       <div class="input-group mb-3">
                           <input type="text"
                                  name="degree2"
