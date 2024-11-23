@@ -585,7 +585,7 @@
                                  value="{{ old('degree3') }}"
                                  
                                  class="form-control"
-                                 placeholder="ডাক্তার কী বিশেষজ্ঞ (যেমন: )">
+                                 placeholder="ডাক্তার কী বিশেষজ্ঞ (যেমন: সার্জারি বিশেষজ্ঞ)">
                           <div class="input-group-append">
                               <div class="input-group-text"><span class="fas fa-certificate"></span></div>
                           </div>
