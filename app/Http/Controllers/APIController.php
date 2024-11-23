@@ -563,6 +563,7 @@ class APIController extends Controller
         }
     }
 
+
     public function getAdminOfficers($softtoken, $district_id)
     {
         if($softtoken == env('SOFT_TOKEN'))
@@ -692,6 +693,29 @@ class APIController extends Controller
             return response()->json([
                 'success' => true,
                 'rentacars' => $rentacars,
+            ]);
+        } else {
+            return response()->json([
+                'success' => false
+            ]);
+        }
+    }
+
+    public function getNewspapers($softtoken)
+    {
+        if($softtoken == env('SOFT_TOKEN')) {
+            $eshebas = Cache::remember('eshebas', 365 * 24 * 60 * 60, function ()  {
+               $eshebas = Esheba::get();
+               foreach($eshebas as $esheba) {
+                   $esheba->image = $esheba->eshebaimage ? $esheba->eshebaimage->image : '';
+                   $esheba->makeHidden('eshebaimage', 'created_at', 'updated_at');
+               }
+
+               return $eshebas;
+            });
+            return response()->json([
+            'success' => true,
+            'eshebas' => $eshebas,
             ]);
         } else {
             return response()->json([
