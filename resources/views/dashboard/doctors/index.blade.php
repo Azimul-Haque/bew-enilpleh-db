@@ -582,7 +582,7 @@
                     </div>
                     <div class="col-md-6">
                       <div class="input-group mb-3">
-                        <textarea name="degree" class="form-control" style="min-height: 150px;" placeholder="ডাক্তারের ডিগ্রি/ ডিগ্রিসমূহ (যেমন: MBBS, FCPS, MD) [একাধিক লাইন এড করা যাবে]"></textarea>
+                        <textarea name="degree" class="form-control" style="min-height: 150px;" placeholder="ডাক্তারের ডিগ্রি/ ডিগ্রিসমূহ (যেমন: MBBS, FCPS, MD, বিসিএস (স্বাস্থ্য) ইত্যাদি) [একাধিক লাইন এড করা যাবে]"></textarea>
                       </div>
                     </div>
                     <div class="col-md-6">
