@@ -263,6 +263,7 @@ class APIController extends Controller
                         $doctormedicalsymptom->id = $doctormedicalsymptom->doctor->id;
                         $doctormedicalsymptom->name = $doctormedicalsymptom->doctor->name;
                         $doctormedicalsymptom->degree = $doctormedicalsymptom->doctor->degree;
+                        $doctormedicalsymptom->specialization = $doctormedicalsymptom->doctor->specialization;
                         $doctormedicalsymptom->serial = $doctormedicalsymptom->doctor->serial;
                         $doctormedicalsymptom->address = $doctormedicalsymptom->doctor->address;
                         $doctormedicalsymptom->helpline = $doctormedicalsymptom->doctor->helpline;
