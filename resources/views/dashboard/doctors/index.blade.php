@@ -563,8 +563,8 @@
                       </div>
                       <div class="input-group mb-3">
                           <input type="text"
-                                 name="degree2"
-                                 value="{{ old('degree3') }}"
+                                 name="specialization"
+                                 value="{{ old('specialization') }}"
                                  
                                  class="form-control"
                                  placeholder="ডাক্তার কী বিশেষজ্ঞ (যেমন: হৃদরোগ বিশেষজ্ঞ)">
