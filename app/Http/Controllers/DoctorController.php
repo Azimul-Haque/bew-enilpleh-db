@@ -107,6 +107,7 @@ class DoctorController extends Controller
             'upazilla_id'            => 'required',
             'name'                => 'required|string|max:191',
             'degree'                => 'required|string|max:191',
+            'specialization'                => 'required|string|max:191',
             'serial'           => 'required',
             'address'           => 'required',
             'helpline'              => 'required',
