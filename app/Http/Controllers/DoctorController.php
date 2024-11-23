@@ -222,7 +222,7 @@ class DoctorController extends Controller
         $doctor->name = $request->name;
         $doctor->degree = $request->degree;
         if($request->specialization) {
-            $hospital->specialization = nl2br($request->specialization);
+            $doctor->specialization = nl2br($request->specialization);
         }
         $doctor->serial = $request->serial;
         $doctor->address = $request->address;
