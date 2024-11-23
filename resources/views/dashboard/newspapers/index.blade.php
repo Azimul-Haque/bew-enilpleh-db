@@ -52,8 +52,8 @@
                       <a href="{{ $newspaper->url }}" target="_blank">{{ $newspaper->name }} (ক্লিক করুন)</a>
                     </td>
                     <td>
-                      @if($newspaper->eshebaimage != null)
-                        <img src="{{ asset('images/newspapers/' . $newspaper->eshebaimage->image)}}" id='img-upload' style="width: 250px; height: auto;" class="img-responsive" />
+                      @if($newspaper->newspaperimage != null)
+                        <img src="{{ asset('images/newspapers/' . $newspaper->newspaperimage->image)}}" id='img-upload' style="width: 250px; height: auto;" class="img-responsive" />
                       @else
                         <img src="{{ asset('images/placeholder.png')}}" id='img-upload' style="width: 250px; height: auto;" class="img-responsive" />
                       @endif
@@ -108,8 +108,8 @@
                                         <input type="file" id="image" name="image" accept="image/*">
                                     </div>
                                     <center>
-                                      @if($newspaper->eshebaimage != null)
-                                        <img src="{{ asset('images/newspapers/' . $newspaper->eshebaimage->image)}}" id='img-upload' style="width: 250px; height: auto;" class="img-responsive" />
+                                      @if($newspaper->newspaperimage != null)
+                                        <img src="{{ asset('images/newspapers/' . $newspaper->newspaperimage->image)}}" id='img-upload' style="width: 250px; height: auto;" class="img-responsive" />
                                       @else
                                         <img src="{{ asset('images/placeholder.png')}}" id='img-upload' style="width: 250px; height: auto;" class="img-responsive" />
                                       @endif
