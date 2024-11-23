@@ -51,6 +51,9 @@
                     <td>
                       <a href="{{ $newspaper->url }}" target="_blank">{{ $newspaper->name }} (ক্লিক করুন)</a>
                     </td>
+                    <td>
+                      <a href="{{ $newspaper->url }}" target="_blank">{{ $newspaper->name }} (ক্লিক করুন)</a>
+                    </td>
                     <td align="right">
                       {{-- <button type="button" class="btn btn-warning btn-sm" data-toggle="modal" data-target="#notifModal{{ $newspaper->id }}">
                         <i class="fas fa-bell"></i>
