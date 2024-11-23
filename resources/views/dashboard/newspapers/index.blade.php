@@ -42,25 +42,25 @@
                 </tr>
               </thead>
               <tbody>
-                @foreach($newspapers as $newspapers)
+                @foreach($newspapers as $newspaper)
                   <tr>
                     <td>
-                      {{ $newspapers->name }}<br/>
+                      {{ $newspaper->name }}<br/>
                     </td>
                     <td>
-                      <a href="{{ $newspapers->url }}" target="_blank">{{ $newspapers->name }} (ক্লিক করুন)</a>
+                      <a href="{{ $newspaper->url }}" target="_blank">{{ $newspaper->name }} (ক্লিক করুন)</a>
                     </td>
                     <td align="right">
-                      {{-- <button type="button" class="btn btn-warning btn-sm" data-toggle="modal" data-target="#notifModal{{ $newspapers->id }}">
+                      {{-- <button type="button" class="btn btn-warning btn-sm" data-toggle="modal" data-target="#notifModal{{ $newspaper->id }}">
                         <i class="fas fa-bell"></i>
                       </button> --}}
-                      <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#editUserModal{{ $newspapers->id }}">
+                      <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#editUserModal{{ $newspaper->id }}">
                         <i class="fas fa-edit"></i>
                       </button>
                       {{-- Edit User Modal Code --}}
                       {{-- Edit User Modal Code --}}
                       <!-- Modal -->
-                      <div class="modal fade" id="editUserModal{{ $newspapers->id }}" tabindex="-1" role="dialog" aria-labelledby="editUserModalLabel" aria-hidden="true" data-backdrop="static">
+                      <div class="modal fade" id="editUserModal{{ $newspaper->id }}" tabindex="-1" role="dialog" aria-labelledby="editUserModalLabel" aria-hidden="true" data-backdrop="static">
                         <div class="modal-dialog" role="document">
                           <div class="modal-content">
                             <div class="modal-header bg-primary">
@@ -69,7 +69,7 @@
                                 <span aria-hidden="true">&times;</span>
                               </button>
                             </div>
-                            <form method="post" action="{{ route('dashboard.newspapers.update', $newspapers->id) }}" enctype="multipart/form-data">
+                            <form method="post" action="{{ route('dashboard.newspapers.update', $newspaper->id) }}" enctype="multipart/form-data">
                               <div class="modal-body">
                                 
                                     @csrf
@@ -78,7 +78,7 @@
                                         <input type="text"
                                                name="name"
                                                class="form-control"
-                                               value="{{ $newspapers->name }}"
+                                               value="{{ $newspaper->name }}"
                                                placeholder="দৈনিক পত্রিকার নাম" required>
                                         <div class="input-group-append">
                                             <div class="input-group-text"><span class="fas fa-hand-holding-medical"></span></div>
@@ -87,7 +87,7 @@
                                     <div class="input-group mb-3">
                                         <input type="text"
                                                name="url"
-                                               value="{{ $newspapers->url }}"
+                                               value="{{ $newspaper->url }}"
                                                class="form-control"
                                                placeholder="দৈনিক পত্রিকা লিংক (URL)" required>
                                         <div class="input-group-append">
@@ -100,8 +100,8 @@
                                         <input type="file" id="image" name="image" accept="image/*">
                                     </div>
                                     <center>
-                                      @if($newspapers->eshebaimage != null)
-                                        <img src="{{ asset('images/newspapers/' . $newspapers->eshebaimage->image)}}" id='img-upload' style="width: 250px; height: auto;" class="img-responsive" />
+                                      @if($newspaper->eshebaimage != null)
+                                        <img src="{{ asset('images/newspapers/' . $newspaper->eshebaimage->image)}}" id='img-upload' style="width: 250px; height: auto;" class="img-responsive" />
                                       @else
                                         <img src="{{ asset('images/placeholder.png')}}" id='img-upload' style="width: 250px; height: auto;" class="img-responsive" />
                                       @endif
@@ -119,14 +119,14 @@
                       {{-- Edit User Modal Code --}}
                       {{-- Edit User Modal Code --}}
 
-                      <button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#deleteUserModal{{ $newspapers->id }}">
+                      <button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#deleteUserModal{{ $newspaper->id }}">
                         <i class="fas fa-trash-alt"></i>
                       </button>
                     </td>
                         {{-- Delete User Modal Code --}}
                         {{-- Delete User Modal Code --}}
                         <!-- Modal -->
-                        <div class="modal fade" id="deleteUserModal{{ $newspapers->id }}" tabindex="-1" role="dialog" aria-labelledby="deleteUserModalLabel" aria-hidden="true" data-backdrop="static">
+                        <div class="modal fade" id="deleteUserModal{{ $newspaper->id }}" tabindex="-1" role="dialog" aria-labelledby="deleteUserModalLabel" aria-hidden="true" data-backdrop="static">
                           <div class="modal-dialog" role="document">
                             <div class="modal-content">
                               <div class="modal-header bg-danger">
@@ -138,13 +138,13 @@
                               <div class="modal-body">
                                 আপনি কি নিশ্চিতভাবে এই দৈনিক পত্রিকাকে ডিলেট করতে চান?<br/>
                                 <center>
-                                    <big><b>{{ $newspapers->name }}</b></big><br/>
-                                    <small><i class="fas fa-phone"></i> {{ $newspapers->mobile }}</small>
+                                    <big><b>{{ $newspaper->name }}</b></big><br/>
+                                    <small><i class="fas fa-phone"></i> {{ $newspaper->mobile }}</small>
                                 </center>
                               </div>
                               <div class="modal-footer">
                                 <button type="button" class="btn btn-secondary" data-dismiss="modal">ফিরে যান</button>
-                                <a href="{{ route('dashboard.newspapers.delete', $newspapers->id) }}" class="btn btn-danger">ডিলেট করুন</a>
+                                <a href="{{ route('dashboard.newspapers.delete', $newspaper->id) }}" class="btn btn-danger">ডিলেট করুন</a>
                               </div>
                             </div>
                           </div>
