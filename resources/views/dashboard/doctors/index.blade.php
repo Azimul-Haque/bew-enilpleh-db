@@ -160,7 +160,7 @@
                                                        value="{{ $doctor->degree }}"
                                                        
                                                        class="form-control"
-                                                       placeholder="ডাক্তারের ডিগ্রি/ ডিগ্রিসমূহ (যেমন: MBBS, FCPS, MD)" required>
+                                                       placeholder="ডাক্তারের ডিগ্রি/ ডিগ্রিসমূহ (যেমন: MBBS, FCPS, MD) [প্রয়োজনে]" required>
                                                 <div class="input-group-append">
                                                     <div class="input-group-text"><span class="fas fa-certificate"></span></div>
                                                 </div>
@@ -175,7 +175,7 @@
                                                        value="{{ $doctor->degree2 }}"
                                                        
                                                        class="form-control"
-                                                       placeholder="ডিগ্রি/এফিলিয়েশন (যেমন: বিসিএস (স্বাস্থ্য))">
+                                                       placeholder="ডিগ্রি/এফিলিয়েশন (যেমন: বিসিএস (স্বাস্থ্য)) [প্রয়োজনে]">
                                                 <div class="input-group-append">
                                                     <div class="input-group-text"><span class="fas fa-certificate"></span></div>
                                                 </div>
