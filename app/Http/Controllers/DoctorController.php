@@ -128,6 +128,9 @@ class DoctorController extends Controller
         $doctor->serial = $request->serial;
         $doctor->address = $request->address;
         $doctor->specialization = $request->specialization;
+        if($request->investigation_data) {
+            $hospital->investigation_data = nl2br($request->investigation_data);
+        }
         $doctor->helpline = $request->helpline;
         $doctor->weekdays = $request->weekdays;
         $doctor->timefrom = $request->timefrom;
