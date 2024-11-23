@@ -201,8 +201,7 @@ class DoctorController extends Controller
             'upazilla_id'            => 'required',
             'name'                => 'required|string|max:191',
             'degree'                => 'required|string|max:191',
-            'degree2'                => 'sometimes',
-            'degree3'                => 'sometimes',
+            'specialization'                => 'required|string|max:191',
             'serial'           => 'required',
             'address'           => 'required',
             'helpline'              => 'required',
@@ -220,12 +219,7 @@ class DoctorController extends Controller
         $doctor->upazilla_id = $request->upazilla_id;
         $doctor->name = $request->name;
         $doctor->degree = $request->degree;
-        if(isset($request->degree2)) {
-            $doctor->degree2 = $request->degree2;
-        }
-        if(isset($request->degree3)) {
-            $doctor->degree3 = $request->degree3;
-        }
+        $doctor->specialization = $request->specialization;
         $doctor->serial = $request->serial;
         $doctor->address = $request->address;
         $doctor->helpline = $request->helpline;
