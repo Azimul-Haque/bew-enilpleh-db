@@ -705,7 +705,7 @@ class APIController extends Controller
     {
         if($softtoken == env('SOFT_TOKEN')) {
             $newspapers = Cache::remember('newspapers', 365 * 24 * 60 * 60, function ()  {
-               $newspapers = Esheba::get();
+               $newspapers = Newspaper::get();
                foreach($newspapers as $esheba) {
                    $esheba->image = $esheba->eshebaimage ? $esheba->eshebaimage->image : '';
                    $esheba->makeHidden('eshebaimage', 'created_at', 'updated_at');
