@@ -704,18 +704,18 @@ class APIController extends Controller
     public function getNewspapers($softtoken)
     {
         if($softtoken == env('SOFT_TOKEN')) {
-            $eshebas = Cache::remember('eshebas', 365 * 24 * 60 * 60, function ()  {
-               $eshebas = Esheba::get();
-               foreach($eshebas as $esheba) {
+            $newspapers = Cache::remember('newspapers', 365 * 24 * 60 * 60, function ()  {
+               $newspapers = Esheba::get();
+               foreach($newspapers as $esheba) {
                    $esheba->image = $esheba->eshebaimage ? $esheba->eshebaimage->image : '';
                    $esheba->makeHidden('eshebaimage', 'created_at', 'updated_at');
                }
 
-               return $eshebas;
+               return $newspapers;
             });
             return response()->json([
             'success' => true,
-            'eshebas' => $eshebas,
+            'newspapers' => $newspapers,
             ]);
         } else {
             return response()->json([
