@@ -127,9 +127,8 @@ class DoctorController extends Controller
         $doctor->degree = $request->degree;
         $doctor->serial = $request->serial;
         $doctor->address = $request->address;
-        $doctor->specialization = $request->specialization;
-        if($request->investigation_data) {
-            $hospital->investigation_data = nl2br($request->investigation_data);
+        if($request->specialization) {
+            $hospital->specialization = nl2br($request->specialization);
         }
         $doctor->helpline = $request->helpline;
         $doctor->weekdays = $request->weekdays;
@@ -222,7 +221,9 @@ class DoctorController extends Controller
         $doctor->upazilla_id = $request->upazilla_id;
         $doctor->name = $request->name;
         $doctor->degree = $request->degree;
-        $doctor->specialization = $request->specialization;
+        if($request->specialization) {
+            $hospital->specialization = nl2br($request->specialization);
+        }
         $doctor->serial = $request->serial;
         $doctor->address = $request->address;
         $doctor->helpline = $request->helpline;
