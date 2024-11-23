@@ -180,34 +180,6 @@
                                         <div class="row">
                                           <div class="col-md-6">
                                             <div class="input-group mb-3">
-                                                <input type="text"
-                                                       name="degree2"
-                                                       value="{{ $doctor->degree2 }}"
-                                                       
-                                                       class="form-control"
-                                                       placeholder="ডিগ্রি/এফিলিয়েশন (যেমন: বিসিএস (স্বাস্থ্য)) [প্রয়োজনে]">
-                                                <div class="input-group-append">
-                                                    <div class="input-group-text"><span class="fas fa-certificate"></span></div>
-                                                </div>
-                                            </div>
-                                          </div>
-                                          <div class="col-md-6">
-                                            <div class="input-group mb-3">
-                                                <input type="text"
-                                                       name="degree3"
-                                                       value="{{ $doctor->degree3 }}"
-                                                       
-                                                       class="form-control"
-                                                       placeholder="ডিগ্রি/এফিলিয়েশন (যেমন: হার্ট বিশেষজ্ঞ) [প্রয়োজনে]">
-                                                <div class="input-group-append">
-                                                    <div class="input-group-text"><span class="fas fa-certificate"></span></div>
-                                                </div>
-                                            </div>
-                                          </div>
-                                        </div>
-                                        <div class="row">
-                                          <div class="col-md-6">
-                                            <div class="input-group mb-3">
                                                 <input type="number"
                                                        name="serial"
                                                        class="form-control"
