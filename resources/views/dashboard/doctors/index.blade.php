@@ -585,19 +585,6 @@
                         <textarea name="degree" class="form-control" style="min-height: 100px;" placeholder="ডাক্তারের ডিগ্রি/ ডিগ্রিসমূহ (যেমন: MBBS, FCPS, MD, বিসিএস (স্বাস্থ্য) ইত্যাদি) [একাধিক লাইন এড করা যাবে]">{{ old('degree') }}</textarea>
                       </div>
                     </div>
-                    <div class="col-md-6">
-                      <div class="input-group mb-3">
-                          <input type="text"
-                                 name="degree"
-                                 value="{{ old('degree') }}"
-                                 
-                                 class="form-control"
-                                 placeholder="ডাক্তারের ডিগ্রি/ ডিগ্রিসমূহ (যেমন: MBBS, FCPS, MD)" required>
-                          <div class="input-group-append">
-                              <div class="input-group-text"><span class="fas fa-certificate"></span></div>
-                          </div>
-                      </div>
-                    </div>
                   </div>
                   <div class="row">
                     <div class="col-md-6">
