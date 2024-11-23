@@ -135,6 +135,15 @@
 
 @if(Auth::user()->role == 'admin')
 <li class="nav-item">
+    <a href="{{ route('dashboard.newspapers') }}" class="nav-link {{ Request::is('dashboard/newspapers') ? 'active' : '' }} {{ Request::is('dashboard/newspapers/*') ? 'active' : '' }}">
+        <i class="nav-icon fas fa-newspaper"></i>
+        <p>দৈনিক পত্রিকা</p>
+    </a>
+</li>
+@endif
+
+@if(Auth::user()->role == 'admin')
+<li class="nav-item">
     <a href="{{ route('dashboard.journalists') }}" class="nav-link {{ Request::is('dashboard/journalists') ? 'active' : '' }} {{ Request::is('dashboard/journalists/*') ? 'active' : '' }}">
         <i class="nav-icon fas fa-gavel"></i>
         <p>সাংবাদিকরৃন্দ</p>

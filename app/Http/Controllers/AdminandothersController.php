@@ -16,6 +16,8 @@ use App\Rabbattalion;
 use App\Rabbattaliondetail;
 use App\Bus;
 use App\Journalist;
+use App\Newspaper;
+use App\Newspaperimage;
 use App\District;
 
 use Carbon\Carbon;
@@ -944,5 +946,100 @@ class AdminandothersController extends Controller
         Cache::forget('busesto' . $request->to_district);
         Session::flash('success', 'Bus added successfully!');
         return redirect()->route('dashboard.buses.districtwise', $district_id);
+    }
+
+    public function newspaperIndex()
+    {
+        $newspaperscount = Newspaper::count();
+        $newspapers = Newspaper::orderBy('id', 'desc')->paginate(10);
+                
+        return view('dashboard.newspapers.index')
+                            ->withNewspaperscount($newspaperscount)
+                            ->withNewspapers($newspapers);
+    }
+
+    public function newspaperIndexSearch($search)
+    {
+        $newspaperscount = Newspaper::where('name', 'LIKE', "%$search%")
+                                  ->orWhere('url', 'LIKE', "%$search%")->count();
+
+        $newspapers = Newspaper::where('name', 'LIKE', "%$search%")
+                                  ->orWhere('url', 'LIKE', "%$search%")
+                                  ->orderBy('id', 'desc')
+                                  ->paginate(10);
+        
+        return view('dashboard.newspapers.index')
+                            ->withNewspaperscount($newspaperscount)
+                            ->withNewspapers($newspapers);
+    }
+
+    public function storeNewspaper(Request $request)
+    {
+        $this->validate($request,array(
+            'name'                => 'required|string|max:191',
+            'url'                 => 'required|string|max:191',
+            'image'               => 'sometimes',
+        ));
+
+        $newspaper = new Newspaper;
+        $newspaper->name = $request->name;
+        $newspaper->url = $request->url;
+        $newspaper->save();
+
+        // image upload
+        if($request->hasFile('image')) {
+            $image    = $request->file('image');
+            $filename = random_string(5) . time() .'.' . "webp";
+            $location = public_path('images/newspapers/'. $filename);
+            Image::make($image)->fit(200, 200)->save($location);
+            $newspaperimage              = new Newspaperimage;
+            $newspaperimage->newspaper_id   = $newspaper->id;
+            $newspaperimage->image       = $filename;
+            $newspaperimage->save();
+        }
+        
+        Cache::forget('newspapers');
+        Session::flash('success', 'Newspaper added successfully!');
+        return redirect()->route('dashboard.newspapers');
+    }
+
+    public function updateNewspaper(Request $request, $id)
+    {
+        $this->validate($request,array(
+            'name'                => 'required|string|max:191',
+            'url'              => 'required|string|max:191',
+            'image'               => 'sometimes',
+        ));
+
+        $newspaper = Newspaper::find($id);
+        $newspaper->name = $request->name;
+        $newspaper->url = $request->url;
+        $newspaper->save();
+
+        // image upload
+        if($request->hasFile('image')) {
+            if($newspaper->newspaperimage !=null) {
+               $image_path = public_path('images/newspapers/'. $newspaper->newspaperimage->image);
+               // dd($image_path);
+               if(File::exists($image_path)) {
+                   File::delete($image_path);
+               }
+               $newspaperimage              = Newspaperimage::where('newspaper_id', $newspaper->id)->first();
+            } else {
+               $newspaperimage              = new Newspaperimage;
+            }
+            $image    = $request->file('image');
+            $filename = random_string(5) . time() .'.' . "webp";
+            $location = public_path('images/newspapers/'. $filename);
+            Image::make($image)->fit(200, 200)->save($location);
+            $newspaperimage->newspaper_id   = $newspaper->id;
+            $newspaperimage->image       = $filename;
+            $newspaperimage->save();
+        }
+
+        
+        Cache::forget('newspapers');
+        Session::flash('success', 'Newspaper updated successfully!');
+        return redirect()->route('dashboard.newspapers');
     }
 }

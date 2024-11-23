@@ -64,7 +64,7 @@ Route::post('/dashboard/ambulances/store', 'AmbulanceController@storeAmbulance')
 Route::post('/dashboard/ambulances/{id}/update', 'AmbulanceController@updateAmbulance')->name('dashboard.ambulances.update');
 Route::get('/dashboard/ambulances/{id}/delete', 'AmbulanceController@deleteAmbulance')->name('dashboard.ambulances.delete');
 
-// Ambulances
+// Esheba
 Route::get('/dashboard/eshebas', 'EshebaController@index')->name('dashboard.eshebas');
 Route::get('/dashboard/eshebas/{search}', 'EshebaController@indexSearch')->name('dashboard.eshebas.search');
 Route::post('/dashboard/eshebas/store', 'EshebaController@storeEsheba')->name('dashboard.eshebas.store');
@@ -110,6 +110,13 @@ Route::get('/dashboard/rentacars/{district_id}/{search}', 'AdminandothersControl
 Route::post('/dashboard/rentacars/{district_id}/store', 'AdminandothersController@storeRentacar')->name('dashboard.rentacars.store');
 Route::post('/dashboard/rentacars/{district_id}/{id}/update', 'AdminandothersController@updateRentacar')->name('dashboard.rentacars.update');
 Route::get('/dashboard/rentacars/{district_id}/{id}/delete', 'AdminandothersController@deleteRentacar')->name('dashboard.rentacars.delete');
+
+// Newspapers
+Route::get('/dashboard/newspapers', 'AdminandothersController@newspaperIndex')->name('dashboard.newspapers');
+Route::get('/dashboard/newspapers/{search}', 'AdminandothersController@newspaperIndexSearch')->name('dashboard.newspapers.search');
+Route::post('/dashboard/newspapers/store', 'AdminandothersController@storeNewspaper')->name('dashboard.newspapers.store');
+Route::post('/dashboard/newspapers/{id}/update', 'AdminandothersController@updateNewspaper')->name('dashboard.newspapers.update');
+Route::get('/dashboard/newspapers/{id}/delete', 'AdminandothersController@deleteNewspaper')->name('dashboard.newspapers.delete');
 
 // Coaching
 Route::get('/dashboard/coachings', 'AdminandothersController@coachingIndex')->name('dashboard.coachings');

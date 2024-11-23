@@ -61,6 +61,8 @@ return array(
     'App\\Medicaldepartment' => $baseDir . '/app/Medicaldepartment.php',
     'App\\Medicalsymptom' => $baseDir . '/app/Medicalsymptom.php',
     'App\\Message' => $baseDir . '/app/Message.php',
+    'App\\Newspaper' => $baseDir . '/app/Newspaper.php',
+    'App\\Newspaperimage' => $baseDir . '/app/Newspaperimage.php',
     'App\\Notification' => $baseDir . '/app/Notification.php',
     'App\\Police' => $baseDir . '/app/Police.php',
     'App\\Providers\\AppServiceProvider' => $baseDir . '/app/Providers/AppServiceProvider.php',

@@ -31,6 +31,8 @@ use App\Rabbattalion;
 use App\Rabbattaliondetail;
 use App\Bus;
 use App\Journalist;
+use App\Newspaper;
+use App\Newspaperimage;
 
 use Hash;
 use Carbon\Carbon;
