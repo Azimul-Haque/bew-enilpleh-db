@@ -7,7 +7,7 @@
 @endsection
 
 @section('content')
-  @section('page-header') দৈনিক পত্রিকা তালিকা (মোট {{ bangla($eshebascount) }} টি) @endsection
+  @section('page-header') দৈনিক পত্রিকা তালিকা (মোট {{ bangla($newspaperscount) }} টি) @endsection
     <div class="container-fluid">
     <div class="card">
           <div class="card-header">
