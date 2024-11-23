@@ -19,8 +19,8 @@ class CreateDoctorsTable extends Migration
             $table->integer('upazilla_id')->unsigned();
             $table->string('name');
             $table->string('degree');
-            $table->string('degree2');
-            $table->string('degree3');
+            $table->string('degree2')->nullable();
+            $table->string('degree3')->nullable();
             $table->string('serial');
             $table->string('address');
             $table->string('helpline');
