@@ -188,7 +188,7 @@
                                                        value="{{ $doctor->degree3 }}"
                                                        
                                                        class="form-control"
-                                                       placeholder="ডিগ্রি/এফিলিয়েশন (যেমন: হার্ট বিশেষজ্ঞ)">
+                                                       placeholder="ডিগ্রি/এফিলিয়েশন (যেমন: হার্ট বিশেষজ্ঞ) [প্রয়োজনে]">
                                                 <div class="input-group-append">
                                                     <div class="input-group-text"><span class="fas fa-certificate"></span></div>
                                                 </div>
