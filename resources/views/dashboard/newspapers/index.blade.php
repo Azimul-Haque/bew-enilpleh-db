@@ -96,7 +96,7 @@
                                     </div>
                                      
                                     <div class="form-group">
-                                        <label for="image">ছবি (প্রয়োজনে, ৩০০ x ৩০০ সাইজের, ২ মেগাবাইটের মধ্যে)</label><br/>
+                                        <label for="image">ছবি (প্রয়োজনে, ৩০০ x ৮০ সাইজের, ১ মেগাবাইটের মধ্যে)</label><br/>
                                         <input type="file" id="image" name="image" accept="image/*">
                                     </div>
                                     <center>
@@ -200,7 +200,7 @@
                       </div>
                   </div>
                   <div class="form-group ">
-                      <label for="image">ছবি (প্রয়োজনে, ৩০০ x ৩০০ সাইজের, ২ মেগাবাইটের মধ্যে)</label><br/>
+                      <label for="image">ছবি (প্রয়োজনে, ৩০০ x ৮০ সাইজের, ১ মেগাবাইটের মধ্যে)</label><br/>
                       <input type="file" id="image" name="image" accept="image/*">
                   </div>
                   <center>
@@ -301,7 +301,7 @@
         $("#image").change(function(){
             readURL(this);
             var filesize = parseInt((this.files[0].size)/1024);
-            if(filesize > 2000) {
+            if(filesize > ১000) {
               $("#image").val('');
               // toastr.warning('File size is: '+filesize+' Kb. try uploading less than 300Kb', 'WARNING').css('width', '400px;');
               Toast.fire({
