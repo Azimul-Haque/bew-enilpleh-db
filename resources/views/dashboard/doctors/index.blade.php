@@ -171,8 +171,8 @@
                                           <div class="col-md-6">
                                             <div class="input-group mb-3">
                                                 <input type="text"
-                                                       name="degree"
-                                                       value="{{ $doctor->degree }}"
+                                                       name="degree2"
+                                                       value="{{ $doctor->degree2 }}"
                                                        
                                                        class="form-control"
                                                        placeholder="ডাক্তারের ডিগ্রি/ ডিগ্রিসমূহ (যেমন: MBBS, FCPS, MD)" required>
@@ -184,8 +184,8 @@
                                           <div class="col-md-6">
                                             <div class="input-group mb-3">
                                                 <input type="text"
-                                                       name="degree"
-                                                       value="{{ $doctor->degree }}"
+                                                       name="degree3"
+                                                       value="{{ $doctor->degree3 }}"
                                                        
                                                        class="form-control"
                                                        placeholder="ডাক্তারের ডিগ্রি/ ডিগ্রিসমূহ (যেমন: MBBS, FCPS, MD)" required>
