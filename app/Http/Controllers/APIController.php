@@ -307,6 +307,7 @@ class APIController extends Controller
                         $doctormedicaldepartment->id = $doctormedicaldepartment->doctor->id;
                         $doctormedicaldepartment->name = $doctormedicaldepartment->doctor->name;
                         $doctormedicaldepartment->degree = $doctormedicaldepartment->doctor->degree;
+                        $doctormedicaldepartment->specialization = $doctormedicaldepartment->doctor->specialization;
                         $doctormedicaldepartment->serial = $doctormedicaldepartment->doctor->serial;
                         $doctormedicaldepartment->helpline = $doctormedicaldepartment->doctor->helpline;
                         $doctormedicaldepartment->image = $doctormedicaldepartment->doctor->doctorimage ? $doctormedicaldepartment->doctor->doctorimage->image : '';
@@ -329,6 +330,7 @@ class APIController extends Controller
                         $doctormedicalsymptom->id = $doctormedicalsymptom->doctor->id;
                         $doctormedicalsymptom->name = $doctormedicalsymptom->doctor->name;
                         $doctormedicalsymptom->degree = $doctormedicalsymptom->doctor->degree;
+                        $doctormedicalsymptom->specialization = $doctormedicalsymptom->doctor->specialization;
                         $doctormedicalsymptom->serial = $doctormedicalsymptom->doctor->serial;
                         $doctormedicalsymptom->helpline = $doctormedicalsymptom->doctor->helpline;
                         $doctormedicalsymptom->image = $doctormedicalsymptom->doctor->doctorimage ? $doctormedicalsymptom->doctor->doctorimage->image : '';
