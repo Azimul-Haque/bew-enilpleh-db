@@ -128,6 +128,8 @@ class DoctorController extends Controller
         $doctor->degree = $request->degree;
         $doctor->serial = $request->serial;
         $doctor->address = $request->address;
+        $doctor->address2 = $request->address2;
+        $doctor->address3 = $request->address3;
         $doctor->helpline = $request->helpline;
         $doctor->weekdays = $request->weekdays;
         $doctor->timefrom = $request->timefrom;
