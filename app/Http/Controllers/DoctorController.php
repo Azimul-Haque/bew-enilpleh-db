@@ -226,11 +226,11 @@ class DoctorController extends Controller
         $doctor->upazilla_id = $request->upazilla_id;
         $doctor->name = $request->name;
         $doctor->degree = $request->degree;
-        if(isset($request->address2)) {
-            $doctor->address2 = $request->address2;
+        if(isset($request->degree2)) {
+            $doctor->degree2 = $request->degree2;
         }
-        if(isset($request->address3)) {
-            $doctor->address3 = $request->address3;
+        if(isset($request->degree3)) {
+            $doctor->degree3 = $request->degree3;
         }
         $doctor->serial = $request->serial;
         $doctor->address = $request->address;
