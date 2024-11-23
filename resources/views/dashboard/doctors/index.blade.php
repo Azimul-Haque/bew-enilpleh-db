@@ -58,7 +58,11 @@
                       @foreach($doctors as $doctor)
                         <tr>
                           <td>
-                            {{ $doctor->name }} <span class="badge bg-success">{{ $doctor->degree }}</span><br/>
+                            {{ $doctor->name }} 
+                            <span class="badge bg-success">{{ $doctor->degree }}</span>
+                            <span class="badge bg-primary">{{ $doctor->degree2 }}</span>
+                            <span class="badge bg-warning">{{ $doctor->degree3 }}</span>
+                            <br/>
                             <small class="text-black-50"><i class="fas fa-phone"></i> {{ $doctor->serial }}</small>
                             <small class="text-black-50"><i class="fas fa-mobile"></i> {{ $doctor->helpline }}</small>
                             
