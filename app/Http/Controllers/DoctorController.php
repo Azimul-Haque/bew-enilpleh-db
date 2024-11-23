@@ -128,11 +128,11 @@ class DoctorController extends Controller
         $doctor->degree = $request->degree;
         $doctor->serial = $request->serial;
         $doctor->address = $request->address;
-        if(isset($request->address2)) {
-            $doctor->address2 = $request->address2;
+        if(isset($request->degree2)) {
+            $doctor->degree2 = $request->degree2;
         }
-        if(isset($request->address3)) {
-            $doctor->address3 = $request->address3;
+        if(isset($request->degree3)) {
+            $doctor->degree3 = $request->degree3;
         }
         $doctor->helpline = $request->helpline;
         $doctor->weekdays = $request->weekdays;
