@@ -708,7 +708,7 @@ class APIController extends Controller
                $newspapers = Newspaper::get();
                foreach($newspapers as $newspaper) {
                    $newspaper->image = $newspaper->newspaperimage ? $newspaper->newspaperimage->image : '';
-                   $newspaper->makeHidden('eshebaimage', 'created_at', 'updated_at');
+                   $newspaper->makeHidden('newspaperimage', 'created_at', 'updated_at');
                }
 
                return $newspapers;
