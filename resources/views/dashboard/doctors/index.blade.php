@@ -585,7 +585,7 @@
                                  value="{{ old('degree3') }}"
                                  
                                  class="form-control"
-                                 placeholder="ডিগ্রি/এফিলিয়েশন (যেমন: বিসিএস (স্বাস্থ্য)) [প্রয়োজনে]">
+                                 placeholder="ডাক্তার কী বিশেষজ্ঞ (যেমন: )">
                           <div class="input-group-append">
                               <div class="input-group-text"><span class="fas fa-certificate"></span></div>
                           </div>
