@@ -52,7 +52,11 @@
                       <a href="{{ $newspaper->url }}" target="_blank">{{ $newspaper->name }} (ক্লিক করুন)</a>
                     </td>
                     <td>
-                      <a href="{{ $newspaper->url }}" target="_blank">{{ $newspaper->name }} (ক্লিক করুন)</a>
+                      @if($newspaper->eshebaimage != null)
+                        <img src="{{ asset('images/newspapers/' . $newspaper->eshebaimage->image)}}" id='img-upload' style="width: 250px; height: auto;" class="img-responsive" />
+                      @else
+                        <img src="{{ asset('images/placeholder.png')}}" id='img-upload' style="width: 250px; height: auto;" class="img-responsive" />
+                      @endif
                     </td>
                     <td align="right">
                       {{-- <button type="button" class="btn btn-warning btn-sm" data-toggle="modal" data-target="#notifModal{{ $newspaper->id }}">
