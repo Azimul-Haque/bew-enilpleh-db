@@ -109,8 +109,6 @@ class DoctorController extends Controller
             'degree'                => 'required|string|max:191',
             'serial'           => 'required',
             'address'           => 'required',
-            'address2'           => 'sometimes',
-            'address3'           => 'sometimes',
             'helpline'              => 'required',
             'image'                 => 'sometimes|image|mimes:jpeg,png,jpg,gif,svg,webp|max:2000',
             'medicaldepartments'            => 'required',
