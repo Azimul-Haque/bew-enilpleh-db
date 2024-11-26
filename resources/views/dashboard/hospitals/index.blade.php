@@ -411,7 +411,7 @@
                         
                       </div>
                       <div style="margin-bottom: 15px;">
-                        <select name="branch_ids[]" class="form-control multiple-select" multiple="multiple" data-placeholder="শাখা হাসপাতাল (প্রয়োজনে একাধিক সিলেক্ট করা যাবে)" required>
+                        <select name="branch_ids[]" class="form-control multiple-select" multiple="multiple" data-placeholder="শাখা হাসপাতাল (প্রয়োজনে একাধিক সিলেক্ট করা যাবে)">
                             
                             @foreach($hospitals as $hospital)
                               <option value="{{ $hospital->id }}">{{ $hospital->name }}</option>
