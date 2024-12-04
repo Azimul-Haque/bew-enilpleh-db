@@ -68,9 +68,7 @@
                           <td>
                             @foreach($doctor->doctormedicaldepartments as $medicaldepartment)
                               <span class="badge bg-primary">{{ $medicaldepartment->medicaldepartment->name }}</span>
-                            @endforeach
-                          </td>
-                          <td>
+                            @endforeach <br/>
                             @foreach($doctor->doctormedicalsymptoms as $medicalsymptom)
                               <span class="badge bg-info">{{ $medicalsymptom->medicalsymptom->name }}</span>
                             @endforeach
