@@ -130,7 +130,9 @@ class DoctorController extends Controller
         if($request->specialization) {
             $doctor->specialization = nl2br($request->specialization);
         }
-        $doctor->helpline = $request->helpline;
+        if($request->helpline) {
+            $doctor->helpline = $request->helpline;
+        }
         $doctor->weekdays = $request->weekdays;
         $doctor->timefrom = $request->timefrom;
         $doctor->timeto = $request->timeto;
