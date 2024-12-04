@@ -155,7 +155,7 @@
                                                    value="{{ $hospital->mobile }}"
                                                    autocomplete="off"
                                                    class="form-control"
-                                                   placeholder="মোবাইল নম্বর">
+                                                   placeholder="মোবাইল নম্বর (যদি থাকে)">
                                             <div class="input-group-append">
                                                 <div class="input-group-text"><span class="fas fa-mobile"></span></div>
                                             </div>
@@ -359,7 +359,7 @@
                                  value="{{ old('mobile') }}"
                                  autocomplete="off"
                                  class="form-control"
-                                 placeholder="মোবাইল নম্বর">
+                                 placeholder="মোবাইল নম্বর (যদি থাকে)">
                           <div class="input-group-append">
                               <div class="input-group-text"><span class="fas fa-mobile"></span></div>
                           </div>
