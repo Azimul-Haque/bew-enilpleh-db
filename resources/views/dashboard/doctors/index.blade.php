@@ -48,8 +48,7 @@
                       <tr>
                         <th>নাম</th>
                         <th>বিভাগ/লক্ষণ</th>
-                        <th>হাসপাতাল</th>
-                        <th>ঠিকানা</th>
+                        <th>হাসপাতাল/ ঠিকানা</th>
                         <th align="right" width="15%">কার্যক্রম</th>
                       </tr>
                     </thead>
@@ -76,9 +75,9 @@
                           <td>
                             @foreach($doctor->doctorhospitals as $hospital)
                               <span class="badge bg-warning">{{ $hospital->hospital->name }}</span>
-                            @endforeach
+                            @endforeach <br/>
+                            {{ $doctor->upazilla->name_bangla }}, {{ $doctor->district->name_bangla }}
                           </td>
-                          <td style="font-size: 12px;">{{ $doctor->upazilla->name_bangla }}, {{ $doctor->district->name_bangla }}</td>
                           <td align="right">
                             {{-- <button type="button" class="btn btn-warning btn-sm" data-toggle="modal" data-target="#notifModal{{ $doctor->id }}">
                               <i class="fas fa-bell"></i>
