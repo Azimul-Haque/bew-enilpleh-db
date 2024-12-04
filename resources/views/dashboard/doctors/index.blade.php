@@ -49,7 +49,7 @@
                         <th>নাম</th>
                         <th>বিভাগ/ লক্ষণ</th>
                         <th>হাসপাতাল/ ঠিকানা</th>
-                        <th align="right" width="30%">কার্যক্রম</th>
+                        <th align="right" width="50%">কার্যক্রম</th>
                       </tr>
                     </thead>
                     <tbody>
