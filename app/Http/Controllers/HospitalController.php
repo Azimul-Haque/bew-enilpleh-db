@@ -139,7 +139,7 @@ class HospitalController extends Controller
             'name'                => 'required|string|max:191',
             'hospital_type'       => 'required',
             'telephone'           => 'required',
-            'mobile'              => 'required',
+            'mobile'              => 'sometimes',
             'location'            => 'required',
             'website'            => 'sometimes|max:191',
             'address'            => 'required',
