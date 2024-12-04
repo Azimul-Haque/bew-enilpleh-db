@@ -230,6 +230,8 @@ class DoctorController extends Controller
         $doctor->address = $request->address;
         if($request->helpline) {
             $doctor->helpline = $request->helpline;
+        } else {
+            $doctor->helpline = '';
         }
         $doctor->weekdays = $request->weekdays;
         $doctor->timefrom = $request->timefrom;
