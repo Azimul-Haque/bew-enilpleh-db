@@ -57,7 +57,7 @@
                       @foreach($doctors as $doctor)
                         <tr>
                           <td>
-                            {{ $doctor->name }} 
+                            {{ $doctor->name }}<br/>
                             <span class="badge bg-success">{{ $doctor->degree }}</span>
                             <span class="badge bg-primary">{{ $doctor->specialization }}</span>
                             <br/>
