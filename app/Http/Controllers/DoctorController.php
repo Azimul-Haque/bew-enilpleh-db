@@ -42,9 +42,11 @@ class DoctorController extends Controller
         if(Auth::user()->role == 'editor') {
             $hospitalscount = Auth::user()->accessibleHospitals()->count();
             $hospitals = Auth::user()->accessibleHospitals()->paginate(10);
+            $doctorscount = Doctor::count();
+            $doctors = Doctor::orderBy('id', 'desc')->paginate(10);
         } else {
             $doctorscount = Doctor::count();
-        $doctors = Doctor::orderBy('id', 'desc')->paginate(10);
+            $doctors = Doctor::orderBy('id', 'desc')->paginate(10);
         }
         
 
