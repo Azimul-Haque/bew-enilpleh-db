@@ -38,9 +38,7 @@ class BlooddonorController extends Controller
         } else {
             $blooddonorscount = Blooddonor::count();
             $blooddonors = Blooddonor::orderBy('id', 'desc')->paginate(10);
-        }
-
-        
+        }        
 
         $districts = District::all();
                 
