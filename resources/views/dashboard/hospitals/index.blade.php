@@ -417,7 +417,7 @@
                             @endforeach
                         </select>
 
-                        <div class="form-group" style="margin-bottom: 15px;">
+                        <div class="form-group" style="margin-top: 15px;">
                             <label for="image">ব্যানার-১ (Optional, Max 1 MB)</label>
                             <input type="file" name="image1" accept="image/*">
                         </div>
