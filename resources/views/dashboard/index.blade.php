@@ -15,7 +15,7 @@
 
               <div class="info-box-content">
                 <span class="info-box-text">হাসপাতাল তালিকা</span>
-                <small class="info-box-number">ক্লিক করুন</small>
+                <small class="info-box-text">ক্লিক করুন</small>
               </div>
             </a>
           </div>
