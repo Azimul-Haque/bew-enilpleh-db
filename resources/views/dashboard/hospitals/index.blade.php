@@ -394,7 +394,7 @@
                           </div>
                       </div>
                     </div>
-                    <div class="col-md-12">
+                    <div class="col-md-6">
                       <div class="input-group mb-3">
                           <input type="text"
                                  name="website"
