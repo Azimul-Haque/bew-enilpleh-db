@@ -431,6 +431,11 @@
                             <label for="image">ব্যানার-৩ (Optional, Max 1 MB)</label>
                             <input type="file" name="image3" accept="image/*">
                         </div>
+
+                        <div class="form-group" style="margin-top: 15px;">
+                            <label for="image">ব্যানার-৪ (Optional, Max 1 MB)</label>
+                            <input type="file" name="image4" accept="image/*">
+                        </div>
                       </div> 
                     </div>
                     <div class="col-md-6">
