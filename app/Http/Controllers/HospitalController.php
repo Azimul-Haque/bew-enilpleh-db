@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\District;
 use App\Upazilla;
 use App\Hospital;
+use App\Hospitalimage;
 
 use Carbon\Carbon;
 use DB;
