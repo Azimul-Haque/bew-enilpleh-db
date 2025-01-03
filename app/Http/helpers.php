@@ -95,6 +95,7 @@
   }
 
   function edu_inst_type($type) {
+      $text = '';
       if ($type == 1) {
         $text = "সরকারি শিক্ষা প্রতিষ্ঠান";
       } elseif($type == 2) {
@@ -106,6 +107,7 @@
   }
 
   function edu_inst_badge($type) {
+      $text = '';
       if ($type == 1) {
         $text = "success";
       } elseif($type == 2) {
@@ -113,7 +115,7 @@
       } elseif($type == 3) {
         $text = "warning";
       }
-      return $type;
+      return $text;
   }
 
   function local_currency($num) {
