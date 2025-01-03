@@ -130,6 +130,9 @@ class HospitalController extends Controller
             }
         }
 
+        if(Auth::user()->)
+        Auth::user->accessibleHospitals()->attach($hospital);
+
         Cache::forget('hospitals'. $request->hospital_type . $request->district_id);
         Cache::forget('hospitals'. $request->hospital_type . $request->district_id . $request->upazilla_id);
         Session::flash('success', 'Hospital added successfully!');
