@@ -353,6 +353,14 @@
                     </select>
                   </div>
 
+                  <div style="margin-bottom: 15px;">
+                    <select name="blooddonors[]" class="form-control multiple-select" multiple="multiple" data-placeholder="যে যে রক্তদাতা/সংগঠনের এক্সেস দেওয়া হবে (প্রয়োজনে একাধিক সিলেক্ট করা যাবে) [Optional]" onautocomplete="off">
+                        @foreach($blooddonors as $blooddonor)
+                          <option value="{{ $blooddonor->id }}">{{ $blooddonor->name }} - ({{ $blooddonor->upazilla->name_bangla }}, {{ $blooddonor->district->name_bangla }})</option>
+                        @endforeach
+                    </select>
+                  </div>
+
 
 	                <div class="input-group mb-3">
 	                    <input type="password"
