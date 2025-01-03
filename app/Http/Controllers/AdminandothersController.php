@@ -714,6 +714,15 @@ class AdminandothersController extends Controller
             $coachingimage1->save();
         }
         if($request->hasFile('image2')) {
+            if($coaching->coachingimages) {
+                foreach($coaching->coachingimages as $coachingimage) {
+                    $image_path = public_path('images/coachings/'. $coachingimage->image);
+                    if(File::exists($image_path)) {
+                        File::delete($image_path);
+                    }
+                    $coachingimage->delete();
+                }
+            }
             $image    = $request->file('image2');
             $filename = random_string(5) . time() .'.' . "webp";
             $location = public_path('images/coachings/'. $filename);
@@ -724,6 +733,15 @@ class AdminandothersController extends Controller
             $coachingimage2->save();
         }
         if($request->hasFile('image3')) {
+            if($coaching->coachingimages) {
+                foreach($coaching->coachingimages as $coachingimage) {
+                    $image_path = public_path('images/coachings/'. $coachingimage->image);
+                    if(File::exists($image_path)) {
+                        File::delete($image_path);
+                    }
+                    $coachingimage->delete();
+                }
+            }
             $image    = $request->file('image3');
             $filename = random_string(5) . time() .'.' . "webp";
             $location = public_path('images/coachings/'. $filename);
@@ -734,6 +752,15 @@ class AdminandothersController extends Controller
             $coachingimage3->save();
         }
         if($request->hasFile('image4')) {
+            if($coaching->coachingimages) {
+                foreach($coaching->coachingimages as $coachingimage) {
+                    $image_path = public_path('images/coachings/'. $coachingimage->image);
+                    if(File::exists($image_path)) {
+                        File::delete($image_path);
+                    }
+                    $coachingimage->delete();
+                }
+            }
             $image    = $request->file('image4');
             $filename = random_string(5) . time() .'.' . "webp";
             $location = public_path('images/coachings/'. $filename);
