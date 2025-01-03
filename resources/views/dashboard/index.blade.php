@@ -78,7 +78,7 @@
         </div>
         @endif
         <div class="row">
-          <div class="col-md-6">
+          {{-- <div class="col-md-6">
             <div class="card card-success">
               <div class="card-header">
                 <h3 class="card-title">ব্যবহারকারী যোগদানের হার</h3>
@@ -107,7 +107,7 @@
               </div>
               </div>
             </div>
-          </div>
+          </div> --}}
         </div>
     </div>
 @endsection
