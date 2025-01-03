@@ -184,9 +184,6 @@ class HospitalController extends Controller
             }
         }
 
-        
-        
-
         Cache::forget('hospitals'. $request->hospital_type . $request->district_id);
         Cache::forget('hospitals'. $request->hospital_type . $request->district_id . $request->upazilla_id);
         Session::flash('success', 'Hospital added successfully!');
@@ -208,6 +205,10 @@ class HospitalController extends Controller
             'branch_data'            => 'sometimes',
             'branch_ids'            => 'sometimes',
             'investigation_data'            => 'sometimes',
+            'image1'            => 'sometimes|image|mimes:jpeg,png,jpg,gif,svg,webp|max:1000',
+            'image2'            => 'sometimes|image|mimes:jpeg,png,jpg,gif,svg,webp|max:1000',
+            'image3'            => 'sometimes|image|mimes:jpeg,png,jpg,gif,svg,webp|max:1000',
+            'image4'            => 'sometimes|image|mimes:jpeg,png,jpg,gif,svg,webp|max:1000',
         ));
 
         $hospital = Hospital::findOrFail($id);
