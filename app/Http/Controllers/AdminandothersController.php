@@ -562,8 +562,14 @@ class AdminandothersController extends Controller
     public function coachingIndexSingle($district_id)
     {
         $district = District::find($district_id);
-        $coachingscount = Coaching::where('district_id', $district_id)->count();
-        $coachings = Coaching::where('district_id', $district_id)->orderBy('id', 'asc')->paginate(10);
+        if(Auth::user()->role == 'editor') {
+            $coachingscount = Auth::user()->accessibleCoachings()->count();
+            $coachings = Auth::user()->accessibleCoachings()->paginate(10);
+        } else {
+            $coachingscount = Coaching::where('district_id', $district_id)->count();
+            $coachings = Coaching::where('district_id', $district_id)->orderBy('id', 'asc')->paginate(10);
+        }
+        
                 
         return view('dashboard.coachings.single')
                             ->withDistrict($district)
