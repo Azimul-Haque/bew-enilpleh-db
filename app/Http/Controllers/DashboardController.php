@@ -313,7 +313,7 @@ class DashboardController extends Controller
         $user->mobile = $request->mobile;
         $user->role = $request->role;
         if(isset($request->hospitals)){
-            foreach($doctor->doctorhospitals as $hospital) {
+            foreach($user->doctorhospitals as $hospital) {
                 $hospital->delete();
             }
             foreach($request->hospitals as $hospital_id) {
