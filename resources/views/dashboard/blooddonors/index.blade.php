@@ -64,7 +64,7 @@
                     </td>
                     <td>
                       @if($blooddonor->category == 2)
-                        <a href="{{ route('dashboard.blooddonormembers', $blooddonor->id) }}" class="badge badge-warning" title="সদস্য যোগ করতে বা এডিট করতে ক্লিক করুন" class=""><strong>সদস্য তালিকা দেখুন</strong></a>
+                        <a href="{{ route('dashboard.blooddonormembers', $blooddonor->id) }}" class="badge badge-warning" title="সদস্য যোগ করতে বা এডিট করতে ক্লিক করুন" class=""><big><strong>সদস্য তালিকা দেখুন</strong></big></a>
                       @endif
                     </td>
                     <td>
