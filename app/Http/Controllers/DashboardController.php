@@ -118,6 +118,32 @@ class DashboardController extends Controller
                     ->withDoctors($doctors);
     }
 
+    public function getUsersSearch($search)
+    {
+        $userscount = User::where('name', 'LIKE', "%$search%")
+                          ->orWhere('email', 'LIKE', "%$search%")
+                          ->orWhere('mobile', 'LIKE', "%$search%")
+                          ->orWhere('uid', 'LIKE', "%$search%")
+                          ->orWhere('onesignal_id', 'LIKE', "%$search%")
+                          ->orderBy('id', 'desc')
+                          ->count();
+        $users = User::where('name', 'LIKE', "%$search%")
+                     ->orWhere('email', 'LIKE', "%$search%")
+                     ->orWhere('mobile', 'LIKE', "%$search%")
+                     ->orWhere('uid', 'LIKE', "%$search%")
+                     ->orWhere('onesignal_id', 'LIKE', "%$search%")
+                     ->orderBy('id', 'desc')
+                     ->paginate(10);
+
+        $hospitals = Hospital::all();
+        $doctors = Doctor::all();
+
+        // $sites = Site::all();
+        return view('dashboard.users.index')
+                    ->withUsers($users)
+                    ->withUserscount($userscount);
+    }
+
     public function getUsersSort()
     {
         // $users = User::where('name', '!=', null)->orderBy('id', 'asc')->get(10);
@@ -223,32 +249,6 @@ class DashboardController extends Controller
         }
 
         return redirect()->back();
-    }
-
-    public function getUsersSearch($search)
-    {
-        $userscount = User::where('name', 'LIKE', "%$search%")
-                          ->orWhere('email', 'LIKE', "%$search%")
-                          ->orWhere('mobile', 'LIKE', "%$search%")
-                          ->orWhere('uid', 'LIKE', "%$search%")
-                          ->orWhere('onesignal_id', 'LIKE', "%$search%")
-                          ->orderBy('id', 'desc')
-                          ->count();
-        $users = User::where('name', 'LIKE', "%$search%")
-                     ->orWhere('email', 'LIKE', "%$search%")
-                     ->orWhere('mobile', 'LIKE', "%$search%")
-                     ->orWhere('uid', 'LIKE', "%$search%")
-                     ->orWhere('onesignal_id', 'LIKE', "%$search%")
-                     ->orderBy('id', 'desc')
-                     ->paginate(10);
-
-        $hospitals = Hospital::all();
-        $doctors = Doctor::all();
-
-        // $sites = Site::all();
-        return view('dashboard.users.index')
-                    ->withUsers($users)
-                    ->withUserscount($userscount);
     }
 
     public function getUser($id)
