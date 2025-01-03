@@ -140,11 +140,10 @@
                       </div>
                       {{-- Notif Modal Code --}}
                       {{-- Notif Modal Code --}}
-                      @if(Auth::user()->role == 'admin')
-                        <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#editUserModal{{ $user->id }}">
-                          <i class="fas fa-user-edit"></i>
-                        </button>
-                      @endif
+
+                			<button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#editUserModal{{ $user->id }}">
+                				<i class="fas fa-user-edit"></i>
+                			</button>
             			    {{-- Edit User Modal Code --}}
             			    {{-- Edit User Modal Code --}}
             			    <!-- Modal -->
@@ -233,9 +232,12 @@
             			    {{-- Edit User Modal Code --}}
             			    {{-- Edit User Modal Code --}}
 
-                			<button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#deleteUserModal{{ $user->id }}">
-                				<i class="fas fa-user-minus"></i>
-                			</button>
+                      @if(Auth::user()->role == 'admin')
+                        <button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#deleteUserModal{{ $user->id }}">
+                          <i class="fas fa-user-minus"></i>
+                        </button>
+                      @endif
+                			
                 		</td>
                         {{-- Delete User Modal Code --}}
                         {{-- Delete User Modal Code --}}
