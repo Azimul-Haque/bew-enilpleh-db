@@ -113,7 +113,7 @@
       } elseif($type == 3) {
         $text = "warning";
       }
-      return $text;
+      return $type;
   }
 
   function local_currency($num) {
