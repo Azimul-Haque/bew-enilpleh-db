@@ -30,6 +30,28 @@
               </div>
             </a>
           </div>
+
+          <div class="col-md-3">
+            <a href="{{ route('dashboard.hospitals') }}" class="info-box mb-3">
+              <span class="info-box-icon bg-warning elevation-1"><i class="fas fa-hospital"></i></span>
+
+              <div class="info-box-content">
+                <span class="info-box-text">হাসপাতাল তালিকা</span>
+                <small class="info-box-text" style="margin-top: 10px;">ক্লিক করুন</small>
+              </div>
+            </a>
+          </div>
+
+          <div class="col-md-3">
+            <a href="{{ route('dashboard.hospitals') }}" class="info-box mb-3">
+              <span class="info-box-icon bg-warning elevation-1"><i class="fas fa-hospital"></i></span>
+
+              <div class="info-box-content">
+                <span class="info-box-text">হাসপাতাল তালিকা</span>
+                <small class="info-box-text" style="margin-top: 10px;">ক্লিক করুন</small>
+              </div>
+            </a>
+          </div>
         </div>
 
         <div class="row">
