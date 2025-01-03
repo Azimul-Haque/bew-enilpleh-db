@@ -161,10 +161,10 @@ class HospitalController extends Controller
             $filename = random_string(5) . time() .'.' . "webp";
             $location = public_path('images/hospitals/'. $filename);
             Image::make($image)->resize(300, null, function ($constraint) { $constraint->aspectRatio(); })->save($location);
-            $hospitalimage3              = new Hospitalimage;
-            $hospitalimage3->hospital_id = $hospital->id;
-            $hospitalimage3->image       = $filename;
-            $hospitalimage3->save();
+            $hospitalimage4              = new Hospitalimage;
+            $hospitalimage4->hospital_id = $hospital->id;
+            $hospitalimage4->image       = $filename;
+            $hospitalimage4->save();
         }
         // image upload
         // image upload
