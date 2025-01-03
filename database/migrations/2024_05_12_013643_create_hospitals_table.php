@@ -22,7 +22,7 @@ class CreateHospitalsTable extends Migration
             $table->string('telephone');
             $table->string('mobile');
             $table->string('location');
-            $table->text('description');
+            $table->text('description')->nullable();
             $table->string('website')->nullable();
             $table->string('address');
             $table->text('branch_data')->nullable();
