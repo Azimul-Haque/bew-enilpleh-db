@@ -129,6 +129,10 @@ class HospitalController extends Controller
 
         $hospital->save();
 
+        if(Auth::user()->role == 'editor') {
+            Auth::user()->accessibleHospitals()->attach($hospital);
+        }
+
         // image upload
         // image upload
         if($request->hasFile('image1')) {
@@ -180,9 +184,7 @@ class HospitalController extends Controller
             }
         }
 
-        if(Auth::user()->role == 'editor') {
-            Auth::user()->accessibleHospitals()->attach($hospital);
-        }
+        
         
 
         Cache::forget('hospitals'. $request->hospital_type . $request->district_id);
