@@ -1,5 +1,5 @@
 @extends('layouts.app')
-@section('title') ড্যাশবোর্ড | কোচিং সেন্টার তালিকা @endsection
+@section('title') ড্যাশবোর্ড | শিক্ষা প্রতিষ্ঠান/কোচিং সেন্টার তালিকা @endsection
 
 @section('third_party_stylesheets')
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
