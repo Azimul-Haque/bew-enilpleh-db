@@ -60,7 +60,7 @@
 </li>
 @endif
 
-@if(Auth::user()->role == 'admin')
+{{-- @if(Auth::user()->role == 'admin')
 <li class="nav-item">
     <a href="{{ route('dashboard.admins') }}" class="nav-link {{ Request::is('dashboard/admins') ? 'active' : '' }} {{ Request::is('dashboard/admins/*') ? 'active' : '' }}">
         <i class="nav-icon fas fa-user-tie"></i>
@@ -85,7 +85,16 @@
         <p>ফায়ার সার্ভিস</p>
     </a>
 </li>
+
+@if(Auth::user()->role == 'admin')
+<li class="nav-item">
+    <a href="{{ route('dashboard.rabs') }}" class="nav-link {{ Request::is('dashboard/rabs') ? 'active' : '' }} {{ Request::is('dashboard/rabs/*') ? 'active' : '' }}">
+        <i class="nav-icon fas fa-user-shield"></i>
+        <p>র‍্যাব</p>
+    </a>
+</li>
 @endif
+@endif --}}
 
 @if(Auth::user()->role == 'admin')
 <li class="nav-item">
@@ -106,14 +115,7 @@
 </li>
 @endif
 
-@if(Auth::user()->role == 'admin')
-<li class="nav-item">
-    <a href="{{ route('dashboard.rabs') }}" class="nav-link {{ Request::is('dashboard/rabs') ? 'active' : '' }} {{ Request::is('dashboard/rabs/*') ? 'active' : '' }}">
-        <i class="nav-icon fas fa-user-shield"></i>
-        <p>র‍্যাব</p>
-    </a>
-</li>
-@endif
+
 
 @if(Auth::user()->role == 'admin')
 <li class="nav-item">
