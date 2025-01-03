@@ -111,8 +111,9 @@ class APIController extends Controller
                         // $hospital->push($hospitalimagetemp);
                         
                      }
-                     dd($hospital->hospitalimages);
+
                      $hospital->makeHidden('hospitalimages', 'district', 'upazilla', 'created_at', 'updated_at');
+                     dd($hospital);
                  }
                  return $hospitals;
             });
