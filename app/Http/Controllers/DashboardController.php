@@ -120,7 +120,9 @@ class DashboardController extends Controller
                     ->withUsers($users)
                     ->withUserscount($userscount)
                     ->withHospitals($hospitals)
-                    ->withDoctors($doctors);
+                    ->withDoctors($doctors)
+                    ->withblooddonors($blooddonors)
+                    ->withcoachings($coachings);
     }
 
     public function getUsersSearch($search)
