@@ -409,10 +409,6 @@
                     </div>
                     
                     <div class="col-md-6">
-                      <div class="input-group mb-3">
-                        {{-- <textarea name="branch_data" class="form-control" style="min-height: 150px;" placeholder="ব্রাঞ্চের তালিকা (প্রযোজ্য ক্ষেত্রে)"></textarea> --}}
-                        
-                      </div>
                       <div style="margin-bottom: 15px;">
                         <select name="branch_ids[]" class="form-control multiple-select" multiple="multiple" data-placeholder="শাখা হাসপাতাল (প্রয়োজনে একাধিক সিলেক্ট করা যাবে)">
                             
