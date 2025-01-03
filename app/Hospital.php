@@ -24,7 +24,7 @@ class Hospital extends Model
     }
 
     public function doctorimages(){
-        return $this->hasMany('App\Doctorimage');
+        return $this->hasMany('App\Hospitalimage');
     }
 
     public function branches()
