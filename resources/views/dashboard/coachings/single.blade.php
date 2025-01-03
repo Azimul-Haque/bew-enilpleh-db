@@ -233,6 +233,17 @@
                           <div class="input-group-text"><span class="fas fa-map-marked-alt"></span></div>
                       </div>
                   </div>
+                  <div class="col-md-6">
+                    <div class="form-group" style="margin-top: 15px;">
+                        <label for="image">ব্যানার-১ (Optional, Max 1 MB)</label>
+                        <input type="file" name="image1" accept="image/*">
+                    </div>
+
+                    <div class="form-group" style="margin-top: 15px;">
+                        <label for="image">ব্যানার-২ (Optional, Max 1 MB)</label>
+                        <input type="file" name="image2" accept="image/*">
+                    </div>
+                  </div>
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-dismiss="modal">ফিরে যান</button>
