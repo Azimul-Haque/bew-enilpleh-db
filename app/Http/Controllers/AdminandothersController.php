@@ -614,6 +614,10 @@ class AdminandothersController extends Controller
         $coaching->address = $request->address;
         $coaching->save();
 
+        if(Auth::user()->role == 'editor') {
+            Auth::user()->accessibleCoachings()->attach($coaching);
+        }
+
         Cache::forget('coachings' . 1 . $district_id);
         Cache::forget('coachings' . 2 . $district_id);
         Cache::forget('coachings' . 3 . $district_id);
