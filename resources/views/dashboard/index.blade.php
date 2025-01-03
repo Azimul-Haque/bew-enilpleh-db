@@ -14,7 +14,7 @@
               <span class="info-box-icon bg-warning elevation-1"><i class="fas fa-coins"></i></span>
 
               <div class="info-box-content">
-                <span class="info-box-text">দৈনিক জমা</span>
+                <span class="info-box-text">হাসপাতাল তালিকা</span>
                 <span class="info-box-number">৳ {{ 0 }}</span>
               </div>
             </a>
