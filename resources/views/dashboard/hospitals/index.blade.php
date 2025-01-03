@@ -416,6 +416,11 @@
                               <option value="{{ $hospital->id }}">{{ $hospital->name }}</option>
                             @endforeach
                         </select>
+
+                        <div class="form-group">
+                            <label for="image">ছবি/ ভিজিটিং কার্ড/ ব্যানার (প্রয়োজনে, ৩০০ h x ১৭৫ w সাইজের, ২ মেগাবাইটের মধ্যে)</label>
+                            <input type="file" id="image" name="image" accept="image/*">
+                        </div>
                       </div> 
                     </div>
                     <div class="col-md-6">
