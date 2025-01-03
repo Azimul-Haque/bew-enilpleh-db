@@ -4,6 +4,12 @@
 @section('third_party_stylesheets')
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/icheck-bootstrap@3.0.1/icheck-bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="{{ asset('css/bootstrap-datepicker.min.css') }}">
+
+    <style type="text/css">
+      .select2-selection__choice{
+          background-color: rgba(0, 123, 255) !important;
+      }
+    </style>
 @endsection
 
 @section('content')
@@ -419,7 +425,7 @@
       $('.multiple-select').select2({
         // theme: 'bootstrap4',
       });
-      
+
         $('#adduserrole').change(function () {
             if($('#adduserrole').val() == 'accountant') {
                 $('#ifaccountant').hide();
