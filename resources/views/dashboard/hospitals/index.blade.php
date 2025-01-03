@@ -406,36 +406,32 @@
                               <div class="input-group-text"><span class="fas fa-globe"></span></div>
                           </div>
                       </div>
-
-                      <select name="branch_ids[]" class="form-control multiple-select" multiple="multiple" data-placeholder="শাখা হাসপাতাল (প্রয়োজনে একাধিক সিলেক্ট করা যাবে)">
-                          
-                          @foreach($hospitals as $hospital)
-                            <option value="{{ $hospital->id }}">{{ $hospital->name }}</option>
-                          @endforeach
-                      </select>
                     </div>
                     
                     <div class="col-md-6">
                       <div style="margin-bottom: 15px;">
-                        
-
-                        <div class="form-group" style="margin-top: 15px;">
-                            <label for="image">ব্যানার-১ (Optional, Max 1 MB)</label>
-                            <input type="file" name="image1" accept="image/*">
-                        </div>
-
-                        <div class="form-group" style="margin-top: 15px;">
-                            <label for="image">ব্যানার-২ (Optional, Max 1 MB)</label>
-                            <input type="file" name="image2" accept="image/*">
-                        </div>
-
-                        <div class="form-group" style="margin-top: 15px;">
-                            <label for="image">ব্যানার-৩ (Optional, Max 1 MB)</label>
-                            <input type="file" name="image3" accept="image/*">
-                        </div>
-
-                        
+                        <select name="branch_ids[]" class="form-control multiple-select" multiple="multiple" data-placeholder="শাখা হাসপাতাল (প্রয়োজনে একাধিক সিলেক্ট করা যাবে)">
+                            
+                            @foreach($hospitals as $hospital)
+                              <option value="{{ $hospital->id }}">{{ $hospital->name }}</option>
+                            @endforeach
+                        </select>
                       </div> 
+
+                      <div class="form-group" style="margin-top: 15px;">
+                          <label for="image">ব্যানার-১ (Optional, Max 1 MB)</label>
+                          <input type="file" name="image1" accept="image/*">
+                      </div>
+
+                      <div class="form-group" style="margin-top: 15px;">
+                          <label for="image">ব্যানার-২ (Optional, Max 1 MB)</label>
+                          <input type="file" name="image2" accept="image/*">
+                      </div>
+
+                      <div class="form-group" style="margin-top: 15px;">
+                          <label for="image">ব্যানার-৩ (Optional, Max 1 MB)</label>
+                          <input type="file" name="image3" accept="image/*">
+                      </div>
                     </div>
                     <div class="col-md-6">
                       <div class="input-group mb-3">
