@@ -24,7 +24,7 @@
             </div>
           </div>
           
-          <div class="col-lg-3 col-6">
+          {{-- <div class="col-lg-3 col-6">
             <!-- small box -->
             <div class="small-box bg-success">
               <div class="inner">
@@ -67,7 +67,7 @@
               </div>
               <a href="{{ route('dashboard.users') }}" class="small-box-footer">ব্যবহারকারীগণ <i class="fas fa-arrow-circle-right"></i></a>
             </div>
-          </div>
+          </div> --}}
         </div>
         <div class="row">
           {{-- <div class="col-md-6">
