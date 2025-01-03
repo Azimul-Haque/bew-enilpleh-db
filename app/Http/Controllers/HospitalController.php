@@ -99,6 +99,7 @@ class HospitalController extends Controller
             'branch_data'            => 'sometimes',
             'branch_ids'            => 'sometimes',
             'investigation_data'            => 'sometimes',
+            'image1'            => 'sometimes',
         ));
 
         $hospital = new Hospital;
