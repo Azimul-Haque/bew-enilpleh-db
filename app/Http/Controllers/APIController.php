@@ -112,7 +112,7 @@ class APIController extends Controller
                      }
                      $hospital->images = $imagestemp;
                      $hospital->makeHidden('hospitalimages', 'district', 'upazilla', 'created_at', 'updated_at');
-                     dd($hospital);
+                     // dd($hospital);
                  }
                  return $hospitals;
             });
