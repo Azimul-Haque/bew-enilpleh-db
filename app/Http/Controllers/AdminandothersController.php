@@ -604,6 +604,10 @@ class AdminandothersController extends Controller
             'type'                => 'required',
             'mobile'              => 'required|string|max:191',
             'address'             => 'required|string|max:191',
+            'image1'            => 'sometimes|image|mimes:jpeg,png,jpg,gif,svg,webp|max:1000',
+            'image2'            => 'sometimes|image|mimes:jpeg,png,jpg,gif,svg,webp|max:1000',
+            'image3'            => 'sometimes|image|mimes:jpeg,png,jpg,gif,svg,webp|max:1000',
+            'image4'            => 'sometimes|image|mimes:jpeg,png,jpg,gif,svg,webp|max:1000',
         ));
 
         $coaching = new Coaching;
