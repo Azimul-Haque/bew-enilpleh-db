@@ -601,6 +601,7 @@ class ComposerStaticInitd99be2aa22b662638be63ef18831ea06
         'App\\Http\\Middleware\\EncryptCookies' => __DIR__ . '/../..' . '/app/Http/Middleware/EncryptCookies.php',
         'App\\Http\\Middleware\\IsAccountantMiddleware' => __DIR__ . '/../..' . '/app/Http/Middleware/IsAccountantMiddleware.php',
         'App\\Http\\Middleware\\IsAdminMiddleware' => __DIR__ . '/../..' . '/app/Http/Middleware/IsAdminMiddleware.php',
+        'App\\Http\\Middleware\\IsEditorMiddleware' => __DIR__ . '/../..' . '/app/Http/Middleware/IsEditorMiddleware.php',
         'App\\Http\\Middleware\\IsManagerMiddleware' => __DIR__ . '/../..' . '/app/Http/Middleware/IsManagerMiddleware.php',
         'App\\Http\\Middleware\\IsVolunteerMiddleware' => __DIR__ . '/../..' . '/app/Http/Middleware/IsVolunteerMiddleware.php',
         'App\\Http\\Middleware\\RedirectIfAuthenticated' => __DIR__ . '/../..' . '/app/Http/Middleware/RedirectIfAuthenticated.php',

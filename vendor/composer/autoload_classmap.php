@@ -50,6 +50,7 @@ return array(
     'App\\Http\\Middleware\\EncryptCookies' => $baseDir . '/app/Http/Middleware/EncryptCookies.php',
     'App\\Http\\Middleware\\IsAccountantMiddleware' => $baseDir . '/app/Http/Middleware/IsAccountantMiddleware.php',
     'App\\Http\\Middleware\\IsAdminMiddleware' => $baseDir . '/app/Http/Middleware/IsAdminMiddleware.php',
+    'App\\Http\\Middleware\\IsEditorMiddleware' => $baseDir . '/app/Http/Middleware/IsEditorMiddleware.php',
     'App\\Http\\Middleware\\IsManagerMiddleware' => $baseDir . '/app/Http/Middleware/IsManagerMiddleware.php',
     'App\\Http\\Middleware\\IsVolunteerMiddleware' => $baseDir . '/app/Http/Middleware/IsVolunteerMiddleware.php',
     'App\\Http\\Middleware\\RedirectIfAuthenticated' => $baseDir . '/app/Http/Middleware/RedirectIfAuthenticated.php',
