@@ -139,7 +139,7 @@ class HospitalController extends Controller
             $image    = $request->file('image1');
             $filename = random_string(5) . time() .'.' . "webp";
             $location = public_path('images/hospitals/'. $filename);
-            Image::make($image)->resize(300, null, function ($constraint) { $constraint->aspectRatio(); })->save($location);
+            Image::make($image)->resize(350, null, function ($constraint) { $constraint->aspectRatio(); })->save($location);
             $hospitalimage1              = new Hospitalimage;
             $hospitalimage1->hospital_id = $hospital->id;
             $hospitalimage1->image       = $filename;
@@ -149,7 +149,7 @@ class HospitalController extends Controller
             $image    = $request->file('image2');
             $filename = random_string(5) . time() .'.' . "webp";
             $location = public_path('images/hospitals/'. $filename);
-            Image::make($image)->resize(300, null, function ($constraint) { $constraint->aspectRatio(); })->save($location);
+            Image::make($image)->resize(350, null, function ($constraint) { $constraint->aspectRatio(); })->save($location);
             $hospitalimage2              = new Hospitalimage;
             $hospitalimage2->hospital_id = $hospital->id;
             $hospitalimage2->image       = $filename;
@@ -159,7 +159,7 @@ class HospitalController extends Controller
             $image    = $request->file('image3');
             $filename = random_string(5) . time() .'.' . "webp";
             $location = public_path('images/hospitals/'. $filename);
-            Image::make($image)->resize(300, null, function ($constraint) { $constraint->aspectRatio(); })->save($location);
+            Image::make($image)->resize(350, null, function ($constraint) { $constraint->aspectRatio(); })->save($location);
             $hospitalimage3              = new Hospitalimage;
             $hospitalimage3->hospital_id = $hospital->id;
             $hospitalimage3->image       = $filename;
@@ -169,7 +169,7 @@ class HospitalController extends Controller
             $image    = $request->file('image4');
             $filename = random_string(5) . time() .'.' . "webp";
             $location = public_path('images/hospitals/'. $filename);
-            Image::make($image)->resize(300, null, function ($constraint) { $constraint->aspectRatio(); })->save($location);
+            Image::make($image)->resize(350, null, function ($constraint) { $constraint->aspectRatio(); })->save($location);
             $hospitalimage4              = new Hospitalimage;
             $hospitalimage4->hospital_id = $hospital->id;
             $hospitalimage4->image       = $filename;
@@ -264,7 +264,7 @@ class HospitalController extends Controller
             $image    = $request->file('image1');
             $filename = random_string(5) . time() .'.' . "webp";
             $location = public_path('images/hospitals/'. $filename);
-            Image::make($image)->resize(300, null, function ($constraint) { $constraint->aspectRatio(); })->save($location);
+            Image::make($image)->resize(350, null, function ($constraint) { $constraint->aspectRatio(); })->save($location);
             $hospitalimage1              = new Hospitalimage;
             $hospitalimage1->hospital_id = $hospital->id;
             $hospitalimage1->image       = $filename;
@@ -283,7 +283,7 @@ class HospitalController extends Controller
             $image    = $request->file('image2');
             $filename = random_string(5) . time() .'.' . "webp";
             $location = public_path('images/hospitals/'. $filename);
-            Image::make($image)->resize(300, null, function ($constraint) { $constraint->aspectRatio(); })->save($location);
+            Image::make($image)->resize(350, null, function ($constraint) { $constraint->aspectRatio(); })->save($location);
             $hospitalimage2              = new Hospitalimage;
             $hospitalimage2->hospital_id = $hospital->id;
             $hospitalimage2->image       = $filename;
@@ -302,7 +302,7 @@ class HospitalController extends Controller
             $image    = $request->file('image3');
             $filename = random_string(5) . time() .'.' . "webp";
             $location = public_path('images/hospitals/'. $filename);
-            Image::make($image)->resize(300, null, function ($constraint) { $constraint->aspectRatio(); })->save($location);
+            Image::make($image)->resize(350, null, function ($constraint) { $constraint->aspectRatio(); })->save($location);
             $hospitalimage3              = new Hospitalimage;
             $hospitalimage3->hospital_id = $hospital->id;
             $hospitalimage3->image       = $filename;
@@ -321,7 +321,7 @@ class HospitalController extends Controller
             $image    = $request->file('image4');
             $filename = random_string(5) . time() .'.' . "webp";
             $location = public_path('images/hospitals/'. $filename);
-            Image::make($image)->resize(300, null, function ($constraint) { $constraint->aspectRatio(); })->save($location);
+            Image::make($image)->resize(350, null, function ($constraint) { $constraint->aspectRatio(); })->save($location);
             $hospitalimage4              = new Hospitalimage;
             $hospitalimage4->hospital_id = $hospital->id;
             $hospitalimage4->image       = $filename;
