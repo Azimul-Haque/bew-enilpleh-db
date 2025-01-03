@@ -252,6 +252,7 @@ class HospitalController extends Controller
         // image upload
         // image upload
         if($request->hasFile('image1')) {
+            if($hospital->hospitalimages)
             $image    = $request->file('image1');
             $filename = random_string(5) . time() .'.' . "webp";
             $location = public_path('images/hospitals/'. $filename);
