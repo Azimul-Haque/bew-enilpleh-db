@@ -756,7 +756,7 @@ class APIController extends Controller
                         // $coaching->push($coachingimagetemp);
                      }
                      $coaching->images = $imagestemp;
-                     $coaching->makeHidden('id', 'district_id', 'created_at', 'updated_at');
+                     $coaching->makeHidden('coachingimages', 'id', 'district_id', 'created_at', 'updated_at');
                  }
                  return $coachings;
             });
