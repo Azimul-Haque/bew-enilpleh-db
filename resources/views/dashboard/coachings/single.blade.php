@@ -233,26 +233,28 @@
                           <div class="input-group-text"><span class="fas fa-map-marked-alt"></span></div>
                       </div>
                   </div>
-                  <div class="col-md-6">
-                    <div class="form-group" style="margin-top: 15px;">
-                        <label for="image">ব্যানার-১ (Optional, Max 1 MB)</label>
-                        <input type="file" name="image1" accept="image/*">
-                    </div>
+                  <div class="row">
+                    <div class="col-md-6">
+                      <div class="form-group" style="margin-top: 15px;">
+                          <label for="image">ব্যানার-১ (Optional, Max 1 MB)</label>
+                          <input type="file" name="image1" accept="image/*">
+                      </div>
 
-                    <div class="form-group" style="margin-top: 15px;">
-                        <label for="image">ব্যানার-২ (Optional, Max 1 MB)</label>
-                        <input type="file" name="image2" accept="image/*">
+                      <div class="form-group" style="margin-top: 15px;">
+                          <label for="image">ব্যানার-২ (Optional, Max 1 MB)</label>
+                          <input type="file" name="image2" accept="image/*">
+                      </div>
                     </div>
-                  </div>
-                  <div class="col-md-6">
-                    <div class="form-group" style="margin-top: 15px;">
-                        <label for="image">ব্যানার-৩ (Optional, Max 1 MB)</label>
-                        <input type="file" name="image3" accept="image/*">
-                    </div>
+                    <div class="col-md-6">
+                      <div class="form-group" style="margin-top: 15px;">
+                          <label for="image">ব্যানার-৩ (Optional, Max 1 MB)</label>
+                          <input type="file" name="image3" accept="image/*">
+                      </div>
 
-                    <div class="form-group" style="margin-top: 15px;">
-                        <label for="image">ব্যানার-৪ (Optional, Max 1 MB)</label>
-                        <input type="file" name="image4" accept="image/*">
+                      <div class="form-group" style="margin-top: 15px;">
+                          <label for="image">ব্যানার-৪ (Optional, Max 1 MB)</label>
+                          <input type="file" name="image4" accept="image/*">
+                      </div>
                     </div>
                   </div>
             </div>
