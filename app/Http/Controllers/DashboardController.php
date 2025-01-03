@@ -287,7 +287,9 @@ class DashboardController extends Controller
         $user->role = $request->role;
         if(isset($request->hospitals)){
             foreach($request->hospitals as $hospital_id) {
-                
+                $hospital = Hospital::find($hospital_id);
+
+                $editor->accessibleEntities()->attach($hospital);
             }            
         }
         $user->password = Hash::make($request->password);
