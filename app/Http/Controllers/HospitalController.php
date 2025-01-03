@@ -254,7 +254,7 @@ class HospitalController extends Controller
         if($request->hasFile('image1')) {
             if($hospital->hospitalimages) {
                 foreach($hospital->hospitalimages as $hospitalimage) {
-                    $image_path = public_path('images/hospitals/'. $hospital->doctorimage->image);
+                    $image_path = public_path('images/hospitals/'. $hospitalimage->image);
                     if(File::exists($image_path)) {
                         File::delete($image_path);
                     }
