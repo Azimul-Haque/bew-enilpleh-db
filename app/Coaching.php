@@ -14,4 +14,8 @@ class Coaching extends Model
     public function district(){
         return $this->belongsTo('App\District');
     }
+
+    public function coachingimages(){
+        return $this->hasMany('App\Coachingimage');
+    }
 }
