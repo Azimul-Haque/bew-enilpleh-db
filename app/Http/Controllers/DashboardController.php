@@ -277,6 +277,7 @@ class DashboardController extends Controller
             'mobile'      => 'required|string|max:191|unique:users,mobile',
             'role'        => 'required',
             // 'sitecheck'   => 'sometimes',
+            'hospitals'   => 'sometimes',
             'password'    => 'required|string|min:8|max:191',
         ));
 
