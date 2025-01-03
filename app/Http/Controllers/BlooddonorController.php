@@ -32,8 +32,15 @@ class BlooddonorController extends Controller
 
     public function index()
     {
-        $blooddonorscount = Blooddonor::count();
-        $blooddonors = Blooddonor::orderBy('id', 'desc')->paginate(10);
+        if(Auth::user()->role == 'editor') {
+            $blooddonorscount = Auth::user()->accessibleBlooddonors()->count();
+            $blooddonors = Auth::user()->accessibleBlooddonors()->paginate(10);
+        } else {
+            $blooddonorscount = Blooddonor::count();
+            $blooddonors = Blooddonor::orderBy('id', 'desc')->paginate(10);
+        }
+
+        
 
         $districts = District::all();
                 
