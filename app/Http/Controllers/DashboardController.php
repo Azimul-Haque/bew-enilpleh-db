@@ -192,7 +192,7 @@ class DashboardController extends Controller
         }
 
         if(isset($request->blooddonors)){
-            foreach($request->doctors as $doctors_id) {
+            foreach($request->blooddonors as $blooddonor_id) {
                 $doctor = Doctor::find($doctors_id);
                 $user->accessibleDoctors()->attach($doctor);
             }            
