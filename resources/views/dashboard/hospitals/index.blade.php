@@ -87,7 +87,7 @@
                               <span aria-hidden="true">&times;</span>
                             </button>
                           </div>
-                          <form method="post" action="{{ route('dashboard.hospitals.update', $hospital->id) }}">
+                          <form method="post" action="{{ route('dashboard.hospitals.update', $hospital->id) }}" >
                             <div class="modal-body">
                               
                                   @csrf
@@ -246,7 +246,7 @@
                     </div>
                     {{-- Edit User Modal Code --}}
                     {{-- Edit User Modal Code --}}
-                    
+
                         {{-- Delete User Modal Code --}}
                         {{-- Delete User Modal Code --}}
                         <!-- Modal -->
