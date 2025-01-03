@@ -111,6 +111,7 @@ class DashboardController extends Controller
 
         $hospitals = Hospital::all();
         $doctors = Doctor::all();
+        $doctors = Doctor::all();
 
         return view('dashboard.users.index')
                     ->withUsers($users)
@@ -144,6 +145,81 @@ class DashboardController extends Controller
                     ->withUserscount($userscount)
                     ->withHospitals($hospitals)
                     ->withDoctors($doctors);
+    }
+
+    public function storeUser(Request $request)
+    {
+        // dd(serialize($request->sitecheck));
+        $this->validate($request,array(
+            'name'        => 'required|string|max:191',
+            'mobile'      => 'required|string|max:191|unique:users,mobile',
+            'role'        => 'required',
+            'hospitals'   => 'sometimes',
+            'doctors'   => 'sometimes',
+            'password'    => 'required|string|min:8|max:191',
+        ));
+
+        $user = new User;
+        $user->name = $request->name;
+        $user->mobile = $request->mobile;
+        $user->role = $request->role;
+        $user->password = Hash::make($request->password);
+        $user->save();
+
+        if(isset($request->hospitals)){
+            foreach($request->hospitals as $hospital_id) {
+                $hospital = Hospital::find($hospital_id);
+                $user->accessibleHospitals()->attach($hospital);
+            }            
+        }
+
+        if(isset($request->doctors)){
+            foreach($request->doctors as $doctors_id) {
+                $doctor = Doctor::find($doctors_id);
+                $user->accessibleDoctors()->attach($doctor);
+            }            
+        }
+
+        Session::flash('success', 'User created successfully!');
+        return redirect()->route('dashboard.users');
+    }
+
+    public function updateUser(Request $request, $id)
+    {
+        $this->validate($request,array(
+            'name'        => 'required|string|max:191',
+            'mobile'      => 'required|string|max:191|unique:users,mobile,'.$id,
+            'role'        => 'required',
+            'hospitals'   => 'sometimes',
+            'doctors'   => 'sometimes',
+            'password'    => 'nullable|string|min:8|max:191',
+        ));
+
+        $user = User::find($id);
+        $user->name = $request->name;
+        $user->mobile = $request->mobile;
+        $user->role = $request->role;
+        if(isset($request->hospitals)){
+            $user->accessibleHospitals()->detach();
+            foreach($request->hospitals as $hospital_id) {
+                $hospital = Hospital::find($hospital_id);
+                $user->accessibleHospitals()->attach($hospital);
+            }            
+        }
+        if(isset($request->doctors)){
+            $user->accessibleDoctors()->detach();
+            foreach($request->doctors as $doctors_id) {
+                $doctor = Doctor::find($doctors_id);
+                $user->accessibleDoctors()->attach($doctor);
+            }            
+        }
+        if(!empty($request->password)) {
+            $user->password = Hash::make($request->password);
+        }
+        $user->save();
+
+        Session::flash('success', 'User updated successfully!');
+        return redirect()->route('dashboard.users');
     }
 
     public function sendExpiredSMS(Request $request)
@@ -229,81 +305,6 @@ class DashboardController extends Controller
 
         return view('dashboard.users.singleother')
                     ->withUser($user);
-    }
-
-    public function storeUser(Request $request)
-    {
-        // dd(serialize($request->sitecheck));
-        $this->validate($request,array(
-            'name'        => 'required|string|max:191',
-            'mobile'      => 'required|string|max:191|unique:users,mobile',
-            'role'        => 'required',
-            'hospitals'   => 'sometimes',
-            'doctors'   => 'sometimes',
-            'password'    => 'required|string|min:8|max:191',
-        ));
-
-        $user = new User;
-        $user->name = $request->name;
-        $user->mobile = $request->mobile;
-        $user->role = $request->role;
-        $user->password = Hash::make($request->password);
-        $user->save();
-
-        if(isset($request->hospitals)){
-            foreach($request->hospitals as $hospital_id) {
-                $hospital = Hospital::find($hospital_id);
-                $user->accessibleHospitals()->attach($hospital);
-            }            
-        }
-
-        if(isset($request->doctors)){
-            foreach($request->doctors as $doctors_id) {
-                $doctor = Doctor::find($doctors_id);
-                $user->accessibleDoctors()->attach($doctor);
-            }            
-        }
-
-        Session::flash('success', 'User created successfully!');
-        return redirect()->route('dashboard.users');
-    }
-
-    public function updateUser(Request $request, $id)
-    {
-        $this->validate($request,array(
-            'name'        => 'required|string|max:191',
-            'mobile'      => 'required|string|max:191|unique:users,mobile,'.$id,
-            'role'        => 'required',
-            'hospitals'   => 'sometimes',
-            'doctors'   => 'sometimes',
-            'password'    => 'nullable|string|min:8|max:191',
-        ));
-
-        $user = User::find($id);
-        $user->name = $request->name;
-        $user->mobile = $request->mobile;
-        $user->role = $request->role;
-        if(isset($request->hospitals)){
-            $user->accessibleHospitals()->detach();
-            foreach($request->hospitals as $hospital_id) {
-                $hospital = Hospital::find($hospital_id);
-                $user->accessibleHospitals()->attach($hospital);
-            }            
-        }
-        if(isset($request->doctors)){
-            $user->accessibleDoctors()->detach();
-            foreach($request->doctors as $doctors_id) {
-                $doctor = Doctor::find($doctors_id);
-                $user->accessibleDoctors()->attach($doctor);
-            }            
-        }
-        if(!empty($request->password)) {
-            $user->password = Hash::make($request->password);
-        }
-        $user->save();
-
-        Session::flash('success', 'User updated successfully!');
-        return redirect()->route('dashboard.users');
     }
 
     public function updateBulkPackageDate(Request $request)
