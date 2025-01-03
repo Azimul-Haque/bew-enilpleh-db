@@ -231,9 +231,12 @@
                       {{-- Edit User Modal Code --}}
                       {{-- Edit User Modal Code --}}
 
-                      <button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#deleteUserModal{{ $hospital->id }}">
-                        <i class="fas fa-trash-alt"></i>
-                      </button>
+                      @if(Auth::user()->role == 'admin')
+                        <button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#deleteUserModal{{ $hospital->id }}">
+                          <i class="fas fa-trash-alt"></i>
+                        </button>
+                      @endif
+                      
                     </td>
                         {{-- Delete User Modal Code --}}
                         {{-- Delete User Modal Code --}}
