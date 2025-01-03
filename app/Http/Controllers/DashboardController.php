@@ -290,6 +290,13 @@ class DashboardController extends Controller
                 $user->accessibleHospitals()->attach($hospital);
             }            
         }
+        if(isset($request->doctors)){
+            $user->accessibleDoctors()->detach();
+            foreach($request->doctors as $doctors_id) {
+                $doctor = Doctor::find($doctors_id);
+                $user->accessibleDoctors()->attach($doctor);
+            }            
+        }
         if(!empty($request->password)) {
             $user->password = Hash::make($request->password);
         }
