@@ -240,6 +240,19 @@ class DashboardController extends Controller
                 $user->accessibleDoctors()->attach($doctor);
             }            
         }
+        if(isset($request->blooddonors)){
+            foreach($request->blooddonors as $blooddonor_id) {
+                $blooddonor = Blooddonor::find($blooddonor_id);
+                $user->accessibleBlooddonors()->attach($blooddonor);
+            }            
+        }
+
+        if(isset($request->coachings)){
+            foreach($request->coachings as $coaching_id) {
+                $coaching = Blooddonor::find($coaching_id);
+                $user->accessibleCoachings()->attach($coaching);
+            }            
+        }
         if(!empty($request->password)) {
             $user->password = Hash::make($request->password);
         }
