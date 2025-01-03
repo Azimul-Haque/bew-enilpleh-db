@@ -257,10 +257,10 @@ class DashboardController extends Controller
             }            
         }
 
-        if(isset($request->hospitals)){
-            foreach($request->hospitals as $hospital_id) {
-                $hospital = Hospital::find($hospital_id);
-                $user->accessibleHospitals()->attach($hospital);
+        if(isset($request->doctors)){
+            foreach($request->doctors as $doctors_id) {
+                $doctors = Doctor::find($doctors_id);
+                $user->accessibleDoctors()->attach($hospital);
             }            
         }
 
@@ -275,6 +275,7 @@ class DashboardController extends Controller
             'mobile'      => 'required|string|max:191|unique:users,mobile,'.$id,
             'role'        => 'required',
             'hospitals'   => 'sometimes',
+            'doctors'   => 'sometimes',
             'password'    => 'nullable|string|min:8|max:191',
         ));
 
