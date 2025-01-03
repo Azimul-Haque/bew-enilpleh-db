@@ -108,7 +108,7 @@ class APIController extends Controller
                      foreach($hospital->hospitalimages as $hospitalimage) {
                         $hospitalimagetemp->image = $hospitalimage->image;
                         $hospitalimagetemp->makeHidden('id', 'hospital_id', 'created_at', 'updated_at');
-                        $hospital->push($doctormedicaldepartment);
+                        $hospital->push($hospitalimagetemp);
                         // dd($doctorstoreturn);
                         
                      }
