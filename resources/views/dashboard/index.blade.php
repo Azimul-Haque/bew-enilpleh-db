@@ -102,7 +102,7 @@
               <span class="info-box-icon bg-primary elevation-1"><i class="fas fa-external-link-alt"></i></span>
 
               <div class="info-box-content">
-                <span class="info-box-text">ই-সেবা তালিকা</span>
+                <span class="info-box-text">রেন্ট-এ-কার তালিকা</span>
                 <small class="info-box-text" style="margin-top: 10px;">ক্লিক করুন</small>
               </div>
             </a>
