@@ -94,6 +94,7 @@ class HospitalController extends Controller
             'telephone'           => 'required',
             'mobile'              => 'sometimes',
             'location'            => 'required',
+            'description'            => 'sometimes',
             'website'            => 'sometimes|max:191',
             'address'            => 'required',
             'branch_data'            => 'sometimes',
