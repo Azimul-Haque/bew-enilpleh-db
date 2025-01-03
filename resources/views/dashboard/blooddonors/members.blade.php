@@ -7,7 +7,7 @@
 @endsection
 
 @section('content')
-  @section('page-header')  রক্তদাতা তালিকা / {{ $blooddonor->name }} (মোট সদস্য - {{ bangla($blooddonormemberscount) }} জন) @endsection
+  @section('page-header')  <a href="">রক্তদাতা তালিকা</a> / {{ $blooddonor->name }} (মোট সদস্য - {{ bangla($blooddonormemberscount) }} জন) @endsection
     <div class="container-fluid">
     <div class="card">
           <div class="card-header">
