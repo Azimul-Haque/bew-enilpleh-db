@@ -397,7 +397,7 @@
                                  value="{{ old('description') }}"
                                  autocomplete="off"
                                  class="form-control"
-                                 placeholder="বক্স এর বার্তা লিখুন (Optional)">
+                                 placeholder="বক্স এর জন্য বার্তা লিখুন (Optional)">
                           <div class="input-group-append">
                               <div class="input-group-text"><span class="fas fa-edit"></span></div>
                           </div>
