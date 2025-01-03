@@ -42,7 +42,7 @@
 </li>
 @endif
 
-@if(Auth::user()->role == 'admin' || Auth::user()->role == 'editor')
+@if(Auth::user()->role == 'admin')
 <li class="nav-item">
     <a href="{{ route('dashboard.ambulances') }}" class="nav-link {{ Request::is('dashboard/ambulances') ? 'active' : '' }} {{ Request::is('dashboard/ambulances/*') ? 'active' : '' }}">
         <i class="nav-icon fas fa-ambulance"></i>
@@ -51,7 +51,7 @@
 </li>
 @endif
 
-@if(Auth::user()->role == 'admin' || Auth::user()->role == 'editor')
+@if(Auth::user()->role == 'admin')
 <li class="nav-item">
     <a href="{{ route('dashboard.eshebas') }}" class="nav-link {{ Request::is('dashboard/eshebas') ? 'active' : '' }} {{ Request::is('dashboard/eshebas/*') ? 'active' : '' }}">
         <i class="nav-icon fas fa-external-link-alt"></i>
@@ -87,7 +87,7 @@
 </li>
 @endif
 
-@if(Auth::user()->role == 'admin' || Auth::user()->role == 'editor')
+@if(Auth::user()->role == 'admin')
 <li class="nav-item">
     <a href="{{ route('dashboard.lawyers') }}" class="nav-link {{ Request::is('dashboard/lawyers') ? 'active' : '' }} {{ Request::is('dashboard/lawyers/*') ? 'active' : '' }}">
         <i class="nav-icon fas fa-gavel"></i>
@@ -115,7 +115,7 @@
 </li>
 @endif
 
-@if(Auth::user()->role == 'admin' || Auth::user()->role == 'editor')
+@if(Auth::user()->role == 'admin')
 <li class="nav-item">
     <a href="{{ route('dashboard.buses') }}" class="nav-link {{ Request::is('dashboard/buses') ? 'active' : '' }} {{ Request::is('dashboard/buses/*') ? 'active' : '' }}">
         <i class="nav-icon fas fa-bus"></i>
@@ -124,7 +124,7 @@
 </li>
 @endif
 
-@if(Auth::user()->role == 'admin' || Auth::user()->role == 'editor')
+@if(Auth::user()->role == 'admin')
 <li class="nav-item">
     <a href="{{ route('dashboard.rentacars') }}" class="nav-link {{ Request::is('dashboard/rentacars') ? 'active' : '' }} {{ Request::is('dashboard/rentacars/*') ? 'active' : '' }}">
         <i class="nav-icon fas fa-car"></i>
@@ -133,7 +133,7 @@
 </li>
 @endif
 
-@if(Auth::user()->role == 'admin' || Auth::user()->role == 'editor')
+@if(Auth::user()->role == 'admin')
 <li class="nav-item">
     <a href="{{ route('dashboard.newspapers') }}" class="nav-link {{ Request::is('dashboard/newspapers') ? 'active' : '' }} {{ Request::is('dashboard/newspapers/*') ? 'active' : '' }}">
         <i class="nav-icon fas fa-newspaper"></i>
@@ -142,7 +142,7 @@
 </li>
 @endif
 
-@if(Auth::user()->role == 'admin' || Auth::user()->role == 'editor')
+@if(Auth::user()->role == 'admin')
 <li class="nav-item">
     <a href="{{ route('dashboard.journalists') }}" class="nav-link {{ Request::is('dashboard/journalists') ? 'active' : '' }} {{ Request::is('dashboard/journalists/*') ? 'active' : '' }}">
         <i class="nav-icon fas fa-gavel"></i>
