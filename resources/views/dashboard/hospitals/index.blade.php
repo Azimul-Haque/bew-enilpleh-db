@@ -406,9 +406,7 @@
                               <div class="input-group-text"><span class="fas fa-globe"></span></div>
                           </div>
                       </div>
-                    </div>
-                    
-                    <div class="col-md-6">
+
                       <div style="margin-bottom: 15px;">
                         <select name="branch_ids[]" class="form-control multiple-select" multiple="multiple" data-placeholder="শাখা হাসপাতাল (প্রয়োজনে একাধিক সিলেক্ট করা যাবে)">
                             
@@ -417,6 +415,10 @@
                             @endforeach
                         </select>
                       </div> 
+                    </div>
+                    
+                    <div class="col-md-6">
+                      
 
                       <div class="form-group" style="margin-top: 15px;">
                           <label for="image">ব্যানার-১ (Optional, Max 1 MB)</label>
