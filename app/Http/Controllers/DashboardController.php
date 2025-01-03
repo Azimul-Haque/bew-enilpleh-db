@@ -9,6 +9,7 @@ use App\Message;
 use App\Notification;
 
 use App\Hospital;
+use App\Doctor;
 
 use Carbon\Carbon;
 use DB;
