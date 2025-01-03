@@ -113,7 +113,7 @@
               <span class="info-box-icon bg-success elevation-1"><i class="fas fa-gavel"></i></span>
 
               <div class="info-box-content">
-                <span class="info-box-text">আইনজীবী তালিকা</span>
+                <span class="info-box-text">দৈনিক পত্রিকা তালিকা</span>
                 <small class="info-box-text" style="margin-top: 10px;">ক্লিক করুন</small>
               </div>
             </a>
