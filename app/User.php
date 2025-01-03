@@ -15,6 +15,11 @@ class User extends Authenticatable
         return $this->morphedByMany(Hospital::class, 'accessible', 'editor_access');
     }
 
+    public function accessibleDoctors()
+    {
+        return $this->morphedByMany(Hospital::class, 'accessible', 'editor_access');
+    }
+
     public function messages(){
         return $this->hasMany('App\Message');
     }
