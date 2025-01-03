@@ -121,6 +121,8 @@ class HospitalController extends Controller
         if($request->investigation_data) {
             $hospital->investigation_data = nl2br($request->investigation_data);
         }
+
+        
         
         $hospital->save();
 
