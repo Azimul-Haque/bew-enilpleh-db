@@ -110,7 +110,7 @@
 
           <div class="col-md-3">
             <a href="{{ route('dashboard.newspapers') }}" class="info-box mb-3">
-              <span class="info-box-icon bg-success elevation-1"><i class="fas fa-gavel"></i></span>
+              <span class="info-box-icon bg-success elevation-1"><i class="fas fa-newspaper"></i></span>
 
               <div class="info-box-content">
                 <span class="info-box-text">দৈনিক পত্রিকা তালিকা</span>
