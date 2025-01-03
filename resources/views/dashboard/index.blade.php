@@ -96,6 +96,50 @@
               </div>
             </a>
           </div>
+
+          <div class="col-md-3">
+            <a href="{{ route('dashboard.eshebas') }}" class="info-box mb-3">
+              <span class="info-box-icon bg-primary elevation-1"><i class="fas fa-external-link-alt"></i></span>
+
+              <div class="info-box-content">
+                <span class="info-box-text">ই-সেবা তালিকা</span>
+                <small class="info-box-text" style="margin-top: 10px;">ক্লিক করুন</small>
+              </div>
+            </a>
+          </div>
+
+          <div class="col-md-3">
+            <a href="{{ route('dashboard.lawyers') }}" class="info-box mb-3">
+              <span class="info-box-icon bg-success elevation-1"><i class="fas fa-gavel"></i></span>
+
+              <div class="info-box-content">
+                <span class="info-box-text">আইনজীবী তালিকা</span>
+                <small class="info-box-text" style="margin-top: 10px;">ক্লিক করুন</small>
+              </div>
+            </a>
+          </div>
+
+          <div class="col-md-3">
+            <a href="{{ route('dashboard.coachings') }}" class="info-box mb-3">
+              <span class="info-box-icon bg-warning elevation-1"><i class="fas fa-chalkboard-teacher"></i></span>
+
+              <div class="info-box-content">
+                <span class="info-box-text">শিক্ষা প্রতিষ্ঠান তালিকা</span>
+                <small class="info-box-text" style="margin-top: 10px;">ক্লিক করুন</small>
+              </div>
+            </a>
+          </div>
+
+          <div class="col-md-3">
+            <a href="{{ route('dashboard.buses') }}" class="info-box mb-3">
+              <span class="info-box-icon bg-info elevation-1"><i class="fas fa-bus"></i></span>
+
+              <div class="info-box-content">
+                <span class="info-box-text">বাস তালিকা</span>
+                <small class="info-box-text" style="margin-top: 10px;">ক্লিক করুন</small>
+              </div>
+            </a>
+          </div>
         </div>
 
         <div class="row">
