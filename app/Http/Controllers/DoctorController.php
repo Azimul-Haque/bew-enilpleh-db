@@ -34,7 +34,7 @@ class DoctorController extends Controller
     public function __construct()
     {
         parent::__construct();
-        $this->middleware(['admin'])->only('index', 'indexSearch');
+        $this->middleware(['admin'])->only();
     }
 
     public function index()
