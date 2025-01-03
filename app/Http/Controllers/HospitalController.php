@@ -252,7 +252,7 @@ class HospitalController extends Controller
         // image upload
         // image upload
         if($request->hasFile('image1')) {
-            if($doctor->doctorimage != null) {
+            if($hospital->doctorimage != null) {
                 $image_path = public_path('images/doctors/'. $doctor->doctorimage->image);
                 if(File::exists($image_path)) {
                     File::delete($image_path);
