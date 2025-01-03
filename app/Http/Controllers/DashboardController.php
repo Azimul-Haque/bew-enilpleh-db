@@ -312,12 +312,6 @@ class DashboardController extends Controller
         $user->name = $request->name;
         $user->mobile = $request->mobile;
         $user->role = $request->role;
-        $user->package_expiry_date = date('Y-m-d', strtotime($request->packageexpirydate)) . ' 23:59:59';
-        // if(!empty($request->sitecheck)) {
-        //     $user->sites = implode(',', $request->sitecheck);
-        // }
-        $user->uid = $request->uid;
-        $user->onesignal_id = $request->onesignal_id;
         if(!empty($request->password)) {
             $user->password = Hash::make($request->password);
         }
