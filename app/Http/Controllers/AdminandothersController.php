@@ -692,6 +692,51 @@ class AdminandothersController extends Controller
         $coaching->address = $request->address;
         $coaching->save();
 
+        // image upload
+        // image upload
+        if($request->hasFile('image1')) {
+            $image    = $request->file('image1');
+            $filename = random_string(5) . time() .'.' . "webp";
+            $location = public_path('images/coachings/'. $filename);
+            Image::make($image)->resize(300, null, function ($constraint) { $constraint->aspectRatio(); })->save($location);
+            $coachingimage1              = new Coachingimage;
+            $coachingimage1->coaching_id = $coaching->id;
+            $coachingimage1->image       = $filename;
+            $coachingimage1->save();
+        }
+        if($request->hasFile('image2')) {
+            $image    = $request->file('image2');
+            $filename = random_string(5) . time() .'.' . "webp";
+            $location = public_path('images/coachings/'. $filename);
+            Image::make($image)->resize(300, null, function ($constraint) { $constraint->aspectRatio(); })->save($location);
+            $coachingimage2              = new Coachingimage;
+            $coachingimage2->coaching_id = $coaching->id;
+            $coachingimage2->image       = $filename;
+            $coachingimage2->save();
+        }
+        if($request->hasFile('image3')) {
+            $image    = $request->file('image3');
+            $filename = random_string(5) . time() .'.' . "webp";
+            $location = public_path('images/coachings/'. $filename);
+            Image::make($image)->resize(300, null, function ($constraint) { $constraint->aspectRatio(); })->save($location);
+            $coachingimage3              = new Coachingimage;
+            $coachingimage3->coaching_id = $coaching->id;
+            $coachingimage3->image       = $filename;
+            $coachingimage3->save();
+        }
+        if($request->hasFile('image4')) {
+            $image    = $request->file('image4');
+            $filename = random_string(5) . time() .'.' . "webp";
+            $location = public_path('images/coachings/'. $filename);
+            Image::make($image)->resize(300, null, function ($constraint) { $constraint->aspectRatio(); })->save($location);
+            $coachingimage4              = new Coachingimage;
+            $coachingimage4->coaching_id = $coaching->id;
+            $coachingimage4->image       = $filename;
+            $coachingimage4->save();
+        }
+        // image upload
+        // image upload
+
         Cache::forget('coachings' . 1 . $district_id);
         Cache::forget('coachings' . 2 . $district_id);
         Cache::forget('coachings' . 3 . $district_id);
