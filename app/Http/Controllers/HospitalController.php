@@ -131,10 +131,10 @@ class HospitalController extends Controller
             Image::make($image)->resize(300, null, function ($constraint) { $constraint->aspectRatio(); })->save($location);
             // Image::make($image)->fit(300, 175)->save($location);
             // Image::make($image)->crop(300, 175)->save($location);
-            $doctorimage              = new Doctorimage;
-            $doctorimage->doctor_id = $doctor->id;
-            $doctorimage->image       = $filename;
-            $doctorimage->save();
+            $hospitalimage              = new Hospitalimage;
+            $hospitalimage->doctor_id = $doctor->id;
+            $hospitalimage->image       = $filename;
+            $hospitalimage->save();
         }
         // image upload
         // image upload
