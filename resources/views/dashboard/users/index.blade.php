@@ -218,7 +218,7 @@
                                     <div style="margin-bottom: 15px;">
                                       <select name="blooddonors[]" class="form-control multiple-select" multiple="multiple" data-placeholder="যে যে রক্তদাতা/সংগঠনের এক্সেস দেওয়া হবে (প্রয়োজনে একাধিক সিলেক্ট করা যাবে) [Optional]" onautocomplete="off">
                                           @foreach($blooddonors as $blooddonor)
-                                            <option value="{{ $blooddonor->id }}" @if($user->accessibleBlooddonor->contains($blooddonor)) selected @endif>{{ $blooddonor->name }} - ({{ $blooddonor->upazilla->name_bangla }}, {{ $blooddonor->district->name_bangla }})</option>
+                                            <option value="{{ $blooddonor->id }}" @if($user->accessibleBlooddonors->contains($blooddonor)) selected @endif>{{ $blooddonor->name }} - ({{ $blooddonor->upazilla->name_bangla }}, {{ $blooddonor->district->name_bangla }})</option>
                                           @endforeach
                                       </select>
                                     </div>
@@ -226,7 +226,7 @@
                                     <div style="margin-bottom: 15px;">
                                       <select name="coachings[]" class="form-control multiple-select" multiple="multiple" data-placeholder="যে যে শিক্ষা প্রতিষ্ঠানের এক্সেস দেওয়া হবে (প্রয়োজনে একাধিক সিলেক্ট করা যাবে) [Optional]" onautocomplete="off">
                                           @foreach($coachings as $coaching)
-                                            <option value="{{ $coaching->id }}">{{ $coaching->name }} - ({{ $coaching->district->name_bangla }})</option>
+                                            <option value="{{ $coaching->id }}" @if($user->accessibleCoachings->contains($coaching)) selected @endif>{{ $coaching->name }} - ({{ $coaching->district->name_bangla }})</option>
                                           @endforeach
                                       </select>
                                     </div>
