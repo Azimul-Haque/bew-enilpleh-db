@@ -270,7 +270,7 @@
     <!-- Modal -->
     <div class="modal fade" id="addUserModal" tabindex="-1" role="dialog" aria-labelledby="addUserModalLabel" aria-hidden="true" data-backdrop="static">
       <div class="modal-dialog" role="document">
-        <div class="modal-content modal-bg">
+        <div class="modal-content modal-md">
           <div class="modal-header bg-success">
             <h5 class="modal-title" id="addUserModalLabel">নতুন ব্যবহারকারী যোগ</h5>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
