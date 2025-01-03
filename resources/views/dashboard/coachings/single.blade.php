@@ -59,108 +59,109 @@
                       <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#editUserModal{{ $coaching->id }}">
                         <i class="fas fa-edit"></i>
                       </button>
-                      {{-- Edit User Modal Code --}}
-                      {{-- Edit User Modal Code --}}
-                      <!-- Modal -->
-                      <div class="modal fade" id="editUserModal{{ $coaching->id }}" tabindex="-1" role="dialog" aria-labelledby="editUserModalLabel" aria-hidden="true" data-backdrop="static">
-                        <div class="modal-dialog modal-lg" role="document">
-                          <div class="modal-content">
-                            <div class="modal-header bg-primary">
-                              <h5 class="modal-title" id="editUserModalLabel">শিক্ষা প্রতিষ্ঠান তথ্য হালনাগাদ</h5>
-                              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                              </button>
-                            </div>
-                            <form method="post" action="{{ route('dashboard.coachings.update', [$district->id, $coaching->id]) }}" enctype="multipart/form-data">
-                              <div class="modal-body">
-                                
-                                    @csrf
-
-                                    <div class="input-group mb-3">
-                                        <input type="text"
-                                               name="name"
-                                               class="form-control"
-                                               value="{{ $coaching->name }}"
-                                               placeholder="শিক্ষা প্রতিষ্ঠানের নাম" required>
-                                        <div class="input-group-append">
-                                            <div class="input-group-text"><span class="fas fa-user-tie"></span></div>
-                                        </div>
-                                    </div>
-
-                                    <div class="input-group mb-3">
-                                      <select name="type" class="form-control" required>
-                                          <option selected="" disabled="" value="">শিক্ষা প্রতিষ্ঠানের ধরন</option>
-                                          <option value="1" @if($coaching->type == 1) selected @endif>সরকারি শিক্ষা প্রতিষ্ঠান</option>
-                                          <option value="2" @if($coaching->type == 2) selected @endif>বেসরকারি শিক্ষা প্রতিষ্ঠান</option>
-                                          <option value="3" @if($coaching->type == 3) selected @endif>কোচিং সেন্টার</option>
-                                      </select>
-                                      <div class="input-group-append">
-                                          <div class="input-group-text"><span class="fas fa-star-half-alt"></span></div>
-                                      </div>
-                                    </div>
-
-                                    <div class="input-group mb-3">
-                                        <input type="number"
-                                               name="mobile"
-                                               value="{{ $coaching->mobile }}"
-                                               class="form-control"
-                                               placeholder="শিক্ষা প্রতিষ্ঠানের মোবাইল নম্বর" required>
-                                        <div class="input-group-append">
-                                            <div class="input-group-text"><span class="fas fa-mobile"></span></div>
-                                        </div>
-                                    </div>
-                                    <div class="input-group mb-3">
-                                        <input type="text"
-                                               name="address"
-                                               class="form-control"
-                                               value="{{ $coaching->address }}"
-                                               placeholder="শিক্ষা প্রতিষ্ঠানের ঠিকানা" required>
-                                        <div class="input-group-append">
-                                            <div class="input-group-text"><span class="fas fa-map-marked-alt"></span></div>
-                                        </div>
-                                    </div>
-
-                                    <div class="row">
-                                      <div class="col-md-6">
-                                        <div class="form-group" style="margin-top: 15px;">
-                                            <label for="image">ব্যানার-১ (Optional, Max 1 MB)</label>
-                                            <input type="file" name="image1" accept="image/*">
-                                        </div>
-
-                                        <div class="form-group" style="margin-top: 15px;">
-                                            <label for="image">ব্যানার-২ (Optional, Max 1 MB)</label>
-                                            <input type="file" name="image2" accept="image/*">
-                                        </div>
-                                      </div>
-                                      <div class="col-md-6">
-                                        <div class="form-group" style="margin-top: 15px;">
-                                            <label for="image">ব্যানার-৩ (Optional, Max 1 MB)</label>
-                                            <input type="file" name="image3" accept="image/*">
-                                        </div>
-
-                                        <div class="form-group" style="margin-top: 15px;">
-                                            <label for="image">ব্যানার-৪ (Optional, Max 1 MB)</label>
-                                            <input type="file" name="image4" accept="image/*">
-                                        </div>
-                                      </div>
-                                    </div>
-                                     
-                              </div>
-                              <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-dismiss="modal">ফিরে যান</button>
-                                <button type="submit" class="btn btn-primary">দাখিল করুন</button>
-                              </div>
-                            </form>
-                          </div>
-                        </div>
-                      </div>
-                      {{-- Edit User Modal Code --}}
-                      {{-- Edit User Modal Code --}}
-
                       <button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#deleteUserModal{{ $coaching->id }}">
                         <i class="fas fa-trash-alt"></i>
                       </button>
                     </td>
+
+                    {{-- Edit User Modal Code --}}
+                    {{-- Edit User Modal Code --}}
+                    <!-- Modal -->
+                    <div class="modal fade" id="editUserModal{{ $coaching->id }}" tabindex="-1" role="dialog" aria-labelledby="editUserModalLabel" aria-hidden="true" data-backdrop="static">
+                      <div class="modal-dialog modal-lg" role="document">
+                        <div class="modal-content">
+                          <div class="modal-header bg-primary">
+                            <h5 class="modal-title" id="editUserModalLabel">শিক্ষা প্রতিষ্ঠান তথ্য হালনাগাদ</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                              <span aria-hidden="true">&times;</span>
+                            </button>
+                          </div>
+                          <form method="post" action="{{ route('dashboard.coachings.update', [$district->id, $coaching->id]) }}" enctype="multipart/form-data">
+                            <div class="modal-body">
+                              
+                                  @csrf
+
+                                  <div class="input-group mb-3">
+                                      <input type="text"
+                                             name="name"
+                                             class="form-control"
+                                             value="{{ $coaching->name }}"
+                                             placeholder="শিক্ষা প্রতিষ্ঠানের নাম" required>
+                                      <div class="input-group-append">
+                                          <div class="input-group-text"><span class="fas fa-user-tie"></span></div>
+                                      </div>
+                                  </div>
+
+                                  <div class="input-group mb-3">
+                                    <select name="type" class="form-control" required>
+                                        <option selected="" disabled="" value="">শিক্ষা প্রতিষ্ঠানের ধরন</option>
+                                        <option value="1" @if($coaching->type == 1) selected @endif>সরকারি শিক্ষা প্রতিষ্ঠান</option>
+                                        <option value="2" @if($coaching->type == 2) selected @endif>বেসরকারি শিক্ষা প্রতিষ্ঠান</option>
+                                        <option value="3" @if($coaching->type == 3) selected @endif>কোচিং সেন্টার</option>
+                                    </select>
+                                    <div class="input-group-append">
+                                        <div class="input-group-text"><span class="fas fa-star-half-alt"></span></div>
+                                    </div>
+                                  </div>
+
+                                  <div class="input-group mb-3">
+                                      <input type="number"
+                                             name="mobile"
+                                             value="{{ $coaching->mobile }}"
+                                             class="form-control"
+                                             placeholder="শিক্ষা প্রতিষ্ঠানের মোবাইল নম্বর" required>
+                                      <div class="input-group-append">
+                                          <div class="input-group-text"><span class="fas fa-mobile"></span></div>
+                                      </div>
+                                  </div>
+                                  <div class="input-group mb-3">
+                                      <input type="text"
+                                             name="address"
+                                             class="form-control"
+                                             value="{{ $coaching->address }}"
+                                             placeholder="শিক্ষা প্রতিষ্ঠানের ঠিকানা" required>
+                                      <div class="input-group-append">
+                                          <div class="input-group-text"><span class="fas fa-map-marked-alt"></span></div>
+                                      </div>
+                                  </div>
+
+                                  <div class="row">
+                                    <div class="col-md-6">
+                                      <div class="form-group" style="margin-top: 15px;">
+                                          <label for="image">ব্যানার-১ (Optional, Max 1 MB)</label>
+                                          <input type="file" name="image1" accept="image/*">
+                                      </div>
+
+                                      <div class="form-group" style="margin-top: 15px;">
+                                          <label for="image">ব্যানার-২ (Optional, Max 1 MB)</label>
+                                          <input type="file" name="image2" accept="image/*">
+                                      </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                      <div class="form-group" style="margin-top: 15px;">
+                                          <label for="image">ব্যানার-৩ (Optional, Max 1 MB)</label>
+                                          <input type="file" name="image3" accept="image/*">
+                                      </div>
+
+                                      <div class="form-group" style="margin-top: 15px;">
+                                          <label for="image">ব্যানার-৪ (Optional, Max 1 MB)</label>
+                                          <input type="file" name="image4" accept="image/*">
+                                      </div>
+                                    </div>
+                                  </div>
+                                   
+                            </div>
+                            <div class="modal-footer">
+                              <button type="button" class="btn btn-secondary" data-dismiss="modal">ফিরে যান</button>
+                              <button type="submit" class="btn btn-primary">দাখিল করুন</button>
+                            </div>
+                          </form>
+                        </div>
+                      </div>
+                    </div>
+                    {{-- Edit User Modal Code --}}
+                    {{-- Edit User Modal Code --}}
+                    
                         {{-- Delete User Modal Code --}}
                         {{-- Delete User Modal Code --}}
                         <!-- Modal -->
