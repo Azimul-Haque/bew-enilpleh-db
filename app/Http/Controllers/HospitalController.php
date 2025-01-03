@@ -131,20 +131,29 @@ class HospitalController extends Controller
             $filename = random_string(5) . time() .'.' . "webp";
             $location = public_path('images/hospitals/'. $filename);
             Image::make($image)->resize(300, null, function ($constraint) { $constraint->aspectRatio(); })->save($location);
-            $hospitalimage              = new Hospitalimage;
-            $hospitalimage->hospital_id = $hospital->id;
-            $hospitalimage->image       = $filename;
-            $hospitalimage->save();
+            $hospitalimage1              = new Hospitalimage;
+            $hospitalimage1->hospital_id = $hospital->id;
+            $hospitalimage1->image       = $filename;
+            $hospitalimage1->save();
         }
         if($request->hasFile('image2')) {
             $image    = $request->file('image2');
             $filename = random_string(5) . time() .'.' . "webp";
             $location = public_path('images/hospitals/'. $filename);
             Image::make($image)->resize(300, null, function ($constraint) { $constraint->aspectRatio(); })->save($location);
-            $hospitalimage              = new Hospitalimage;
-            $hospitalimage->hospital_id = $hospital->id;
-            $hospitalimage->image       = $filename;
-            $hospitalimage->save();
+            $hospitalimage2              = new Hospitalimage;
+            $hospitalimage2->hospital_id = $hospital->id;
+            $hospitalimage2->image       = $filename;
+            $hospitalimage2->save();
+        }if($request->hasFile('image3')) {
+            $image    = $request->file('image3');
+            $filename = random_string(5) . time() .'.' . "webp";
+            $location = public_path('images/hospitals/'. $filename);
+            Image::make($image)->resize(300, null, function ($constraint) { $constraint->aspectRatio(); })->save($location);
+            $hospitalimage3              = new Hospitalimage;
+            $hospitalimage3->hospital_id = $hospital->id;
+            $hospitalimage3->image       = $filename;
+            $hospitalimage3->save();
         }
         // image upload
         // image upload
