@@ -419,7 +419,7 @@
 
                         <div class="form-group">
                             <label for="image">ব্যানার-১ (Optional, Max 1 MB)</label>
-                            <input type="file" id="image" name="image" accept="image/*">
+                            <input type="file" name="image1" accept="image/*">
                         </div>
                       </div> 
                     </div>
