@@ -49,10 +49,7 @@ class DashboardController extends Controller
         // if user is a manager, redirect him to his profile
         if(Auth::user()->role == 'user') {
             abort(403, 'Access Denied');
-        } elseif(Auth::user()->role == 'editor') {
-            // echo 'ase';
-            return redirect()->route('dashboard.questions.reported');
-        }
+        } 
 
         // $totalsites = Site::count();
         $totalusers = User::count();
