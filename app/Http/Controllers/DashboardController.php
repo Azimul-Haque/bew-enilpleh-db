@@ -144,12 +144,16 @@ class DashboardController extends Controller
 
         $hospitals = Hospital::all();
         $doctors = Doctor::all();
+        $blooddonors = Blooddonor::all();
+        $coachings = Coaching::all();
 
         return view('dashboard.users.index')
                     ->withUsers($users)
                     ->withUserscount($userscount)
                     ->withHospitals($hospitals)
-                    ->withDoctors($doctors);
+                    ->withDoctors($doctors)
+                    ->withBlooddonors($blooddonors)
+                    ->withCoachings($coachings);
     }
 
     public function storeUser(Request $request)
