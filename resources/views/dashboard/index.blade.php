@@ -88,7 +88,7 @@
 
           <div class="col-md-3">
             <a href="{{ route('dashboard.buses') }}" class="info-box mb-3">
-              <span class="info-box-icon bg-info elevation-1"><i class="fas fa-hospital"></i></span>
+              <span class="info-box-icon bg-info elevation-1"><i class="fas fa-bus"></i></span>
 
               <div class="info-box-content">
                 <span class="info-box-text">বাস তালিকা</span>
