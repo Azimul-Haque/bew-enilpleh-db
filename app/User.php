@@ -22,13 +22,13 @@ class User extends Authenticatable
     //     return $this->hasMany('App\Meritlist');
     // }
 
-    public function reportedquestions(){
-        return $this->hasMany('App\Reportedquestion');
-    }
+    // public function reportedquestions(){
+    //     return $this->hasMany('App\Reportedquestion');
+    // }
 
-    public function blogs(){
-        return $this->hasMany('App\Blog');
-    }
+    // public function blogs(){
+    //     return $this->hasMany('App\Blog');
+    // }
 
     /**
      * The attributes that are mass assignable.
