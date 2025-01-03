@@ -81,7 +81,6 @@
                           <i class="fas fa-trash-alt"></i>
                         </button>
                       @endif
-                      
                     </td>
                     <div class="modal fade" id="editUserModal{{ $hospital->id }}" tabindex="-1" role="dialog" aria-labelledby="editUserModalLabel" aria-hidden="true" data-backdrop="static">
                         <div class="modal-dialog modal-lg" role="document">
