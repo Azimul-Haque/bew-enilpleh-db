@@ -25,9 +25,9 @@ class User extends Authenticatable
         return $this->morphedByMany(Blooddonor::class, 'accessible', 'editor_access');
     }
 
-    public function accessibleBlooddonors()
+    public function accessibleCoachings()
     {
-        return $this->morphedByMany(Blooddonor::class, 'accessible', 'editor_access');
+        return $this->morphedByMany(Coaching::class, 'accessible', 'editor_access');
     }
 
     public function messages(){
