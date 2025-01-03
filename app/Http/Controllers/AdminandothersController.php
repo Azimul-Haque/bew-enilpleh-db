@@ -631,7 +631,7 @@ class AdminandothersController extends Controller
             $location = public_path('images/coachings/'. $filename);
             Image::make($image)->resize(300, null, function ($constraint) { $constraint->aspectRatio(); })->save($location);
             $coachingimage1              = new Coachingimage;
-            $coachingimage1->hospital_id = $coaching->id;
+            $coachingimage1->coaching_id = $coaching->id;
             $coachingimage1->image       = $filename;
             $coachingimage1->save();
         }
