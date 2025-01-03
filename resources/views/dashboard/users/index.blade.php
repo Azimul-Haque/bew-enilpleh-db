@@ -55,9 +55,9 @@
                 			<span class="badge @if($user->role == 'admin') bg-success @else bg-info @endif">{{ ucfirst($user->role) }}</span>
                 		</td>
                 		<td align="right" width="40%">
-                      <button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#smsModal{{ $user->id }}">
+                      {{-- <button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#smsModal{{ $user->id }}">
                         <i class="fas fa-envelope"></i>
-                      </button>
+                      </button> --}}
                       {{-- SMS Modal Code --}}
                       {{-- SMS Modal Code --}}
                       <!-- Modal -->
