@@ -87,7 +87,7 @@
                               <span aria-hidden="true">&times;</span>
                             </button>
                           </div>
-                          <form method="post" action="{{ route('dashboard.hospitals.update', $hospital->id) }}" >
+                          <form method="post" action="{{ route('dashboard.hospitals.update', $hospital->id) }}" enctype="multipart/form-data">
                             <div class="modal-body">
                               
                                   @csrf
@@ -298,7 +298,7 @@
               <span aria-hidden="true">&times;</span>
             </button>
           </div>
-          <form method="post" action="{{ route('dashboard.hospitals.store') }}">
+          <form method="post" action="{{ route('dashboard.hospitals.store') }}" enctype="multipart/form-data">
             <div class="modal-body">
               
                   @csrf
