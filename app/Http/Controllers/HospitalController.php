@@ -121,11 +121,21 @@ class HospitalController extends Controller
         if($request->investigation_data) {
             $hospital->investigation_data = nl2br($request->investigation_data);
         }
-        
+
         $hospital->save();
 
         // image upload
         // image upload
+        if($request->hasFile('image1')) {
+            $image    = $request->file('image1');
+            $filename = random_string(5) . time() .'.' . "webp";
+            $location = public_path('images/hospitals/'. $filename);
+            Image::make($image)->resize(300, null, function ($constraint) { $constraint->aspectRatio(); })->save($location);
+            $hospitalimage              = new Hospitalimage;
+            $hospitalimage->hospital_id = $hospital->id;
+            $hospitalimage->image       = $filename;
+            $hospitalimage->save();
+        }
         if($request->hasFile('image1')) {
             $image    = $request->file('image1');
             $filename = random_string(5) . time() .'.' . "webp";
