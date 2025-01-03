@@ -231,7 +231,6 @@
             			    </div>
             			    {{-- Edit User Modal Code --}}
             			    {{-- Edit User Modal Code --}}
-
                       
                 			<button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#deleteUserModal{{ $user->id }}">
                 				<i class="fas fa-user-minus"></i>
