@@ -145,8 +145,19 @@ class HospitalController extends Controller
             $hospitalimage2->hospital_id = $hospital->id;
             $hospitalimage2->image       = $filename;
             $hospitalimage2->save();
-        }if($request->hasFile('image3')) {
+        }
+        if($request->hasFile('image3')) {
             $image    = $request->file('image3');
+            $filename = random_string(5) . time() .'.' . "webp";
+            $location = public_path('images/hospitals/'. $filename);
+            Image::make($image)->resize(300, null, function ($constraint) { $constraint->aspectRatio(); })->save($location);
+            $hospitalimage3              = new Hospitalimage;
+            $hospitalimage3->hospital_id = $hospital->id;
+            $hospitalimage3->image       = $filename;
+            $hospitalimage3->save();
+        }
+        if($request->hasFile('image4')) {
+            $image    = $request->file('image4');
             $filename = random_string(5) . time() .'.' . "webp";
             $location = public_path('images/hospitals/'. $filename);
             Image::make($image)->resize(300, null, function ($constraint) { $constraint->aspectRatio(); })->save($location);
