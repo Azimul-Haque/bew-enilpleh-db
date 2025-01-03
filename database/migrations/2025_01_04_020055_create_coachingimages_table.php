@@ -15,6 +15,8 @@ class CreateCoachingimagesTable extends Migration
     {
         Schema::create('coachingimages', function (Blueprint $table) {
             $table->id();
+            $table->integer('coaching_id');
+            $table->string('image');
             $table->timestamps();
         });
     }
