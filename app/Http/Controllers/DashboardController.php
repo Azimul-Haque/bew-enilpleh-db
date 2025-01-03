@@ -165,6 +165,8 @@ class DashboardController extends Controller
             'role'        => 'required',
             'hospitals'   => 'sometimes',
             'doctors'   => 'sometimes',
+            'blooddonors'   => 'sometimes',
+            'coachings'   => 'sometimes',
             'password'    => 'required|string|min:8|max:191',
         ));
 
@@ -201,6 +203,8 @@ class DashboardController extends Controller
             'role'        => 'required',
             'hospitals'   => 'sometimes',
             'doctors'   => 'sometimes',
+            'blooddonors'   => 'sometimes',
+            'coachings'   => 'sometimes',
             'password'    => 'nullable|string|min:8|max:191',
         ));
 
