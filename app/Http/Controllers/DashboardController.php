@@ -109,11 +109,13 @@ class DashboardController extends Controller
         $users = User::where('name', '!=', null)->orderBy('id', 'asc')->paginate(10);
 
         $hospitals = Hospital::all();
+        $doctors = Doctor::all();
 
         return view('dashboard.users.index')
                     ->withUsers($users)
                     ->withUserscount($userscount)
-                    ->withHospitals($hospitals);
+                    ->withHospitals($hospitals)
+                    ->withDoctors($doctors);
     }
 
     public function getUsersSort()
