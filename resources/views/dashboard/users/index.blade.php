@@ -231,7 +231,7 @@
             			    </div>
             			    {{-- Edit User Modal Code --}}
             			    {{-- Edit User Modal Code --}}
-                      
+
                 			<button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#deleteUserModal{{ $user->id }}">
                 				<i class="fas fa-user-minus"></i>
                 			</button>
@@ -331,6 +331,14 @@
 
                   <div style="margin-bottom: 15px;">
                     <select name="hospitals[]" class="form-control multiple-select" multiple="multiple" data-placeholder="যে যে হাসপাতালের এক্সেস দেওয়া হবে (প্রয়োজনে একাধিক সিলেক্ট করা যাবে) [Optional]" onautocomplete="off">
+                        @foreach($hospitals as $hospital)
+                          <option value="{{ $hospital->id }}">{{ $hospital->name }} - ({{ $hospital->upazilla->name_bangla }}, {{ $hospital->district->name_bangla }})</option>
+                        @endforeach
+                    </select>
+                  </div>
+
+                  <div style="margin-bottom: 15px;">
+                    <select name="hospitals[]" class="form-control multiple-select" multiple="multiple" data-placeholder="যে যে ডাক্তারের এক্সেস দেওয়া হবে (প্রয়োজনে একাধিক সিলেক্ট করা যাবে) [Optional]" onautocomplete="off">
                         @foreach($hospitals as $hospital)
                           <option value="{{ $hospital->id }}">{{ $hospital->name }} - ({{ $hospital->upazilla->name_bangla }}, {{ $hospital->district->name_bangla }})</option>
                         @endforeach
