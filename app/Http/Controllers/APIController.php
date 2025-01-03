@@ -110,7 +110,7 @@ class APIController extends Controller
                         $imagestemp->makeHidden('id', 'hospital_id', 'created_at', 'updated_at');
                         // $hospital->push($hospitalimagetemp);
                      }
-                     // $hospital->images = $hospital->hospitalimages;
+                     $hospital->images = $imagestemp;
 
                      $hospital->makeHidden('hospitalimages', 'district', 'upazilla', 'created_at', 'updated_at');
                      dd($hospital);
