@@ -749,7 +749,6 @@ class APIController extends Controller
                                  ->where('type', $type) // 1 = Govt, 2 = Private, 3 = Coaching
                                  ->get();
                  foreach($coachings as $coaching) {
-                     $coaching->makeHidden('id', 'district_id', 'created_at', 'updated_at');
                      $imagestemp = collect();
                      foreach($coaching->coachingimages as $coachingimage) {
                         $imagestemp->push($coachingimage->image);
@@ -757,6 +756,7 @@ class APIController extends Controller
                         // $coaching->push($coachingimagetemp);
                      }
                      $coaching->images = $imagestemp;
+                     $coaching->makeHidden('id', 'district_id', 'created_at', 'updated_at');
                  }
                  return $coachings;
             });
