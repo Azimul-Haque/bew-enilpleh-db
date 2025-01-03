@@ -418,7 +418,7 @@
                         </select>
 
                         <div class="form-group">
-                            <label for="image">ছবি/ ভিজিটিং কার্ড/ ব্যানার (প্রয়োজনে, ৩০০ h x ১৭৫ w সাইজের, ২ মেগাবাইটের মধ্যে)</label>
+                            <label for="image">ব্যানার-১ (Optional, Max 1 MB)</label>
                             <input type="file" id="image" name="image" accept="image/*">
                         </div>
                       </div> 
