@@ -26,6 +26,7 @@ return array(
     'App\\Exceptions\\Handler' => $baseDir . '/app/Exceptions/Handler.php',
     'App\\Fireservice' => $baseDir . '/app/Fireservice.php',
     'App\\Hospital' => $baseDir . '/app/Hospital.php',
+    'App\\Hospitalimage' => $baseDir . '/app/Hospitalimage.php',
     'App\\Http\\Controllers\\APIController' => $baseDir . '/app/Http/Controllers/APIController.php',
     'App\\Http\\Controllers\\AdminandothersController' => $baseDir . '/app/Http/Controllers/AdminandothersController.php',
     'App\\Http\\Controllers\\AmbulanceController' => $baseDir . '/app/Http/Controllers/AmbulanceController.php',

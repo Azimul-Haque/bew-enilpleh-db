@@ -577,6 +577,7 @@ class ComposerStaticInitd99be2aa22b662638be63ef18831ea06
         'App\\Exceptions\\Handler' => __DIR__ . '/../..' . '/app/Exceptions/Handler.php',
         'App\\Fireservice' => __DIR__ . '/../..' . '/app/Fireservice.php',
         'App\\Hospital' => __DIR__ . '/../..' . '/app/Hospital.php',
+        'App\\Hospitalimage' => __DIR__ . '/../..' . '/app/Hospitalimage.php',
         'App\\Http\\Controllers\\APIController' => __DIR__ . '/../..' . '/app/Http/Controllers/APIController.php',
         'App\\Http\\Controllers\\AdminandothersController' => __DIR__ . '/../..' . '/app/Http/Controllers/AdminandothersController.php',
         'App\\Http\\Controllers\\AmbulanceController' => __DIR__ . '/../..' . '/app/Http/Controllers/AmbulanceController.php',
