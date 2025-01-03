@@ -85,6 +85,7 @@
         <p>ফায়ার সার্ভিস</p>
     </a>
 </li>
+@endif 
 
 @if(Auth::user()->role == 'admin')
 <li class="nav-item">
@@ -93,7 +94,6 @@
         <p>র‍্যাব</p>
     </a>
 </li>
-@endif
 @endif --}}
 
 @if(Auth::user()->role == 'admin')
