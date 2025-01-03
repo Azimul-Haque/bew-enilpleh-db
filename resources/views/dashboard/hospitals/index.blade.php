@@ -174,7 +174,7 @@
                                             </div>
                                         </div>
                                       </div>
-                                      <div class="col-md-12">
+                                      <div class="col-md-6">
                                         <div class="input-group mb-3">
                                             <input type="text"
                                                    name="location"
@@ -186,8 +186,6 @@
                                                 <div class="input-group-text"><span class="fas fa-map-marker-alt"></span></div>
                                             </div>
                                         </div>
-                                      </div>
-                                      <div class="col-md-12">
                                         <div class="input-group mb-3">
                                             <input type="text"
                                                    name="website"
@@ -199,6 +197,9 @@
                                                 <div class="input-group-text"><span class="fas fa-globe"></span></div>
                                             </div>
                                         </div>
+                                      </div>
+                                      <div class="col-md-12">
+                                        
                                       </div>
                                       <div class="col-md-6">
                                         <div class="input-group mb-3">
