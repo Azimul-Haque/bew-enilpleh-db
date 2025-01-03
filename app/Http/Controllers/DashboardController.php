@@ -242,6 +242,9 @@ class DashboardController extends Controller
                      ->orderBy('id', 'desc')
                      ->paginate(10);
 
+        $hospitals = Hospital::all();
+        $doctors = Doctor::all();
+
         // $sites = Site::all();
         return view('dashboard.users.index')
                     ->withUsers($users)
