@@ -14,8 +14,8 @@
               <span class="info-box-icon bg-warning elevation-1"><i class="fas fa-hospital"></i></span>
 
               <div class="info-box-content">
-                <span class="info-box-text">হাসপাতাল তালিকা</span><br/>
-                <small class="info-box-text">ক্লিক করুন</small>
+                <span class="info-box-text">হাসপাতাল তালিকা</span>
+                <small class="info-box-text" style="margin-top: 10px;">ক্লিক করুন</small>
               </div>
             </a>
           </div>
