@@ -105,6 +105,23 @@ class APIController extends Controller
                      $hospital->districtname = $hospital->district->name_bangla;
                      $hospital->upazillaname = $hospital->upazilla->name_bangla;
                      $hospital->images = $hospital->hospitalimages;
+                     foreach($doctormedicaldepartments as $doctormedicaldepartment) {
+                        $doctormedicaldepartment->id = $doctormedicaldepartment->doctor->id;
+                        $doctormedicaldepartment->name = $doctormedicaldepartment->doctor->name;
+                        $doctormedicaldepartment->degree = $doctormedicaldepartment->doctor->degree;
+                        $doctormedicaldepartment->specialization = $doctormedicaldepartment->doctor->specialization;
+                        $doctormedicaldepartment->serial = $doctormedicaldepartment->doctor->serial;
+                        $doctormedicaldepartment->address = $doctormedicaldepartment->doctor->address;
+                        $doctormedicaldepartment->helpline = $doctormedicaldepartment->doctor->helpline;
+                        $doctormedicaldepartment->weekdays = $doctormedicaldepartment->doctor->weekdays;
+                        $doctormedicaldepartment->timefrom = $doctormedicaldepartment->doctor->timefrom;
+                        $doctormedicaldepartment->timeto = $doctormedicaldepartment->doctor->timeto;
+                        $doctormedicaldepartment->image = $doctormedicaldepartment->doctor->doctorimage ? $doctormedicaldepartment->doctor->doctorimage->image : '';
+                        $doctormedicaldepartment->makeHidden('doctor', 'medicaldepartment_id', 'doctor_id', 'created_at', 'updated_at');
+                        $doctorstoreturn->push($doctormedicaldepartment);
+                        // dd($doctorstoreturn);
+                        
+                     }
                      $hospital->makeHidden('hospitalimages', 'district', 'upazilla', 'created_at', 'updated_at');
                  }
                  return $hospitals;
