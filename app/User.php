@@ -10,9 +10,10 @@ class User extends Authenticatable
 {
     use Notifiable;
 
-    // public function payments(){
-    //     return $this->hasMany('App\Payment');
-    // }
+    public function accessibleEntities()
+    {
+        return $this->morphToMany(Accessible::class, 'accessible', 'editor_access');
+    }
 
     public function messages(){
         return $this->hasMany('App\Message');
