@@ -190,6 +190,12 @@
             				                    </div>
             				                </div>
 
+                                    <select name="hospitals[]" class="form-control multiple-select" multiple="multiple" data-placeholder="ডাক্তার যে হাসপাতালের সাথে সম্পৃক্ত (প্রয়োজনে একাধিক সিলেক্ট করা যাবে)">
+                                        @foreach($hospitals as $hospital)
+                                          <option value="{{ $hospital->id }}" @if(in_array($hospital->id, $doctor->doctorhospitals->pluck('hospital_id')->toArray())) selected @endif>{{ $hospital->name }} - ({{ $hospital->upazilla->name_bangla }}, {{ $hospital->district->name_bangla }})</option>
+                                        @endforeach
+                                    </select>
+
             				                <div class="input-group mb-3">
             				                    <input type="password"
             				                           name="password"
