@@ -98,6 +98,10 @@ class BlooddonorController extends Controller
         $blooddonor->mobile = $request->mobile;
         $blooddonor->save();
 
+        if(Auth::user()->role == 'editor') {
+            Auth::user()->accessibleDoctors()->attach($blooddonor);
+        }
+
         
         Cache::forget('blooddonors'. $request->category . $request->district_id);
         Cache::forget('blooddonors'. $request->category . $request->district_id. $request->upazilla_id);
