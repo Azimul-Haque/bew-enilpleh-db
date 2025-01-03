@@ -627,42 +627,42 @@ class AdminandothersController extends Controller
         if($request->hasFile('image1')) {
             $image    = $request->file('image1');
             $filename = random_string(5) . time() .'.' . "webp";
-            $location = public_path('images/hospitals/'. $filename);
+            $location = public_path('images/coachings/'. $filename);
             Image::make($image)->resize(300, null, function ($constraint) { $constraint->aspectRatio(); })->save($location);
-            $hospitalimage1              = new Hospitalimage;
-            $hospitalimage1->hospital_id = $hospital->id;
-            $hospitalimage1->image       = $filename;
-            $hospitalimage1->save();
+            $coachingimage1              = new Hospitalimage;
+            $coachingimage1->hospital_id = $hospital->id;
+            $coachingimage1->image       = $filename;
+            $coachingimage1->save();
         }
         if($request->hasFile('image2')) {
             $image    = $request->file('image2');
             $filename = random_string(5) . time() .'.' . "webp";
-            $location = public_path('images/hospitals/'. $filename);
+            $location = public_path('images/coachings/'. $filename);
             Image::make($image)->resize(300, null, function ($constraint) { $constraint->aspectRatio(); })->save($location);
-            $hospitalimage2              = new Hospitalimage;
-            $hospitalimage2->hospital_id = $hospital->id;
-            $hospitalimage2->image       = $filename;
-            $hospitalimage2->save();
+            $coachingimage2              = new Hospitalimage;
+            $coachingimage2->hospital_id = $hospital->id;
+            $coachingimage2->image       = $filename;
+            $coachingimage2->save();
         }
         if($request->hasFile('image3')) {
             $image    = $request->file('image3');
             $filename = random_string(5) . time() .'.' . "webp";
-            $location = public_path('images/hospitals/'. $filename);
+            $location = public_path('images/coachings/'. $filename);
             Image::make($image)->resize(300, null, function ($constraint) { $constraint->aspectRatio(); })->save($location);
-            $hospitalimage3              = new Hospitalimage;
-            $hospitalimage3->hospital_id = $hospital->id;
-            $hospitalimage3->image       = $filename;
-            $hospitalimage3->save();
+            $coachingimage3              = new Hospitalimage;
+            $coachingimage3->hospital_id = $hospital->id;
+            $coachingimage3->image       = $filename;
+            $coachingimage3->save();
         }
         if($request->hasFile('image4')) {
             $image    = $request->file('image4');
             $filename = random_string(5) . time() .'.' . "webp";
-            $location = public_path('images/hospitals/'. $filename);
+            $location = public_path('images/coachings/'. $filename);
             Image::make($image)->resize(300, null, function ($constraint) { $constraint->aspectRatio(); })->save($location);
-            $hospitalimage4              = new Hospitalimage;
-            $hospitalimage4->hospital_id = $hospital->id;
-            $hospitalimage4->image       = $filename;
-            $hospitalimage4->save();
+            $coachingimage4              = new Hospitalimage;
+            $coachingimage4->hospital_id = $hospital->id;
+            $coachingimage4->image       = $filename;
+            $coachingimage4->save();
         }
         // image upload
         // image upload
