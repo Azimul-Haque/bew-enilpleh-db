@@ -406,6 +406,13 @@
                               <div class="input-group-text"><span class="fas fa-globe"></span></div>
                           </div>
                       </div>
+
+                      <select name="branch_ids[]" class="form-control multiple-select" multiple="multiple" data-placeholder="শাখা হাসপাতাল (প্রয়োজনে একাধিক সিলেক্ট করা যাবে)">
+                          
+                          @foreach($hospitals as $hospital)
+                            <option value="{{ $hospital->id }}">{{ $hospital->name }}</option>
+                          @endforeach
+                      </select>
                     </div>
                     
                     <div class="col-md-6">
