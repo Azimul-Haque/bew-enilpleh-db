@@ -194,7 +194,7 @@ class DashboardController extends Controller
         if(isset($request->blooddonors)){
             foreach($request->blooddonors as $blooddonor_id) {
                 $blooddonor = Blooddonor::find($blooddonor_id);
-                $user->accessibleDoctors()->attach($doctor);
+                $user->accessibleBlooddonors()->attach($blooddonor);
             }            
         }
 
