@@ -11,6 +11,11 @@ class Doctor extends Model
         'weekdays' => 'array',
     ];
 
+    public function editors()
+    {
+        return $this->morphToMany(User::class, 'accessible', 'editor_access');
+    }
+
     public function district(){
         return $this->belongsTo('App\District');
     }
