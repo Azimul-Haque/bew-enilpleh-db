@@ -136,8 +136,8 @@ class HospitalController extends Controller
             $hospitalimage->image       = $filename;
             $hospitalimage->save();
         }
-        if($request->hasFile('image1')) {
-            $image    = $request->file('image1');
+        if($request->hasFile('image2')) {
+            $image    = $request->file('image2');
             $filename = random_string(5) . time() .'.' . "webp";
             $location = public_path('images/hospitals/'. $filename);
             Image::make($image)->resize(300, null, function ($constraint) { $constraint->aspectRatio(); })->save($location);
