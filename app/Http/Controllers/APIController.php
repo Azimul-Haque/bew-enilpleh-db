@@ -750,6 +750,13 @@ class APIController extends Controller
                                  ->get();
                  foreach($coachings as $coaching) {
                      $coaching->makeHidden('id', 'district_id', 'created_at', 'updated_at');
+                     $imagestemp = collect();
+                     foreach($coaching->coachingimages as $coachingimage) {
+                        $imagestemp->push($coachingimage->image);
+                        $coachingimage->makeHidden('id', 'coaching_id', 'created_at', 'updated_at');
+                        // $coaching->push($coachingimagetemp);
+                     }
+                     $coaching->images = $imagestemp;
                  }
                  return $coachings;
             });
