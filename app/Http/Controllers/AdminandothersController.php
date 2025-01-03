@@ -629,7 +629,7 @@ class AdminandothersController extends Controller
             $filename = random_string(5) . time() .'.' . "webp";
             $location = public_path('images/coachings/'. $filename);
             Image::make($image)->resize(300, null, function ($constraint) { $constraint->aspectRatio(); })->save($location);
-            $coachingimage1              = new Hospitalimage;
+            $coachingimage1              = new Coachingimage;
             $coachingimage1->hospital_id = $hospital->id;
             $coachingimage1->image       = $filename;
             $coachingimage1->save();
@@ -639,7 +639,7 @@ class AdminandothersController extends Controller
             $filename = random_string(5) . time() .'.' . "webp";
             $location = public_path('images/coachings/'. $filename);
             Image::make($image)->resize(300, null, function ($constraint) { $constraint->aspectRatio(); })->save($location);
-            $coachingimage2              = new Hospitalimage;
+            $coachingimage2              = new Coachingimage;
             $coachingimage2->hospital_id = $hospital->id;
             $coachingimage2->image       = $filename;
             $coachingimage2->save();
@@ -649,7 +649,7 @@ class AdminandothersController extends Controller
             $filename = random_string(5) . time() .'.' . "webp";
             $location = public_path('images/coachings/'. $filename);
             Image::make($image)->resize(300, null, function ($constraint) { $constraint->aspectRatio(); })->save($location);
-            $coachingimage3              = new Hospitalimage;
+            $coachingimage3              = new Coachingimage;
             $coachingimage3->hospital_id = $hospital->id;
             $coachingimage3->image       = $filename;
             $coachingimage3->save();
@@ -659,7 +659,7 @@ class AdminandothersController extends Controller
             $filename = random_string(5) . time() .'.' . "webp";
             $location = public_path('images/coachings/'. $filename);
             Image::make($image)->resize(300, null, function ($constraint) { $constraint->aspectRatio(); })->save($location);
-            $coachingimage4              = new Hospitalimage;
+            $coachingimage4              = new Coachingimage;
             $coachingimage4->hospital_id = $hospital->id;
             $coachingimage4->image       = $filename;
             $coachingimage4->save();
