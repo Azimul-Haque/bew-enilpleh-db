@@ -60,7 +60,7 @@
                     <td>
                       {{ $blooddonor->name }}
                       <small class="text-black-50"><i class="fas fa-phone"></i> {{ $blooddonor->mobile }}</small><br/>
-                      <span class="badge @if($blooddonor->category == 2) bg-warning @else bg-success @endif">{{ blooddonor_category($blooddonor->category) }}</span>
+                      <span class="badge @if($blooddonor->category == 2) bg-primary @else bg-info @endif">{{ blooddonor_category($blooddonor->category) }}</span>
                     </td>
                     <td>
                       @if($blooddonor->category == 2)
