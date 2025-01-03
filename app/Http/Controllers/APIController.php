@@ -132,6 +132,7 @@ class APIController extends Controller
                  foreach($hospitals as $hospital) {
                      $hospital->districtname = $hospital->district->name_bangla;
                      $hospital->upazillaname = $hospital->upazilla->name_bangla;
+                     $hospital->images = $hospital->hospitalimages;
                      $hospital->makeHidden('district', 'upazilla', 'created_at', 'updated_at');
                  }
                  return $hospitals;
