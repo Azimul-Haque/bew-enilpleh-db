@@ -121,7 +121,7 @@
 
           <div class="col-md-3">
             <a href="{{ route('dashboard.journalists') }}" class="info-box mb-3">
-              <span class="info-box-icon bg-warning elevation-1"><i class="fas fa-chalkboard-teacher"></i></span>
+              <span class="info-box-icon bg-warning elevation-1"><i class="fas fa-gavel"></i></span>
 
               <div class="info-box-content">
                 <span class="info-box-text">সাংবাদিকরৃন্দ</span>
@@ -130,7 +130,7 @@
             </a>
           </div>
 
-          <div class="col-md-3">
+          {{-- <div class="col-md-3">
             <a href="{{ route('dashboard.buses') }}" class="info-box mb-3">
               <span class="info-box-icon bg-info elevation-1"><i class="fas fa-bus"></i></span>
 
@@ -139,7 +139,7 @@
                 <small class="info-box-text" style="margin-top: 10px;">ক্লিক করুন</small>
               </div>
             </a>
-          </div>
+          </div> --}}
         </div>
 
         <div class="row">
