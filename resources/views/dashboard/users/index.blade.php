@@ -140,9 +140,11 @@
                       </div>
                       {{-- Notif Modal Code --}}
                       {{-- Notif Modal Code --}}
-                			<button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#editUserModal{{ $user->id }}">
-                				<i class="fas fa-user-edit"></i>
-                			</button>
+                      @if(Auth::user()->role == 'admin')
+                        <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#editUserModal{{ $user->id }}">
+                          <i class="fas fa-user-edit"></i>
+                        </button>
+                      @endif
             			    {{-- Edit User Modal Code --}}
             			    {{-- Edit User Modal Code --}}
             			    <!-- Modal -->
