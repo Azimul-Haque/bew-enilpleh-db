@@ -10,6 +10,8 @@ use App\Notification;
 
 use App\Hospital;
 use App\Doctor;
+use App\Blooddonor;
+use App\Coaching;
 
 use Carbon\Carbon;
 use DB;
