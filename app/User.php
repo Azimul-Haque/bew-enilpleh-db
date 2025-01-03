@@ -10,9 +10,9 @@ class User extends Authenticatable
 {
     use Notifiable;
 
-    public function accessibleEntities()
+    public function accessibleHospitals()
     {
-        return $this->morphToMany(Accessible::class, 'accessible', 'editor_access');
+        return $this->morphedByMany(Hospital::class, 'accessible', 'editor_access');
     }
 
     public function messages(){
