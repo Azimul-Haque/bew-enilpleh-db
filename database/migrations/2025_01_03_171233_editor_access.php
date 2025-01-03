@@ -13,7 +13,14 @@ class EditorAccess extends Migration
      */
     public function up()
     {
-        //
+        Schema::create('editor_access', function (Blueprint $table) {
+            $table->id();
+            $table->unsignedBigInteger('user_id');
+            $table->morphs('accessible'); // polymorphic relation
+            $table->timestamps();
+
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+        });
     }
 
     /**
