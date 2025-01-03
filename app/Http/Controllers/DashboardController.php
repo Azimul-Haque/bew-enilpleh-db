@@ -241,6 +241,7 @@ class DashboardController extends Controller
             }            
         }
         if(isset($request->blooddonors)){
+            $user->accessibleBlooddonors()->detach();
             foreach($request->blooddonors as $blooddonor_id) {
                 $blooddonor = Blooddonor::find($blooddonor_id);
                 $user->accessibleBlooddonors()->attach($blooddonor);
@@ -248,6 +249,7 @@ class DashboardController extends Controller
         }
 
         if(isset($request->coachings)){
+            $user->accessibleCoachings()->detach();
             foreach($request->coachings as $coaching_id) {
                 $coaching = Blooddonor::find($coaching_id);
                 $user->accessibleCoachings()->attach($coaching);
