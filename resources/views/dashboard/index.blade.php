@@ -42,6 +42,7 @@
             </a>
           </div> --}}
         </div>
+        @if(Auth::user()->role == 'admin')
         <div class="row">
           <div class="col-md-6">
             <button class="btn btn-warning" data-toggle="modal" data-target="#clearQueryCacheModal">
@@ -75,6 +76,7 @@
             <br/>
           </div>
         </div>
+        @endif
         <div class="row">
           <div class="col-md-6">
             <div class="card card-success">
