@@ -748,8 +748,8 @@ class APIController extends Controller
                                  ->where('district_id', $district_id) // COMMENTED
                                  ->where('type', $type) // 1 = Govt, 2 = Private, 3 = Coaching
                                  ->get();
-                 foreach($coachings as $fireservice) {
-                     $fireservice->makeHidden('id', 'district_id', 'created_at', 'updated_at');
+                 foreach($coachings as $coaching) {
+                     $coaching->makeHidden('id', 'district_id', 'created_at', 'updated_at');
                  }
                  return $coachings;
             });
