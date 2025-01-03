@@ -130,8 +130,10 @@ class HospitalController extends Controller
             }
         }
 
-        if(Auth::user()->)
-        Auth::user->accessibleHospitals()->attach($hospital);
+        if(Auth::user()->role == 'editor') {
+            Auth::user()->accessibleHospitals()->attach($hospital);
+        }
+        
 
         Cache::forget('hospitals'. $request->hospital_type . $request->district_id);
         Cache::forget('hospitals'. $request->hospital_type . $request->district_id . $request->upazilla_id);
