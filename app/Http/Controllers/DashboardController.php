@@ -312,6 +312,12 @@ class DashboardController extends Controller
         $user->name = $request->name;
         $user->mobile = $request->mobile;
         $user->role = $request->role;
+        if(isset($request->hospitals)){
+            foreach($request->hospitals as $hospital_id) {
+                $hospital = Hospital::find($hospital_id);
+                $user->accessibleHospitals()->attach($hospital);
+            }            
+        }
         if(!empty($request->password)) {
             $user->password = Hash::make($request->password);
         }
