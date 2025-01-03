@@ -138,52 +138,11 @@ class DashboardController extends Controller
         $hospitals = Hospital::all();
         $doctors = Doctor::all();
 
-        // $sites = Site::all();
         return view('dashboard.users.index')
                     ->withUsers($users)
-                    ->withUserscount($userscount);
-    }
-
-    public function getUsersSort()
-    {
-        // $users = User::where('name', '!=', null)->orderBy('id', 'asc')->get(10);
-        $userscount = User::count();
-        $users = User::withCount('meritlists')
-                     ->orderBy('meritlists_count', 'desc')
-                     ->paginate(10);
-
-        // dd($users);
-        // $users = $users->join('meritlists', function ($join) {
-        //                 $join->on('meritlists.user_id', '=', 'users.id');
-        //             })
-        //             ->groupBy('users.id')
-        //             ->orderBy('count', $order)
-        //             ->select((['users.*', DB::raw('COUNT(meritlists.user_id) as count')]))->paginate(10);
-
-        return view('dashboard.users.index')
-                    ->withUsers($users)
-                    ->withUserscount($userscount);
-    }
-
-    public function getExpiredUsers()
-    {
-        $paidusersids = DB::table('payments')->select('user_id')->groupBy('user_id')->get()->pluck('user_id')->toArray();
-        // dd($paidusersids);
-        $userscount = User::where('package_expiry_date', '<', Carbon::now())
-                          ->whereIn('id', $paidusersids)
-                          ->count();
-        $users = User::where('package_expiry_date', '<', Carbon::now())
-                     ->whereIn('id', $paidusersids)
-                     ->orderBy('package_expiry_date', 'asc')
-                     ->paginate(10);
-                     // ->get();
-        
-        // dd($users);
-        // $usermobiles = $users->pluck('mobile')->toArray();
-        // dd(implode(', ', $usermobiles));
-        return view('dashboard.users.expiredusers')
-                    ->withUsers($users)
-                    ->withUserscount($userscount);
+                    ->withUserscount($userscount)
+                    ->withHospitals($hospitals)
+                    ->withDoctors($doctors);
     }
 
     public function sendExpiredSMS(Request $request)
