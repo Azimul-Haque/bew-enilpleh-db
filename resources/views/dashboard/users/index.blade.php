@@ -4,7 +4,7 @@
 @section('third_party_stylesheets')
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/icheck-bootstrap@3.0.1/icheck-bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="{{ asset('css/bootstrap-datepicker.min.css') }}">
-
+    <script src="{{ asset('js/select2.full.min.js') }}"></script>
     <style type="text/css">
       .select2-selection__choice{
           background-color: rgba(0, 123, 255) !important;
