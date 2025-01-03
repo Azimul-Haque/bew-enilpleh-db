@@ -144,6 +144,10 @@ class DoctorController extends Controller
         $doctor->timeto = $request->timeto;
         $doctor->save();
 
+        if(Auth::user()->role == 'editor') {
+            Auth::user()->accessibleDoctors()->attach($doctor);
+        }
+
         if(isset($request->medicaldepartments)){
             foreach($request->medicaldepartments as $medicaldepartment_id) {
                 $doctormedicaldepartment = new Doctormedicaldepartment;
