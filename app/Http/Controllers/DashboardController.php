@@ -198,6 +198,13 @@ class DashboardController extends Controller
             }            
         }
 
+        if(isset($request->coachings)){
+            foreach($request->coachings as $coaching_id) {
+                $blooddonor = Blooddonor::find($blooddonor_id);
+                $user->accessibleCoachings()->attach($blooddonor);
+            }            
+        }
+
         Session::flash('success', 'User created successfully!');
         return redirect()->route('dashboard.users');
     }
