@@ -121,6 +121,8 @@ class HospitalController extends Controller
         if($request->investigation_data) {
             $hospital->investigation_data = nl2br($request->investigation_data);
         }
+        
+        $hospital->save();
 
         // image upload
         // image upload
@@ -132,14 +134,12 @@ class HospitalController extends Controller
             // Image::make($image)->fit(300, 175)->save($location);
             // Image::make($image)->crop(300, 175)->save($location);
             $hospitalimage              = new Hospitalimage;
-            $hospitalimage->doctor_id = $doctor->id;
+            $hospitalimage->hospital_id = $hospital->id;
             $hospitalimage->image       = $filename;
             $hospitalimage->save();
         }
         // image upload
         // image upload
-        
-        $hospital->save();
 
         if($request->branch_ids) {
             foreach($request->branch_ids as $brid) {
