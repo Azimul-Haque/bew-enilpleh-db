@@ -123,6 +123,7 @@ class HospitalController extends Controller
         }
 
         // image upload
+        // image upload
         if($request->hasFile('image1')) {
             $image    = $request->file('image1');
             $filename = random_string(5) . time() .'.' . "webp";
@@ -135,6 +136,8 @@ class HospitalController extends Controller
             $doctorimage->image       = $filename;
             $doctorimage->save();
         }
+        // image upload
+        // image upload
         
         $hospital->save();
 
