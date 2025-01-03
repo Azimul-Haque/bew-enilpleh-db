@@ -422,6 +422,11 @@
                       <div class="input-group mb-3">
                         <textarea name="investigation_data" class="form-control" style="min-height: 150px;" placeholder="টেস্ট ইনভেস্টিগেশন তালিকা (প্রয়োজনে)"></textarea>
                       </div>
+
+                      <div class="form-group">
+                          <label for="image">ছবি/ ভিজিটিং কার্ড/ ব্যানার (প্রয়োজনে, ৩০০ h x ১৭৫ w সাইজের, ২ মেগাবাইটের মধ্যে)</label>
+                          <input type="file" id="image" name="image" accept="image/*">
+                      </div>
                     </div>
                   </div>
 
