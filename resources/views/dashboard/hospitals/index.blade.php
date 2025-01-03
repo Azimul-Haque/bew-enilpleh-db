@@ -399,7 +399,7 @@
                                  class="form-control"
                                  placeholder="বক্স এর বার্তা লিখুন (Optional)">
                           <div class="input-group-append">
-                              <div class="input-group-text"><span class="fas fa-map-marked-alt"></span></div>
+                              <div class="input-group-text"><span class="fas fa-edit"></span></div>
                           </div>
                       </div>
                     </div>
