@@ -121,8 +121,8 @@ class DashboardController extends Controller
                     ->withUserscount($userscount)
                     ->withHospitals($hospitals)
                     ->withDoctors($doctors)
-                    ->withblooddonors($blooddonors)
-                    ->withcoachings($coachings);
+                    ->withBlooddonors($blooddonors)
+                    ->withCoachings($coachings);
     }
 
     public function getUsersSearch($search)
