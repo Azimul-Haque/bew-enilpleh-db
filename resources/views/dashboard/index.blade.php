@@ -87,11 +87,11 @@
           </div>
 
           <div class="col-md-3">
-            <a href="{{ route('dashboard.ambulances') }}" class="info-box mb-3">
+            <a href="{{ route('dashboard.buses') }}" class="info-box mb-3">
               <span class="info-box-icon bg-info elevation-1"><i class="fas fa-hospital"></i></span>
 
               <div class="info-box-content">
-                <span class="info-box-text">অ্যাম্বুলেন্স তালিকা</span>
+                <span class="info-box-text">বাস তালিকা</span>
                 <small class="info-box-text" style="margin-top: 10px;">ক্লিক করুন</small>
               </div>
             </a>
