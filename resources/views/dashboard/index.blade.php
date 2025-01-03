@@ -33,7 +33,7 @@
 
           <div class="col-md-3">
             <a href="{{ route('dashboard.blooddonors') }}" class="info-box mb-3">
-              <span class="info-box-icon bg-warning elevation-1"><i class="fas fa-hospital"></i></span>
+              <span class="info-box-icon bg-warning elevation-1"><i class="fas fa-tint"></i></span>
 
               <div class="info-box-content">
                 <span class="info-box-text">রক্তদাতা তালিকা</span>
