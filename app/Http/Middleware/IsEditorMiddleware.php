@@ -16,7 +16,7 @@ class IsEditorMiddleware
      */
     public function handle($request, Closure $next)
     {
-        if(!Auth::check() || Auth::user()->role != 'manager'){
+        if(!Auth::check() || Auth::user()->role != 'editor'){
             abort(403, 'Access Denied');
         }
         return $next($request);
