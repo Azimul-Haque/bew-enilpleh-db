@@ -252,7 +252,6 @@ class HospitalController extends Controller
         // image upload
         // image upload
         if($request->hasFile('image1')) {
-            dd($hospital->hospitalimages);
             if($hospital->hospitalimages) {
                 foreach($hospital->hospitalimages as $hospitalimage) {
                     $image_path = public_path('images/hospitals/'. $hospitalimage->image);
