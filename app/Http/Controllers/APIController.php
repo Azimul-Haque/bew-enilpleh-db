@@ -100,7 +100,7 @@ class APIController extends Controller
                              // ->where('district_id', $district_id) // COMMENTED
                              ->orderBy('id', 'desc')
                              ->get();
-                             // dd($hospitals);
+                             dd($hospitals);
                  foreach($hospitals as $hospital) {
                      $hospital->districtname = $hospital->district->name_bangla;
                      $hospital->upazillaname = $hospital->upazilla->name_bangla;
