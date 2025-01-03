@@ -8,6 +8,8 @@ use App\User;
 use App\Message;
 use App\Notification;
 
+use App\Hospital;
+
 use Carbon\Carbon;
 use DB;
 use Hash;
