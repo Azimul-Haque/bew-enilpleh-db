@@ -99,7 +99,7 @@ class BlooddonorController extends Controller
         $blooddonor->save();
 
         if(Auth::user()->role == 'editor') {
-            Auth::user()->accessibleDoctors()->attach($blooddonor);
+            Auth::user()->accessibleBlooddonors()->attach($blooddonor);
         }
 
         
