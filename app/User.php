@@ -18,9 +18,9 @@ class User extends Authenticatable
         return $this->hasMany('App\Message');
     }
 
-    public function meritlists(){
-        return $this->hasMany('App\Meritlist');
-    }
+    // public function meritlists(){
+    //     return $this->hasMany('App\Meritlist');
+    // }
 
     public function reportedquestions(){
         return $this->hasMany('App\Reportedquestion');
