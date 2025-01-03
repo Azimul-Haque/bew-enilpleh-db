@@ -109,7 +109,7 @@
           </div>
 
           <div class="col-md-3">
-            <a href="{{ route('dashboard.lawyers') }}" class="info-box mb-3">
+            <a href="{{ route('dashboard.newspapers') }}" class="info-box mb-3">
               <span class="info-box-icon bg-success elevation-1"><i class="fas fa-gavel"></i></span>
 
               <div class="info-box-content">
