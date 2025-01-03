@@ -117,6 +117,7 @@ class HospitalController extends Controller
         }
         $hospital->mobile = $request->mobile;
         $hospital->location = $request->location;
+        $hospital->description = $request->description;
         if($request->website) {
             $hospital->website = $request->website;
         }
