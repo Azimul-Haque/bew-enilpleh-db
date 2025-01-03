@@ -10,7 +10,7 @@
     <div class="container-fluid">
         <div class="row">
           <div class="col-md-3">
-            <a href="{{ route('dashboard.deposit.getlist', [date('Y-m-d'), 'All']) }}" class="info-box mb-3">
+            <a href="{{ route('dashboard.hospitals') }}" class="info-box mb-3">
               <span class="info-box-icon bg-warning elevation-1"><i class="fas fa-coins"></i></span>
 
               <div class="info-box-content">
