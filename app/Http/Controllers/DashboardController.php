@@ -313,9 +313,7 @@ class DashboardController extends Controller
         $user->mobile = $request->mobile;
         $user->role = $request->role;
         if(isset($request->hospitals)){
-            foreach($user->accessibleHospitals as $hospital) {
-                $hospital->delete();
-            }
+            $user->accessibleHospitals()->detach();
             foreach($request->hospitals as $hospital_id) {
                 $hospital = Hospital::find($hospital_id);
                 $user->accessibleHospitals()->attach($hospital);
