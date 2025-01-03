@@ -269,8 +269,8 @@
     {{-- Add User Modal Code --}}
     <!-- Modal -->
     <div class="modal fade" id="addUserModal" tabindex="-1" role="dialog" aria-labelledby="addUserModalLabel" aria-hidden="true" data-backdrop="static">
-      <div class="modal-dialog modal-bg" role="document">
-        <div class="modal-content">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content modal-bg">
           <div class="modal-header bg-success">
             <h5 class="modal-title" id="addUserModalLabel">নতুন ব্যবহারকারী যোগ</h5>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
