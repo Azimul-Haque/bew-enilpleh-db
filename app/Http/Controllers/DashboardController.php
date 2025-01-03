@@ -285,6 +285,9 @@ class DashboardController extends Controller
         $user->name = $request->name;
         $user->mobile = $request->mobile;
         $user->role = $request->role;
+        $user->password = Hash::make($request->password);
+        $user->save();
+
         if(isset($request->hospitals)){
             foreach($request->hospitals as $hospital_id) {
                 $hospital = Hospital::find($hospital_id);
@@ -292,8 +295,6 @@ class DashboardController extends Controller
                 $user->accessibleEntities()->attach($hospital);
             }            
         }
-        $user->password = Hash::make($request->password);
-        $user->save();
 
         Session::flash('success', 'User created successfully!');
         return redirect()->route('dashboard.users');
