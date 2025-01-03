@@ -40,10 +40,8 @@ class DoctorController extends Controller
     public function index()
     {
         if(Auth::user()->role == 'editor') {
-            $doctorscount = Auth::user()->accessibleHospitals()->count();
-            $doctors = Auth::user()->accessibleHospitals()->paginate(10);
-            $doctorscount = Doctor::count();
-            $doctors = Doctor::orderBy('id', 'desc')->paginate(10);
+            $doctorscount = Auth::user()->accessibleDoctors()->count();
+            $doctors = Auth::user()->accessibleDoctors()->paginate(10);
         } else {
             $doctorscount = Doctor::count();
             $doctors = Doctor::orderBy('id', 'desc')->paginate(10);
