@@ -31,9 +31,13 @@ class HospitalController extends Controller
 
     public function index()
     {
-        $hospitalscount = Hospital::count();
-        $hospitals = Hospital::orderBy('id', 'desc')->paginate(10);
-
+        if(Auth::user()->role == 'editor') {
+            $hospitals = $user->accessibleHospitals;
+        } else {
+            $hospitalscount = Hospital::count();
+            $hospitals = Hospital::orderBy('id', 'desc')->paginate(10);
+        }
+        
         $districts = District::all();
         
         return view('dashboard.hospitals.index')
