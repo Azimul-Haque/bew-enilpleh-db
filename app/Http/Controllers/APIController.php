@@ -106,8 +106,7 @@ class APIController extends Controller
                      $hospital->upazillaname = $hospital->upazilla->name_bangla;
                      $hospital->images = $hospital->hospitalimages;
                      foreach($hospital->hospitalimages as $hospitalimage) {
-
-                        $hospitalimagetemp->image = $hospitalimage->image;
+                        $hospitalimage->image = $hospitalimage->image;
                         dd($hospitalimage);
                         $hospitalimagetemp->makeHidden('id', 'hospital_id', 'created_at', 'updated_at');
                         // $hospital->push($hospitalimagetemp);
