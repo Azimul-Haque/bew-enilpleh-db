@@ -85,9 +85,9 @@
                       </div>
                       {{-- SMS Modal Code --}}
                       {{-- SMS Modal Code --}}
-                      <button type="button" class="btn btn-warning btn-sm" data-toggle="modal" data-target="#notifModal{{ $user->id }}">
+                      {{-- <button type="button" class="btn btn-warning btn-sm" data-toggle="modal" data-target="#notifModal{{ $user->id }}">
                         <i class="fas fa-bell"></i>
-                      </button>
+                      </button> --}}
                       {{-- Notif Modal Code --}}
                       {{-- Notif Modal Code --}}
                       <!-- Modal -->
