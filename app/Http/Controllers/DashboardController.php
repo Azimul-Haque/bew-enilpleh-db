@@ -200,7 +200,7 @@ class DashboardController extends Controller
 
         if(isset($request->coachings)){
             foreach($request->coachings as $coaching_id) {
-                $coaching = Blooddonor::find($coaching_id);
+                $coaching = Coaching::find($coaching_id);
                 $user->accessibleCoachings()->attach($coaching);
             }            
         }
