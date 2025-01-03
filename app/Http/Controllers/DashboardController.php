@@ -191,6 +191,13 @@ class DashboardController extends Controller
             }            
         }
 
+        if(isset($request->blooddonors)){
+            foreach($request->doctors as $doctors_id) {
+                $doctor = Doctor::find($doctors_id);
+                $user->accessibleDoctors()->attach($doctor);
+            }            
+        }
+
         Session::flash('success', 'User created successfully!');
         return redirect()->route('dashboard.users');
     }
