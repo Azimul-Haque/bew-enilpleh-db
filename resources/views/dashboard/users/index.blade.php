@@ -364,7 +364,7 @@
                   <div style="margin-bottom: 15px;">
                     <select name="coachings[]" class="form-control multiple-select" multiple="multiple" data-placeholder="যে যে শিক্ষা প্রতিষ্ঠানের এক্সেস দেওয়া হবে (প্রয়োজনে একাধিক সিলেক্ট করা যাবে) [Optional]" onautocomplete="off">
                         @foreach($coachings as $coaching)
-                          <option value="{{ $coaching->id }}">{{ $coaching->name }} - ({{ $coaching->upazilla->name_bangla }}, {{ $coaching->district->name_bangla }})</option>
+                          <option value="{{ $coaching->id }}">{{ $coaching->name }} - ({{ $coaching->district->name_bangla }})</option>
                         @endforeach
                     </select>
                   </div>
