@@ -69,185 +69,184 @@
                       <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#editUserModal{{ $hospital->id }}">
                         <i class="fas fa-edit"></i>
                       </button>
-                      {{-- Edit User Modal Code --}}
-                      {{-- Edit User Modal Code --}}
-                      <!-- Modal -->
-
-                      {{-- Edit User Modal Code --}}
-                      {{-- Edit User Modal Code --}}
-
                       @if(Auth::user()->role == 'admin')
                         <button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#deleteUserModal{{ $hospital->id }}">
                           <i class="fas fa-trash-alt"></i>
                         </button>
                       @endif
                     </td>
+                    {{-- Edit User Modal Code --}}
+                    {{-- Edit User Modal Code --}}
+                    <!-- Modal -->
                     <div class="modal fade" id="editUserModal{{ $hospital->id }}" tabindex="-1" role="dialog" aria-labelledby="editUserModalLabel" aria-hidden="true" data-backdrop="static">
-                        <div class="modal-dialog modal-lg" role="document">
-                          <div class="modal-content">
-                            <div class="modal-header bg-primary">
-                              <h5 class="modal-title" id="editUserModalLabel">হাসপাতাল তথ্য হালনাগাদ</h5>
-                              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                              </button>
-                            </div>
-                            <form method="post" action="{{ route('dashboard.hospitals.update', $hospital->id) }}">
-                              <div class="modal-body">
-                                
-                                    @csrf
+                      <div class="modal-dialog modal-lg" role="document">
+                        <div class="modal-content">
+                          <div class="modal-header bg-primary">
+                            <h5 class="modal-title" id="editUserModalLabel">হাসপাতাল তথ্য হালনাগাদ</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                              <span aria-hidden="true">&times;</span>
+                            </button>
+                          </div>
+                          <form method="post" action="{{ route('dashboard.hospitals.update', $hospital->id) }}">
+                            <div class="modal-body">
+                              
+                                  @csrf
 
-                                    <div class="row">
-                                      <div class="col-md-6">
-                                        <div class="input-group mb-3">
-                                          <select name="district_id" id="district" class="form-control district" required>
-                                              <option selected="" disabled="" value="">জেলা নির্বাচন করুন</option>
-                                              @foreach($districts as $district)
-                                                <option value="{{ $district->id }}" @if($district->id == $hospital->district_id) selected @endif>{{ $district->name_bangla }}</option>
-                                              @endforeach
-                                          </select>
-                                          <div class="input-group-append">
-                                              <div class="input-group-text"><span class="fas fa-map"></span></div>
-                                          </div>
+                                  <div class="row">
+                                    <div class="col-md-6">
+                                      <div class="input-group mb-3">
+                                        <select name="district_id" id="district" class="form-control district" required>
+                                            <option selected="" disabled="" value="">জেলা নির্বাচন করুন</option>
+                                            @foreach($districts as $district)
+                                              <option value="{{ $district->id }}" @if($district->id == $hospital->district_id) selected @endif>{{ $district->name_bangla }}</option>
+                                            @endforeach
+                                        </select>
+                                        <div class="input-group-append">
+                                            <div class="input-group-text"><span class="fas fa-map"></span></div>
                                         </div>
                                       </div>
-                                      <div class="col-md-6">
-                                        <div class="input-group mb-3">
-                                          <select name="upazilla_id" id="upazilla" class="form-control upazilla" required>
-                                              <option selected="" value="{{ $hospital->upazilla_id }}">{{ $hospital->upazilla->name_bangla }}</option>
-                                          </select>
+                                    </div>
+                                    <div class="col-md-6">
+                                      <div class="input-group mb-3">
+                                        <select name="upazilla_id" id="upazilla" class="form-control upazilla" required>
+                                            <option selected="" value="{{ $hospital->upazilla_id }}">{{ $hospital->upazilla->name_bangla }}</option>
+                                        </select>
+                                        <div class="input-group-append">
+                                            <div class="input-group-text"><span class="fas fa-map-marked-alt"></span></div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                      <div class="input-group mb-3">
+                                          <input type="text"
+                                                 name="name"
+                                                 class="form-control"
+                                                 value="{{ $hospital->name }}"
+                                                 placeholder="হাসপাতালের নাম" required>
+                                          <div class="input-group-append">
+                                              <div class="input-group-text"><span class="fas fa-hospital"></span></div>
+                                          </div>
+                                      </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                      <div class="input-group mb-3">
+                                        <select name="hospital_type" class="form-control" required>
+                                            <option selected="" disabled="" value="">হাসপাতালের ধরন</option>
+                                            <option value="1" @if($hospital->hospital_type == 1) selected @endif>সরকারি হাসপাতাল</option>
+                                            <option value="2" @if($hospital->hospital_type == 2) selected @endif>প্রাইভেট ক্লিনিক ও হাসপাতাল</option>
+                                            <option value="3" @if($hospital->hospital_type == 3) selected @endif>ফিজিওথেরাপি সেন্টার</option>
+                                            <option value="4" @if($hospital->hospital_type == 4) selected @endif>কিডনি ডায়ালাইসিস</option>
+                                        </select>
+                                        <div class="input-group-append">
+                                            <div class="input-group-text"><span class="fas fa-star-half-alt"></span></div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                      <div class="input-group mb-3">
+                                          <input type="number"
+                                                 name="telephone"
+                                                 class="form-control"
+                                                 value="{{ $hospital->telephone }}"
+                                                 placeholder="টেলিফোন নং" required>
+                                          <div class="input-group-append">
+                                              <div class="input-group-text"><span class="fas fa-phone"></span></div>
+                                          </div>
+                                      </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                      <div class="input-group mb-3">
+                                          <input type="number"
+                                                 name="mobile"
+                                                 value="{{ $hospital->mobile }}"
+                                                 autocomplete="off"
+                                                 class="form-control"
+                                                 placeholder="মোবাইল নম্বর (যদি থাকে)">
+                                          <div class="input-group-append">
+                                              <div class="input-group-text"><span class="fas fa-mobile"></span></div>
+                                          </div>
+                                      </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                      <div class="input-group mb-3">
+                                          <input type="text"
+                                                 name="address"
+                                                 value="{{ $hospital->address }}"
+                                                 autocomplete="off"
+                                                 class="form-control"
+                                                 placeholder="হাসপাতাল/ক্লিনিক/প্রতিষ্ঠানের ঠিকানা লিখুন" required>
                                           <div class="input-group-append">
                                               <div class="input-group-text"><span class="fas fa-map-marked-alt"></span></div>
                                           </div>
-                                        </div>
                                       </div>
-                                      <div class="col-md-6">
-                                        <div class="input-group mb-3">
-                                            <input type="text"
-                                                   name="name"
-                                                   class="form-control"
-                                                   value="{{ $hospital->name }}"
-                                                   placeholder="হাসপাতালের নাম" required>
-                                            <div class="input-group-append">
-                                                <div class="input-group-text"><span class="fas fa-hospital"></span></div>
-                                            </div>
-                                        </div>
-                                      </div>
-                                      <div class="col-md-6">
-                                        <div class="input-group mb-3">
-                                          <select name="hospital_type" class="form-control" required>
-                                              <option selected="" disabled="" value="">হাসপাতালের ধরন</option>
-                                              <option value="1" @if($hospital->hospital_type == 1) selected @endif>সরকারি হাসপাতাল</option>
-                                              <option value="2" @if($hospital->hospital_type == 2) selected @endif>প্রাইভেট ক্লিনিক ও হাসপাতাল</option>
-                                              <option value="3" @if($hospital->hospital_type == 3) selected @endif>ফিজিওথেরাপি সেন্টার</option>
-                                              <option value="4" @if($hospital->hospital_type == 4) selected @endif>কিডনি ডায়ালাইসিস</option>
-                                          </select>
+                                    </div>
+                                    <div class="col-md-6">
+                                      <div class="input-group mb-3">
+                                          <input type="text"
+                                                 name="location"
+                                                 value="{{ $hospital->location }}"
+                                                 autocomplete="off"
+                                                 class="form-control"
+                                                 placeholder="গুগল ম্যাপ লোকেশন লিংক" required>
                                           <div class="input-group-append">
-                                              <div class="input-group-text"><span class="fas fa-star-half-alt"></span></div>
+                                              <div class="input-group-text"><span class="fas fa-map-marker-alt"></span></div>
                                           </div>
-                                        </div>
                                       </div>
-                                      <div class="col-md-6">
-                                        <div class="input-group mb-3">
-                                            <input type="number"
-                                                   name="telephone"
-                                                   class="form-control"
-                                                   value="{{ $hospital->telephone }}"
-                                                   placeholder="টেলিফোন নং" required>
-                                            <div class="input-group-append">
-                                                <div class="input-group-text"><span class="fas fa-phone"></span></div>
-                                            </div>
-                                        </div>
+                                      <div class="input-group mb-3">
+                                          <input type="text"
+                                                 name="website"
+                                                 value="{{ $hospital->website }}"
+                                                 autocomplete="off"
+                                                 class="form-control"
+                                                 placeholder="সরকারি হাসপাতালের ক্ষেত্রে ডাক্তার তালিকার ওয়েবপেজ লিংক (প্রয়োজনে)">
+                                          <div class="input-group-append">
+                                              <div class="input-group-text"><span class="fas fa-globe"></span></div>
+                                          </div>
                                       </div>
-                                      <div class="col-md-6">
-                                        <div class="input-group mb-3">
-                                            <input type="number"
-                                                   name="mobile"
-                                                   value="{{ $hospital->mobile }}"
-                                                   autocomplete="off"
-                                                   class="form-control"
-                                                   placeholder="মোবাইল নম্বর (যদি থাকে)">
-                                            <div class="input-group-append">
-                                                <div class="input-group-text"><span class="fas fa-mobile"></span></div>
-                                            </div>
-                                        </div>
+                                      <div style="margin-bottom: 15px;">
+                                        <select name="branch_ids[]" class="form-control multiple-select" multiple="multiple" data-placeholder="শাখা হাসপাতাল (প্রয়োজনে একাধিক সিলেক্ট করা যাবে)" >
+                                            
+                                            @foreach($hospitals->except($hospital->id) as $brhospital)
+                                              <option value="{{ $brhospital->id }}" @if(in_array($brhospital->id, $hospital->branches->pluck('id')->toArray())) selected @endif>{{ $brhospital->name }}</option>
+                                            @endforeach
+                                        </select>
                                       </div>
-                                      <div class="col-md-12">
-                                        <div class="input-group mb-3">
-                                            <input type="text"
-                                                   name="address"
-                                                   value="{{ $hospital->address }}"
-                                                   autocomplete="off"
-                                                   class="form-control"
-                                                   placeholder="হাসপাতাল/ক্লিনিক/প্রতিষ্ঠানের ঠিকানা লিখুন" required>
-                                            <div class="input-group-append">
-                                                <div class="input-group-text"><span class="fas fa-map-marked-alt"></span></div>
-                                            </div>
-                                        </div>
+                                      <div class="form-group" style="margin-top: 15px;">
+                                          <label for="image">ব্যানার-১ (Optional, Max 1 MB)</label>
+                                          <input type="file" name="image1" accept="image/*">
                                       </div>
-                                      <div class="col-md-6">
-                                        <div class="input-group mb-3">
-                                            <input type="text"
-                                                   name="location"
-                                                   value="{{ $hospital->location }}"
-                                                   autocomplete="off"
-                                                   class="form-control"
-                                                   placeholder="গুগল ম্যাপ লোকেশন লিংক" required>
-                                            <div class="input-group-append">
-                                                <div class="input-group-text"><span class="fas fa-map-marker-alt"></span></div>
-                                            </div>
-                                        </div>
-                                        <div class="input-group mb-3">
-                                            <input type="text"
-                                                   name="website"
-                                                   value="{{ $hospital->website }}"
-                                                   autocomplete="off"
-                                                   class="form-control"
-                                                   placeholder="সরকারি হাসপাতালের ক্ষেত্রে ডাক্তার তালিকার ওয়েবপেজ লিংক (প্রয়োজনে)">
-                                            <div class="input-group-append">
-                                                <div class="input-group-text"><span class="fas fa-globe"></span></div>
-                                            </div>
-                                        </div>
-                                        <div style="margin-bottom: 15px;">
-                                          <select name="branch_ids[]" class="form-control multiple-select" multiple="multiple" data-placeholder="শাখা হাসপাতাল (প্রয়োজনে একাধিক সিলেক্ট করা যাবে)" >
-                                              
-                                              @foreach($hospitals->except($hospital->id) as $brhospital)
-                                                <option value="{{ $brhospital->id }}" @if(in_array($brhospital->id, $hospital->branches->pluck('id')->toArray())) selected @endif>{{ $brhospital->name }}</option>
-                                              @endforeach
-                                          </select>
-                                        </div>
-                                        <div class="form-group" style="margin-top: 15px;">
-                                            <label for="image">ব্যানার-১ (Optional, Max 1 MB)</label>
-                                            <input type="file" name="image1" accept="image/*">
-                                        </div>
 
-                                        <div class="form-group" style="margin-top: 15px;">
-                                            <label for="image">ব্যানার-২ (Optional, Max 1 MB)</label>
-                                            <input type="file" name="image2" accept="image/*">
-                                        </div>
+                                      <div class="form-group" style="margin-top: 15px;">
+                                          <label for="image">ব্যানার-২ (Optional, Max 1 MB)</label>
+                                          <input type="file" name="image2" accept="image/*">
                                       </div>
-                                      <div class="col-md-6">
-                                        <div class="input-group mb-3">
-                                          <textarea name="investigation_data" class="form-control" style="min-height: 150px;" placeholder="টেস্ট ইনভেস্টিগেশন তালিকা (প্রয়োজনে)">{{ str_replace('<br />', "", $hospital->investigation_data) }}</textarea>
-                                        </div>
-                                        <div class="form-group" style="margin-top: 15px;">
-                                            <label for="image">ব্যানার-৩ (Optional, Max 1 MB)</label>
-                                            <input type="file" name="image3" accept="image/*">
-                                        </div>
-                                        <div class="form-group" style="margin-top: 15px;">
-                                            <label for="image">ব্যানার-৪ (Optional, Max 1 MB)</label>
-                                            <input type="file" name="image4" accept="image/*">
-                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                      <div class="input-group mb-3">
+                                        <textarea name="investigation_data" class="form-control" style="min-height: 150px;" placeholder="টেস্ট ইনভেস্টিগেশন তালিকা (প্রয়োজনে)">{{ str_replace('<br />', "", $hospital->investigation_data) }}</textarea>
                                       </div>
-                                    </div>                                    
-                              </div>
-                              <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-dismiss="modal">ফিরে যান</button>
-                                <button type="submit" class="btn btn-primary">দাখিল করুন</button>
-                              </div>
-                            </form>
-                          </div>
+                                      <div class="form-group" style="margin-top: 15px;">
+                                          <label for="image">ব্যানার-৩ (Optional, Max 1 MB)</label>
+                                          <input type="file" name="image3" accept="image/*">
+                                      </div>
+                                      <div class="form-group" style="margin-top: 15px;">
+                                          <label for="image">ব্যানার-৪ (Optional, Max 1 MB)</label>
+                                          <input type="file" name="image4" accept="image/*">
+                                      </div>
+                                    </div>
+                                  </div>                                    
+                            </div>
+                            <div class="modal-footer">
+                              <button type="button" class="btn btn-secondary" data-dismiss="modal">ফিরে যান</button>
+                              <button type="submit" class="btn btn-primary">দাখিল করুন</button>
+                            </div>
+                          </form>
                         </div>
                       </div>
+                    </div>
+                    {{-- Edit User Modal Code --}}
+                    {{-- Edit User Modal Code --}}
+                    
                         {{-- Delete User Modal Code --}}
                         {{-- Delete User Modal Code --}}
                         <!-- Modal -->
