@@ -105,7 +105,7 @@ class APIController extends Controller
                      $hospital->districtname = $hospital->district->name_bangla;
                      $hospital->upazillaname = $hospital->upazilla->name_bangla;
                      $hospital->images = $hospital->hospitalimages;
-                     foreach($hospital->hospitalimages as $hospitalimages) {
+                     foreach($hospital->hospitalimages as $hospitalimage) {
                         $doctormedicaldepartment->id = $doctormedicaldepartment->doctor->id;
                         $doctormedicaldepartment->name = $doctormedicaldepartment->doctor->name;
                         $doctormedicaldepartment->degree = $doctormedicaldepartment->doctor->degree;
