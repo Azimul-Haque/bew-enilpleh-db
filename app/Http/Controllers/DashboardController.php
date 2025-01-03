@@ -239,6 +239,7 @@ class DashboardController extends Controller
             'mobile'      => 'required|string|max:191|unique:users,mobile',
             'role'        => 'required',
             'hospitals'   => 'sometimes',
+            'doctors'   => 'sometimes',
             'password'    => 'required|string|min:8|max:191',
         ));
 
@@ -248,6 +249,13 @@ class DashboardController extends Controller
         $user->role = $request->role;
         $user->password = Hash::make($request->password);
         $user->save();
+
+        if(isset($request->hospitals)){
+            foreach($request->hospitals as $hospital_id) {
+                $hospital = Hospital::find($hospital_id);
+                $user->accessibleHospitals()->attach($hospital);
+            }            
+        }
 
         if(isset($request->hospitals)){
             foreach($request->hospitals as $hospital_id) {
