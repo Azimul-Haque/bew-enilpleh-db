@@ -52,10 +52,10 @@
               </div>
             </a>
           </div>
-          
+
           <div class="col-md-3">
-            <a href="{{ route('dashboard.hospitals') }}" class="info-box mb-3">
-              <span class="info-box-icon bg-primary elevation-1"><i class="fas fa-hospital"></i></span>
+            <a href="{{ route('dashboard.esebas') }}" class="info-box mb-3">
+              <span class="info-box-icon bg-primary elevation-1"><i class="fas fa-external-link-alt"></i></span>
 
               <div class="info-box-content">
                 <span class="info-box-text">ই-সেবা তালিকা</span>
