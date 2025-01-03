@@ -569,7 +569,6 @@ class AdminandothersController extends Controller
             $coachingscount = Coaching::where('district_id', $district_id)->count();
             $coachings = Coaching::where('district_id', $district_id)->orderBy('id', 'asc')->paginate(10);
         }
-        
                 
         return view('dashboard.coachings.single')
                             ->withDistrict($district)
