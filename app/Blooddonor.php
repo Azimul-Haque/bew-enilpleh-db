@@ -6,6 +6,11 @@ use Illuminate\Database\Eloquent\Model;
 
 class Blooddonor extends Model
 {
+    public function editors()
+    {
+        return $this->morphToMany(User::class, 'accessible', 'editor_access');
+    }
+    
     public function district(){
         return $this->belongsTo('App\District');
     }
