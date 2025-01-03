@@ -629,7 +629,7 @@ class AdminandothersController extends Controller
             $image    = $request->file('image1');
             $filename = random_string(5) . time() .'.' . "webp";
             $location = public_path('images/coachings/'. $filename);
-            Image::make($image)->resize(300, null, function ($constraint) { $constraint->aspectRatio(); })->save($location);
+            Image::make($image)->resize(350, null, function ($constraint) { $constraint->aspectRatio(); })->save($location);
             $coachingimage1              = new Coachingimage;
             $coachingimage1->coaching_id = $coaching->id;
             $coachingimage1->image       = $filename;
@@ -639,7 +639,7 @@ class AdminandothersController extends Controller
             $image    = $request->file('image2');
             $filename = random_string(5) . time() .'.' . "webp";
             $location = public_path('images/coachings/'. $filename);
-            Image::make($image)->resize(300, null, function ($constraint) { $constraint->aspectRatio(); })->save($location);
+            Image::make($image)->resize(350, null, function ($constraint) { $constraint->aspectRatio(); })->save($location);
             $coachingimage2              = new Coachingimage;
             $coachingimage2->coaching_id = $coaching->id;
             $coachingimage2->image       = $filename;
@@ -649,7 +649,7 @@ class AdminandothersController extends Controller
             $image    = $request->file('image3');
             $filename = random_string(5) . time() .'.' . "webp";
             $location = public_path('images/coachings/'. $filename);
-            Image::make($image)->resize(300, null, function ($constraint) { $constraint->aspectRatio(); })->save($location);
+            Image::make($image)->resize(350, null, function ($constraint) { $constraint->aspectRatio(); })->save($location);
             $coachingimage3              = new Coachingimage;
             $coachingimage3->coaching_id = $coaching->id;
             $coachingimage3->image       = $filename;
@@ -659,7 +659,7 @@ class AdminandothersController extends Controller
             $image    = $request->file('image4');
             $filename = random_string(5) . time() .'.' . "webp";
             $location = public_path('images/coachings/'. $filename);
-            Image::make($image)->resize(300, null, function ($constraint) { $constraint->aspectRatio(); })->save($location);
+            Image::make($image)->resize(350, null, function ($constraint) { $constraint->aspectRatio(); })->save($location);
             $coachingimage4              = new Coachingimage;
             $coachingimage4->coaching_id = $coaching->id;
             $coachingimage4->image       = $filename;
@@ -707,7 +707,7 @@ class AdminandothersController extends Controller
             $image    = $request->file('image1');
             $filename = random_string(5) . time() .'.' . "webp";
             $location = public_path('images/coachings/'. $filename);
-            Image::make($image)->resize(300, null, function ($constraint) { $constraint->aspectRatio(); })->save($location);
+            Image::make($image)->resize(350, null, function ($constraint) { $constraint->aspectRatio(); })->save($location);
             $coachingimage1              = new Coachingimage;
             $coachingimage1->coaching_id = $coaching->id;
             $coachingimage1->image       = $filename;
@@ -726,7 +726,7 @@ class AdminandothersController extends Controller
             $image    = $request->file('image2');
             $filename = random_string(5) . time() .'.' . "webp";
             $location = public_path('images/coachings/'. $filename);
-            Image::make($image)->resize(300, null, function ($constraint) { $constraint->aspectRatio(); })->save($location);
+            Image::make($image)->resize(350, null, function ($constraint) { $constraint->aspectRatio(); })->save($location);
             $coachingimage2              = new Coachingimage;
             $coachingimage2->coaching_id = $coaching->id;
             $coachingimage2->image       = $filename;
@@ -745,7 +745,7 @@ class AdminandothersController extends Controller
             $image    = $request->file('image3');
             $filename = random_string(5) . time() .'.' . "webp";
             $location = public_path('images/coachings/'. $filename);
-            Image::make($image)->resize(300, null, function ($constraint) { $constraint->aspectRatio(); })->save($location);
+            Image::make($image)->resize(350, null, function ($constraint) { $constraint->aspectRatio(); })->save($location);
             $coachingimage3              = new Coachingimage;
             $coachingimage3->coaching_id = $coaching->id;
             $coachingimage3->image       = $filename;
@@ -764,7 +764,7 @@ class AdminandothersController extends Controller
             $image    = $request->file('image4');
             $filename = random_string(5) . time() .'.' . "webp";
             $location = public_path('images/coachings/'. $filename);
-            Image::make($image)->resize(300, null, function ($constraint) { $constraint->aspectRatio(); })->save($location);
+            Image::make($image)->resize(350, null, function ($constraint) { $constraint->aspectRatio(); })->save($location);
             $coachingimage4              = new Coachingimage;
             $coachingimage4->coaching_id = $coaching->id;
             $coachingimage4->image       = $filename;
