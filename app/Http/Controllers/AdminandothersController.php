@@ -11,6 +11,7 @@ use App\Lawyer;
 use App\Rentacar;
 use App\Rentacarimage;
 use App\Coaching;
+use App\Coachingimage;
 use App\Rab;
 use App\Rabbattalion;
 use App\Rabbattaliondetail;
