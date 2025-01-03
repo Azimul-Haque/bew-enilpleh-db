@@ -97,7 +97,7 @@ class APIController extends Controller
         {
             $hospitals = Cache::remember('hospitals'.$hospital_type . $district_id, 30 * 24 * 60 * 60, function () use ($hospital_type, $district_id) {
                  $hospitals = Hospital::where('hospital_type', $hospital_type)
-                             ->where('district_id', $district_id) // COMMENTED
+                             // ->where('district_id', $district_id) // COMMENTED
                              ->orderBy('id', 'desc')
                              ->get();
                              // dd($hospitals);
@@ -411,7 +411,7 @@ class APIController extends Controller
         {
             $blooddonors = Cache::remember('blooddonors' . $category . $district_id, 30 * 24 * 60 * 60, function () use ($category, $district_id) {
                  $blooddonors = Blooddonor::where('category', $category)
-                                 ->where('district_id', $district_id) // COMMENTED
+                                 // ->where('district_id', $district_id) // COMMENTED
                                  ->orderBy('id', 'desc')
                                  ->get();
                                  // dd($blooddonors);
@@ -499,7 +499,7 @@ class APIController extends Controller
         {
             $ambulances = Cache::remember('ambulances'  . $district_id, 30 * 24 * 60 * 60, function () use ($district_id) {
                  $ambulances = Ambulance::orderBy('id', 'desc')
-                                 ->where('district_id', $district_id) // COMMENTED
+                                 // ->where('district_id', $district_id) // COMMENTED
                                  ->get();
                                  // dd($ambulances);
                  foreach($ambulances as $ambulance) {
@@ -694,7 +694,7 @@ class APIController extends Controller
         {
             $rentacars = Cache::remember('rentacars'  . $district_id, 30 * 24 * 60 * 60, function () use ($district_id) {
                  $rentacars = Rentacar::orderBy('id', 'desc')
-                                 ->where('district_id', $district_id) // COMMENTED
+                                 // ->where('district_id', $district_id) // COMMENTED
                                  ->get();
                                  // dd($rentacars);
                  foreach($rentacars as $rentacar) {
@@ -745,7 +745,7 @@ class APIController extends Controller
         {
             $coachings = Cache::remember('coachings'  . $type . $district_id, 30 * 24 * 60 * 60, function () use ($type, $district_id) {
                  $coachings = Coaching::orderBy('id', 'asc')
-                                 ->where('district_id', $district_id) // COMMENTED
+                                 // ->where('district_id', $district_id) // COMMENTED
                                  ->where('type', $type) // 1 = Govt, 2 = Private, 3 = Coaching
                                  ->get();
                  foreach($coachings as $coaching) {
@@ -821,7 +821,7 @@ class APIController extends Controller
         {
             $buses = Cache::remember('busesfrom'  . $district_id, 30 * 24 * 60 * 60, function () use ($district_id) {
                  $buses = Bus::orderBy('id', 'asc')
-                             ->where('district_id', $district_id) // COMMENTED
+                             // ->where('district_id', $district_id) // COMMENTED
                              ->get();
                  foreach($buses as $bus) {
                        $bus->district_from = $bus->district->name_bangla;
@@ -875,7 +875,7 @@ class APIController extends Controller
         {
             $journalists = Cache::remember('journalists'  . $district_id, 30 * 24 * 60 * 60, function () use ($district_id) {
                 $journalists = Journalist::orderBy('id', 'asc')
-                                ->where('district_id', $district_id) // COMMENTED
+                                // ->where('district_id', $district_id) // COMMENTED
                                 ->get();
 
                             
