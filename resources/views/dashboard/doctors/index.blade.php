@@ -74,7 +74,7 @@
                           </td>
                           <td>
                             @foreach($doctor->doctorhospitals as $hospital)
-                              <span class="badge bg-warning">{{ $hospital->hospital->name }}</span>
+                              <span class="badge bg-info">{{ $hospital->hospital->name }}</span>
                             @endforeach <br/>
                             {{ $doctor->upazilla->name_bangla }}, {{ $doctor->district->name_bangla }}
                           </td>
