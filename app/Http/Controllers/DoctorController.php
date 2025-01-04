@@ -401,11 +401,7 @@ class DoctorController extends Controller
 
         
         return view('dashboard.doctors.doctorserials')
-                            ->withDoctorscount($doctorscount)
-                            ->withDoctors($doctors)
-                            ->withDistricts($districts)
-                            ->withMedicaldepartments($medicaldepartments)
-                            ->withMedicalsymptoms($medicalsymptoms)
-                            ->withHospitals($hospitals);
+                            ->withDoctor($doctor)
+                            ->withDoctorserials($doctorserials);
     }
 }
