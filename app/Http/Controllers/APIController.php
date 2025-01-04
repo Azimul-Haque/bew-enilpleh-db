@@ -1495,10 +1495,7 @@ class APIController extends Controller
             'mobile'    =>   'required',
             'message'    =>   'required',
         ));
-
-        // KAJ ACHE...
-        // KAJ ACHE...
-        // KAJ ACHE...
+        
         $message = new Message;
         $message->name = $request->name;
         $message->mobile = $request->mobile;
