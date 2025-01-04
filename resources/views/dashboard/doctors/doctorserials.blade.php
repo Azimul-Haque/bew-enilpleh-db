@@ -35,8 +35,8 @@
                     <thead>
                       <tr>
                         <th>নাম</th>
-                        <th>বিভাগ/ লক্ষণ</th>
-                        <th>হাসপাতাল/ ঠিকানা</th>
+                        <th>মোবাইল</th>
+                        <th>তারিখ</th>
                         <th align="right" width="15%">কার্যক্রম</th>
                       </tr>
                     </thead>
