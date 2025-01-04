@@ -85,8 +85,6 @@
                             <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#editUserModal{{ $doctor->id }}">
                               <i class="fas fa-edit"></i>
                             </button>
-                            
-
                             <button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#deleteUserModal{{ $doctor->id }}" disabled>
                               <i class="fas fa-trash-alt"></i>
                             </button>
