@@ -47,9 +47,9 @@
                     </td>
                     <td>
                       @if($message->status == 1)
-                        {{ $message->name }}
+                        {{ $message->mobile }}
                       @else
-                        <b>{{ $message->name }}</b>
+                        <b>{{ $message->mobile }}</b>
                       @endif
                     </td>
                     <td>{{ $message->message }}</td>
