@@ -68,7 +68,7 @@
                               </div>
                               <div class="modal-body">
                                 আপনি কি নিশ্চিতভাবে এই সমস্যাটি সমাধান করতে চান?<br/><br/>
-                                <b>{{ $message->user->name }}</b><br/>
+                                <b>{{ $message->name }}</b><br/>
                                 {{ $message->message }}
                                 
                               </div>
@@ -100,7 +100,7 @@
                               </div>
                               <div class="modal-body">
                                 আপনি কি নিশ্চিতভাবে এই মেসেজটি ডিলেট করতে চান?<br/><br/>
-                                <b>{{ $message->user->name }}</b><br/>
+                                <b>{{ $message->name }}</b><br/>
                                 {{ $message->message }}
                                 
                               </div>
