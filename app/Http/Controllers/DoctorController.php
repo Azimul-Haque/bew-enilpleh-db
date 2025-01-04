@@ -394,15 +394,6 @@ class DoctorController extends Controller
 
     public function doctorSerialIndex()
     {
-        if(Auth::user()->role == 'editor') {
-            $doctorscount = Auth::user()->accessibleDoctors()->count();
-            $doctors = Auth::user()->accessibleDoctors()->paginate(10);
-        } else {
-            $doctorscount = Doctor::count();
-            $doctors = Doctor::orderBy('id', 'desc')->paginate(10);
-        }
-        
-
         $districts = District::all();
         $medicaldepartments = Medicaldepartment::all();
         $medicalsymptoms = Medicalsymptom::all();
