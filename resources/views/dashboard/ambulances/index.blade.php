@@ -58,92 +58,94 @@
                       <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#editUserModal{{ $ambulance->id }}">
                         <i class="fas fa-edit"></i>
                       </button>
-                      {{-- Edit User Modal Code --}}
-                      {{-- Edit User Modal Code --}}
-                      <!-- Modal -->
-                      <div class="modal fade" id="editUserModal{{ $ambulance->id }}" tabindex="-1" role="dialog" aria-labelledby="editUserModalLabel" aria-hidden="true" data-backdrop="static">
-                        <div class="modal-dialog" role="document">
-                          <div class="modal-content">
-                            <div class="modal-header bg-primary">
-                              <h5 class="modal-title" id="editUserModalLabel">অ্যাম্বুলেন্স তথ্য হালনাগাদ</h5>
-                              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                              </button>
-                            </div>
-                            <form method="post" action="{{ route('dashboard.ambulances.update', $ambulance->id) }}" enctype="multipart/form-data">
-                              <div class="modal-body">
-                                
-                                    @csrf
-
-                                    <div class="input-group mb-3">
-                                      <select name="district_id" id="district" class="form-control district" required>
-                                          <option selected="" disabled="" value="">জেলা নির্বাচন করুন</option>
-                                          @foreach($districts as $district)
-                                            <option value="{{ $district->id }}" @if($district->id == $ambulance->district_id) selected @endif>{{ $district->name_bangla }}</option>
-                                          @endforeach
-                                      </select>
-                                      <div class="input-group-append">
-                                          <div class="input-group-text"><span class="fas fa-map"></span></div>
-                                      </div>
-                                    </div>
-                                    <div class="input-group mb-3">
-                                      <select name="upazilla_id" id="upazilla" class="form-control upazilla" required>
-                                          <option selected="" value="{{ $ambulance->upazilla_id }}">{{ $ambulance->upazilla->name_bangla }}</option>
-                                      </select>
-                                      <div class="input-group-append">
-                                          <div class="input-group-text"><span class="fas fa-map-marked-alt"></span></div>
-                                      </div>
-                                    </div>
-                                    <div class="input-group mb-3">
-                                        <input type="text"
-                                               name="name"
-                                               class="form-control"
-                                               value="{{ $ambulance->name }}"
-                                               placeholder="অ্যাম্বুলেন্সের নাম" required>
-                                        <div class="input-group-append">
-                                            <div class="input-group-text"><span class="fas fa-ambulance"></span></div>
-                                        </div>
-                                    </div>
-                                    <div class="input-group mb-3">
-                                        <input type="number"
-                                               name="mobile"
-                                               value="{{ $ambulance->mobile }}"
-                                               autocomplete="off"
-                                               class="form-control"
-                                               placeholder="মোবাইল নম্বর" required>
-                                        <div class="input-group-append">
-                                            <div class="input-group-text"><span class="fas fa-mobile"></span></div>
-                                        </div>
-                                    </div>
-                                    <textarea class="form-control" name="description" placeholder="বক্স এর জন্য বার্তা লিখুন (Optional)">{{ $ambulance->description }}</textarea>    
-                                    <div class="form-group">
-                                        <label for="image">ছবি (প্রয়োজনে, ৩০০ x ৩০০ সাইজের, ২ মেগাবাইটের মধ্যে)</label>
-                                        <input type="file" name="image" accept="image/*">
-                                    </div>
-                                    <center>
-                                      @if($ambulance->ambulanceimage != null)
-                                        <img src="{{ asset('images/ambulances/' . $ambulance->ambulanceimage->image)}}" style="width: 250px; height: auto;" class="img-responsive" />
-                                      @else
-                                        <img src="{{ asset('images/placeholder.png')}}" style="width: 250px; height: auto;" class="img-responsive" />
-                                      @endif
-                                    </center>            
-                                
-                              </div>
-                              <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-dismiss="modal">ফিরে যান</button>
-                                <button type="submit" class="btn btn-primary">দাখিল করুন</button>
-                              </div>
-                            </form>
-                          </div>
-                        </div>
-                      </div>
-                      {{-- Edit User Modal Code --}}
-                      {{-- Edit User Modal Code --}}
+                      
 
                       <button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#deleteUserModal{{ $ambulance->id }}">
                         <i class="fas fa-trash-alt"></i>
                       </button>
                     </td>
+
+                    {{-- Edit User Modal Code --}}
+                    {{-- Edit User Modal Code --}}
+                    <!-- Modal -->
+                    <div class="modal fade" id="editUserModal{{ $ambulance->id }}" tabindex="-1" role="dialog" aria-labelledby="editUserModalLabel" aria-hidden="true" data-backdrop="static">
+                      <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                          <div class="modal-header bg-primary">
+                            <h5 class="modal-title" id="editUserModalLabel">অ্যাম্বুলেন্স তথ্য হালনাগাদ</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                              <span aria-hidden="true">&times;</span>
+                            </button>
+                          </div>
+                          <form method="post" action="{{ route('dashboard.ambulances.update', $ambulance->id) }}" enctype="multipart/form-data">
+                            <div class="modal-body">
+                              
+                                  @csrf
+
+                                  <div class="input-group mb-3">
+                                    <select name="district_id" id="district" class="form-control district" required>
+                                        <option selected="" disabled="" value="">জেলা নির্বাচন করুন</option>
+                                        @foreach($districts as $district)
+                                          <option value="{{ $district->id }}" @if($district->id == $ambulance->district_id) selected @endif>{{ $district->name_bangla }}</option>
+                                        @endforeach
+                                    </select>
+                                    <div class="input-group-append">
+                                        <div class="input-group-text"><span class="fas fa-map"></span></div>
+                                    </div>
+                                  </div>
+                                  <div class="input-group mb-3">
+                                    <select name="upazilla_id" id="upazilla" class="form-control upazilla" required>
+                                        <option selected="" value="{{ $ambulance->upazilla_id }}">{{ $ambulance->upazilla->name_bangla }}</option>
+                                    </select>
+                                    <div class="input-group-append">
+                                        <div class="input-group-text"><span class="fas fa-map-marked-alt"></span></div>
+                                    </div>
+                                  </div>
+                                  <div class="input-group mb-3">
+                                      <input type="text"
+                                             name="name"
+                                             class="form-control"
+                                             value="{{ $ambulance->name }}"
+                                             placeholder="অ্যাম্বুলেন্সের নাম" required>
+                                      <div class="input-group-append">
+                                          <div class="input-group-text"><span class="fas fa-ambulance"></span></div>
+                                      </div>
+                                  </div>
+                                  <div class="input-group mb-3">
+                                      <input type="number"
+                                             name="mobile"
+                                             value="{{ $ambulance->mobile }}"
+                                             autocomplete="off"
+                                             class="form-control"
+                                             placeholder="মোবাইল নম্বর" required>
+                                      <div class="input-group-append">
+                                          <div class="input-group-text"><span class="fas fa-mobile"></span></div>
+                                      </div>
+                                  </div>
+                                  <textarea class="form-control" name="description" placeholder="বক্স এর জন্য বার্তা লিখুন (Optional)">{{ $ambulance->description }}</textarea>    
+                                  <div class="form-group">
+                                      <label for="image">ছবি (প্রয়োজনে, ৩০০ x ৩০০ সাইজের, ২ মেগাবাইটের মধ্যে)</label>
+                                      <input type="file" name="image" accept="image/*">
+                                  </div>
+                                  <center>
+                                    @if($ambulance->ambulanceimage != null)
+                                      <img src="{{ asset('images/ambulances/' . $ambulance->ambulanceimage->image)}}" style="width: 250px; height: auto;" class="img-responsive" />
+                                    @else
+                                      <img src="{{ asset('images/placeholder.png')}}" style="width: 250px; height: auto;" class="img-responsive" />
+                                    @endif
+                                  </center>            
+                              
+                            </div>
+                            <div class="modal-footer">
+                              <button type="button" class="btn btn-secondary" data-dismiss="modal">ফিরে যান</button>
+                              <button type="submit" class="btn btn-primary">দাখিল করুন</button>
+                            </div>
+                          </form>
+                        </div>
+                      </div>
+                    </div>
+                    {{-- Edit User Modal Code --}}
+                    {{-- Edit User Modal Code --}}
                         {{-- Delete User Modal Code --}}
                         {{-- Delete User Modal Code --}}
                         <!-- Modal -->
