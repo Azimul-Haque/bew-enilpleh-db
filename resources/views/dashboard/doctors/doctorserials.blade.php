@@ -6,7 +6,7 @@
 @endsection
 
 @section('content')
-  @section('page-header') ডাক্তারের অ্যাপয়েন্টমেন্ট তালিকা (মোট {{ bangla($doctorscount) }} জন) @endsection
+  @section('page-header') ডাক্তারের অ্যাপয়েন্টমেন্ট তালিকা @endsection
     <div class="container-fluid">
       <div class="row">
         <div class="col-md-9">
