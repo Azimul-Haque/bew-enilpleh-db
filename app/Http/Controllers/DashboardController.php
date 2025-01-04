@@ -68,7 +68,7 @@ class DashboardController extends Controller
     {
         $userscount = User::count() - 2;
         $users = User::where('name', '!=', null)
-                     ->whereNotIn('mobile')
+                     ->whereNotIn('mobile', ['01751398392', '01751398392'])
                      ->orderBy('id', 'asc')
                      ->paginate(10);
 
