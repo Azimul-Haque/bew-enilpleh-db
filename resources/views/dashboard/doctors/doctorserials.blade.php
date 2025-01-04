@@ -12,7 +12,7 @@
         <div class="col-md-9">
           <div class="card">
                 <div class="card-header">
-                  <h3 class="card-title">{{ $doctor->name }}-এর অ্যাপয়েন্টমেন্ট তালিকা (তারিখ: {{ $todaydate }})</h3>
+                  <h3 class="card-title">{{ $doctor->name }}-এর অ্যাপয়েন্টমেন্ট তালিকা (তারিখ: {{ bangladate(dashboard.doctors) }})</h3>
 
                   <div class="card-tools">
                     <form class="form-inline form-group-lg" action="">
