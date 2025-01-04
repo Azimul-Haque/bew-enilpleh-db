@@ -1500,7 +1500,8 @@ class APIController extends Controller
         // KAJ ACHE...
         // KAJ ACHE...
         $message = new Message;
-        $message->user_id = $user->id;
+        $message->name = $request->name;
+        $message->mobile = $request->mobile;
         $message->message = $request->message;
         $message->save();
         
