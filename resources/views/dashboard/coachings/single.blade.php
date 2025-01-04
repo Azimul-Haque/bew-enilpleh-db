@@ -259,6 +259,7 @@
                           <div class="input-group-text"><span class="fas fa-map-marked-alt"></span></div>
                       </div>
                   </div>
+                  <textarea class="form-control" name="description" placeholder="বক্স এর জন্য বার্তা লিখুন (Optional)">{{ old('description') }}</textarea>   
                   <div class="row">
                     <div class="col-md-6">
                       <div class="form-group" style="margin-top: 15px;">
