@@ -2,7 +2,12 @@
 @section('title') ড্যাশবোর্ড | ডাক্তারের অ্যাপয়েন্টমেন্ট তালিকা @endsection
 
 @section('third_party_stylesheets')
-  <link rel="stylesheet" type="text/css" href="{{ asset('css/bootstrap-datepicker.min.css') }}"> 
+  <link rel="stylesheet" type="text/css" href="{{ asset('css/bootstrap-datepicker.min.css') }}">
+  <style type="text/css">
+    .datepicker_wrapper, .datepicker_wrapper2{
+    position:relative;
+    }
+  </style>
 @endsection
 
 @section('content')
@@ -83,6 +88,7 @@
   {{-- <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script> --}}
   <script type="text/javascript">
     $("#selectdate").datepicker({
+      container: '.datepicker_wrapper',
       format: 'MM dd, yyyy',
       todayHighlight: true,
       autoclose: true,
