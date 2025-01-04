@@ -394,7 +394,7 @@ class DoctorController extends Controller
 
     public function doctorSerialIndex()
     {
-        $districts = District::all();
+        $doctorserials = Doctorserials::all();
         $medicaldepartments = Medicaldepartment::all();
         $medicalsymptoms = Medicalsymptom::all();
         $hospitals = Hospital::all();
