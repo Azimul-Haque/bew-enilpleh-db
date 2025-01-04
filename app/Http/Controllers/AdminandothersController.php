@@ -618,6 +618,7 @@ class AdminandothersController extends Controller
         $coaching->type = $request->type;
         $coaching->mobile = $request->mobile;
         $coaching->address = $request->address;
+        $coaching->description = $request->description;
         $coaching->save();
 
         if(Auth::user()->role == 'editor') {
