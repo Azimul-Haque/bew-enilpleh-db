@@ -87,7 +87,7 @@
                             </button>
                             <button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#deleteUserModal{{ $doctor->id }}" disabled>
                               <i class="fas fa-trash-alt"></i>
-                            </button>
+                            </button><br/>
                              <button type="button" style="margin-top: 15px;" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#deleteUserModal{{ $doctor->id }}" disabled>
                               <i class="fas fa-trash-alt"></i>
                             </button>
