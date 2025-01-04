@@ -22,6 +22,7 @@ return array(
     'App\\Doctorimage' => $baseDir . '/app/Doctorimage.php',
     'App\\Doctormedicaldepartment' => $baseDir . '/app/Doctormedicaldepartment.php',
     'App\\Doctormedicalsymptom' => $baseDir . '/app/Doctormedicalsymptom.php',
+    'App\\Doctorserial' => $baseDir . '/app/Doctorserial.php',
     'App\\Esheba' => $baseDir . '/app/Esheba.php',
     'App\\Eshebaimage' => $baseDir . '/app/Eshebaimage.php',
     'App\\Exceptions\\Handler' => $baseDir . '/app/Exceptions/Handler.php',
