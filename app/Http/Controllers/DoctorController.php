@@ -396,7 +396,7 @@ class DoctorController extends Controller
     {
         $doctorserials = Doctorserial::where('doctor_id', $doctor_id)
                                      ->where('serialdate', $todaydate)
-                                     ->paginate();
+                                     ->paginate(10);
 
         $medicaldepartments = Medicaldepartment::all();
         $medicalsymptoms = Medicalsymptom::all();
