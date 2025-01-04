@@ -82,12 +82,12 @@
   <script type="text/javascript" src="{{ asset('js/bootstrap-datepicker.min.js') }}"></script>
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
   <script type="text/javascript">
-    $("#packageexpirydate{{ $user->id }}").datepicker({
+    $("#selectdate").datepicker({
       format: 'MM dd, yyyy',
       todayHighlight: true,
       autoclose: true,
     });
-    
+
     $(document).on('click', '#search-button', function() {
       if($('#search-param').val() != '') {
         var urltocall = '{{ route('dashboard.doctors') }}' +  '/' + $('#search-param').val();
