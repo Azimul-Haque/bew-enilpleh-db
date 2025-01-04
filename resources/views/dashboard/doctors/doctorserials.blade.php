@@ -12,7 +12,7 @@
         <div class="col-md-9">
           <div class="card">
                 <div class="card-header">
-                  <h3 class="card-title">ডাক্তারের অ্যাপয়েন্টমেন্ট তালিকা</h3>
+                  <h3 class="card-title">ডাক্তারের অ্যাপয়েন্টমেন্ট তালিকা (তারিখ: )</h3>
 
                   <div class="card-tools">
                     <form class="form-inline form-group-lg" action="">
