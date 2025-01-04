@@ -45,7 +45,13 @@
                       @endif
                       
                     </td>
-                    <td>{{ $message->mobile }}</td>
+                    <td>
+                      @if($message->status == 1)
+                        {{ $message->name }}
+                      @else
+                        <b>{{ $message->name }}</b>
+                      @endif
+                    </td>
                     <td>{{ $message->message }}</td>
                     <td>{{ date('F d, Y h:m A', strtotime($message->created_at)) }}</td>
                 		
