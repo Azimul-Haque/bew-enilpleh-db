@@ -83,6 +83,7 @@ class AmbulanceController extends Controller
             'name'                => 'required|string|max:191',
             'mobile'              => 'required|string|max:191',
             'image'              => 'sometimes',
+            'description'              => 'sometimes|string|max:500',
         ));
 
         $ambulance = new Ambulance;
@@ -90,6 +91,7 @@ class AmbulanceController extends Controller
         $ambulance->upazilla_id = $request->upazilla_id;
         $ambulance->name = $request->name;
         $ambulance->mobile = $request->mobile;
+        $ambulance->description = $request->description;
         $ambulance->save();
 
         // image upload
@@ -118,6 +120,7 @@ class AmbulanceController extends Controller
             'name'                => 'required|string|max:191',
             'mobile'              => 'required|string|max:191',
             'image'              => 'sometimes',
+            'description'              => 'sometimes|string|max:500',
         ));
 
         $ambulance = Ambulance::find($id);
@@ -125,6 +128,7 @@ class AmbulanceController extends Controller
         $ambulance->upazilla_id = $request->upazilla_id;
         $ambulance->name = $request->name;
         $ambulance->mobile = $request->mobile;
+        $ambulance->description = $request->description;
         $ambulance->save();
 
         // image upload
