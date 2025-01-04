@@ -399,12 +399,8 @@ class DoctorController extends Controller
                                      ->where('serialdate', $todaydate)
                                      ->paginate(10);
 
-        $medicaldepartments = Medicaldepartment::all();
-        $medicalsymptoms = Medicalsymptom::all();
-        $hospitals = Hospital::all();
-
         
-        return view('dashboard.doctors.index')
+        return view('dashboard.doctors.doctorserials')
                             ->withDoctorscount($doctorscount)
                             ->withDoctors($doctors)
                             ->withDistricts($districts)
