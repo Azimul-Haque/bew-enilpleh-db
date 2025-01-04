@@ -41,13 +41,34 @@
                       </tr>
                     </thead>
                     <tbody>
-                      
+                      @foreach($doctorserials as $doctorserial)
+                        <tr>
+                          <td>
+                            {{ $doctor->name }}<br/>
+                            <span style="font-size: 12px;">{{ $doctor->degree }}</span>
+                            <span class="badge bg-primary">{{ $doctor->specialization }}</span>
+                            <br/>
+                            <small class="text-black-50"><i class="fas fa-phone"></i> {{ $doctor->serial }}</small>
+                            <small class="text-black-50"><i class="fas fa-mobile"></i> {{ $doctor->helpline }}</small>
+                            
+                          </td>
+                          <td>
+                            
+                          </td>
+                          <td>
+                            
+                          </td>
+                          <td align="right">
+                           
+                          </td>
+                        </tr>
+                      @endforeach
                     </tbody>
                   </table>
                 </div>
                 <!-- /.card-body -->
               </div>
-              {{ $doctors->links() }}
+              {{ $doctorserials->links() }}
         </div>
       </div>
     </div>
