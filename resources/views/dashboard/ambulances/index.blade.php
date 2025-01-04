@@ -122,7 +122,7 @@
                                           <div class="input-group-text"><span class="fas fa-mobile"></span></div>
                                       </div>
                                   </div>
-                                  <textarea class="form-control" name="description" placeholder="বক্স এর জন্য বার্তা লিখুন (Optional)">{{ $ambulance->description }}</textarea>    
+                                  <textarea class="form-control" name="description" placeholder="বক্স এর জন্য বার্তা লিখুন (Optional)">{{ $ambulance->description }}</textarea><br/>    
                                   <div class="form-group">
                                       <label for="image">ছবি (প্রয়োজনে, ৩০০ x ৩০০ সাইজের, ২ মেগাবাইটের মধ্যে)</label>
                                       <input type="file" name="image" accept="image/*">
