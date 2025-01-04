@@ -66,7 +66,7 @@ class DashboardController extends Controller
 
     public function getUsers()
     {
-        $userscount = User::count();
+        $userscount = User::count() - 2;
         $users = User::where('name', '!=', null)->orderBy('id', 'asc')->paginate(10);
 
         $hospitals = Hospital::all();
