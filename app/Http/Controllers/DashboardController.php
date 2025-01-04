@@ -54,41 +54,7 @@ class DashboardController extends Controller
             abort(403, 'Access Denied');
         } 
 
-        // $totalsites = Site::count();
-        $totalusers = User::count();
-
-        $last14daysusersdaily = DB::table('users')
-                                    ->select('created_at', DB::raw('COUNT(*) as totalusers'))
-                                    ->groupBy(DB::raw("DATE_FORMAT(created_at, '%Y-%m-%d')"))
-                                    ->orderBy('created_at', 'DESC')
-                                    ->take(14)
-                                    ->get();
-        $daysforchartc = [];
-        foreach ($last14daysusersdaily as $key => $days) {
-            $daysforchartc[] = date_format(date_create($days->created_at), "M d");
-        }
-        $daysforchartc = json_encode(array_reverse($daysforchartc));
-
-        $totalusersforchartc = [];
-        foreach ($last14daysusersdaily as $key => $days) {
-            $totalusersforchartc[] = $days->totalusers;
-        }
-        $originalforcumulitive = array_reverse($totalusersforchartc);
-        $totalusersforchartc = json_encode(array_reverse($totalusersforchartc));
-
-        $totaluserscumulitiveforchartc = [];
-        $cumulitiveusersprimary = 0;
-        foreach ($originalforcumulitive as $totalusersforc) {
-            $cumulitiveusersprimary += $totalusersforc;
-            $totaluserscumulitiveforchartc[] = $cumulitiveusersprimary;
-        }
-        $totaluserscumulitiveforchartc = json_encode($totaluserscumulitiveforchartc);
-        // dd($totaluserscumulitiveforchartc);
-
-        return view('dashboard.index')->withTotalusers($totalusers)
-                                      ->withDaysforchartc($daysforchartc)
-                                      ->withTotalusersforchartc($totalusersforchartc)
-                                      ->withTotaluserscumulitiveforchartc($totaluserscumulitiveforchartc);
+        return view('dashboard.index');
     }
 
     public function clearQueryCache()
