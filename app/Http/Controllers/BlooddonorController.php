@@ -88,6 +88,7 @@ class BlooddonorController extends Controller
             'name'                => 'required|string|max:191',
             'category'            => 'required',
             'mobile'              => 'required|string|max:191',
+            'description'              => 'sometimes|string|max:500',
         ));
 
         $blooddonor = new Blooddonor;
@@ -117,6 +118,7 @@ class BlooddonorController extends Controller
             'name'                => 'required|string|max:191',
             'category'            => 'required',
             'mobile'              => 'required|string|max:191',
+            'description'              => 'sometimes|string|max:500',
         ));
 
         $blooddonor = Blooddonor::find($id);
@@ -127,6 +129,7 @@ class BlooddonorController extends Controller
         $blooddonor->name = $request->name;
         $blooddonor->category = $request->category;
         $blooddonor->mobile = $request->mobile;
+        $blooddonor->description = $request->description;
         $blooddonor->save();
 
         Cache::forget('blooddonors'. $request->category . $request->district_id);
