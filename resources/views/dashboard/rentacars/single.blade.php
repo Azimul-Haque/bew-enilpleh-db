@@ -55,71 +55,71 @@
                       <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#editUserModal{{ $rentacar->id }}">
                         <i class="fas fa-edit"></i>
                       </button>
-                      {{-- Edit User Modal Code --}}
-                      {{-- Edit User Modal Code --}}
-                      <!-- Modal -->
-                      <div class="modal fade" id="editUserModal{{ $rentacar->id }}" tabindex="-1" role="dialog" aria-labelledby="editUserModalLabel" aria-hidden="true" data-backdrop="static">
-                        <div class="modal-dialog" role="document">
-                          <div class="modal-content">
-                            <div class="modal-header bg-primary">
-                              <h5 class="modal-title" id="editUserModalLabel">রেন্ট-এ-কার তথ্য হালনাগাদ</h5>
-                              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                              </button>
-                            </div>
-                            <form method="post" action="{{ route('dashboard.rentacars.update', [$district->id, $rentacar->id]) }}" enctype="multipart/form-data">
-                              <div class="modal-body">
-                                
-                                    @csrf
-
-                                    <div class="input-group mb-3">
-                                        <input type="text"
-                                               name="name"
-                                               class="form-control"
-                                               value="{{ $rentacar->name }}"
-                                               placeholder="রেন্ট-এ-কারের নাম" required>
-                                        <div class="input-group-append">
-                                            <div class="input-group-text"><span class="fas fa-user-tie"></span></div>
-                                        </div>
-                                    </div>
-                                    <div class="input-group mb-3">
-                                        <input type="number"
-                                               name="mobile"
-                                               value="{{ $rentacar->mobile }}"
-                                               class="form-control"
-                                               placeholder="রেন্ট-এ-কারের মোবাইল নম্বর" required>
-                                        <div class="input-group-append">
-                                            <div class="input-group-text"><span class="fas fa-mobile"></span></div>
-                                        </div>
-                                    </div>
-                                    <textarea class="form-control" name="description" placeholder="বক্স এর জন্য বার্তা লিখুন (Optional)">{{ $rentacar->description }}</textarea><br/>  
-                                    <div class="form-group">
-                                        <label for="image">ছবি (প্রয়োজনে, ৩০০ x ৩০০ সাইজের, ২ মেগাবাইটের মধ্যে)</label>
-                                        <input type="file" id="image" name="image" accept="image/*">
-                                    </div>
-                                    <center>
-                                      @if($rentacar->rentacarimage != null)
-                                        <img src="{{ asset('images/rentacars/' . $rentacar->rentacarimage->image)}}" id='img-upload' style="width: 250px; height: auto;" class="img-responsive" />
-                                      @else
-                                        <img src="{{ asset('images/placeholder.png')}}" id='img-upload' style="width: 250px; height: auto;" class="img-responsive" />
-                                      @endif
-                                    </center>                                               
-                              </div>
-                              <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-dismiss="modal">ফিরে যান</button>
-                                <button type="submit" class="btn btn-primary">দাখিল করুন</button>
-                              </div>
-                            </form>
-                          </div>
-                        </div>
-                      </div>
-                      {{-- Edit User Modal Code --}}
-                      {{-- Edit User Modal Code --}}
-
                       <button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#deleteUserModal{{ $rentacar->id }}">
                         <i class="fas fa-trash-alt"></i>
                       </button>
                     </td>
+
+                    {{-- Edit User Modal Code --}}
+                    {{-- Edit User Modal Code --}}
+                    <!-- Modal -->
+                    <div class="modal fade" id="editUserModal{{ $rentacar->id }}" tabindex="-1" role="dialog" aria-labelledby="editUserModalLabel" aria-hidden="true" data-backdrop="static">
+                      <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                          <div class="modal-header bg-primary">
+                            <h5 class="modal-title" id="editUserModalLabel">রেন্ট-এ-কার তথ্য হালনাগাদ</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                              <span aria-hidden="true">&times;</span>
+                            </button>
+                          </div>
+                          <form method="post" action="{{ route('dashboard.rentacars.update', [$district->id, $rentacar->id]) }}" enctype="multipart/form-data">
+                            <div class="modal-body">
+                              
+                                  @csrf
+
+                                  <div class="input-group mb-3">
+                                      <input type="text"
+                                             name="name"
+                                             class="form-control"
+                                             value="{{ $rentacar->name }}"
+                                             placeholder="রেন্ট-এ-কারের নাম" required>
+                                      <div class="input-group-append">
+                                          <div class="input-group-text"><span class="fas fa-user-tie"></span></div>
+                                      </div>
+                                  </div>
+                                  <div class="input-group mb-3">
+                                      <input type="number"
+                                             name="mobile"
+                                             value="{{ $rentacar->mobile }}"
+                                             class="form-control"
+                                             placeholder="রেন্ট-এ-কারের মোবাইল নম্বর" required>
+                                      <div class="input-group-append">
+                                          <div class="input-group-text"><span class="fas fa-mobile"></span></div>
+                                      </div>
+                                  </div>
+                                  <textarea class="form-control" name="description" placeholder="বক্স এর জন্য বার্তা লিখুন (Optional)">{{ $rentacar->description }}</textarea><br/>  
+                                  <div class="form-group">
+                                      <label for="image">ছবি (প্রয়োজনে, ৩০০ x ৩০০ সাইজের, ২ মেগাবাইটের মধ্যে)</label>
+                                      <input type="file" id="image" name="image" accept="image/*">
+                                  </div>
+                                  <center>
+                                    @if($rentacar->rentacarimage != null)
+                                      <img src="{{ asset('images/rentacars/' . $rentacar->rentacarimage->image)}}" id='img-upload' style="width: 250px; height: auto;" class="img-responsive" />
+                                    @else
+                                      <img src="{{ asset('images/placeholder.png')}}" id='img-upload' style="width: 250px; height: auto;" class="img-responsive" />
+                                    @endif
+                                  </center>                                               
+                            </div>
+                            <div class="modal-footer">
+                              <button type="button" class="btn btn-secondary" data-dismiss="modal">ফিরে যান</button>
+                              <button type="submit" class="btn btn-primary">দাখিল করুন</button>
+                            </div>
+                          </form>
+                        </div>
+                      </div>
+                    </div>
+                    {{-- Edit User Modal Code --}}
+                    {{-- Edit User Modal Code --}}
                         {{-- Delete User Modal Code --}}
                         {{-- Delete User Modal Code --}}
                         <!-- Modal -->
