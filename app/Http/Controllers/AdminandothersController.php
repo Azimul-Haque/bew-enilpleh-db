@@ -409,6 +409,7 @@ class AdminandothersController extends Controller
         $rentacar->district_id = $district_id;
         $rentacar->name = $request->name;
         $rentacar->mobile = $request->mobile;
+        $rentacar->description = $request->description;
         $rentacar->save();
 
         // image upload
