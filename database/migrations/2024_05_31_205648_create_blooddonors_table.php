@@ -20,6 +20,7 @@ class CreateBlooddonorsTable extends Migration
             $table->string('name');
             $table->string('category');
             $table->string('mobile');
+            $table->text('description')->nullable();
             $table->timestamps();
         });
     }
