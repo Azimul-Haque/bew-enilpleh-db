@@ -392,9 +392,9 @@ class DoctorController extends Controller
         return redirect()->route('dashboard.doctors');
     }
 
-    public function doctorSerialIndex()
+    public function doctorSerialIndex($todaydate)
     {
-        $doctorserials = Doctorserial::all();
+        $doctorserials = Doctorserial::where('');
         $medicaldepartments = Medicaldepartment::all();
         $medicalsymptoms = Medicalsymptom::all();
         $hospitals = Hospital::all();
