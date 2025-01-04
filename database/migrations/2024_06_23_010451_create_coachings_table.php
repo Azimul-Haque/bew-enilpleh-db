@@ -20,6 +20,7 @@ class CreateCoachingsTable extends Migration
             $table->integer('type');
             $table->string('address');
             $table->string('mobile');
+            $table->text('description')->nullable();
             $table->timestamps();
         });
     }
