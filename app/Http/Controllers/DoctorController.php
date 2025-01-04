@@ -394,12 +394,14 @@ class DoctorController extends Controller
 
     public function doctorSerialIndex($doctor_id, $todaydate)
     {
+        $doctor = Doctor::findOrFail($doctor_id);
         $doctorserials = Doctorserial::where('doctor_id', $doctor_id)
                                      ->where('serialdate', $todaydate)
                                      ->paginate(10);
 
         
         return view('dashboard.doctors.doctorserials')
+                            ->withDoctor($doctor)
                             ->withDoctorserials($doctorserials)
                             ->withTodaydate($todaydate);
     }
