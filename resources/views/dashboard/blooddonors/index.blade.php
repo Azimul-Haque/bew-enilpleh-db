@@ -265,7 +265,8 @@
                       <div class="input-group-append">
                           <div class="input-group-text"><span class="fas fa-mobile"></span></div>
                       </div>
-                  </div>           
+                  </div>
+                  <textarea class="form-control" name="description"></textarea>           
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-dismiss="modal">ফিরে যান</button>
