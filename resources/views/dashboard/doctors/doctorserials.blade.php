@@ -53,18 +53,10 @@
                             
                           </td>
                           <td>
-                            @foreach($doctor->doctormedicaldepartments as $medicaldepartment)
-                              <span class="badge bg-primary">{{ $medicaldepartment->medicaldepartment->name }}</span>
-                            @endforeach <br/>
-                            @foreach($doctor->doctormedicalsymptoms as $medicalsymptom)
-                              <span class="badge bg-info">{{ $medicalsymptom->medicalsymptom->name }}</span>
-                            @endforeach
+                            
                           </td>
                           <td>
-                            @foreach($doctor->doctorhospitals as $hospital)
-                              <span class="badge bg-info">{{ $hospital->hospital->name }}</span>
-                            @endforeach <br/>
-                            {{ $doctor->upazilla->name_bangla }}, {{ $doctor->district->name_bangla }}
+                            
                           </td>
                           <td align="right">
                             {{-- <button type="button" class="btn btn-warning btn-sm" data-toggle="modal" data-target="#notifModal{{ $doctor->id }}">
