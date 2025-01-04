@@ -17,7 +17,7 @@
                   <div class="card-tools">
                     <form class="form-inline form-group-lg" action="">
                       <div class="form-group">
-                        <input type="button" id="selectdate" class="form-control form-control-sm" placeholder="ডাক্তার খুঁজুন" id="search-param" required>
+                        <input type="text" id="selectdate" class="form-control form-control-sm" placeholder="ডাক্তার খুঁজুন" id="search-param" required>
                       </div>
                       <button type="button" id="search-button" class="btn btn-default btn-sm" style="margin-left: 5px;">
                         <i class="fas fa-search"></i> খুঁজুন
