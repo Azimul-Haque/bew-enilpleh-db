@@ -402,6 +402,7 @@ class AdminandothersController extends Controller
             'name'           => 'required|string|max:191',
             'mobile'         => 'required|string|max:191',
             'image'          => 'sometimes',
+            'description'          => 'sometimes|string|max:500',
         ));
 
         $rentacar = new Rentacar;
@@ -433,12 +434,14 @@ class AdminandothersController extends Controller
             'name'           => 'required|string|max:191',
             'mobile'         => 'required|string|max:191',
             'image'          => 'sometimes',
+            'description'          => 'sometimes|string|max:500',
         ));
 
         $rentacar = Rentacar::find($id);
         $rentacar->district_id = $district_id;
         $rentacar->name = $request->name;
         $rentacar->mobile = $request->mobile;
+        $rentacar->description = $request->description;
         $rentacar->save();
 
         // image upload
