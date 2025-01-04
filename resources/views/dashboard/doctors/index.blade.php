@@ -88,9 +88,9 @@
                             <button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#deleteUserModal{{ $doctor->id }}" disabled>
                               <i class="fas fa-trash-alt"></i>
                             </button><br/>
-                             <button type="button" style="margin-top: 5px;" class="btn btn-warning btn-sm" data-toggle="modal" data-target="#deleteUserModal{{ $doctor->id }}">
+                             <a href="" style="margin-top: 5px;" class="btn btn-warning btn-sm" data-toggle="modal" data-target="#deleteUserModal{{ $doctor->id }}">
                               <i class="fas fa-calendar-alt"></i> <b>অ্যাপয়েন্ট তালিকা</b>
-                            </button>
+                            </a>
                           </td>
 
                           {{-- Edit User Modal Code --}}
