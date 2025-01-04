@@ -41,28 +41,7 @@
                       </tr>
                     </thead>
                     <tbody>
-                      @foreach($doctors as $doctor)
-                        <tr>
-                          <td>
-                            {{ $doctor->name }}<br/>
-                            <span style="font-size: 12px;">{{ $doctor->degree }}</span>
-                            <span class="badge bg-primary">{{ $doctor->specialization }}</span>
-                            <br/>
-                            <small class="text-black-50"><i class="fas fa-phone"></i> {{ $doctor->serial }}</small>
-                            <small class="text-black-50"><i class="fas fa-mobile"></i> {{ $doctor->helpline }}</small>
-                            
-                          </td>
-                          <td>
-                            
-                          </td>
-                          <td>
-                            
-                          </td>
-                          <td align="right">
-                           
-                          </td>
-                        </tr>
-                      @endforeach
+                      
                     </tbody>
                   </table>
                 </div>
@@ -104,47 +83,6 @@
               })
             }
           }
-        });
-
-
-        $(document).on('change', '.btn-file :file', function() {
-          var input = $(this),
-              label = input.val().replace(/\\/g, '/').replace(/.*\//, '');
-          input.trigger('fileselect', [label]);
-        });
-
-        $('.btn-file :file').on('fileselect', function(event, label) {
-            var input = $(this).parents('.input-group').find(':text'),
-                log = label;
-            if( input.length ) {
-                input.val(log);
-            } else {
-                if( log ) alert(log);
-            }
-        });
-        function readURL(input) {
-            if (input.files && input.files[0]) {
-                var reader = new FileReader();
-                reader.onload = function (e) {
-                    $('#img-upload').attr('src', e.target.result);
-                }
-                reader.readAsDataURL(input.files[0]);
-            }
-        }
-        $("#image").change(function(){
-            readURL(this);
-            var filesize = parseInt((this.files[0].size)/1024);
-            if(filesize > 2000) {
-              $("#image").val('');
-              // toastr.warning('File size is: '+filesize+' Kb. try uploading less than 300Kb', 'WARNING').css('width', '400px;');
-              Toast.fire({
-                  icon: 'warning',
-                  title: 'File size is: '+filesize+' Kb. try uploading less than 2MB'
-              })
-              setTimeout(function() {
-              $("#img-upload").attr('src', '{{ asset('images/placeholder.png') }}');
-              }, 1000);
-            }
         });
     </script>
 @endsection
