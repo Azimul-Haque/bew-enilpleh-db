@@ -144,7 +144,7 @@
                                             <div class="input-group-text"><span class="fas fa-mobile"></span></div>
                                         </div>
                                     </div>    
-                                    <textarea class="form-control" name="description" placeholder="বক্স এর জন্য বার্তা লিখুন (Optional)">{{ old('description') }}</textarea>        
+                                    <textarea class="form-control" name="description" placeholder="বক্স এর জন্য বার্তা লিখুন (Optional)">{{ $blooddonor->description }}</textarea>        
                                 
                               </div>
                               <div class="modal-footer">
