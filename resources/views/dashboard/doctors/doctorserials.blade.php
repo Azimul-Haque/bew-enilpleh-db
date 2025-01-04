@@ -70,7 +70,6 @@
               </div>
               {{ $doctors->links() }}
         </div>
-        
       </div>
     </div>
 
