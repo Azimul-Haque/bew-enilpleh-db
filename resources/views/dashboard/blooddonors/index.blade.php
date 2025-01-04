@@ -266,7 +266,7 @@
                           <div class="input-group-text"><span class="fas fa-mobile"></span></div>
                       </div>
                   </div>
-                  <textarea class="form-control" name="description" placeholder="asds"></textarea>           
+                  <textarea class="form-control" name="description" placeholder="বক্স এর জন্য বার্তা লিখুন (Optional)"></textarea>           
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-dismiss="modal">ফিরে যান</button>
