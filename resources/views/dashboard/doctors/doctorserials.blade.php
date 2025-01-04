@@ -94,24 +94,24 @@
     });
 
     $(document).on('click', '#search-button', function() {
-      if($('#search-param').val() != '') {
-        var urltocall = '{{ route('dashboard.doctors') }}' +  '/' + $('#search-param').val();
+      if($('#selectdate').val() != '') {
+        var urltocall = '{{ route('dashboard.doctors') }}' +  '/' + $('#selectdate').val();
         location.href= urltocall;
       } else {
-        $('#search-param').css({ "border": '#FF0000 2px solid'});
+        $('#selectdate').css({ "border": '#FF0000 2px solid'});
         Toast.fire({
             icon: 'warning',
             title: 'কিছু লিখে খুঁজুন!'
         })
       }
     });
-    $("#search-param").keyup(function(e) {
+    $("#selectdate").keyup(function(e) {
       if(e.which == 13) {
-        if($('#search-param').val() != '') {
-          var urltocall = '{{ route('dashboard.doctors') }}' +  '/' + $('#search-param').val();
+        if($('#selectdate').val() != '') {
+          var urltocall = '{{ route('dashboard.doctors') }}' +  '/' + $('#selectdate').val();
           location.href= urltocall;
         } else {
-          $('#search-param').css({ "border": '#FF0000 2px solid'});
+          $('#selectdate').css({ "border": '#FF0000 2px solid'});
           Toast.fire({
               icon: 'warning',
               title: 'কিছু লিখে খুঁজুন!'
