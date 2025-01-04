@@ -33,6 +33,7 @@ use App\Bus;
 use App\Journalist;
 use App\Newspaper;
 use App\Newspaperimage;
+use App\Message;
 
 use Hash;
 use Carbon\Carbon;
