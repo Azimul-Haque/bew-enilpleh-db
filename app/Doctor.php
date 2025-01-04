@@ -39,4 +39,8 @@ class Doctor extends Model
     public function doctorhospitals(){
         return $this->hasMany('App\Doctorhospital');
     }
+
+    public function doctorserials(){
+        return $this->hasMany('App\Doctorserial');
+    }
 }
