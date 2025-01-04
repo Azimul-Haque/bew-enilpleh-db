@@ -197,7 +197,7 @@
                       </div>
                   </div>
 
-                  <textarea class="form-control" name="description" placeholder="বক্স এর জন্য বার্তা লিখুন (Optional)">{{ old('description') }}</textarea> 
+                  <textarea class="form-control" name="description" placeholder="বক্স এর জন্য বার্তা লিখুন (Optional)">{{ old('description') }}</textarea> <br/>
 
                   <div class="form-group ">
                       <label for="image">ছবি (প্রয়োজনে, ৩০০ x ৩০০ সাইজের, ২ মেগাবাইটের মধ্যে)</label>
