@@ -15,6 +15,7 @@ use App\Medicaldepartment;
 use App\Medicalsymptom;
 use App\Doctormedicaldepartment;
 use App\Doctormedicalsymptom;
+use App\Doctorserial;
 
 use Carbon\Carbon;
 use DB;
