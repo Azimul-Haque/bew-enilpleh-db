@@ -394,7 +394,9 @@ class DoctorController extends Controller
 
     public function doctorSerialIndex($doctor_id, $todaydate)
     {
-        $doctorserials = Doctorserial::where('doctor_id', $doctor_id);
+        $doctorserials = Doctorserial::where('doctor_id', $doctor_id)
+                                     ->where('serialdate', $todaydate)
+
         $medicaldepartments = Medicaldepartment::all();
         $medicalsymptoms = Medicalsymptom::all();
         $hospitals = Hospital::all();
