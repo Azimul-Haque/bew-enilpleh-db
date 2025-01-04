@@ -97,6 +97,7 @@ class BlooddonorController extends Controller
         $blooddonor->name = $request->name;
         $blooddonor->category = $request->category;
         $blooddonor->mobile = $request->mobile;
+        $blooddonor->description = $request->description;
         $blooddonor->save();
 
         if(Auth::user()->role == 'editor') {
