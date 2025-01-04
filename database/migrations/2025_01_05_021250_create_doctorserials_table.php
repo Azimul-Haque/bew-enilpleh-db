@@ -15,6 +15,9 @@ class CreateDoctorserialsTable extends Migration
     {
         Schema::create('doctorserials', function (Blueprint $table) {
             $table->id();
+            $table->integer('doctor_id');
+
+            $table->foreign('doctor_id')->references('id')->on('users')->onDelete('cascade');
             $table->timestamps();
         });
     }
