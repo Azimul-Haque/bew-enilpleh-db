@@ -18,6 +18,7 @@ class CreateRentacarsTable extends Migration
             $table->integer('district_id')->unsigned();
             $table->string('name');
             $table->string('mobile');
+            $table->text('description')->nullable();
             $table->timestamps();
         });
     }
