@@ -17,7 +17,7 @@ class CreateDoctorserialsTable extends Migration
             $table->id();
             $table->integer('doctor_id');
 
-            $table->foreign('doctor_id')->references('id')->on('users')->onDelete('cascade');
+            $table->foreign('doctor_id')->references('id')->on('doctors')->onDelete('cascade');
             $table->timestamps();
         });
     }
