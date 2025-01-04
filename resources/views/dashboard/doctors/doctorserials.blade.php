@@ -6,7 +6,7 @@
 @endsection
 
 @section('content')
-  @section('page-header') <a href="{{ route('dashboard.doctors') }}">asd</a> / {{ $doctor->name }}-এর অ্যাপয়েন্টমেন্ট তালিকা @endsection
+  @section('page-header') <a href="{{ route('dashboard.doctors') }}">ডাক্তার তালিকা</a> / {{ $doctor->name }}-এর অ্যাপয়েন্টমেন্ট তালিকা @endsection
     <div class="container-fluid">
       <div class="row">
         <div class="col-md-9">
