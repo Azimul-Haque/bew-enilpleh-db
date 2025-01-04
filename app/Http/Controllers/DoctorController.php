@@ -396,6 +396,7 @@ class DoctorController extends Controller
     {
         $doctorserials = Doctorserial::where('doctor_id', $doctor_id)
                                      ->where('serialdate', $todaydate)
+                                     ->get();
 
         $medicaldepartments = Medicaldepartment::all();
         $medicalsymptoms = Medicalsymptom::all();
