@@ -59,7 +59,14 @@
                         <b>{{ $message->message }}</b>
                       @endif
                     </td>
-                    <td>{{ date('F d, Y h:m A', strtotime($message->created_at)) }}</td>
+                    <td>
+                      @if($message->status == 1)
+                        {{ date('F d, Y h:m A', strtotime($message->created_at)) }}
+                      @else
+                        <b>{{ date('F d, Y h:m A', strtotime($message->created_at)) }}</b>
+                      @endif
+                      
+                    </td>
                 		
                 		<td align="right">
                       @if($message->status == 0)
