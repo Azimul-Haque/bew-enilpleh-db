@@ -88,7 +88,7 @@
                             <button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#deleteUserModal{{ $doctor->id }}" disabled>
                               <i class="fas fa-trash-alt"></i>
                             </button><br/>
-                             <a href="{{ route('api.getpaymenthistory', [$doctor->id, date('Y-m-d')]) }}" style="margin-top: 5px;" class="btn btn-warning btn-sm">
+                             <a href="{{ route('dashboard.doctorserialindex', [$doctor->id, date('Y-m-d')]) }}" style="margin-top: 5px;" class="btn btn-warning btn-sm">
                               <i class="fas fa-calendar-alt"></i> <b>অ্যাপয়েন্ট তালিকা</b>
                             </a>
                           </td>
