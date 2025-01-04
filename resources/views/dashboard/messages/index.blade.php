@@ -37,7 +37,13 @@
                       @if($message->status == 1)
                         <i class="fas fa-calendar-check"></i>
                       @endif
-                      {{ $message->name }}
+                      
+                      @if($message->status == 1)
+                        {{ $message->name }}
+                      @else
+                        <b>{{ $message->name }}</b>
+                      @endif
+                      
                     </td>
                     <td>{{ $message->mobile }}</td>
                     <td>{{ $message->message }}</td>
