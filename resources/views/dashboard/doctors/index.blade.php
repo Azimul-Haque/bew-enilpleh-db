@@ -89,7 +89,7 @@
                               <i class="fas fa-trash-alt"></i>
                             </button><br/>
                              <button type="button" style="margin-top: 5px;" class="btn btn-warning btn-sm" data-toggle="modal" data-target="#deleteUserModal{{ $doctor->id }}">
-                              অ্যাপয়েন্ট তালিকা
+                              <b>অ্যাপয়েন্ট তালিকা</b>
                             </button>
                           </td>
 
