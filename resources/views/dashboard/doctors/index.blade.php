@@ -89,7 +89,7 @@
                               <i class="fas fa-trash-alt"></i>
                             </button><br/>
                              <a href="{{ route('dashboard.doctorserialindex', [$doctor->id, date('Y-m-d')]) }}" style="margin-top: 5px;" class="btn btn-warning btn-sm">
-                              <i class="fas fa-calendar-alt"></i> <b>অ্যাপয়েন্ট তালিকা</b>
+                              <i class="fas fa-calendar-alt"></i> <b>অ্যাপয়েন্টমেন্ট তালিকা</b>
                             </a>
                           </td>
 

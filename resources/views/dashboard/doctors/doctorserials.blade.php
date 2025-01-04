@@ -1,5 +1,5 @@
 @extends('layouts.app')
-@section('title') ড্যাশবোর্ড | ডাক্তারের সিরিয়াল তালিকা @endsection
+@section('title') ড্যাশবোর্ড | ডাক্তারের অ্যাপয়েন্টমেন্ট তালিকা @endsection
 
 @section('third_party_stylesheets')
     <link href="{{ asset('css/select2.min.css') }}" rel="stylesheet" />
