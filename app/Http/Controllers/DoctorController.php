@@ -403,5 +403,6 @@ class DoctorController extends Controller
         return view('dashboard.doctors.doctorserials')
                             ->withDoctor($doctor)
                             ->withDoctorserials($doctorserials);
+                            ->withTodaydate($todaydate);
     }
 }
