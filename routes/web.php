@@ -123,7 +123,7 @@ Route::get('/dashboard/newspapers/{id}/delete', 'AdminandothersController@delete
 // Coaching
 Route::get('/dashboard/coachings', 'AdminandothersController@coachingIndex')->name('dashboard.coachings');
 Route::get('/dashboard/coachings/{district_id}', 'AdminandothersController@coachingIndexSingle')->name('dashboard.coachings.districtwise');
-Route::get('/dashboard/coachings/{district_id}', 'AdminandothersController@coachingIndexSingleForEditor')->name('dashboard.coachings.districtwise');
+Route::get('/dashboard/coachings/editor', 'AdminandothersController@coachingIndexSingleForEditor')->name('dashboard.coachings.singleforeditor');
 Route::get('/dashboard/coachings/{district_id}/{search}', 'AdminandothersController@coachingIndexSearch')->name('dashboard.coachings.districtwise.search');
 Route::post('/dashboard/coachings/{district_id}/store', 'AdminandothersController@storeCoaching')->name('dashboard.coachings.store');
 Route::post('/dashboard/coachings/{district_id}/{id}/update', 'AdminandothersController@updateCoaching')->name('dashboard.coachings.update');
