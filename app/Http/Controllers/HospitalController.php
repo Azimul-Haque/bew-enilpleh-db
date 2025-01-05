@@ -144,6 +144,19 @@ class HospitalController extends Controller
             Auth::user()->accessibleHospitals()->attach($hospital);
         }
 
+        // associate doctors
+        if(isset($request->hospitals)){
+            foreach($request->hospitals as $hospital_id) {
+                $doctorhospital = new Doctorhospital;
+                $doctorhospital->doctor_id = $doctor->id;
+                $doctorhospital->hospital_id = $hospital_id;
+                $doctorhospital->save();
+
+                Cache::forget('hospitaldoctors'. $hospital_id);
+            }            
+        }
+        // associate doctors
+
         // image upload
         // image upload
         if($request->hasFile('image1')) {
