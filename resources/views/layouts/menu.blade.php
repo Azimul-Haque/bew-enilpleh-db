@@ -106,14 +106,14 @@
 @endif
 
 
-@if(Auth::user()->role == 'admin' || in_array('coachings', Auth::user()->accessibleTables()))
+@if(Auth::user()->role == 'admin')
 <li class="nav-item">
     <a href="{{ route('dashboard.coachings') }}" class="nav-link {{ Request::is('dashboard/coachings') ? 'active' : '' }} {{ Request::is('dashboard/coachings/*') ? 'active' : '' }}">
         <i class="nav-icon fas fa-chalkboard-teacher"></i>
         <p>শিক্ষা প্রতিষ্ঠান</p>
     </a>
 </li>
-@elseif(Auth::user()->role == 'editor')
+@elseif(Auth::user()->role == 'editor' && in_array('coachings', Auth::user()->accessibleTables()))
 dashboard.coachings.singleforeditor
 @endif
 
