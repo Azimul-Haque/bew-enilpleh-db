@@ -338,7 +338,8 @@
               {{ $doctors->links() }}
         </div>
         <div class="col-md-3">
-          <div class="card">
+          @if(Auth::user()->role == 'admin')
+            <div class="card">
                 <div class="card-header">
                   <h3 class="card-title">বিভাগ তালিকা</h3>
 
@@ -493,6 +494,7 @@
                 </div>
                 <!-- /.card-body -->
               </div>
+          @endif
         </div>
       </div>
     </div>
