@@ -46,10 +46,10 @@
     <table class="bordertable">
         <thead>
           <tr>
-            <th class="calibri_normal" width="40%">Product</th>
-            <th class="calibri_normal">Quantity</th>
-            <th class="calibri_normal">Price</th>
-            <th class="calibri_normal" width="30%">Total</th>
+            <th width="40%">Product</th>
+            <th>Quantity</th>
+            <th>Price</th>
+            <th width="30%">Total</th>
           </tr>
         </thead>
         <tbody>
