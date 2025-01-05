@@ -46,7 +46,7 @@
     <table class="bordertable">
         <thead>
           <tr>
-            <th width="40%"><<b>রোগীর নাম</b></th>
+            <th width="40%"><b>রোগীর নাম</b></th>
             <th>মোবাইল</th>
             <th width="30%">সময়</th>
           </tr>
