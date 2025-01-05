@@ -414,7 +414,7 @@ class DoctorController extends Controller
                                    ->where('serialdate', $serialdate)
                                    ->get();
       // dd($doctorserials);
-      $pdf = PDF::loadView('dashboard.doctors.pdf.serials', ['doctor' => $doctor, 'doctorserials' => $doctorserials]);
+      $pdf = PDF::loadView('dashboard.doctors.pdf.serials', ['doctor' => $doctor, 'doctorserials' => $doctorserials, 'serialdate' => $serialdate]);
       $fileName = 'Doctor-Serial-'. $doctor_id . '-' . $serialdate . '.pdf';
       return $pdf->stream($fileName);
     }
