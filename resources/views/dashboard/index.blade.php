@@ -9,7 +9,7 @@
 	@section('page-header') ড্যাশবোর্ড @endsection
     <div class="container-fluid">
         <div class="row">
-          @if(Auth::user()->accessibleTables())
+          @if(in_array('hospitals', Auth::user()->accessibleTables()))
 
           @endif
           <div class="col-md-3">
