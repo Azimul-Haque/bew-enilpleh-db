@@ -88,6 +88,10 @@
           @endif
 
           @if(Auth::user()->role == 'admin' || in_array('coachings', Auth::user()->accessibleTables()))
+          
+          @endif
+
+          @if(Auth::user()->role == 'admin')
           <div class="col-md-3">
             <a href="{{ route('dashboard.coachings') }}" class="info-box mb-3">
               <span class="info-box-icon bg-warning elevation-1"><i class="fas fa-chalkboard-teacher"></i></span>
@@ -98,15 +102,6 @@
               </div>
             </a>
           </div>
-          @endif
-
-          @if(Auth::user()->role == 'admin')
-          <li class="nav-item">
-              <a href="{{ route('dashboard.coachings') }}" class="nav-link {{ Request::is('dashboard/coachings') ? 'active' : '' }} {{ Request::is('dashboard/coachings/*') ? 'active' : '' }}">
-                  <i class="nav-icon fas fa-chalkboard-teacher"></i>
-                  <p>শিক্ষা প্রতিষ্ঠান</p>
-              </a>
-          </li>
           @elseif(Auth::user()->role == 'editor' && in_array('coachings', Auth::user()->accessibleTables()))
           <li class="nav-item">
               <a href="{{ route('dashboard.coachings.singleforeditor') }}" class="nav-link {{ Request::is('dashboard/coachings') ? 'active' : '' }} {{ Request::is('dashboard/coachings/*') ? 'active' : '' }}">
