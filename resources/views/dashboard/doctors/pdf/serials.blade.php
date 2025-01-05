@@ -43,6 +43,37 @@
     </h3>
     <span class="calibri_normal"><b>Date: {{ date('F d, Y', strtotime($serialdate)) }}</b></span>
 
+    <table class="bordertable">
+        <thead>
+          <tr>
+            <th class="calibri_normal" width="40%">Product</th>
+            <th class="calibri_normal">Quantity</th>
+            <th class="calibri_normal">Price</th>
+            <th class="calibri_normal" width="30%">Total</th>
+          </tr>
+        </thead>
+        <tbody>
+          @foreach($order->cart->items as $item)
+          <tr>
+            <td class="calibri_normal">{{ $item['item']['title'] }}</td>
+            <td align="center" class="calibri_normal">{{ $item['qty'] }}</td>
+            <td align="right" class="calibri_normal">¥ <span class="calibri_normal">{{ $item['item']['price'] }}</span></td>
+            <td align="right" class="calibri_normal">¥ <span class="calibri_normal">{{ $item['price'] }}</span></td>
+          </tr>
+          @endforeach
+          <tr>
+            <td colspan="3"></td>
+            <td align="right" class="calibri_normal" style="line-height: 1.5em;">
+              SUBTOTAL ¥ {{ $order->cart->totalPrice - $order->cart->deliveryCharge + $order->cart->discount }}<br/>
+              Delivery Charge ¥ {{ $order->cart->deliveryCharge }}<br/>
+              Discount ¥ {{ $order->cart->discount }}<br/>
+              <big><strong>TOTAL ¥ {{ $order->cart->totalPrice }}</strong></big>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <br/>
+
     
 
     <htmlpagefooter name="page-footer">
