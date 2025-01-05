@@ -51,8 +51,7 @@ class HospitalController extends Controller
     public function indexSearch($search)
     {
         if(Auth::user()->role == 'editor') {
-            $hospitalscount = Auth::user()->accessibleHospitals()->count();
-            $hospitals = Auth::user()->accessibleHospitals()->paginate(10);
+            abort(403, 'Access Denied');
         }
         $hospitalscount = Hospital::where('name', 'LIKE', "%$search%")
                                   ->orWhere('telephone', 'LIKE', "%$search%")
