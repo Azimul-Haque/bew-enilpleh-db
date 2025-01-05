@@ -40,6 +40,7 @@ class HospitalController extends Controller
             $hospitalscount = Hospital::count();
             $hospitals = Hospital::orderBy('id', 'desc')->paginate(10);
         }
+        $allhospitals = Hospital::all();
         $doctors = Doctor::all();
         
         $districts = District::all();
