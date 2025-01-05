@@ -126,6 +126,7 @@
           </div>
           @endif
 
+          @if(Auth::user()->role == 'admin' || in_array('newspapers', Auth::user()->accessibleTables()))
           <div class="col-md-3">
             <a href="{{ route('dashboard.newspapers') }}" class="info-box mb-3">
               <span class="info-box-icon bg-success elevation-1"><i class="fas fa-newspaper"></i></span>
@@ -136,7 +137,9 @@
               </div>
             </a>
           </div>
+          @endif
 
+          @if(Auth::user()->role == 'admin' || in_array('journalists', Auth::user()->accessibleTables()))
           <div class="col-md-3">
             <a href="{{ route('dashboard.journalists') }}" class="info-box mb-3">
               <span class="info-box-icon bg-warning elevation-1"><i class="fas fa-gavel"></i></span>
@@ -147,6 +150,7 @@
               </div>
             </a>
           </div>
+          @endif
 
           {{-- <div class="col-md-3">
             <a href="{{ route('dashboard.buses') }}" class="info-box mb-3">
