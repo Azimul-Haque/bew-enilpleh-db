@@ -43,7 +43,8 @@
                 @foreach($coachings as $coaching)
                   <tr>
                     <td>
-                      {{ $coaching->name }}
+                      {{ $coaching->name }}<br/>
+                      <span>{{ $coaching->district->name_bangla }}</span>
                     </td>
                     <td><span class="badge badge-pill badge-{{ edu_inst_badge($coaching->type) }}">{{ edu_inst_type($coaching->type) }}</span></td>
                     <td>{{ $coaching->mobile }}</td>
