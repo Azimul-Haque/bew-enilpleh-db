@@ -50,7 +50,7 @@
                       @php $iteratior = 1; @endphp
                       @foreach($doctorserials as $doctorserial)
                         <tr>
-                          <td>{{ $iteratior }}</td>
+                          <td>{{ bangla($iteratior) }}</td>
                           <td>{{ $doctorserial->name }}</td>
                           <td>{{ $doctorserial->mobile }}</td>
                           <td>{{ date('F d, Y', strtotime($doctorserial->serialdate)) }}</td>
