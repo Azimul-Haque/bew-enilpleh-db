@@ -1509,7 +1509,7 @@ class APIController extends Controller
         ]);
     }
 
-    public function storeMessage(Request $request)
+    public function storeDoctorSerial(Request $request)
     {
         $this->validate($request,array(
             'name'    =>   'required',
