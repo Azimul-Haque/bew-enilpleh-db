@@ -93,8 +93,8 @@ class BlooddonorController extends Controller
             'upazilla_id'            => 'required',
             'name'                => 'required|string|max:191',
             'category'            => 'required',
-            'mobile'              => 'required|string|max:191',
-            'description'              => 'sometimes|string|max:500',
+            'mobile'              => 'required|max:191',
+            'description'              => 'sometimes|max:500',
         ));
 
         $blooddonor = new Blooddonor;
@@ -124,8 +124,8 @@ class BlooddonorController extends Controller
             'upazilla_id'         => 'required',
             'name'                => 'required|string|max:191',
             'category'            => 'required',
-            'mobile'              => 'required|string|max:191',
-            'description'              => 'sometimes|string|max:500',
+            'mobile'              => 'required|max:191',
+            'description'              => 'sometimes|max:500',
         ));
 
         $blooddonor = Blooddonor::find($id);
