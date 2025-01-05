@@ -22,10 +22,10 @@
                   <div class="card-tools">
                     <form class="form-inline form-group-lg" action="">
                       <div class="form-group">
-                        <input type="text" id="selectdate" class="form-control form-control-sm" placeholder="ডাক্তার খুঁজুন" required>
+                        <input type="text" id="selectdate" class="form-control form-control-sm" placeholder="তারিখ পরিবর্তন" required>
                       </div>
                       <button type="button" id="search-button" class="btn btn-default btn-sm" style="margin-left: 5px;">
-                        <i class="fas fa-search"></i> খুঁজুন
+                        <i class="fas fa-search"></i> তারিখ পরিবর্তন
                       </button>
                       <button type="button" class="btn btn-success btn-sm"  data-toggle="modal" data-target="#addUserModal" style="margin-left: 5px;">
                         <i class="fas fa-user-plus"></i> নতুন
