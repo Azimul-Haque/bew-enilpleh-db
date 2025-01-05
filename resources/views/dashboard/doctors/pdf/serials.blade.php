@@ -40,7 +40,7 @@
     </h3>
     <center>
       <span align="center" class="" style="color: #397736; border-bottom: 1px solid #397736;">
-        <b>{{ $doctor->name }} এর সিরিয়ালসমূহ</b>
+        <b>{{ $doctor->name }} এর</b>
       </span>
     </center>
     
