@@ -199,11 +199,7 @@
                                       <div style="margin-bottom: 15px;">
                                         <select name="doctor_ids[]" class="form-control multiple-select" multiple="multiple" data-placeholder="যে ডাক্তার হাসপাতালের এর সাথে সম্পৃক্ত (প্রয়োজনে একাধিক সিলেক্ট করা যাবে)" >
                                             @foreach($alldoctors as $doctor)
-                                              <option value="{{ $doctor->id }}">{{ $doctor->name }}, {{ $doctor->degree }}, {{ $doctor->specialization }} ({{ $doctor->district->name }})</option>
-                                            @endforeach
-
-                                            @foreach($allhospitals->except($hospital->id) as $brhospital)
-                                              <option value="{{ $brhospital->id }}" @if(in_array($brhospital->id, $hospital->branches->pluck('id')->toArray())) selected @endif>{{ $brhospital->name }}</option>
+                                              <option value="{{ $doctor->id }}" @if(in_array($hospital->id, $doctor->doctorhospitals->pluck('hospital_id')->toArray())) selected @endif>{{ $doctor->name }}, {{ $doctor->degree }}, {{ $doctor->specialization }} ({{ $doctor->district->name }})</option>
                                             @endforeach
                                         </select>
                                       </div>
