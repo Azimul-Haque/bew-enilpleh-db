@@ -7,7 +7,7 @@
 @endsection
 
 @section('content')
-  @section('page-header') শিক্ষা প্রতিষ্ঠান তালিকা (সরকারি/বেসরকারি/কোচিং) / {{ $district->name_bangla }} জেলা (মোট {{ bangla($coachingscount) }} টি) @endsection
+  @section('page-header') শিক্ষা প্রতিষ্ঠান তালিকা (সরকারি/বেসরকারি/কোচিং) / (মোট {{ bangla($coachingscount) }} টি) @endsection
     <div class="container-fluid">
     <div class="card">
           <div class="card-header">
@@ -78,7 +78,7 @@
                               <span aria-hidden="true">&times;</span>
                             </button>
                           </div>
-                          <form method="post" action="{{ route('dashboard.coachings.update', [$district->id, $coaching->id]) }}" enctype="multipart/form-data">
+                          <form method="post" action="{{ route('dashboard.coachings.update', [$coaching->district->id, $coaching->id]) }}" enctype="multipart/form-data">
                             <div class="modal-body">
                               
                                   @csrf
