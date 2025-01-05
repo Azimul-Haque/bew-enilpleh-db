@@ -32,6 +32,9 @@ class BlooddonorController extends Controller
 
     public function index()
     {
+        if(!in_array('blooddonors', Auth::user()->accessibleTables())) {
+            abort(403, 'Access Denied');
+        }
         if(Auth::user()->role == 'editor') {
             $blooddonorscount = Auth::user()->accessibleBlooddonors()->count();
             $blooddonors = Auth::user()->accessibleBlooddonors()->paginate(10);
