@@ -1517,11 +1517,11 @@ class APIController extends Controller
             'serialdate'    =>   'required',
         ));
         
-        $message = new Message;
-        $message->name = $request->name;
-        $message->mobile = $request->mobile;
-        $message->message = $request->message;
-        $message->save();
+        $doctorserial = new Doctorserial;
+        $doctorserial->name = $request->name;
+        $doctorserial->mobile = $request->mobile;
+        $doctorserial->doctorserial = $request->message;
+        $doctorserial->save();
         
         return response()->json([
             'success' => true
