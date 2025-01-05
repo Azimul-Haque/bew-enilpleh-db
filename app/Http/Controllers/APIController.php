@@ -1512,12 +1512,14 @@ class APIController extends Controller
     public function storeDoctorSerial(Request $request)
     {
         $this->validate($request,array(
+            'doctor_id'     =>   'required',
             'name'          =>   'required',
             'mobile'        =>   'required',
             'serialdate'    =>   'required',
         ));
         
         $doctorserial = new Doctorserial;
+        $doctorserial->doctor_id = $request->doctor_id;
         $doctorserial->name = $request->name;
         $doctorserial->mobile = $request->mobile;
         $doctorserial->serialdate = $request->serialdate;
