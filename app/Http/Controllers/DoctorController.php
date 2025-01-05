@@ -295,8 +295,8 @@ class DoctorController extends Controller
 
         if(isset($request->hospitals)){
 
-            foreach($doctor->doctorhospitals as $hospital) {
-                $hospital->delete();
+            foreach($doctor->doctorhospitals as $olddoctorhospital) {
+                $olddoctorhospital->delete();
             }
 
             foreach($request->hospitals as $hospital_id) {
