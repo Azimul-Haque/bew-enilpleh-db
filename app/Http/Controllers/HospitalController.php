@@ -160,25 +160,6 @@ class HospitalController extends Controller
         }
         // associate doctors
 
-        // associate doctors
-        if(isset($request->doctor_ids))
-        {
-            foreach($hospital->doctorhospitals as $doctor) {
-                $doctor->delete();
-            }
-            foreach($request->doctor_ids as $doctor_id) {
-                $doctorhospital = new Doctorhospital;
-                $doctorhospital->doctor_id = $doctor_id;
-                $doctorhospital->hospital_id = $hospital->id;
-                $doctorhospital->save();
-                // $thisdoctor = Doctor::find($doctor_id);
-                // $hospital->attach($thisdoctor);
-
-                Cache::forget('hospitaldoctors'. $hospital->id);
-            }            
-        }
-        // associate doctors
-
         // image upload
         // image upload
         if($request->hasFile('image1')) {
@@ -296,6 +277,25 @@ class HospitalController extends Controller
             }
         }
         $hospital->save();
+
+        // associate doctors
+        if(isset($request->doctor_ids))
+        {
+            foreach($hospital->doctorhospitals as $doctor) {
+                $doctor->delete();
+            }
+            foreach($request->doctor_ids as $doctor_id) {
+                $doctorhospital = new Doctorhospital;
+                $doctorhospital->doctor_id = $doctor_id;
+                $doctorhospital->hospital_id = $hospital->id;
+                $doctorhospital->save();
+                // $thisdoctor = Doctor::find($doctor_id);
+                // $hospital->attach($thisdoctor);
+
+                Cache::forget('hospitaldoctors'. $hospital->id);
+            }            
+        }
+        // associate doctors
 
         // image upload
         // image upload
