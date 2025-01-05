@@ -583,6 +583,9 @@ class AdminandothersController extends Controller
 
     public function coachingIndexSearch($district_id, $search)
     {
+        if(Auth::user()->role == 'editor') {
+            abort(403, 'Access Denied');
+        }
         $district = District::find($district_id);
         $coachingscount = Coaching::where('district_id', $district_id)
                                  ->where('name', 'LIKE', "%$search%")
