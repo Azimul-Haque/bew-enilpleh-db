@@ -558,6 +558,7 @@ class AdminandothersController extends Controller
 
     public function coachingIndex()
     {
+        if(Auth::user()->a)
         $districts = District::all();
                 
         return view('dashboard.coachings.index')
