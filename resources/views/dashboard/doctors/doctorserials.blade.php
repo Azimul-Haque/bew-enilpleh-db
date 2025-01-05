@@ -49,13 +49,7 @@
                       @foreach($doctorserials as $doctorserial)
                         <tr>
                           <td>
-                            {{ $doctorserial->name }}<br/>
-                            <span style="font-size: 12px;">{{ $doctorserial->degree }}</span>
-                            <span class="badge bg-primary">{{ $doctorserial->specialization }}</span>
-                            <br/>
-                            <small class="text-black-50"><i class="fas fa-phone"></i> {{ $doctorserial->serial }}</small>
-                            <small class="text-black-50"><i class="fas fa-mobile"></i> {{ $doctorserial->helpline }}</small>
-                            
+                            {{ $doctorserial->name }}
                           </td>
                           <td>
                             
