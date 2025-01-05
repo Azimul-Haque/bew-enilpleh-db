@@ -8,6 +8,7 @@ use App\District;
 use App\Upazilla;
 use App\Hospital;
 use App\Hospitalimage;
+use App\Doctor;
 
 use Carbon\Carbon;
 use DB;
@@ -39,6 +40,7 @@ class HospitalController extends Controller
             $hospitalscount = Hospital::count();
             $hospitals = Hospital::orderBy('id', 'desc')->paginate(10);
         }
+        $doctors = Doctor::all();
         
         $districts = District::all();
         
