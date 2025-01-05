@@ -40,7 +40,7 @@
     </h3>
     <center>
       <span align="center" class="" style="color: #397736; border-bottom: 1px solid #397736;">
-        <b>{{ $doctor->name }} SSS</b>
+        <b>{{ $doctor->name }}</b>
       </span>
     </center>
     
