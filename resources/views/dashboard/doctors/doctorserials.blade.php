@@ -48,15 +48,10 @@
                     <tbody>
                       @foreach($doctorserials as $doctorserial)
                         <tr>
-                          <td>
-                            {{ $doctorserial->name }}
-                          </td>
-                          <td>
-                            
-                          </td>
-                          <td>
-                            
-                          </td>
+                          <td>{{ $doctorserial->name }}</td>
+                          <td>{{ $doctorserial->name }}</td>
+                          <td>{{ $doctorserial->name }}</td>
+
                           <td align="right">
                            
                           </td>
