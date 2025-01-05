@@ -407,7 +407,7 @@ class DoctorController extends Controller
                             ->withTodaydate($todaydate);
     }
 
-    public function getDoctorSerialPDF($payment_id, $random_string) {
+    public function getDoctorSerialPDF($doctor_id, $serialdate) {
       $order = Order::where('payment_id', $payment_id)->first();
       $order->cart = unserialize($order->cart);
       // dd($order->user);
