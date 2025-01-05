@@ -53,7 +53,7 @@
           </tr>
         </thead>
         <tbody>
-          @foreach($order->cart->items as $item)
+          @foreach($doctorserials as $doctorserials)
           <tr>
             <td class="calibri_normal">{{ $item['item']['title'] }}</td>
             <td align="center" class="calibri_normal">{{ $item['qty'] }}</td>
