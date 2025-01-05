@@ -411,7 +411,6 @@ class DoctorController extends Controller
                                      ->where('serialdate', $todaydate)
                                      ->paginate(10);
 
-        
         return view('dashboard.doctors.doctorserials')
                             ->withDoctor($doctor)
                             ->withDoctorserials($doctorserials)
