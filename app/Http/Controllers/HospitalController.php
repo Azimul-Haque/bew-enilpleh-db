@@ -34,6 +34,10 @@ class HospitalController extends Controller
 
     public function index()
     {
+        if(!in_array('coachings', Auth::user()->accessibleTables())) {
+            abort(403, 'Access Denied');
+        }
+        
         if(Auth::user()->role == 'editor') {
             $hospitalscount = Auth::user()->accessibleHospitals()->count();
             $hospitals = Auth::user()->accessibleHospitals()->paginate(10);
