@@ -57,7 +57,7 @@
           <tr>
             <td>{{ $doctorserial->name }}</td>
             <td align="center" class="calibri_normal">{{ $doctorserial->name }}</td>
-            <td align="center"><span class="calibri_normal">{{ $doctorserial->name }}</span></td>
+            <td align="center">{{ $doctorserial->name }}</td>
             <td></td>
           </tr>
           @endforeach
