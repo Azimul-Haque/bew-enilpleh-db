@@ -55,7 +55,7 @@
           @foreach($doctorserials as $doctorserial)
           <tr>
             <td>{{ $doctorserial->name }}</td>
-            <td align="center" class="calibri_normal">{{ $doctorserial->name }}</td>
+            <td align="center" class="calibri_normal">{{ $doctorserial->mobile }}</td>
             <td></td>
           </tr>
           @endforeach
