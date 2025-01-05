@@ -113,6 +113,8 @@
         <p>শিক্ষা প্রতিষ্ঠান</p>
     </a>
 </li>
+@elseif(Auth::user()->role == 'editor')
+dashboard.coachings.singleforeditor
 @endif
 
 
