@@ -34,6 +34,7 @@ use App\Journalist;
 use App\Newspaper;
 use App\Newspaperimage;
 use App\Message;
+use App\Doctorserial
 
 use Hash;
 use Carbon\Carbon;
