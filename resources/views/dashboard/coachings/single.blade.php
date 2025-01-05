@@ -14,6 +14,7 @@
             <h3 class="card-title">শিক্ষা প্রতিষ্ঠান তালিকা (সরকারি/বেসরকারি/কোচিং)</h3>
 
             <div class="card-tools">
+              @if(Auth::user()->role == 'admin')
               <form class="form-inline form-group-lg" action="">
                 <div class="form-group">
                   <input type="search-param" class="form-control form-control-sm" placeholder="শিক্ষা প্রতিষ্ঠান খুঁজুন" id="search-param" required>
@@ -28,6 +29,7 @@
                   <i class="fas fa-plus-square"></i> নতুন
                 </button>
               </form>
+              @endif
               
             </div>
           </div>
