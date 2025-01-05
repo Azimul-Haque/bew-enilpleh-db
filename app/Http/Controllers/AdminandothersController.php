@@ -587,12 +587,10 @@ class AdminandothersController extends Controller
         if(!in_array('coachings', Auth::user()->accessibleTables())) {
             abort(403, 'Access Denied');
         }
-        $district = District::find($district_id);
-        $coachingscount = Auth::user()->accessibleCoachings()->where('district_id', $district_id)->count();
-        $coachings = Auth::user()->accessibleCoachings()->where('district_id', $district_id)->paginate(10);
+        $coachingscount = Auth::user()->accessibleCoachings()->count();
+        $coachings = Auth::user()->accessibleCoachings()->paginate(10);
                 
         return view('dashboard.coachings.singleforeditors')
-                            ->withDistrict($district)
                             ->withCoachingscount($coachingscount)
                             ->withCoachings($coachings);
     }
