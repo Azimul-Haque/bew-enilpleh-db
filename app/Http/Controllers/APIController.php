@@ -1520,7 +1520,7 @@ class APIController extends Controller
         $doctorserial = new Doctorserial;
         $doctorserial->name = $request->name;
         $doctorserial->mobile = $request->mobile;
-        $doctorserial->doctorserial = $request->message;
+        $doctorserial->serialdate = $request->serialdate;
         $doctorserial->save();
         
         return response()->json([
