@@ -146,7 +146,7 @@ class HospitalController extends Controller
 
         // associate doctors
         if(isset($request->doctor_ids)){
-            foreach($request->hospitals as $hospital_id) {
+            foreach($request->doctor_ids as $doctor_id) {
                 $doctorhospital = new Doctorhospital;
                 $doctorhospital->doctor_id = $doctor->id;
                 $doctorhospital->hospital_id = $hospital_id;
