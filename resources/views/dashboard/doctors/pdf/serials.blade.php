@@ -46,10 +46,10 @@
     <table class="bordertable">
         <thead>
           <tr>
-            <th width="40%">Product</th>
-            <th>Quantity</th>
-            <th>Price</th>
-            <th width="30%">Total</th>
+            <th width="40%">রোগীর নাম</th>
+            <th>মোবাইল</th>
+            <th>তারিখ</th>
+            <th width="30%">সময়</th>
           </tr>
         </thead>
         <tbody>
