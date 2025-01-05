@@ -420,13 +420,18 @@ class DoctorController extends Controller
 
     public function getDoctorSerialPDF($doctor_id, $serialdate)
     {
-      $doctor = Doctor::findOrFail($doctor_id);
-      $doctorserials = Doctorserial::where('doctor_id', $doctor_id)
+        if(Auth::user()->role == 'editor') {
+            if(!in_array('doctors', Auth::user()->accessibleTables())) {
+                abort(403, 'Access Denied');
+            }
+        }
+        $doctor = Doctor::findOrFail($doctor_id);
+        $doctorserials = Doctorserial::where('doctor_id', $doctor_id)
                                    ->where('serialdate', $serialdate)
                                    ->get();
-      // dd($doctorserials);
-      $pdf = PDF::loadView('dashboard.doctors.pdf.serials', ['doctor' => $doctor, 'doctorserials' => $doctorserials, 'serialdate' => $serialdate]);
-      $fileName = 'Doctor-Serial-'. $doctor_id . '-' . $serialdate . '.pdf';
-      return $pdf->stream($fileName);
+        // dd($doctorserials);
+        $pdf = PDF::loadView('dashboard.doctors.pdf.serials', ['doctor' => $doctor, 'doctorserials' => $doctorserials, 'serialdate' => $serialdate]);
+        $fileName = 'Doctor-Serial-'. $doctor_id . '-' . $serialdate . '.pdf';
+        return $pdf->stream($fileName);
     }
 }
