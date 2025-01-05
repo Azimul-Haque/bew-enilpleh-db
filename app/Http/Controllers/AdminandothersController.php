@@ -591,7 +591,7 @@ class AdminandothersController extends Controller
         $coachingscount = Auth::user()->accessibleCoachings()->where('district_id', $district_id)->count();
         $coachings = Auth::user()->accessibleCoachings()->where('district_id', $district_id)->paginate(10);
                 
-        return view('dashboard.coachings.single')
+        return view('dashboard.coachings.singleforeditors')
                             ->withDistrict($district)
                             ->withCoachingscount($coachingscount)
                             ->withCoachings($coachings);
