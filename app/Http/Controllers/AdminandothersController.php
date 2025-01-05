@@ -588,13 +588,8 @@ class AdminandothersController extends Controller
             abort(403, 'Access Denied');
         }
         $district = District::find($district_id);
-        if(Auth::user()->role == 'editor') {
-            $coachingscount = Auth::user()->accessibleCoachings()->where('district_id', $district_id)->count();
-            $coachings = Auth::user()->accessibleCoachings()->where('district_id', $district_id)->paginate(10);
-        } else {
-            $coachingscount = Coaching::where('district_id', $district_id)->count();
-            $coachings = Coaching::where('district_id', $district_id)->orderBy('id', 'asc')->paginate(10);
-        }
+        $coachingscount = Auth::user()->accessibleCoachings()->where('district_id', $district_id)->count();
+        $coachings = Auth::user()->accessibleCoachings()->where('district_id', $district_id)->paginate(10);
                 
         return view('dashboard.coachings.single')
                             ->withDistrict($district)
