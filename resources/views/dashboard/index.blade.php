@@ -15,7 +15,7 @@
 
               <div class="info-box-content">
                 <span class="info-box-text">হাসপাতাল তালিকা</span>
-                <small class="info-box-text" style="margin-top: 10px;">ক্লিক করুন {{ dd(Auth::user()->accessibleTables()) }}</small>
+                <small class="info-box-text" style="margin-top: 10px;">ক্লিক করুন</small>
               </div>
             </a>
           </div>
