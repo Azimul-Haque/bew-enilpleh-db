@@ -148,12 +148,12 @@ class HospitalController extends Controller
         // associate doctors
         if(isset($request->doctor_ids)){
             foreach($request->doctor_ids as $doctor_id) {
-                $doctorhospital = new Doctorhospital;
-                $doctorhospital->doctor_id = $doctor_id;
-                $doctorhospital->hospital_id = $hospital->id;
-                $doctorhospital->save();
-                // $thisdoctor = Doctor::find($doctor_id);
-                // $hospital->attach($thisdoctor);
+                // $doctorhospital = new Doctorhospital;
+                // $doctorhospital->doctor_id = $doctor_id;
+                // $doctorhospital->hospital_id = $hospital->id;
+                // $doctorhospital->save();
+                $thisdoctor = Doctor::find($doctor_id);
+                $hospital->attach($thisdoctor);
 
                 Cache::forget('hospitaldoctors'. $hospital->id);
             }            
