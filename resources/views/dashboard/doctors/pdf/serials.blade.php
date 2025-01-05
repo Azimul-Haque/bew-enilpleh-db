@@ -41,7 +41,7 @@
     <h3 style="color: #397736; border-bottom: 1px solid #397736;" align="center">
         <b>{{ $doctor->name }}-এর সিরিয়ালসমূহ</b>
     </h3>
-    <big>{{ date('F d, Y', strtotime($serialdate)) }}</big>
+    <big>Date: {{ date('F d, Y', strtotime($serialdate)) }}</big>
 
     
 
