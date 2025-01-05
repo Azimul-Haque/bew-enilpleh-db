@@ -28,7 +28,7 @@
                         <i class="fas fa-search"></i> তারিখ পরিবর্তন
                       </button>
                       <button type="button" class="btn btn-success btn-sm"  data-toggle="modal" data-target="#addUserModal" style="margin-left: 5px;">
-                        <i class="fas fa-print"></i> নতুন
+                        <i class="fas fa-print"></i> প্রিন্ট করুন
                       </button>
                     </form>
                     
