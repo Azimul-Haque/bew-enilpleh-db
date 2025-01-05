@@ -401,6 +401,14 @@ class DoctorController extends Controller
 
     public function doctorSerialIndex($doctor_id, $todaydate)
     {
+        if(Auth::user()->role == 'editor') {
+            if(!in_array('doctors', Auth::user()->accessibleTables())) {
+                abort(403, 'Access Denied');
+            }
+            $doctorscount = Auth::user()->accessibleDoctors()->count();
+            $doctors = Auth::user()->accessibleDoctors()->paginate(10);
+        }
+        
         $doctor = Doctor::findOrFail($doctor_id);
         $doctorserials = Doctorserial::where('doctor_id', $doctor_id)
                                      ->where('serialdate', $todaydate)
