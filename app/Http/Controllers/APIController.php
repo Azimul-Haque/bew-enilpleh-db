@@ -1514,7 +1514,7 @@ class APIController extends Controller
         $this->validate($request,array(
             'name'    =>   'required',
             'mobile'    =>   'required',
-            'message'    =>   'required',
+            'serialdate'    =>   'required',
         ));
         
         $message = new Message;
