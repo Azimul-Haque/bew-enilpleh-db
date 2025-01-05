@@ -24,6 +24,7 @@
                   <h3 class="card-title">ডাক্তার তালিকা</h3>
 
                   <div class="card-tools">
+                    @if(Auth::user()->role == 'admin')
                     <form class="form-inline form-group-lg" action="">
                       <div class="form-group">
                         <input type="search-param" class="form-control form-control-sm" placeholder="ডাক্তার খুঁজুন" id="search-param" required>
@@ -38,6 +39,7 @@
                         <i class="fas fa-user-plus"></i> নতুন
                       </button>
                     </form>
+                    @endif
                     
                   </div>
                 </div>
