@@ -31,7 +31,7 @@ Route::get('/getdoctors/{softtoken}/{medicalitemid}/{datatype}/{district_id}', '
 Route::get('/getdoctors/{softtoken}/{medicalitemid}/{datatype}/{district_id}/{upazilla_id}', 'APIController@getDoctorsUpazilla')->name('api.getdoctorsupazilla');
 Route::get('/gethospitaldoctors/{softtoken}/{hospital_id}', 'APIController@getHospitalDoctors')->name('api.gethospitaldoctors');
 Route::get('/getblooddonors/{softtoken}/{category}/{district_id}', 'APIController@getBloodDonorsDistrict')->name('api.getblooddonorsdistrict');
-Route::post('/doctorserial/store', 'APIController@storeDoctorSerial')->name('api.storemessage');
+Route::post('/doctorserial/store', 'APIController@storeDoctorSerial')->name('api.storedoctorserial');
 
 Route::get('/getblooddonors/{softtoken}/{category}/{district_id}/{upazilla_id}', 'APIController@getBloodDonorsUpazilla')->name('api.getblooddonorsupazilla');
 Route::get('/getblooddonormembers/{softtoken}/{blooddonor_id}', 'APIController@getBloodDonorMembers')->name('api.getblooddonormembers');
