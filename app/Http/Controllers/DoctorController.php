@@ -407,14 +407,15 @@ class DoctorController extends Controller
                             ->withTodaydate($todaydate);
     }
 
-    public function getDoctorSerialPDF($doctor_id, $serialdate) {
-      $order = Order::where('payment_id', $payment_id)->first();
+    public function getDoctorSerialPDF($doctor_id, $serialdate)
+    {
+      $doctor = Doctor::findOrFail($doctor_id);
       $doctorserials = Doctorserial::where('doctor_id', $doctor_id)
                                    ->where('serialdate', $serialdate)
                                    ->get();
       // dd($doctorserials);
-      $pdf = PDF::loadView('pdf.receipt', ['order' => $order]);
-      $fileName = 'Receipt_'. $payment_id .'.pdf';
+      $pdf = PDF::loadView('dashboard.doctors.pdf.serials', ['doctor' => $doctor, 'doctorserials' => $doctorserials]);
+      $fileName = 'Doctor-Serial-'. $doctor_id . '-' . $serialdate . '.pdf';
       return $pdf->stream($fileName);
     }
 }
