@@ -34,7 +34,7 @@ class HospitalController extends Controller
 
     public function index()
     {
-        if(!in_array('coachings', Auth::user()->accessibleTables())) {
+        if(!in_array('hospitals', Auth::user()->accessibleTables())) {
             abort(403, 'Access Denied');
         }
         
