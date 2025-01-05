@@ -9,7 +9,7 @@
 	@section('page-header') ড্যাশবোর্ড @endsection
     <div class="container-fluid">
         <div class="row">
-          @if(in_array('hospitals', Auth::user()->accessibleTables()))
+          @if(Auth::user()->role == 'editor' && in_array('hospitals', Auth::user()->accessibleTables()))
             <div class="col-md-3">
               <a href="{{ route('dashboard.hospitals') }}" class="info-box mb-3">
                 <span class="info-box-icon bg-primary elevation-1"><i class="fas fa-hospital"></i></span>
