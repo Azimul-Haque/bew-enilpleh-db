@@ -9,6 +9,7 @@ use App\Upazilla;
 use App\Hospital;
 use App\Hospitalimage;
 use App\Doctor;
+use App\Doctorhospital;
 
 use Carbon\Carbon;
 use DB;
