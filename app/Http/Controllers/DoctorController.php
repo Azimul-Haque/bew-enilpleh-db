@@ -410,7 +410,7 @@ class DoctorController extends Controller
     public function getDoctorSerialPDF($doctor_id, $serialdate) {
       $order = Order::where('payment_id', $payment_id)->first();
       $doctorserials = Doctorserial::where('doctor_id', $doctor_id)
-                                   ->where('serialdate', $todaydate)
+                                   ->where('serialdate', $serialdate)
                                    ->get();
       // dd($order->user);
       $pdf = PDF::loadView('pdf.receipt', ['order' => $order]);
