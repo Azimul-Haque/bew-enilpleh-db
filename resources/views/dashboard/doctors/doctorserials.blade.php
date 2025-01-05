@@ -39,6 +39,7 @@
                   <table class="table">
                     <thead>
                       <tr>
+                        <th>সিরিয়াল</th>
                         <th>নাম</th>
                         <th>মোবাইল</th>
                         <th>তারিখ</th>
