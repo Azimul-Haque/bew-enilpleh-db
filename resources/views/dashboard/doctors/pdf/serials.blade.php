@@ -38,8 +38,8 @@
       <img src="{{ public_path('images/logo.png') }}" style="height: 40px; width: auto;"><br/>
       <span class="calibri_normal"><b>Infoline</b> - BD Smart Seba</span><br/>
     </h3>
-    <h3 style="color: #397736; border-bottom: 1px solid #397736;">
-        <center><b>{{ $doctor->name }}</b></center>
+    <h3 style="color: #397736; border-bottom: 1px solid #397736;" align="center">
+        <b>{{ $doctor->name }}</b>
     </h3>
     
 
