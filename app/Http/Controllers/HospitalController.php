@@ -50,7 +50,7 @@ class HospitalController extends Controller
 
     public function indexSearch($search)
     {
-        $hospitalscount = Hospital::where('name', 'LIKE', "%$search%")
+        $hospitalscount = Auth::user()->accessibleHospitals()->where('name', 'LIKE', "%$search%")
                                   ->orWhere('telephone', 'LIKE', "%$search%")
                                   ->orWhere('mobile', 'LIKE', "%$search%")
                                   ->orWhereHas('district', function ($query) use ($search){
