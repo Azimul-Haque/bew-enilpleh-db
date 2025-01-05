@@ -630,7 +630,7 @@ class AdminandothersController extends Controller
             'image2'            => 'sometimes|image|mimes:jpeg,png,jpg,gif,svg,webp|max:1000',
             'image3'            => 'sometimes|image|mimes:jpeg,png,jpg,gif,svg,webp|max:1000',
             'image4'            => 'sometimes|image|mimes:jpeg,png,jpg,gif,svg,webp|max:1000',
-            'description'             => 'sometimes|string|max:500',
+            'description'             => 'sometimes|max:500',
         ));
 
         $coaching = new Coaching;
