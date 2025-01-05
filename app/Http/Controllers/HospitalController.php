@@ -150,7 +150,7 @@ class HospitalController extends Controller
             foreach($request->doctor_ids as $doctor_id) {
                 $doctorhospital = new Doctorhospital;
                 $doctorhospital->doctor_id = $doctor_id;
-                $doctorhospital->hospital_id = $hospital_id;
+                $doctorhospital->hospital_id = $hospital->id;
                 $doctorhospital->save();
 
                 Cache::forget('hospitaldoctors'. $hospital_id);
