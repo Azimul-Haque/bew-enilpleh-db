@@ -25,6 +25,7 @@
             <h3 class="card-title">রক্তদাতা প্রতিষ্ঠান/ব্লাড ব্যাংক</h3>
 
             <div class="card-tools">
+              @if(Auth::user()->role == 'admin')
               <form class="form-inline form-group-lg" action="">
                 <div class="form-group">
                   <input type="search-param" class="form-control form-control-sm" placeholder="রক্তদাতা প্রতিষ্ঠান খুঁজুন" id="search-param" required>
@@ -39,6 +40,7 @@
                   <i class="fas fa-plus-square"></i> নতুন
                 </button>
               </form>
+              @endif
               
             </div>
           </div>
