@@ -100,6 +100,22 @@
           </div>
           @endif
 
+          @if(Auth::user()->role == 'admin')
+          <li class="nav-item">
+              <a href="{{ route('dashboard.coachings') }}" class="nav-link {{ Request::is('dashboard/coachings') ? 'active' : '' }} {{ Request::is('dashboard/coachings/*') ? 'active' : '' }}">
+                  <i class="nav-icon fas fa-chalkboard-teacher"></i>
+                  <p>শিক্ষা প্রতিষ্ঠান</p>
+              </a>
+          </li>
+          @elseif(Auth::user()->role == 'editor' && in_array('coachings', Auth::user()->accessibleTables()))
+          <li class="nav-item">
+              <a href="{{ route('dashboard.coachings.singleforeditor') }}" class="nav-link {{ Request::is('dashboard/coachings') ? 'active' : '' }} {{ Request::is('dashboard/coachings/*') ? 'active' : '' }}">
+                  <i class="nav-icon fas fa-chalkboard-teacher"></i>
+                  <p>শিক্ষা প্রতিষ্ঠান</p>
+              </a>
+          </li>
+          @endif
+
           @if(Auth::user()->role == 'admin' || in_array('buses', Auth::user()->accessibleTables()))
           <div class="col-md-3">
             <a href="{{ route('dashboard.buses') }}" class="info-box mb-3">
