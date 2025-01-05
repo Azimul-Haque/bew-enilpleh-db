@@ -55,7 +55,7 @@
         <tbody>
           @foreach($doctorserials as $doctorserials)
           <tr>
-            <td>{{ $doctorserial }}</td>
+            <td>{{ $doctorserial->name }}</td>
             <td align="center" class="calibri_normal">{{ $doctorserial['qty'] }}</td>
             <td align="right" class="calibri_normal">¥ <span class="calibri_normal">{{ $doctorserial['item']['price'] }}</span></td>
             <td align="right" class="calibri_normal">¥ <span class="calibri_normal">{{ $doctorserial['price'] }}</span></td>
