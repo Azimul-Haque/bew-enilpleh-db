@@ -412,7 +412,7 @@ class DoctorController extends Controller
       $doctorserials = Doctorserial::where('doctor_id', $doctor_id)
                                    ->where('serialdate', $serialdate)
                                    ->get();
-      // dd($order->user);
+      // dd($doctorserials);
       $pdf = PDF::loadView('pdf.receipt', ['order' => $order]);
       $fileName = 'Receipt_'. $payment_id .'.pdf';
       return $pdf->stream($fileName);
