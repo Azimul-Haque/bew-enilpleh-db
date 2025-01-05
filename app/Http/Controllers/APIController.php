@@ -1512,8 +1512,8 @@ class APIController extends Controller
     public function storeDoctorSerial(Request $request)
     {
         $this->validate($request,array(
-            'name'    =>   'required',
-            'mobile'    =>   'required',
+            'name'          =>   'required',
+            'mobile'        =>   'required',
             'serialdate'    =>   'required',
         ));
         
