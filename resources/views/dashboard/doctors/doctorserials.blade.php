@@ -59,6 +59,7 @@
                            
                           </td>
                         </tr>
+                        @php $iteratior++; @endphp
                       @endforeach
                     </tbody>
                   </table>
