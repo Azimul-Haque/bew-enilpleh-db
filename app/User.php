@@ -34,17 +34,27 @@ class User extends Authenticatable
         return $this->hasMany('App\Message');
     }
 
-    // public function meritlists(){
-    //     return $this->hasMany('App\Meritlist');
-    // }
+    public function accessibleTables()
+    {
+        $tables = [];
 
-    // public function reportedquestions(){
-    //     return $this->hasMany('App\Reportedquestion');
-    // }
+        // Check hospitals
+        if ($this->accessibleHospitals()->exists()) {
+            $tables[] = 'hospitals';
+        }
 
-    // public function blogs(){
-    //     return $this->hasMany('App\Blog');
-    // }
+        // Check doctors
+        if ($this->accessibleDoctors()->exists()) {
+            $tables[] = 'doctors';
+        }
+
+        // Check blooddonors
+        if ($this->accessibleBloodDonors()->exists()) {
+            $tables[] = 'blooddonors';
+        }
+
+        return $tables;
+    }
 
     /**
      * The attributes that are mass assignable.
