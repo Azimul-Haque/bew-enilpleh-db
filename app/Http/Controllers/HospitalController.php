@@ -163,7 +163,7 @@ class HospitalController extends Controller
         // associate doctors
         if(isset($request->doctor_ids))
         {
-            foreach($doctor->doctorhospitals as $hospital) {
+            foreach($hospital->doctorhospitals as $hospital) {
                 $hospital->delete();
             }
             foreach($request->doctor_ids as $doctor_id) {
