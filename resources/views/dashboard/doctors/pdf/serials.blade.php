@@ -59,15 +59,6 @@
             <td></td>
           </tr>
           @endforeach
-          <tr>
-            <td colspan="3"></td>
-            <td align="right" class="calibri_normal" style="line-height: 1.5em;">
-              SUBTOTAL ¥ {{ $order->cart->totalPrice - $order->cart->deliveryCharge + $order->cart->discount }}<br/>
-              Delivery Charge ¥ {{ $order->cart->deliveryCharge }}<br/>
-              Discount ¥ {{ $order->cart->discount }}<br/>
-              <big><strong>TOTAL ¥ {{ $order->cart->totalPrice }}</strong></big>
-            </td>
-          </tr>
         </tbody>
       </table>
       <br/>
