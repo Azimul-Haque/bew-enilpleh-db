@@ -15,8 +15,7 @@
 </li>
 @endif
 
-@if(Auth::user()->role == 'admin' || Auth::user()->role == 'editor')
-@if(in_array('hospitals', Auth::user()->accessibleTables()))
+@if(Auth::user()->role == 'admin' || in_array('hospitals', Auth::user()->accessibleTables()))
 <li class="nav-item">
     <a href="{{ route('dashboard.hospitals') }}" class="nav-link {{ Request::is('dashboard/hospitals') ? 'active' : '' }} {{ Request::is('dashboard/hospitals/*') ? 'active' : '' }}">
         <i class="nav-icon fas fa-hospital"></i>
@@ -25,7 +24,7 @@
 </li>
 @endif
 
-@if(Auth::user()->role == 'admin' || Auth::user()->role == 'editor')
+@if(Auth::user()->role == 'admin' || in_array('hospitals', Auth::user()->accessibleTables()))
 <li class="nav-item">
     <a href="{{ route('dashboard.doctors') }}" class="nav-link {{ Request::is('dashboard/doctors') ? 'active' : '' }} {{ Request::is('dashboard/doctors/*') ? 'active' : '' }}">
         <i class="nav-icon fas fa-user-md"></i>
@@ -34,7 +33,7 @@
 </li>
 @endif
 
-@if(Auth::user()->role == 'admin' || Auth::user()->role == 'editor')
+@if(Auth::user()->role == 'admin' || in_array('hospitals', Auth::user()->accessibleTables()))
 <li class="nav-item">
     <a href="{{ route('dashboard.blooddonors') }}" class="nav-link {{ Request::is('dashboard/blooddonors') ? 'active' : '' }} {{ Request::is('dashboard/blooddonors/*') ? 'active' : '' }}">
         <i class="nav-icon fas fa-tint"></i>
@@ -107,7 +106,7 @@
 @endif
 
 
-@if(Auth::user()->role == 'admin' || Auth::user()->role == 'editor')
+@if(Auth::user()->role == 'admin' || in_array('hospitals', Auth::user()->accessibleTables()))
 <li class="nav-item">
     <a href="{{ route('dashboard.coachings') }}" class="nav-link {{ Request::is('dashboard/coachings') ? 'active' : '' }} {{ Request::is('dashboard/coachings/*') ? 'active' : '' }}">
         <i class="nav-icon fas fa-chalkboard-teacher"></i>
