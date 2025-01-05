@@ -67,6 +67,9 @@ class DoctorController extends Controller
 
     public function indexSearch($search)
     {
+        if(Auth::user()->role == 'editor') {
+            abort(403, 'Access Denied');
+        }
         $doctorscount = Doctor::where('name', 'LIKE', "%$search%")
                                   ->orWhere('degree', 'LIKE', "%$search%")
                                   ->orWhere('serial', 'LIKE', "%$search%")
