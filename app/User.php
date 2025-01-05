@@ -53,6 +53,11 @@ class User extends Authenticatable
             $tables[] = 'blooddonors';
         }
 
+        // Check coachings
+        if ($this->accessibleCoachings()->exists()) {
+            $tables[] = 'coachings';
+        }
+
         return $tables;
     }
 
