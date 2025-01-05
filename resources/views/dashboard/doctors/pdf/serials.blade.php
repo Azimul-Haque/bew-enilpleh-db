@@ -39,7 +39,7 @@
       <span class="calibri_normal"><b>Infoline</b> - BD Smart Seba</span><br/>
     </h3>
     <h3 style="color: #397736; border-bottom: 1px solid #397736;" align="center">
-        <b>{{ $doctor->name }} এর সিরিয়ালসমূহ</b>
+        <b>{{ $doctor->name }}- -এর সিরিয়ালসমূহ</b>
     </h3>
     
 
