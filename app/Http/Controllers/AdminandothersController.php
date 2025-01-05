@@ -558,7 +558,7 @@ class AdminandothersController extends Controller
 
     public function coachingIndex()
     {
-        if(!in_array('coachings', Auth::user()->accessibleTables())) {
+        if(Auth::user()->role == 'editor' || !in_array('coachings', Auth::user()->accessibleTables())) {
             abort(403, 'Access Denied');
         }
         $districts = District::all();
