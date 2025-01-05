@@ -1509,6 +1509,25 @@ class APIController extends Controller
         ]);
     }
 
+    public function storeMessage(Request $request)
+    {
+        $this->validate($request,array(
+            'name'    =>   'required',
+            'mobile'    =>   'required',
+            'message'    =>   'required',
+        ));
+        
+        $message = new Message;
+        $message->name = $request->name;
+        $message->mobile = $request->mobile;
+        $message->message = $request->message;
+        $message->save();
+        
+        return response()->json([
+            'success' => true
+        ]);
+    }
+
 
 
 
@@ -1565,35 +1584,6 @@ class APIController extends Controller
             'onesignal_id' => $request->onesignal_id
         ]); 
     }
-
-    // public function getMaterials($softtoken)
-    // {
-    //     if($softtoken == env('SOFT_TOKEN'))
-    //     {
-    //         $materials = Cache::remember('lecturematerials', 10 * 24 * 60 * 60, function () {
-    //             $materials = Material::where('status', 1) // 1 = active, 0 = inactive
-    //                                  ->orderBy('id', 'desc')
-    //                                  // ->select('id', 'type', 'title', 'author', 'author_desc')
-    //                                  ->get();
-
-    //             foreach($materials as $material) {
-    //                 $material->makeHidden('status', 'updated_at'); // 'id', 
-    //             }
-    //             return $materials;
-    //         });
-    //         // dd($materials);
-    //         $materials = $materials->sortByDesc('start');
-    //         // return 'Test';
-    //         return response()->json([
-    //             'success' => true,
-    //             'materials' => $materials,
-    //         ]);
-    //     } else {
-    //         return response()->json([
-    //             'success' => false
-    //         ]);
-    //     }
-    // }
 
     public function testNotification()
     {
