@@ -48,7 +48,7 @@
     
 
     <htmlpagefooter name="page-footer">
-      <small><span class="calibri_normal">Downloaded at:  {{ date('F d, Y, h:i A') }}</span></small><br/>
+      {{-- <small><span class="calibri_normal">Downloaded at:  {{ date('F d, Y, h:i A') }}</span></small><br/> --}}
       <!-- <small class="calibri_normal" style="color: #3f51b5;">Powered by: App Lab Bangladesh</small> -->
     </htmlpagefooter>
   </body>
