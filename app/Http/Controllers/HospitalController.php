@@ -41,7 +41,7 @@ class HospitalController extends Controller
             $hospitals = Hospital::orderBy('id', 'desc')->paginate(10);
         }
         $allhospitals = Hospital::all();
-        $doctors = Doctor::all();
+        $alldoctors = Doctor::all();
         
         $districts = District::all();
         
@@ -49,7 +49,8 @@ class HospitalController extends Controller
                             ->withHospitalscount($hospitalscount)
                             ->withHospitals($hospitals)
                             ->withDistricts($districts)
-                            ->withDoctors($doctors);
+                            ->withAllhospitals($allhospitals)
+                            ->withAlldoctors($alldoctors);
     }
 
     public function indexSearch($search)
