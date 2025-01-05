@@ -49,8 +49,8 @@
                       @foreach($doctorserials as $doctorserial)
                         <tr>
                           <td>{{ $doctorserial->name }}</td>
-                          <td>{{ $doctorserial->name }}</td>
-                          <td>{{ $doctorserial->name }}</td>
+                          <td>{{ $doctorserial->mobile }}</td>
+                          <td>{{ $doctorserial->serialdate }}</td>
 
                           <td align="right">
                            
