@@ -44,7 +44,7 @@
                   <tr>
                     <td>
                       {{ $coaching->name }}<br/>
-                      <span badge badge-pill badge-warning>{{ $coaching->district->name_bangla }}</span>
+                      <span class="badge badge-warning">{{ $coaching->district->name_bangla }}</span>
                     </td>
                     <td><span class="badge badge-pill badge-{{ edu_inst_badge($coaching->type) }}">{{ edu_inst_type($coaching->type) }}</span></td>
                     <td>{{ $coaching->mobile }}</td>
