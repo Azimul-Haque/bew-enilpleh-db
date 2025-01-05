@@ -406,6 +406,9 @@ class DoctorController extends Controller
                 abort(403, 'Access Denied');
             }
         }
+        if(in_array($doctor_id, Auth::user()->accessibleDoctors()->pluck('doctor_id'))) {
+
+        }
         $doctor = Doctor::findOrFail($doctor_id);
         $doctorserials = Doctorserial::where('doctor_id', $doctor_id)
                                      ->where('serialdate', $todaydate)
