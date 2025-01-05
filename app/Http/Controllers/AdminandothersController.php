@@ -587,7 +587,7 @@ class AdminandothersController extends Controller
                             ->withCoachings($coachings);
     }
 
-    public function coachingIndexSingleForEditor($district_id)
+    public function coachingIndexSingleForEditor()
     {
         if(!in_array('coachings', Auth::user()->accessibleTables())) {
             abort(403, 'Access Denied');
