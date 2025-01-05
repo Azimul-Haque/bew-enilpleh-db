@@ -48,7 +48,6 @@
           <tr>
             <th width="40%">রোগীর নাম</th>
             <th>মোবাইল</th>
-            <th>তারিখ</th>
             <th width="30%">সময়</th>
           </tr>
         </thead>
@@ -57,7 +56,6 @@
           <tr>
             <td>{{ $doctorserial->name }}</td>
             <td align="center" class="calibri_normal">{{ $doctorserial->name }}</td>
-            <td align="center">{{ $doctorserial->name }}</td>
             <td></td>
           </tr>
           @endforeach
