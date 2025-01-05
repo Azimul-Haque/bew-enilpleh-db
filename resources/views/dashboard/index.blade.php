@@ -61,6 +61,7 @@
           </div>
           @endif
 
+          @if(Auth::user()->role == 'admin' || in_array('eshebas', Auth::user()->accessibleTables()))
           <div class="col-md-3">
             <a href="{{ route('dashboard.eshebas') }}" class="info-box mb-3">
               <span class="info-box-icon bg-primary elevation-1"><i class="fas fa-external-link-alt"></i></span>
@@ -71,6 +72,7 @@
               </div>
             </a>
           </div>
+          @endif
 
           <div class="col-md-3">
             <a href="{{ route('dashboard.lawyers') }}" class="info-box mb-3">
