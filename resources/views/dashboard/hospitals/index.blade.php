@@ -201,19 +201,11 @@
                                             @foreach($alldoctors as $doctor)
                                               <option value="{{ $doctor->id }}">{{ $doctor->name }}, {{ $doctor->degree }}, {{ $doctor->specialization }} ({{ $doctor->district->name }})</option>
                                             @endforeach
-                                            
+
                                             @foreach($allhospitals->except($hospital->id) as $brhospital)
                                               <option value="{{ $brhospital->id }}" @if(in_array($brhospital->id, $hospital->branches->pluck('id')->toArray())) selected @endif>{{ $brhospital->name }}</option>
                                             @endforeach
                                         </select>
-
-                                        <select name="doctor_ids[]" class="form-control multiple-select" multiple="multiple" data-placeholder="">
-                                            @foreach($alldoctors as $doctor)
-                                              <option value="{{ $doctor->id }}">{{ $doctor->name }}, {{ $doctor->degree }}, {{ $doctor->specialization }} ({{ $doctor->district->name }})</option>
-                                            @endforeach
-                                        </select>
-
-
                                       </div>
                                     </div>
                                     <div class="col-md-6">
