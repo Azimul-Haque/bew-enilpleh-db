@@ -43,9 +43,7 @@ class DoctorController extends Controller
     {
         if(Auth::user()->role == 'editor') {
             if(!in_array('doctors', Auth::user()->accessibleTables())) {
-                if(!in_array('hospital', Auth::user()->accessibleTables())) {
-                    abort(403, 'Access Denied');
-                }
+                abort(403, 'Access Denied');
             }
             $doctorscount = Auth::user()->accessibleDoctors()->count();
             $doctors = Auth::user()->accessibleDoctors()->paginate(10);
