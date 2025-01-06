@@ -41,6 +41,7 @@ class User extends Authenticatable
         // Check hospitals
         if ($this->accessibleHospitals()->exists()) {
             $tables[] = 'hospitals';
+            $tables[] = 'doctors';
         }
 
         // Check doctors
