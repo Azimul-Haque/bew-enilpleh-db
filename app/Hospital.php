@@ -53,4 +53,12 @@ class Hospital extends Model
     {
         return $this->branches->merge($this->mutualBranches);
     }
+
+    protected static function booted()
+    {
+        static::deleting(function ($hospital) {
+            // Delete all related entries in doctorhospitals table
+            $hospital->doctorhospitals()->delete();
+        });
+    }
 }
