@@ -44,7 +44,7 @@ class Doctor extends Model
     {
         static::deleting(function ($doctor) {
             // Delete all related entries in doctorhospitals table
-            $doctor->doctorHospitals()->delete();
+            $doctor->doctorhospitals()->delete();
         });
     }
 
