@@ -45,9 +45,9 @@ class User extends Authenticatable
         }
 
         // Check doctors
-        if ($this->accessibleDoctors()->exists()) {
-            $tables[] = 'doctors';
-        }
+        // if ($this->accessibleDoctors()->exists()) {
+        //     $tables[] = 'doctors';
+        // }
 
         // Check blooddonors
         if ($this->accessibleBloodDonors()->exists()) {
