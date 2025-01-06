@@ -19,7 +19,15 @@ class CreateDoctorhospitalsTable extends Migration
             $table->foreignId('hospital_id')->unsigned();
             $table->timestamps();
 
-             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+            $table->foreign('doctor_id')
+                  ->references('id')
+                  ->on('doctors')
+                  ->onDelete('cascade');
+
+            $table->foreign('hospital_id')
+                  ->references('id')
+                  ->on('hospitals')
+                  ->onDelete('cascade');
         });
     }
 
