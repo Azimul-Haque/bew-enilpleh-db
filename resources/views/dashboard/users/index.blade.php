@@ -256,7 +256,7 @@
             			    {{-- Edit User Modal Code --}}
             			    {{-- Edit User Modal Code --}}
 
-                      @if(Auth::user()->role == 'editor')
+                      @if($user->role == 'editor')
                 			<button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#deleteUserModal{{ $user->id }}">
                 				<i class="fas fa-user-minus"></i>
                 			</button>
