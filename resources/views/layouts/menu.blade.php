@@ -51,14 +51,14 @@
 </li>
 @endif
 
-@if(Auth::user()->role == 'admin')
+{{-- @if(Auth::user()->role == 'admin')
 <li class="nav-item">
     <a href="{{ route('dashboard.eshebas') }}" class="nav-link {{ Request::is('dashboard/eshebas') ? 'active' : '' }} {{ Request::is('dashboard/eshebas/*') ? 'active' : '' }}">
         <i class="nav-icon fas fa-external-link-alt"></i>
         <p>ই-সেবা তালিকা</p>
     </a>
 </li>
-@endif
+@endif --}}
 
 {{-- @if(Auth::user()->role == 'admin')
 <li class="nav-item">
