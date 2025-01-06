@@ -20,7 +20,7 @@ class Hospital extends Model
     }
 
     public function doctorhospitals(){
-        return $this->hasMany('App\Doctorhospital');
+        return $this->belongsToMany('App\Doctorhospital');
     }
 
     public function hospitalimages(){
