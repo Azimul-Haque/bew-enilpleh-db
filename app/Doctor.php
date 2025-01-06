@@ -40,6 +40,14 @@ class Doctor extends Model
         return $this->hasMany('App\Doctorhospital');
     }
 
+    protected static function booted()
+    {
+        static::deleting(function ($doctor) {
+            // Delete all related entries in doctorhospitals table
+            $doctor->doctorHospitals()->delete();
+        });
+    }
+
     public function doctorserials(){
         return $this->hasMany('App\Doctorserial');
     }
