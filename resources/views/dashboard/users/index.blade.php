@@ -256,9 +256,11 @@
             			    {{-- Edit User Modal Code --}}
             			    {{-- Edit User Modal Code --}}
 
+                      @if(Auth::user()->role =! 'admin')
                 			<button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#deleteUserModal{{ $user->id }}">
                 				<i class="fas fa-user-minus"></i>
                 			</button>
+                      @endif
                 		</td>
                         {{-- Delete User Modal Code --}}
                         {{-- Delete User Modal Code --}}
