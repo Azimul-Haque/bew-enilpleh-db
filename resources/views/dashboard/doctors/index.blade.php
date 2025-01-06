@@ -24,7 +24,7 @@
                   <h3 class="card-title">ডাক্তার তালিকা</h3>
 
                   <div class="card-tools">
-                    {{-- @if(Auth::user()->role == 'admin') --}}
+                    @if(Auth::user()->role == 'admin')
                     <form class="form-inline form-group-lg" action="">
                       <div class="form-group">
                         <input type="search-param" class="form-control form-control-sm" placeholder="ডাক্তার খুঁজুন" id="search-param" required>
@@ -39,7 +39,11 @@
                         <i class="fas fa-user-plus"></i> নতুন
                       </button>
                     </form>
-                    {{-- @endif --}}
+                    @else
+                    <button type="button" class="btn btn-success btn-sm"  data-toggle="modal" data-target="#addUserModal" style="margin-left: 5px;">
+                      <i class="fas fa-user-plus"></i> নতুন
+                    </button>
+                    @endif
                     
                   </div>
                 </div>
