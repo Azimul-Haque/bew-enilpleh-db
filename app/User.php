@@ -45,8 +45,8 @@ class User extends Authenticatable
         }
 
         // Check doctors
-        if ($this->accessibleDoctors()->exists()) {
-            $tables[] = 'doctors';
+        if ($this->accessibleDoctors()->exists() && !in_array('doctors', $tables)) {
+            $tables[] = 'doctors'; // Doctors access only if explicitly granted
         }
 
         // Check blooddonors
