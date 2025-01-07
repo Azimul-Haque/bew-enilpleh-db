@@ -119,8 +119,8 @@ class DoctorController extends Controller
         $this->validate($request,array(
             'district_id'            => 'required',
             'upazilla_id'            => 'required',
-            'name'                => 'required|string|max:191',
-            'degree'                => 'required|string|max:191',
+            'name'                => 'required|max:191',
+            'degree'                => 'required|max:191',
             'specialization'                => 'sometimes|max:191',
             'serial'           => 'required',
             'address'           => 'required',
@@ -221,9 +221,9 @@ class DoctorController extends Controller
         $this->validate($request,array(
             'district_id'            => 'required',
             'upazilla_id'            => 'required',
-            'name'                => 'required|string|max:191',
-            'degree'                => 'required|string|max:191',
-            'specialization'                => 'sometimes|string|max:191',
+            'name'                => 'required|max:191',
+            'degree'                => 'required|max:191',
+            'specialization'                => 'sometimes|max:191',
             'serial'           => 'required',
             'address'           => 'required',
             'helpline'              => 'sometimes',
