@@ -11,6 +11,10 @@
      .select2-selection__choice{
          background-color: rgba(0, 123, 255) !important;
      }
+
+     .select2-container .select2-selection--multiple{
+   min-height: 40px !important;
+ }
    </style>
 @endsection
 
