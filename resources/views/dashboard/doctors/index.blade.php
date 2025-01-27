@@ -236,7 +236,7 @@
 
                                         <div>
                                           সপ্তাহে যে যে দিন রোগী দেখেন<br/>
-                                          <textarea name="weekdays" class="form-control" placeholder="উদাহরণ: শুক্রবার সকাল ৯টা থেকে দুপুর ১২টা, শনিবার সন্ধ্যা ৬টা থেকে রাত ১০টা ইত্যাদি">{{ str_replace('<br />', "", $doctor->weekdays) }}</textarea>
+                                          <textarea name="weekdays" class="form-control" style="min-height110px;" placeholder="উদাহরণ: শুক্রবার সকাল ৯টা থেকে দুপুর ১২টা, শনিবার সন্ধ্যা ৬টা থেকে রাত ১০টা ইত্যাদি">{{ str_replace('<br />', "", $doctor->weekdays) }}</textarea>
                                         </div>
 
                                         {{-- <div class="form-group ">
