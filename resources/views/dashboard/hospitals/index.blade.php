@@ -264,34 +264,34 @@
                   {{-- Edit User Modal Code --}}
                   {{-- Edit User Modal Code --}}
 
-                      {{-- Delete User Modal Code --}}
-                      {{-- Delete User Modal Code --}}
-                      <!-- Modal -->
-                      <div class="modal fade" id="deleteUserModal{{ $hospital->id }}" tabindex="-1" role="dialog" aria-labelledby="deleteUserModalLabel" aria-hidden="true" data-backdrop="static">
-                        <div class="modal-dialog" role="document">
-                          <div class="modal-content">
-                            <div class="modal-header bg-danger">
-                              <h5 class="modal-title" id="deleteUserModalLabel">হাসপাতাল ডিলেট</h5>
-                              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                              </button>
-                            </div>
-                            <div class="modal-body">
-                              আপনি কি নিশ্চিতভাবে এই হাসপাতালকে ডিলেট করতে চান?<br/>
-                              <center>
-                                  <big><b>{{ $hospital->name }}</b></big><br/>
-                                  <small><i class="fas fa-phone"></i> {{ $hospital->mobile }}</small>
-                              </center>
-                            </div>
-                            <div class="modal-footer">
-                              <button type="button" class="btn btn-secondary" data-dismiss="modal">ফিরে যান</button>
-                              <a href="{{ route('dashboard.hospitals.delete', $hospital->id) }}" class="btn btn-danger">ডিলেট করুন</a>
-                            </div>
-                          </div>
+                  {{-- Delete User Modal Code --}}
+                  {{-- Delete User Modal Code --}}
+                  <!-- Modal -->
+                  <div class="modal fade" id="deleteUserModal{{ $hospital->id }}" tabindex="-1" role="dialog" aria-labelledby="deleteUserModalLabel" aria-hidden="true" data-backdrop="static">
+                    <div class="modal-dialog" role="document">
+                      <div class="modal-content">
+                        <div class="modal-header bg-danger">
+                          <h5 class="modal-title" id="deleteUserModalLabel">হাসপাতাল ডিলেট</h5>
+                          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                          </button>
+                        </div>
+                        <div class="modal-body">
+                          আপনি কি নিশ্চিতভাবে এই হাসপাতালকে ডিলেট করতে চান?<br/>
+                          <center>
+                              <big><b>{{ $hospital->name }}</b></big><br/>
+                              <small><i class="fas fa-phone"></i> {{ $hospital->mobile }}</small>
+                          </center>
+                        </div>
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-secondary" data-dismiss="modal">ফিরে যান</button>
+                          <a href="{{ route('dashboard.hospitals.delete', $hospital->id) }}" class="btn btn-danger">ডিলেট করুন</a>
                         </div>
                       </div>
-                      {{-- Delete User Modal Code --}}
-                      {{-- Delete User Modal Code --}}
+                    </div>
+                  </div>
+                  {{-- Delete User Modal Code --}}
+                  {{-- Delete User Modal Code --}}
                   
                 @endforeach
               </tbody>
