@@ -133,7 +133,7 @@
                                           <div class="col-md-6">
                                             <div class="input-group mb-3">
                                               <select name="upazilla_id" id="upazilla" class="form-control upazilla select21" required>
-                                                  <option selected="" value="{{ $doctor->upazilla_id }}">{{ $doctor->upazilla->name_bangla }}</option>
+                                                  <option selected="" value="{{ $doctor->upazilla_id }}">{{ $doctor->upazilla->name_bangla }}-{{ $doctor->upazilla->name }}</option>
                                               </select>
                                               <div class="input-group-append">
                                                   <div class="input-group-text"><span class="fas fa-map-marked-alt"></span></div>
