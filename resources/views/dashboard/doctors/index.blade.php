@@ -102,7 +102,7 @@
                           {{-- Edit User Modal Code --}}
                           {{-- Edit User Modal Code --}}
                           <!-- Modal -->
-                          <div class="modal fade" id="editUserModal{{ $doctor->id }}" tabindex="-1" role="dialog" aria-labelledby="editUserModalLabel" aria-hidden="true" data-backdrop="static">
+                          <div class="modal fade" id="editUserModal{{ $doctor->id }}" role="dialog" aria-labelledby="editUserModalLabel" aria-hidden="true" data-backdrop="static">
                             <div class="modal-dialog modal-lg" role="document">
                               <div class="modal-content">
                                 <div class="modal-header bg-success">
