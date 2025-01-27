@@ -194,18 +194,18 @@ class DoctorController extends Controller
         }
 
         // image upload
-        if($request->hasFile('image')) {
-            $image    = $request->file('image');
-            $filename = random_string(5) . time() .'.' . "webp";
-            $location = public_path('images/doctors/'. $filename);
-            // Image::make($image)->resize(350, null, function ($constraint) { $constraint->aspectRatio(); })->save($location);
-            Image::make($image)->fit(300, 175)->save($location);
-            // Image::make($image)->crop(300, 175)->save($location);
-            $doctorimage              = new Doctorimage;
-            $doctorimage->doctor_id = $doctor->id;
-            $doctorimage->image       = $filename;
-            $doctorimage->save();
-        }
+        // if($request->hasFile('image')) {
+        //     $image    = $request->file('image');
+        //     $filename = random_string(5) . time() .'.' . "webp";
+        //     $location = public_path('images/doctors/'. $filename);
+        //     // Image::make($image)->resize(350, null, function ($constraint) { $constraint->aspectRatio(); })->save($location);
+        //     Image::make($image)->fit(300, 175)->save($location);
+        //     // Image::make($image)->crop(300, 175)->save($location);
+        //     $doctorimage              = new Doctorimage;
+        //     $doctorimage->doctor_id = $doctor->id;
+        //     $doctorimage->image       = $filename;
+        //     $doctorimage->save();
+        // }
 
         Cache::forget('doctors*');
         Session::flash('success', 'Doctors added successfully!');
