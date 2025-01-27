@@ -344,7 +344,7 @@
                       </div> --}}
                     </div>
                     <div class="col-md-6">
-                      <select name="upazilla_id" id="upazilla" class="form-control upazilla select21" data-placeholder="জেলা নির্বাচন করুন">
+                      <select name="upazilla_id" id="upazilla" class="form-control upazilla select21" data-placeholder="উপজেলা নির্বাচন করুন" required>
                           <option selected="" disabled="" value="">উপজেলা নির্বাচন করুন</option>
                       </select>
                       {{-- <div class="input-group mb-3">
