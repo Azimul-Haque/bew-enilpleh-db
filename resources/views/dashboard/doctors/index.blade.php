@@ -638,43 +638,6 @@
                       </div>
                     @endforeach
                   </div>
-
-                  <div class="row" style="margin-top: 10px;">
-                    <div class="col-md-12">
-                      <div class="input-group mb-3">
-                          <select name="timefrom" id="timefrom" class="form-control">
-                            <option value="" selected="" disabled="">রোগী দেখার সময় শুরু</option>
-                              @for ($hour = 6; $hour <= 23; $hour++)
-                                  @php
-                                      $time24 = \Carbon\Carbon::createFromTime($hour, 0);
-                                      $time12 = $time24->format('g:00 A'); // Convert to 12-hour format with AM/PM
-                                  @endphp
-                                  <option value="{{ $time12 }}">{{ $time12 }}</option>
-                              @endfor
-                          </select>
-                          <div class="input-group-append">
-                              <div class="input-group-text"><span class="fas fa-mobile"></span></div>
-                          </div>
-                      </div>
-                    </div>
-                    <div class="col-md-6">
-                      <div class="input-group mb-3">
-                          <select name="timeto" id="timeto" class="form-control">
-                            <option value="" selected="" disabled="">রোগী দেখার সময় শেষ</option>
-                              @for ($hour = 6; $hour <= 23; $hour++)
-                                  @php
-                                      $time24 = \Carbon\Carbon::createFromTime($hour, 0);
-                                      $time12 = $time24->format('g:00 A'); // Convert to 12-hour format with AM/PM
-                                  @endphp
-                                  <option value="{{ $time12 }}">{{ $time12 }}</option>
-                              @endfor
-                          </select>
-                          <div class="input-group-append">
-                              <div class="input-group-text"><span class="fas fa-mobile"></span></div>
-                          </div>
-                      </div>
-                    </div>
-                  </div>
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-dismiss="modal">ফিরে যান</button>
