@@ -111,6 +111,7 @@
                                         <option selected="" value="{{ $hospital->upazilla_id }}">{{ $hospital->upazilla->name_bangla }}-{{ $hospital->upazilla->name }}</option>
                                     </select>
                                   </div>
+                                  <br/><br/>
                                   <div class="col-md-6">
                                     <div class="input-group mb-3">
                                         <input type="text"
