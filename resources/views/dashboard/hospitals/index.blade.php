@@ -517,6 +517,7 @@
       });
       $('.select21').select2({
         // theme: 'bootstrap4',
+        dropdownParent: $('.modal')
       });
 
         $('.district').on('change', function() {
