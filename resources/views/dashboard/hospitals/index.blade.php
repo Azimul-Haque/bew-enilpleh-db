@@ -518,6 +518,9 @@
       $('.multiple-select').select2({
         // theme: 'bootstrap4',
       });
+      $('.select21').select2({
+        // theme: 'bootstrap4',
+      });
 
         $('.district').on('change', function() {
           $('.upazilla').prop('disabled', true);
