@@ -459,7 +459,7 @@
                                  value="{{ old('website') }}"
                                  autocomplete="off"
                                  class="form-control"
-                                 placeholder="সরকারি হাসপাতালের ক্ষেত্রে ডাক্তার তালিকার ওয়েবপেজ লিংক (OPTIONAL)">
+                                 placeholder="(OPTIONAL) সরকারি হাসপাতালের ক্ষেত্রে ডাক্তার তালিকার ওয়েবপেজ লিংক">
                           <div class="input-group-append">
                               <div class="input-group-text"><span class="fas fa-globe"></span></div>
                           </div>
