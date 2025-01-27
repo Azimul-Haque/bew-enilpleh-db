@@ -234,10 +234,7 @@
                                           </select>
                                         </div>
 
-                                        <div>
-                                          সপ্তাহে যে যে দিন রোগী দেখেন<br/>
-                                          <textarea name="weekdays" class="form-control" placeholder="উদাহরণ: শুক্রবার সকাল ৯টা থেকে দুপুর ১২টা, শনিবার সন্ধ্যা ৬টা থেকে রাত ১০টা ইত্যাদি">{{ $doctor->weekdays }}</textarea>
-                                        </div>
+                                        
 
                                         {{-- <div class="form-group ">
                                             <label for="image">ছবি/ ভিজিটিং কার্ড/ ব্যানার (প্রয়োজনে, ৩০০ h x ১৭৫ w সাইজের, ২ মেগাবাইটের মধ্যে)</label>
