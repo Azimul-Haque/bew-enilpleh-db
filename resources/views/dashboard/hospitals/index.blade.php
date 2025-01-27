@@ -98,17 +98,12 @@
 
                                   <div class="row">
                                     <div class="col-md-6">
-                                      <div class="input-group mb-3">
-                                        <select name="district_id" id="district" class="form-control district select21" data-placeholder="জেলা নির্বাচন করুন" required>
-                                            <option selected="" disabled="" value="">জেলা নির্বাচন করুন</option>
-                                            @foreach($districts as $district)
-                                              <option value="{{ $district->id }}" @if($district->id == $hospital->district_id) selected @endif>{{ $district->name_bangla }}</option>
-                                            @endforeach
-                                        </select>
-                                        <div class="input-group-append">
-                                            <div class="input-group-text"><span class="fas fa-map"></span></div>
-                                        </div>
-                                      </div>
+                                      <select name="district_id" id="district" class="form-control district select21" data-placeholder="জেলা নির্বাচন করুন" required>
+                                          <option selected="" disabled="" value="">জেলা নির্বাচন করুন</option>
+                                          @foreach($districts as $district)
+                                            <option value="{{ $district->id }}" @if($district->id == $hospital->district_id) selected @endif>{{ $district->name_bangla }}</option>
+                                          @endforeach
+                                      </select>
                                     </div>
                                     <div class="col-md-6">
                                       <div class="input-group mb-3">
