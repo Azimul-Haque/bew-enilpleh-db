@@ -258,7 +258,9 @@ class HospitalController extends Controller
         } else {
             $hospital->mobile = '';
         }
-        $hospital->location = $request->location;
+        if($request->location) {
+            $hospital->location = $request->location;
+        }
         $hospital->description = $request->description;
         if($request->website) {
             $hospital->website = $request->website;
