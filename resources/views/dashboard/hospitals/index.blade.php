@@ -13,7 +13,7 @@
      }
 
      .select2-container .select2-selection--multiple{
-       min-height: 40px !important;
+       min-height: 60px !important;
      }
    </style>
 @endsection
