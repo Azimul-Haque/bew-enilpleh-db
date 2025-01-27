@@ -334,12 +334,12 @@
                               <option value="{{ $district->id }}">{{ $district->name_bangla }}</option>
                             @endforeach
                         </select>
-                      <div class="input-group mb-3">
+                      {{-- <div class="input-group mb-3">
                         
                         <div class="input-group-append">
                             <div class="input-group-text"><span class="fas fa-map"></span></div>
                         </div>
-                      </div>
+                      </div> --}}
                     </div>
                     <div class="col-md-6">
                       <div class="input-group mb-3">
