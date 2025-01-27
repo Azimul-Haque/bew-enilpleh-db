@@ -12,9 +12,16 @@
          background-color: rgba(0, 123, 255) !important;
      }
 
-     .select2-container .select2-selection--multiple{
-       line-height: 31px !important;
-     }
+     .select2-selection__rendered {
+          padding: 0px 5px !important;
+      }
+      .select2-container .select2-selection--single {
+          height: 30px !important;
+      }
+      .select2-selection__arrow {
+          height: 30px !important;
+          top: 0px !important;
+      }
    </style>
 @endsection
 
