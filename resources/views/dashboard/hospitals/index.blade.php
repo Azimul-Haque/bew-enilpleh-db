@@ -459,6 +459,9 @@
                             @endforeach
                         </select>
                       </div>
+                      <div class="input-group mb-3">
+                        <textarea name="investigation_data" class="form-control" style="min-height: 150px;" placeholder="টেস্ট ইনভেস্টিগেশন তালিকা (প্রয়োজনে)"></textarea>
+                      </div>
 
                       
                     </div>                    
@@ -487,11 +490,7 @@
                           <input type="file" name="image2" accept="image/*">
                       </div>
                     </div>
-                    <div class="col-md-6">
-                      <div class="input-group mb-3">
-                        <textarea name="investigation_data" class="form-control" style="min-height: 150px;" placeholder="টেস্ট ইনভেস্টিগেশন তালিকা (প্রয়োজনে)"></textarea>
-                      </div>
-
+                    <div class="col-md-6">                    
                       <div class="form-group" style="margin-top: 15px;">
                           <label for="image">ব্যানার-৩ (Optional, Max 1 MB)</label>
                           <input type="file" name="image3" accept="image/*">
