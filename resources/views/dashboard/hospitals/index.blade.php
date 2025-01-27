@@ -469,21 +469,7 @@
                           <label for="image">ব্যানার-২ (Optional, Max 1 MB)</label>
                           <input type="file" name="image2" accept="image/*">
                       </div>
-                    </div>
-                    <div class="col-md-12">
-                      <div class="input-group mb-3">
-                          <input type="text"
-                                 name="description"
-                                 value="{{ old('description') }}"
-                                 autocomplete="off"
-                                 class="form-control"
-                                 placeholder="বক্স এর জন্য বার্তা লিখুন (Optional)">
-                          <div class="input-group-append">
-                              <div class="input-group-text"><span class="fas fa-edit"></span></div>
-                          </div>
-                      </div>
-                    </div>
-                    
+                    </div>                    
                     <div class="col-md-6">
                       <div class="input-group mb-3">
                         <textarea name="investigation_data" class="form-control" style="min-height: 150px;" placeholder="টেস্ট ইনভেস্টিগেশন তালিকা (প্রয়োজনে)"></textarea>
