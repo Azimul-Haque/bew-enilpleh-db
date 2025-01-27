@@ -231,7 +231,7 @@ class HospitalController extends Controller
             'hospital_type'       => 'required',
             'telephone'           => 'required',
             'mobile'              => 'sometimes',
-            'location'            => 'required',
+            'location'            => 'sometimes',
             'description'            => 'sometimes|max:500',
             'doctor_ids'            => 'sometimes',
             'website'            => 'sometimes|max:191',
