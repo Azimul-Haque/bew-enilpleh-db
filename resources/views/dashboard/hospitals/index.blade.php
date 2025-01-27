@@ -183,7 +183,7 @@
                                                value="{{ $hospital->description }}"
                                                autocomplete="off"
                                                class="form-control"
-                                               placeholder="বক্স এর জন্য বার্তা লিখুন (Optional)">
+                                               placeholder="(Optional) বক্স এর জন্য বার্তা লিখুন">
                                         <div class="input-group-append">
                                             <div class="input-group-text"><span class="fas fa-edit"></span></div>
                                         </div>
@@ -205,7 +205,7 @@
                                                value="{{ $hospital->location }}"
                                                autocomplete="off"
                                                class="form-control"
-                                               placeholder="গুগল ম্যাপ লোকেশন লিংক" required>
+                                               placeholder="(Optional) গুগল ম্যাপ লোকেশন লিংক">
                                         <div class="input-group-append">
                                             <div class="input-group-text"><span class="fas fa-map-marker-alt"></span></div>
                                         </div>
@@ -216,7 +216,7 @@
                                                value="{{ $hospital->website }}"
                                                autocomplete="off"
                                                class="form-control"
-                                               placeholder="সরকারি হাসপাতালের ক্ষেত্রে ডাক্তার তালিকার ওয়েবপেজ লিংক (প্রয়োজনে)">
+                                               placeholder="(Optional) সরকারি হাসপাতালের ক্ষেত্রে ডাক্তার তালিকার ওয়েবপেজ লিংক">
                                         <div class="input-group-append">
                                             <div class="input-group-text"><span class="fas fa-globe"></span></div>
                                         </div>
