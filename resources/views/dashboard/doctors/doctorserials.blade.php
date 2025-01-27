@@ -25,7 +25,7 @@
                         <input type="text" id="selectdate" class="form-control form-control-sm" placeholder="তারিখ পরিবর্তন" required>
                       </div>
                       <button type="button" id="search-button" class="btn btn-default btn-sm" style="margin-left: 5px;">
-                        <i class="fas fa-search"></i> তারিখ পরিবর্তন
+                        <i class="fas fa-search"></i> Search
                       </button>
                       <a href="{{ route('dashboard.getdoctorserialpdf', [$doctor->id, $todaydate]) }}" class="btn btn-success btn-sm"  style="margin-left: 5px;" target="_blank">
                         <i class="fas fa-print"></i> প্রিন্ট করুন
