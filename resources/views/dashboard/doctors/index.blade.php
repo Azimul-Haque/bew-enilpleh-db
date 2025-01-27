@@ -236,59 +236,15 @@
 
                                         <div>
                                           সপ্তাহে যে যে দিন রোগী দেখেন<br/>
-                                          <textarea name="weekdays" class="form-control" placeholder="উদাহরণ: শুক্রবার সকাল ৯টা থেকে দুপুর ১২টা, শনিবার সন্ধ্যা ৬টা থেকে রাত ১০টা ইত্যাদি">{{ str_replace('<br />', "", old('weekdays')) }}</textarea>
-                                        </div>
-                                        <div>
-                                          সপ্তাহে যে যে দিন রোগী দেখেন<br/>
-                                          @foreach(['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'] as $day)
-                                            <div class="form-check form-check-inline">
-                                              <input class="form-check-input" type="checkbox" id="inlineCheckbox{{ $doctor->id . $day }}" name="weekdays[]" value="{{ $day }}" {{ in_array($day, $doctor->weekdays ?? []) ? 'checked' : '' }}>
-                                              <label class="form-check-label" for="inlineCheckbox{{ $doctor->id . $day }}">{{ $day }}</label>
-                                            </div>
-                                          @endforeach
+                                          <textarea name="weekdays" class="form-control" placeholder="উদাহরণ: শুক্রবার সকাল ৯টা থেকে দুপুর ১২টা, শনিবার সন্ধ্যা ৬টা থেকে রাত ১০টা ইত্যাদি">{{ str_replace('<br />', "", $doctor->weekdays) }}</textarea>
                                         </div>
 
-                                        <div class="row" style="margin-top: 10px;">
-                                          <div class="col-md-6">
-                                            <div class="input-group mb-3">
-                                                <select name="timefrom" id="timefrom" class="form-control">
-                                                  <option value="" selected="" disabled="">রোগী দেখার সময় শুরু</option>
-                                                    @for ($hour = 6; $hour <= 23; $hour++)
-                                                        @php
-                                                            $time24 = \Carbon\Carbon::createFromTime($hour, 0);
-                                                            $time12 = $time24->format('g:00 A'); // Convert to 12-hour format with AM/PM
-                                                        @endphp
-                                                        <option value="{{ $time12 }}" @if($time12 == $doctor->timefrom) selected="" @endif>{{ $time12 }}</option>
-                                                    @endfor
-                                                </select>
-                                                <div class="input-group-append">
-                                                    <div class="input-group-text"><span class="fas fa-mobile"></span></div>
-                                                </div>
-                                            </div>
-                                          </div>
-                                          <div class="col-md-6">
-                                            <div class="input-group mb-3">
-                                                <select name="timeto" id="timeto" class="form-control">
-                                                  <option value="" selected="" disabled="">রোগী দেখার সময় শেষ</option>
-                                                    @for ($hour = 6; $hour <= 23; $hour++)
-                                                        @php
-                                                            $time24 = \Carbon\Carbon::createFromTime($hour, 0);
-                                                            $time12 = $time24->format('g:00 A'); // Convert to 12-hour format with AM/PM
-                                                        @endphp
-                                                        <option value="{{ $time12 }}" @if($time12 == $doctor->timeto) selected="" @endif>{{ $time12 }}</option>
-                                                    @endfor
-                                                </select>
-                                                <div class="input-group-append">
-                                                    <div class="input-group-text"><span class="fas fa-mobile"></span></div>
-                                                </div>
-                                            </div>
-                                          </div>
-                                        </div>
+                                      
 
-                                        <div class="form-group ">
+                                        {{-- <div class="form-group ">
                                             <label for="image">ছবি/ ভিজিটিং কার্ড/ ব্যানার (প্রয়োজনে, ৩০০ h x ১৭৫ w সাইজের, ২ মেগাবাইটের মধ্যে)</label>
                                             <input type="file" name="image" accept="image/*">
-                                        </div>
+                                        </div> --}}
                                         {{-- <center>
                                             @if($doctor->doctorimage != null)
                                               <img src="{{ asset('images/doctors/' . $doctor->doctorimage->image)}}" style="width: 250px; height: auto;" class="img-responsive" />
