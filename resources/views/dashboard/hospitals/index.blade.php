@@ -175,20 +175,7 @@
                                             <div class="input-group-text"><span class="fas fa-map-marked-alt"></span></div>
                                         </div>
                                     </div>
-                                  </div>
-                                  <div class="col-md-12">
-                                    <div class="input-group mb-3">
-                                        <input type="text"
-                                               name="description"
-                                               value="{{ $hospital->description }}"
-                                               autocomplete="off"
-                                               class="form-control"
-                                               placeholder="(Optional) বক্স এর জন্য বার্তা লিখুন">
-                                        <div class="input-group-append">
-                                            <div class="input-group-text"><span class="fas fa-edit"></span></div>
-                                        </div>
-                                    </div>
-                                  </div>
+                                  </div>                                  
                                   {{-- <div class="col-md-12">
                                     <div style="margin-bottom: 15px;">
                                       <select name="doctor_ids[]" class="form-control multiple-select" multiple="multiple" data-placeholder="যে ডাক্তার হাসপাতালের এর সাথে সম্পৃক্ত (প্রয়োজনে একাধিক সিলেক্ট করা যাবে)">
@@ -233,6 +220,19 @@
                                   <div class="col-md-6">
                                     <div class="input-group mb-3">
                                       <textarea name="investigation_data" class="form-control" style="min-height: 150px;" placeholder="টেস্ট ইনভেস্টিগেশন তালিকা (প্রয়োজনে)">{{ str_replace('<br />', "", $hospital->investigation_data) }}</textarea>
+                                    </div>
+                                  </div>
+                                  <div class="col-md-12">
+                                    <div class="input-group mb-3">
+                                        <input type="text"
+                                               name="description"
+                                               value="{{ $hospital->description }}"
+                                               autocomplete="off"
+                                               class="form-control"
+                                               placeholder="(Optional) বক্স এর জন্য বার্তা লিখুন">
+                                        <div class="input-group-append">
+                                            <div class="input-group-text"><span class="fas fa-edit"></span></div>
+                                        </div>
                                     </div>
                                   </div>
                                   <div class="col-md-6">
