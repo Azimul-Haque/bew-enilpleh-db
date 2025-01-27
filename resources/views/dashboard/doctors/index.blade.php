@@ -186,7 +186,7 @@
                                             </div>
                                           </div>
                                           <div class="col-md-6">
-                                            <div class="input-group mb-3">
+                                            {{-- <div class="input-group mb-3">
                                                 <input type="number"
                                                        name="helpline"
                                                        value="{{ $doctor->helpline }}"
@@ -196,16 +196,15 @@
                                                 <div class="input-group-append">
                                                     <div class="input-group-text"><span class="fas fa-mobile"></span></div>
                                                 </div>
+                                            </div> --}}
+                                            <div class="input-group mb-3">
+                                                <input type="text"
+                                                       name="address"
+                                                       value="{{ $doctor->address }}"
+                                                       class="form-control"
+                                                       placeholder="চেম্বারের ঠিকানা" required>
                                             </div>
                                           </div>
-                                        </div>
-
-                                        <div class="input-group mb-3">
-                                            <input type="text"
-                                                   name="address"
-                                                   value="{{ $doctor->address }}"
-                                                   class="form-control"
-                                                   placeholder="চেম্বারের ঠিকানা" required>
                                         </div>
                                         
                                         <div style="margin-bottom: 15px;">
