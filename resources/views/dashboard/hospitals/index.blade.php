@@ -418,20 +418,7 @@
                               <div class="input-group-text"><span class="fas fa-map-marked-alt"></span></div>
                           </div>
                       </div>
-                    </div>
-                    <div class="col-md-12">
-                      <div class="input-group mb-3">
-                          <input type="text"
-                                 name="description"
-                                 value="{{ old('description') }}"
-                                 autocomplete="off"
-                                 class="form-control"
-                                 placeholder="বক্স এর জন্য বার্তা লিখুন (Optional)">
-                          <div class="input-group-append">
-                              <div class="input-group-text"><span class="fas fa-edit"></span></div>
-                          </div>
-                      </div>
-                    </div>
+                    </div>                    
                     {{-- <div class="col-md-12">
                       <div style="margin-bottom: 15px;">
                         <select name="doctor_ids[]" class="form-control multiple-select" multiple="multiple" data-placeholder="যে ডাক্তার হাসপাতালের এর সাথে সম্পৃক্ত (প্রয়োজনে একাধিক সিলেক্ট করা যাবে)">
@@ -481,6 +468,19 @@
                       <div class="form-group" style="margin-top: 15px;">
                           <label for="image">ব্যানার-২ (Optional, Max 1 MB)</label>
                           <input type="file" name="image2" accept="image/*">
+                      </div>
+                    </div>
+                    <div class="col-md-12">
+                      <div class="input-group mb-3">
+                          <input type="text"
+                                 name="description"
+                                 value="{{ old('description') }}"
+                                 autocomplete="off"
+                                 class="form-control"
+                                 placeholder="বক্স এর জন্য বার্তা লিখুন (Optional)">
+                          <div class="input-group-append">
+                              <div class="input-group-text"><span class="fas fa-edit"></span></div>
+                          </div>
                       </div>
                     </div>
                     
