@@ -228,8 +228,6 @@ class DoctorController extends Controller
             'medicalsymptoms'            => 'required',
             'hospitals'            => 'sometimes',
             'weekdays'            => 'sometimes',
-            'timefrom'            => 'sometimes',
-            'timeto'            => 'sometimes',
         ));
 
         $doctor = Doctor::findOrFail($id);
@@ -248,8 +246,6 @@ class DoctorController extends Controller
             $doctor->helpline = '';
         }
         $doctor->weekdays = $request->weekdays;
-        $doctor->timefrom = $request->timefrom;
-        $doctor->timeto = $request->timeto;
         $doctor->save();
 
         if(isset($request->medicaldepartments)){
@@ -309,26 +305,26 @@ class DoctorController extends Controller
         }
 
         // image upload
-        if($request->hasFile('image')) {
-            if($doctor->doctorimage != null) {
-                $image_path = public_path('images/doctors/'. $doctor->doctorimage->image);
-                if(File::exists($image_path)) {
-                    File::delete($image_path);
-                }
-                $doctorimage              = Doctorimage::where('doctor_id', $doctor->id)->first();
-            } else {
-                $doctorimage              = new Doctorimage;
-            }
-            $image    = $request->file('image');
-            $filename = random_string(5) . time() .'.' . "webp";
-            $location = public_path('images/doctors/'. $filename);
-            // Image::make($image)->resize(350, null, function ($constraint) { $constraint->aspectRatio(); })->save($location);
-            Image::make($image)->fit(300, 175)->save($location);
-            // Image::make($image)->crop(300, 175)->save($location);
-            $doctorimage->doctor_id = $doctor->id;
-            $doctorimage->image       = $filename;
-            $doctorimage->save();
-        }
+        // if($request->hasFile('image')) {
+        //     if($doctor->doctorimage != null) {
+        //         $image_path = public_path('images/doctors/'. $doctor->doctorimage->image);
+        //         if(File::exists($image_path)) {
+        //             File::delete($image_path);
+        //         }
+        //         $doctorimage              = Doctorimage::where('doctor_id', $doctor->id)->first();
+        //     } else {
+        //         $doctorimage              = new Doctorimage;
+        //     }
+        //     $image    = $request->file('image');
+        //     $filename = random_string(5) . time() .'.' . "webp";
+        //     $location = public_path('images/doctors/'. $filename);
+        //     // Image::make($image)->resize(350, null, function ($constraint) { $constraint->aspectRatio(); })->save($location);
+        //     Image::make($image)->fit(300, 175)->save($location);
+        //     // Image::make($image)->crop(300, 175)->save($location);
+        //     $doctorimage->doctor_id = $doctor->id;
+        //     $doctorimage->image       = $filename;
+        //     $doctorimage->save();
+        // }
 
         Cache::forget('doctors*');
         Session::flash('success', 'Doctors updated successfully!');
