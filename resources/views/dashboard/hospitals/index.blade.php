@@ -459,10 +459,12 @@
                             @endforeach
                         </select>
                       </div>
+                    </div>
+                    <div class="col-md-6">
                       <div class="input-group mb-3">
                         <textarea name="investigation_data" class="form-control" style="min-height: 150px;" placeholder="টেস্ট ইনভেস্টিগেশন তালিকা (প্রয়োজনে)"></textarea>
                       </div>
-                    </div>                    
+                    </div>
                     
                     <div class="col-md-12">
                       <div class="input-group mb-3">
