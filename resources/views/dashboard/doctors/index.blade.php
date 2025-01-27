@@ -64,7 +64,7 @@
                           <td>
                             {{ $doctor->name }}<br/>
                             <span style="font-size: 12px;">{{ $doctor->degree }}</span>
-                            <span class="badge bg-primary">{{ $doctor->specialization }}</span>
+                            <span class="">{{ $doctor->specialization }}</span>
                             <br/>
                             <small class="text-black-50"><i class="fas fa-phone"></i> {{ $doctor->serial }}</small>
                             <small class="text-black-50"><i class="fas fa-mobile"></i> {{ $doctor->helpline }}</small>
@@ -72,15 +72,15 @@
                           </td>
                           <td>
                             @foreach($doctor->doctormedicaldepartments as $medicaldepartment)
-                              <span class="badge bg-primary">{{ $medicaldepartment->medicaldepartment->name }}</span>
+                              <span class="">{{ $medicaldepartment->medicaldepartment->name }}</span>
                             @endforeach <br/>
                             @foreach($doctor->doctormedicalsymptoms as $medicalsymptom)
-                              <span class="badge bg-info">{{ $medicalsymptom->medicalsymptom->name }}</span>
+                              <span class="">{{ $medicalsymptom->medicalsymptom->name }}</span>
                             @endforeach
                           </td>
                           <td>
                             @foreach($doctor->doctorhospitals as $hospital)
-                              <span class="badge bg-info">{{ $hospital->hospital->name }}</span>
+                              <span class="">{{ $hospital->hospital->name }}</span>
                             @endforeach <br/>
                             {{ $doctor->upazilla->name_bangla }}, {{ $doctor->district->name_bangla }}
                           </td>
