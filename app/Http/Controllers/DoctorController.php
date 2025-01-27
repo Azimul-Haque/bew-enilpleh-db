@@ -130,8 +130,6 @@ class DoctorController extends Controller
             'medicalsymptoms'            => 'required',
             'hospitals'            => 'sometimes',
             'weekdays'            => 'sometimes',
-            'timefrom'            => 'sometimes',
-            'timeto'            => 'sometimes',
         ));
 
         $doctor = new Doctor;
@@ -148,8 +146,6 @@ class DoctorController extends Controller
             $doctor->helpline = $request->helpline;
         }
         $doctor->weekdays = $request->weekdays;
-        $doctor->timefrom = $request->timefrom;
-        $doctor->timeto = $request->timeto;
         $doctor->save();
 
         if(Auth::user()->role == 'editor') {
