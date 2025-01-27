@@ -329,7 +329,7 @@
                   <div class="row">
                     <div class="col-md-6">
                       <div class="input-group mb-3">
-                        <select name="district_id" id="district" class="form-control district" required>
+                        <select name="district_id" id="district" class="form-control district select21" required>
                             <option selected="" disabled="" value="">জেলা নির্বাচন করুন</option>
                             @foreach($districts as $district)
                               <option value="{{ $district->id }}">{{ $district->name_bangla }}</option>
