@@ -107,7 +107,7 @@
                                     </div>
                                     <div class="col-md-6">
                                       <select name="upazilla_id" id="upazilla" class="form-control upazilla" data-placeholder="উপজেলা সিলেক্ট করুন" required>
-                                          <option selected="" value="{{ $hospital->upazilla_id }}">{{ $hospital->upazilla->name_bangla }}</option>
+                                          <option selected="" value="{{ $hospital->upazilla_id }}">{{ $hospital->upazilla->name_bangla }}-{{ $hospital->upazilla->name }}</option>
                                       </select>
                                     </div>
                                     <div class="col-md-6">
