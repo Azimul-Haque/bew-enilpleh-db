@@ -119,7 +119,7 @@
                                         <div class="row">
                                           <div class="col-md-6">
                                             <div class="input-group mb-3">
-                                              <select name="district_id" id="district" class="form-control district" required>
+                                              <select name="district_id" id="district" class="form-control district select21" required>
                                                   <option selected="" disabled="" value="">জেলা নির্বাচন করুন</option>
                                                   @foreach($districts as $district)
                                                     <option value="{{ $district->id }}" @if($doctor->district->id == $district->id) selected @endif>{{ $district->name_bangla }}</option>
@@ -132,7 +132,7 @@
                                           </div>
                                           <div class="col-md-6">
                                             <div class="input-group mb-3">
-                                              <select name="upazilla_id" id="upazilla" class="form-control upazilla" required>
+                                              <select name="upazilla_id" id="upazilla" class="form-control upazilla select21" required>
                                                   <option selected="" value="{{ $doctor->upazilla_id }}">{{ $doctor->upazilla->name_bangla }}</option>
                                               </select>
                                               <div class="input-group-append">
