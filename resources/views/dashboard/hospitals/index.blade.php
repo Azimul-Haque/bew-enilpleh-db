@@ -432,7 +432,7 @@
                           </div>
                       </div>
                     </div>
-                    <div class="col-md-12">
+                    {{-- <div class="col-md-12">
                       <div style="margin-bottom: 15px;">
                         <select name="doctor_ids[]" class="form-control multiple-select" multiple="multiple" data-placeholder="যে ডাক্তার হাসপাতালের এর সাথে সম্পৃক্ত (প্রয়োজনে একাধিক সিলেক্ট করা যাবে)">
                             @foreach($alldoctors as $doctor)
@@ -440,7 +440,7 @@
                             @endforeach
                         </select>
                       </div>
-                    </div>
+                    </div> --}}
                     <div class="col-md-6">
                       <div class="input-group mb-3">
                           <input type="text"
