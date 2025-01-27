@@ -631,9 +631,7 @@
 
                   <div>
                     সপ্তাহে যে যে দিন রোগী দেখেন<br/>
-                    <textarea name="weekdays" class="form-control">
-                      
-                    </textarea>
+                    <textarea name="weekdays" class="form-control"></textarea>
                   </div>
             </div>
             <div class="modal-footer">
