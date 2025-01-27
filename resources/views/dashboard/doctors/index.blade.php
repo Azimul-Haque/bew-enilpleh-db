@@ -236,6 +236,10 @@
 
                                         <div>
                                           সপ্তাহে যে যে দিন রোগী দেখেন<br/>
+                                          <textarea name="weekdays" class="form-control" placeholder="উদাহরণ: শুক্রবার সকাল ৯টা থেকে দুপুর ১২টা, শনিবার সন্ধ্যা ৬টা থেকে রাত ১০টা ইত্যাদি">{{ str_replace('<br />', "", old('weekdays')) }}</textarea>
+                                        </div>
+                                        <div>
+                                          সপ্তাহে যে যে দিন রোগী দেখেন<br/>
                                           @foreach(['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'] as $day)
                                             <div class="form-check form-check-inline">
                                               <input class="form-check-input" type="checkbox" id="inlineCheckbox{{ $doctor->id . $day }}" name="weekdays[]" value="{{ $day }}" {{ in_array($day, $doctor->weekdays ?? []) ? 'checked' : '' }}>
