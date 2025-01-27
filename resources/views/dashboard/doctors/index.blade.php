@@ -640,7 +640,7 @@
                   </div>
 
                   <div class="row" style="margin-top: 10px;">
-                    <div class="col-md-6">
+                    <div class="col-md-12">
                       <div class="input-group mb-3">
                           <select name="timefrom" id="timefrom" class="form-control">
                             <option value="" selected="" disabled="">রোগী দেখার সময় শুরু</option>
@@ -675,14 +675,6 @@
                       </div>
                     </div>
                   </div>
-
-                  <div class="form-group">
-                      <label for="image">ছবি/ ভিজিটিং কার্ড/ ব্যানার (প্রয়োজনে, ৩০০ h x ১৭৫ w সাইজের, ২ মেগাবাইটের মধ্যে)</label>
-                      <input type="file" id="image" name="image" accept="image/*">
-                  </div>
-                  {{-- <center>
-                      <img src="{{ asset('images/placeholder.png')}}" id='img-upload' style="width: 250px; height: auto;" class="img-responsive" />
-                  </center> --}}
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-dismiss="modal">ফিরে যান</button>
