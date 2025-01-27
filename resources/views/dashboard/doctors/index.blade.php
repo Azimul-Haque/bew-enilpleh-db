@@ -82,7 +82,7 @@
                             @foreach($doctor->doctorhospitals as $hospital)
                               <small class="">{{ $hospital->hospital->name }}</small>
                             @endforeach <br/>
-                            {{ $doctor->upazilla->name_bangla }}, {{ $doctor->district->name_bangla }}
+                            <small class="">{{ $doctor->upazilla->name_bangla }}, {{ $doctor->district->name_bangla }}</small>
                           </td>
                           <td align="right">
                             {{-- <button type="button" class="btn btn-warning btn-sm" data-toggle="modal" data-target="#notifModal{{ $doctor->id }}">
