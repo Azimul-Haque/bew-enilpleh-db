@@ -342,14 +342,15 @@
                       </div> --}}
                     </div>
                     <div class="col-md-6">
-                      <div class="input-group mb-3">
-                        <select name="upazilla_id" id="upazilla" class="form-control upazilla select21" required>
-                            <option selected="" disabled="" value="">উপজেলা নির্বাচন করুন</option>
-                        </select>
+                      <select name="upazilla_id" id="upazilla" class="form-control upazilla select21" required>
+                          <option selected="" disabled="" value="">উপজেলা নির্বাচন করুন</option>
+                      </select>
+                      {{-- <div class="input-group mb-3">
+                        
                         <div class="input-group-append">
                             <div class="input-group-text"><span class="fas fa-map-marked-alt"></span></div>
                         </div>
-                      </div>
+                      </div> --}}
                     </div>
                     <div class="col-md-6">
                       <div class="input-group mb-3">
