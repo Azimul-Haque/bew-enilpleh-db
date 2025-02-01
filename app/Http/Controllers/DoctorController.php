@@ -147,6 +147,7 @@ class DoctorController extends Controller
             $doctor->helpline = $request->helpline;
         }
         $doctor->weekdays = $request->weekdays;
+        $doctor->onlineserial = $request->onlineserial;
         $doctor->save();
 
         if(Auth::user()->role == 'editor') {
