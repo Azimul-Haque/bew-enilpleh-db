@@ -249,6 +249,7 @@ class DoctorController extends Controller
             $doctor->helpline = '';
         }
         $doctor->weekdays = $request->weekdays;
+        $doctor->onlineserial = $request->onlineserial;
         $doctor->save();
 
         if(isset($request->medicaldepartments)){
