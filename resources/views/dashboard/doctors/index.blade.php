@@ -595,8 +595,8 @@
                       </div>
                     </div>
                     <div class="col-md-4">
-                      <select name="district_id" id="district" class="form-control district select21" data-placeholder="জেলা নির্বাচন করুন" required>
-                          <option selected="" disabled="" value="">জেলা নির্বাচন করুন</option>
+                      <select name="onlineserial" class="form-control district" required>
+                          <option selected="" disabled="" value="">অনলাইনে সিরিয়াল দেওয়া যাবে কি না</option>
                           @foreach($districts as $district)
                             <option value="{{ $district->id }}">{{ $district->name_bangla }}-{{ $district->name }}</option>
                           @endforeach
