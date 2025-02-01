@@ -130,6 +130,7 @@ class DoctorController extends Controller
             'medicalsymptoms'            => 'required',
             'hospitals'            => 'sometimes',
             'weekdays'            => 'sometimes',
+            'onlineserial'            => 'required',
         ));
 
         $doctor = new Doctor;
@@ -228,6 +229,7 @@ class DoctorController extends Controller
             'medicalsymptoms'            => 'required',
             'hospitals'            => 'sometimes',
             'weekdays'            => 'sometimes',
+            'onlineserial'            => 'required',
         ));
 
         $doctor = Doctor::findOrFail($id);
