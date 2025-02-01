@@ -241,6 +241,7 @@
                                             </div>
                                           </div>
                                           <div class="col-md-4">
+                                            অনলাইনে সিরিয়াল দেওয়া যাবে কি না<br/>
                                             <select name="onlineserial" class="form-control district" required>
                                                 <option selected="" disabled="" value="">অনলাইনে সিরিয়াল দেওয়া যাবে কি না</option>
                                                 <option value="1" @if($doctor->onlineserial == 1) selected @endif>অনলাইনে সিরিয়াল দেওয়া যাবে</option>
