@@ -233,10 +233,23 @@
                                           </select>
                                         </div>
 
-                                        <div>
-                                          সপ্তাহে যে যে দিন রোগী দেখেন<br/>
-                                          <textarea name="weekdays" class="form-control" style="min-height: 90px;" placeholder="উদাহরণ: শুক্রবার সকাল ৯টা থেকে দুপুর ১২টা, শনিবার সন্ধ্যা ৬টা থেকে রাত ১০টা ইত্যাদি">{{ str_replace('<br />', "", $doctor->weekdays) }}</textarea>
+                                        <div class="row">
+                                          <div class="col-md-8">
+                                            <div>
+                                              সপ্তাহে যে যে দিন রোগী দেখেন<br/>
+                                              <textarea name="weekdays" class="form-control" style="min-height: 90px;" placeholder="উদাহরণ: শুক্রবার সকাল ৯টা থেকে দুপুর ১২টা, শনিবার সন্ধ্যা ৬টা থেকে রাত ১০টা ইত্যাদি">{{ str_replace('<br />', "", $doctor->weekdays) }}</textarea>
+                                            </div>
+                                          </div>
+                                          <div class="col-md-4">
+                                            <select name="onlineserial" class="form-control district" required>
+                                                <option selected="" disabled="" value="">অনলাইনে সিরিয়াল দেওয়া যাবে কি না</option>
+                                                <option value="1">অনলাইনে সিরিয়াল দেওয়া যাবে</option>
+                                                <option value="0">অনলাইনে সিরিয়াল দেওয়া যাবে না</option>
+                                            </select>
+                                          </div>
                                         </div>
+
+                                        
 
                                         {{-- <div class="form-group ">
                                             <label for="image">ছবি/ ভিজিটিং কার্ড/ ব্যানার (প্রয়োজনে, ৩০০ h x ১৭৫ w সাইজের, ২ মেগাবাইটের মধ্যে)</label>
