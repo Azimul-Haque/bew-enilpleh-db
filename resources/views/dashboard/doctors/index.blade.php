@@ -597,9 +597,8 @@
                     <div class="col-md-4">
                       <select name="onlineserial" class="form-control district" required>
                           <option selected="" disabled="" value="">অনলাইনে সিরিয়াল দেওয়া যাবে কি না</option>
-                          @foreach($districts as $district)
-                            <option value="{{ $district->id }}">{{ $district->name_bangla }}-{{ $district->name }}</option>
-                          @endforeach
+                          <option value="">অনলাইনে সিরিয়াল দেওয়া যাবে</option>
+                          <option value="">অনলাইনে সিরিয়াল দেওয়া যাবে না</option>
                       </select>
                     </div>
                   </div>
