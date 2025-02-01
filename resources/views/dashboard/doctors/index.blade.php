@@ -602,13 +602,13 @@
                   </div>
 
                   <div class="row">
-                    <div class="col-md-7">
+                    <div class="col-md-6">
                       <div>
                         সপ্তাহে যে যে দিন রোগী দেখেন<br/>
                         <textarea name="weekdays" class="form-control" style="min-height: 90px;" placeholder="উদাহরণ: শুক্রবার সকাল ৯টা থেকে দুপুর ১২টা, শনিবার সন্ধ্যা ৬টা থেকে রাত ১০টা ইত্যাদি">{{ str_replace('<br />', "", old('weekdays')) }}</textarea>
                       </div>
                     </div>
-                    <div class="col-md-5">
+                    <div class="col-md-6">
                       অনলাইনে সিরিয়াল দেওয়া যাবে কি না<br/>
                       <select name="onlineserial" class="form-control district" required>
                           <option selected="" disabled="" value="">অনলাইনে সিরিয়াল দেওয়া যাবে কি না</option>
