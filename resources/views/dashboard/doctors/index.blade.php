@@ -244,7 +244,7 @@
                                             অনলাইনে সিরিয়াল দেওয়া যাবে কি না<br/>
                                             <select name="onlineserial" class="form-control" required>
                                                 <option selected="" disabled="" value="">অনলাইনে সিরিয়াল দেওয়া যাবে কি না</option>
-                                                <option value="1" @if($doctor->onlineserial == 1) selected @endif>অনলাইনে সিরিয়াল দেওয়া যাবে</option>
+                                                <option value="1" @if($doctor->onlineserial == 1) selected @endif>অনলাইনে সিরিয়াল দেওয়া যাবে ✅</option>
                                                 <option value="0" @if($doctor->onlineserial == 0) selected @endif>অনলাইনে সিরিয়াল দেওয়া যাবে না</option>
                                             </select>
                                           </div>
@@ -612,7 +612,7 @@
                       অনলাইনে সিরিয়াল দেওয়া যাবে কি না<br/>
                       <select name="onlineserial" class="form-control" required>
                           <option selected="" disabled="" value="">অনলাইনে সিরিয়াল দেওয়া যাবে কি না</option>
-                          <option value="1">অনলাইনে সিরিয়াল দেওয়া যাবে</option>
+                          <option value="1">অনলাইনে সিরিয়াল দেওয়া যাবে ✅</option>
                           <option value="0">অনলাইনে সিরিয়াল দেওয়া যাবে না</option>
                       </select>
                     </div>
