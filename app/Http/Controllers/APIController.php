@@ -259,6 +259,7 @@ class APIController extends Controller
                         $doctormedicaldepartment->address = $doctormedicaldepartment->doctor->address;
                         $doctormedicaldepartment->helpline = $doctormedicaldepartment->doctor->helpline;
                         $doctormedicaldepartment->weekdays = $doctormedicaldepartment->doctor->weekdays;
+                        $doctormedicaldepartment->onlineserial = $doctormedicaldepartment->doctor->onlineserial;
                         // $doctormedicaldepartment->timefrom = $doctormedicaldepartment->doctor->timefrom;
                         // $doctormedicaldepartment->timeto = $doctormedicaldepartment->doctor->timeto;
                         // $doctormedicaldepartment->image = $doctormedicaldepartment->doctor->doctorimage ? $doctormedicaldepartment->doctor->doctorimage->image : '';
@@ -285,6 +286,7 @@ class APIController extends Controller
                         $doctormedicalsymptom->address = $doctormedicalsymptom->doctor->address;
                         $doctormedicalsymptom->helpline = $doctormedicalsymptom->doctor->helpline;
                         $doctormedicalsymptom->weekdays = $doctormedicalsymptom->doctor->weekdays;
+                        $doctormedicalsymptom->onlineserial = $doctormedicalsymptom->doctor->onlineserial;
                         // $doctormedicalsymptom->timefrom = $doctormedicalsymptom->doctor->timefrom;
                         // $doctormedicalsymptom->timeto = $doctormedicalsymptom->doctor->timeto;
                         // $doctormedicalsymptom->image = $doctormedicalsymptom->doctor->doctorimage ? $doctormedicalsymptom->doctor->doctorimage->image : '';
