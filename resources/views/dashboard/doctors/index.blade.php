@@ -621,13 +621,9 @@
                     <select name="offdays[]" class="form-control multiple-select" multiple="multiple" data-placeholder="যেদিন যেদিন রোগী দেখবেন না (প্রয়োজনে একাধিক সিলেক্ট করা যাবে) [Optional]" required>
                         @php
                             use Carbon\Carbon;
-
-                            // Set start date as today and end date three months later.
                             $startDate = Carbon::today();
                             $endDate = $startDate->copy()->addMonths(3);
                             $dates = [];
-
-                            // Build an array of dates from today up to and including the end date.
                             while ($startDate->lte($endDate)) {
                                 $dates[] = $startDate->copy();
                                 $startDate->addDay();
