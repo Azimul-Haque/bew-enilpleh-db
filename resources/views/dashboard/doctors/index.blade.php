@@ -268,7 +268,7 @@
                                           <select name="offdays[]" class="form-control multiple-select" multiple="multiple" data-placeholder="যেদিন যেদিন রোগী দেখবেন না (প্রয়োজনে একাধিক সিলেক্ট করা যাবে) [Optional]" required>
                                               @php
                                                 $decodedoffdays = json_decode($doctor->offdays, true);
-                                                print_r($decodedoffdays);
+                                                // print_r($decodedoffdays);
                                               @endphp
                                               @foreach($optiondates as $date)
                                                   <option value="{{ $date->format('Y-m-d') }}" @if(in_array($date->format('Y-m-d'), $decodedoffdays)) selected @endif>
