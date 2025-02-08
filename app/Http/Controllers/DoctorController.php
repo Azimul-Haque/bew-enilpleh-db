@@ -129,6 +129,7 @@ class DoctorController extends Controller
             'medicalsymptoms'            => 'required',
             'hospitals'            => 'sometimes',
             'weekdays'            => 'sometimes',
+            'offdays'            => 'sometimes',
             'onlineserial'            => 'required',
         ));
 
