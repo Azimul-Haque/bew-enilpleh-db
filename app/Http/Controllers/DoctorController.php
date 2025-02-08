@@ -56,7 +56,7 @@ class DoctorController extends Controller
                 }
             }
             $doctors = collect($doctors )->unique('id');
-            $doctors = collect($doctors )->paginate(10);
+            $doctors = collect($doctors )->toQuery()->paginate(10);
 
             dd($doctors);
 
