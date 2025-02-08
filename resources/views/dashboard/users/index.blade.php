@@ -55,7 +55,7 @@
                 @foreach($users as $user)
                 	<tr>
                 		<td>
-                			<a href="{{ route('dashboard.users.single', $user->id) }}">{{ $user->name }}</a>
+                			<a href="#!">{{ $user->name }}</a>
                       
                 			<br/>
                             {{-- {{ $user->balances2 }} --}}
