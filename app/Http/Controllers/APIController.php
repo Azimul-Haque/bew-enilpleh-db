@@ -1525,7 +1525,6 @@ class APIController extends Controller
         $doctorserial->serialdate = $request->serialdate;
         $doctorserial->save();
 
-        // send pending SMS ... aro kichu kaaj baki ache...
         // send sms
         $mobile_number = 0;
         if(strlen(Auth::user()->mobile) == 11) {
