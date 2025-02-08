@@ -633,7 +633,7 @@
                         @endphp
                         @foreach($optiondates as $date)
                             <option value="{{ $date->format('Y-m-d') }}">
-                                {{ $date->format('d-m-Y l') }}
+                                {{ bangla($date->format('d-m-Y l')) }}
                             </option>
                         @endforeach
                     </select>
