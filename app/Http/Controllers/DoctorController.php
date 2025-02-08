@@ -66,10 +66,8 @@ class DoctorController extends Controller
 
             // Get current page from the request, defaulting to 1
             $page = request()->get('page', 1);
-
             // Calculate the starting offset
             $offset = ($page - 1) * $perPage;
-
             // Slice the collection to get the items to display in current page
             $currentPageItems = $doctors->slice($offset, $perPage)->values();
 
@@ -85,7 +83,7 @@ class DoctorController extends Controller
                 ]
             );
 
-            dd($doctors);
+            // dd($doctors);
 
         } else {
             $doctorscount = Doctor::count();
