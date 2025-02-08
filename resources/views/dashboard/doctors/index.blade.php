@@ -642,7 +642,7 @@
                   <div style="margin-top: 15px;">
                     <select name="offdays[]" class="form-control multiple-select" multiple="multiple" data-placeholder="যেদিন যেদিন রোগী দেখবেন না (প্রয়োজনে একাধিক সিলেক্ট করা যাবে) [Optional]" required>
                         @php
-                            // use Carbon\Carbon;
+                            use Carbon\Carbon;
 
                             $startDate = Carbon::today();
                             $endDate = $startDate->copy()->addMonths(3);
