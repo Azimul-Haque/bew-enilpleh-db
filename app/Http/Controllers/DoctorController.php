@@ -49,7 +49,7 @@ class DoctorController extends Controller
             $doctors = Auth::user()->accessibleDoctors()->paginate(10);
 
             $accessedhospitals = Auth::user()->accessibleHospitals()->get();
-            dd($accessedhospitals);
+            dd($doctors);
 
         } else {
             $doctorscount = Doctor::count();
