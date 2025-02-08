@@ -56,6 +56,7 @@
           @php $iteratior = 1; @endphp
           @foreach($doctorserials as $doctorserial)
           <tr>
+            <td>{{ bangla($iteratior) }}</td>
             <td>{{ $doctorserial->name }}</td>
             <td align="center" class="calibri_normal">{{ $doctorserial->mobile }}</td>
             <td></td>
