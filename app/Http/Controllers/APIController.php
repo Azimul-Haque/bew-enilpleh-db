@@ -1527,11 +1527,11 @@ class APIController extends Controller
 
         // send sms
         $mobile_number = 0;
-        if(strlen(Auth::user()->mobile) == 11) {
-            $mobile_number = Auth::user()->mobile;
-        } elseif(strlen(Auth::user()->mobile) > 11) {
-            if (strpos(Auth::user()->mobile, '+') !== false) {
-                $mobile_number = substr(Auth::user()->mobile, -11);
+        if(strlen($request->mobile) == 11) {
+            $mobile_number = $request->mobile;
+        } elseif(strlen($request->mobile) > 11) {
+            if (strpos($request->mobile, '+') !== false) {
+                $mobile_number = substr($request->mobile, -11);
             }
         }
 
