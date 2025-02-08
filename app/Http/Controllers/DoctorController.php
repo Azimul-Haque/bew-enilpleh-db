@@ -451,7 +451,7 @@ class DoctorController extends Controller
                 $hospitaldoctorslist = collect();
                 foreach($accessedhospitals as $hospital) {
                     foreach($hospital->doctorhospitals as $doctor) {
-                        $doctors->push($doctor->doctor);
+                        $hospitaldoctorslist->push($doctor->doctor);
                     }
                 }
 
