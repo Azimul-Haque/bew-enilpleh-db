@@ -61,6 +61,7 @@
             <td align="center" class="calibri_normal">{{ $doctorserial->mobile }}</td>
             <td></td>
           </tr>
+          @php $iteratior++; @endphp
           @endforeach
         </tbody>
       </table>
