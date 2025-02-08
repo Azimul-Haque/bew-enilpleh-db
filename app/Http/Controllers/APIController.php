@@ -1535,7 +1535,11 @@ class APIController extends Controller
             }
         }
 
-        $text = 'Dear ' . $request->name . ', payment of tk. '. $request->amount .' is submitted successfully. We will notify you once we approve it. Customs and VAT Co-operative Society (CVCS). Login: https://cvcsbd.com/login';
+        $text = "Dear " . $request->name . ",\n\n" .
+        "Payment of tk. " . $request->amount . " is submitted successfully.\n" .
+        "We will notify you once we approve it.\n\n" .
+        "Customs and VAT Co-operative Society (CVCS).\n" .
+        "Login: https://cvcsbd.com/login";
         
         // NEW PANEL
         $url = config('sms.url');
