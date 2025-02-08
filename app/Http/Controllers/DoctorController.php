@@ -55,7 +55,7 @@ class DoctorController extends Controller
                     $doctors->push($doctor->doctor);
                 }
             }
-            $doctors = collect($doctors )->unique();
+            $doctors = collect($doctors )->unique('id');
 
             dd($doctors);
 
