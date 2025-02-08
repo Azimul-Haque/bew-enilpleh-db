@@ -51,8 +51,8 @@ class DoctorController extends Controller
             $accessedhospitals = Auth::user()->accessibleHospitals()->get();
 
             foreach($accessedhospitals as $hospital) {
-                $hospital->doctorhospitals;
-                dd($hospital->doctorhospitals);
+                // $doctors->push($hospital->doctorhospitals);
+                // dd($hospital->doctorhospitals);
             }
 
             dd($doctors);
