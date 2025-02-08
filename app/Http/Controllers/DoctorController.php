@@ -454,8 +454,8 @@ class DoctorController extends Controller
                         $hospitaldoctorslist->push($doctor->doctor);
                     }
                 }
-
-                if()
+                dd($hospitaldoctorslist);
+                // if()
                 abort(403, 'Access Denied');
             }
         }
