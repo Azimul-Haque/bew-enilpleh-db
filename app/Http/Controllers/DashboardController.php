@@ -202,6 +202,8 @@ class DashboardController extends Controller
                 $doctor = Doctor::find($doctors_id);
                 $user->accessibleDoctors()->attach($doctor);
             }            
+        } else {
+            $user->accessibleDoctors()->detach();
         }
         if(isset($request->blooddonors)){
             $user->accessibleBlooddonors()->detach();
@@ -209,6 +211,8 @@ class DashboardController extends Controller
                 $blooddonor = Blooddonor::find($blooddonor_id);
                 $user->accessibleBlooddonors()->attach($blooddonor);
             }            
+        } else {
+            $user->accessibleDoctors()->detach();
         }
 
         if(isset($request->coachings)){
