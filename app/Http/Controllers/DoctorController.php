@@ -58,7 +58,7 @@ class DoctorController extends Controller
                 }
             }
             $doctors = collect($doctors )->unique('id');
-            
+
             // Now paginate the collection:
 
             // Define how many items you want per page
@@ -446,6 +446,16 @@ class DoctorController extends Controller
                 abort(403, 'Access Denied');
             }
             if(!in_array($doctor_id, Auth::user()->accessibleDoctors()->pluck('accessible_id')->toArray())) {
+                // if not in doctors list, check if hospital is granted
+                $accessedhospitals = Auth::user()->accessibleHospitals()->get();
+
+                foreach($accessedhospitals as $hospital) {
+                    foreach($hospital->doctorhospitals as $doctor) {
+                        $doctors->push($doctor->doctor);
+                    }
+                }
+                
+                if()
                 abort(403, 'Access Denied');
             }
         }
