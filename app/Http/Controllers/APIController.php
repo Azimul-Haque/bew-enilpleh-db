@@ -287,6 +287,7 @@ class APIController extends Controller
                         $doctormedicalsymptom->address = $doctormedicalsymptom->doctor->address;
                         $doctormedicalsymptom->helpline = $doctormedicalsymptom->doctor->helpline;
                         $doctormedicalsymptom->weekdays = $doctormedicalsymptom->doctor->weekdays;
+                        $doctormedicalsymptom->offdays = $doctormedicalsymptom->doctor->offdays;
                         $doctormedicalsymptom->onlineserial = $doctormedicalsymptom->doctor->onlineserial;
                         // $doctormedicalsymptom->timefrom = $doctormedicalsymptom->doctor->timefrom;
                         // $doctormedicalsymptom->timeto = $doctormedicalsymptom->doctor->timeto;
