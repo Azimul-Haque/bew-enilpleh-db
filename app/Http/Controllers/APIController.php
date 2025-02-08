@@ -1535,7 +1535,8 @@ class APIController extends Controller
             }
         }
 
-        $text = "Dear " . $request->name . ",\n\n" .
+        $text = "Appointment\n"
+                "Dear " . $request->name . ",\n\n" .
                 "Payment of tk. " . $request->amount . " is submitted successfully.\n" .
                 "We will notify you once we approve it.\n\n" .
                 "Customs and VAT Co-operative Society (CVCS).\n" .
