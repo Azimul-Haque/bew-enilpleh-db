@@ -194,11 +194,7 @@ class DashboardController extends Controller
                 $user->accessibleHospitals()->attach($hospital);
             }            
         } else {
-            $user->accessibleHospitals()->detach();
-            foreach($request->hospitals as $hospital_id) {
-                $hospital = Hospital::find($hospital_id);
-                $user->accessibleHospitals()->attach($hospital);
-            } 
+            $user->accessibleHospitals()->detach(); 
         }
         if(isset($request->doctors)){
             $user->accessibleDoctors()->detach();
