@@ -1526,6 +1526,7 @@ class APIController extends Controller
         $doctorserial->save();
 
         // send sms
+        // send sms
         $mobile_number = 0;
         $serialdoctor = Doctor::findOrFail($request->doctor_id);
         if(strlen($request->mobile) == 11) {
@@ -1573,7 +1574,8 @@ class APIController extends Controller
         } else {
             // Session::flash('warning', 'দুঃখিত! SMS পাঠানো যায়নি!');
         }
-        // NEW PANEL
+        // send sms
+        // send sms
         
         return response()->json([
             'success' => true
