@@ -618,9 +618,9 @@
                     </div>
                   </div>
                   <div style="margin-top: 15px;">
-                    <select name="medicalsymptoms[]" class="form-control multiple-select" multiple="multiple" data-placeholder="যেদিন যেদিন রোগী দেখবেন না (প্রয়োজনে একাধিক সিলেক্ট করা যাবে) [Optional]" required>
+                    <select name="offdays[]" class="form-control multiple-select" multiple="multiple" data-placeholder="যেদিন যেদিন রোগী দেখবেন না (প্রয়োজনে একাধিক সিলেক্ট করা যাবে) [Optional]" required>
                         
-                        @foreach($medicalsymptoms as $medicalsymptom)
+                        @foreach($offdays as $medicalsymptom)
                           <option value="{{ $medicalsymptom->id }}">{{ $medicalsymptom->name }}</option>
                         @endforeach
                     </select>
