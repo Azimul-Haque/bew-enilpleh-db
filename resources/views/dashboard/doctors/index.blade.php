@@ -270,21 +270,7 @@
                                                   </option>
                                               @endforeach
                                           </select>
-                                        </div>
-
-                                        
-
-                                        {{-- <div class="form-group ">
-                                            <label for="image">ছবি/ ভিজিটিং কার্ড/ ব্যানার (প্রয়োজনে, ৩০০ h x ১৭৫ w সাইজের, ২ মেগাবাইটের মধ্যে)</label>
-                                            <input type="file" name="image" accept="image/*">
-                                        </div> --}}
-                                        {{-- <center>
-                                            @if($doctor->doctorimage != null)
-                                              <img src="{{ asset('images/doctors/' . $doctor->doctorimage->image)}}" style="width: 250px; height: auto;" class="img-responsive" />
-                                            @else
-                                              <img src="{{ asset('images/placeholder.png')}}" style="width: 250px; height: auto;" class="img-responsive" />
-                                            @endif
-                                        </center>   --}}   
+                                        </div> 
                                     
                                   </div>
                                   <div class="modal-footer">
