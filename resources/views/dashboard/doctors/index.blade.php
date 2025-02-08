@@ -271,7 +271,7 @@
                                                 print_r($decodedoffdays);
                                               @endphp
                                               @foreach($optiondates as $date)
-                                                  <option value="{{ $date->format('Y-m-d') }}" @if(in_array($decodedoffdays, $date->format('Y-m-d'))) selected @endif>
+                                                  <option value="{{ $date->format('Y-m-d') }}" @if(in_array($date->format('Y-m-d'), $decodedoffdays)) selected @endif>
                                                       {{ bangla($date->format('d-m-Y l')) }}
                                                   </option>
                                               @endforeach
