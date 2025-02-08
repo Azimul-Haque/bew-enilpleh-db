@@ -60,8 +60,13 @@ class DoctorController extends Controller
             $doctors = collect($doctors )->unique('id');
             // Now paginate the collection:
 
+            // Define how many items you want per page
             $perPage = 10;
+
+            // Get current page from the request, defaulting to 1
             $page = request()->get('page', 1);
+
+            // Calculate the starting offset
             $offset = ($page - 1) * $perPage;
 
             // Slice the collection to get the items to display in current page
