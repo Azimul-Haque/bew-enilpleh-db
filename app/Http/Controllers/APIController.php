@@ -1537,7 +1537,7 @@ class APIController extends Controller
             }
         }
 
-        $text = "Appointment\n\n"
+        $text = "Appointment\n\n" .
                 "Dear " . $request->name . ",\n" .
                 "Your appointment for " . $serialdoctor->name . " is booked successfully.\n" .
                 "Date: " . date('d-m-Y', strtotime($request->serialdate)) . "\n" .
