@@ -270,11 +270,11 @@ class DoctorController extends Controller
                 $doctormedicaldepartment->medicaldepartment_id = $medicaldepartment_id;
                 $doctormedicaldepartment->save();
 
-                Cache::forget('doctors'. $medicaldepartment_id . 'departmentwise' . $request->district_id);
-                Cache::forget('doctors'. $medicaldepartment_id . 'departmentwise' . $request->district_id . $request->upazilla_id);
+                Cache::forget('doctors'. $medicaldepartment_id . '1' . $request->district_id);
+                Cache::forget('doctors'. $medicaldepartment_id . '1' . $request->district_id . $request->upazilla_id);
 
-                Cache::forget('doctors'. $medicaldepartment_id . 'symptomwise' . $request->district_id);
-                Cache::forget('doctors'. $medicaldepartment_id . 'symptomwise' . $request->district_id . $request->upazilla_id);
+                Cache::forget('doctors'. $medicaldepartment_id . '2' . $request->district_id);
+                Cache::forget('doctors'. $medicaldepartment_id . '2' . $request->district_id . $request->upazilla_id);
             }            
         }
 
@@ -290,11 +290,11 @@ class DoctorController extends Controller
                 $doctormedicalsymptom->medicalsymptom_id = $medicalsymptom_id;
                 $doctormedicalsymptom->save();
 
-                Cache::forget('doctors'. $medicalsymptom_id . 'departmentwise' . $request->district_id);
-                Cache::forget('doctors'. $medicalsymptom_id . 'departmentwise' . $request->district_id . $request->upazilla_id);
+                Cache::forget('doctors'. $medicalsymptom_id . '1' . $request->district_id);
+                Cache::forget('doctors'. $medicalsymptom_id . '1' . $request->district_id . $request->upazilla_id);
 
-                Cache::forget('doctors'. $medicalsymptom_id . 'symptomwise' . $request->district_id);
-                Cache::forget('doctors'. $medicalsymptom_id . 'symptomwise' . $request->district_id . $request->upazilla_id);
+                Cache::forget('doctors'. $medicalsymptom_id . '2' . $request->district_id);
+                Cache::forget('doctors'. $medicalsymptom_id . '2' . $request->district_id . $request->upazilla_id);
             }            
         }
 
