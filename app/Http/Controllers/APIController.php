@@ -1540,7 +1540,7 @@ class APIController extends Controller
                 "Dear " . $request->name . ",\n" .
                 "Your appointment for " . $serialdoctor->name . " is booked successfully.\n" .
                 "Date: " . date('d-m-Y', strtotime($request->serialdate)) . ".\n" .
-                "Customs and VAT Co-operative Society (CVCS).\n" .
+                "Chamber: " .  . "\n" .
                 "Login: https://cvcsbd.com/login";
         
         // NEW PANEL
