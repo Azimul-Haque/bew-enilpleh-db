@@ -58,6 +58,7 @@ class DoctorController extends Controller
                 }
             }
             $doctors = collect($doctors )->unique('id');
+            
             // Now paginate the collection:
 
             // Define how many items you want per page
