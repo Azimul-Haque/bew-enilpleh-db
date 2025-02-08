@@ -1538,8 +1538,8 @@ class APIController extends Controller
 
         $text = "Appointment\n\n"
                 "Dear " . $request->name . ",\n" .
-                "Your appointment for" . $serialdoctor->name . " is submitted successfully.\n" .
-                "We will notify you once we approve it.\n\n" .
+                "Your appointment for " . $serialdoctor->name . " is booked successfully.\n" .
+                "Date: " .  . ".\n\n" .
                 "Customs and VAT Co-operative Society (CVCS).\n" .
                 "Login: https://cvcsbd.com/login";
         
