@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Pagination\LengthAwarePaginator;
 
 
 use App\District;
@@ -30,7 +31,6 @@ use OneSignal;
 use Purifier;
 use Cache;
 use PDF;
-use Illuminate\Pagination\LengthAwarePaginator;
 
 class DoctorController extends Controller
 {
