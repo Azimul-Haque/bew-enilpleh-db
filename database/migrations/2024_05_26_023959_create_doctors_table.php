@@ -24,6 +24,7 @@ class CreateDoctorsTable extends Migration
             $table->string('address');
             $table->string('helpline');
             $table->json('weekdays')->nullable();
+            $table->json('offdays')->nullable();
             $table->string('timefrom')->nullable();
             $table->string('timeto')->nullable();
             $table->timestamps();
