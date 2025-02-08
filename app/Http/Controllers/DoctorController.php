@@ -148,7 +148,7 @@ class DoctorController extends Controller
         }
         $doctor->weekdays = $request->weekdays;
         if($request->offdays) {
-            $doctor->offdays = $request->offdays;
+            $doctor->offdays = json_encode($request->offdays);
         }
         $doctor->onlineserial = $request->onlineserial;
         $doctor->save();
