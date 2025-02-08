@@ -46,7 +46,7 @@ class DoctorController extends Controller
                 abort(403, 'Access Denied');
             }
             $doctorscount = Auth::user()->accessibleDoctors()->count();
-            $doctors = Auth::user()->accessibleDoctors()->paginate(10);
+            $doctors = Auth::user()->accessibleDoctors()->get();
 
             $accessedhospitals = Auth::user()->accessibleHospitals()->get();
             dd($doctors);
