@@ -1524,6 +1524,52 @@ class APIController extends Controller
         $doctorserial->mobile = $request->mobile;
         $doctorserial->serialdate = $request->serialdate;
         $doctorserial->save();
+
+        // send pending SMS ... aro kichu kaaj baki ache...
+        // send sms
+        $mobile_number = 0;
+        if(strlen(Auth::user()->mobile) == 11) {
+            $mobile_number = Auth::user()->mobile;
+        } elseif(strlen(Auth::user()->mobile) > 11) {
+            if (strpos(Auth::user()->mobile, '+') !== false) {
+                $mobile_number = substr(Auth::user()->mobile, -11);
+            }
+        }
+        // $url = config('sms.url');
+        // $number = $mobile_number;
+        $text = 'Dear ' . Auth::user()->name . ', payment of tk. '. $request->amount .' is submitted successfully. We will notify you once we approve it. Customs and VAT Co-operative Society (CVCS). Login: https://cvcsbd.com/login';
+        
+        // NEW PANEL
+        $url = config('sms.url2');
+        $api_key = config('sms.api_key');
+        $senderid = config('sms.senderid');
+        $number = $mobile_number;
+        $message = $text;
+
+        $data = [
+            "api_key" => $api_key,
+            "senderid" => $senderid,
+            "number" => $number,
+            "message" => $message,
+        ];
+        $ch = curl_init();
+        curl_setopt($ch, CURLOPT_URL, $url);
+        curl_setopt($ch, CURLOPT_POST, 1);
+        curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+        curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+        $response = curl_exec($ch);
+        curl_close($ch);
+        $jsonresponse = json_decode($response);
+
+        if($jsonresponse->response_code == 202) {
+            // Session::flash('success', 'SMS সফলভাবে পাঠানো হয়েছে!');
+        } elseif($jsonresponse->response_code == 1007) {
+            // Session::flash('warning', 'অপর্যাপ্ত SMS ব্যালেন্সের কারণে SMS পাঠানো যায়নি!');
+        } else {
+            // Session::flash('warning', 'দুঃখিত! SMS পাঠানো যায়নি!');
+        }
+        // NEW PANEL
         
         return response()->json([
             'success' => true
