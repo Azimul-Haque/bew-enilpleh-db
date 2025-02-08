@@ -1541,7 +1541,7 @@ class APIController extends Controller
                 "Your appointment for " . $serialdoctor->name . " is booked successfully.\n" .
                 "Date: " . date('d-m-Y', strtotime($request->serialdate)) . "\n" .
                 "Chamber: " . $serialdoctor->address . "\n\n" .
-                "Login: https://cvcsbd.com/login";
+                "Infoline - BD Smart Seba";
         
         // NEW PANEL
         $url = config('sms.url');
