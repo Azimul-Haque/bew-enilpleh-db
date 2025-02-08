@@ -212,7 +212,7 @@ class DashboardController extends Controller
                 $user->accessibleBlooddonors()->attach($blooddonor);
             }            
         } else {
-            $user->accessibleDoctors()->detach();
+            $user->accessibleBlooddonors()->detach();
         }
 
         if(isset($request->coachings)){
@@ -221,6 +221,8 @@ class DashboardController extends Controller
                 $coaching = Coaching::find($coaching_id);
                 $user->accessibleCoachings()->attach($coaching);
             }            
+        } else {
+            $user->accessibleCoachings()->detach();
         }
         if(!empty($request->password)) {
             $user->password = Hash::make($request->password);
