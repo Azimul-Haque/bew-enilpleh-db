@@ -455,7 +455,7 @@ class DoctorController extends Controller
                     }
                 }
                 dd($hospitaldoctorslist);
-                if(!in_array($doctor_id, $hospitaldoctorslist->pluck('accessible_id')->toArray()))
+                if(!in_array($doctor_id, $hospitaldoctorslist->pluck('id')->toArray()))
                 abort(403, 'Access Denied');
             }
         }
