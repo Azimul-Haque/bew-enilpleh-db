@@ -56,7 +56,31 @@ class DoctorController extends Controller
                 }
             }
             $doctors = collect($doctors )->unique('id');
-            $doctors = collect($doctors )->paginate(10);
+            // Now paginate the collection:
+
+            // Define how many items you want per page
+            $perPage = 15;
+
+            // Get current page from the request, defaulting to 1
+            $page = request()->get('page', 1);
+
+            // Calculate the starting offset
+            $offset = ($page - 1) * $perPage;
+
+            // Slice the collection to get the items to display in current page
+            $currentPageItems = $doctors->slice($offset, $perPage)->values();
+
+            // Create LengthAwarePaginator instance
+            $pagedDoctors = new LengthAwarePaginator(
+                $currentPageItems,
+                $doctors->count(),  // total items
+                $perPage,
+                $page,
+                [
+                    'path'  => request()->url(),
+                    'query' => request()->query(),
+                ]
+            );
 
             dd($doctors);
 
