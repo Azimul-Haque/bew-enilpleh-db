@@ -52,7 +52,7 @@ class DoctorController extends Controller
 
             foreach($accessedhospitals as $hospital) {
                 foreach($hospital->doctorhospitals as $doctor) {
-                    $doctors->push($doctor);
+                    $doctors->push($doctor->doctor);
                 }
             }
 
