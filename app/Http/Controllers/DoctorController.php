@@ -30,6 +30,7 @@ use OneSignal;
 use Purifier;
 use Cache;
 use PDF;
+use Illuminate\Pagination\LengthAwarePaginator;
 
 class DoctorController extends Controller
 {
