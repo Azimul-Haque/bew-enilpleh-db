@@ -1534,6 +1534,12 @@ class APIController extends Controller
 
 
 
+
+
+
+
+
+
     public function getPaymentHistory($softtoken, $phonenumber)
     {
         $user = User::where('mobile', substr($phonenumber, -11))->first();
