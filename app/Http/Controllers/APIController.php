@@ -1527,6 +1527,7 @@ class APIController extends Controller
 
         // send sms
         $mobile_number = 0;
+        $serialdoctor = Doctor::findOrFail($request->doctor_id);
         if(strlen($request->mobile) == 11) {
             $mobile_number = $request->mobile;
         } elseif(strlen($request->mobile) > 11) {
