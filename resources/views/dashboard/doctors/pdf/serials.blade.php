@@ -53,6 +53,7 @@
           </tr>
         </thead>
         <tbody>
+          @php $iteratior = 1; @endphp
           @foreach($doctorserials as $doctorserial)
           <tr>
             <td>{{ $doctorserial->name }}</td>
