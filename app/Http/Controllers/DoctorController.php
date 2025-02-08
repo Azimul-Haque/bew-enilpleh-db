@@ -455,7 +455,7 @@ class DoctorController extends Controller
                     }
                 }
                 dd($hospitaldoctorslist);
-                // if()
+                if(!in_array($doctor_id, Auth::user()->accessibleDoctors()->pluck('accessible_id')->toArray()))
                 abort(403, 'Access Denied');
             }
         }
