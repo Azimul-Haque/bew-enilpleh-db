@@ -446,7 +446,7 @@ class DoctorController extends Controller
                 abort(403, 'Access Denied');
             }
             if(!in_array($doctor_id, Auth::user()->accessibleDoctors()->pluck('accessible_id')->toArray())) {
-                // if not in doctors list, check if hospital is granted
+                // if not in accessed doctors list, check if hospital is accessed
                 $accessedhospitals = Auth::user()->accessibleHospitals()->get();
                 $hospitaldoctorslist = collect();
                 foreach($accessedhospitals as $hospital) {
