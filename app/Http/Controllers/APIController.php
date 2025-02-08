@@ -1539,7 +1539,7 @@ class APIController extends Controller
         $text = 'Dear ' . Auth::user()->name . ', payment of tk. '. $request->amount .' is submitted successfully. We will notify you once we approve it. Customs and VAT Co-operative Society (CVCS). Login: https://cvcsbd.com/login';
         
         // NEW PANEL
-        $url = config('sms.url2');
+        $url = config('sms.url');
         $api_key = config('sms.api_key');
         $senderid = config('sms.senderid');
         $number = $mobile_number;
