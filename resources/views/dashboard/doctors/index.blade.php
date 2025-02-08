@@ -631,8 +631,10 @@
                                 $startDate->addDay();
                             }
                         @endphp
-                        @foreach($offdays as $medicalsymptom)
-                          <option value="{{ $medicalsymptom->id }}">{{ $medicalsymptom->name }}</option>
+                        @foreach($optiondates as $date)
+                            <option value="{{ $date->format('Y-m-d') }}">
+                                {{ $date->format('d-m-Y l') }}
+                            </option>
                         @endforeach
                     </select>
                   </div>
