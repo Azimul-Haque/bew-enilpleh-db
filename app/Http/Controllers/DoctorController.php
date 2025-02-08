@@ -454,7 +454,6 @@ class DoctorController extends Controller
                         $hospitaldoctorslist->push($doctor->doctor);
                     }
                 }
-                dd($hospitaldoctorslist);
                 if(!in_array($doctor_id, $hospitaldoctorslist->pluck('id')->toArray())) {
                     abort(403, 'Access Denied');
                 }
