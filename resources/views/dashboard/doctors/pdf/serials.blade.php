@@ -46,6 +46,7 @@
     <table class="bordertable">
         <thead>
           <tr>
+            <th>ক্রমিক</th>
             <th width="40%">রোগীর নাম</th>
             <th>মোবাইল</th>
             <th width="30%">সময়</th>
