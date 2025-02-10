@@ -916,8 +916,6 @@ class APIController extends Controller
         $doctorserial->serialdate = $request->serialdate;
         $doctorserial->save();
 
-        $doctorserialsforserial = Doctorserial::where('doctor_id', )
-                                              ->where()
         $doctorserialsforserial = Doctorserial::where('doctor_id', $request->doctor_id)
                                               ->where('serialdate', $request->serialdate)
                                               ->get();
