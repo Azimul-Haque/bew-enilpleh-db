@@ -17,7 +17,7 @@
   @section('page-header') <a href="{{ route('dashboard.doctors') }}">ডাক্তার তালিকা</a> / {{ $doctor->name }}-এর অ্যাপয়েন্টমেন্ট তালিকা @endsection
     <div class="container-fluid">
       <div class="row">
-        <div class="col-md-9">
+        <div class="col-md-10">
           <div class="card">
                 <div class="card-header">
                   <h3 class="card-title">{{ $doctor->name }}-এর অ্যাপয়েন্টমেন্ট তালিকা (তারিখ: <big><strong>{{ date('d-m-Y', strtotime($todaydate)) }}</strong></big>)</h3>
