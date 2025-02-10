@@ -504,8 +504,8 @@ class DoctorController extends Controller
     {
         $this->validate($request,array(
             'id'               => 'required',
-            'onesignal_id'         => 'required',
-            'headings'             => 'required',
+            'doctor_id'        => 'required',
+            'selecteddate'     => 'required',
             'message'              => 'required',
             'softtoken'            => 'required|max:191'
         ));
