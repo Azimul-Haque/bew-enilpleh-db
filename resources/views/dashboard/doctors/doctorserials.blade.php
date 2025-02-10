@@ -64,7 +64,7 @@
                           {{-- Send Single SMS Code --}}
                           {{-- Send Single SMS Code --}}
                           <!-- Modal -->
-                          <div class="modal fade" id="editUserModal{{ $doctor->id }}" role="dialog" aria-labelledby="editUserModalLabel" aria-hidden="true" data-backdrop="static">
+                          <div class="modal fade" id="sendCancelSMSModal{{ $doctorserial->id }}" role="dialog" aria-labelledby="editUserModalLabel" aria-hidden="true" data-backdrop="static">
                             <div class="modal-dialog modal-lg" role="document">
                               <div class="modal-content">
                                 <div class="modal-header bg-success">
