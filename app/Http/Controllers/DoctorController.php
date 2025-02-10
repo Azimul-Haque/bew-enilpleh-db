@@ -581,7 +581,6 @@ class DoctorController extends Controller
 
         foreach ($doctorserials as $doctorserial) {
             $mobile_number = 0;
-            $serialdoctor = Doctor::findOrFail($request->doctor_id);
             if(strlen($doctorserial->mobile) == 11) {
                 $mobile_number = $doctorserial->mobile;
             } elseif(strlen($doctorserial->mobile) > 11) {
