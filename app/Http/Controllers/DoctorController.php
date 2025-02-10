@@ -508,5 +508,9 @@ class DoctorController extends Controller
             'selecteddate'     => 'required',
         ));
 
+        $doctorserial = Doctorserial::findOrFail($request->id);
+
+        
+
         
 }
