@@ -79,7 +79,7 @@
                                         @csrf
                                         
                                         <div class="input-group mb-3">
-                                          <textarea name="message" class="form-control" style="min-height: 90px;" placeholder="মেসেজ লিখুন">
+                                          <textarea name="message" class="form-control" style="min-height: 90px;" placeholder="মেসেজ লিখুন"></textarea>
                                         </div>
                                   </div>
                                   <div class="modal-footer">
