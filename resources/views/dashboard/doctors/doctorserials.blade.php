@@ -65,7 +65,7 @@
                           {{-- Send Single SMS Code --}}
                           <!-- Modal -->
                           <div class="modal fade" id="sendCancelSMSModal{{ $doctorserial->id }}" role="dialog" aria-labelledby="editUserModalLabel" aria-hidden="true" data-backdrop="static">
-                            <div class="modal-dialog modal-lg" role="document">
+                            <div class="modal-dialog modal-md" role="document">
                               <div class="modal-content">
                                 <div class="modal-header bg-warning">
                                   <h5 class="modal-title" id="editUserModalLabel">ক্যান্সেল মেসেজ পাঠান</h5>
@@ -77,31 +77,7 @@
                                   <div class="modal-body">
                                     
                                         @csrf
-                                        <div class="row">
-                                          <div class="col-md-6">
-                                            <div class="input-group mb-3">
-                                              <select name="district_id" id="district" class="form-control district select21" required>
-                                                  <option selected="" disabled="" value="">জেলা নির্বাচন করুন</option>
-                                                  @foreach($districts as $district)
-                                                    <option value="{{ $district->id }}" @if($doctor->district->id == $district->id) selected @endif>{{ $district->name_bangla }}-{{ $district->name }}</option>
-                                                  @endforeach
-                                              </select>
-                                              <div class="input-group-append">
-                                                  <div class="input-group-text"><span class="fas fa-map"></span></div>
-                                              </div>
-                                            </div>
-                                          </div>
-                                          <div class="col-md-6">
-                                            <div class="input-group mb-3">
-                                              <select name="upazilla_id" id="upazilla" class="form-control upazilla select21" required>
-                                                  <option selected="" value="{{ $doctor->upazilla_id }}">{{ $doctor->upazilla->name_bangla }}-{{ $doctor->upazilla->name }}</option>
-                                              </select>
-                                              <div class="input-group-append">
-                                                  <div class="input-group-text"><span class="fas fa-map-marked-alt"></span></div>
-                                              </div>
-                                            </div>
-                                          </div>
-                                        </div>
+                                        
 
                                         <div class="row">
                                           <div class="col-md-6">
