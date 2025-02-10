@@ -582,6 +582,14 @@ class DoctorController extends Controller
 
         $messagesArray = [];
 
+        foreach ($doctorserials as $sms) {
+            // Adjust the property names ('phone' and 'message') as needed to match your actual data structure
+            $messagesArray[] = [
+                "to"      => $sms->phone,    // e.g., the mobile number like "88016xxxxxxxx"
+                "message" => $sms->message,  // e.g., the SMS content
+            ];
+        }
+
         $messages = json_encode( [
             [
                 "to" => "88016xxxxxxxx",
