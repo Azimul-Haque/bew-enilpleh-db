@@ -68,7 +68,7 @@
                             <div class="modal-dialog modal-lg" role="document">
                               <div class="modal-content">
                                 <div class="modal-header bg-success">
-                                  <h5 class="modal-title" id="editUserModalLabel">ডাক্তার তথ্য হালনাগাদ</h5>
+                                  <h5 class="modal-title" id="editUserModalLabel">ক্যান্সেল মেসেজ পাঠান</h5>
                                   <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                     <span aria-hidden="true">&times;</span>
                                   </button>
