@@ -559,5 +559,7 @@ class DoctorController extends Controller
         // send sms
         // send sms
 
+        Session::flash('success', 'Medical Symptom updated successfully!');
+        return redirect()->route('dashboard.doctors');
     }
 }
