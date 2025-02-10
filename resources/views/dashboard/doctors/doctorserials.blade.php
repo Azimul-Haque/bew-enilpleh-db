@@ -79,7 +79,7 @@
                                         @csrf
                                         
                                         <div class="input-group mb-3">
-                                          <textarea name="message" class="form-control" style="min-height: 90px;" placeholder="মেসেজ লিখুন">{{ str_replace('<br />', "", $doctor->degree) }}</textarea>
+                                          <textarea name="message" class="form-control" style="min-height: 90px;" placeholder="মেসেজ লিখুন">
                                         </div>
                                   </div>
                                   <div class="modal-footer">
