@@ -56,7 +56,7 @@
                           <td>{{ date('F d, Y', strtotime($doctorserial->serialdate)) }}</td>
 
                           <td align="right">
-                           <button type="button" class="btn btn-warning btn-sm" title="asd" data-toggle="modal" data-target="#sendCancelSMSModal{{ $doctorserial->id }}">
+                           <button type="button" class="btn btn-warning btn-sm" title="ক্যান্সেল মেসেজ পাঠান" data-toggle="modal" data-target="#sendCancelSMSModal{{ $doctorserial->id }}">
                              <i class="fas fa-envelope"></i>
                            </button>
                           </td>
