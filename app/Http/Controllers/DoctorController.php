@@ -510,7 +510,57 @@ class DoctorController extends Controller
 
         $doctorserial = Doctorserial::findOrFail($request->id);
 
+        // send sms
+        // send sms
+        $mobile_number = 0;
+        $serialdoctor = Doctor::findOrFail($request->doctor_id);
+        if(strlen($request->mobile) == 11) {
+            $mobile_number = $request->mobile;
+        } elseif(strlen($request->mobile) > 11) {
+            if (strpos($request->mobile, '+') !== false) {
+                $mobile_number = substr($request->mobile, -11);
+            }
+        }
+
+        $text = "Appointment\n\n" .
+                "Dear " . $request->name . ",\n" .
+                "Your appointment for " . $serialdoctor->name . " is booked successfully.\n" .
+                "Date: " . date('d-m-Y', strtotime($request->serialdate)) . "\n" .
+                "Chamber: " . $serialdoctor->address . "\n\n" .
+                "Infoline - BD Smart Seba";
         
+        // NEW PANEL
+        $url = config('sms.url');
+        $api_key = config('sms.api_key');
+        $senderid = config('sms.senderid');
+        $number = $mobile_number;
+        $message = $text;
+
+        $data = [
+            "api_key" => $api_key,
+            "senderid" => $senderid,
+            "number" => $number,
+            "message" => $message,
+        ];
+        $ch = curl_init();
+        curl_setopt($ch, CURLOPT_URL, $url);
+        curl_setopt($ch, CURLOPT_POST, 1);
+        curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+        curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+        $response = curl_exec($ch);
+        curl_close($ch);
+        $jsonresponse = json_decode($response);
+
+        if($jsonresponse->response_code == 202) {
+            // Session::flash('success', 'SMS সফলভাবে পাঠানো হয়েছে!');
+        } elseif($jsonresponse->response_code == 1007) {
+            // Session::flash('warning', 'অপর্যাপ্ত SMS ব্যালেন্সের কারণে SMS পাঠানো যায়নি!');
+        } else {
+            // Session::flash('warning', 'দুঃখিত! SMS পাঠানো যায়নি!');
+        }
+        // send sms
+        // send sms
 
         
 }
