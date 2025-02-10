@@ -79,7 +79,7 @@
                                         @csrf
                                         
                                         <div class="input-group mb-3">
-                                          <textarea name="degree" class="form-control" style="min-height: 90px;" placeholder="ডাক্তারের ডিগ্রি/ ডিগ্রিসমূহ (যেমন: MBBS, FCPS, MD, বিসিএস (স্বাস্থ্য) ইত্যাদি) [একাধিক লাইন এড করা যাবে]">{{ str_replace('<br />', "", $doctor->degree) }}</textarea>
+                                          <textarea name="message" class="form-control" style="min-height: 90px;" placeholder="ডাক্তারের ডিগ্রি/ ডিগ্রিসমূহ (যেমন: MBBS, FCPS, MD, বিসিএস (স্বাস্থ্য) ইত্যাদি) [একাধিক লাইন এড করা যাবে]">{{ str_replace('<br />', "", $doctor->degree) }}</textarea>
                                         </div>
                                   </div>
                                   <div class="modal-footer">
