@@ -33,7 +33,7 @@
                       <a href="{{ route('dashboard.getdoctorserialpdf', [$doctor->id, $todaydate]) }}" class="btn btn-success btn-sm"  style="margin-left: 5px;" target="_blank">
                         <i class="fas fa-print"></i> প্রিন্ট করুন
                       </a>
-                      <button type="button" class="btn btn-warning btn-sm" title="ক্যান্সেল মেসেজ পাঠান" data-toggle="modal" data-target="#sendCancelSMSModal{{ $doctorserial->id }}">
+                      <button type="button" class="btn btn-warning btn-sm" title="ক্যান্সেল মেসেজ পাঠান" data-toggle="modal" data-target="#sendCancelSMSALLModal">
                        সকলকে ক্যানসেক মেসেজ দিন
                      </button>
                     </form>
