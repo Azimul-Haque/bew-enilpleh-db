@@ -564,10 +564,10 @@ class DoctorController extends Controller
 
     public function doctorSerialCancelALL(Request $request)
     {
-        $this->validate($request,array(
-            'id'               => 'required',
-            'doctor_id'        => 'required',
-        ));
+        // $this->validate($request,array(
+        //     'id'               => 'required',
+        //     'doctor_id'        => 'required',
+        // ));
 
         $doctorserial = Doctorserial::findOrFail($request->id);
 
