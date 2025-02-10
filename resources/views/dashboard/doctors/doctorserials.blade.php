@@ -77,7 +77,6 @@
                                   <div class="modal-body">
                                     
                                         @csrf
-                                        <input type="hidden"></input>
                                         <div class="input-group mb-3">
                                           <textarea name="message" class="form-control" style="min-height: 250px;" placeholder="মেসেজ লিখুন">Appointment Cancelled!&#10;&#10;Dear {{ $doctorserial->name }}, we are sorry to inform you that, your appointment with {{ $doctorserial->doctor->name }} on {{ date('d-m-Y', strtotime($doctorserial->serialdate)) }} has been cancelled unfortunately.&#10;&#10;Infoline - BD Smart Seba</textarea>
                                         </div>
