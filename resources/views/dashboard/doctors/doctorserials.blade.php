@@ -56,7 +56,9 @@
                           <td>{{ date('F d, Y', strtotime($doctorserial->serialdate)) }}</td>
 
                           <td align="right">
-                           
+                           <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#editUserModal{{ $doctorserial->id }}">
+                             <i class="fas fa-edit"></i>
+                           </button>
                           </td>
                         </tr>
                         @php $iteratior++; @endphp
