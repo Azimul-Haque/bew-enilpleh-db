@@ -587,8 +587,8 @@ class DoctorController extends Controller
                 "Infoline - BD Smart Seba";
 
             $messagesArray[] = [
-                "to"      => $doctorserial->mobile,    // e.g., the mobile number like "88016xxxxxxxx"
-                "message" => $sms->message,  // e.g., the SMS content
+                "to"      => $doctorserial->mobile,
+                "message" => $text,
             ];
         }
 
