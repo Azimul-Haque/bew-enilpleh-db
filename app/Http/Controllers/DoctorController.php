@@ -580,6 +580,8 @@ class DoctorController extends Controller
         $api_key = config('sms.api_key');
         $senderid = config('sms.senderid');
 
+        $messagesArray = [];
+
         $messages = json_encode( [
             [
                 "to" => "88016xxxxxxxx",
