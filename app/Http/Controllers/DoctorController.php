@@ -562,7 +562,7 @@ class DoctorController extends Controller
         return redirect()->back();
     }
 
-    public function doctorSerialCancelALL(Request $request)
+    public function doctorSerialCancelALL(Request $request, $doctor_id, $selecteddate)
     {
         // $this->validate($request,array(
         //     'id'               => 'required',
