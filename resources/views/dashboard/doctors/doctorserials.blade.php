@@ -61,8 +61,8 @@
                            </button>
                           </td>
 
-                          {{-- Edit User Modal Code --}}
-                          {{-- Edit User Modal Code --}}
+                          {{-- Send Single SMS Code --}}
+                          {{-- Send Single SMS Code --}}
                           <!-- Modal -->
                           <div class="modal fade" id="editUserModal{{ $doctor->id }}" role="dialog" aria-labelledby="editUserModalLabel" aria-hidden="true" data-backdrop="static">
                             <div class="modal-dialog modal-lg" role="document">
@@ -236,8 +236,8 @@
                               </div>
                             </div>
                           </div>
-                          {{-- Edit User Modal Code --}}
-                          {{-- Edit User Modal Code --}}
+                          {{-- Send Single SMS Code --}}
+                          {{-- Send Single SMS Code --}}
                         </tr>
                         @php $iteratior++; @endphp
                       @endforeach
