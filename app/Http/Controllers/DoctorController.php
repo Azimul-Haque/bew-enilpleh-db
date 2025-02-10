@@ -569,7 +569,8 @@ class DoctorController extends Controller
         //     'doctor_id'        => 'required',
         // ));
 
-        $doctorserial = Doctorserial::findOrFail($request->id);
+        $doctorserials = Doctorserial::where(doctor_id, $doctor_id)
+                                     ->where(doctor_id, $selecteddate)
 
         // send sms
         // send sms
