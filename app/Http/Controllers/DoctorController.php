@@ -508,8 +508,6 @@ class DoctorController extends Controller
             'selecteddate'     => 'required',
         ));
 
-        $doctorserial = Doctorserial::findOrFail($request->id);
-
         // send sms
         // send sms
         $mobile_number = 0;
