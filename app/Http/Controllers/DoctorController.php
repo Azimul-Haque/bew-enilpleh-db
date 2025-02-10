@@ -523,8 +523,7 @@ class DoctorController extends Controller
         }
 
         $text = "Appointment Cancelled!\n\n" .
-                "Dear " . $request->name . ",\n" .
-                "Your appointment for " . $serialdoctor->name . " is booked successfully.\n" .
+                "Dear " . $request->name . ", your appointment for " . $serialdoctor->name . " is booked successfully.\n" .
                 "Date: " . date('d-m-Y', strtotime($request->serialdate)) . "\n" .
                 "Chamber: " . $serialdoctor->address . "\n\n" .
                 "Infoline - BD Smart Seba";
