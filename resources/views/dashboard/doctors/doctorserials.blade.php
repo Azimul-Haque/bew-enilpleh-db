@@ -34,7 +34,7 @@
                         <i class="fas fa-print"></i> প্রিন্ট করুন
                       </a>
                       <button type="button" class="btn btn-warning btn-sm" style="margin-left: 5px;" title="সকলকে ক্যানসেল মেসেজ পাঠান" data-toggle="modal" data-target="#sendCancelSMSALLModal">
-                       ক্যানসেল মেসেজ
+                       <i class="fas fa-envelope"></i> ক্যানসেল মেসেজ
                      </button>
                     </form>
                     
