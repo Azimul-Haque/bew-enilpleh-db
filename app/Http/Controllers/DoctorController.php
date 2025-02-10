@@ -561,4 +561,66 @@ class DoctorController extends Controller
         Session::flash('success', 'SMS সফলভাবে পাঠানো হয়েছে!');
         return redirect()->back();
     }
+
+    public function doctorSerialCancelALL(Request $request)
+    {
+        $this->validate($request,array(
+            'id'               => 'required',
+            'doctor_id'        => 'required',
+        ));
+
+        $doctorserial = Doctorserial::findOrFail($request->id);
+
+        // send sms
+        // send sms
+        $mobile_number = 0;
+        $serialdoctor = Doctor::findOrFail($request->doctor_id);
+        if(strlen($doctorserial->mobile) == 11) {
+            $mobile_number = $doctorserial->mobile;
+        } elseif(strlen($doctorserial->mobile) > 11) {
+            if (strpos($doctorserial->mobile, '+') !== false) {
+                $mobile_number = substr($doctorserial->mobile, -11);
+            }
+        }
+
+        $text = "Appointment Cancelled!\n\n" .
+                "Dear " . $doctorserial->name . ", we are sorry to inform you that, your appointment with " . $serialdoctor->name . " on " . date('d-m-Y', strtotime($doctorserial->serialdate)) . " has been cancelled unfortunately.\n\n" .
+                "Infoline - BD Smart Seba";
+        
+        // NEW PANEL
+        $url = config('sms.url');
+        $api_key = config('sms.api_key');
+        $senderid = config('sms.senderid');
+        $number = $mobile_number;
+        $message = $text;
+
+        $data = [
+            "api_key" => $api_key,
+            "senderid" => $senderid,
+            "number" => $number,
+            "message" => $message,
+        ];
+        $ch = curl_init();
+        curl_setopt($ch, CURLOPT_URL, $url);
+        curl_setopt($ch, CURLOPT_POST, 1);
+        curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+        curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+        $response = curl_exec($ch);
+        curl_close($ch);
+        $jsonresponse = json_decode($response);
+
+        if($jsonresponse->response_code == 202) {
+            // Session::flash('success', 'SMS সফলভাবে পাঠানো হয়েছে!');
+        } elseif($jsonresponse->response_code == 1007) {
+            // Session::flash('warning', 'অপর্যাপ্ত SMS ব্যালেন্সের কারণে SMS পাঠানো যায়নি!');
+        } else {
+            // Session::flash('warning', 'দুঃখিত! SMS পাঠানো যায়নি!');
+        }
+        // send sms
+        // send sms
+
+        Session::flash('success', 'SMS সফলভাবে পাঠানো হয়েছে!');
+        return redirect()->back();
+    }
 }
