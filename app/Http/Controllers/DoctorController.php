@@ -579,7 +579,7 @@ class DoctorController extends Controller
         $url = config('sms.url');
         $api_key = config('sms.api_key');
         $senderid = config('sms.senderid');
-        
+
         $messages = json_encode( [
             [
                 "to" => "88016xxxxxxxx",
@@ -613,6 +613,8 @@ class DoctorController extends Controller
                 $mobile_number = substr($doctorserial->mobile, -11);
             }
         }
+
+        ////////////////
 
         $text = "Appointment Cancelled!\n\n" .
                 "Dear " . $doctorserial->name . ", we are sorry to inform you that, your appointment with " . $serialdoctor->name . " on " . date('d-m-Y', strtotime($doctorserial->serialdate)) . " has been cancelled unfortunately.\n\n" .
