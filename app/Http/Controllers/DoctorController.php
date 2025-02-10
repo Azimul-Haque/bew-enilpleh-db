@@ -573,7 +573,7 @@ class DoctorController extends Controller
                                      ->get();
         // send sms
         // send sms
-        $url = config('sms.url');
+        $url = "http://bulksmsbd.net/api/smsapimany";
         $api_key = config('sms.api_key');
         $senderid = config('sms.senderid');
 
