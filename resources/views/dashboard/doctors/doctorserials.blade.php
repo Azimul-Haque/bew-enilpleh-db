@@ -113,11 +113,11 @@
     {{-- Send SMS ALL Code --}}
     {{-- Send SMS ALL Code --}}
     <!-- Modal -->
-    <div class="modal fade" id="sendCancelSMSALLModal" role="dialog" aria-labelledby="editUserModalLabel" aria-hidden="true" data-backdrop="static">
+    <div class="modal fade" id="sendCancelSMSALLModal" role="dialog" aria-labelledby="sendCancelSMSALLModal" aria-hidden="true" data-backdrop="static">
       <div class="modal-dialog modal-md" role="document">
         <div class="modal-content">
           <div class="modal-header bg-warning">
-            <h5 class="modal-title" id="editUserModalLabel"><i class="fas fa-envelope"></i> ক্যান্সেল মেসেজ পাঠান</h5>
+            <h5 class="modal-title" id="sendCancelSMSALLModal"><i class="fas fa-envelope"></i> ক্যান্সেল মেসেজ পাঠান</h5>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
