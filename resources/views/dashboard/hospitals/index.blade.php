@@ -203,7 +203,7 @@
                                                value="{{ $hospital->website }}"
                                                autocomplete="off"
                                                class="form-control"
-                                               placeholder="(Optional) সরকারি হাসপাতালের ক্ষেত্রে ডাক্তার তালিকার ওয়েবপেজ লিংক">
+                                               placeholder="(Optional) ডাক্তার তালিকার ওয়েবপেজ লিংক">
                                         <div class="input-group-append">
                                             <div class="input-group-text"><span class="fas fa-globe"></span></div>
                                         </div>
@@ -442,7 +442,7 @@
                                  value="{{ old('website') }}"
                                  autocomplete="off"
                                  class="form-control"
-                                 placeholder="(OPTIONAL) সরকারি হাসপাতালের ক্ষেত্রে ডাক্তার তালিকার ওয়েবপেজ লিংক">
+                                 placeholder="(OPTIONAL) ডাক্তার তালিকার ওয়েবপেজ লিংক">
                           <div class="input-group-append">
                               <div class="input-group-text"><span class="fas fa-globe"></span></div>
                           </div>
