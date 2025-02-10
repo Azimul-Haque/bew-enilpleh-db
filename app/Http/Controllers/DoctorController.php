@@ -559,5 +559,5 @@ class DoctorController extends Controller
         // send sms
         // send sms
 
-        
+    }
 }
