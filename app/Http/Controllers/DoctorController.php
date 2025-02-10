@@ -382,9 +382,7 @@ class DoctorController extends Controller
     public function storeDoctorDept(Request $request)
     {
         $this->validate($request,array(
-            'id'                => 'required',
-            'doctor_id'         => 'required',
-            'selecteddate'         => 'required',
+            'name'                => 'required|string|max:191',
         ));
 
         $medicaldepartment = new Medicaldepartment;
