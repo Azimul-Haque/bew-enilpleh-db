@@ -500,7 +500,7 @@ class DoctorController extends Controller
         return $pdf->stream($fileName);
     }
 
-    public function doctorSerialCancelSingle(Request $request, )
+    public function doctorSerialCancelSingle(Request $request)
     {
         $this->validate($request,array(
             'id'               => 'required',
