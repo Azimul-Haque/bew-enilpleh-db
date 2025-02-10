@@ -383,7 +383,8 @@ class DoctorController extends Controller
     {
         $this->validate($request,array(
             'id'                => 'required',
-            'id'                => 'required',
+            'doctor_id'         => 'required',
+            'doctor_id'         => 'required',
         ));
 
         $medicaldepartment = new Medicaldepartment;
