@@ -582,6 +582,15 @@ class DoctorController extends Controller
         $messagesArray = [];
 
         foreach ($doctorserials as $doctorserial) {
+            $mobile_number = 0;
+            $serialdoctor = Doctor::findOrFail($request->doctor_id);
+            if(strlen($doctorserial->mobile) == 11) {
+                $mobile_number = $doctorserial->mobile;
+            } elseif(strlen($doctorserial->mobile) > 11) {
+                if (strpos($doctorserial->mobile, '+') !== false) {
+                    $mobile_number = substr($doctorserial->mobile, -11);
+                }
+            }
             $text = "Appointment Cancelled!\n\n" .
                 "Dear " . $doctorserial->name . ", we are sorry to inform you that, your appointment with " . $doctorserial->doctor->name . " on " . date('d-m-Y', strtotime($doctorserial->serialdate)) . " has been cancelled unfortunately.\n\n" .
                 "Infoline - BD Smart Seba";
@@ -616,17 +625,12 @@ class DoctorController extends Controller
         $response = curl_exec($ch);
         curl_close($ch);
         return $response;
-        $mobile_number = 0;
-        $serialdoctor = Doctor::findOrFail($request->doctor_id);
-        if(strlen($doctorserial->mobile) == 11) {
-            $mobile_number = $doctorserial->mobile;
-        } elseif(strlen($doctorserial->mobile) > 11) {
-            if (strpos($doctorserial->mobile, '+') !== false) {
-                $mobile_number = substr($doctorserial->mobile, -11);
-            }
-        }
 
         ////////////////
+        ////////////////
+        
+
+        
 
         $text = "Appointment Cancelled!\n\n" .
                 "Dear " . $doctorserial->name . ", we are sorry to inform you that, your appointment with " . $serialdoctor->name . " on " . date('d-m-Y', strtotime($doctorserial->serialdate)) . " has been cancelled unfortunately.\n\n" .
