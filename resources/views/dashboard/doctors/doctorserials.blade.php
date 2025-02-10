@@ -110,8 +110,8 @@
       </div>
     </div>
 
-    {{-- Send Single SMS Code --}}
-    {{-- Send Single SMS Code --}}
+    {{-- Send SMS ALL Code --}}
+    {{-- Send SMS ALL Code --}}
     <!-- Modal -->
     <div class="modal fade" id="sendCancelSMSModal{{ $doctorserial->id }}" role="dialog" aria-labelledby="editUserModalLabel" aria-hidden="true" data-backdrop="static">
       <div class="modal-dialog modal-md" role="document">
@@ -138,8 +138,8 @@
         </div>
       </div>
     </div>
-    {{-- Send Single SMS Code --}}
-    {{-- Send Single SMS Code --}}
+    {{-- Send SMS ALL Code --}}
+    {{-- Send SMS ALL Code --}}
 
     
 
