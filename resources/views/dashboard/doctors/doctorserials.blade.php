@@ -57,7 +57,7 @@
 
                           <td align="right">
                            <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#sendCancelSMSModal{{ $doctorserial->id }}">
-                             <i class="fas fa-edit"></i>
+                             <i class="fas fa-envelope"></i>
                            </button>
                           </td>
                         </tr>
