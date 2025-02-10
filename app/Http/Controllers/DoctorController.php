@@ -506,8 +506,6 @@ class DoctorController extends Controller
             'id'               => 'required',
             'doctor_id'        => 'required',
             'selecteddate'     => 'required',
-            'message'              => 'required',
-            'softtoken'            => 'required|max:191'
         ));
 
         if($request->softtoken == env('SOFT_TOKEN'))
