@@ -570,7 +570,8 @@ class DoctorController extends Controller
         // ));
 
         $doctorserials = Doctorserial::where(doctor_id, $doctor_id)
-                                     ->where(doctor_id, $selecteddate)
+                                     ->where(serialdate, $selecteddate)
+                                     ->get();
 
         // send sms
         // send sms
