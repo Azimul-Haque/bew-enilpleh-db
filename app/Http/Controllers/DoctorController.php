@@ -523,7 +523,7 @@ class DoctorController extends Controller
         }
 
         $text = "Appointment Cancelled!\n\n" .
-                "Dear " . $doctorserial->name . ", we are sorry to inform you that, your appointment with " . $serialdoctor->name . " on " . date('d-m-Y', strtotime($doctorserial->serialdate)) . " has been cancelled unfortunately.\n\n" .
+                "Dear " . $doctorserial->name . ", we are sorry to inform you that, your appointment with " . $serialdoctor->name . " on " . date('d-m-Y', strtotime($request->serialdate)) . " has been cancelled unfortunately.\n\n" .
                 "Infoline - BD Smart Seba";
         
         // NEW PANEL
