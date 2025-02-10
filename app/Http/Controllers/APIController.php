@@ -936,7 +936,7 @@ class APIController extends Controller
                 "Dear " . $request->name . ",\n" .
                 "Your appointment with " . $serialdoctor->name . " is booked successfully.\n" .
                 "Date: " . date('d-m-Y', strtotime($request->serialdate)) . "\n" .
-                "Serial: " . (count($doctorserialsforserial) + 1) . "\n" .
+                "Serial: " . count($doctorserialsforserial) . "\n" .
                 "Chamber: " . $serialdoctor->address . "\n\n" .
                 "Infoline - BD Smart Seba";
         
