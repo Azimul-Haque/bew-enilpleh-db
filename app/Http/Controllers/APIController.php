@@ -900,6 +900,111 @@ class APIController extends Controller
         }
     }
 
+    public function storeDoctorSerial(Request $request)
+    {
+        $this->validate($request,array(
+            'doctor_id'     =>   'required',
+            'name'          =>   'required',
+            'mobile'        =>   'required',
+            'serialdate'    =>   'required',
+        ));
+        
+        $doctorserial = new Doctorserial;
+        $doctorserial->doctor_id = $request->doctor_id;
+        $doctorserial->name = $request->name;
+        $doctorserial->mobile = $request->mobile;
+        $doctorserial->serialdate = $request->serialdate;
+        $doctorserial->save();
+
+        // send sms
+        // send sms
+        $mobile_number = 0;
+        $serialdoctor = Doctor::findOrFail($request->doctor_id);
+        if(strlen($request->mobile) == 11) {
+            $mobile_number = $request->mobile;
+        } elseif(strlen($request->mobile) > 11) {
+            if (strpos($request->mobile, '+') !== false) {
+                $mobile_number = substr($request->mobile, -11);
+            }
+        }
+
+        $text = "Appointment\n\n" .
+                "Dear " . $request->name . ",\n" .
+                "Your appointment for " . $serialdoctor->name . " is booked successfully.\n" .
+                "Date: " . date('d-m-Y', strtotime($request->serialdate)) . "\n" .
+                "Chamber: " . $serialdoctor->address . "\n\n" .
+                "Infoline - BD Smart Seba";
+        
+        // NEW PANEL
+        $url = config('sms.url');
+        $api_key = config('sms.api_key');
+        $senderid = config('sms.senderid');
+        $number = $mobile_number;
+        $message = $text;
+
+        $data = [
+            "api_key" => $api_key,
+            "senderid" => $senderid,
+            "number" => $number,
+            "message" => $message,
+        ];
+        $ch = curl_init();
+        curl_setopt($ch, CURLOPT_URL, $url);
+        curl_setopt($ch, CURLOPT_POST, 1);
+        curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+        curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+        $response = curl_exec($ch);
+        curl_close($ch);
+        $jsonresponse = json_decode($response);
+
+        if($jsonresponse->response_code == 202) {
+            // Session::flash('success', 'SMS সফলভাবে পাঠানো হয়েছে!');
+        } elseif($jsonresponse->response_code == 1007) {
+            // Session::flash('warning', 'অপর্যাপ্ত SMS ব্যালেন্সের কারণে SMS পাঠানো যায়নি!');
+        } else {
+            // Session::flash('warning', 'দুঃখিত! SMS পাঠানো যায়নি!');
+        }
+        // send sms
+        // send sms
+        
+        return response()->json([
+            'success' => true
+        ]);
+    }
+
+    public function doctorSerialCancelSingle(Request $request)
+    {
+        $this->validate($request,array(
+            'mobile'               => 'required',
+            'onesignal_id'         => 'required',
+            'headings'             => 'required',
+            'message'              => 'required',
+            'softtoken'            => 'required|max:191'
+        ));
+
+        if($request->softtoken == env('SOFT_TOKEN'))
+        {
+
+            // $user = User::where('mobile', substr($request->mobile, -11))->first();
+            
+            OneSignal::sendNotificationToUser(
+                $request->message,
+                // ["a1050399-4f1b-4bd5-9304-47049552749c", "82e84884-917e-497d-b0f5-728aff4fe447"],
+                $request->onesignal_id, // user theke na, direct input theke...
+                $url = null, 
+                $data = null, // array("answer" => $charioteer->answer), // to send some variable
+                $buttons = null, 
+                $schedule = null,
+                $headings = $request->headings,
+            );
+        }
+        return response()->json([
+            'success' => true,
+            'onesignal_id' => $request->onesignal_id
+        ]); 
+    }
+
 
 
 
@@ -1511,110 +1616,9 @@ class APIController extends Controller
         ]);
     }
 
-    public function storeDoctorSerial(Request $request)
-    {
-        $this->validate($request,array(
-            'doctor_id'     =>   'required',
-            'name'          =>   'required',
-            'mobile'        =>   'required',
-            'serialdate'    =>   'required',
-        ));
-        
-        $doctorserial = new Doctorserial;
-        $doctorserial->doctor_id = $request->doctor_id;
-        $doctorserial->name = $request->name;
-        $doctorserial->mobile = $request->mobile;
-        $doctorserial->serialdate = $request->serialdate;
-        $doctorserial->save();
 
-        // send sms
-        // send sms
-        $mobile_number = 0;
-        $serialdoctor = Doctor::findOrFail($request->doctor_id);
-        if(strlen($request->mobile) == 11) {
-            $mobile_number = $request->mobile;
-        } elseif(strlen($request->mobile) > 11) {
-            if (strpos($request->mobile, '+') !== false) {
-                $mobile_number = substr($request->mobile, -11);
-            }
-        }
 
-        $text = "Appointment\n\n" .
-                "Dear " . $request->name . ",\n" .
-                "Your appointment for " . $serialdoctor->name . " is booked successfully.\n" .
-                "Date: " . date('d-m-Y', strtotime($request->serialdate)) . "\n" .
-                "Chamber: " . $serialdoctor->address . "\n\n" .
-                "Infoline - BD Smart Seba";
-        
-        // NEW PANEL
-        $url = config('sms.url');
-        $api_key = config('sms.api_key');
-        $senderid = config('sms.senderid');
-        $number = $mobile_number;
-        $message = $text;
 
-        $data = [
-            "api_key" => $api_key,
-            "senderid" => $senderid,
-            "number" => $number,
-            "message" => $message,
-        ];
-        $ch = curl_init();
-        curl_setopt($ch, CURLOPT_URL, $url);
-        curl_setopt($ch, CURLOPT_POST, 1);
-        curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
-        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-        curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
-        $response = curl_exec($ch);
-        curl_close($ch);
-        $jsonresponse = json_decode($response);
-
-        if($jsonresponse->response_code == 202) {
-            // Session::flash('success', 'SMS সফলভাবে পাঠানো হয়েছে!');
-        } elseif($jsonresponse->response_code == 1007) {
-            // Session::flash('warning', 'অপর্যাপ্ত SMS ব্যালেন্সের কারণে SMS পাঠানো যায়নি!');
-        } else {
-            // Session::flash('warning', 'দুঃখিত! SMS পাঠানো যায়নি!');
-        }
-        // send sms
-        // send sms
-        
-        return response()->json([
-            'success' => true
-        ]);
-    }
-
-    public function doctorSerialCancelSingle(Request $request)
-    {
-        $this->validate($request,array(
-            'mobile'               => 'required',
-            'onesignal_id'         => 'required',
-            'headings'             => 'required',
-            'message'              => 'required',
-            'softtoken'            => 'required|max:191'
-        ));
-
-        if($request->softtoken == env('SOFT_TOKEN'))
-        {
-
-            // $user = User::where('mobile', substr($request->mobile, -11))->first();
-            
-            OneSignal::sendNotificationToUser(
-                $request->message,
-                // ["a1050399-4f1b-4bd5-9304-47049552749c", "82e84884-917e-497d-b0f5-728aff4fe447"],
-                $request->onesignal_id, // user theke na, direct input theke...
-                $url = null, 
-                $data = null, // array("answer" => $charioteer->answer), // to send some variable
-                $buttons = null, 
-                $schedule = null,
-                $headings = $request->headings,
-            );
-        }
-        return response()->json([
-            'success' => true,
-            'onesignal_id' => $request->onesignal_id
-        ]); 
-    }
 
 
 
