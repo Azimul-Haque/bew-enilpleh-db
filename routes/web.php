@@ -45,6 +45,7 @@ Route::post('/dashboard/doctors/departments/{id}/update', 'DoctorController@upda
 Route::post('/dashboard/doctors/symptom/store', 'DoctorController@storeDoctorSymp')->name('dashboard.doctorssymp.store');
 Route::post('/dashboard/doctors/symptom/{id}/update', 'DoctorController@updateDoctorSymp')->name('dashboard.doctorssymp.update');
 Route::get('/dashboard/doctors/{doctor_id}/appoinments/list/{date}', 'DoctorController@doctorSerialIndex')->name('dashboard.doctorserialindex');
+Route::get('/dashboard/doctors/{doctor_id}/appoinments/cancel/{date}', 'DoctorController@doctorSerialIndex')->name('dashboard.doctorserialindex');
 Route::get('/dashboard/doctors/appoinments/pdf/{doctor_id}/{date}', 'DoctorController@getDoctorSerialPDF')->name('dashboard.getdoctorserialpdf');
 
 // Blood Donors
