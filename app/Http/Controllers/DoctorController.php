@@ -616,14 +616,12 @@ class DoctorController extends Controller
         curl_close($ch);
         $jsonresponse = json_decode($response);
         if($jsonresponse->response_code == 202) {
-            // Session::flash('success', 'SMS সফলভাবে পাঠানো হয়েছে!');
+            Session::flash('success', 'SMS সফলভাবে পাঠানো হয়েছে!');
         } elseif($jsonresponse->response_code == 1007) {
-            // Session::flash('warning', 'অপর্যাপ্ত SMS ব্যালেন্সের কারণে SMS পাঠানো যায়নি!');
+            Session::flash('warning', 'অপর্যাপ্ত SMS ব্যালেন্সের কারণে SMS পাঠানো যায়নি!');
         } else {
-            // Session::flash('warning', 'দুঃখিত! SMS পাঠানো যায়নি!');
+            Session::flash('warning', 'দুঃখিত! SMS পাঠানো যায়নি!');
         }
-
-        Session::flash('success', 'SMS সফলভাবে পাঠানো হয়েছে!');
         return redirect()->back();
     }
 }
