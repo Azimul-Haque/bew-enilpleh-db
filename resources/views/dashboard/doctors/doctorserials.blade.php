@@ -73,11 +73,10 @@
                                     <span aria-hidden="true">&times;</span>
                                   </button>
                                 </div>
-                                <form method="post" action="{{ route('dashboard.doctorserialcancelsingle', [$todaydate, $doctorserial->doctor_id]) }}" enctype="multipart/form-data">
+                                <form method="post" action="{{ route('dashboard.doctorserialcancelsingle', [$doctorserial->doctor_id, $todaydate]) }}" enctype="multipart/form-data">
                                   <div class="modal-body">
                                     
                                         @csrf
-
                                         <div class="row">
                                           <div class="col-md-6">
                                             <div class="input-group mb-3">
