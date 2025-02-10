@@ -79,7 +79,7 @@
                                         @csrf
                                         
                                         <div class="input-group mb-3">
-                                          <textarea name="message" class="form-control" style="min-height: 90px;" placeholder="মেসেজ লিখুন">Appointment Cancelled!&#10;</textarea>
+                                          <textarea name="message" class="form-control" style="min-height: 90px;" placeholder="মেসেজ লিখুন">Appointment Cancelled!&#10;&#10;</textarea>
                                         </div>
                                   </div>
                                   <div class="modal-footer">
