@@ -7,6 +7,9 @@
     .datepicker_wrapper, .datepicker_wrapper2{
       position:relative;
     }
+    textarea {
+      resize: none;
+    }
   </style>
 @endsection
 
