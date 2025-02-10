@@ -560,6 +560,6 @@ class DoctorController extends Controller
         // send sms
 
         Session::flash('success', 'SMS সফলভাবে পাঠানো হয়েছে!');
-        return redirect()->route('dashboard.doctors');
+        return redirect()->back();
     }
 }
