@@ -600,7 +600,7 @@ class DoctorController extends Controller
 
         $messages = json_encode($messagesArray);
 
-        dd($messages);
+        // dd($messages);
 
         $data = [
             "api_key" => $api_key,
