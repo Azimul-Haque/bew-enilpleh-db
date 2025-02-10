@@ -514,11 +514,11 @@ class DoctorController extends Controller
         // send sms
         $mobile_number = 0;
         $serialdoctor = Doctor::findOrFail($request->doctor_id);
-        if(strlen($request->mobile) == 11) {
-            $mobile_number = $request->mobile;
-        } elseif(strlen($request->mobile) > 11) {
-            if (strpos($request->mobile, '+') !== false) {
-                $mobile_number = substr($request->mobile, -11);
+        if(strlen($doctorserial->mobile) == 11) {
+            $mobile_number = $doctorserial->mobile;
+        } elseif(strlen($doctorserial->mobile) > 11) {
+            if (strpos($doctorserial->mobile, '+') !== false) {
+                $mobile_number = substr($doctorserial->mobile, -11);
             }
         }
 
