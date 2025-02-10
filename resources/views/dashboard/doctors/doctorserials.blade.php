@@ -79,7 +79,7 @@
                                         @csrf
                                         
                                         <div class="input-group mb-3">
-                                          <textarea name="message" class="form-control" style="min-height: 90px;" placeholder="মেসেজ লিখুন">Appointment Cancelled!&#10;&#10;Dear {{ $doctorserial->name }}, your appointment with {{ $doctorserial->doctor->name }} on {{ date('') }}</textarea>
+                                          <textarea name="message" class="form-control" style="min-height: 90px;" placeholder="মেসেজ লিখুন">Appointment Cancelled!&#10;&#10;Dear {{ $doctorserial->name }}, your appointment with {{ $doctorserial->doctor->name }} on {{ date('d-m-Y', strtotime($doctorserial->serialdate)) }}</textarea>
                                         </div>
                                   </div>
                                   <div class="modal-footer">
