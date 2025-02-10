@@ -585,7 +585,7 @@ class DoctorController extends Controller
         foreach ($doctorserials as $sms) {
             // Adjust the property names ('phone' and 'message') as needed to match your actual data structure
             $messagesArray[] = [
-                "to"      => $sms->phone,    // e.g., the mobile number like "88016xxxxxxxx"
+                "to"      => $sms->mobile,    // e.g., the mobile number like "88016xxxxxxxx"
                 "message" => $sms->message,  // e.g., the SMS content
             ];
         }
