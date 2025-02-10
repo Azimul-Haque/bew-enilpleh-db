@@ -575,6 +575,35 @@ class DoctorController extends Controller
         dd($doctorserials);
         // send sms
         // send sms
+
+        $url = config('sms.url');
+        $api_key = config('sms.api_key');
+        $senderid = config('sms.senderid');
+        
+        $messages = json_encode( [
+            [
+                "to" => "88016xxxxxxxx",
+                "message" => "test content"
+            ],
+            [
+                "to" => "88019xxxxxxxx",
+                "message" => "test 2nd content"
+            ]
+        ]);
+        $data = [
+            "api_key" => $api_key,
+            "senderid" => $senderid,
+            "messages" => $messages
+        ];
+        $ch = curl_init();
+        curl_setopt($ch, CURLOPT_URL, $url);
+        curl_setopt($ch, CURLOPT_POST, 1);
+        curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+        curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+        $response = curl_exec($ch);
+        curl_close($ch);
+        return $response;
         $mobile_number = 0;
         $serialdoctor = Doctor::findOrFail($request->doctor_id);
         if(strlen($doctorserial->mobile) == 11) {
