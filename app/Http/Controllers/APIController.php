@@ -973,7 +973,7 @@ class APIController extends Controller
         ]);
     }
 
-    public function doctorSerialCancelSingle(Request $request)
+    public function doctorSerialCancelSingle(Request $request, )
     {
         $this->validate($request,array(
             'mobile'               => 'required',
@@ -1009,7 +1009,7 @@ class APIController extends Controller
 
 
 
-    
+
 
 
 
