@@ -601,16 +601,8 @@ class DoctorController extends Controller
             ];
         }
 
-        $messages = json_encode( [
-            [
-                "to" => "88016xxxxxxxx",
-                "message" => "test content"
-            ],
-            [
-                "to" => "88019xxxxxxxx",
-                "message" => "test 2nd content"
-            ]
-        ]);
+        $messages = json_encode($messagesArray);
+
         $data = [
             "api_key" => $api_key,
             "senderid" => $senderid,
@@ -624,7 +616,7 @@ class DoctorController extends Controller
         curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
         $response = curl_exec($ch);
         curl_close($ch);
-        return $response;
+        $jsonresponse = json_decode($response);
 
         ////////////////
         ////////////////
