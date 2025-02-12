@@ -632,7 +632,8 @@ class DoctorController extends Controller
             'doctor_id'               => 'required',
             'name'        => 'required',
             'mobile'        => 'required',
-            'mobile'        => 'required',
+            'serialdate'        => 'required',
+            'serialdate'        => 'required',
         ));
 
         $doctorserials = Doctorserial::where('doctor_id', $doctor_id)
