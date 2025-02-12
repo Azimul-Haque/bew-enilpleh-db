@@ -61,6 +61,7 @@
             <td>{{ $doctorserial->name }}</td>
             <td align="center" class="calibri_normal">{{ $doctorserial->mobile }}</td>
             <td></td>
+            <td>{{ $doctorserial->reference }}</td>
           </tr>
           @php $iteratior++; @endphp
           @endforeach
