@@ -641,8 +641,11 @@ class DoctorController extends Controller
         $doctorserial->name = $request->name;
         $doctorserial->mobile = $request->mobile;
         $doctorserial->serialdate = date('d-m-Y', strtotime($request->serialdate));
-        if($request->reference)
-        $doctorserial->reference = $request->reference;
+        if($request->reference) {
+            $doctorserial->reference = $request->reference;
+        }
+        $doctorserial->save();
+        
         
         // send sms
         // send sms
