@@ -706,4 +706,27 @@ class DoctorController extends Controller
 
         return redirect()->back();
     }
+
+    public function deleteDoctorSerial(Request $request, $serial_id)
+    {
+        $this->validate($request,array(
+            'doctor_id'               => 'required',
+            'name'        => 'required',
+            'mobile'        => 'required',
+            'serialdate'        => 'required',
+            'reference'        => 'sometimes',
+        ));
+
+        $doctorserial = new Doctorserial;
+        $doctorserial->doctor_id = $request->doctor_id;
+        $doctorserial->name = $request->name;
+        $doctorserial->mobile = $request->mobile;
+        $doctorserial->serialdate = date('Y-m-d', strtotime($selecteddate));
+        if($request->reference) {
+            $doctorserial->reference = $request->reference;
+        }
+        $doctorserial->save();
+
+        return redirect()->back();
+    }
 }
