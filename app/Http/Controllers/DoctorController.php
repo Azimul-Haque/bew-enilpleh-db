@@ -625,4 +625,69 @@ class DoctorController extends Controller
         }
         return redirect()->back();
     }
+
+    public function addDoctorSerialManually(Request $request, $doctor_id, $selecteddate)
+    {
+        $this->validate($request,array(
+            'id'               => 'required',
+            'doctor_id'        => 'required',
+        ));
+
+        $doctorserials = Doctorserial::where('doctor_id', $doctor_id)
+                                     ->where('serialdate', $selecteddate)
+                                     ->get();
+        // send sms
+        // send sms
+        $url = "http://bulksmsbd.net/api/smsapimany";
+        $api_key = config('sms.api_key');
+        $senderid = config('sms.senderid');
+
+        $messagesArray = [];
+
+        foreach ($doctorserials as $doctorserial) {
+            $mobile_number = 0;
+            if(strlen($doctorserial->mobile) == 11) {
+                $mobile_number = $doctorserial->mobile;
+            } elseif(strlen($doctorserial->mobile) > 11) {
+                if (strpos($doctorserial->mobile, '+') !== false) {
+                    $mobile_number = substr($doctorserial->mobile, -11);
+                }
+            }
+            $text = "Appointment Cancelled!\n\n" .
+                "Dear " . $doctorserial->name . ", we are sorry to inform you that, your appointment with " . $doctorserial->doctor->name . " on " . date('d-m-Y', strtotime($doctorserial->serialdate)) . " has been cancelled unfortunately.\n\n" .
+                "Infoline - BD Smart Seba";
+
+            $messagesArray[] = [
+                "to"      => $mobile_number,
+                "message" => $text,
+            ];
+        }
+
+        $messages = json_encode($messagesArray);
+
+        // dd($messages);
+
+        $data = [
+            "api_key" => $api_key,
+            "senderid" => $senderid,
+            "messages" => $messages
+        ];
+        $ch = curl_init();
+        curl_setopt($ch, CURLOPT_URL, $url);
+        curl_setopt($ch, CURLOPT_POST, 1);
+        curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+        curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+        $response = curl_exec($ch);
+        curl_close($ch);
+        $jsonresponse = json_decode($response);
+        if($jsonresponse->response_code == 202) {
+            Session::flash('success', 'SMS সফলভাবে পাঠানো হয়েছে!');
+        } elseif($jsonresponse->response_code == 1007) {
+            Session::flash('warning', 'অপর্যাপ্ত SMS ব্যালেন্সের কারণে SMS পাঠানো যায়নি!');
+        } else {
+            Session::flash('warning', $jsonresponse->response_code. 'দুঃখিত! SMS পাঠানো যায়নি!');
+        }
+        return redirect()->back();
+    }
 }
