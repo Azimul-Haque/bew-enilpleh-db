@@ -629,7 +629,7 @@ class DoctorController extends Controller
     public function addDoctorSerialManually(Request $request, $doctor_id, $selecteddate)
     {
         $this->validate($request,array(
-            'id'               => 'required',
+            'doctor_id'               => 'required',
             'doctor_id'        => 'required',
         ));
 
