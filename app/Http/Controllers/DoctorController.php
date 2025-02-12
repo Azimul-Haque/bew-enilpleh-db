@@ -710,11 +710,7 @@ class DoctorController extends Controller
     public function deleteDoctorSerial(Request $request, $serial_id)
     {
         $this->validate($request,array(
-            'doctor_id'               => 'required',
-            'name'        => 'required',
-            'mobile'        => 'required',
-            'serialdate'        => 'required',
-            'reference'        => 'sometimes',
+           
         ));
 
         $doctorserial = new Doctorserial;
