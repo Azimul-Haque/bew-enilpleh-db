@@ -69,7 +69,7 @@
                          <i class="fas fa-envelope"></i>
                        </button>
 
-                       <button type="button" class="btn btn-warning btn-sm" title="ক্যান্সেল মেসেজ পাঠান" data-toggle="modal" data-target="#deleteSerialModal{{ $doctorserial->id }}">
+                       <button type="button" class="btn btn-warning btn-sm" title="ডিলেট করুন" data-toggle="modal" data-target="#deleteSerialModal{{ $doctorserial->id }}">
                          <i class="fas fa-envelope"></i>
                        </button>
                       </td>
