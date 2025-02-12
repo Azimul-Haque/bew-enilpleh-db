@@ -138,6 +138,35 @@
     {{-- Send SMS ALL Code --}}
     {{-- Send SMS ALL Code --}}
 
+    {{-- Add Appointment Modal Code --}}
+    {{-- Add Appointment Modal Code --}}
+    <!-- Modal -->
+    <div class="modal fade" id="addNewAppointmentModal" role="dialog" aria-labelledby="addNewAppointmentModal" aria-hidden="true" data-backdrop="static">
+      <div class="modal-dialog modal-md" role="document">
+        <div class="modal-content">
+          <div class="modal-header bg-warning">
+            <h5 class="modal-title" id="addNewAppointmentModal"><i class="fas fa-envelope"></i> ক্যান্সেল মেসেজ পাঠান</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <form method="post" action="{{ route('dashboard.doctorserialcancelall', [$doctor->id, $todaydate]) }}" enctype="multipart/form-data">
+            <div class="modal-body">
+        
+              @csrf
+              <textarea name="message" class="form-control" style="min-height: 250px;" placeholder="মেসেজ লিখুন" readonly="">Appointment Cancelled!&#10;&#10;Dear [Patient Name], we are sorry to inform you that, your appointment with [Doctor Name] on [Date] has been cancelled unfortunately.&#10;&#10;Infoline - BD Smart Seba</textarea>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">ফিরে যান</button>
+              <button type="submit" class="btn btn-primary">মেসেজ পাঠান</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    {{-- Add Appointment Modal Code --}}
+    {{-- Add Appointment Modal Code --}}
+
     
 
 @endsection
