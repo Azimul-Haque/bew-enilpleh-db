@@ -19,6 +19,7 @@ class CreateDoctorserialsTable extends Migration
             $table->string('name');
             $table->string('mobile');
             $table->string('serialdate');
+            $table->string('reference')->nullable();
 
             $table->foreign('doctor_id')->references('id')->on('doctors')->onDelete('cascade');
             $table->timestamps();
