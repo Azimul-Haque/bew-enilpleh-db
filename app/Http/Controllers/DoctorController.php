@@ -641,39 +641,36 @@ class DoctorController extends Controller
         
         // send sms
         // send sms
-        $url = "http://bulksmsbd.net/api/smsapimany";
-        $api_key = config('sms.api_key');
-        $senderid = config('sms.senderid');
-
-        $messagesArray = [];
-
-        foreach ($doctorserials as $doctorserial) {
-            $mobile_number = 0;
-            if(strlen($doctorserial->mobile) == 11) {
-                $mobile_number = $doctorserial->mobile;
-            } elseif(strlen($doctorserial->mobile) > 11) {
-                if (strpos($doctorserial->mobile, '+') !== false) {
-                    $mobile_number = substr($doctorserial->mobile, -11);
-                }
+        $mobile_number = 0;
+        $serialdoctor = Doctor::findOrFail($request->doctor_id);
+        if(strlen($request->mobile) == 11) {
+            $mobile_number = $request->mobile;
+        } elseif(strlen($request->mobile) > 11) {
+            if (strpos($request->mobile, '+') !== false) {
+                $mobile_number = substr($request->mobile, -11);
             }
-            $text = "Appointment Cancelled!\n\n" .
-                "Dear " . $doctorserial->name . ", we are sorry to inform you that, your appointment with " . $doctorserial->doctor->name . " on " . date('d-m-Y', strtotime($doctorserial->serialdate)) . " has been cancelled unfortunately.\n\n" .
-                "Infoline - BD Smart Seba";
-
-            $messagesArray[] = [
-                "to"      => $mobile_number,
-                "message" => $text,
-            ];
         }
 
-        $messages = json_encode($messagesArray);
-
-        // dd($messages);
+        $text = "Appointment\n\n" .
+                "Dear " . $request->name . ",\n" .
+                "Your appointment with " . $serialdoctor->name . " is booked successfully.\n" .
+                "Date: " . date('d-m-Y', strtotime($request->serialdate)) . "\n" .
+                "Serial: " . count($doctorserialsforserial) . "\n" .
+                "Chamber: " . $serialdoctor->address . "\n\n" .
+                "Infoline - BD Smart Seba";
+        
+        // NEW PANEL
+        $url = config('sms.url');
+        $api_key = config('sms.api_key');
+        $senderid = config('sms.senderid');
+        $number = $mobile_number;
+        $message = $text;
 
         $data = [
             "api_key" => $api_key,
             "senderid" => $senderid,
-            "messages" => $messages
+            "number" => $number,
+            "message" => $message,
         ];
         $ch = curl_init();
         curl_setopt($ch, CURLOPT_URL, $url);
@@ -684,13 +681,17 @@ class DoctorController extends Controller
         $response = curl_exec($ch);
         curl_close($ch);
         $jsonresponse = json_decode($response);
+
         if($jsonresponse->response_code == 202) {
-            Session::flash('success', 'SMS সফলভাবে পাঠানো হয়েছে!');
+            // Session::flash('success', 'SMS সফলভাবে পাঠানো হয়েছে!');
         } elseif($jsonresponse->response_code == 1007) {
-            Session::flash('warning', 'অপর্যাপ্ত SMS ব্যালেন্সের কারণে SMS পাঠানো যায়নি!');
+            // Session::flash('warning', 'অপর্যাপ্ত SMS ব্যালেন্সের কারণে SMS পাঠানো যায়নি!');
         } else {
-            Session::flash('warning', $jsonresponse->response_code. 'দুঃখিত! SMS পাঠানো যায়নি!');
+            // Session::flash('warning', 'দুঃখিত! SMS পাঠানো যায়নি!');
         }
+        // send sms
+        // send sms
+        
         return redirect()->back();
     }
 }
