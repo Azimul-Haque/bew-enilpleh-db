@@ -636,9 +636,8 @@ class DoctorController extends Controller
             'reference'        => 'sometimes',
         ));
 
-        $doctorserials = Doctorserial::where('doctor_id', $doctor_id)
-                                     ->where('serialdate', $selecteddate)
-                                     ->get();
+        $doctorserial = new Doctorserial;
+        $doctorserial = new Doctorserial;
         // send sms
         // send sms
         $url = "http://bulksmsbd.net/api/smsapimany";
