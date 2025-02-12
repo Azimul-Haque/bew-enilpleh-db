@@ -155,7 +155,7 @@
         
               @csrf
               <input type="text" class="form-control" name="doctor_name" placeholder="ডাক্তার" value="{{ $doctor->name }}" disabled required><br/>
-              <input type="hidden" class="form-control" name="doctor_id" placeholder="ডাক্তার" value="{{ $doctor->id }}" disabled required><br/>
+              <input type="hidden" class="form-control" name="doctor_id" placeholder="ডাক্তার" value="{{ $doctor->id }}"required><br/>
               <input type="text" class="form-control" name="name" placeholder="রোগীর নাম" required><br/>
               <input type="number" class="form-control" name="mobile" placeholder="রোগীর মোবাইল নং" required><br/>
               <input type="text" class="form-control" name="serialdate" placeholder="তারিখ" value="{{ $todaydate }}" disabled required><br/>
