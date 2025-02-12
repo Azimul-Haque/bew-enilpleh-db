@@ -713,7 +713,7 @@ class DoctorController extends Controller
            
         ));
 
-        $doctorserial = new Doctorserial;
+        $doctorserial = Doctorserial::findOrFail($serial_id);
         $doctorserial->doctor_id = $request->doctor_id;
         $doctorserial->name = $request->name;
         $doctorserial->mobile = $request->mobile;
