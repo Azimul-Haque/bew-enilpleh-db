@@ -49,7 +49,8 @@
             <th>ক্রমিক</th>
             <th width="40%">রোগীর নাম</th>
             <th>মোবাইল</th>
-            <th width="30%">সময়</th>
+            <th width="25%">সময়</th>
+            <th>রেফারেন্স</th>
           </tr>
         </thead>
         <tbody>
