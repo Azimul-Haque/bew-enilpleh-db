@@ -716,7 +716,7 @@ class DoctorController extends Controller
         $doctorserial = Doctorserial::findOrFail($serial_id);
         $doctorserial->delete();
 
-        Session::flash('success', ' হয়েছে!');
+        Session::flash('success', 'অ্যাপয়েন্টমেন্টটি ডিলেট করা হয়েছে!');
         return redirect()->back();
     }
 }
