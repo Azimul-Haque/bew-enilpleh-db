@@ -117,7 +117,7 @@
                                 <span aria-hidden="true">&times;</span>
                               </button>
                             </div>
-                            <form method="post" action="{{ route('dashboard.deletedoctorserial', [$id, $doctorserial->doctor_id, $todaydate]) }}" enctype="multipart/form-data">
+                            <form method="post" action="{{ route('dashboard.deletedoctorserial', $id) }}" enctype="multipart/form-data">
                               <div class="modal-body">
                           
                                 @csrf
