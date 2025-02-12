@@ -649,6 +649,10 @@ class DoctorController extends Controller
         
         // send sms
         // send sms
+
+        $doctorserialsforserial = Doctorserial::where('doctor_id', $request->doctor_id)
+                                              ->where('serialdate', $request->serialdate)
+                                              ->get();
         $mobile_number = 0;
         $serialdoctor = Doctor::findOrFail($request->doctor_id);
         if(strlen($request->mobile) == 11) {
