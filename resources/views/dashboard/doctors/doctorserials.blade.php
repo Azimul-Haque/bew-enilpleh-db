@@ -154,7 +154,9 @@
             <div class="modal-body">
         
               @csrf
-              <input type="text" class="form-control" name="name" placeholder="রোগীর নাম">
+              <input type="text" class="form-control" name="name" placeholder="রোগীর নাম" required>
+              
+              <input type="text" class="form-control" name="name" placeholder="রোগীর নাম" required>
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-dismiss="modal">ফিরে যান</button>
