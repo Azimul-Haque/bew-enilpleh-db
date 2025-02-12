@@ -638,6 +638,7 @@ class DoctorController extends Controller
 
         $doctorserial = new Doctorserial;
         $doctorserial = new Doctorserial;
+        
         // send sms
         // send sms
         $url = "http://bulksmsbd.net/api/smsapimany";
