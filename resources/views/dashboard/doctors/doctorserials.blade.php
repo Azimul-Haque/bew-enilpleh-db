@@ -62,6 +62,7 @@
                       <td>{{ $doctorserial->name }}</td>
                       <td>{{ $doctorserial->mobile }}</td>
                       <td>{{ date('F d, Y', strtotime($doctorserial->serialdate)) }}</td>
+                      <td>{{ $doctorserial->reference }}</td>
 
                       <td align="right">
                        <button type="button" class="btn btn-warning btn-sm" title="ক্যান্সেল মেসেজ পাঠান" data-toggle="modal" data-target="#sendCancelSMSModal{{ $doctorserial->id }}">
