@@ -35,7 +35,7 @@
                    <i class="fas fa-envelope"></i> ক্যানসেল মেসেজ
                  </button>
                  <button type="button" class="btn btn-warning btn-sm" style="margin-left: 5px;" title="নতুন সিরিয়াল যোগ করুন" data-toggle="modal" data-target="#sendCancelSMSALLModal">
-                   <i class="fas fa-envelope"></i> সিরিয়াল যোগ
+                   <i class="fas fa-user-plus"></i> সিরিয়াল যোগ
                  </button>
                 </form>
                 
