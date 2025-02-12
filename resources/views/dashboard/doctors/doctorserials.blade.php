@@ -158,7 +158,7 @@
               <input type="hidden" name="doctor_id" placeholder="ডাক্তার" value="{{ $doctor->id }}"required>
               <input type="text" class="form-control" name="name" placeholder="রোগীর নাম" required><br/>
               <input type="number" class="form-control" name="mobile" placeholder="রোগীর মোবাইল নং" required><br/>
-              <input type="text" class="form-control" name="serialdate" placeholder="তারিখ" value="সিরিয়ালের তারিখ: {{ $todaydate }}" disabled required><br/>
+              <input type="text" class="form-control" name="serialdate" placeholder="তারিখ" value="সিরিয়ালের তারিখ: {{ date('d-m-Y', strtotime($todaydate)) }}" disabled required><br/>
               <input type="text" class="form-control" name="reference" placeholder="রেফারেন্স (OPTIONAL)">
             </div>
             <div class="modal-footer">
