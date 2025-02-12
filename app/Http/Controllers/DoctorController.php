@@ -637,7 +637,7 @@ class DoctorController extends Controller
         ));
 
         $doctorserial = new Doctorserial;
-        $doctorserial = new Doctorserial;
+        $doctorserial->doctor_id = $request->doctor_id;
         
         // send sms
         // send sms
@@ -691,7 +691,7 @@ class DoctorController extends Controller
         }
         // send sms
         // send sms
-        
+
         return redirect()->back();
     }
 }
