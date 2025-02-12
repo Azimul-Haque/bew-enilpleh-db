@@ -716,6 +716,7 @@ class DoctorController extends Controller
         $doctorserial = Doctorserial::findOrFail($serial_id);
         $doctorserial->delete();
 
+        Session::flash('success', 'Appointment বুক করা হয়েছে ও SMS পাঠানো হয়েছে!');
         return redirect()->back();
     }
 }
