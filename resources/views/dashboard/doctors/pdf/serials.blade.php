@@ -50,7 +50,7 @@
             <th width="40%">রোগীর নাম</th>
             <th>মোবাইল</th>
             <th width="15%">সময়</th>
-            <th>রেফারেন্স</th>
+            <th width="30%">রেফারেন্স</th>
           </tr>
         </thead>
         <tbody>
