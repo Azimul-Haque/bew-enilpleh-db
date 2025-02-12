@@ -641,6 +641,7 @@ class DoctorController extends Controller
         $doctorserial->name = $request->name;
         $doctorserial->mobile = $request->mobile;
         $doctorserial->serialdate = $request->serialdate;
+        $doctorserial->reference = $request->reference;
         
         // send sms
         // send sms
