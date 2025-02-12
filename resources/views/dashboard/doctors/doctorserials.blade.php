@@ -121,7 +121,7 @@
                               <div class="modal-body">
                           
                                 @csrf
-                                আপনি কি নিশ্চিতভাবে 
+                                আপনি কি নিশ্চিতভাবে <b>{{ $doctorserial->id }}</b>-এর অ্যাপ্যেন্টমেন্টটি ডিলেট করতে চান?
                               </div>
                               <div class="modal-footer">
                                 <button type="button" class="btn btn-secondary" data-dismiss="modal">ফিরে যান</button>
