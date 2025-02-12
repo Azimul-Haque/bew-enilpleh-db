@@ -159,7 +159,7 @@
               <input type="text" class="form-control" name="name" placeholder="রোগীর নাম" required><br/>
               <input type="number" class="form-control" name="mobile" placeholder="রোগীর মোবাইল নং" required><br/>
               <input type="text" class="form-control" name="serialdate" placeholder="তারিখ" value="{{ $todaydate }}" disabled required><br/>
-              <input type="text" class="form-control" name="reference" placeholder="রেফারেন্স" required>
+              <input type="text" class="form-control" name="reference" placeholder="রেফারেন্স (OPTIONAL)">
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-dismiss="modal">ফিরে যান</button>
