@@ -630,7 +630,9 @@ class DoctorController extends Controller
     {
         $this->validate($request,array(
             'doctor_id'               => 'required',
-            'doctor_id'        => 'required',
+            'name'        => 'required',
+            'mobile'        => 'required',
+            'mobile'        => 'required',
         ));
 
         $doctorserials = Doctorserial::where('doctor_id', $doctor_id)
