@@ -695,7 +695,7 @@ class DoctorController extends Controller
         $jsonresponse = json_decode($response);
 
         if($jsonresponse->response_code == 202) {
-            Session::flash('success', 'Appointment বুক করা হয়েছে ও SMS পাঠানো হয়েছে!');
+            Session::flash('success', 'অ্যাপয়েন্টমেন্টটি বুক করা হয়েছে ও SMS পাঠানো হয়েছে!');
         } elseif($jsonresponse->response_code == 1007) {
             Session::flash('warning', 'অপর্যাপ্ত SMS ব্যালেন্সের কারণে SMS পাঠানো যায়নি!');
         } else {
@@ -716,7 +716,7 @@ class DoctorController extends Controller
         $doctorserial = Doctorserial::findOrFail($serial_id);
         $doctorserial->delete();
 
-        Session::flash('success', 'Appointment বুক করা হয়েছে ও SMS পাঠানো হয়েছে!');
+        Session::flash('success', ' হয়েছে!');
         return redirect()->back();
     }
 }
