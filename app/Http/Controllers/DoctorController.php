@@ -666,7 +666,7 @@ class DoctorController extends Controller
         $text = "Appointment\n\n" .
                 "Dear " . $request->name . ",\n" .
                 "Your appointment with " . $serialdoctor->name . " is booked successfully.\n" .
-                "Date: " . date('d-m-Y', strtotime($request->serialdate)) . "\n" .
+                "Date: " . date('d-m-Y', strtotime($selecteddate)) . "\n" .
                 "Serial: " . count($doctorserialsforserial) . "\n" .
                 "Chamber: " . $serialdoctor->address . "\n\n" .
                 "Infoline - BD Smart Seba";
