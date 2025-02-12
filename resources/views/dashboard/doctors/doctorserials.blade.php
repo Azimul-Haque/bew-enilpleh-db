@@ -154,8 +154,8 @@
             <div class="modal-body">
         
               @csrf
-              <input type="text" class="form-control" name="name" placeholder="রোগীর নাম" required>
-              
+              <input type="text" class="form-control" name="name" placeholder="রোগীর নাম" required><br/>
+
               <input type="text" class="form-control" name="name" placeholder="রোগীর নাম" required>
             </div>
             <div class="modal-footer">
