@@ -48,6 +48,7 @@ Route::get('/dashboard/doctors/{doctor_id}/appoinments/list/{date}', 'DoctorCont
 Route::post('/dashboard/doctors/{doctor_id}/appoinments/cancel/{date}', 'DoctorController@doctorSerialCancelSingle')->name('dashboard.doctorserialcancelsingle');
 Route::post('/dashboard/doctors/{doctor_id}/appoinments/cancel/{date}/all', 'DoctorController@doctorSerialCancelALL')->name('dashboard.doctorserialcancelall');
 Route::get('/dashboard/doctors/appoinments/pdf/{doctor_id}/{date}', 'DoctorController@getDoctorSerialPDF')->name('dashboard.getdoctorserialpdf');
+Route::post('/dashboard/doctors/{doctor_id}/appoinments/add/{date}/all', 'DoctorController@doctorSerialCancelALL')->name('dashboard.doctorserialcancelall');
 
 // Blood Donors
 Route::get('/dashboard/blooddonors', 'BlooddonorController@index')->name('dashboard.blooddonors');
