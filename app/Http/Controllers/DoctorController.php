@@ -714,14 +714,7 @@ class DoctorController extends Controller
         ));
 
         $doctorserial = Doctorserial::findOrFail($serial_id);
-        $doctorserial->doctor_id = $request->doctor_id;
-        $doctorserial->name = $request->name;
-        $doctorserial->mobile = $request->mobile;
-        $doctorserial->serialdate = date('Y-m-d', strtotime($selecteddate));
-        if($request->reference) {
-            $doctorserial->reference = $request->reference;
-        }
-        $doctorserial->save();
+        $doctorserial->delete();
 
         return redirect()->back();
     }
