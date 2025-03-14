@@ -872,7 +872,7 @@
         todayHighlight: true,
         autoclose: false,
         multidate: true,
-        startDate : new Date(),
+        startDate : date,
       })
       // Close Button Functionality
       // $("#closePicker").click(function() {
