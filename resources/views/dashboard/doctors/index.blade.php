@@ -15,7 +15,7 @@
           background-color: rgba(0, 123, 255) !important;
       }
     </style>
-    <link rel="stylesheet" type="text/css" href="{{ asset('css/bootstrap-datepicker.min.css') }}">
+    {{-- <link rel="stylesheet" type="text/css" href="{{ asset('css/bootstrap-datepicker.min.css') }}"> --}}
     <style type="text/css">
       /*.datepicker_wrapper, .datepicker_wrapper2{
         position:relative;
