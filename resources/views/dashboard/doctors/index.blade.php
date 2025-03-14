@@ -761,19 +761,19 @@
                   } else {
                       selectedDates.splice(index, 1); // Remove date if clicked again
                   }
-                  $("#selected_dates").val(selectedDates.join(", ")); // Show selected dates in text field
+                  $("#selected_offdays").val(selectedDates.join(", ")); // Show selected dates in text field
                   $(this).datepicker("refresh"); // Refresh to update highlights
               }
           });
 
           // Show datepicker when clicking the text field
-          $("#selected_dates").focus(function() {
+          $("#selected_offdays").focus(function() {
               $("#datepicker").toggle();
           });
 
           // Hide datepicker when clicking outside
           $(document).click(function(event) {
-              if (!$(event.target).closest("#datepicker, #selected_dates").length) {
+              if (!$(event.target).closest("#datepicker, #selected_offdays").length) {
                   $("#datepicker").hide();
               }
           });
