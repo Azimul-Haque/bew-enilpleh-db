@@ -854,10 +854,10 @@
             }
         });
 
-        $(document).on("click", "#closePicker", function () {
-            $("#selected_offdays").datepicker('hide'); // Close the picker
-            $('body').click();
-        });
+        $("#closePicker").click(function() {
+          $("#selected_offdays").datepicker('hide'); // Close the picker
+          $('body').click();
+        })
     </script>
 
     <script type="text/javascript" src="{{ asset('js/jquery-for-dp.min.js') }}"></script>
