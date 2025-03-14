@@ -768,7 +768,7 @@
               // Save Selected Dates
               $("#saveDates").click(function () {
                   var selectedDates = $("#datepicker").val();
-                  $("#selected_dates").val(selectedDates);
+                  $("#selected_offdays").val(selectedDates);
                   $("#myModal").modal('hide');
               });
           });
