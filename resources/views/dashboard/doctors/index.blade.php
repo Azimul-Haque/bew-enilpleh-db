@@ -753,7 +753,7 @@
 @section('third_party_scripts')
 
     <script type="text/javascript">
-      $('#myModal').on('shown.bs.modal', function () {
+      $('#addUserModal').on('shown.bs.modal', function () {
         $("#datepicker").datepicker({
             dateFormat: "dd-mm-yy",
             multidate: true,
