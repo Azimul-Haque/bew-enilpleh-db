@@ -750,38 +750,34 @@
 @section('third_party_scripts')
 
     <script type="text/javascript">
-      $(document).ready(function () {
-          let selectedDates = []; // Array to store selected dates
-
-          $("#datepicker").datepicker({
-              dateFormat: "dd-mm-yy",
-              beforeShowDay: function (date) {
-                  let dateString = $.datepicker.formatDate('dd-mm-yy', date);
-                  return [true, selectedDates.includes(dateString) ? "ui-state-highlight" : ""];
-              },
-              onSelect: function (dateText) {
-                  let index = selectedDates.indexOf(dateText);
-                  if (index === -1) {
-                      selectedDates.push(dateText); // Add selected date
-                  } else {
-                      selectedDates.splice(index, 1); // Remove date if clicked again
-                  }
-                  $("#selected_offdays").val(selectedDates.join(", ")); // Show selected dates in text field
-                  $(this).datepicker("refresh"); // Refresh to update highlights
+      $("#datepicker").datepicker({
+          dateFormat: "dd-mm-yy",
+          beforeShowDay: function (date) {
+              let dateString = $.datepicker.formatDate('dd-mm-yy', date);
+              return [true, selectedDates.includes(dateString) ? "ui-state-highlight" : ""];
+          },
+          onSelect: function (dateText) {
+              let index = selectedDates.indexOf(dateText);
+              if (index === -1) {
+                  selectedDates.push(dateText); // Add selected date
+              } else {
+                  selectedDates.splice(index, 1); // Remove date if clicked again
               }
-          });
+              $("#selected_offdays").val(selectedDates.join(", ")); // Show selected dates in text field
+              $(this).datepicker("refresh"); // Refresh to update highlights
+          }
+      });
 
-          // Show datepicker when clicking the text field
-          $("#selected_offdays").focus(function() {
-              $("#datepicker").toggle();
-          });
+      // Show datepicker when clicking the text field
+      $("#selected_offdays").focus(function() {
+          $("#datepicker").toggle();
+      });
 
-          // Hide datepicker when clicking outside
-          $(document).click(function(event) {
-              if (!$(event.target).closest("#datepicker, #selected_offdays").length) {
-                  $("#datepicker").hide();
-              }
-          });
+      // Hide datepicker when clicking outside
+      $(document).click(function(event) {
+          if (!$(event.target).closest("#datepicker, #selected_offdays").length) {
+              $("#datepicker").hide();
+          }
       });
 
 
