@@ -188,6 +188,7 @@ class DoctorController extends Controller
         if($request->selected_offdays) {
             $formattedDates = explode(',', $request->selected_offdays);
             dd($formattedDates);
+            $doctor->offdays = json_encode($formattedDates);
         }
         
         if($request->offdays) {
