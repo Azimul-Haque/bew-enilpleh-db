@@ -752,7 +752,7 @@
     <script type="text/javascript" src="{{ asset('js/jquery-for-dp.min.js') }}"></script>
     <script type="text/javascript" src="{{ asset('js/bootstrap-datepicker.min.js') }}"></script>
     <script type="text/javascript">
-      $("#selectdate").datepicker({
+      $("#selected_offdays").datepicker({
         format: 'yyyy-mm-dd',
         todayHighlight: true,
         autoclose: false,
