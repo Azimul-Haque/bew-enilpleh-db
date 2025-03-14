@@ -754,6 +754,7 @@
 
     <script type="text/javascript">
       $('#addUserModal').on('shown.bs.modal', function () {
+        console.log('asdasd');
         $("#datepicker").datepicker({
             dateFormat: "dd-mm-yy",
             multidate: true,
