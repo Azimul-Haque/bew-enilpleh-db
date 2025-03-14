@@ -854,10 +854,7 @@
             }
         });
 
-        $("#closePicker").click(function() {
-          $("#selected_offdays").datepicker('hide'); // Close the picker
-          $('body').click();
-        })
+        
     </script>
 
     <script type="text/javascript" src="{{ asset('js/jquery-for-dp.min.js') }}"></script>
@@ -877,6 +874,9 @@
             }, 10);
         });
       // Close Button Functionality
-      
+      $("#closePicker").click(function() {
+        $("#selected_offdays").datepicker('hide'); // Close the picker
+        $('body').click();
+      })
     </script>
 @endsection
