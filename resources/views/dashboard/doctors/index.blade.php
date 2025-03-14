@@ -653,13 +653,13 @@
                   <div style="margin-top: 15px;">
                     <input type="text" id="selected_offdays" name="selected_offdays" class="form-control" placeholder="যেদিন যেদিন রোগী দেখবেন না (প্রয়োজনে একাধিক সিলেক্ট করা যাবে) [Optional]" readonly>
 
-                    <select name="offdays[]" class="form-control multiple-select" multiple="multiple" data-placeholder="যেদিন যেদিন রোগী দেখবেন না (প্রয়োজনে একাধিক সিলেক্ট করা যাবে) [Optional]">
+                    {{-- <select name="offdays[]" class="form-control multiple-select" multiple="multiple" data-placeholder="যেদিন যেদিন রোগী দেখবেন না (প্রয়োজনে একাধিক সিলেক্ট করা যাবে) [Optional]">
                         @foreach($optiondates as $date)
                             <option value="{{ $date->format('Y-m-d') }}">
                                 {{ bangla($date->format('d-m-Y l')) }}
                             </option>
                         @endforeach
-                    </select>
+                    </select> --}}
                   </div>
             </div>
             <div class="modal-footer">
