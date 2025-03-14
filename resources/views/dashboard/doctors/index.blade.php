@@ -746,7 +746,7 @@
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <script type="text/javascript">
       $(document).ready(function () {
-          let selectedDates = [];
+          let selectedDates = []; // Array to store selected dates
 
           $("#datepicker").datepicker({
               dateFormat: "dd-mm-yy",
@@ -757,12 +757,24 @@
               onSelect: function (dateText) {
                   let index = selectedDates.indexOf(dateText);
                   if (index === -1) {
-                      selectedDates.push(dateText);
+                      selectedDates.push(dateText); // Add selected date
                   } else {
-                      selectedDates.splice(index, 1);
+                      selectedDates.splice(index, 1); // Remove date if clicked again
                   }
-                  $("#selected_offdays").val(selectedDates.join(", ")); // Show in text field
-                  $(this).datepicker("refresh");
+                  $("#selected_dates").val(selectedDates.join(", ")); // Show selected dates in text field
+                  $(this).datepicker("refresh"); // Refresh to update highlights
+              }
+          });
+
+          // Show datepicker when clicking the text field
+          $("#selected_dates").focus(function() {
+              $("#datepicker").toggle();
+          });
+
+          // Hide datepicker when clicking outside
+          $(document).click(function(event) {
+              if (!$(event.target).closest("#datepicker, #selected_dates").length) {
+                  $("#datepicker").hide();
               }
           });
       });
