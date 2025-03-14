@@ -756,6 +756,7 @@
       $(document).ready(function() {
         $("#datepicker").datepicker({
             dateFormat: "dd-mm-yy",
+            multidate: true,
             beforeShowDay: function (date) {
                 let dateString = $.datepicker.formatDate('dd-mm-yy', date);
                 return [true, selectedDates.includes(dateString) ? "ui-state-highlight" : ""];
