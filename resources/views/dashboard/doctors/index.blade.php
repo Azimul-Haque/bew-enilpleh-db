@@ -17,12 +17,18 @@
     </style>
     <link rel="stylesheet" type="text/css" href="{{ asset('css/bootstrap-datepicker.min.css') }}">
     <style type="text/css">
-      /*.datepicker_wrapper, .datepicker_wrapper2{
+      .datepicker_wrapper, .datepicker_wrapper2{
         position:relative;
       }
-      textarea {
+      /*textarea {
         resize: none;
       }*/
+
+      .datepicker-footer {
+          padding: 5px;
+          background: #f8f9fa;
+          border-top: 1px solid #ddd;
+      }
     </style>
 
 @endsection
