@@ -866,17 +866,11 @@
         todayHighlight: true,
         autoclose: false,
         multidate: true,
-      }).on('show', function () {
-            setTimeout(() => {
-                if ($(".datepicker-footer").length === 0) { // Prevent duplicate buttons
-                    $(".datepicker-dropdown").append('<div class="datepicker-footer text-center"><button class="btn btn-success btn-sm mt-2" id="closePicker">Done</button></div>');
-                }
-            }, 10);
-        });
-      // Close Button Functionality
-      $("#closePicker").click(function() {
-        $("#selected_offdays").datepicker('hide'); // Close the picker
-        $('body').click();
       })
+      // Close Button Functionality
+      // $("#closePicker").click(function() {
+      //   $("#selected_offdays").datepicker('hide'); // Close the picker
+      //   $('body').click();
+      // })
     </script>
 @endsection
