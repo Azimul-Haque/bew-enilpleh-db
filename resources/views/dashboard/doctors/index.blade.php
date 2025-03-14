@@ -752,12 +752,7 @@
     <script type="text/javascript" src="{{ asset('js/jquery-for-dp.min.js') }}"></script>
     <script type="text/javascript" src="{{ asset('js/bootstrap-datepicker.min.js') }}"></script>
     <script type="text/javascript">
-      $("#selected_offdays").datepicker({
-        format: 'yyyy-mm-dd',
-        todayHighlight: true,
-        autoclose: false,
-        multidate: true,
-      });
+      
 
 
         $('.multiple-select').select2({
@@ -765,6 +760,13 @@
         });
         $('.select21').select2({
           // theme: 'bootstrap4',
+        });
+
+        $("#selected_offdays").datepicker({
+          format: 'yyyy-mm-dd',
+          todayHighlight: true,
+          autoclose: false,
+          multidate: true,
         });
 
         $('.district').on('change', function() {
