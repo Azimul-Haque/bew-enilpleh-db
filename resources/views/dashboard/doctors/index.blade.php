@@ -16,6 +16,7 @@
       }
     </style>
     {{-- <link rel="stylesheet" type="text/css" href="{{ asset('css/bootstrap-datepicker.min.css') }}"> --}}
+    <link href="https://cdn.rawgit.com/Eonasdan/bootstrap-datetimepicker/25c11d79/build/css/bootstrap-datetimepicker.min.css" rel="stylesheet"/>
     <style type="text/css">
       /*.datepicker_wrapper, .datepicker_wrapper2{
         position:relative;
