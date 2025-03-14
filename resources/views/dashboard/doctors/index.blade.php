@@ -284,6 +284,7 @@
 
                                         <div style="margin-top: 15px;">
                                           @php
+                                            $datesString = '';
                                             if($doctor->offdays) {
                                               $decodedoffdays = json_decode($doctor->offdays, true);
                                               $datesString = implode(',', $decodedoffdays);
