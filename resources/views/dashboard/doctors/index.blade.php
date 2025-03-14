@@ -4,9 +4,6 @@
 @section('third_party_stylesheets')
     <link href="{{ asset('css/select2.min.css') }}" rel="stylesheet" />
     <link href="{{ asset('css/select2-bootstrap4.min.css') }}" rel="stylesheet" />
-    <!-- jQuery UI Datepicker -->
-    
-
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     {{-- <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script> --}}
   {{-- <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script> --}}
@@ -18,15 +15,16 @@
           background-color: rgba(0, 123, 255) !important;
       }
     </style>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css">
-
-    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-
-    <style>
-        .ui-state-highlight { background: #ffc107 !important; } /* Highlight selected dates */
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/bootstrap-datepicker.min.css') }}">
+    <style type="text/css">
+      .datepicker_wrapper, .datepicker_wrapper2{
+        position:relative;
+      }
+      textarea {
+        resize: none;
+      }
     </style>
+
 @endsection
 
 @section('content')
