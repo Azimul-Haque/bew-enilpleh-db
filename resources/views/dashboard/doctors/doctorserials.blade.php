@@ -219,7 +219,7 @@
     $("#selectdate").datepicker({
       format: 'yyyy-mm-dd',
       todayHighlight: true,
-      autoclose: true,
+      autoclose: false,
       multidate: true,
     });
 
