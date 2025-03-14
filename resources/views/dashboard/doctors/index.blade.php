@@ -755,7 +755,7 @@
     <script type="text/javascript">
       $(document).ready(function () {
               // Ensure the modal and datepicker are initialized properly
-              $('#myModal').on('shown.bs.modal', function () {
+              $('#addUserModal').on('shown.bs.modal', function () {
                   if (!$("#datepicker").data('datepicker')) {
                       $("#datepicker").datepicker({
                           format: "dd-mm-yyyy",
