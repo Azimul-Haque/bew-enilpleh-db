@@ -868,7 +868,7 @@
       }).on('show', function () {
             setTimeout(() => {
                 if ($(".datepicker-footer").length === 0) { // Prevent duplicate buttons
-                    $(".datepicker-dropdown").append('<div class="datepicker-footer text-center"><button class="btn btn-danger btn-sm mt-2" id="closePicker">Close</button></div>');
+                    $(".datepicker-dropdown").append('<div class="datepicker-footer text-center"><button class="btn btn-danger btn-sm mt-2" id="closePicker">Submit</button></div>');
                 }
             }, 10);
         });
