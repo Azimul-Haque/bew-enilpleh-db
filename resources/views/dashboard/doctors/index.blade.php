@@ -865,12 +865,6 @@
         todayHighlight: true,
         autoclose: false,
         multidate: true,
-        templates: {
-            // Injecting the Close Button inside the Datepicker
-            leftArrow: '&laquo;',
-            rightArrow: '&raquo;',
-            clearBtn: true
-        }
       });
 
       // Add a Close Button inside the picker
