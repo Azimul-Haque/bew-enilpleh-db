@@ -300,9 +300,9 @@ class DoctorController extends Controller
             // dd($formattedDates);
             $doctor->offdays = json_encode($formattedDates);
         }
-        if($request->offdays) {
-            $doctor->offdays = json_encode($request->offdays);
-        }
+        // if($request->offdays) {
+        //     $doctor->offdays = json_encode($request->offdays);
+        // }
         $doctor->onlineserial = $request->onlineserial;
         $doctor->save();
 
