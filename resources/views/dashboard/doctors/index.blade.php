@@ -752,6 +752,12 @@
     <script type="text/javascript" src="{{ asset('js/jquery-for-dp.min.js') }}"></script>
     <script type="text/javascript" src="{{ asset('js/bootstrap-datepicker.min.js') }}"></script>
     <script type="text/javascript">
+      $("#selectdate").datepicker({
+        format: 'yyyy-mm-dd',
+        todayHighlight: true,
+        autoclose: false,
+        multidate: true,
+      });
       $(document).ready(function () {
               // Ensure the modal and datepicker are initialized properly
               $('#addUserModal').on('shown.bs.modal', function () {
