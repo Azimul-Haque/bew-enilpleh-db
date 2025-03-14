@@ -275,7 +275,7 @@ class DoctorController extends Controller
             'medicalsymptoms'            => 'required',
             'hospitals'            => 'sometimes',
             'weekdays'            => 'sometimes',
-            'offdays'            => 'sometimes',
+            'selected_offdays'            => 'sometimes',
             'onlineserial'            => 'required',
         ));
 
@@ -295,6 +295,11 @@ class DoctorController extends Controller
             $doctor->helpline = '';
         }
         $doctor->weekdays = $request->weekdays;
+        if($request->selected_offdays) {
+            $formattedDates = explode(',', $request->selected_offdays);
+            // dd($formattedDates);
+            $doctor->offdays = json_encode($formattedDates);
+        }
         if($request->offdays) {
             $doctor->offdays = json_encode($request->offdays);
         }
