@@ -755,13 +755,13 @@
                   } else {
                       selectedDates.splice(index, 1);
                   }
-                  $("#selected_dates").val(selectedDates.join(", ")); // Show in text field
+                  $("#selected_offdays").val(selectedDates.join(", ")); // Show in text field
                   $(this).datepicker("refresh");
               }
           });
       });
 
-      
+
         $('.multiple-select').select2({
           // theme: 'bootstrap4',
         });
