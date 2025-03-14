@@ -859,7 +859,6 @@
         todayHighlight: true,
         autoclose: false,
         multidate: true,
-        toolbarPlacement: 'bottom',
         showClose: true,
       });
     </script>
