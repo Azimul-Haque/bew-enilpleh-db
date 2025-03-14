@@ -633,6 +633,9 @@
                     </div>
                   </div>
                   <div style="margin-top: 15px;">
+                    <input type="text" id="selected_dates" class="form-control" readonly>
+
+                    <div id="datepicker"></div> <!-- Datepicker here -->
                     <select name="offdays[]" class="form-control multiple-select" multiple="multiple" data-placeholder="যেদিন যেদিন রোগী দেখবেন না (প্রয়োজনে একাধিক সিলেক্ট করা যাবে) [Optional]">
                         @foreach($optiondates as $date)
                             <option value="{{ $date->format('Y-m-d') }}">
