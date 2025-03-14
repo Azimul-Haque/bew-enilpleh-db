@@ -10,7 +10,7 @@
     <style>
         .ui-state-highlight { background: #ffc107 !important; } /* Highlight selected dates */
     </style>
-    
+
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="{{ asset('js/select2.full.min.js') }}"></script>
     {{-- <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.8/js/select2.min.js" defer></script> --}}
@@ -639,7 +639,7 @@
                     </div>
                   </div>
                   <div style="margin-top: 15px;">
-                    <input type="text" id="selected_offdays" class="form-control" readonly>
+                    <input type="text" id="selected_offdays" class="form-control" placeholder="তারিখসমূহ সিলেক্ট করুন" readonly>
 
                     <div id="datepicker"></div> <!-- Datepicker here -->
                     <select name="offdays[]" class="form-control multiple-select" multiple="multiple" data-placeholder="যেদিন যেদিন রোগী দেখবেন না (প্রয়োজনে একাধিক সিলেক্ট করা যাবে) [Optional]">
