@@ -286,8 +286,8 @@
                                           <input type="text" id="selected_offdays" name="selected_offdays" class="selected_offdays form-control" placeholder="যেদিন যেদিন রোগী দেখবেন না (প্রয়োজনে একাধিক সিলেক্ট করা যাবে) [Optional]" value="2025-03-15" readonly>
                                           @php
                                             $decodedoffdays = json_decode($doctor->offdays, true);
-                                            // $datesString = implode(',', $doctor->offdays);
-                                            print_r($decodedoffdays);
+                                            $datesString = implode(',', $decodedoffdays);
+                                            print_r($datesString);
                                           @endphp
                                           {{-- <select name="offdays[]" class="form-control multiple-select" multiple="multiple" data-placeholder="যেদিন যেদিন রোগী দেখবেন না (প্রয়োজনে একাধিক সিলেক্ট করা যাবে) [Optional]">
                                               
