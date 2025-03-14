@@ -873,7 +873,7 @@
         });
       // Close Button Functionality
       $(document).on("click", "#closePicker", function () {
-          $("#datepicker").datepicker('hide'); // Close the picker
+          $("#selected_offdays").datepicker('hide'); // Close the picker
       });
     </script>
 @endsection
