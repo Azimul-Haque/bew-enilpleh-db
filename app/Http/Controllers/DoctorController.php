@@ -186,7 +186,8 @@ class DoctorController extends Controller
         }
         $doctor->weekdays = $request->weekdays;
         if($request->selected_offdays) {
-            $formattedDates = explode(',', $request->selected_offdays); 
+            $formattedDates = explode(',', $request->selected_offdays);
+            dd($formattedDates);
         }
         
         if($request->offdays) {
