@@ -859,7 +859,7 @@
         todayHighlight: true,
         autoclose: false,
         multidate: true,
-        showClose: true,
+        showclose: true,
       });
     </script>
 @endsection
