@@ -739,6 +739,29 @@
 @section('third_party_scripts')
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <script type="text/javascript">
+      $(document).ready(function () {
+          let selectedDates = [];
+
+          $("#datepicker").datepicker({
+              dateFormat: "dd-mm-yy",
+              beforeShowDay: function (date) {
+                  let dateString = $.datepicker.formatDate('dd-mm-yy', date);
+                  return [true, selectedDates.includes(dateString) ? "ui-state-highlight" : ""];
+              },
+              onSelect: function (dateText) {
+                  let index = selectedDates.indexOf(dateText);
+                  if (index === -1) {
+                      selectedDates.push(dateText);
+                  } else {
+                      selectedDates.splice(index, 1);
+                  }
+                  $("#selected_dates").val(selectedDates.join(", ")); // Show in text field
+                  $(this).datepicker("refresh");
+              }
+          });
+      });
+
+      
         $('.multiple-select').select2({
           // theme: 'bootstrap4',
         });
