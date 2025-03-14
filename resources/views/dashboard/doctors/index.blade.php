@@ -873,10 +873,7 @@
             }, 10);
         });
 
-      // Add a Close Button inside the picker
-      setTimeout(() => {
-          $(".datepicker").append('<div class="datepicker-footer text-center"><button class="btn btn-danger btn-sm mt-2" id="closePicker">Close</button></div>');
-      }, 100);
+      
 
       // Close Button Functionality
       $(document).on("click", "#closePicker", function () {
