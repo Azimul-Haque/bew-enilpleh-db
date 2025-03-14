@@ -753,39 +753,58 @@
 @section('third_party_scripts')
 
     <script type="text/javascript">
-      $('#addUserModal').on('shown.bs.modal', function () {
-        console.log('asdasd');
-        $("#datepicker").datepicker({
-            dateFormat: "dd-mm-yy",
-            multidate: true,
-            beforeShowDay: function (date) {
-                let dateString = $.datepicker.formatDate('dd-mm-yy', date);
-                return [true, selectedDates.includes(dateString) ? "ui-state-highlight" : ""];
-            },
-            onSelect: function (dateText) {
-                let index = selectedDates.indexOf(dateText);
-                if (index === -1) {
-                    selectedDates.push(dateText); // Add selected date
-                } else {
-                    selectedDates.splice(index, 1); // Remove date if clicked again
-                }
-                $("#selected_offdays").val(selectedDates.join(", ")); // Show selected dates in text field
-                $(this).datepicker("refresh"); // Refresh to update highlights
-            }
-        });
+      $(document).ready(function () {
+              // Ensure the modal and datepicker are initialized properly
+              $('#myModal').on('shown.bs.modal', function () {
+                  if (!$("#datepicker").data('datepicker')) {
+                      $("#datepicker").datepicker({
+                          format: "dd-mm-yyyy",
+                          multidate: true,
+                          autoclose: false
+                      });
+                  }
+              });
 
-        // Show datepicker when clicking the text field
-        $("#selected_offdays").focus(function() {
-            $("#datepicker").toggle();
-        });
+              // Save Selected Dates
+              $("#saveDates").click(function () {
+                  var selectedDates = $("#datepicker").val();
+                  $("#selected_dates").val(selectedDates);
+                  $("#myModal").modal('hide');
+              });
+          });
+      // $('#addUserModal').on('shown.bs.modal', function () {
+      //   console.log('asdasd');
+      //   $("#datepicker").datepicker({
+      //       dateFormat: "dd-mm-yy",
+      //       multidate: true,
+      //       beforeShowDay: function (date) {
+      //           let dateString = $.datepicker.formatDate('dd-mm-yy', date);
+      //           return [true, selectedDates.includes(dateString) ? "ui-state-highlight" : ""];
+      //       },
+      //       onSelect: function (dateText) {
+      //           let index = selectedDates.indexOf(dateText);
+      //           if (index === -1) {
+      //               selectedDates.push(dateText); // Add selected date
+      //           } else {
+      //               selectedDates.splice(index, 1); // Remove date if clicked again
+      //           }
+      //           $("#selected_offdays").val(selectedDates.join(", ")); // Show selected dates in text field
+      //           $(this).datepicker("refresh"); // Refresh to update highlights
+      //       }
+      //   });
 
-        // Hide datepicker when clicking outside
-        $(document).click(function(event) {
-            if (!$(event.target).closest("#datepicker, #selected_offdays").length) {
-                $("#datepicker").hide();
-            }
-        });
-      });
+      //   // Show datepicker when clicking the text field
+      //   $("#selected_offdays").focus(function() {
+      //       $("#datepicker").toggle();
+      //   });
+
+      //   // Hide datepicker when clicking outside
+      //   $(document).click(function(event) {
+      //       if (!$(event.target).closest("#datepicker, #selected_offdays").length) {
+      //           $("#datepicker").hide();
+      //       }
+      //   });
+      // });
       
 
 
