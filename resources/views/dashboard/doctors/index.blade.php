@@ -22,11 +22,11 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css">
 
-    {{-- <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 
     <style>
         .ui-state-highlight { background: #ffc107 !important; } /* Highlight selected dates */
-    </style> --}}
+    </style>
 @endsection
 
 @section('content')
@@ -649,7 +649,7 @@
                   <div style="margin-top: 15px;">
                     <input type="text" id="selected_offdays" class="form-control" placeholder="তারিখসমূহ সিলেক্ট করুন" readonly>
                     <div id="datepicker"></div> <!-- Datepicker here -->
-                    
+
                     <select name="offdays[]" class="form-control multiple-select" multiple="multiple" data-placeholder="যেদিন যেদিন রোগী দেখবেন না (প্রয়োজনে একাধিক সিলেক্ট করা যাবে) [Optional]">
                         @foreach($optiondates as $date)
                             <option value="{{ $date->format('Y-m-d') }}">
