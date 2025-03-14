@@ -859,7 +859,12 @@
         todayHighlight: true,
         autoclose: false,
         multidate: true,
-        showclose: true,
+        templates: {
+            // Injecting the Close Button inside the Datepicker
+            leftArrow: '&laquo;',
+            rightArrow: '&raquo;',
+            clearBtn: true
+        }
       });
     </script>
 @endsection
