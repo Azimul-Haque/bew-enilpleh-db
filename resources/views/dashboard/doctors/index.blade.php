@@ -758,41 +758,6 @@
         autoclose: false,
         multidate: true,
       });
-      
-      $('#addUserModal').on('shown.bs.modal', function () {
-        console.log('asdasd');
-        $("#datepicker").datepicker({
-            dateFormat: "dd-mm-yy",
-            multidate: true,
-            beforeShowDay: function (date) {
-                let dateString = $.datepicker.formatDate('dd-mm-yy', date);
-                return [true, selectedDates.includes(dateString) ? "ui-state-highlight" : ""];
-            },
-            onSelect: function (dateText) {
-                let index = selectedDates.indexOf(dateText);
-                if (index === -1) {
-                    selectedDates.push(dateText); // Add selected date
-                } else {
-                    selectedDates.splice(index, 1); // Remove date if clicked again
-                }
-                $("#selected_offdays").val(selectedDates.join(", ")); // Show selected dates in text field
-                $(this).datepicker("refresh"); // Refresh to update highlights
-            }
-        });
-
-        // Show datepicker when clicking the text field
-        $("#selected_offdays").focus(function() {
-            $("#datepicker").toggle();
-        });
-
-        // Hide datepicker when clicking outside
-        $(document).click(function(event) {
-            if (!$(event.target).closest("#datepicker, #selected_offdays").length) {
-                $("#datepicker").hide();
-            }
-        });
-      });
-      
 
 
         $('.multiple-select').select2({
