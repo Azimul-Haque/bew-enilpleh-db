@@ -87,6 +87,8 @@ class HospitalController extends Controller
                               ->orderBy('id', 'desc')
                               ->paginate(10);
 
+        $allhospitals = Hospital::all();
+        $alldoctors = Doctor::all();
         $districts = District::all();
 
         // $sites = Site::all();
