@@ -88,13 +88,14 @@ class DoctorController extends Controller
         } else {
             $doctorscount = Doctor::count();
             $doctors = Doctor::orderBy('id', 'desc')->paginate(10);
+            $hospitals = Hospital::all();
         }
         
 
         $districts = District::all();
         $medicaldepartments = Medicaldepartment::all();
         $medicalsymptoms = Medicalsymptom::all();
-        // $hospitals = Hospital::all();
+        
 
         
         return view('dashboard.doctors.index')
