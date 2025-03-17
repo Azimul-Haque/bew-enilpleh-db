@@ -94,7 +94,7 @@ class DoctorController extends Controller
         $districts = District::all();
         $medicaldepartments = Medicaldepartment::all();
         $medicalsymptoms = Medicalsymptom::all();
-        $hospitals = Hospital::all();
+        // $hospitals = Hospital::all();
 
         
         return view('dashboard.doctors.index')
