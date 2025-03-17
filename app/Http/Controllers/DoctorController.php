@@ -103,7 +103,7 @@ class DoctorController extends Controller
                             ->withDistricts($districts)
                             ->withMedicaldepartments($medicaldepartments)
                             ->withMedicalsymptoms($medicalsymptoms)
-                            ->withHospitals($hospitals);
+                            ->withHospitals($accessedhospitals);
     }
 
     public function indexSearch($search)
