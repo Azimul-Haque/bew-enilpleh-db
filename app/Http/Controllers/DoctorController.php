@@ -51,6 +51,7 @@ class DoctorController extends Controller
             $doctors = Auth::user()->accessibleDoctors()->get();
 
             $accessedhospitals = Auth::user()->accessibleHospitals()->get();
+            $hospitals = $accessedhospitals;
 
             foreach($accessedhospitals as $hospital) {
                 foreach($hospital->doctorhospitals as $doctor) {
@@ -104,7 +105,7 @@ class DoctorController extends Controller
                             ->withDistricts($districts)
                             ->withMedicaldepartments($medicaldepartments)
                             ->withMedicalsymptoms($medicalsymptoms)
-                            ->withHospitals($accessedhospitals);
+                            ->withHospitals($hospitals);
     }
 
     public function indexSearch($search)
