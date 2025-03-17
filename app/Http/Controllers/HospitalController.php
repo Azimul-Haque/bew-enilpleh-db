@@ -95,7 +95,9 @@ class HospitalController extends Controller
         return view('dashboard.hospitals.index')
                     ->withHospitalscount($hospitalscount)
                     ->withHospitals($hospitals)
-                    ->withDistricts($districts);
+                    ->withDistricts($districts)
+                    ->withAllhospitals($allhospitals)
+                    ->withAlldoctors($alldoctors);
     }
 
     public function storeHospital(Request $request)
