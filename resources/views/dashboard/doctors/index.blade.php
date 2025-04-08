@@ -869,7 +869,7 @@
     <script type="text/javascript">
       $(".selected_offdays").datepicker({
         format: 'yyyy-mm-dd',
-        startDate: new Date(),
+        startDate: new Date(),c
         todayHighlight: true,
         autoclose: false,
         multidate: true,
