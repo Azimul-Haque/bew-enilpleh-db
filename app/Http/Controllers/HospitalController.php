@@ -265,7 +265,7 @@ class HospitalController extends Controller
         if($request->location) {
             $hospital->location = $request->location;
         } else {
-            $hospital->location = '';
+            $hospital->location = null;
         }
         $hospital->description = $request->description;
         if($request->website) {
