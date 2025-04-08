@@ -111,7 +111,7 @@
                                              name="mobile"
                                              value="{{ $coaching->mobile }}"
                                              class="form-control"
-                                             placeholder="শিক্ষা প্রতিষ্ঠানের মোবাইল নম্বর" required>
+                                             placeholder="শিক্ষা প্রতিষ্ঠানের মোবাইল নম্বর (OPTIONAL)">
                                       <div class="input-group-append">
                                           <div class="input-group-text"><span class="fas fa-mobile"></span></div>
                                       </div>
