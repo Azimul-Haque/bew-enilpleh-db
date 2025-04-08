@@ -21,7 +21,7 @@ class CreateHospitalsTable extends Migration
             $table->integer('hospital_type');
             $table->string('telephone');
             $table->string('mobile');
-            $table->string('location');
+            $table->string('location')->nullable();
             $table->text('description')->nullable();
             $table->string('website')->nullable();
             $table->string('address');
