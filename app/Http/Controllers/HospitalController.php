@@ -351,6 +351,9 @@ class HospitalController extends Controller
             $hospitalimage1              = new Hospitalimage;
             $hospitalimage1->hospital_id = $hospital->id;
             $hospitalimage1->image       = $filename;
+            if($request->image1caption) {
+                $hospitalimage1->caption       = $request->image1caption;
+            }
             $hospitalimage1->save();
         }
         if($request->hasFile('image2')) {
@@ -370,6 +373,9 @@ class HospitalController extends Controller
             $hospitalimage2              = new Hospitalimage;
             $hospitalimage2->hospital_id = $hospital->id;
             $hospitalimage2->image       = $filename;
+            if($request->image2caption) {
+                $hospitalimage2->caption       = $request->image2caption;
+            }
             $hospitalimage2->save();
         }
         if($request->hasFile('image3')) {
