@@ -109,7 +109,7 @@ class APIController extends Controller
                         $imagestemp->push($hospitalimage->image);
                         $imagestemp->push($hospitalimage->caption);
                         $hospitalimage->makeHidden('id', 'hospital_id', 'created_at', 'updated_at');
-                        $hospital->push($hospitalimagetemp);
+                        // $hospital->push($hospitalimagetemp);
                      }
                      $hospital->images = $imagestemp;
                      $hospital->branchcount = $hospital->allBranches()->count();
