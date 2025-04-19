@@ -121,6 +121,7 @@ class HospitalController extends Controller
             'image2'            => 'sometimes|image|mimes:jpeg,png,jpg,gif,svg,webp|max:1000',
             'image3'            => 'sometimes|image|mimes:jpeg,png,jpg,gif,svg,webp|max:1000',
             'image4'            => 'sometimes|image|mimes:jpeg,png,jpg,gif,svg,webp|max:1000',
+            'image1caption'     => 'sometimes|max:191',
         ));
 
         $hospital = new Hospital;
