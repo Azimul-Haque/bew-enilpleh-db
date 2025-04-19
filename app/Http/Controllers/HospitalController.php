@@ -264,6 +264,10 @@ class HospitalController extends Controller
             'image2'            => 'sometimes|image|mimes:jpeg,png,jpg,gif,svg,webp|max:1000',
             'image3'            => 'sometimes|image|mimes:jpeg,png,jpg,gif,svg,webp|max:1000',
             'image4'            => 'sometimes|image|mimes:jpeg,png,jpg,gif,svg,webp|max:1000',
+            'image1caption'     => 'sometimes|max:191',
+            'image2caption'     => 'sometimes|max:191',
+            'image3caption'     => 'sometimes|max:191',
+            'image4caption'     => 'sometimes|max:191',
         ));
 
         $hospital = Hospital::findOrFail($id);
@@ -404,6 +408,9 @@ class HospitalController extends Controller
             $hospitalimage4              = new Hospitalimage;
             $hospitalimage4->hospital_id = $hospital->id;
             $hospitalimage4->image       = $filename;
+            if($request->image4caption) {
+                $hospitalimage4->caption       = $request->image4caption;
+            }
             $hospitalimage4->save();
         }
         // image upload
