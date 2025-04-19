@@ -17,7 +17,7 @@ class CreateHospitalimagesTable extends Migration
             $table->id();
             $table->integer('hospital_id');
             $table->string('image');
-            $table->string('caption');
+            $table->string('caption')->nullable();
             $table->timestamps();
         });
     }
