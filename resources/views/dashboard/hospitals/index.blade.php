@@ -248,6 +248,7 @@
 
                                     <div class="form-group" style="margin-top: 15px;">
                                         <label for="image">ব্যানার-২ (Optional, Max 1 MB)</label>
+                                        <input type="text" name="image2caption" class="form-control" placeholder="ব্যানার-২ এর ক্যাপশন লিখুন (OPTIONAL)" style="margin-bottom: 5px;">
                                         <input type="file" name="image2" accept="image/*">
                                     </div>
                                   </div>
