@@ -499,6 +499,7 @@
                     <div class="col-md-6">                    
                       <div class="form-group" style="margin-top: 15px;">
                           <label for="image">ব্যানার-৩ (Optional, Max 1 MB)</label>
+                          <input type="text" name="image3caption" class="form-control" placeholder="ব্যানার-৩ এর ক্যাপশন লিখুন (OPTIONAL)" style="margin-bottom: 5px;">
                           <input type="file" name="image3" accept="image/*">
                       </div>
                       <div class="form-group" style="margin-top: 15px;">
