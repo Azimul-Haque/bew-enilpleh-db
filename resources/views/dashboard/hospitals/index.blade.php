@@ -236,8 +236,12 @@
                                     </div>
                                   </div>
                                   <div class="col-md-6">
+                                    <h4>
+                                      বিস্তারিত (OPTIONAL)
+                                    </h4>
                                     <div class="form-group" style="margin-top: 15px;">
                                         <label for="image">ব্যানার-১ (Optional, Max 1 MB)</label>
+                                        <input type="text" class="form-control" style="margin-bottom: 5px;">
                                         <input type="file" name="image1" accept="image/*">
                                     </div>
 
