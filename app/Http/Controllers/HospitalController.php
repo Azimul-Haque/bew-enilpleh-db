@@ -223,6 +223,9 @@ class HospitalController extends Controller
             $hospitalimage4              = new Hospitalimage;
             $hospitalimage4->hospital_id = $hospital->id;
             $hospitalimage4->image       = $filename;
+            if($request->image4caption) {
+                $hospitalimage4->caption       = $request->image4caption;
+            }
             $hospitalimage4->save();
         }
         // image upload
