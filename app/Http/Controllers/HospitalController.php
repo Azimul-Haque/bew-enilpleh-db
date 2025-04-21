@@ -153,7 +153,7 @@ class HospitalController extends Controller
             $hospital->investigation_data = nl2br($request->investigation_data);
         }
         if($request->webaddress) {
-            $hospital->webaddress = nl2br($request->webaddress);
+            $hospital->webaddress = $request->webaddress;
         }
 
         $hospital->save();
