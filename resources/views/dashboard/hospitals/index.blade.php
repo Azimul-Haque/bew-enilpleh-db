@@ -234,12 +234,18 @@
                                             <div class="input-group-text"><span class="fas fa-edit"></span></div>
                                         </div>
                                     </div>
+                                  </div>
+
+                                  <div class="col-md-12">
                                     <h4>
                                       বিস্তারিত (OPTIONAL)
                                     </h4>
+                                    <input type="text" name="webaddress" class="form-control" placeholder="ওয়েব এড্রেস" style="margin-bottom: 5px;">
+                                    <h5>
+                                      অথবা (ওয়েব এড্রেস দিলে নিচের ব্যানার প্রদর্শন করবে না)
+                                    </h5>
                                   </div>
                                   <div class="col-md-6">
-                                    
                                     <div class="form-group" style="margin-top: 15px;">
                                         <label for="image">ব্যানার-১ (Optional, Max 1 MB)</label>
                                         <input type="text" name="image1caption" class="form-control" placeholder="ব্যানার-১ এর ক্যাপশন লিখুন (OPTIONAL)" style="margin-bottom: 5px;">
