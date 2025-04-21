@@ -482,6 +482,9 @@
                               <div class="input-group-text"><span class="fas fa-edit"></span></div>
                           </div>
                       </div>
+                      
+                    </div>
+                    <div class="col-md-12">
                       <h4>
                         বিস্তারিত (OPTIONAL)
                       </h4>
