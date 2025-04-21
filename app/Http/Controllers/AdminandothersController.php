@@ -16,6 +16,7 @@ use App\Rab;
 use App\Rabbattalion;
 use App\Rabbattaliondetail;
 use App\Bus;
+use App\Buscounter;
 use App\Journalist;
 use App\Newspaper;
 use App\Newspaperimage;
@@ -1012,6 +1013,7 @@ class AdminandothersController extends Controller
     public function busIndex()
     {
         $districts = District::all();
+        $buscounters = Buscounter::all();
                 
         return view('dashboard.buses.index')
                             ->withDistricts($districts);
