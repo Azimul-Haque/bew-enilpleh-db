@@ -17,7 +17,6 @@ class CreateBuscountersTable extends Migration
             $table->id();
             $table->integer('user_id');
             $table->string('counter_name');
-            $table->string('caption')->nullable();
             $table->timestamps();
         });
     }
