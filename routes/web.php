@@ -159,8 +159,8 @@ Route::get('/dashboard/buses/{district_id}/{search}', 'AdminandothersController@
 Route::post('/dashboard/buses/{district_id}/store', 'AdminandothersController@storeBus')->name('dashboard.buses.store');
 Route::post('/dashboard/buses/{district_id}/{id}/update', 'AdminandothersController@updateBus')->name('dashboard.buses.update');
 Route::get('/dashboard/buses/{district_id}/{id}/delete', 'AdminandothersController@updateBus')->name('dashboard.buses.delete');
-Route::post('/dashboard/buses/counter/store', 'AdminandothersController@storeBusCounter')->name('dashboard.buses.addcounter');
-Route::post('/dashboard/buses/counter/{id}/update', 'AdminandothersController@updateBusCounter')->name('dashboard.buses.updatecounter');
+Route::post('/dashboard/bus/counter/store', 'AdminandothersController@storeBusCounter')->name('dashboard.buses.addcounter');
+Route::post('/dashboard/bus/counter/{id}/update', 'AdminandothersController@updateBusCounter')->name('dashboard.buses.updatecounter');
 
 
 
