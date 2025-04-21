@@ -143,7 +143,7 @@
       <div class="modal-dialog" role="document">
         <div class="modal-content">
           <div class="modal-header bg-warning">
-            <h5 class="modal-title" id="addCounterModalLabel">নতুন বিভাগ যোগ</h5>
+            <h5 class="modal-title" id="addCounterModalLabel">নতুন কাউন্টার যোগ</h5>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
