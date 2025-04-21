@@ -56,7 +56,7 @@
         <div class="col-md-4">
           <div class="card">
               <div class="card-header">
-                <h3 class="card-title">বিভাগ তালিকা</h3>
+                <h3 class="card-title"> কাউন্টার ইনপুট</h3>
 
                 <div class="card-tools">
                   <button type="button" class="btn btn-warning btn-sm"  data-toggle="modal" data-target="#addDeptModal" style="margin-left: 5px;">
