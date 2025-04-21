@@ -306,6 +306,11 @@ class HospitalController extends Controller
         if($request->investigation_data) {
             $hospital->investigation_data = nl2br($request->investigation_data);
         }
+        if($request->webaddress) {
+            $hospital->webaddress = $request->webaddress;
+        } else {
+            $hospital->webaddress = NULL;
+        }
 
         foreach($hospital->allBranches() as $oldbranch) {
             $hospital->branches()->detach($oldbranch->id);
