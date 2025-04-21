@@ -1130,7 +1130,6 @@ class AdminandothersController extends Controller
 
     public function storeBusCounter(Request $request)
     {
-        dd($request);
         $this->validate($request,array(
             'counter_name'      => 'required|string|max:191',
         ));
