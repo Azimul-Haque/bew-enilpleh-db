@@ -240,7 +240,7 @@
                                     <h4>
                                       বিস্তারিত (OPTIONAL)
                                     </h4>
-                                    <input type="text" name="webaddress" value="webaddress" class="form-control" placeholder="ওয়েব এড্রেস" style="margin-bottom: 5px;">
+                                    <input type="text" name="webaddress" value="{{ $hospital->webaddress }}" class="form-control" placeholder="ওয়েব এড্রেস" style="margin-bottom: 5px;">
                                     <h5>
                                       অথবা (ওয়েব এড্রেস দিলে নিচের ব্যানার প্রদর্শন করবে না)
                                     </h5>
