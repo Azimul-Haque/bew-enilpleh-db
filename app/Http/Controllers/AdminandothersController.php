@@ -1137,10 +1137,6 @@ class AdminandothersController extends Controller
         $buscounter = new Buscounter;
         $buscounter->counter_name = $request->counter_name;
         $buscounter->save();
-
-
-        Cache::forget('busesfrom' . $district_id);
-        Cache::forget('busesto' . $request->to_district);
         Session::flash('success', 'Bus added successfully!');
         return redirect()->route('dashboard.buses.districtwise', $district_id);
     }
