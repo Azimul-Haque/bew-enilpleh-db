@@ -135,6 +135,45 @@
       </div>
     </div>
 
+
+    {{-- Add Dept Modal Code --}}
+    {{-- Add Dept Modal Code --}}
+    <!-- Modal -->
+    <div class="modal fade" id="addDeptModal" tabindex="-1" role="dialog" aria-labelledby="addDeptModalLabel" aria-hidden="true" data-backdrop="static">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header bg-warning">
+            <h5 class="modal-title" id="addDeptModalLabel">নতুন বিভাগ যোগ</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <form method="post" action="{{ route('dashboard.doctorsdept.store') }}">
+            <div class="modal-body">
+              
+                  @csrf
+                  <div class="input-group mb-3">
+                      <input type="text"
+                             name="name"
+                             class="form-control"
+                             value="{{ old('name') }}"
+                             placeholder="বিভাগের নাম" required>
+                      <div class="input-group-append">
+                          <div class="input-group-text"><span class="fas fa-user-md"></span></div>
+                      </div>
+                  </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">ফিরে যান</button>
+              <button type="submit" class="btn btn-warning">দাখিল করুন</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    {{-- Add Dept Modal Code --}}
+    {{-- Add Dept Modal Code --}}
+
 @endsection
 
 @section('third_party_scripts')
