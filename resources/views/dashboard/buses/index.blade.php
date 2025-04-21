@@ -77,7 +77,7 @@
                     @foreach($buscounters as $buscounter)
                       <tr>
                         <td>
-                          {{ $buscounter->name }}
+                          {{ $buscounter->counter_name }}
                         </td>
                         <td align="right">
                           {{-- <button type="button" class="btn btn-warning btn-sm" data-toggle="modal" data-target="#notifModal{{ $buscounter->id }}">
