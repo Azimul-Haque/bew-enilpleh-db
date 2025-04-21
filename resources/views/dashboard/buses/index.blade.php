@@ -107,7 +107,7 @@
                                                    name="name"
                                                    class="form-control"
                                                    value="{{ $buscounter->name }}"
-                                                   placeholder="বিভাগের নাম" required>
+                                                   placeholder="কাউন্টারের নাম" required>
                                             <div class="input-group-append">
                                                 <div class="input-group-text"><span class="fas fa-user-md"></span></div>
                                             </div>
@@ -157,7 +157,7 @@
                              name="name"
                              class="form-control"
                              value="{{ old('name') }}"
-                             placeholder="বিভাগের নাম" required>
+                             placeholder="কাউন্টারের নাম" required>
                       <div class="input-group-append">
                           <div class="input-group-text"><span class="fas fa-user-md"></span></div>
                       </div>
