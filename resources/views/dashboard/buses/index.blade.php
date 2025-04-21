@@ -104,9 +104,9 @@
                                         @csrf
                                         <div class="input-group mb-3">
                                             <input type="text"
-                                                   name="name"
+                                                   name="counter_name"
                                                    class="form-control"
-                                                   value="{{ $buscounter->name }}"
+                                                   value="{{ $buscounter->counter_name }}"
                                                    placeholder="কাউন্টারের নাম" required>
                                             <div class="input-group-append">
                                                 <div class="input-group-text"><span class="fas fa-map-marker-alt"></span></div>
