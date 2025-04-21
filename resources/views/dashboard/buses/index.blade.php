@@ -109,7 +109,7 @@
                                                    value="{{ $buscounter->name }}"
                                                    placeholder="কাউন্টারের নাম" required>
                                             <div class="input-group-append">
-                                                <div class="input-group-text"><span class="fas fa-user-md"></span></div>
+                                                <div class="input-group-text"><span class="fas fa-map-marker-alt"></span></div>
                                             </div>
                                         </div>
                                   </div>
@@ -159,7 +159,7 @@
                              value="{{ old('name') }}"
                              placeholder="কাউন্টারের নাম" required>
                       <div class="input-group-append">
-                          <div class="input-group-text"><span class="fas fa-user-md"></span></div>
+                          <div class="input-group-text"><span class="fas fa-map-marker-alt"></span></div>
                       </div>
                   </div>
             </div>
