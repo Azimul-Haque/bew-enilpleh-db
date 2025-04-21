@@ -1128,7 +1128,7 @@ class AdminandothersController extends Controller
         return redirect()->route('dashboard.buses', $district_id);
     }
 
-    public function storeBusCounter(Request $request, $district_id)
+    public function storeBusCounter(Request $request)
     {
         $this->validate($request,array(
             'counter_name'      => 'required|string|max:191',
