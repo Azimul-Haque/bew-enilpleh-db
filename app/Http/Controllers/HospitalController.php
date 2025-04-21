@@ -117,6 +117,7 @@ class HospitalController extends Controller
             'branch_data'            => 'sometimes',
             'branch_ids'            => 'sometimes',
             'investigation_data'            => 'sometimes',
+            'webaddress'            => 'sometimes',
             'image1'            => 'sometimes|image|mimes:jpeg,png,jpg,gif,svg,webp|max:1000',
             'image2'            => 'sometimes|image|mimes:jpeg,png,jpg,gif,svg,webp|max:1000',
             'image3'            => 'sometimes|image|mimes:jpeg,png,jpg,gif,svg,webp|max:1000',
