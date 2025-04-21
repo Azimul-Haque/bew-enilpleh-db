@@ -1146,14 +1146,7 @@ class AdminandothersController extends Controller
     public function updateBusCounter(Request $request, $id)
     {
         $this->validate($request,array(
-            'to_district'      => 'required',
-            'bus_name'         => 'required|string|max:191',
-            'route_info'       => 'required|string',
-            'bus_type'         => 'required|string|max:191',
-            'fare'             => 'required|string|max:191',
-            'starting_time'    => 'required|string|max:191',
-            'counter_address'    => 'required|string|max:191',
-            'contact'          => 'required|string|max:191',
+            'counter_name'         => 'required|string|max:191',
         ));
 
         $bus = Bus::find($id);
