@@ -59,7 +59,7 @@
                 <h3 class="card-title">কাউন্টার ইনপুট</h3>
 
                 <div class="card-tools">
-                  <button type="button" class="btn btn-warning btn-sm"  data-toggle="modal" data-target="#addModal" style="margin-left: 5px;">
+                  <button type="button" class="btn btn-warning btn-sm"  data-toggle="modal" data-target="#addCounterModal" style="margin-left: 5px;">
                     <i class="fas fa-user-plus"></i> নতুন
                   </button>
                 </div>
@@ -139,11 +139,11 @@
     {{-- Add Dept Modal Code --}}
     {{-- Add Dept Modal Code --}}
     <!-- Modal -->
-    <div class="modal fade" id="addModal" tabindex="-1" role="dialog" aria-labelledby="addModalLabel" aria-hidden="true" data-backdrop="static">
+    <div class="modal fade" id="addCounterModal" tabindex="-1" role="dialog" aria-labelledby="addCounterModalLabel" aria-hidden="true" data-backdrop="static">
       <div class="modal-dialog" role="document">
         <div class="modal-content">
           <div class="modal-header bg-warning">
-            <h5 class="modal-title" id="addModalLabel">নতুন বিভাগ যোগ</h5>
+            <h5 class="modal-title" id="addCounterModalLabel">নতুন বিভাগ যোগ</h5>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
