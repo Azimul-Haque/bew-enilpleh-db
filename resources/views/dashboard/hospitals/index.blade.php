@@ -488,6 +488,7 @@
                       <h4>
                         বিস্তারিত (OPTIONAL)
                       </h4>
+                      <input type="text" name="image1caption" class="form-control" placeholder="ব্যানার-১ এর ক্যাপশন লিখুন (OPTIONAL)" style="margin-bottom: 5px;">
                     </div>
                     <div class="col-md-6">
                       <div class="form-group" style="margin-top: 15px;">
