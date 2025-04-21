@@ -490,7 +490,7 @@
                       </h4>
                       <input type="text" name="webaddress" class="form-control" placeholder="ওয়েব এড্রেস" style="margin-bottom: 5px;">
                       <h5>
-                        অথবা
+                        অথবা (ওয়েব এড্রেস দিলে নিচের ব্যানার প্রদর্শন করবে না)
                       </h5>
                     </div>
                     <div class="col-md-6">
