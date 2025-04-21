@@ -1149,17 +1149,9 @@ class AdminandothersController extends Controller
             'counter_name'         => 'required|string|max:191',
         ));
 
-        $bus = Bus::find($id);
-        // $bus->district_id = $district_id; // dorkar nai
-        $bus->to_district = $request->to_district;
-        $bus->bus_name = $request->bus_name;
-        $bus->route_info = $request->route_info;
-        $bus->bus_type = $request->bus_type;
-        $bus->fare = $request->fare;
-        $bus->starting_time = $request->starting_time;
-        $bus->counter_address = $request->counter_address;
-        $bus->contact = $request->contact;
-        $bus->save();
+        $buscounter = Buscounter::find($id);
+        $buscounter->counter_name = $request->counter_name;
+        $buscounter->save();
 
         Cache::forget('busesfrom' . $district_id);
         Cache::forget('busesto' . $request->to_district);
