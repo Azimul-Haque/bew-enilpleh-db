@@ -69,7 +69,7 @@
                 <table class="table">
                   <thead>
                     <tr>
-                      <th>বিভাগ</th>
+                      <th>কাউন্টার</th>
                       <th align="right" width="20%">কার্যক্রম</th>
                     </tr>
                   </thead>
