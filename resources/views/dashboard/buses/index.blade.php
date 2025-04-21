@@ -148,7 +148,7 @@
               <span aria-hidden="true">&times;</span>
             </button>
           </div>
-          <form method="post" action="">
+          <form method="post" action="{{ route('dashboard.buses.addcounter') }}">
             <div class="modal-body">
               
                   @csrf
