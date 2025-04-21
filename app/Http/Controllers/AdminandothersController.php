@@ -1128,6 +1128,37 @@ class AdminandothersController extends Controller
         return redirect()->route('dashboard.buses.districtwise', $district_id);
     }
 
+    public function storeBusCounter(Request $request, $district_id)
+    {
+        $this->validate($request,array(
+            'counter_name'      => 'required|string|max:191',
+            'route_info'       => 'required|string',
+            'bus_type'         => 'required|string|max:191',
+            'fare'             => 'required|string|max:191',
+            'starting_time'    => 'required|string|max:191',
+            'counter_address'    => 'required|string|max:191',
+            'contact'          => 'required|string|max:191',
+        ));
+
+        $bus = new Bus;
+        $bus->district_id = $district_id;
+        $bus->to_district = $request->to_district;
+        $bus->bus_name = $request->bus_name;
+        $bus->route_info = $request->route_info;
+        $bus->bus_type = $request->bus_type;
+        $bus->fare = $request->fare;
+        $bus->starting_time = $request->starting_time;
+        $bus->counter_address = $request->counter_address;
+        $bus->contact = $request->contact;
+        $bus->save();
+
+
+        Cache::forget('busesfrom' . $district_id);
+        Cache::forget('busesto' . $request->to_district);
+        Session::flash('success', 'Bus added successfully!');
+        return redirect()->route('dashboard.buses.districtwise', $district_id);
+    }
+
     public function newspaperIndex()
     {
         $newspaperscount = Newspaper::count();
