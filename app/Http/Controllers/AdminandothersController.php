@@ -1016,7 +1016,8 @@ class AdminandothersController extends Controller
         $buscounters = Buscounter::all();
                 
         return view('dashboard.buses.index')
-                            ->withDistricts($districts);
+                            ->withDistricts($districts)
+                            ->withBuscounters($buscounters);
     }
 
     public function busIndexSingle($district_id)
