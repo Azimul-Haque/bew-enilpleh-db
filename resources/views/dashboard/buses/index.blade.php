@@ -74,22 +74,22 @@
                     </tr>
                   </thead>
                   <tbody>
-                    @foreach($medicaldepartments as $medicaldepartment)
+                    @foreach($buscounters as $buscounter)
                       <tr>
                         <td>
-                          {{ $medicaldepartment->name }}
+                          {{ $buscounter->name }}
                         </td>
                         <td align="right">
-                          {{-- <button type="button" class="btn btn-warning btn-sm" data-toggle="modal" data-target="#notifModal{{ $medicaldepartment->id }}">
+                          {{-- <button type="button" class="btn btn-warning btn-sm" data-toggle="modal" data-target="#notifModal{{ $buscounter->id }}">
                             <i class="fas fa-bell"></i>
                           </button> --}}
-                          <button type="button" class="btn btn-warning btn-sm" data-toggle="modal" data-target="#editDeptModal{{ $medicaldepartment->id }}">
+                          <button type="button" class="btn btn-warning btn-sm" data-toggle="modal" data-target="#editDeptModal{{ $buscounter->id }}">
                             <i class="fas fa-edit"></i>
                           </button>
                           {{-- Edit Dept Modal Code --}}
                           {{-- Edit Dept Modal Code --}}
                           <!-- Modal -->
-                          <div class="modal fade" id="editDeptModal{{ $medicaldepartment->id }}" tabindex="-1" role="dialog" aria-labelledby="editDeptModalLabel" aria-hidden="true" data-backdrop="static">
+                          <div class="modal fade" id="editDeptModal{{ $buscounter->id }}" tabindex="-1" role="dialog" aria-labelledby="editDeptModalLabel" aria-hidden="true" data-backdrop="static">
                             <div class="modal-dialog" role="document">
                               <div class="modal-content">
                                 <div class="modal-header bg-warning">
@@ -98,7 +98,7 @@
                                     <span aria-hidden="true">&times;</span>
                                   </button>
                                 </div>
-                                <form method="post" action="{{ route('dashboard.doctorsdept.update', $medicaldepartment->id) }}">
+                                <form method="post" action="{{ route('dashboard.doctorsdept.update', $buscounter->id) }}">
                                   <div class="modal-body">
                                     
                                         @csrf
@@ -106,7 +106,7 @@
                                             <input type="text"
                                                    name="name"
                                                    class="form-control"
-                                                   value="{{ $medicaldepartment->name }}"
+                                                   value="{{ $buscounter->name }}"
                                                    placeholder="বিভাগের নাম" required>
                                             <div class="input-group-append">
                                                 <div class="input-group-text"><span class="fas fa-user-md"></span></div>
