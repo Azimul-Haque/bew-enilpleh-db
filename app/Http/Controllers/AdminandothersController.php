@@ -1142,7 +1142,6 @@ class AdminandothersController extends Controller
     }
 
 
-
     public function updateBusCounter(Request $request, $id)
     {
         $this->validate($request,array(
