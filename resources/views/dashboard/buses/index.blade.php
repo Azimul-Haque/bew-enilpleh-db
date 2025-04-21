@@ -60,7 +60,7 @@
 
                 <div class="card-tools">
                   <button type="button" class="btn btn-warning btn-sm"  data-toggle="modal" data-target="#addCounterModal" style="margin-left: 5px;">
-                    <i class="fas fa-user-plus"></i> নতুন কাউন্টার
+                    <i class="fas fa-map-marked-alt"></i> নতুন কাউন্টার
                   </button>
                 </div>
               </div>
