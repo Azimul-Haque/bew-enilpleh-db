@@ -1153,7 +1153,7 @@ class AdminandothersController extends Controller
         $buscounter->counter_name = $request->counter_name;
         $buscounter->save();
         Session::flash('success', 'Bus Counter updated successfully!');
-        return redirect()->route('dashboard.buses.districtwise', $district_id);
+        return redirect()->route('dashboard.buses');
     }
 
     public function newspaperIndex()
