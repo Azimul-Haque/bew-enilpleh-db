@@ -731,4 +731,17 @@ class DoctorController extends Controller
         Session::flash('success', 'অ্যাপয়েন্টমেন্টটি ডিলেট করা হয়েছে!');
         return redirect()->back();
     }
+
+    public function deleteDoctor(Request $request, $serial_id)
+    {
+        $this->validate($request,array(
+           
+        ));
+
+        $doctorserial = Doctorserial::findOrFail($serial_id);
+        $doctorserial->delete();
+
+        Session::flash('success', 'অ্যাপয়েন্টমেন্টটি ডিলেট করা হয়েছে!');
+        return redirect()->back();
+    }
 }
