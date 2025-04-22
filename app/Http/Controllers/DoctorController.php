@@ -735,7 +735,7 @@ class DoctorController extends Controller
     public function deleteDoctor(Request $request, $id)
     {
         
-        $doctorserial = Doctorserial::findOrFail($serial_id);
+        $doctor = Doctor::findOrFail($id);
         $doctorserial->delete();
 
         Session::flash('success', 'অ্যাপয়েন্টমেন্টটি ডিলেট করা হয়েছে!');
