@@ -123,7 +123,7 @@
                             <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#editUserModal{{ $doctor->id }}">
                               <i class="fas fa-edit"></i>
                             </button>
-                            <button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#deleteUserModal{{ $doctor->id }}" disabled>
+                            <button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#deleteUserModal{{ $doctor->id }}" >
                               <i class="fas fa-trash-alt"></i>
                             </button><br/>
                              <a href="{{ route('dashboard.doctorserialindex', [$doctor->id, date('Y-m-d')]) }}" style="margin-top: 5px;" class="btn btn-warning btn-sm">
