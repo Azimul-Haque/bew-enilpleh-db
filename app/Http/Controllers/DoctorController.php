@@ -737,6 +737,8 @@ class DoctorController extends Controller
         
         $doctor = Doctor::findOrFail($id);
         $doctor->delete();
+        
+        Cache::flush();
 
         Session::flash('success', 'ডাক্তার ডিলেট করা হয়েছে!');
         return redirect()->back();
