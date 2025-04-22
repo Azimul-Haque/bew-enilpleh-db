@@ -732,12 +732,9 @@ class DoctorController extends Controller
         return redirect()->back();
     }
 
-    public function deleteDoctor(Request $request, $serial_id)
+    public function deleteDoctor(Request $request, $id)
     {
-        $this->validate($request,array(
-           
-        ));
-
+        
         $doctorserial = Doctorserial::findOrFail($serial_id);
         $doctorserial->delete();
 
