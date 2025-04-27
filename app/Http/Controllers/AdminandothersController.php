@@ -650,7 +650,7 @@ class AdminandothersController extends Controller
         }
         $coaching->address = $request->address;
         if($request->location) {
-            $hospital->location = $request->location;
+            $coaching->location = $request->location;
         }
         $coaching->description = $request->description;
         $coaching->save();
@@ -755,7 +755,7 @@ class AdminandothersController extends Controller
         }
         $coaching->address = $request->address;
         if($request->location) {
-            $hospital->location = $request->location;
+            $coaching->location = $request->location;
         }
         $coaching->description = $request->description;
         $coaching->save();
