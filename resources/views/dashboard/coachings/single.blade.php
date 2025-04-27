@@ -232,7 +232,7 @@
                       </div>
                   </div>
                   <div class="input-group mb-3">
-                    <select name="type" class="form-control" required>
+                    <select name="type" id="typeSelect" class="form-control" required>
                         <option selected="" disabled="" value="">শিক্ষা প্রতিষ্ঠানের ধরন</option>
                         <option value="1">সরকারি শিক্ষা প্রতিষ্ঠান</option>
                         <option value="2">বেসরকারি শিক্ষা প্রতিষ্ঠান</option>
