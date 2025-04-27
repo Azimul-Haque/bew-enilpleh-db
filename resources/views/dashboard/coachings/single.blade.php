@@ -108,9 +108,9 @@
                                     </div>
                                   </div>
 
-                                  <div id="subTypeEditContainer" class="input-group mb-3">
+                                  <div id="subTypeEditContainer" class="input-group mb-3" style="display:none;">
                                       <select id="subTypeSelectEdit" name="sub_type" class="form-control" required>
-                                          <option value="{{ $coaching->sub_type }}">{{ $coaching->sub_type }}</option>
+                                          <!-- Options will load dynamically -->
                                       </select>
                                   </div>
 
