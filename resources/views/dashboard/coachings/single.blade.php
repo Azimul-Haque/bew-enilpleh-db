@@ -350,6 +350,7 @@
 
             if (type == '1') {
                 options = `
+                    <option selected disabled>প্রাথমিক</option>
                     <option value="প্রাথমিক">প্রাথমিক</option>
                     <option value="মাধ্যমিক">মাধ্যমিক</option>
                     <option value="উচ্চমাধ্যমিক">উচ্চমাধ্যমিক</option>
