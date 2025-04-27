@@ -653,6 +653,9 @@ class AdminandothersController extends Controller
         if($request->location) {
             $coaching->location = $request->location;
         }
+        if($request->webaddress) {
+            $hospital->webaddress = $request->webaddress;
+        }
         $coaching->description = $request->description;
         $coaching->save();
 
