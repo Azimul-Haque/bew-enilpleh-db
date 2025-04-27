@@ -633,6 +633,10 @@ class AdminandothersController extends Controller
             'image2'            => 'sometimes|image|mimes:jpeg,png,jpg,gif,svg,webp|max:1000',
             'image3'            => 'sometimes|image|mimes:jpeg,png,jpg,gif,svg,webp|max:1000',
             'image4'            => 'sometimes|image|mimes:jpeg,png,jpg,gif,svg,webp|max:1000',
+            'image1caption'     => 'sometimes|max:191',
+            'image2caption'     => 'sometimes|max:191',
+            'image3caption'     => 'sometimes|max:191',
+            'image4caption'     => 'sometimes|max:191',
             'description'             => 'sometimes|max:500',
         ));
 
