@@ -18,10 +18,10 @@ class CreateCoachingsTable extends Migration
             $table->integer('district_id')->unsigned();
             $table->string('name');
             $table->integer('type');
+            $table->string('sub_type');
             $table->string('address');
             $table->string('mobile')->nullable();
             $table->string('location')->nullable();
-            $table->string('sub_type');
             $table->text('description')->nullable();
             $table->timestamps();
         });
