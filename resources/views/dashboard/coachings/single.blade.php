@@ -4,7 +4,7 @@
 @section('third_party_stylesheets')
    {{--  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/icheck-bootstrap@3.0.1/icheck-bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="{{ asset('css/bootstrap-datepicker.min.css') }}"> --}}
-    
+
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 @endsection
 
@@ -170,6 +170,64 @@
                         </div>
                       </div>
                     </div>
+                    <script>
+                    $(document).ready(function() {
+                        var selectedSubType = "{{ old('sub_type', $data->sub_type ?? '') }}";
+
+                        function loadSubTypes(type, selectedValue = '') {
+                            var options = '';
+
+                            if (type == '1') {
+                                options = `
+                                    <option value="প্রথমিক">প্রথমিক</option>
+                                    <option value="মাধ্যমিক">মাধ্যমিক</option>
+                                    <option value="উচ্চমাধ্যমিক">উচ্চমাধ্যমিক</option>
+                                    <option value="কলেজ/ বিশবিদযালয়">কলেজ/ বিশবিদযালয়</option>
+                                    <option value="মাদ্রাসা">মাদ্রাসা</option>
+                                    <option value="কারিগরি শিক্ষা">কারিগরি শিক্ষা</option>
+                                `;
+                            } else if (type == '2') {
+                                options = `
+                                    <option value="প্রথমিক">প্রথমিক</option>
+                                    <option value="মাধ্যমিক">মাধ্যমিক</option>
+                                    <option value="উচ্চমাধ্যমিক">উচ্চমাধ্যমিক</option>
+                                    <option value="কলেজ/ বিশবিদযালয়">কলেজ/ বিশবিদযালয়</option>
+                                    <option value="কারিগরি শিক্ষা">কারিগরি শিক্ষা</option>
+                                    <option value="ইংলিশ মিডিয়াম">ইংলিশ মিডিয়াম</option>
+                                    <option value="মাদ্রাসা">মাদ্রাসা</option>
+                                `;
+                            } else if (type == '3') {
+                                options = `
+                                    <option value="একাডেমিক (প্রথমিক/ মাধ্যমিক/ উচ্চমাধ্যমিক)">একাডেমিক (প্রথমিক/ মাধ্যমিক/ উচ্চমাধ্যমিক)</option>
+                                    <option value="ভর্তি কোচিং">ভর্তি কোচিং</option>
+                                    <option value="স্কিল ডেভেলপমেন্ট">স্কিল ডেভেলপমেন্ট</option>
+                                    <option value="IELTS/ GRE/ Tofel">IELTS/ GRE/ Tofel</option>
+                                `;
+                            }
+
+                            if (options != '') {
+                                $('#subTypeSelect').html(options);
+                                $('#subTypeContainer').show();
+
+                                // After options are loaded, select the correct sub_type
+                                if (selectedValue != '') {
+                                    $('#subTypeSelect').val(selectedValue);
+                                }
+                            } else {
+                                $('#subTypeContainer').hide();
+                            }
+                        }
+
+                        $('#typeSelect').change(function() {
+                            loadSubTypes($(this).val());
+                        });
+
+                        // If editing, trigger change automatically
+                        if ($('#typeSelect').val()) {
+                            loadSubTypes($('#typeSelect').val(), selectedSubType);
+                        }
+                    });
+                    </script>
 
                     {{-- Edit User Modal Code --}}
                     {{-- Edit User Modal Code --}}
