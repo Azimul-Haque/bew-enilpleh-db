@@ -313,9 +313,6 @@
 @section('third_party_scripts')
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script type="text/javascript">
-
-        
-
         $(document).on('click', '#search-button', function() {
           if($('#search-param').val() != '') {
             var urltocall = '{{ route('dashboard.coachings.districtwise', $district->id) }}' +  '/' + $('#search-param').val();
@@ -342,5 +339,50 @@
             }
           }
         });
+    </script>
+
+    <!-- jQuery part -->
+    <script>
+    $(document).ready(function() {
+        $('#typeSelect').change(function() {
+            var type = $(this).val();
+            var options = '';
+
+            if (type == '1') {
+                options = `
+                    <option value="প্রথমিক">প্রথমিক</option>
+                    <option value="মাধ্যমিক">মাধ্যমিক</option>
+                    <option value="উচ্চমাধ্যমিক">উচ্চমাধ্যমিক</option>
+                    <option value="কলেজ/ বিশবিদযালয়">কলেজ/ বিশবিদযালয়</option>
+                    <option value="মাদ্রাসা">মাদ্রাসা</option>
+                    <option value="কারিগরি শিক্ষা">কারিগরি শিক্ষা</option>
+                `;
+            } else if (type == '2') {
+                options = `
+                    <option value="প্রথমিক">প্রথমিক</option>
+                    <option value="মাধ্যমিক">মাধ্যমিক</option>
+                    <option value="উচ্চমাধ্যমিক">উচ্চমাধ্যমিক</option>
+                    <option value="কলেজ/ বিশবিদযালয়">কলেজ/ বিশবিদযালয়</option>
+                    <option value="কারিগরি শিক্ষা">কারিগরি শিক্ষা</option>
+                    <option value="ইংলিশ মিডিয়াম">ইংলিশ মিডিয়াম</option>
+                    <option value="মাদ্রাসা">মাদ্রাসা</option>
+                `;
+            } else if (type == '3') {
+                options = `
+                    <option value="একাডেমিক (প্রথমিক/ মাধ্যমিক/ উচ্চমাধ্যমিক)">একাডেমিক (প্রথমিক/ মাধ্যমিক/ উচ্চমাধ্যমিক)</option>
+                    <option value="ভর্তি কোচিং">ভর্তি কোচিং</option>
+                    <option value="স্কিল ডেভেলপমেন্ট">স্কিল ডেভেলপমেন্ট</option>
+                    <option value="IELTS/ GRE/ Tofel">IELTS/ GRE/ Tofel</option>
+                `;
+            }
+
+            if (options != '') {
+                $('#subTypeSelect').html(options);
+                $('#subTypeContainer').show();
+            } else {
+                $('#subTypeContainer').hide();
+            }
+        });
+    });
     </script>
 @endsection
