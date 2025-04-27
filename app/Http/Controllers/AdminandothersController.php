@@ -747,6 +747,7 @@ class AdminandothersController extends Controller
         $coaching->district_id = $district_id;
         $coaching->name = $request->name;
         $coaching->type = $request->type;
+        $coaching->sub_type = $request->sub_type;
         if($request->mobile) {
             $coaching->mobile = $request->mobile;
         } else {
