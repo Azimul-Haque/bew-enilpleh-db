@@ -173,6 +173,7 @@
                     <script>
                     $(document).ready(function() {
                         var selectedSubType = "{{ $coaching->type }}";
+                        loadSubTypes($(this).val());
 
                         function loadSubTypes(type, selectedValue = '') {
                             var options = '';
