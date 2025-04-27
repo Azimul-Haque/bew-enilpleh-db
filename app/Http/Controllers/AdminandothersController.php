@@ -779,6 +779,9 @@ class AdminandothersController extends Controller
             $coachingimage1              = new Coachingimage;
             $coachingimage1->coaching_id = $coaching->id;
             $coachingimage1->image       = $filename;
+            if($request->image1caption) {
+                $coachingimage1->caption       = $request->image1caption;
+            }
             $coachingimage1->save();
         }
         if($request->hasFile('image2')) {
@@ -798,6 +801,9 @@ class AdminandothersController extends Controller
             $coachingimage2              = new Coachingimage;
             $coachingimage2->coaching_id = $coaching->id;
             $coachingimage2->image       = $filename;
+            if($request->image2caption) {
+                $coachingimage2->caption       = $request->image2caption;
+            }
             $coachingimage2->save();
         }
         if($request->hasFile('image3')) {
