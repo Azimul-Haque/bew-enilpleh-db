@@ -4,6 +4,8 @@
 @section('third_party_stylesheets')
    {{--  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/icheck-bootstrap@3.0.1/icheck-bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="{{ asset('css/bootstrap-datepicker.min.css') }}"> --}}
+    
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 @endsection
 
 @section('content')
@@ -168,6 +170,7 @@
                         </div>
                       </div>
                     </div>
+
                     {{-- Edit User Modal Code --}}
                     {{-- Edit User Modal Code --}}
                     
@@ -340,7 +343,6 @@
 @endsection
 
 @section('third_party_scripts')
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script type="text/javascript">
         $(document).on('click', '#search-button', function() {
           if($('#search-param').val() != '') {
