@@ -274,20 +274,6 @@
                   <textarea class="form-control" name="description" placeholder="বক্স এর জন্য বার্তা লিখুন (Optional)">{{ old('description') }}</textarea>   
                   <div class="row">
                     <div class="col-md-12">
-                      <div class="input-group mb-3">
-                          <input type="text"
-                                 name="description"
-                                 value="{{ old('description') }}"
-                                 autocomplete="off"
-                                 class="form-control"
-                                 placeholder="বক্স এর জন্য বার্তা লিখুন (Optional)">
-                          <div class="input-group-append">
-                              <div class="input-group-text"><span class="fas fa-edit"></span></div>
-                          </div>
-                      </div>
-                      
-                    </div>
-                    <div class="col-md-12">
                       <h4>
                         বিস্তারিত (OPTIONAL)
                       </h4>
