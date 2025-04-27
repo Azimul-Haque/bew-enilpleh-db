@@ -669,6 +669,9 @@ class AdminandothersController extends Controller
             $coachingimage1              = new Coachingimage;
             $coachingimage1->coaching_id = $coaching->id;
             $coachingimage1->image       = $filename;
+            if($request->image1caption) {
+                $hospitalimage1->caption       = $request->image1caption;
+            }
             $coachingimage1->save();
         }
         if($request->hasFile('image2')) {
