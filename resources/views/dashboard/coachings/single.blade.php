@@ -106,6 +106,12 @@
                                     </div>
                                   </div>
 
+                                  <div id="subTypeContainer" class="input-group mb-3" style="display:none;">
+                                      <select id="subTypeSelect" name="sub_type" class="form-control" required>
+                                          <!-- Options will load dynamically -->
+                                      </select>
+                                  </div>
+
                                   <div class="input-group mb-3">
                                       <input type="number"
                                              name="mobile"
