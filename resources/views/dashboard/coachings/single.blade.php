@@ -350,7 +350,7 @@
 
             if (type == '1') {
                 options = `
-                    <option selected disabled>প্রাথমিক</option>
+                    <option selected disabled>ধরন সিলেক্ট করুন</option>
                     <option value="প্রাথমিক">প্রাথমিক</option>
                     <option value="মাধ্যমিক">মাধ্যমিক</option>
                     <option value="উচ্চমাধ্যমিক">উচ্চমাধ্যমিক</option>
@@ -360,6 +360,7 @@
                 `;
             } else if (type == '2') {
                 options = `
+                    <option selected disabled>ধরন সিলেক্ট করুন</option>
                     <option value="প্রাথমিক">প্রাথমিক</option>
                     <option value="মাধ্যমিক">মাধ্যমিক</option>
                     <option value="উচ্চমাধ্যমিক">উচ্চমাধ্যমিক</option>
@@ -370,6 +371,7 @@
                 `;
             } else if (type == '3') {
                 options = `
+                    <option selected disabled>ধরন সিলেক্ট করুন</option>
                     <option value="একাডেমিক (প্রথমিক/ মাধ্যমিক/ উচ্চমাধ্যমিক)">একাডেমিক (প্রথমিক/ মাধ্যমিক/ উচ্চমাধ্যমিক)</option>
                     <option value="ভর্তি কোচিং">ভর্তি কোচিং</option>
                     <option value="স্কিল ডেভেলপমেন্ট">স্কিল ডেভেলপমেন্ট</option>
