@@ -354,7 +354,7 @@
                     <option value="প্রাথমিক">প্রাথমিক</option>
                     <option value="মাধ্যমিক">মাধ্যমিক</option>
                     <option value="উচ্চমাধ্যমিক">উচ্চমাধ্যমিক</option>
-                    <option value="কলেজ/ বিশবিদযালয়">কলেজ/ বিশবিদযালয়</option>
+                    <option value="কলেজ/ বিশ্ববিদ্যালয়">কলেজ/ বিশ্ববিদ্যালয়</option>
                     <option value="মাদ্রাসা">মাদ্রাসা</option>
                     <option value="কারিগরি শিক্ষা">কারিগরি শিক্ষা</option>
                 `;
@@ -364,7 +364,7 @@
                     <option value="প্রাথমিক">প্রাথমিক</option>
                     <option value="মাধ্যমিক">মাধ্যমিক</option>
                     <option value="উচ্চমাধ্যমিক">উচ্চমাধ্যমিক</option>
-                    <option value="কলেজ/ বিশবিদযালয়">কলেজ/ বিশবিদযালয়</option>
+                    <option value="কলেজ/ বিশ্ববিদ্যালয়">কলেজ/ বিশ্ববিদ্যালয়</option>
                     <option value="কারিগরি শিক্ষা">কারিগরি শিক্ষা</option>
                     <option value="ইংলিশ মিডিয়াম">ইংলিশ মিডিয়াম</option>
                     <option value="মাদ্রাসা">মাদ্রাসা</option>
