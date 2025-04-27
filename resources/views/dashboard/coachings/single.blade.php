@@ -206,15 +206,15 @@
                             }
 
                             if (options != '') {
-                                $('#subTypeSelectEdit').html(options);
-                                $('#subTypeEditContainer').show();
+                                $('#subTypeSelectEdit{{ $coaching->id }}').html(options);
+                                $('#subTypeEditContainer{{ $coaching->id }}').show();
 
                                 // After options are loaded, select the correct sub_type
                                 if (selectedValue != '') {
-                                    $('#subTypeSelectEdit').val(selectedValue);
+                                    $('#subTypeSelectEdit{{ $coaching->id }}').val(selectedValue);
                                 }
                             } else {
-                                $('#subTypeEditContainer').hide();
+                                $('#subTypeEditContainer{{ $coaching->id }}').hide();
                             }
                         }
 
