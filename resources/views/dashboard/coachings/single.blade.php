@@ -273,25 +273,51 @@
                   </div>
                   <textarea class="form-control" name="description" placeholder="বক্স এর জন্য বার্তা লিখুন (Optional)">{{ old('description') }}</textarea>   
                   <div class="row">
+                    <div class="col-md-12">
+                      <div class="input-group mb-3">
+                          <input type="text"
+                                 name="description"
+                                 value="{{ old('description') }}"
+                                 autocomplete="off"
+                                 class="form-control"
+                                 placeholder="বক্স এর জন্য বার্তা লিখুন (Optional)">
+                          <div class="input-group-append">
+                              <div class="input-group-text"><span class="fas fa-edit"></span></div>
+                          </div>
+                      </div>
+                      
+                    </div>
+                    <div class="col-md-12">
+                      <h4>
+                        বিস্তারিত (OPTIONAL)
+                      </h4>
+                      <input type="text" name="webaddress" class="form-control" placeholder="ওয়েব এড্রেস" style="margin-bottom: 5px;">
+                      <h5>
+                        অথবা (ওয়েব এড্রেস দিলে নিচের ব্যানার প্রদর্শন করবে না)
+                      </h5>
+                    </div>
                     <div class="col-md-6">
                       <div class="form-group" style="margin-top: 15px;">
                           <label for="image">ব্যানার-১ (Optional, Max 1 MB)</label>
+                          <input type="text" name="image1caption" class="form-control" placeholder="ব্যানার-১ এর ক্যাপশন লিখুন (OPTIONAL)" style="margin-bottom: 5px;">
                           <input type="file" name="image1" accept="image/*">
                       </div>
 
                       <div class="form-group" style="margin-top: 15px;">
                           <label for="image">ব্যানার-২ (Optional, Max 1 MB)</label>
+                          <input type="text" name="image2caption" class="form-control" placeholder="ব্যানার-২ এর ক্যাপশন লিখুন (OPTIONAL)" style="margin-bottom: 5px;">
                           <input type="file" name="image2" accept="image/*">
                       </div>
                     </div>
-                    <div class="col-md-6">
+                    <div class="col-md-6">                    
                       <div class="form-group" style="margin-top: 15px;">
                           <label for="image">ব্যানার-৩ (Optional, Max 1 MB)</label>
+                          <input type="text" name="image3caption" class="form-control" placeholder="ব্যানার-৩ এর ক্যাপশন লিখুন (OPTIONAL)" style="margin-bottom: 5px;">
                           <input type="file" name="image3" accept="image/*">
                       </div>
-
                       <div class="form-group" style="margin-top: 15px;">
                           <label for="image">ব্যানার-৪ (Optional, Max 1 MB)</label>
+                          <input type="text" name="image4caption" class="form-control" placeholder="ব্যানার-৪ এর ক্যাপশন লিখুন (OPTIONAL)" style="margin-bottom: 5px;">
                           <input type="file" name="image4" accept="image/*">
                       </div>
                     </div>
