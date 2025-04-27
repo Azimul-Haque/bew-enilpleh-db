@@ -201,7 +201,7 @@
                                     <option value="একাডেমিক (প্রাথমিক/ মাধ্যমিক/ উচ্চমাধ্যমিক)">একাডেমিক (প্রাথমিক/ মাধ্যমিক/ উচ্চমাধ্যমিক)</option>
                                     <option value="ভর্তি কোচিং">ভর্তি কোচিং</option>
                                     <option value="স্কিল ডেভেলপমেন্ট">স্কিল ডেভেলপমেন্ট</option>
-                                    <option value="IELTS/ GRE/ Tofel">IELTS/ GRE/ Tofel</option>
+                                    <option value="IELTS/ GRE/ Toefl">IELTS/ GRE/ Toefl</option>
                                 `;
                             }
 
