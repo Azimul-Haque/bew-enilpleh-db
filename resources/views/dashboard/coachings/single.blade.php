@@ -97,7 +97,7 @@
                                   </div>
 
                                   <div class="input-group mb-3">
-                                    <select name="type" class="form-control" required>
+                                    <select name="type" class="form-control typeSelectEdit" required>
                                         <option selected="" disabled="" value="">শিক্ষা প্রতিষ্ঠানের ধরন</option>
                                         <option value="1" @if($coaching->type == 1) selected @endif>সরকারি শিক্ষা প্রতিষ্ঠান</option>
                                         <option value="2" @if($coaching->type == 2) selected @endif>বেসরকারি শিক্ষা প্রতিষ্ঠান</option>
