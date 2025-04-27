@@ -297,7 +297,7 @@ class HospitalController extends Controller
         if($request->website) {
             $hospital->website = $request->website;
         } else {
-            $hospital->website = '';
+            $hospital->website = NULL;
         }
         $hospital->address = $request->address;
         if($request->branch_data) {
