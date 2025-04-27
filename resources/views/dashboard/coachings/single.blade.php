@@ -107,7 +107,7 @@
                                   </div>
 
                                   <div id="subTypeContainer" class="input-group mb-3" style="display:none;">
-                                      <select id="subTypeSelect" name="sub_type" class="form-control" required>
+                                      <select id="subTypeSelectEdit" name="sub_type" class="form-control" required>
                                           <!-- Options will load dynamically -->
                                       </select>
                                   </div>
