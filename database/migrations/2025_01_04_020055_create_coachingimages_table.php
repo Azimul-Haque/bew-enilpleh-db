@@ -17,7 +17,7 @@ class CreateCoachingimagesTable extends Migration
             $table->id();
             $table->integer('coaching_id');
             $table->string('image');
-            $table->string('caption');
+            $table->string('caption')->nullable();
             $table->timestamps();
         });
     }
