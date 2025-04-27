@@ -206,15 +206,15 @@
                             }
 
                             if (options != '') {
-                                $('#subTypeSelect').html(options);
-                                $('#subTypeContainer').show();
+                                $('#subTypeSelectEdit').html(options);
+                                $('#subTypeEditContainer').show();
 
                                 // After options are loaded, select the correct sub_type
                                 if (selectedValue != '') {
-                                    $('#subTypeSelect').val(selectedValue);
+                                    $('#subTypeSelectEdit').val(selectedValue);
                                 }
                             } else {
-                                $('#subTypeContainer').hide();
+                                $('#subTypeEditContainer').hide();
                             }
                         }
 
