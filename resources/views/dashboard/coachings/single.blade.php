@@ -172,7 +172,7 @@
                     </div>
                     <script>
                     $(document).ready(function() {
-                        var selectedSubType = "{{ old('sub_type', $data->sub_type ?? '') }}";
+                        var selectedSubType = "{{ $coaching->type }}";
 
                         function loadSubTypes(type, selectedValue = '') {
                             var options = '';
