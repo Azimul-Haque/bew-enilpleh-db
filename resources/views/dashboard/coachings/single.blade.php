@@ -110,7 +110,7 @@
 
                                   <div id="subTypeEditContainer" class="input-group mb-3">
                                       <select id="subTypeSelectEdit" name="sub_type" class="form-control" required>
-                                          <option value="প্রথমিক">প্রথমিক</option>
+                                          <option value="{{ $coaching->sub_type }}">{{ $coaching->sub_type }}</option>
                                       </select>
                                   </div>
 
