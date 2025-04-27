@@ -271,6 +271,17 @@
                           <div class="input-group-text"><span class="fas fa-map-marked-alt"></span></div>
                       </div>
                   </div>
+                  <div class="input-group mb-3">
+                      <input type="text"
+                             name="location"
+                             value="{{ old('location') }}"
+                             autocomplete="off"
+                             class="form-control"
+                             placeholder="(OPTIONAL) গুগল ম্যাপ লোকেশন লিংক">
+                      <div class="input-group-append">
+                          <div class="input-group-text"><span class="fas fa-map-marker-alt"></span></div>
+                      </div>
+                  </div>
                   <textarea class="form-control" name="description" placeholder="বক্স এর জন্য বার্তা লিখুন (Optional)">{{ old('description') }}</textarea><br/>
                   <div class="row">
                     <div class="col-md-12">
