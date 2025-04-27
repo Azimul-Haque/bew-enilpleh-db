@@ -218,13 +218,13 @@
                             }
                         }
 
-                        $('#typeSelectEdit').change(function() {
+                        $('.typeSelectEdit').change(function() {
                             loadSubTypes($(this).val());
                         });
 
                         // If editing, trigger change automatically
-                        if ($('#typeSelectEdit').val()) {
-                            loadSubTypes($('#typeSelectEdit').val(), selectedSubType);
+                        if ($('.typeSelectEdit').val()) {
+                            loadSubTypes($('.typeSelectEdit').val(), selectedSubType);
                         }
                     });
                     </script>
