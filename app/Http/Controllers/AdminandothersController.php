@@ -625,6 +625,7 @@ class AdminandothersController extends Controller
         $this->validate($request,array(
             'name'                => 'required|string|max:191',
             'type'                => 'required',
+            'type'                => 'required',
             'mobile'              => 'sometimes|max:191',
             'address'             => 'required|string|max:191',
             'image1'            => 'sometimes|image|mimes:jpeg,png,jpg,gif,svg,webp|max:1000',
