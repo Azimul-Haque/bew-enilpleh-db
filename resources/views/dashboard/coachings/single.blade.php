@@ -110,7 +110,7 @@
 
                                   <div id="subTypeEditContainer" class="input-group mb-3" style="display:none;">
                                       <select id="subTypeSelectEdit" name="sub_type" class="form-control" required>
-                                          <!-- Options will load dynamically -->
+                                          <option value="প্রথমিক">প্রথমিক</option>
                                       </select>
                                   </div>
 
