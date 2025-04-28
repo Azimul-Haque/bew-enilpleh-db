@@ -53,7 +53,10 @@
                     <td>
                       {{ $coaching->name }}
                     </td>
-                    <td><span class="badge badge-pill badge-{{ edu_inst_badge($coaching->type) }}">{{ edu_inst_type($coaching->type) }}</span></td>
+                    <td>
+                      <span class="badge badge-pill badge-{{ edu_inst_badge($coaching->type) }}">{{ edu_inst_type($coaching->type) }}</span>
+                      <span class="badge badge-pill badge-{{ edu_inst_badge($coaching->type) }}">{{ edu_inst_type($coaching->type) }}</span>
+                    </td>
                     <td>{{ $coaching->mobile }}</td>
                     <td>{{ $coaching->address }}</td>
                     <td align="right">
