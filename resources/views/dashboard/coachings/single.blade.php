@@ -137,7 +137,7 @@
                                   <div class="input-group mb-3">
                                       <input type="text"
                                              name="location"
-                                             value="{{ old('location') }}"
+                                             value="{{ $coaching->location }}"
                                              autocomplete="off"
                                              class="form-control"
                                              placeholder="(OPTIONAL) গুগল ম্যাপ লোকেশন লিংক">
