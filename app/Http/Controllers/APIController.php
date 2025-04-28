@@ -763,7 +763,11 @@ class APIController extends Controller
                  foreach($coachings as $coaching) {
                      $imagestemp = collect();
                      foreach($coaching->coachingimages as $coachingimage) {
-                        $imagestemp->push($coachingimage->image);
+                        // $imagestemp->push($coachingimage->image);
+                        $imagestemp->push([
+                            'image' => $coachingimage->image,
+                            'caption' => $coachingimage->caption,
+                        ]);
                         $coachingimage->makeHidden('id', 'coaching_id', 'created_at', 'updated_at');
                         // $coaching->push($coachingimagetemp);
                      }
