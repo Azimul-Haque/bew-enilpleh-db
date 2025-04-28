@@ -55,7 +55,7 @@
                     </td>
                     <td>
                       <span class="badge badge-pill badge-{{ edu_inst_badge($coaching->type) }}">{{ edu_inst_type($coaching->type) }}</span>
-                      <span class="badge badge-pill badge-{{ edu_inst_badge($coaching->type) }}">{{ edu_inst_type($coaching->type) }}</span>
+                      <span class="badge badge-pill badge-default">{{ edu_inst_type($coaching->sub_type) }}</span>
                     </td>
                     <td>{{ $coaching->mobile }}</td>
                     <td>{{ $coaching->address }}</td>
