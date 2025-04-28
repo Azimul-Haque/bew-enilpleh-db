@@ -100,7 +100,7 @@
                                   </div>
 
                                   <div class="input-group mb-3">
-                                    <select name="type" class="form-control typeSelectEdit" required>
+                                    <select name="type" class="form-control typeSelectEdit{{ $coaching->id }}" required>
                                         <option selected="" disabled="" value="">শিক্ষা প্রতিষ্ঠানের ধরন</option>
                                         <option value="1" @if($coaching->type == 1) selected @endif>সরকারি শিক্ষা প্রতিষ্ঠান</option>
                                         <option value="2" @if($coaching->type == 2) selected @endif>বেসরকারি শিক্ষা প্রতিষ্ঠান</option>
@@ -245,13 +245,13 @@
                             }
                         }
 
-                        $('.typeSelectEdit').change(function() {
+                        $('.typeSelectEdit{{ $coaching->id }}').change(function() {
                             loadSubTypes($(this).val());
                         });
 
                         // If editing, trigger change automatically
-                        if ($('.typeSelectEdit').val()) {
-                            loadSubTypes($('.typeSelectEdit').val(), selectedSubType);
+                        if ($('.typeSelectEdit{{ $coaching->id }}').val()) {
+                            loadSubTypes($('.typeSelectEdit{{ $coaching->id }}').val(), selectedSubType);
                         }
                     });
                     </script>
