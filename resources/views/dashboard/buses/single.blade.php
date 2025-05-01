@@ -404,6 +404,13 @@
             `;
 
             $('#counterInputsWrapper').append(html);
+
+            // Initialize Select2
+             $(`#${selectId}`).select2({
+               width: '100%',
+               dropdownParent: $('#counterInputsWrapper')
+             });
+
             counterIndex++;
         });
 
@@ -413,7 +420,7 @@
         });
     </script>
 
-    
+
     <script type="text/javascript">
         $('.select2').select2({
           // theme: 'bootstrap4',
