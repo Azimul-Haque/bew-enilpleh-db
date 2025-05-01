@@ -474,7 +474,7 @@
                         <input type="text" name="counterdata[${counterIndex}][mobile]" class="form-control" placeholder="মোবাইল" required>
                     </div>
                     <div class="col-md-1 text-right">
-                        <button type="button" class="btn btn-danger btn-sm removeCounterRow">❌</button>
+                        <button type="button" class="btn btn-danger btn-sm removeCounterRow">X❌</button>
                     </div>
                 </div>
             `;
