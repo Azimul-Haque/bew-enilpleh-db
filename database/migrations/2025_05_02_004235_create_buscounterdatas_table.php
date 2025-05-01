@@ -15,6 +15,7 @@ class CreateBuscounterdatasTable extends Migration
     {
         Schema::create('buscounterdatas', function (Blueprint $table) {
             $table->id();
+            $table->integer('bus_id')->unsigned();
             $table->timestamps();
         });
     }
