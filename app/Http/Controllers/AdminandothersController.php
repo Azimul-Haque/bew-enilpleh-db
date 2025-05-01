@@ -1070,8 +1070,6 @@ class AdminandothersController extends Controller
     {
         $districts = District::all();
         $buscounters = Buscounter::all();
-
-        dd($buscounters);
                 
         return view('dashboard.buses.index')
                             ->withDistricts($districts)
@@ -1084,12 +1082,15 @@ class AdminandothersController extends Controller
         $district = District::find($district_id);
         $busescount = Bus::where('district_id', $district_id)->count();
         $buses = Bus::where('district_id', $district_id)->orderBy('id', 'asc')->paginate(10);
+
+        $buscounters = Buscounter::all();
                 
         return view('dashboard.buses.single')
                             ->withDistricts($districts)
                             ->withDistrict($district)
                             ->withBusescount($busescount)
-                            ->withBuses($buses);
+                            ->withBuses($buses)
+                            ->withBuscounters($buscounters);
     }
 
     public function busIndexSearch($district_id, $search)
