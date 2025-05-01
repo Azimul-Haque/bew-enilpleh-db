@@ -384,6 +384,8 @@
                 options += `<option value="${counter.id}">${counter.name}</option>`;
             });
 
+            const selectId = `select2-counter-${counterIndex}`;
+
             const html = `
                 <div class="row mb-2 counter-group align-items-center">
                     <div class="col-md-4">
