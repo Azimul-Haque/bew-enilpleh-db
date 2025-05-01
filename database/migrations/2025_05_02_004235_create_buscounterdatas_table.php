@@ -22,8 +22,8 @@ class CreateBuscounterdatasTable extends Migration
             $table->timestamps();
 
             // Foreign keys
-            $table->foreign('bus_id')->references('id')->on('hospitals')->onDelete('cascade');
-            $table->foreign('buscounter_id')->references('id')->on('hospitals')->onDelete('cascade');
+            $table->foreign('bus_id')->references('id')->on('buses')->onDelete('cascade');
+            $table->foreign('buscounter_id')->references('id')->on('buscounters')->onDelete('cascade');
         });
     }
 
