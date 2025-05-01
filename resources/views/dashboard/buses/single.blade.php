@@ -450,42 +450,5 @@
         });
     </script>
 
-    <script>
-        const buscounters = @json($buscounters);
-        let counterIndex = 0;
-
-        $('#addCounterBtn').on('click', function () {
-            let options = '<option value="">কাউন্টার নির্বাচন করুন</option>';
-            buscounters.forEach(counter => {
-                options += `<option value="${counter.id}">${counter.name}</option>`;
-            });
-
-            const html = `
-                <div class="row mb-2 counter-group align-items-center">
-                    <div class="col-md-4">
-                        <select name="counterdata[${counterIndex}][buscounter_id]" class="form-control select2" required>
-                            ${options}
-                        </select>
-                    </div>
-                    <div class="col-md-4">
-                        <input type="text" name="counterdata[${counterIndex}][address]" class="form-control" placeholder="ঠিকানা" required>
-                    </div>
-                    <div class="col-md-3">
-                        <input type="text" name="counterdata[${counterIndex}][mobile]" class="form-control" placeholder="মোবাইল" required>
-                    </div>
-                    <div class="col-md-1 text-right">
-                        <button type="button" class="btn btn-sm removeCounterRow">❌</button>
-                    </div>
-                </div>
-            `;
-
-            $('#counterInputsWrapper').append(html);
-            counterIndex++;
-        });
-
-        // Remove button action
-        $(document).on('click', '.removeCounterRow', function () {
-            $(this).closest('.counter-group').remove();
-        });
-    </script>
+    
 @endsection
