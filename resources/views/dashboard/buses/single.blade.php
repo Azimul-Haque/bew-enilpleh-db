@@ -354,7 +354,7 @@
                   </div> --}}
 
                   <!-- কাউন্টার যোগ করুন Button -->
-                  <button type="button" class="btn btn-sm btn-info mb-2" id="addCounterBtn">কাউন্টার যোগ করুন</button>
+                  <button type="button" class="btn btn-sm btn-primary mb-2" id="addCounterBtn">কাউন্টার যোগ করুন</button>
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-dismiss="modal">ফিরে যান</button>
