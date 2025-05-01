@@ -449,4 +449,40 @@
             }
         });
     </script>
+
+    <!-- Include buscounters data as JS variable -->
+    <script>
+        const buscounters = @json($buscounters);
+    </script>
+
+    <!-- jQuery Script -->
+    <script>
+        let counterIndex = 0;
+
+        $('#addCounterBtn').on('click', function () {
+            let options = '<option value="">কাউন্টার নির্বাচন করুন</option>';
+            buscounters.forEach(counter => {
+                options += `<option value="${counter.id}">${counter.name}</option>`;
+            });
+
+            const html = `
+                <div class="row mb-2 counter-group">
+                    <div class="col-md-4">
+                        <select name="counterdata[${counterIndex}][buscounter_id]" class="form-control" required>
+                            ${options}
+                        </select>
+                    </div>
+                    <div class="col-md-4">
+                        <input type="text" name="counterdata[${counterIndex}][address]" class="form-control" placeholder="ঠিকানা" required>
+                    </div>
+                    <div class="col-md-4">
+                        <input type="text" name="counterdata[${counterIndex}][mobile]" class="form-control" placeholder="মোবাইল" required>
+                    </div>
+                </div>
+            `;
+
+            $('#counterInputsWrapper').append(html);
+            counterIndex++;
+        });
+    </script>
 @endsection
