@@ -1152,7 +1152,7 @@ class AdminandothersController extends Controller
 
         if ($request->has('counterdata')) {
             foreach ($request->counterdata as $data) {
-                $buscounterdatas = new Duscounterdata;
+                $buscounterdatas = new Buscounterdata;
                 $buscounterdatas->bus_id = $bus->id;
                 $buscounterdatas->buscounter_id = $data['buscounter_id'];
                 $buscounterdatas->address = $data['address'];
