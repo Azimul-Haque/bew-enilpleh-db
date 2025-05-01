@@ -16,7 +16,7 @@ class CreateBuscountersTable extends Migration
         Schema::create('buscounters', function (Blueprint $table) {
             $table->id();
             $table->integer('user_id');
-            $table->string('counter_name');
+            $table->string('name');
             $table->timestamps();
         });
     }
