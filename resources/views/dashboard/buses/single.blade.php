@@ -413,6 +413,13 @@
                dropdownParent: $('#counterInputsWrapper')
              });
 
+             $('#modalId').on('shown.bs.modal', function () {
+                 $('.select2-dynamic').select2({
+                     width: '100%',
+                     dropdownParent: $('#modalId')
+                 });
+             });
+
             counterIndex++;
         });
 
