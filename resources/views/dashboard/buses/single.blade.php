@@ -408,7 +408,7 @@
             $('#counterInputsWrapper').append(html);
 
             // Initialize Select2
-             $(`#${selectId}`).select2({
+             $('#${selectId}').select2({
                width: '100%',
                dropdownParent: $('#counterInputsWrapper')
              });
