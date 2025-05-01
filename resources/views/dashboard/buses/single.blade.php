@@ -389,7 +389,7 @@
             const html = `
                 <div class="row mb-2 counter-group align-items-center">
                     <div class="col-md-4">
-                        <select id="${selectId}" name="counterdata[${counterIndex}][buscounter_id]" class="form-control select2" required>
+                        <select name="counterdata[${counterIndex}][buscounter_id]" class="form-control select2" required>
                             ${options}
                         </select>
                     </div>
@@ -407,18 +407,7 @@
 
             $('#counterInputsWrapper').append(html);
 
-            // Initialize Select2
-             $('`#${selectId}`').select2({
-               width: '100%',
-               dropdownParent: $('#counterInputsWrapper')
-             });
-
-             $('#modalId').on('shown.bs.modal', function () {
-                 $('.select2-dynamic').select2({
-                     width: '100%',
-                     dropdownParent: $('#modalId')
-                 });
-             });
+            
 
             counterIndex++;
         });
