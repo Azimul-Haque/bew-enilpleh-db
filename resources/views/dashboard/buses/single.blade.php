@@ -344,14 +344,17 @@
                           <div class="input-group-text"><span class="fas fa-mobile"></span></div>
                       </div>
                   </div>
-                  <div class="" style="margin-bottom: 15px;">
+                  {{-- <div class="" style="margin-bottom: 15px;">
                     <select name="buscounters" class="form-control select2" required>
                         <option selected="" disabled="" value="">গন্তব্য জেলা নির্বাচন করুন</option>
                         @foreach($buscounters as $buscounter)
                           <option value="{{ $buscounter->id }}">{{ $buscounter->name }}</option>
                         @endforeach
                     </select>
-                  </div>
+                  </div> --}}
+
+                  <!-- কাউন্টার যোগ করুন Button -->
+                  <button type="button" class="btn btn-sm btn-info mb-2" id="addCounterBtn">কাউন্টার যোগ করুন</button>
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-dismiss="modal">ফিরে যান</button>
