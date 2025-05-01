@@ -1150,6 +1150,17 @@ class AdminandothersController extends Controller
         $bus->save();
 
 
+        if ($request->has('counterdata')) {
+            foreach ($request->counterdata as $data) {
+                $bus->counterData()->create([
+                    'buscounter_id' => $data['buscounter_id'],
+                    'address' => $data['address'],
+                    'mobile' => $data['mobile'],
+                ]);
+            }
+        }
+
+
         Cache::forget('busesfrom' . $district_id);
         Cache::forget('busesto' . $request->to_district);
         Session::flash('success', 'Bus added successfully!');
