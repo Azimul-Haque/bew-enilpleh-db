@@ -269,9 +269,6 @@
                           <option value="{{ $buscounter->id }}">{{ $buscounter->name }}</option>
                         @endforeach
                     </select>
-                    {{-- <div class="input-group-append">
-                        <div class="input-group-text"><span class="fas fa-map"></span></div>
-                    </div> --}}
                   </div>
                   
                   <div class="input-group mb-3">
