@@ -1070,6 +1070,8 @@ class AdminandothersController extends Controller
     {
         $districts = District::all();
         $buscounters = Buscounter::all();
+
+        dd($buscounters);
                 
         return view('dashboard.buses.index')
                             ->withDistricts($districts)
