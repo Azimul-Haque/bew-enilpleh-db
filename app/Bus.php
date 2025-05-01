@@ -16,7 +16,7 @@ class Bus extends Model
         return $this->belongsTo('App\District', 'to_district', 'id');
     }
 
-    public function coachingimages(){
-        return $this->hasMany('App\Coachingimage');
+    public function buscounterdatas(){
+        return $this->hasMany('App\Buscounterdata');
     }
 }
