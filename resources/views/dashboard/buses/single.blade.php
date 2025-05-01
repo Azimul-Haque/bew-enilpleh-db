@@ -345,7 +345,7 @@
                       </div>
                   </div>
 
-                  //
+                  // HERE I NEED THE BUTTON AND REST OF THE THINGS
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-dismiss="modal">ফিরে যান</button>
