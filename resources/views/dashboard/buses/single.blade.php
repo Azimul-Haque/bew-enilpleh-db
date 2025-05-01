@@ -389,7 +389,7 @@
             const html = `
                 <div class="row mb-2 counter-group align-items-center">
                     <div class="col-md-4">
-                        <select name="counterdata[${counterIndex}][buscounter_id]" class="form-control select2" required>
+                        <select id="${selectId}" name="counterdata[${counterIndex}][buscounter_id]" class="form-control select2" required>
                             ${options}
                         </select>
                     </div>
