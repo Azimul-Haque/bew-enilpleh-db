@@ -20,6 +20,10 @@ class CreateBuscounterdatasTable extends Migration
             $table->string('address');
             $table->string('mobile');
             $table->timestamps();
+
+            // Foreign keys
+            $table->foreign('hospital_id')->references('id')->on('hospitals')->onDelete('cascade');
+            $table->foreign('branch_id')->references('id')->on('hospitals')->onDelete('cascade');
         });
     }
 
