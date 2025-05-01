@@ -564,6 +564,7 @@ class ComposerStaticInitd99be2aa22b662638be63ef18831ea06
         'App\\Blooddonormember' => __DIR__ . '/../..' . '/app/Blooddonormember.php',
         'App\\Bus' => __DIR__ . '/../..' . '/app/Bus.php',
         'App\\Buscounter' => __DIR__ . '/../..' . '/app/Buscounter.php',
+        'App\\Buscounterdata' => __DIR__ . '/../..' . '/app/Buscounterdata.php',
         'App\\Coaching' => __DIR__ . '/../..' . '/app/Coaching.php',
         'App\\Coachingimage' => __DIR__ . '/../..' . '/app/Coachingimage.php',
         'App\\Console\\Kernel' => __DIR__ . '/../..' . '/app/Console/Kernel.php',

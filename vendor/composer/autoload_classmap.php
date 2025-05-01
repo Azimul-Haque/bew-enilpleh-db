@@ -13,6 +13,7 @@ return array(
     'App\\Blooddonormember' => $baseDir . '/app/Blooddonormember.php',
     'App\\Bus' => $baseDir . '/app/Bus.php',
     'App\\Buscounter' => $baseDir . '/app/Buscounter.php',
+    'App\\Buscounterdata' => $baseDir . '/app/Buscounterdata.php',
     'App\\Coaching' => $baseDir . '/app/Coaching.php',
     'App\\Coachingimage' => $baseDir . '/app/Coachingimage.php',
     'App\\Console\\Kernel' => $baseDir . '/app/Console/Kernel.php',
