@@ -467,13 +467,13 @@
                             ${options}
                         </select>
                     </div>
-                    <div class="col-md-3">
+                    <div class="col-md-4">
                         <input type="text" name="counterdata[${counterIndex}][address]" class="form-control" placeholder="ঠিকানা" required>
                     </div>
                     <div class="col-md-3">
                         <input type="text" name="counterdata[${counterIndex}][mobile]" class="form-control" placeholder="মোবাইল" required>
                     </div>
-                    <div class="col-md-2 text-right">
+                    <div class="col-md-1 text-right">
                         <button type="button" class="btn btn-danger btn-sm removeCounterRow">❌</button>
                     </div>
                 </div>
