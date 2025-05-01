@@ -77,7 +77,7 @@
                     @foreach($buscounters as $buscounter)
                       <tr>
                         <td>
-                          {{ $buscounter->counter_name }}
+                          {{ $buscounter->name }}
                         </td>
                         <td align="right">
                           {{-- <button type="button" class="btn btn-warning btn-sm" data-toggle="modal" data-target="#notifModal{{ $buscounter->id }}">
@@ -104,9 +104,9 @@
                                         @csrf
                                         <div class="input-group mb-3">
                                             <input type="text"
-                                                   name="counter_name"
+                                                   name="name"
                                                    class="form-control"
-                                                   value="{{ $buscounter->counter_name }}"
+                                                   value="{{ $buscounter->name }}"
                                                    placeholder="কাউন্টারের নাম" required>
                                             <div class="input-group-append">
                                                 <div class="input-group-text"><span class="fas fa-map-marker-alt"></span></div>
@@ -153,9 +153,9 @@
                   @csrf
                   <div class="input-group mb-3">
                       <input type="text"
-                             name="counter_name"
+                             name="name"
                              class="form-control"
-                             value="{{ old('counter_name') }}"
+                             value="{{ old('name') }}"
                              placeholder="কাউন্টারের নাম" required>
                       <div class="input-group-append">
                           <div class="input-group-text"><span class="fas fa-map-marker-alt"></span></div>
