@@ -1155,12 +1155,10 @@ class AdminandothersController extends Controller
                 $buscounterdatas = new Duscounterdata;
                 $buscounterdatas->bus_id = $bus->id;
                 $buscounterdatas->buscounter_id = $data['buscounter_id'];
-                $buscounterdatas->buscounter_id = $data['buscounter_id'];
-                $bus->buscounterdatas()->create([
-                    'buscounter_id' => ,
-                    'address' => $data['address'],
-                    'mobile' => $data['mobile'],
-                ]);
+                $buscounterdatas->address = $data['address'];
+                $buscounterdatas->mobile = $data['mobile'];
+                $buscounterdatas->save();
+                
             }
         }
 
