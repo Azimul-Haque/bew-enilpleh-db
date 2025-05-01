@@ -17,6 +17,8 @@ class CreateBuscounterdatasTable extends Migration
             $table->id();
             $table->integer('bus_id')->unsigned();
             $table->integer('buscounter_id')->unsigned();
+            $table->string('address');
+            $table->string('mobile');
             $table->timestamps();
         });
     }
