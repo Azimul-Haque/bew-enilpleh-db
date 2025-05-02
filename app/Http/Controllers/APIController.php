@@ -876,7 +876,8 @@ class APIController extends Controller
                        foreach($bus->buscounterdatas as $buscounterdata) {
                           $bustmp->push([
                               'counter' => $buscounterdata->buscounter->name,
-                              'caption' => $coachingimage->caption,
+                              'address' => $buscounterdata->address,
+                              'mobile' => $buscounterdata->mobile,
                           ]);
                           $coachingimage->makeHidden('id', 'coaching_id', 'created_at', 'updated_at');
                           // $coaching->push($coachingimagetemp);
