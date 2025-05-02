@@ -1250,12 +1250,12 @@ class AdminandothersController extends Controller
         // Remove old counter data
         $bus->buscounterdatas()->delete();
         $bus->delete();
-        
+
         Cache::forget('busesfrom' . $district_id);
         Cache::forget('busesto' . $district_id);
 
         Session::flash('success', 'Hospital deleted successfully!');
-        return redirect()->route('dashboard.hospitals');
+        return redirect()->route('dashboard.buses');
     }
 
     public function newspaperIndex()
