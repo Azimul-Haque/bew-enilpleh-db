@@ -257,7 +257,7 @@
                             let field = `
                                 <div class="row mb-2 counter-group">
                                     <div class="col-md-4">
-                                        <select name="counters[]" class="form-control select2" required>${options}</select>
+                                        <select name="counters[]" class="form-control" required>${options}</select>
                                     </div>
                                     <div class="col-md-4">
                                         <input type="text" name="addresses[]" class="form-control" placeholder="ঠিকানা" required>
