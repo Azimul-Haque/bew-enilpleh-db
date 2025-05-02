@@ -1181,7 +1181,7 @@ class AdminandothersController extends Controller
             'starting_time'    => 'required|string|max:191',
             'counter_address'    => 'required|string|max:191',
             'contact'          => 'required|string|max:191',
-            'counterdata*'          => 'sometimes',
+            'counterdata.*'          => 'sometimes',
         ));
 
         dd($request->all());
