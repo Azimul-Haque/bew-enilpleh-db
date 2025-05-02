@@ -1127,7 +1127,6 @@ class AdminandothersController extends Controller
 
     public function storeBus(Request $request, $district_id)
     {
-        dd($request->all());
         $this->validate($request,array(
             'to_district'      => 'required',
             'bus_name'         => 'required|string|max:191',
@@ -1184,7 +1183,7 @@ class AdminandothersController extends Controller
             'contact'          => 'required|string|max:191',
         ));
 
-        dd($request->counterdata);
+        dd($request->all());
 
         $bus = Bus::find($id);
         // $bus->district_id = $district_id; // dorkar nai
