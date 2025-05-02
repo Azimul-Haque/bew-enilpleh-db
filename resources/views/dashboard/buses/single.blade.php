@@ -226,7 +226,7 @@
                                   @endif
                                 </div>
 
-                                <button type="button" class="btn btn-sm btn-primary mt-2" id="addCounterEdit"><i class="fas fa-plus-circle"></i> কাউন্টার যোগ করুন</button>
+                                <button type="button" class="btn btn-sm btn-primary mt-2" id="addCounterEdit{{ $bus->id }}"><i class="fas fa-plus-circle"></i> কাউন্টার যোগ করুন</button>
 
                             </div>
                             <div class="modal-footer">
@@ -241,7 +241,7 @@
                     $(document).ready(function () {
                         {{-- $('.select2').select2({ dropdownParent: $('#yourEditModalId') }); --}}
 
-                        $('#addCounterEdit').click(function () {
+                        $('#addCounterEdit{{ $bus->id }}').click(function () {
                             let existingOptions = [];
                             $('#counterFieldsEdit select').each(function () {
                                 existingOptions.push($(this).val());
