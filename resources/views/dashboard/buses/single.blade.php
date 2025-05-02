@@ -248,7 +248,7 @@
                         {{-- $('.select2').select2({ dropdownParent: $('#yourEditModalId') }); --}}
 
                         $jsiterator = {{ ++$edititerator }};
-                        
+
                         $('#addCounterEdit{{ $bus->id }}').click(function () {
                             let existingOptions = [];
                             $('#counterFieldsEdit{{ $bus->id }} select').each(function () {
@@ -261,7 +261,6 @@
                                     options += `<option value="{{ $counter->id }}">{{ $counter->name }}</option>`;
                                 }
                             @endforeach
-
 
                             let field = `
                                 <div class="row mb-2 counter-group">
