@@ -167,11 +167,6 @@ Route::post('/dashboard/bus/counter/{id}/update', 'AdminandothersController@upda
 
 
 
-
-
-
-
-
 // blog
 Route::get('/blogs', 'BlogController@index')->name('blogs.index');
 // Route::resource('blogs','BlogController');

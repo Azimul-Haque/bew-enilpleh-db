@@ -1179,12 +1179,10 @@ class AdminandothersController extends Controller
             'bus_type'         => 'required|string|max:191',
             'fare'             => 'required|string|max:191',
             'starting_time'    => 'required|string|max:191',
-            'counter_address'    => 'required|string|max:191',
+            'counter_address'  => 'required|string|max:191',
             'contact'          => 'required|string|max:191',
-            'counterdata.*'          => 'sometimes',
+            'counterdata.*'    => 'sometimes',
         ));
-
-        dd($request->all());
 
         $bus = Bus::find($id);
         // $bus->district_id = $district_id; // dorkar nai
@@ -1211,8 +1209,7 @@ class AdminandothersController extends Controller
                 $buscounterdatas->mobile = $data['mobile'];
                 $buscounterdatas->save();
             }
-        }
-       
+        }   
 
         Cache::forget('busesfrom' . $district_id);
         Cache::forget('busesto' . $request->to_district);
