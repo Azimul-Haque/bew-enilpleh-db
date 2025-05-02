@@ -201,10 +201,10 @@
                                 <hr>
                                 <h5>কাউন্টারসমূহ</h5>
                                 <div id="counterFieldsEdit{{ $bus->id }}">
+                                  @php
+                                    $edititerator = 1;
+                                  @endphp
                                   @if($bus->buscounterdatas)
-                                    @php
-                                      $edititerator = 1;
-                                    @endphp
                                     @foreach($bus->buscounterdatas as $counterdata)
                                       <div class="row mb-2 counter-group">
                                           <div class="col-md-4">
