@@ -879,7 +879,7 @@ class APIController extends Controller
                               'address' => $buscounterdata->address,
                               'mobile' => $buscounterdata->mobile,
                           ]);
-                          $coachingimage->makeHidden('id', 'coaching_id', 'created_at', 'updated_at');
+                          $coachingimage->makeHidden('id', 'bus_id', 'buscounter_id', 'created_at', 'updated_at');
                           // $coaching->push($coachingimagetemp);
                        }
                        $coaching->images = $bustmp;
