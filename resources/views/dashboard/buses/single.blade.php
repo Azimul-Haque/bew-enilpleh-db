@@ -265,7 +265,7 @@
                             let field = `
                                 <div class="row mb-2 counter-group">
                                     <div class="col-md-4">
-                                        <select name="counterdata[{{ $counterdata->id }}][buscounter_id]" class="form-control" required>${options}</select>
+                                        <select name="counterdata[`{$jsiterator}`][buscounter_id]" class="form-control" required>${options}</select>
                                     </div>
                                     <div class="col-md-4">
                                         <input type="text" name="addresses[]" class="form-control" placeholder="ঠিকানা" required>
