@@ -1134,7 +1134,6 @@ class AdminandothersController extends Controller
             'bus_type'         => 'required|string|max:191',
             'fare'             => 'required|string|max:191',
             'starting_time'    => 'required|string|max:191',
-            'counter_address'    => 'sometimes|string|max:191',
             'contact'          => 'required|string|max:191',
         ));
 
