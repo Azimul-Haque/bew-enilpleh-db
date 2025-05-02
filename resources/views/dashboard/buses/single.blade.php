@@ -246,9 +246,7 @@
                     <script>
                     $(document).ready(function () {
                         {{-- $('.select2').select2({ dropdownParent: $('#yourEditModalId') }); --}}
-
                         
-
                         $('#addCounterEdit{{ $bus->id }}').click(function () {
                             $jsiterator = {{ ++$edititerator }};
                             let existingOptions = [];
