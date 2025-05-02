@@ -202,27 +202,27 @@
                                 <h5>কাউন্টারসমূহ</h5>
                                 <div id="counterFieldsEdit{{ $bus->id }}">
                                   @if($bus->buscounterdatas)
-                                  @foreach($bus->buscounterdatas as $counterdata)
-                                    <div class="row mb-2 counter-group">
-                                        <div class="col-md-4">
-                                            <select name="countereditdata[{{ $counterdata->id }}][buscounter_id]" class="form-control" required>
-                                                <option value="">কাউন্টার নির্বাচন করুন</option>
-                                                @foreach($buscounters as $buscounter)
-                                                    <option value="{{ $buscounter->id }}" {{ $buscounter->id == $counterdata->buscounter_id ? 'selected' : '' }}>{{ $buscounter->name }}</option>
-                                                @endforeach
-                                            </select>
-                                        </div>
-                                        <div class="col-md-4">
-                                            <input type="text" name="countereditdata[{{ $counterdata->id }}][address]" class="form-control" placeholder="ঠিকানা" value="{{ $counterdata->address }}" required>
-                                        </div>
-                                        <div class="col-md-3">
-                                            <input type="text" name="countereditdata[{{ $counterdata->id }}][mobile]" class="form-control" placeholder="মোবাইল" value="{{ $counterdata->mobile }}" required>
-                                        </div>
-                                        <div class="col-md-1 d-flex align-items-center">
-                                            <button type="button" class="btn btn-danger btn-sm removeCounter"><i class="fas fa-times"></i></button>
-                                        </div>
-                                    </div>
-                                  @endforeach
+                                    @foreach($bus->buscounterdatas as $counterdata)
+                                      <div class="row mb-2 counter-group">
+                                          <div class="col-md-4">
+                                              <select name="countereditdata[{{ $counterdata->id }}][buscounter_id]" class="form-control" required>
+                                                  <option value="">কাউন্টার নির্বাচন করুন</option>
+                                                  @foreach($buscounters as $buscounter)
+                                                      <option value="{{ $buscounter->id }}" {{ $buscounter->id == $counterdata->buscounter_id ? 'selected' : '' }}>{{ $buscounter->name }}</option>
+                                                  @endforeach
+                                              </select>
+                                          </div>
+                                          <div class="col-md-4">
+                                              <input type="text" name="countereditdata[{{ $counterdata->id }}][address]" class="form-control" placeholder="ঠিকানা" value="{{ $counterdata->address }}" required>
+                                          </div>
+                                          <div class="col-md-3">
+                                              <input type="text" name="countereditdata[{{ $counterdata->id }}][mobile]" class="form-control" placeholder="মোবাইল" value="{{ $counterdata->mobile }}" required>
+                                          </div>
+                                          <div class="col-md-1 d-flex align-items-center">
+                                              <button type="button" class="btn btn-danger btn-sm removeCounter"><i class="fas fa-times"></i></button>
+                                          </div>
+                                      </div>
+                                    @endforeach
                                   @endif
                                 </div>
 
