@@ -133,25 +133,31 @@
                                         <div class="input-group-text"><span class="fas fa-bus"></span></div>
                                     </div>
                                 </div>
-                                <div class="input-group mb-3">
-                                    <input type="text"
-                                           name="bus_type"
-                                           class="form-control"
-                                           value="{{ $bus->bus_type }}"
-                                           placeholder="AC/ Non-AC/ Volvo/ স্ক্যানিয়া/ ডাবল ডেকার ইত্যাদি" required>
-                                    <div class="input-group-append">
-                                        <div class="input-group-text"><span class="fas fa-bus"></span></div>
+                                <div class="row">
+                                  <div class="col-md-6">
+                                    <div class="input-group mb-3">
+                                        <input type="text"
+                                               name="bus_type"
+                                               class="form-control"
+                                               value="{{ $bus->bus_type }}"
+                                               placeholder="AC/ Non-AC/ Volvo/ স্ক্যানিয়া/ ডাবল ডেকার ইত্যাদি" required>
+                                        <div class="input-group-append">
+                                            <div class="input-group-text"><span class="fas fa-bus"></span></div>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="input-group mb-3">
-                                    <input type="text"
-                                           name="fare"
-                                           class="form-control"
-                                           value="{{ $bus->fare }}"
-                                           placeholder="বাস ভাড়া" required>
-                                    <div class="input-group-append">
-                                        <div class="input-group-text"><span class="fas fa-bus"></span></div>
+                                  </div>
+                                  <div class="col-md-6">
+                                    <div class="input-group mb-3">
+                                        <input type="text"
+                                               name="fare"
+                                               class="form-control"
+                                               value="{{ $bus->fare }}"
+                                               placeholder="বাস ভাড়া" required>
+                                        <div class="input-group-append">
+                                            <div class="input-group-text"><span class="fas fa-bus"></span></div>
+                                        </div>
                                     </div>
+                                  </div>
                                 </div>
                                 <div class="input-group mb-3">
                                     <input type="text"
