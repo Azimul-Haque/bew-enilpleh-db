@@ -223,7 +223,6 @@
                                               <button type="button" class="btn btn-danger btn-sm removeCounter"><i class="fas fa-times"></i></button>
                                           </div>
                                       </div>
-                                      
                                     @endforeach
                                   @endif
                                 </div>
