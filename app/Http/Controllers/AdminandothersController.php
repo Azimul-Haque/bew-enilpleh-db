@@ -1199,8 +1199,8 @@ class AdminandothersController extends Controller
         $bus->buscounterdatas()->delete();
 
         // Save new counter data
-        if ($request->has('counterdata')) {
-            foreach ($request->counterdata as $data) {
+        if ($request->has('countereditdata')) {
+            foreach ($request->countereditdata as $data) {
                 $buscounterdatas = new Buscounterdata;
                 $buscounterdatas->bus_id = $bus->id;
                 $buscounterdatas->buscounter_id = $data['buscounter_id'];
