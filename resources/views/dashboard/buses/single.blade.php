@@ -97,7 +97,7 @@
                               <span aria-hidden="true">&times;</span>
                             </button>
                           </div>
-                          <form method="post" action="{{ route('dashboard.buses.update', [$district->id, $bus->id]) }}" enctype="multipart/form-data">
+                          <form method="post" action="{{ route('dashboard.buses.update', [$district->id, $bus->id]) }}">
                             <div class="modal-body">
                                 @csrf
                                 <h5>হতে জেলা: {{ $district->name_bangla }}</h5>
