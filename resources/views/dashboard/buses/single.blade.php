@@ -259,6 +259,7 @@
                   </div> --}}
 
                   <!-- কাউন্টার যোগ করুন Button -->
+                  <hr/>
                   <button type="button" class="btn btn-sm btn-primary mb-2" id="addCounterBtn">কাউন্টার যোগ করুন</button>
 
                   <!-- Dynamic Counter Inputs Will Appear Here -->
