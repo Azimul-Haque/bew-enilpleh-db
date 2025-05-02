@@ -1199,15 +1199,18 @@ class AdminandothersController extends Controller
         $bus->buscounterdatas()->delete();
 
         // Save new counter data
-        if (!empty($validated['buscounters'])) {
-            foreach ($validated['buscounters'] as $counter) {
-                $bus->busCounterData()->create([
-                    'buscounter_id' => $counter['buscounter_id'],
-                    'address' => $counter['address'],
-                    'mobile' => $counter['mobile'],
-                ]);
+        if ($request->has('counterdata')) {
+            foreach ($request->counterdata as $data) {
+                $buscounterdatas = new Buscounterdata;
+                $buscounterdatas->bus_id = $bus->id;
+                $buscounterdatas->buscounter_id = $data['buscounter_id'];
+                $buscounterdatas->address = $data['address'];
+                $buscounterdatas->mobile = $data['mobile'];
+                $buscounterdatas->save();
+                
             }
         }
+       
 
         Cache::forget('busesfrom' . $district_id);
         Cache::forget('busesto' . $request->to_district);
