@@ -280,7 +280,7 @@
 
                             $('#counterFieldsEdit{{ $bus->id }}').append(field);
                             {{-- $('.select2').select2({ dropdownParent: $('#yourEditModalId') }); --}}
-                            jsiterator = jsiterator;
+                            
                         });
 
                         $(document).on('click', '.removeCounter', function () {
