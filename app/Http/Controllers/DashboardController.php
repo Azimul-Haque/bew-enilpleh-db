@@ -38,7 +38,7 @@ class DashboardController extends Controller
         parent::__construct();
         $this->middleware('auth')->except('clear');
         $this->middleware(['admin'])->only('getUsers', 'storeUser', 'updateUser', 'deleteUser', 'getUser', 'getMessages', 'updateMessage', 'getNotifications');
-        
+
     }
 
     /**
@@ -52,7 +52,7 @@ class DashboardController extends Controller
         // if user is a manager, redirect him to his profile
         if(Auth::user()->role == 'user') {
             abort(403, 'Access Denied');
-        } 
+        }
 
         return view('dashboard.index');
     }
@@ -142,28 +142,28 @@ class DashboardController extends Controller
             foreach($request->hospitals as $hospital_id) {
                 $hospital = Hospital::find($hospital_id);
                 $user->accessibleHospitals()->attach($hospital);
-            }            
+            }
         }
 
         if(isset($request->doctors)){
             foreach($request->doctors as $doctors_id) {
                 $doctor = Doctor::find($doctors_id);
                 $user->accessibleDoctors()->attach($doctor);
-            }            
+            }
         }
 
         if(isset($request->blooddonors)){
             foreach($request->blooddonors as $blooddonor_id) {
                 $blooddonor = Blooddonor::find($blooddonor_id);
                 $user->accessibleBlooddonors()->attach($blooddonor);
-            }            
+            }
         }
 
         if(isset($request->coachings)){
             foreach($request->coachings as $coaching_id) {
                 $coaching = Coaching::find($coaching_id);
                 $user->accessibleCoachings()->attach($coaching);
-            }            
+            }
         }
 
         Session::flash('success', 'User created successfully!');
@@ -192,16 +192,16 @@ class DashboardController extends Controller
             foreach($request->hospitals as $hospital_id) {
                 $hospital = Hospital::find($hospital_id);
                 $user->accessibleHospitals()->attach($hospital);
-            }            
+            }
         } else {
-            $user->accessibleHospitals()->detach(); 
+            $user->accessibleHospitals()->detach();
         }
         if(isset($request->doctors)){
             $user->accessibleDoctors()->detach();
             foreach($request->doctors as $doctors_id) {
                 $doctor = Doctor::find($doctors_id);
                 $user->accessibleDoctors()->attach($doctor);
-            }            
+            }
         } else {
             $user->accessibleDoctors()->detach();
         }
@@ -210,7 +210,7 @@ class DashboardController extends Controller
             foreach($request->blooddonors as $blooddonor_id) {
                 $blooddonor = Blooddonor::find($blooddonor_id);
                 $user->accessibleBlooddonors()->attach($blooddonor);
-            }            
+            }
         } else {
             $user->accessibleBlooddonors()->detach();
         }
@@ -220,7 +220,7 @@ class DashboardController extends Controller
             foreach($request->coachings as $coaching_id) {
                 $coaching = Coaching::find($coaching_id);
                 $user->accessibleCoachings()->attach($coaching);
-            }            
+            }
         } else {
             $user->accessibleCoachings()->detach();
         }
@@ -247,7 +247,7 @@ class DashboardController extends Controller
                          ->whereIn('id', $paidusersids)
                          ->orderBy('package_expiry_date', 'asc')
                          ->get();
-            
+
             foreach ($users as $user) {
                 $mobile_number = 0;
                 if(strlen($user->mobile) == 11) {
@@ -261,7 +261,7 @@ class DashboardController extends Controller
             }
             $numbersstr = implode (",", $numbersarray);
             // dd($numbersstr);
-            
+
             $url = config('sms.url');
             $number = $mobile_number;
             $text = $request->sms; // . ' Customs and VAT Co-operative Society (CVCS).';
@@ -301,7 +301,7 @@ class DashboardController extends Controller
     public function getUser($id)
     {
         $user = User::find($id);
-        
+
         // dd($totaldeposit);
 
         return view('dashboard.users.single')
@@ -353,7 +353,7 @@ class DashboardController extends Controller
     public function getPackages()
     {
         $packages = Package::all();
-        
+
         return view('dashboard.packages.index')->withPackages($packages);
     }
 
@@ -390,12 +390,12 @@ class DashboardController extends Controller
             OneSignal::sendNotificationToUser(
                 $request->message,
                 $user->onesignal_id,
-                $url = null, 
+                $url = null,
                 $data = null,
-                $buttons = null, 
+                $buttons = null,
                 $schedule = null,
                 $headings = $request->headings,
-            );  
+            );
 
             Session::flash('success', 'Notification sent successfully!');
             return redirect()->route('dashboard.users');
@@ -458,7 +458,7 @@ class DashboardController extends Controller
             Session::flash('warning', 'দুঃখিত! SMS পাঠানো যায়নি!');
         }
         // NEW PANEL
-        
+
         // $data= array(
         //     'username'=>config('sms.username'),
         //     'password'=>config('sms.password'),
@@ -526,9 +526,9 @@ class DashboardController extends Controller
         } elseif($request->type == 'all') {
             OneSignal::sendNotificationToAll(
                 $request->message,
-                $url = null, 
-                $data = null, 
-                $buttons = null, 
+                $url = null,
+                $data = null,
+                $buttons = null,
                 $schedule = null,
                 $headings = $request->headings,
             );
@@ -537,9 +537,9 @@ class DashboardController extends Controller
             // LIVE HOILE ETA DEOA HOBE
             OneSignal::sendNotificationToAll(
                 $request->message,
-                $url = null, 
+                $url = null,
                 $data = array("a" => 'update'),
-                $buttons = null, 
+                $buttons = null,
                 $schedule = null,
                 $headings = $request->headings,
             );
@@ -547,9 +547,9 @@ class DashboardController extends Controller
             // OneSignal::sendNotificationToUser(
             //     $request->message,
             //     ['716ffeb3-f6c2-4a4a-a253-710f339aa863'],
-            //     $url = null, 
+            //     $url = null,
             //     $data = array("a" => 'update'),
-            //     $buttons = null, 
+            //     $buttons = null,
             //     $schedule = null,
             //     $headings = $request->headings,
             // );
@@ -605,9 +605,9 @@ class DashboardController extends Controller
         } elseif($request->type == 'all') {
             OneSignal::sendNotificationToAll(
                 $request->message,
-                $url = null, 
-                $data = null, 
-                $buttons = null, 
+                $url = null,
+                $data = null,
+                $buttons = null,
                 $schedule = null,
                 $headings = $request->headings,
             );
@@ -616,19 +616,19 @@ class DashboardController extends Controller
             // LIVE HOILE ETA DEOA HOBE
             // OneSignal::sendNotificationToAll(
             //     $request->message,
-            //     $url = null, 
+            //     $url = null,
             //     $data = array("a" => 'update'),
-            //     $buttons = null, 
+            //     $buttons = null,
             //     $schedule = null,
             //     $headings = $request->headings,
             // );
-            
+
             OneSignal::sendNotificationToUser(
                 $request->message,
                 ['716ffeb3-f6c2-4a4a-a253-710f339aa863'],
-                $url = null, 
+                $url = null,
                 $data = array("a" => 'update'),
-                $buttons = null, 
+                $buttons = null,
                 $schedule = null,
                 $headings = $request->headings,
             );
@@ -664,7 +664,7 @@ class DashboardController extends Controller
     // }
 
 
-    
+
 
     public function getComponents()
     {
