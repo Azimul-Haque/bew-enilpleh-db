@@ -216,7 +216,7 @@
                                             <input type="text" name="counterdata[{{ $counterdata->id }}][address]" class="form-control" placeholder="ঠিকানা" value="{{ $counterdata->address }}" required>
                                         </div>
                                         <div class="col-md-3">
-                                            <input type="text" name="counterdata[{{ $counterdata->id }}][address]" class="form-control" placeholder="মোবাইল" value="{{ $counterdata->mobile }}" required>
+                                            <input type="text" name="counterdata[{{ $counterdata->id }}][mobile]" class="form-control" placeholder="মোবাইল" value="{{ $counterdata->mobile }}" required>
                                         </div>
                                         <div class="col-md-1 d-flex align-items-center">
                                             <button type="button" class="btn btn-danger btn-sm removeCounter"><i class="fas fa-times"></i></button>
