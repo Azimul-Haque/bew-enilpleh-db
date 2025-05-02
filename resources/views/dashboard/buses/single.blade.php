@@ -247,7 +247,7 @@
                     $(document).ready(function () {
                         {{-- $('.select2').select2({ dropdownParent: $('#yourEditModalId') }); --}}
                         let counterIndex = {{ $bus->buscounterdatas->count() ?? 0 }};
-                        
+
                         $('#addCounterEdit{{ $bus->id }}').click(function () {
                             let existingOptions = [];
                             $('#counterFieldsEdit{{ $bus->id }} select').each(function () {
@@ -280,7 +280,7 @@
 
                             $('#counterFieldsEdit{{ $bus->id }}').append(field);
                             {{-- $('.select2').select2({ dropdownParent: $('#yourEditModalId') }); --}}
-                            counterIndex
+                            counterIndex++;
                         });
 
                         $(document).on('click', '.removeCounter', function () {
