@@ -1255,7 +1255,7 @@ class AdminandothersController extends Controller
         Cache::forget('busesto' . $district_id);
 
         Session::flash('success', 'Hospital deleted successfully!');
-        return redirect()->route('dashboard.buses');
+        return redirect()->back();
     }
 
     public function newspaperIndex()
