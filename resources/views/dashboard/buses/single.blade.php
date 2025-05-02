@@ -205,10 +205,10 @@
                                   @foreach($bus->buscounterdatas as $counterdata)
                                     <div class="row mb-2 counter-group">
                                         <div class="col-md-4">
-                                            <select name="counters[]" class="form-control " required>
+                                            <select name="counters[]" class="form-control" required>
                                                 <option value="">কাউন্টার নির্বাচন করুন</option>
-                                                @foreach($counterdata as $buscounter)
-                                                    {{-- <option value="{{ $buscounter->id }}" {{ $buscounter->id == $counterdata->buscounter_id ? 'selected' : '' }}>{{ $buscounter->name }}</option> --}}
+                                                @foreach($buscounters as $buscounter)
+                                                    <option value="{{ $buscounter->id }}" {{ $buscounter->id == $counterdata->buscounter_id ? 'selected' : '' }}>{{ $buscounter->name }}</option>
                                                 @endforeach
                                             </select>
                                         </div>
