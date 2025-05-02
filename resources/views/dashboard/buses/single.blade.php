@@ -237,6 +237,48 @@
                         </div>
                       </div>
                     </div>
+                    <script>
+                    $(document).ready(function () {
+                        {{-- $('.select2').select2({ dropdownParent: $('#yourEditModalId') }); --}}
+
+                        $('#addCounterEdit').click(function () {
+                            let existingOptions = [];
+                            $('#counterFieldsEdit select').each(function () {
+                                existingOptions.push($(this).val());
+                            });
+
+                            let options = `<option value="">কাউন্টার নির্বাচন করুন</option>`;
+                            @foreach($buscounters as $counter)
+                                if (!existingOptions.includes("{{ $counter->id }}")) {
+                                    options += `<option value="{{ $counter->id }}">{{ $counter->name }}</option>`;
+                                }
+                            @endforeach
+
+                            let field = `
+                                <div class="row mb-2 counter-group">
+                                    <div class="col-md-4">
+                                        <select name="counters[]" class="form-control select2" required>${options}</select>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <input type="text" name="addresses[]" class="form-control" placeholder="ঠিকানা" required>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <input type="text" name="mobiles[]" class="form-control" placeholder="মোবাইল" required>
+                                    </div>
+                                    <div class="col-md-1 d-flex align-items-center">
+                                        <button type="button" class="btn btn-danger btn-sm removeCounter"><i class="fas fa-times"></i></button>
+                                    </div>
+                                </div>`;
+
+                            $('#counterFieldsEdit').append(field);
+                            $('.select2').select2({ dropdownParent: $('#yourEditModalId') });
+                        });
+
+                        $(document).on('click', '.removeCounter', function () {
+                            $(this).closest('.counter-group').remove();
+                        });
+                    });
+                    </script>
                     {{-- Edit User Modal Code --}}
                     {{-- Edit User Modal Code --}}
                         {{-- Delete User Modal Code --}}
