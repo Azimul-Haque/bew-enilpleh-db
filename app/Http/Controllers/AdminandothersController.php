@@ -1244,7 +1244,7 @@ class AdminandothersController extends Controller
         return redirect()->route('dashboard.buses');
     }
 
-    public function deleteBus($id)
+    public function deleteBus($district_id, $id)
     {
         $hospital = Hospital::find($id);
         Cache::forget('hospitals'. $hospital->hospital_type . $hospital->district_id);
