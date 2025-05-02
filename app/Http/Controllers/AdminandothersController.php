@@ -1214,7 +1214,7 @@ class AdminandothersController extends Controller
         Cache::forget('busesfrom' . $district_id);
         Cache::forget('busesto' . $request->to_district);
         Session::flash('success', 'Bus updated successfully!');
-        return redirect()->route()->back();
+        return redirect()->back();
     }
 
     public function storeBusCounter(Request $request)
