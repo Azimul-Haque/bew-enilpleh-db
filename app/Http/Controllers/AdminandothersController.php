@@ -1127,7 +1127,7 @@ class AdminandothersController extends Controller
 
     public function storeBus(Request $request, $district_id)
     {
-        dd($request->counterdata);
+        dd($request->all());
         $this->validate($request,array(
             'to_district'      => 'required',
             'bus_name'         => 'required|string|max:191',
