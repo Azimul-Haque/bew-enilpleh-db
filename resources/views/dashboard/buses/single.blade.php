@@ -73,18 +73,17 @@
                 </thead> --}}
                 <tbody>
                   <tr>
-                    <td>
+                    <td width="20%">
                       {{ $bus->bus_name }}<br/>
                       <span class="badge bg-success">{{ $bus->bus_type }}</span>
                       <span class="badge bg-warning">{{ $bus->contact }}</span>
                     </td>
-                    <td>{{ $bus->district->name_bangla }}</td>
-                    <td>{{ $bus->toDistrict->name_bangla }}</td>
-                    <td>{{ $bus->starting_time }}</td>
+                    <td width="15%">{{ $bus->district->name_bangla }}</td>
+                    <td width="15%">{{ $bus->toDistrict->name_bangla }}</td>
+                    <td width="10%">{{ $bus->starting_time }}</td>
                     <td width="15%"><small>{{ $bus->route_info }}</small></td>
-                    <td>
+                    <td width="20%">
                       <span class="badge bg-primary">ভাড়া: ৳ {{ $bus->fare }}/-</span><br/>
-                      <small>{{ $bus->counter_address }}</small>
                     </td>
                     <td align="right">
                       {{-- <button type="button" class="btn btn-warning btn-sm" data-toggle="modal" data-target="#notifModal{{ $bus->id }}">
