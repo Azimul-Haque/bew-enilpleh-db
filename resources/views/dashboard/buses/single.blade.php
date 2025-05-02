@@ -281,7 +281,7 @@
 
                             $('#counterFieldsEdit{{ $bus->id }}').append(field);
                             {{-- $('.select2').select2({ dropdownParent: $('#yourEditModalId') }); --}}
-
+                            oldjsiterator = oldjsiterator++;
                         });
 
                         $(document).on('click', '.removeCounter', function () {
