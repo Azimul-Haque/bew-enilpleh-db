@@ -1244,6 +1244,17 @@ class AdminandothersController extends Controller
         return redirect()->route('dashboard.buses');
     }
 
+    public function deleteBus($id)
+    {
+        $hospital = Hospital::find($id);
+        Cache::forget('hospitals'. $hospital->hospital_type . $hospital->district_id);
+        Cache::forget('hospitals'. $hospital->hospital_type . $hospital->district_id . $hospital->upazilla_id);
+        $hospital->delete();
+
+        Session::flash('success', 'Hospital deleted successfully!');
+        return redirect()->route('dashboard.hospitals');
+    }
+
     public function newspaperIndex()
     {
         $newspaperscount = Newspaper::count();
