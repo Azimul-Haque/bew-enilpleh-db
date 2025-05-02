@@ -201,6 +201,7 @@
                                 <hr>
                                 <h5>কাউন্টারসমূহ</h5>
                                 <div id="counterFieldsEdit">
+                                  @if($bus->buscounters)
                                   @foreach($bus->buscounters as $counterdata)
                                     <div class="row mb-2 counter-group">
                                         <div class="col-md-4">
@@ -222,10 +223,11 @@
                                         </div>
                                     </div>
                                   @endforeach
+                                  @endif
                                 </div>
 
                                 <button type="button" class="btn btn-sm btn-primary mt-2" id="addCounterEdit"><i class="fas fa-plus-circle"></i> কাউন্টার যোগ করুন</button>
-                                
+
                             </div>
                             <div class="modal-footer">
                               <button type="button" class="btn btn-secondary" data-dismiss="modal">ফিরে যান</button>
