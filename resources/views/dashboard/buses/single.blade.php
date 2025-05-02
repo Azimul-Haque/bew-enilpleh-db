@@ -262,7 +262,6 @@
                                 }
                             @endforeach
 
-                            
 
                             let field = `
                                 <div class="row mb-2 counter-group">
