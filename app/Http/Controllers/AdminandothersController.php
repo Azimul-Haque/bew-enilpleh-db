@@ -1183,6 +1183,8 @@ class AdminandothersController extends Controller
             'contact'          => 'required|string|max:191',
         ));
 
+        dd($request->all());
+
         $bus = Bus::find($id);
         // $bus->district_id = $district_id; // dorkar nai
         $bus->to_district = $request->to_district;
