@@ -52,8 +52,8 @@
                   <th width="20%">নাম</th>
                   <th width="10%">হতে</th>
                   <th width="10%">পর্যন্ত</th>
-                  <th width="25%">ছাড়ার সময়</th>
-                  <th width="20%">রুটের তথ্য</th>
+                  <th width="30%">ছাড়ার সময়</th>
+                  <th width="15%">রুটের তথ্য</th>
                   <th align="right" width="15%">কার্যক্রম</th>
                 </tr>
               </thead>
@@ -80,8 +80,8 @@
                     </td>
                     <td width="10%">{{ $bus->district->name_bangla }}</td>
                     <td width="10%">{{ $bus->toDistrict->name_bangla }}</td>
-                    <td width="25%">{{ $bus->starting_time }}<br/><span class="badge bg-primary">ভাড়া: ৳ {{ $bus->fare }}/-</span></td>
-                    <td width="20%"><small>{{ $bus->route_info }}</small></td>
+                    <td width="30%">{{ $bus->starting_time }}<br/><span class="badge bg-primary">ভাড়া: ৳ {{ $bus->fare }}/-</span></td>
+                    <td width="15%"><small>{{ $bus->route_info }}</small></td>
                     <td align="right" width="15%">
                       {{-- <button type="button" class="btn btn-warning btn-sm" data-toggle="modal" data-target="#notifModal{{ $bus->id }}">
                         <i class="fas fa-bell"></i>
