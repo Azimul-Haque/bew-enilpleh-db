@@ -81,8 +81,8 @@
                     <td width="15%">{{ $bus->district->name_bangla }}</td>
                     <td width="15%">{{ $bus->toDistrict->name_bangla }}</td>
                     <td width="10%">{{ $bus->starting_time }}<br/><span class="badge bg-primary">ভাড়া: ৳ {{ $bus->fare }}/-</span></td>
-                    <td width="15%"><small>{{ $bus->route_info }}</small></td>
-                    <td align="right">
+                    <td width="25%"><small>{{ $bus->route_info }}</small></td>
+                    <td align="right" width="15%">
                       {{-- <button type="button" class="btn btn-warning btn-sm" data-toggle="modal" data-target="#notifModal{{ $bus->id }}">
                         <i class="fas fa-bell"></i>
                       </button> --}}
