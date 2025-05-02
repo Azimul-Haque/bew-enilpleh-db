@@ -200,7 +200,7 @@
 
                                 <hr>
                                 <h5>কাউন্টারসমূহ</h5>
-                                <div id="counterFieldsEdit">
+                                <div id="counterFieldsEdit{{ $bus->id }}">
                                   @if($bus->buscounterdatas)
                                   @foreach($bus->buscounterdatas as $counterdata)
                                     <div class="row mb-2 counter-group">
@@ -243,7 +243,7 @@
 
                         $('#addCounterEdit{{ $bus->id }}').click(function () {
                             let existingOptions = [];
-                            $('#counterFieldsEdit select').each(function () {
+                            $('#counterFieldsEdit{{ $bus->id }} select').each(function () {
                                 existingOptions.push($(this).val());
                             });
 
@@ -270,7 +270,7 @@
                                     </div>
                                 </div>`;
 
-                            $('#counterFieldsEdit').append(field);
+                            $('#counterFieldsEdit{{ $bus->id }}').append(field);
                             {{-- $('.select2').select2({ dropdownParent: $('#yourEditModalId') }); --}}
                         });
 
