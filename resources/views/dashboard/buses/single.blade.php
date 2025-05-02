@@ -226,7 +226,7 @@
                       </div>
                     </div>
                     <div class="col-md-6">
-                      <div class="input-group mb-3">
+                      {{-- <div class="input-group mb-3">
                           <input type="text"
                                  name="counter_address"
                                  class="form-control"
@@ -235,19 +235,20 @@
                           <div class="input-group-append">
                               <div class="input-group-text"><span class="fas fa-bus"></span></div>
                           </div>
+                      </div> --}}
+                      <div class="input-group mb-3">
+                          <input type="number"
+                                 name="contact"
+                                 value="{{ old('contact') }}"
+                                 class="form-control"
+                                 placeholder="মোবাইল নং (১১ ডিজিট, ইংরেজিতে)" required>
+                          <div class="input-group-append">
+                              <div class="input-group-text"><span class="fas fa-mobile"></span></div>
+                          </div>
                       </div>
                     </div>
                   </div>
-                  <div class="input-group mb-3">
-                      <input type="number"
-                             name="contact"
-                             value="{{ old('contact') }}"
-                             class="form-control"
-                             placeholder="মোবাইল নং (১১ ডিজিট, ইংরেজিতে)" required>
-                      <div class="input-group-append">
-                          <div class="input-group-text"><span class="fas fa-mobile"></span></div>
-                      </div>
-                  </div>
+                  
                   {{-- <div class="" style="margin-bottom: 15px;">
                     <select name="buscounters" class="form-control select2" required>
                         <option selected="" disabled="" value="">গন্তব্য জেলা নির্বাচন করুন</option>
