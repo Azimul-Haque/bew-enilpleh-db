@@ -842,17 +842,20 @@ class APIController extends Controller
                  foreach($buses as $bus) {
                        $bus->district_from = $bus->district->name_bangla;
                        $bus->district_to = $bus->toDistrict->name_bangla;
+                       $bustmp = collect();
+                       foreach($bus->buscounterdatas as $buscounterdata) {
+                          $bustmp->push([
+                              'counter' => $buscounterdata->buscounter->name,
+                              'address' => $buscounterdata->address,
+                              'mobile' => $buscounterdata->mobile,
+                          ]);
+                          $buscounterdata->makeHidden('id', 'bus_id', 'buscounter_id', 'created_at', 'updated_at');
+                       }
+                       $bus->buscounters = $bustmp;
+                       $bus->makeHidden('coachingimages', 'id', 'district_id', 'created_at', 'updated_at');
                        $bus->makeHidden('district', 'toDistrict', 'id', 'district_id', 'to_district', 'created_at', 'updated_at');
                  }
-                 $bustmp = collect();
-                   foreach($bus->buscounterdatas as $buscounterdata) {
-                      $bustmp->push([
-                          'counter' => $buscounterdata->buscounter->name,
-                          'address' => $buscounterdata->address,
-                          'mobile' => $buscounterdata->mobile,
-                      ]);
-                      $buscounterdata->makeHidden('id', 'bus_id', 'buscounter_id', 'created_at', 'updated_at');
-                   }
+
                  return $buses;
             });
             dd($buses);
