@@ -171,6 +171,8 @@
                                             <div class="input-group-text"><span class="fas fa-bus"></span></div>
                                         </div>
                                     </div>
+                                  </div>
+                                  <div class="col-md-6">
                                     <div class="input-group mb-3">
                                         <input type="text"
                                                name="counter_address"
@@ -182,7 +184,6 @@
                                         </div>
                                     </div>    
                                   </div>
-                                  <div class="col-md-6"></div>
                                 </div>                            
                                 <div class="input-group mb-3">
                                     <input type="number"
