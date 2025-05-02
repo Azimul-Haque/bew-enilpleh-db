@@ -239,7 +239,7 @@
                       </div>
                     </div>
                     <script>
-                    $(document).ready(function () {
+                    
                         {{-- $('.select2').select2({ dropdownParent: $('#yourEditModalId') }); --}}
                         let counterEditIndex = {{ $bus->buscounterdatas->count() ?? 0 }};
 
@@ -281,7 +281,7 @@
                         $(document).on('click', '.removeCounter', function () {
                             $(this).closest('.counter-group').remove();
                         });
-                    });
+                    
                     </script>
                     {{-- Edit User Modal Code --}}
                     {{-- Edit User Modal Code --}}
