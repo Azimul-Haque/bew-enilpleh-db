@@ -1247,8 +1247,8 @@ class AdminandothersController extends Controller
     public function deleteBus($district_id, $id)
     {
         $bus = Bus::find($id);
-        Cache::forget('hospitals'. $hospital->hospital_type . $hospital->district_id);
-        Cache::forget('hospitals'. $hospital->hospital_type . $hospital->district_id . $hospital->upazilla_id);
+        Cache::forget('busesfrom' . $district_id);
+        Cache::forget('busesto' . $district_id);
         $hospital->delete();
 
         Session::flash('success', 'Hospital deleted successfully!');
