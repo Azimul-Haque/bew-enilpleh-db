@@ -91,7 +91,7 @@
                   <!-- Modal -->
                   <div class="modal fade" id="editUserModal{{ $bus->id }}" tabindex="-1" role="dialog" aria-labelledby="editUserModalLabel" aria-hidden="true" data-backdrop="static">
                     <div class="modal-dialog modal-lg" role="document">
-                      <form method="post" action="{{ route('dashboard.buses.update', [$district->id, $bus->id]) }}">
+                      
                         <div class="modal-content">
                           <div class="modal-header bg-primary">
                             <h5 class="modal-title" id="editUserModalLabel">বাস তথ্য হালনাগাদ</h5>
@@ -99,7 +99,7 @@
                               <span aria-hidden="true">&times;</span>
                             </button>
                           </div>
-                          
+                          <form method="post" action="/">
                             <div class="modal-body">
                                 @csrf
                                 <h5>হতে জেলা: {{ $district->name_bangla }}</h5>
@@ -235,8 +235,8 @@
                               <button type="button" class="btn btn-secondary" data-dismiss="modal">ফিরে যান</button>
                               <button type="submit" class="btn btn-primary">দাখিল করুন</button>
                             </div>
+                          </form>
                         </div>
-                      </form>
                     </div>
                   </div>
 
