@@ -872,17 +872,17 @@ class APIController extends Controller
                        $bus->district_to = $bus->toDistrict->name_bangla;
                        $bus->makeHidden('district', 'toDistrict', 'id', 'district_id', 'to_district', 'created_at', 'updated_at');
 
-                       $imagestemp = collect();
-                       foreach($coaching->coachingimages as $coachingimage) {
-                          // $imagestemp->push($coachingimage->image);
-                          $imagestemp->push([
+                       $bustmp = collect();
+                       foreach($bus->buscounterdatas as $buscounterdata) {
+                          // $bustmp->push($coachingimage->image);
+                          $bustmp->push([
                               'image' => $coachingimage->image,
                               'caption' => $coachingimage->caption,
                           ]);
                           $coachingimage->makeHidden('id', 'coaching_id', 'created_at', 'updated_at');
                           // $coaching->push($coachingimagetemp);
                        }
-                       $coaching->images = $imagestemp;
+                       $coaching->images = $bustmp;
                        $coaching->makeHidden('coachingimages', 'id', 'district_id', 'created_at', 'updated_at');
                  }
                  return $buses;
