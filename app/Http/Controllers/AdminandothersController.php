@@ -1207,7 +1207,6 @@ class AdminandothersController extends Controller
                 $buscounterdatas->address = $data['address'];
                 $buscounterdatas->mobile = $data['mobile'];
                 $buscounterdatas->save();
-                
             }
         }
        
