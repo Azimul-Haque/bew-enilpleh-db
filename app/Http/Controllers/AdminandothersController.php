@@ -1247,6 +1247,8 @@ class AdminandothersController extends Controller
     public function deleteBus($district_id, $id)
     {
         $bus = Bus::find($id);
+        // Remove old counter data
+        $bus->buscounterdatas()->delete();
         Cache::forget('busesfrom' . $district_id);
         Cache::forget('busesto' . $district_id);
         $bus->delete();
