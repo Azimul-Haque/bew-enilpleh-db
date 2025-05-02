@@ -201,13 +201,13 @@
                                 <hr>
                                 <h5>কাউন্টারসমূহ</h5>
                                 <div id="counterFieldsEdit">
-                                  @if($bus->buscounters)
-                                  @foreach($bus->buscounters as $counterdata)
+                                  @if($bus->buscounterdatas)
+                                  @foreach($bus->buscounterdatas as $counterdata)
                                     <div class="row mb-2 counter-group">
                                         <div class="col-md-4">
                                             <select name="counters[]" class="form-control select2" required>
                                                 <option value="">কাউন্টার নির্বাচন করুন</option>
-                                                @foreach($buscounters as $counter)
+                                                @foreach($buscounterdatas as $counter)
                                                     <option value="{{ $counter->id }}" {{ $counter->id == $counterdata->buscounter_id ? 'selected' : '' }}>{{ $counter->name }}</option>
                                                 @endforeach
                                             </select>
