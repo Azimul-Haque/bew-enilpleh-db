@@ -248,7 +248,7 @@
                         {{-- $('.select2').select2({ dropdownParent: $('#yourEditModalId') }); --}}
 
                         $jsiterator = {{ ++$edititerator }};
-
+                        
                         $('#addCounterEdit{{ $bus->id }}').click(function () {
                             let existingOptions = [];
                             $('#counterFieldsEdit{{ $bus->id }} select').each(function () {
@@ -262,16 +262,17 @@
                                 }
                             @endforeach
 
+
                             let field = `
                                 <div class="row mb-2 counter-group">
                                     <div class="col-md-4">
-                                        <select name="counterdata[`{$jsiterator}`][buscounter_id]" class="form-control" required>${options}</select>
+                                        <select name="counterdata[${jsiterator}][buscounter_id]" class="form-control" required>${options}</select>
                                     </div>
                                     <div class="col-md-4">
-                                        <input type="text" name="counterdata[`{$jsiterator}`][address]" class="form-control" placeholder="ঠিকানা" required>
+                                        <input type="text" name="counterdata[${jsiterator}][address]" class="form-control" placeholder="ঠিকানা" required>
                                     </div>
                                     <div class="col-md-3">
-                                        <input type="text" name="counterdata[`{$jsiterator}`][mobile]" class="form-control" placeholder="মোবাইল" required>
+                                        <input type="text" name="counterdata[${jsiterator}][mobile]" class="form-control" placeholder="মোবাইল" required>
                                     </div>
                                     <div class="col-md-1 d-flex align-items-center">
                                         <button type="button" class="btn btn-danger btn-sm removeCounter"><i class="fas fa-times"></i></button>
