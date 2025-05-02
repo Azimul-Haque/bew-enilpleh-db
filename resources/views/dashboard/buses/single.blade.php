@@ -202,7 +202,7 @@
                                 <h5>কাউন্টারসমূহ</h5>
                                 <div id="counterFieldsEdit{{ $bus->id }}">
                                   @php
-                                    $edititerator = 1;
+                                    $edititerator = 0;
                                   @endphp
                                   @if($bus->buscounterdatas)
                                     @foreach($bus->buscounterdatas as $counterdata)
