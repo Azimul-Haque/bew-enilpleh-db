@@ -853,6 +853,7 @@ class APIController extends Controller
                        }
                        $bus->buscounters = $bustmp;
                        $bus->makeHidden('coachingimages', 'id', 'district_id', 'created_at', 'updated_at');
+                       
                        $bus->makeHidden('district', 'toDistrict', 'id', 'district_id', 'to_district', 'created_at', 'updated_at');
                  }
 
