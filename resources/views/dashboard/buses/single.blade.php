@@ -41,7 +41,7 @@
                   <i class="fas fa-plus-square"></i> নতুন
                 </button>
               </form>
-              
+
             </div>
           </div>
           <!-- /.card-header -->
@@ -112,7 +112,7 @@
                                       <div class="input-group-text"><span class="fas fa-map"></span></div>
                                   </div> --}}
                                 </div>
-                                
+
                                 <div class="input-group mb-3">
                                     <input type="text"
                                            name="bus_name"
@@ -159,6 +159,7 @@
                                     </div>
                                   </div>
                                 </div>
+                                
                                 <div class="row">
                                   <div class="col-md-6">
                                     <div class="input-group mb-3">
@@ -182,9 +183,9 @@
                                         <div class="input-group-append">
                                             <div class="input-group-text"><span class="fas fa-bus"></span></div>
                                         </div>
-                                    </div>    
+                                    </div>
                                   </div>
-                                </div>                            
+                                </div>
                                 <div class="input-group mb-3">
                                     <input type="number"
                                            name="contact"
@@ -194,7 +195,7 @@
                                     <div class="input-group-append">
                                         <div class="input-group-text"><span class="fas fa-mobile"></span></div>
                                     </div>
-                                </div>                                              
+                                </div>
                             </div>
                             <div class="modal-footer">
                               <button type="button" class="btn btn-secondary" data-dismiss="modal">ফিরে যান</button>
@@ -235,7 +236,7 @@
                         {{-- Delete User Modal Code --}}
                         {{-- Delete User Modal Code --}}
                   </tr>
-                  
+
                 @endforeach
               </tbody>
             </table>
@@ -259,7 +260,7 @@
           </div>
           <form method="post" action="{{ route('dashboard.buses.store', $district->id) }}" enctype='multipart/form-data'>
             <div class="modal-body">
-              
+
                   @csrf
                   <h5>হতে জেলা: {{ $district->name_bangla }}</h5>
                   <div class="" style="margin-bottom: 15px;">
@@ -273,7 +274,7 @@
                         <div class="input-group-text"><span class="fas fa-map"></span></div>
                     </div> --}}
                   </div>
-                  
+
                   <div class="input-group mb-3">
                       <input type="text"
                              name="bus_name"
@@ -436,7 +437,7 @@
           // theme: 'bootstrap4',
           dropdownParent: $('.modal')
         });
-        
+
 
         $(document).on('click', '#search-button', function() {
           if($('#search-param').val() != '') {
@@ -507,5 +508,5 @@
         });
     </script>
 
-    
+
 @endsection
