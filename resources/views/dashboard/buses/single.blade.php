@@ -201,11 +201,9 @@
                                 <hr>
                                 <h5>কাউন্টারসমূহ</h5>
                                 <div id="counterFieldsEdit{{ $bus->id }}">
-                                  @php
-                                    $edititerator = 0;
-                                  @endphp
+                                  
                                   @if($bus->buscounterdatas)
-                                    @foreach($bus->buscounterdatas as $counterdata)
+                                    @foreach($bus->buscounterdatas as $key => $counterdata)
                                       <div class="row mb-2 counter-group">
                                           <div class="col-md-4">
                                               <select name="counterdata[{{ $edititerator }}][buscounter_id]" class="form-control" required>
@@ -225,9 +223,7 @@
                                               <button type="button" class="btn btn-danger btn-sm removeCounter"><i class="fas fa-times"></i></button>
                                           </div>
                                       </div>
-                                      @php
-                                        $edititerator++;
-                                      @endphp
+                                      
                                     @endforeach
                                   @endif
                                 </div>
