@@ -89,7 +89,7 @@
                                     </div>
                                   </div>
                                   <div class="col-md-6">
-                                    <div class="input-group mb-3">
+                                    {{-- <div class="input-group mb-3">
                                         <input type="text"
                                                name="counter_address"
                                                class="form-control"
@@ -98,19 +98,20 @@
                                         <div class="input-group-append">
                                             <div class="input-group-text"><span class="fas fa-bus"></span></div>
                                         </div>
+                                    </div> --}}
+                                    <div class="input-group mb-3">
+                                        <input type="number"
+                                               name="contact"
+                                               value="{{ $bus->contact }}"
+                                               class="form-control"
+                                               placeholder="যোগাযোগ" required>
+                                        <div class="input-group-append">
+                                            <div class="input-group-text"><span class="fas fa-mobile"></span></div>
+                                        </div>
                                     </div>
                                   </div>
                                 </div>
-                                <div class="input-group mb-3">
-                                    <input type="number"
-                                           name="contact"
-                                           value="{{ $bus->contact }}"
-                                           class="form-control"
-                                           placeholder="যোগাযোগ" required>
-                                    <div class="input-group-append">
-                                        <div class="input-group-text"><span class="fas fa-mobile"></span></div>
-                                    </div>
-                                </div>
+                                
 
                                 <hr>
                                 <h5>কাউন্টারসমূহ</h5>
