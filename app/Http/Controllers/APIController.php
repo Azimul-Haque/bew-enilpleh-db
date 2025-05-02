@@ -846,6 +846,7 @@ class APIController extends Controller
                  }
                  return $buses;
             });
+            dd($buses);
             
             return response()->json([
                 'success' => true,
