@@ -54,7 +54,7 @@
                   <th width="10%">পর্যন্ত</th>
                   <th width="10%">ছাড়ার সময়</th>
                   <th width="20%">রুটের তথ্য</th>
-                  <th>অন্যান্য তথ্য</th>
+                  <th width="10%">অন্যান্য তথ্য</th>
                   <th align="right" width="10%">কার্যক্রম</th>
                 </tr>
               </thead>
