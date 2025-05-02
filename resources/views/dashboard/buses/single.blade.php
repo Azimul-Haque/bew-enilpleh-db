@@ -207,8 +207,8 @@
                                         <div class="col-md-4">
                                             <select name="counters[]" class="form-control select2" required>
                                                 <option value="">কাউন্টার নির্বাচন করুন</option>
-                                                @foreach($counterdata as $counter)
-                                                    <option value="{{ $counter->id }}" {{ $counter->id == $counterdata->buscounter_id ? 'selected' : '' }}>{{ $counter->name }}</option>
+                                                @foreach($counterdata as $buscounter)
+                                                    <option value="{{ $buscounter->id }}" {{ $counter->id == $counterdata->buscounter_id ? 'selected' : '' }}>{{ $buscounter->name }}</option>
                                                 @endforeach
                                             </select>
                                         </div>
