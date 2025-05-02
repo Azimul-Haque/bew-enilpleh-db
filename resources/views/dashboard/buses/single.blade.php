@@ -271,7 +271,7 @@
                                 </div>`;
 
                             $('#counterFieldsEdit').append(field);
-                            $('.select2').select2({ dropdownParent: $('#yourEditModalId') });
+                            {{-- $('.select2').select2({ dropdownParent: $('#yourEditModalId') }); --}}
                         });
 
                         $(document).on('click', '.removeCounter', function () {
