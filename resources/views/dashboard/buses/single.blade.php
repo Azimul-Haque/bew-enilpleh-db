@@ -249,7 +249,7 @@
                         jsiterator = {{ ++$edititerator }};
                         oldjsiterator = jsiterator;
                         $('#addCounterEdit{{ $bus->id }}').click(function () {
-                            jsiterator = jsiterator;
+                            jsiterator = oldjsiterator;
                             let existingOptions = [];
                             $('#counterFieldsEdit{{ $bus->id }} select').each(function () {
                                 existingOptions.push($(this).val());
