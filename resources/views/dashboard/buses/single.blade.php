@@ -240,12 +240,11 @@
                     </div>
                     <script>
                     $(document).ready(function () {
-                        {{-- $('.select2').select2({ dropdownParent: $('#yourEditModalId') }); --}}
                         let counterEditIndex = {{ $bus->buscounterdatas->count() ?? 0 }};
 
                         $('#addCounterEdit{{ $bus->id }}').click(function () {
                             let existingOptions = [];
-                            $('#counterFieldsEdit{{ $bus->id }} select').each(function () {
+                            $('#counterFieldsEdit{{ $bus->id }} select[name*="[buscounter_id]"]').each(function () {
                                 existingOptions.push($(this).val());
                             });
 
@@ -256,11 +255,12 @@
                                 }
                             @endforeach
 
-
                             let field = `
                                 <div class="row mb-2 counter-group">
                                     <div class="col-md-4">
-                                        <select name="counterdata[${counterEditIndex}][buscounter_id]" class="form-control" required>${options}</select>
+                                        <select name="counterdata[${counterEditIndex}][buscounter_id]" class="form-control" required>
+                                            ${options}
+                                        </select>
                                     </div>
                                     <div class="col-md-4">
                                         <input type="text" name="counterdata[${counterEditIndex}][address]" class="form-control" placeholder="ঠিকানা" required>
@@ -274,7 +274,6 @@
                                 </div>`;
 
                             $('#counterFieldsEdit{{ $bus->id }}').append(field);
-                            {{-- $('.select2').select2({ dropdownParent: $('#yourEditModalId') }); --}}
                             counterEditIndex++;
                         });
 
