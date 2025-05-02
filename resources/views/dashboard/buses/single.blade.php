@@ -52,7 +52,7 @@
                   <th width="10%">নাম</th>
                   <th width="10%">হতে</th>
                   <th width="10%">পর্যন্ত</th>
-                  <th>ছাড়ার সময়</th>
+                  <th width="10%">ছাড়ার সময়</th>
                   <th>রুটের তথ্য</th>
                   <th>অন্যান্য তথ্য</th>
                   <th align="right" width="10%">কার্যক্রম</th>
