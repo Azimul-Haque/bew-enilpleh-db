@@ -246,7 +246,7 @@
                     <script>
                     $(document).ready(function () {
                         {{-- $('.select2').select2({ dropdownParent: $('#yourEditModalId') }); --}}
-                        
+
                         $('#addCounterEdit{{ $bus->id }}').click(function () {
                             jsiterator = {{ ++$edititerator }};
                             let existingOptions = [];
@@ -280,6 +280,7 @@
 
                             $('#counterFieldsEdit{{ $bus->id }}').append(field);
                             {{-- $('.select2').select2({ dropdownParent: $('#yourEditModalId') }); --}}
+                            jsiterator++;
                         });
 
                         $(document).on('click', '.removeCounter', function () {
