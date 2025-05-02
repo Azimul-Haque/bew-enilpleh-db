@@ -248,7 +248,7 @@
                         {{-- $('.select2').select2({ dropdownParent: $('#yourEditModalId') }); --}}
                         jsiterator = {{ ++$edititerator }};
                         $('#addCounterEdit{{ $bus->id }}').click(function () {
-                            jsiterator = jsiterator++;
+                            jsiterator = jsiterator;
                             let existingOptions = [];
                             $('#counterFieldsEdit{{ $bus->id }} select').each(function () {
                                 existingOptions.push($(this).val());
