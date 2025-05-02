@@ -881,7 +881,7 @@ class APIController extends Controller
                           ]);
                           $buscounterdata->makeHidden('id', 'bus_id', 'buscounter_id', 'created_at', 'updated_at');
                        }
-                       $coaching->images = $bustmp;
+                       $coaching->buscounters = $bustmp;
                        $coaching->makeHidden('coachingimages', 'id', 'district_id', 'created_at', 'updated_at');
                  }
                  return $buses;
