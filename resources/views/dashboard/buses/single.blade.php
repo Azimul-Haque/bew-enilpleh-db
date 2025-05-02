@@ -229,6 +229,51 @@
 
                                 <button type="button" class="btn btn-sm btn-primary mt-2" id="addCounterEdit{{ $bus->id }}"><i class="fas fa-plus-circle"></i> কাউন্টার যোগ করুন</button>
 
+                                <script>
+                                $(document).ready(function () {
+                                    let counterEditIndex = {{ $bus->buscounterdatas->count() ?? 0 }};
+
+                                    $('#addCounterEdit{{ $bus->id }}').click(function () {
+                                        let existingOptions = [];
+                                        $('#counterFieldsEdit{{ $bus->id }} select[name*="[buscounter_id]"]').each(function () {
+                                            existingOptions.push($(this).val());
+                                        });
+
+                                        let options = `<option value="">কাউন্টার নির্বাচন করুন</option>`;
+                                        @foreach($buscounters as $counter)
+                                            if (!existingOptions.includes("{{ $counter->id }}")) {
+                                                options += `<option value="{{ $counter->id }}">{{ $counter->name }}</option>`;
+                                            }
+                                        @endforeach
+
+                                        let field = `
+                                            <div class="row mb-2 counter-group">
+                                                <div class="col-md-4">
+                                                    <select name="counterdata[${counterEditIndex}][buscounter_id]" class="form-control" required>
+                                                        ${options}
+                                                    </select>
+                                                </div>
+                                                <div class="col-md-4">
+                                                    <input type="text" name="counterdata[${counterEditIndex}][address]" class="form-control" placeholder="ঠিকানা" required>
+                                                </div>
+                                                <div class="col-md-3">
+                                                    <input type="text" name="counterdata[${counterEditIndex}][mobile]" class="form-control" placeholder="মোবাইল" required>
+                                                </div>
+                                                <div class="col-md-1 d-flex align-items-center">
+                                                    <button type="button" class="btn btn-danger btn-sm removeCounter"><i class="fas fa-times"></i></button>
+                                                </div>
+                                            </div>`;
+
+                                        $('#counterFieldsEdit{{ $bus->id }}').append(field);
+                                        counterEditIndex++;
+                                    });
+
+                                    $(document).on('click', '.removeCounter', function () {
+                                        $(this).closest('.counter-group').remove();
+                                    });
+                                });
+                                </script>
+
                             </div>
                             <div class="modal-footer">
                               <button type="button" class="btn btn-secondary" data-dismiss="modal">ফিরে যান</button>
@@ -238,50 +283,7 @@
                         </div>
                       </div>
                     </div>
-                    <script>
-                    $(document).ready(function () {
-                        let counterEditIndex = {{ $bus->buscounterdatas->count() ?? 0 }};
-
-                        $('#addCounterEdit{{ $bus->id }}').click(function () {
-                            let existingOptions = [];
-                            $('#counterFieldsEdit{{ $bus->id }} select[name*="[buscounter_id]"]').each(function () {
-                                existingOptions.push($(this).val());
-                            });
-
-                            let options = `<option value="">কাউন্টার নির্বাচন করুন</option>`;
-                            @foreach($buscounters as $counter)
-                                if (!existingOptions.includes("{{ $counter->id }}")) {
-                                    options += `<option value="{{ $counter->id }}">{{ $counter->name }}</option>`;
-                                }
-                            @endforeach
-
-                            let field = `
-                                <div class="row mb-2 counter-group">
-                                    <div class="col-md-4">
-                                        <select name="counterdata[${counterEditIndex}][buscounter_id]" class="form-control" required>
-                                            ${options}
-                                        </select>
-                                    </div>
-                                    <div class="col-md-4">
-                                        <input type="text" name="counterdata[${counterEditIndex}][address]" class="form-control" placeholder="ঠিকানা" required>
-                                    </div>
-                                    <div class="col-md-3">
-                                        <input type="text" name="counterdata[${counterEditIndex}][mobile]" class="form-control" placeholder="মোবাইল" required>
-                                    </div>
-                                    <div class="col-md-1 d-flex align-items-center">
-                                        <button type="button" class="btn btn-danger btn-sm removeCounter"><i class="fas fa-times"></i></button>
-                                    </div>
-                                </div>`;
-
-                            $('#counterFieldsEdit{{ $bus->id }}').append(field);
-                            counterEditIndex++;
-                        });
-
-                        $(document).on('click', '.removeCounter', function () {
-                            $(this).closest('.counter-group').remove();
-                        });
-                    });
-                    </script>
+                    
                     {{-- Edit User Modal Code --}}
                     {{-- Edit User Modal Code --}}
                         {{-- Delete User Modal Code --}}
