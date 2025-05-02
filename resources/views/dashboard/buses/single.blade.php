@@ -466,6 +466,20 @@
         let counterIndex = 0;
 
         $('#addCounterBtn').on('click', function () {
+
+          let existingOptions = [];
+          $('#counterFieldsEdit{{ $bus->id }} select').each(function () {
+              existingOptions.push($(this).val());
+          });
+
+          let options = `<option value="">কাউন্টার নির্বাচন করুন</option>`;
+          @foreach($buscounters as $counter)
+              if (!existingOptions.includes("{{ $counter->id }}")) {
+                  options += `<option value="{{ $counter->id }}">{{ $counter->name }}</option>`;
+              }
+          @endforeach
+
+          
             let options = '<option value="">কাউন্টার নির্বাচন করুন</option>';
             buscounters.forEach(counter => {
                 options += `<option value="${counter.id}">${counter.name}</option>`;
