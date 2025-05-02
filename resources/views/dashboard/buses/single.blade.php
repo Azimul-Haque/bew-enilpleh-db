@@ -260,6 +260,8 @@
                                 }
                             @endforeach
 
+                            $jsiterator = {{ ++$edititerator }};
+
                             let field = `
                                 <div class="row mb-2 counter-group">
                                     <div class="col-md-4">
