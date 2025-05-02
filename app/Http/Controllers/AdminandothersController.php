@@ -1198,6 +1198,8 @@ class AdminandothersController extends Controller
         // Remove old counter data
         $bus->buscounterdatas()->delete();
 
+        
+
         Cache::forget('busesfrom' . $district_id);
         Cache::forget('busesto' . $request->to_district);
         Session::flash('success', 'Bus updated successfully!');
