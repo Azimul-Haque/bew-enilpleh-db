@@ -49,13 +49,13 @@
             <table class="table">
               <thead>
                 <tr>
-                  <th>নাম</th>
+                  <th width="10%">নাম</th>
                   <th>হতে</th>
                   <th>পর্যন্ত</th>
                   <th>ছাড়ার সময়</th>
                   <th>রুটের তথ্য</th>
                   <th>অন্যান্য তথ্য</th>
-                  <th align="right">কার্যক্রম</th>
+                  <th align="right" width="10%">কার্যক্রম</th>
                 </tr>
               </thead>
             </table>
