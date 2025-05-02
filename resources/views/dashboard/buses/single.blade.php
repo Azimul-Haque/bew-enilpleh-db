@@ -225,6 +225,9 @@
                                               <button type="button" class="btn btn-danger btn-sm removeCounter"><i class="fas fa-times"></i></button>
                                           </div>
                                       </div>
+                                      @php
+                                        $edititerator = 1;
+                                      @endphp
                                     @endforeach
                                   @endif
                                 </div>
