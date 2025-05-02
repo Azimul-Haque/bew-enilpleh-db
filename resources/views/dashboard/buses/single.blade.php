@@ -226,7 +226,7 @@
                                           </div>
                                       </div>
                                       @php
-                                        $edititerator = 1;
+                                        $edititerator++;
                                       @endphp
                                     @endforeach
                                   @endif
