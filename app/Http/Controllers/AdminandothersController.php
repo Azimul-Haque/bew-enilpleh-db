@@ -1249,7 +1249,7 @@ class AdminandothersController extends Controller
         $bus = Bus::find($id);
         Cache::forget('busesfrom' . $district_id);
         Cache::forget('busesto' . $district_id);
-        $hospital->delete();
+        $bus->delete();
 
         Session::flash('success', 'Hospital deleted successfully!');
         return redirect()->route('dashboard.hospitals');
