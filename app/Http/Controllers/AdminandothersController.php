@@ -1183,7 +1183,7 @@ class AdminandothersController extends Controller
             'contact'          => 'required|string|max:191',
         ));
 
-        dd($request->countereditdata);
+        dd($request->counterdata);
 
         $bus = Bus::find($id);
         // $bus->district_id = $district_id; // dorkar nai
@@ -1201,8 +1201,8 @@ class AdminandothersController extends Controller
         $bus->buscounterdatas()->delete();
 
         // Save new counter data
-        if ($request->has('countereditdata')) {
-            foreach ($request->countereditdata as $data) {
+        if ($request->has('counterdata')) {
+            foreach ($request->counterdata as $data) {
                 $buscounterdatas = new Buscounterdata;
                 $buscounterdatas->bus_id = $bus->id;
                 $buscounterdatas->buscounter_id = $data['buscounter_id'];
