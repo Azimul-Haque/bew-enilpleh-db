@@ -197,6 +197,35 @@
                                         <div class="input-group-text"><span class="fas fa-mobile"></span></div>
                                     </div>
                                 </div>
+
+                                <hr>
+                                <h5>কাউন্টারসমূহ</h5>
+                                <div id="counterFieldsEdit">
+                                  @foreach($bus->buscounters as $counterdata)
+                                    <div class="row mb-2 counter-group">
+                                        <div class="col-md-4">
+                                            <select name="counters[]" class="form-control select2" required>
+                                                <option value="">কাউন্টার নির্বাচন করুন</option>
+                                                @foreach($buscounters as $counter)
+                                                    <option value="{{ $counter->id }}" {{ $counter->id == $counterdata->buscounter_id ? 'selected' : '' }}>{{ $counter->name }}</option>
+                                                @endforeach
+                                            </select>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <input type="text" name="addresses[]" class="form-control" placeholder="ঠিকানা" value="{{ $counterdata->address }}" required>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <input type="text" name="mobiles[]" class="form-control" placeholder="মোবাইল" value="{{ $counterdata->mobile }}" required>
+                                        </div>
+                                        <div class="col-md-1 d-flex align-items-center">
+                                            <button type="button" class="btn btn-danger btn-sm removeCounter"><i class="fas fa-times"></i></button>
+                                        </div>
+                                    </div>
+                                  @endforeach
+                                </div>
+
+                                <button type="button" class="btn btn-sm btn-primary mt-2" id="addCounterEdit"><i class="fas fa-plus-circle"></i> কাউন্টার যোগ করুন</button>
+                                
                             </div>
                             <div class="modal-footer">
                               <button type="button" class="btn btn-secondary" data-dismiss="modal">ফিরে যান</button>
