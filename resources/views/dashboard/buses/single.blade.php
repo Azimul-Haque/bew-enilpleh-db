@@ -50,10 +50,10 @@
               <thead>
                 <tr>
                   <th width="20%">নাম</th>
-                  <th width="15%">হতে</th>
-                  <th width="15%">পর্যন্ত</th>
+                  <th width="10%">হতে</th>
+                  <th width="10%">পর্যন্ত</th>
                   <th width="10%">ছাড়ার সময়</th>
-                  <th width="25%">রুটের তথ্য</th>
+                  <th width="35%">রুটের তথ্য</th>
                   <th align="right" width="15%">কার্যক্রম</th>
                 </tr>
               </thead>
@@ -78,10 +78,10 @@
                       <span class="badge bg-success">{{ $bus->bus_type }}</span>
                       <span class="badge bg-warning">{{ $bus->contact }}</span>
                     </td>
-                    <td width="15%">{{ $bus->district->name_bangla }}</td>
-                    <td width="15%">{{ $bus->toDistrict->name_bangla }}</td>
+                    <td width="10%">{{ $bus->district->name_bangla }}</td>
+                    <td width="10%">{{ $bus->toDistrict->name_bangla }}</td>
                     <td width="10%">{{ $bus->starting_time }}<br/><span class="badge bg-primary">ভাড়া: ৳ {{ $bus->fare }}/-</span></td>
-                    <td width="25%"><small>{{ $bus->route_info }}</small></td>
+                    <td width="35%"><small>{{ $bus->route_info }}</small></td>
                     <td align="right" width="15%">
                       {{-- <button type="button" class="btn btn-warning btn-sm" data-toggle="modal" data-target="#notifModal{{ $bus->id }}">
                         <i class="fas fa-bell"></i>
