@@ -151,7 +151,7 @@ class BlooddonorController extends Controller
     {
         if(Auth::user()->role == 'editor') {
             $blooddonor = Blooddonor::where('id', $id)
-                                    ->where('district_id', Auth::user()->id)
+                                    ->where('district_id', Auth::user()->district_id)
                                     ->first();
             dd($blooddonor);
             // if($blooddonor) {
