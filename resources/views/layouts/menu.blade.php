@@ -131,14 +131,21 @@
 
 
 
-{{-- @if(Auth::user()->role == 'admin') --}}
+@if(Auth::user()->role == 'admin')
 <li class="nav-item">
     <a href="{{ route('dashboard.buses') }}" class="nav-link {{ Request::is('dashboard/buses') ? 'active' : '' }} {{ Request::is('dashboard/buses/*') ? 'active' : '' }}">
         <i class="nav-icon fas fa-bus"></i>
         <p>বাস</p>
     </a>
 </li>
-{{-- @endif --}}
+@elseif(Auth::user()->role == 'editor')
+<li class="nav-item">
+    <a href="{{ route('dashboard.buses') }}" class="nav-link {{ Request::is('dashboard/buses') ? 'active' : '' }} {{ Request::is('dashboard/buses/*') ? 'active' : '' }}">
+        <i class="nav-icon fas fa-bus"></i>
+        <p>বাস</p>
+    </a>
+</li>
+@endif
 
 {{-- @if(Auth::user()->role == 'admin') --}}
 <li class="nav-item">
