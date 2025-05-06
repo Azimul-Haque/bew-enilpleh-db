@@ -152,7 +152,7 @@ class BlooddonorController extends Controller
     public function deleteBloodDonor ($id)
     {
         $blooddonor = Blooddonor::find($id);
-        foreach($blooddonor->blooddonormembers $blooddonormember) {
+        foreach($blooddonor->blooddonormembers as $blooddonormember) {
             $blooddonormember->delete();
         }
         $blooddonor->delete();
