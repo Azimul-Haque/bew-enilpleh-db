@@ -98,6 +98,7 @@
                                 @csrf
 
                                 <div class="row">
+                                  @if(Auth::user()->role == 'admin')
                                   <div class="col-md-6">
                                     <select name="district_id" id="district" class="form-control district select21" data-placeholder="জেলা নির্বাচন করুন" required>
                                         <option selected="" disabled="" value="">জেলা নির্বাচন করুন</option>
@@ -111,6 +112,9 @@
                                         <option selected="" value="{{ $hospital->upazilla_id }}">{{ $hospital->upazilla->name_bangla }}-{{ $hospital->upazilla->name }}</option>
                                     </select>
                                   </div>
+                                  @else
+
+                                  @endif
                                   <br/><br/>
                                   <div class="col-md-6">
                                     <div class="input-group mb-3">
