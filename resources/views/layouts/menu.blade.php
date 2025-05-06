@@ -147,14 +147,21 @@
 </li>
 @endif
 
-{{-- @if(Auth::user()->role == 'admin') --}}
+@if(Auth::user()->role == 'admin')
 <li class="nav-item">
     <a href="{{ route('dashboard.rentacars') }}" class="nav-link {{ Request::is('dashboard/rentacars') ? 'active' : '' }} {{ Request::is('dashboard/rentacars/*') ? 'active' : '' }}">
         <i class="nav-icon fas fa-car"></i>
         <p>রেন্ট-এ-কার</p>
     </a>
 </li>
-{{-- @endif --}}
+@elseif(Auth::user()->role == 'editor')
+<li class="nav-item">
+    <a href="{{ route('dashboard.rentacars') }}" class="nav-link {{ Request::is('dashboard/rentacars') ? 'active' : '' }} {{ Request::is('dashboard/rentacars/*') ? 'active' : '' }}">
+        <i class="nav-icon fas fa-car"></i>
+        <p>রেন্ট-এ-কার</p>
+    </a>
+</li>
+@endif
 
 {{-- @if(Auth::user()->role == 'admin') --}}
 <li class="nav-item">
