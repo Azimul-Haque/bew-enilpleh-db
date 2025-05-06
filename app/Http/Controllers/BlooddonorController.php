@@ -153,7 +153,7 @@ class BlooddonorController extends Controller
             $blooddonor = Blooddonor::where('id', $id)
                                     ->where('district_id', Auth::user()->id)
                                     ->first();
-            if($blooddonor) {
+            if(!$blooddonor) {
                 abort(403, 'Access Denied');
             }
             $blooddonormemberscount = Blooddonormember::where('blooddonor_id', $blooddonor->id)->count();
