@@ -498,7 +498,7 @@ class AdminandothersController extends Controller
 
     public function deleteRentacar($district_id, $id)
     {
-        $bus = Bus::find($id);
+        $rentacar = Rentacar::find($id);
         // Remove old counter data
         $bus->buscounterdatas()->delete();
         $bus->delete();
