@@ -170,9 +170,8 @@ class AmbulanceController extends Controller
         $ambulance = Ambulance::find($id);
         $ambulance->delete();
 
-        Cache::forget('blooddonors'. 1 . Auth::user()->district_id);
-        Cache::forget('blooddonors'. 2 . Auth::user()->district_id);
-        Session::flash('success', 'Blood Donor deleted successfully!');
+        Cache::forget('ambulances'. Auth::user()->district_id);
+        Session::flash('success', 'Ambulances deleted successfully!');
         return redirect()->back();
     }
 }
