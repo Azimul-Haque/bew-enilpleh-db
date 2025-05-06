@@ -504,7 +504,7 @@ class AdminandothersController extends Controller
           if(File::exists($image_path)) {
               File::delete($image_path);
           }
-          $rentacarimage->delete();
+          $rentacar->rentacarimage->delete();
         }
         $rentacar->delete();
 
