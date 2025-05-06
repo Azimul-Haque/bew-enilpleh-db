@@ -128,7 +128,7 @@ class AmbulanceController extends Controller
             'name'                => 'required|string|max:191',
             'mobile'              => 'required|string|max:191',
             'image'              => 'sometimes',
-            'description'              => 'sometimes|string|max:500',
+            'description'              => 'sometimes|max:500',
         ));
 
         $ambulance = Ambulance::find($id);
