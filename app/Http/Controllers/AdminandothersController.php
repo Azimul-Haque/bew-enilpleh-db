@@ -1438,7 +1438,7 @@ class AdminandothersController extends Controller
         return redirect()->route('dashboard.newspapers');
     }
 
-    public function deleteNewspaper($district_id, $id)
+    public function deleteNewspaper($id)
     {
         $newspaper = Newspaper::find($id);
 
