@@ -169,10 +169,10 @@ class AmbulanceController extends Controller
     {
         $ambulance = Ambulance::find($id);
         $image_path = public_path('images/ambulances/'. $ambulance->ambulanceimage->image);
-        // dd($image_path);
         if(File::exists($image_path)) {
             File::delete($image_path);
         }
+        $ambulance->ambulanceimage->delete();
         $ambulance->delete();
 
         Cache::forget('ambulances'. Auth::user()->district_id);
