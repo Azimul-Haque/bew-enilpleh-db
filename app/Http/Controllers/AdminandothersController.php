@@ -1278,10 +1278,12 @@ class AdminandothersController extends Controller
                                   ->orWhere('url', 'LIKE', "%$search%")
                                   ->orderBy('id', 'desc')
                                   ->paginate(10);
+        $districts = District::all();
         
         return view('dashboard.newspapers.index')
                             ->withNewspaperscount($newspaperscount)
-                            ->withNewspapers($newspapers);
+                            ->withNewspapers($newspapers)
+                            ->withDistricts($districts);
     }
 
     public function storeNewspaper(Request $request)
