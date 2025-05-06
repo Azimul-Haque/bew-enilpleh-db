@@ -586,7 +586,7 @@
           });
         });
 
-        function EditorSelected() {
+        @if()
           $('.upazilla').prop('disabled', true);
           $('.upazilla').append('<option value="" selected disabled>উপজেলা লোড হচ্ছে...</option>');
 
@@ -607,7 +607,7 @@
               }
             }
           });
-        }
+        @endif
 
         $(document).on('click', '#search-button', function() {
           if($('#search-param').val() != '') {
