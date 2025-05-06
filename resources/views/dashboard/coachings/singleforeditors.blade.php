@@ -322,5 +322,80 @@
 @endsection
 
 @section('third_party_scripts')
+    <script type="text/javascript">
+        $(document).on('click', '#search-button', function() {
+          if($('#search-param').val() != '') {
+            var urltocall = '{{ route('dashboard.coachings.districtwise', $district->id) }}' +  '/' + $('#search-param').val();
+            location.href= urltocall;
+          } else {
+            $('#search-param').css({ "border": '#FF0000 2px solid'});
+            Toast.fire({
+                icon: 'warning',
+                title: 'কিছু লিখে খুঁজুন!'
+            })
+          }
+        });
+        $("#search-param").keyup(function(e) {
+          if(e.which == 13) {
+            if($('#search-param').val() != '') {
+              var urltocall = '{{ route('dashboard.coachings.districtwise', $district->id) }}' +  '/' + $('#search-param').val();
+              location.href= urltocall;
+            } else {
+              $('#search-param').css({ "border": '#FF0000 2px solid'});
+              Toast.fire({
+                  icon: 'warning',
+                  title: 'কিছু লিখে খুঁজুন!'
+              })
+            }
+          }
+        });
+    </script>
 
+    <!-- jQuery part -->
+    <script>
+    $(document).ready(function() {
+        $('#typeSelect').change(function() {
+            var type = $(this).val();
+            var options = '';
+
+            if (type == '1') {
+                options = `
+                    <option value="" selected disabled>ধরন সিলেক্ট করুন</option>
+                    <option value="প্রাথমিক">প্রাথমিক</option>
+                    <option value="মাধ্যমিক">মাধ্যমিক</option>
+                    <option value="উচ্চমাধ্যমিক">উচ্চমাধ্যমিক</option>
+                    <option value="কলেজ/ বিশ্ববিদ্যালয়">কলেজ/ বিশ্ববিদ্যালয়</option>
+                    <option value="মাদ্রাসা">মাদ্রাসা</option>
+                    <option value="কারিগরি শিক্ষা">কারিগরি শিক্ষা</option>
+                `;
+            } else if (type == '2') {
+                options = `
+                    <option value="" selected disabled>ধরন সিলেক্ট করুন</option>
+                    <option value="প্রাথমিক">প্রাথমিক</option>
+                    <option value="মাধ্যমিক">মাধ্যমিক</option>
+                    <option value="উচ্চমাধ্যমিক">উচ্চমাধ্যমিক</option>
+                    <option value="কলেজ/ বিশ্ববিদ্যালয়">কলেজ/ বিশ্ববিদ্যালয়</option>
+                    <option value="কারিগরি শিক্ষা">কারিগরি শিক্ষা</option>
+                    <option value="ইংলিশ মিডিয়াম">ইংলিশ মিডিয়াম</option>
+                    <option value="মাদ্রাসা">মাদ্রাসা</option>
+                `;
+            } else if (type == '3') {
+                options = `
+                    <option value="" selected disabled>ধরন সিলেক্ট করুন</option>
+                    <option value="একাডেমিক (প্রাথমিক/ মাধ্যমিক/ উচ্চমাধ্যমিক)">একাডেমিক (প্রাথমিক/ মাধ্যমিক/ উচ্চমাধ্যমিক)</option>
+                    <option value="ভর্তি কোচিং">ভর্তি কোচিং</option>
+                    <option value="স্কিল ডেভেলপমেন্ট">স্কিল ডেভেলপমেন্ট</option>
+                    <option value="IELTS/ GRE/ Toefl">IELTS/ GRE/ Toefl</option>
+                `;
+            }
+
+            if (options != '') {
+                $('#subTypeSelect').html(options);
+                $('#subTypeContainer').show();
+            } else {
+                $('#subTypeContainer').hide();
+            }
+        });
+    });
+    </script>
 @endsection
