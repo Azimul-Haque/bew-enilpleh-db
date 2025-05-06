@@ -587,9 +587,9 @@ class AdminandothersController extends Controller
 
     public function coachingIndexSingleForEditor()
     {
-        if(!in_array('coachings', Auth::user()->accessibleTables())) {
-            abort(403, 'Access Denied');
-        }
+        // if(!in_array('coachings', Auth::user()->accessibleTables())) {
+        //     abort(403, 'Access Denied');
+        // }
         $coachingscount = Auth::user()->accessibleCoachings()->count();
         $coachings = Auth::user()->accessibleCoachings()->paginate(10);
                 
