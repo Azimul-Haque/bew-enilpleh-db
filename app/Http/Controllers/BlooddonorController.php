@@ -149,9 +149,16 @@ class BlooddonorController extends Controller
 
     public function getBloodDonorMembers($id)
     {
-        $blooddonor = Blooddonor::find($id);
-        $blooddonormemberscount = Blooddonormember::where('blooddonor_id', $id)->count();
-        $blooddonormembers = Blooddonormember::where('blooddonor_id', $id)->orderBy('id', 'desc')->paginate(10);
+        if(Auth::user()->role == 'editor') {
+            $blooddonor = Blooddonor::find($id);
+                    $blooddonormemberscount = Blooddonormember::where('blooddonor_id', $id)->count();
+                    $blooddonormembers = Blooddonormember::where('blooddonor_id', $id)->orderBy('id', 'desc')->paginate(10);
+        } else {
+            $blooddonor = Blooddonor::find($id);
+            $blooddonormemberscount = Blooddonormember::where('blooddonor_id', $id)->count();
+            $blooddonormembers = Blooddonormember::where('blooddonor_id', $id)->orderBy('id', 'desc')->paginate(10);
+        }
+        
                 
         return view('dashboard.blooddonors.members')
                             ->withBlooddonor($blooddonor)
