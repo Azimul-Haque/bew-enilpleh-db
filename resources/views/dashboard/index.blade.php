@@ -9,7 +9,7 @@
 	@section('page-header') ড্যাশবোর্ড @endsection
     <div class="container-fluid">
         <div class="row">
-          @if(Auth::user()->role == 'admin')
+          {{-- @if(Auth::user()->role == 'admin' || in_array('hospitals', Auth::user()->accessibleTables())) --}}
             <div class="col-md-3">
               <a href="{{ route('dashboard.hospitals') }}" class="info-box mb-3">
                 <span class="info-box-icon bg-primary elevation-1"><i class="fas fa-hospital"></i></span>
@@ -20,9 +20,9 @@
                 </div>
               </a>
             </div>
-          @endif
+          {{-- @endif --}}
 
-          @if(Auth::user()->role == 'admin')
+          {{-- @if(Auth::user()->role == 'admin' || in_array('doctors', Auth::user()->accessibleTables()) || in_array('hospitals', Auth::user()->accessibleTables())) --}}
           <div class="col-md-3">
             <a href="{{ route('dashboard.doctors') }}" class="info-box mb-3">
               <span class="info-box-icon bg-success elevation-1"><i class="fas fa-user-md"></i></span>
@@ -33,9 +33,9 @@
               </div>
             </a>
           </div>
-          @endif
+          {{-- @endif --}}
 
-          @if(Auth::user()->role == 'admin')
+          {{-- @if(Auth::user()->role == 'admin' || in_array('blooddonors', Auth::user()->accessibleTables())) --}}
           <div class="col-md-3">
             <a href="{{ route('dashboard.blooddonors') }}" class="info-box mb-3">
               <span class="info-box-icon bg-warning elevation-1"><i class="fas fa-ambulance"></i></span>
@@ -46,9 +46,9 @@
               </div>
             </a>
           </div>
-          @endif
+          {{-- @endif --}}
 
-          @if(Auth::user()->role == 'admin')
+          {{-- @if(Auth::user()->role == 'admin' || in_array('ambulances', Auth::user()->accessibleTables())) --}}
           <div class="col-md-3">
             <a href="{{ route('dashboard.ambulances') }}" class="info-box mb-3">
               <span class="info-box-icon bg-info elevation-1"><i class="fas fa-hospital"></i></span>
@@ -59,9 +59,9 @@
               </div>
             </a>
           </div>
-          @endif
+          {{-- @endif --}}
 
-          @if(Auth::user()->role == 'admin')
+          {{-- @if(Auth::user()->role == 'admin' || in_array('eshebas', Auth::user()->accessibleTables())) --}}
           <div class="col-md-3">
             <a href="{{ route('dashboard.eshebas') }}" class="info-box mb-3">
               <span class="info-box-icon bg-primary elevation-1"><i class="fas fa-external-link-alt"></i></span>
@@ -72,7 +72,7 @@
               </div>
             </a>
           </div>
-          @endif
+          {{-- @endif --}}
 
           @if(Auth::user()->role == 'admin' || in_array('lawyers', Auth::user()->accessibleTables()))
           <div class="col-md-3">
