@@ -242,8 +242,8 @@
                   </div>
                   @else
                   জেলা: {{ Auth::user()->district->name_bangla }}
-                  <input type="hidden" name="district_id" value="{{ Auth::user()->district_id }}" style="margin-bottom: 15px;">
-                  <div class="input-group mb-3">
+                  <input type="hidden" name="district_id" value="{{ Auth::user()->district_id }}">
+                  <div class="input-group mb-3" style="margin-top: 15px;">
                     <select name="upazilla_id" id="upazilla" class="form-control upazilla" required>
                         <option selected="" disabled="" value="">উপজেলা নির্বাচন করুন</option>
                     </select>
