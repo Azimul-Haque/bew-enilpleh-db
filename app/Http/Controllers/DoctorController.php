@@ -85,6 +85,9 @@ class DoctorController extends Controller
             );
 
             // dd($doctors);
+            $doctorscount = Doctor::where('district_id', Auth::user()->district_id)->count();
+            $doctors = Doctor::orderBy('id', 'desc')->paginate(10);
+            $hospitals = Hospital::all();
 
         } else {
             $doctorscount = Doctor::count();
