@@ -55,9 +55,6 @@ Route::get('/getjournalists/{softtoken}/{district_id}', 'APIController@getJourna
 
 
 
-
-
-
 Route::post('/generateotp', 'APIController@generateOTP')->name('api.generateotp');
 Route::post('/loginorcreate', 'APIController@loginOrCreate')->name('api.loginorcreate');
 
