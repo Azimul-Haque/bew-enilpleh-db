@@ -890,6 +890,19 @@ class AdminandothersController extends Controller
         return redirect()->back();
     }
 
+    public function deleteCoaching($id) {
+
+        $coaching = Coaching::find($id);
+        $coaching->delete();
+
+        Cache::forget('coachings' . 1 . Auth::user()->district_id);
+        Cache::forget('coachings' . 2 . Auth::user()->district_id);
+        Cache::forget('coachings' . 3 . Auth::user()->district_id);
+        Session::flash('success', 'Coaching updated successfully!');
+        return redirect()->back();
+
+    }
+
     public function rabIndex()
     {
         $districts = District::all();
