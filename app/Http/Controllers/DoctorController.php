@@ -459,9 +459,9 @@ class DoctorController extends Controller
     public function doctorSerialIndex($doctor_id, $todaydate)
     {
         if(Auth::user()->role == 'editor') {
-            if(!in_array('doctors', Auth::user()->accessibleTables())) {
-                abort(403, 'Access Denied');
-            }
+            // if(!in_array('doctors', Auth::user()->accessibleTables())) {
+            //     abort(403, 'Access Denied');
+            // }
             if(!in_array($doctor_id, Auth::user()->accessibleDoctors()->pluck('accessible_id')->toArray())) {
                 // if not in accessed doctors list, check if hospital is accessed atleast
                 $accessedhospitals = Auth::user()->accessibleHospitals()->get();
