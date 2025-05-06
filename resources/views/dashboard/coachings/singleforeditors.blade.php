@@ -192,6 +192,133 @@
         {{ $coachings->links() }}
     </div>
 
+    {{-- Add User Modal Code --}}
+    {{-- Add User Modal Code --}}
+    <!-- Modal -->
+    <div class="modal fade" id="addUserModal" tabindex="-1" role="dialog" aria-labelledby="addUserModalLabel" aria-hidden="true" data-backdrop="static">
+      <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+          <div class="modal-header bg-success">
+            <h5 class="modal-title" id="addUserModalLabel">নতুন শিক্ষা প্রতিষ্ঠান যোগ (জেলা: <strong>{{ $district->name_bangla }}</strong>)</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <form method="post" action="{{ route('dashboard.coachings.store', $district->id) }}" enctype='multipart/form-data'>
+            <div class="modal-body">
+              
+                  @csrf
+                  
+                  <div class="input-group mb-3">
+                      <input type="text"
+                             name="name"
+                             class="form-control"
+                             value="{{ old('name') }}"
+                             placeholder="শিক্ষা প্রতিষ্ঠানের নাম" required>
+                      <div class="input-group-append">
+                          <div class="input-group-text"><span class="fas fa-user-tie"></span></div>
+                      </div>
+                  </div>
+                  <div class="input-group mb-3">
+                    <select name="type" id="typeSelect" class="form-control" required>
+                        <option selected="" disabled="" value="">শিক্ষা প্রতিষ্ঠানের ধরন</option>
+                        <option value="1">সরকারি শিক্ষা প্রতিষ্ঠান</option>
+                        <option value="2">বেসরকারি শিক্ষা প্রতিষ্ঠান</option>
+                        <option value="3">কোচিং সেন্টার</option>
+                    </select>
+                    <div class="input-group-append">
+                        <div class="input-group-text"><span class="fas fa-star-half-alt"></span></div>
+                    </div>
+                  </div>
+
+                  <!-- Here new select will appear -->
+                  <div id="subTypeContainer" class="input-group mb-3" style="display:none;">
+                      <select id="subTypeSelect" name="sub_type" class="form-control" required>
+                          <!-- Options will be added dynamically -->
+                      </select>
+                  </div>
+
+
+                  <div class="input-group mb-3">
+                      <input type="number"
+                             name="mobile"
+                             value="{{ old('mobile') }}"
+                             class="form-control"
+                             placeholder="শিক্ষা প্রতিষ্ঠানের মোবাইল নম্বর (OPTIONAL)">
+                      <div class="input-group-append">
+                          <div class="input-group-text"><span class="fas fa-mobile"></span></div>
+                      </div>
+                  </div>
+                  <div class="input-group mb-3">
+                      <input type="text"
+                             name="address"
+                             class="form-control"
+                             value="{{ old('address') }}"
+                             placeholder="শিক্ষা প্রতিষ্ঠানের ঠিকানা" required>
+                      <div class="input-group-append">
+                          <div class="input-group-text"><span class="fas fa-map-marked-alt"></span></div>
+                      </div>
+                  </div>
+                  <div class="input-group mb-3">
+                      <input type="text"
+                             name="location"
+                             value="{{ old('location') }}"
+                             autocomplete="off"
+                             class="form-control"
+                             placeholder="(OPTIONAL) গুগল ম্যাপ লোকেশন লিংক">
+                      <div class="input-group-append">
+                          <div class="input-group-text"><span class="fas fa-map-marker-alt"></span></div>
+                      </div>
+                  </div>
+                  <textarea class="form-control" name="description" placeholder="বক্স এর জন্য বার্তা লিখুন (Optional)">{{ old('description') }}</textarea><br/>
+                  <div class="row">
+                    <div class="col-md-12">
+                      <h4>
+                        বিস্তারিত (OPTIONAL)
+                      </h4>
+                      <input type="text" name="webaddress" class="form-control" placeholder="ওয়েব এড্রেস" style="margin-bottom: 5px;">
+                      <h5>
+                        অথবা (ওয়েব এড্রেস দিলে নিচের ব্যানার প্রদর্শন করবে না)
+                      </h5>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="form-group" style="margin-top: 15px;">
+                          <label for="image">ব্যানার-১ (Optional, Max 1 MB)</label>
+                          <input type="text" name="image1caption" class="form-control" placeholder="ব্যানার-১ এর ক্যাপশন লিখুন (OPTIONAL)" style="margin-bottom: 5px;">
+                          <input type="file" name="image1" accept="image/*">
+                      </div>
+
+                      <div class="form-group" style="margin-top: 15px;">
+                          <label for="image">ব্যানার-২ (Optional, Max 1 MB)</label>
+                          <input type="text" name="image2caption" class="form-control" placeholder="ব্যানার-২ এর ক্যাপশন লিখুন (OPTIONAL)" style="margin-bottom: 5px;">
+                          <input type="file" name="image2" accept="image/*">
+                      </div>
+                    </div>
+                    <div class="col-md-6">                    
+                      <div class="form-group" style="margin-top: 15px;">
+                          <label for="image">ব্যানার-৩ (Optional, Max 1 MB)</label>
+                          <input type="text" name="image3caption" class="form-control" placeholder="ব্যানার-৩ এর ক্যাপশন লিখুন (OPTIONAL)" style="margin-bottom: 5px;">
+                          <input type="file" name="image3" accept="image/*">
+                      </div>
+                      <div class="form-group" style="margin-top: 15px;">
+                          <label for="image">ব্যানার-৪ (Optional, Max 1 MB)</label>
+                          <input type="text" name="image4caption" class="form-control" placeholder="ব্যানার-৪ এর ক্যাপশন লিখুন (OPTIONAL)" style="margin-bottom: 5px;">
+                          <input type="file" name="image4" accept="image/*">
+                      </div>
+                    </div>
+                  </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">ফিরে যান</button>
+              <button type="submit" class="btn btn-success">দাখিল করুন</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    {{-- Add User Modal Code --}}
+    {{-- Add User Modal Code --}}
+
 @endsection
 
 @section('third_party_scripts')
