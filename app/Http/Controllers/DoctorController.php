@@ -475,6 +475,10 @@ class DoctorController extends Controller
             //         abort(403, 'Access Denied');
             //     }
             // }
+            $doctor = Doctor::findOrFail($doctor_id);
+            $doctorserials = Doctorserial::where('doctor_id', $doctor_id)
+                                         ->where('serialdate', $todaydate)
+                                         ->paginate(10);
         }
         $doctor = Doctor::findOrFail($doctor_id);
         $doctorserials = Doctorserial::where('doctor_id', $doctor_id)
