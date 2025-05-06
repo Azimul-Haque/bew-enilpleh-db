@@ -159,7 +159,7 @@ class BlooddonorController extends Controller
 
         Cache::forget('blooddonors'. 1 . Auth::user()->district_id);
         Cache::forget('blooddonors'. 2 . Auth::user()->district_id);
-        Session::flash('success', 'Blood Donor Member deleted successfully!');
+        Session::flash('success', 'Blood Donor deleted successfully!');
         return redirect()->back();
     }
 
