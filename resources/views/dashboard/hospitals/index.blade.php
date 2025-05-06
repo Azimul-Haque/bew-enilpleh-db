@@ -116,7 +116,6 @@
                                   @else
                                     <div class="col-md-6">
                                       জেলা: {{ Auth::user()->district->name_bangla }}
-                                      {{ $hospital->upazilla->name_bangla }}-{{ $hospital->upazilla->name }}
                                       <input type="hidden" name="district_id" value="{{ Auth::user()->district_id }}">
                                     </div>
                                     <div class="col-md-6">
