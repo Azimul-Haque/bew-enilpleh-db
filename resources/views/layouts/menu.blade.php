@@ -104,7 +104,12 @@
     </a>
 </li>
 @elseif(Auth::user()->role == 'editor')
-
+<li class="nav-item">
+    <a href="{{ route('dashboard.lawyers') }}" class="nav-link {{ Request::is('dashboard/lawyers') ? 'active' : '' }} {{ Request::is('dashboard/lawyers/*') ? 'active' : '' }}">
+        <i class="nav-icon fas fa-gavel"></i>
+        <p>আইনজীবী</p>
+    </a>
+</li>
 @endif
 
 
