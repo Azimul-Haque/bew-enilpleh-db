@@ -605,13 +605,9 @@ class AdminandothersController extends Controller
 
     public function coachingIndexSingleForEditor()
     {
-        if(!in_array('coachings', Auth::user()->accessibleTables())) {
-            $coachingscount = Auth::user()->accessibleCoachings()->count();
-            $coachings = Auth::user()->accessibleCoachings()->paginate(10);
-        } else {
-            $coachingscount = Auth::user()->accessibleCoachings()->count();
-            $coachings = Auth::user()->accessibleCoachings()->paginate(10);
-        }   
+        $coachingscount = Auth::user()->accessibleCoachings()->count();
+        $coachings = Auth::user()->accessibleCoachings()->paginate(10);
+           
         return view('dashboard.coachings.singleforeditors')
                             ->withCoachingscount($coachingscount)
                             ->withCoachings($coachings);
