@@ -1437,6 +1437,7 @@ class AdminandothersController extends Controller
         Session::flash('success', 'Newspaper updated successfully!');
         return redirect()->route('dashboard.newspapers');
     }
+    
     public function deleteNewspaper($district_id, $id)
     {
         $rentacar = Rentacar::find($id);
