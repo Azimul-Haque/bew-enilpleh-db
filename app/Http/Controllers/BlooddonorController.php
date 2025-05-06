@@ -153,7 +153,7 @@ class BlooddonorController extends Controller
             $blooddonor = Blooddonor::where('id', $id)
                                     ->where('district_id', Auth::user()->id)
                                     ->first();
-            $blooddonormemberscount = Blooddonormember::where('blooddonor_id', $id)->count();
+            $blooddonormemberscount = Blooddonormember::where('blooddonor_id', $blooddonor->id)->count();
             $blooddonormembers = Blooddonormember::where('blooddonor_id', $id)->orderBy('id', 'desc')->paginate(10);
         } else {
             $blooddonor = Blooddonor::find($id);
