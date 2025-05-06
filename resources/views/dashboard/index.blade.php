@@ -151,7 +151,7 @@
           {{-- @endif --}}
 
           {{-- @if(Auth::user()->role == 'admin' || in_array('journalists', Auth::user()->accessibleTables())) --}}
-          <div class="col-md-3">
+          {{-- <div class="col-md-3">
             <a href="{{ route('dashboard.journalists') }}" class="info-box mb-3">
               <span class="info-box-icon bg-warning elevation-1"><i class="fas fa-gavel"></i></span>
 
@@ -160,7 +160,7 @@
                 <small class="info-box-text" style="margin-top: 10px;">ক্লিক করুন</small>
               </div>
             </a>
-          </div>
+          </div> --}}
           {{-- @endif --}}
 
           {{-- <div class="col-md-3">
