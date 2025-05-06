@@ -199,12 +199,12 @@
       <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content">
           <div class="modal-header bg-success">
-            <h5 class="modal-title" id="addUserModalLabel">নতুন শিক্ষা প্রতিষ্ঠান যোগ (জেলা: <strong>{{ $district->name_bangla }}</strong>)</h5>
+            <h5 class="modal-title" id="addUserModalLabel">নতুন শিক্ষা প্রতিষ্ঠান যোগ (জেলা: <strong>{{ Auth::user()->district->name_bangla }}</strong>)</h5>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
           </div>
-          <form method="post" action="{{ route('dashboard.coachings.store', $district->id) }}" enctype='multipart/form-data'>
+          <form method="post" action="{{ route('dashboard.coachings.store', Auth::user()->district->id) }}" enctype='multipart/form-data'>
             <div class="modal-body">
               
                   @csrf
@@ -325,7 +325,7 @@
     <script type="text/javascript">
         $(document).on('click', '#search-button', function() {
           if($('#search-param').val() != '') {
-            var urltocall = '{{ route('dashboard.coachings.districtwise', $district->id) }}' +  '/' + $('#search-param').val();
+            var urltocall = '{{ route('dashboard.coachings.districtwise', Auth::user()->district->id) }}' +  '/' + $('#search-param').val();
             location.href= urltocall;
           } else {
             $('#search-param').css({ "border": '#FF0000 2px solid'});
@@ -338,7 +338,7 @@
         $("#search-param").keyup(function(e) {
           if(e.which == 13) {
             if($('#search-param').val() != '') {
-              var urltocall = '{{ route('dashboard.coachings.districtwise', $district->id) }}' +  '/' + $('#search-param').val();
+              var urltocall = '{{ route('dashboard.coachings.districtwise', Auth::user()->district->id) }}' +  '/' + $('#search-param').val();
               location.href= urltocall;
             } else {
               $('#search-param').css({ "border": '#FF0000 2px solid'});
