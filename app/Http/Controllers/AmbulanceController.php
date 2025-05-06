@@ -27,7 +27,7 @@ class AmbulanceController extends Controller
     public function __construct()
     {
         parent::__construct();
-        $this->middleware(['admin'])->only('index', 'indexSearch');
+        $this->middleware(['admin'])->only('indexSearch');
     }
 
     public function index()
