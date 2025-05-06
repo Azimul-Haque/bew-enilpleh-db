@@ -1331,8 +1331,14 @@ class AdminandothersController extends Controller
 
     public function newspaperIndex()
     {
-        $newspaperscount = Newspaper::count();
-        $newspapers = Newspaper::orderBy('id', 'desc')->paginate(10);
+        if(Auth::user()->role == 'editor') {
+            $newspaperscount = Newspaper::count();
+            $newspapers = Newspaper::orderBy('id', 'desc')->paginate(10);
+        } else {
+            $newspaperscount = Newspaper::count();
+            $newspapers = Newspaper::orderBy('id', 'desc')->paginate(10);
+        }
+        
         $districts = District::all();
                 
         return view('dashboard.newspapers.index')
