@@ -67,7 +67,7 @@
                               <span aria-hidden="true">&times;</span>
                             </button>
                           </div>
-                          <form method="post" action="{{ route('dashboard.coachings.update', [$district->id, $coaching->id]) }}" enctype="multipart/form-data">
+                          <form method="post" action="{{ route('dashboard.coachings.update', [Auth::user()->district_id, $coaching->id]) }}" enctype="multipart/form-data">
                             <div class="modal-body">
                               
                                   @csrf
