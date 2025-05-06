@@ -35,11 +35,11 @@
                 {{-- <button type="button" class="btn btn-info btn-sm"  data-toggle="modal" data-target="#addBulkDate" style="margin-left: 5px;">
                   <i class="fas fa-calendar-alt"></i> বাল্ক মেয়াদ বাড়ান
                 </button> --}}
-                <button type="button" class="btn btn-success btn-sm"  data-toggle="modal" data-target="#addUserModal" style="margin-left: 5px;">
-                  <i class="fas fa-user-plus"></i> নতুন
-                </button>
               </form>
               @endif
+              <button type="button" class="btn btn-success btn-sm"  data-toggle="modal" data-target="#addUserModal" style="margin-left: 5px;">
+                <i class="fas fa-user-plus"></i> নতুন
+              </button>
               
             </div>
           </div>
