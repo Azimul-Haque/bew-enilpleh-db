@@ -89,7 +89,7 @@
                                     <select name="district_id" id="district" class="form-control district" required>
                                         <option selected="" disabled="" value="">জেলা নির্বাচন করুন</option>
                                         @foreach($districts as $district)
-                                          <option value="{{ $district->id }}" @if($district->id == $blooddonor->district_id) selected @endif>{{ $district->name_bangla }}</option>
+                                          <option value="{{ $district->id }}" @if($district->id == $ambulance->district_id) selected @endif>{{ $district->name_bangla }}</option>
                                         @endforeach
                                     </select>
                                     <div class="input-group-append">
@@ -98,7 +98,7 @@
                                   </div>
                                   <div class="input-group mb-3">
                                     <select name="upazilla_id" id="upazilla" class="form-control upazilla" required>
-                                        <option selected="" value="{{ $blooddonor->upazilla_id }}">{{ $blooddonor->upazilla->name_bangla }}</option>
+                                        <option selected="" value="{{ $ambulance->upazilla_id }}">{{ $ambulance->upazilla->name_bangla }}</option>
                                     </select>
                                     <div class="input-group-append">
                                         <div class="input-group-text"><span class="fas fa-map-marked-alt"></span></div>
@@ -109,7 +109,7 @@
                                   <input type="hidden" name="district_id" value="{{ Auth::user()->district_id }}">
                                   <div class="input-group mb-3" style="margin-top: 15px;">
                                     <select name="upazilla_id" id="upazilla" class="form-control upazilla" required>
-                                        <option selected="" value="{{ $blooddonor->upazilla_id }}">{{ $blooddonor->upazilla->name_bangla }}</option>
+                                        <option selected="" value="{{ $ambulance->upazilla_id }}">{{ $ambulance->upazilla->name_bangla }}</option>
                                     </select>
                                     <div class="input-group-append">
                                         <div class="input-group-text"><span class="fas fa-map-marked-alt"></span></div>
