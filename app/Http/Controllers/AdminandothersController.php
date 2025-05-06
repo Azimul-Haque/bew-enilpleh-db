@@ -284,7 +284,8 @@ class AdminandothersController extends Controller
     public function lawyerIndexSingle($district_id)
     {
         if(Auth::user()->role == 'editor') {
-
+            $lawyerscount = Lawyer::where('district_id', $district_id)->count();
+            $lawyers = Lawyer::where('district_id', $district_id)->orderBy('id', 'asc')->paginate(10);
         } else {
             $lawyerscount = Lawyer::where('district_id', $district_id)->count();
             $lawyers = Lawyer::where('district_id', $district_id)->orderBy('id', 'asc')->paginate(10);
