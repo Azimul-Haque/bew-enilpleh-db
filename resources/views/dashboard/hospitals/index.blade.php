@@ -600,7 +600,7 @@
             success: function(result){
               $('.upazilla')
                   .find('option')
-                  {{-- .remove() --}}
+                  .remove()
                   .end()
                   .prop('disabled', false)
                   .append('<option value="" selected disabled>উপজেলা নির্ধারণ করুন</option>')
