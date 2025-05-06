@@ -1454,7 +1454,7 @@ class AdminandothersController extends Controller
 
         
 
-        Session::flash('success', 'Rent-a-Car deleted successfully!');
+        Session::flash('success', 'Newspaper deleted successfully!');
         return redirect()->back();
     }
 }
