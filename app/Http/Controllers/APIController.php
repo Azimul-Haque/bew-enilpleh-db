@@ -730,9 +730,9 @@ class APIController extends Controller
 
     public function getNewspapers($softtoken, $district_id)
     {
-
+        
         if($softtoken == env('SOFT_TOKEN')) {
-            $newspapers = Cache::remember('newspapers' . $district_id, 365 * 24 * 60 * 60, function (use $district_id)  {
+            $newspapers = Cache::remember('newspapers' . $district_id, 365 * 24 * 60 * 60, function ($district_id)  {
                $newspapers = Newspaper::where('district_id', $district_id)->orderBy('id', 'desc')->get();
                foreach($newspapers as $newspaper) {
                    $newspaper->image = $newspaper->newspaperimage ? $newspaper->newspaperimage->image : '';
