@@ -150,7 +150,7 @@
                     </div>
                     {{-- Edit User Modal Code --}}
                     {{-- Edit User Modal Code --}}
-                    
+
                         {{-- Delete User Modal Code --}}
                         {{-- Delete User Modal Code --}}
                         <!-- Modal -->
@@ -217,12 +217,19 @@
                           <div class="input-group-text"><span class="fas fa-hand-holding-medical"></span></div>
                       </div>
                   </div>
+
+                  @if(Auth::user()->role == 'admin')
                   <select name="district_id" id="district" class="form-control district select21" data-placeholder="জেলা নির্বাচন করুন" required>
                       <option selected="" disabled="" value="">জেলা নির্বাচন করুন</option>
                       @foreach($districts as $district)
                         <option value="{{ $district->id }}">{{ $district->name_bangla }}-{{ $district->name }}</option>
                       @endforeach
                   </select>
+                  @else
+                    জেলা: {{ Auth::user()->district->name_bangla }}
+                    <input type="hidden" name="district_id" value="{{ Auth::user()->district_id }}">
+                  @endif
+                  
                   <div class="input-group mb-3" style="margin-top: 15px;">
                       <input type="text"
                              name="url"
