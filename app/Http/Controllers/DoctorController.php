@@ -89,7 +89,7 @@ class DoctorController extends Controller
             $doctors = Doctor::where('district_id', Auth::user()->district_id)
                              ->orderBy('id', 'desc')
                              ->paginate(10);
-            $hospitals = Hospital::all();
+            $hospitals = where('district_id', Auth::user()->district_id)->get();
 
         } else {
             $doctorscount = Doctor::count();
