@@ -586,7 +586,7 @@
           });
         });
 
-        @if()
+        @if(Auth::user()->role == 'editor')
           $('.upazilla').prop('disabled', true);
           $('.upazilla').append('<option value="" selected disabled>উপজেলা লোড হচ্ছে...</option>');
 
