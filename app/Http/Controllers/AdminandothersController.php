@@ -1391,7 +1391,7 @@ class AdminandothersController extends Controller
             $newspaperimage->save();
         }
         
-        Cache::forget('newspapers' . $district_id);
+        Cache::forget('newspapers' . $request->district_id);
         Session::flash('success', 'Newspaper added successfully!');
         return redirect()->route('dashboard.newspapers');
     }
