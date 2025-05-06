@@ -508,6 +508,7 @@ class AdminandothersController extends Controller
                 $rentacarimage->delete();
             }
         }
+        $rentacar->delete;
 
         Cache::forget('rentacars' . $district_id);
 
