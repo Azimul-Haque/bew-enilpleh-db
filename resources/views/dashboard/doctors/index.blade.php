@@ -149,7 +149,7 @@
                                         @csrf
 
                                         <div class="row">
-                                          <div class="col-md-6">
+                                          {{-- <div class="col-md-6">
                                             <div class="input-group mb-3">
                                               <select name="district_id" id="district" class="form-control district select21" required>
                                                   <option selected="" disabled="" value="">জেলা নির্বাচন করুন</option>
@@ -171,7 +171,32 @@
                                                   <div class="input-group-text"><span class="fas fa-map-marked-alt"></span></div>
                                               </div>
                                             </div>
+                                          </div> --}}
+                                          @if(Auth::user()->role == 'admin')
+                                          <div class="col-md-6">
+                                            <select name="district_id" id="district" class="form-control district select21" data-placeholder="জেলা নির্বাচন করুন" required>
+                                                <option selected="" disabled="" value="">জেলা নির্বাচন করুন</option>
+                                                @foreach($districts as $district)
+                                                  <option value="{{ $district->id }}" @if($district->id == $hospital->district_id) selected @endif>{{ $district->name_bangla }}-{{ $district->name }}</option>
+                                                @endforeach
+                                            </select>
                                           </div>
+                                          <div class="col-md-6">
+                                            <select name="upazilla_id" id="upazilla" class="form-control upazilla select21" data-placeholder="উপজেলা সিলেক্ট করুন" required>
+                                                <option selected="" value="{{ $hospital->upazilla_id }}">{{ $hospital->upazilla->name_bangla }}-{{ $hospital->upazilla->name }}</option>
+                                            </select>
+                                          </div>
+                                          @else
+                                            <div class="col-md-6">
+                                              জেলা: {{ Auth::user()->district->name_bangla }}
+                                              <input type="hidden" name="district_id" value="{{ Auth::user()->district_id }}">
+                                            </div>
+                                            <div class="col-md-6">
+                                              <select name="upazilla_id" id="upazilla" class="form-control upazilla select21" data-placeholder="উপজেলা সিলেক্ট করুন" required>
+                                                  <option selected="" value="{{ $hospital->upazilla_id }}">{{ $hospital->upazilla->name_bangla }}-{{ $hospital->upazilla->name }}</option>
+                                              </select>
+                                            </div>
+                                          @endif
                                         </div>
 
                                         <div class="row">
