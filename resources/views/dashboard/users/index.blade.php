@@ -355,7 +355,7 @@
 	                    </div>
 	                </div>
 
-                  <select name="district_id" id="district" class="form-control district select21" data-placeholder="জেলা নির্বাচন করুন" style="margin-bottom: 15px;" required>
+                  <select name="district_id" id="district" class="form-control district select2" data-placeholder="জেলা নির্বাচন করুন" style="margin-bottom: 15px;" required>
                       <option selected="" disabled="" value="">জেলা নির্বাচন করুন</option>
                       @foreach($districts as $district)
                         <option value="{{ $district->id }}" @if($district->id == $hospital->district_id) selected @endif>{{ $district->name_bangla }}-{{ $district->name }}</option>
