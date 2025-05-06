@@ -103,6 +103,8 @@
         <p>আইনজীবী</p>
     </a>
 </li>
+@elseif(Auth::user()->role == 'editor')
+
 @endif
 
 
