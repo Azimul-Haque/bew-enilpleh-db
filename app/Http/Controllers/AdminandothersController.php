@@ -511,7 +511,7 @@ class AdminandothersController extends Controller
 
         Cache::forget('rentacars' . $district_id);
 
-        Session::flash('success', 'Hospital deleted successfully!');
+        Session::flash('success', 'Rent a Car deleted successfully!');
         return redirect()->back();
     }
 
