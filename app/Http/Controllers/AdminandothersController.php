@@ -382,8 +382,10 @@ class AdminandothersController extends Controller
 
     public function rentacarIndex()
     {
+        if(Auth::user()->role == 'editor') {
+            abort(403, 'Access Denied');
+        }
         $districts = District::all();
-                
         return view('dashboard.rentacars.index')
                             ->withDistricts($districts);
     }
@@ -496,6 +498,9 @@ class AdminandothersController extends Controller
 
     public function journalistIndex()
     {
+        if(Auth::user()->role == 'editor') {
+            abort(403, 'Access Denied');
+        }
         $districts = District::all();
         return view('dashboard.journalists.index')
                             ->withDistricts($districts);
