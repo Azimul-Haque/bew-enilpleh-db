@@ -1119,8 +1119,14 @@ class AdminandothersController extends Controller
     {
         $districts = District::all();
         $district = District::find($district_id);
-        $busescount = Bus::where('district_id', $district_id)->count();
-        $buses = Bus::where('district_id', $district_id)->orderBy('id', 'asc')->paginate(10);
+        
+        if(Auth::user()->role == 'editor') {
+            $busescount = Bus::where('district_id', $district_id)->count();
+            $buses = Bus::where('district_id', $district_id)->orderBy('id', 'asc')->paginate(10);
+        } else {
+            $busescount = Bus::where('district_id', $district_id)->count();
+            $buses = Bus::where('district_id', $district_id)->orderBy('id', 'asc')->paginate(10);
+        }
 
         $buscounters = Buscounter::all();
                 
