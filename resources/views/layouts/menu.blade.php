@@ -113,7 +113,7 @@
         <p>শিক্ষা প্রতিষ্ঠান</p>
     </a>
 </li>
-@elseif(Auth::user()->role == 'editor' && in_array('coachings', Auth::user()->accessibleTables()))
+@elseif(Auth::user()->role == 'editor')
 <li class="nav-item">
     <a href="{{ route('dashboard.coachings.singleforeditor') }}" class="nav-link {{ Request::is('dashboard/coachings') ? 'active' : '' }} {{ Request::is('dashboard/coachings/*') ? 'active' : '' }}">
         <i class="nav-icon fas fa-chalkboard-teacher"></i>
