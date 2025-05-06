@@ -38,6 +38,8 @@ class BlooddonorController extends Controller
             // }
             // $blooddonorscount = Auth::user()->accessibleBlooddonors()->count();
             // $blooddonors = Auth::user()->accessibleBlooddonors()->paginate(10);
+            $blooddonorscount = Blooddonor::where('district_id', Auth::user()->district_id)->count();
+            $blooddonors = Blooddonor::where('district_id', Auth::user()->district_id)->orderBy('id', 'desc')->paginate(10);
         } else {
             $blooddonorscount = Blooddonor::count();
             $blooddonors = Blooddonor::orderBy('id', 'desc')->paginate(10);
