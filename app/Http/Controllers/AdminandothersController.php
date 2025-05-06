@@ -590,6 +590,10 @@ class AdminandothersController extends Controller
         // if(!in_array('coachings', Auth::user()->accessibleTables())) {
         //     abort(403, 'Access Denied');
         // }
+        // COACING E KAJ KORLE BAKIGULA HOYE JAABE
+        // COACING E KAJ KORLE BAKIGULA HOYE JAABE
+        // COACING E KAJ KORLE BAKIGULA HOYE JAABE
+        // COACING E KAJ KORLE BAKIGULA HOYE JAABE
         $coachingscount = Auth::user()->accessibleCoachings()->count();
         $coachings = Auth::user()->accessibleCoachings()->paginate(10);
                 
