@@ -99,8 +99,8 @@
                                           <option value="{{ $district->id }}" @if($district->id == $newspaper->district_id) selected @endif>{{ $district->name_bangla }}-{{ $district->name }}</option>
                                         @endforeach
                                     </select>
-                                    
-                                    <div class="input-group mb-3">
+
+                                    <div class="input-group mb-3" style="margin-top: 15px;">
                                         <input type="text"
                                                name="url"
                                                value="{{ $newspaper->url }}"
