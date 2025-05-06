@@ -516,7 +516,7 @@ class DoctorController extends Controller
             $doctor = Doctor::where('id', $doctor_id)
                             ->where('district_id', Auth::user()->district_id)
                             ->first();
-            $doctorserials = Doctorserial::where('doctor_id', $doctor_id)
+            $doctorserials = Doctorserial::where('doctor_id', $doctor->id)
                                        ->where('serialdate', $serialdate)
                                        ->get();
         }
