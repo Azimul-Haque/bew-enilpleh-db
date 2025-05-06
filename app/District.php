@@ -69,4 +69,8 @@ class District extends Model
     public function journalists(){
         return $this->hasMany('App\Journalist');
     }
+
+    public function newspapers(){
+        return $this->hasMany('App\Newspaper');
+    }
 }
