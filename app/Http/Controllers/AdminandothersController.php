@@ -496,6 +496,20 @@ class AdminandothersController extends Controller
         return redirect()->route('dashboard.rentacars.districtwise', $district_id);
     }
 
+    public function deleteRentacar($district_id, $id)
+    {
+        $bus = Bus::find($id);
+        // Remove old counter data
+        $bus->buscounterdatas()->delete();
+        $bus->delete();
+
+        Cache::forget('busesfrom' . $district_id);
+        Cache::forget('busesto' . $district_id);
+
+        Session::flash('success', 'Hospital deleted successfully!');
+        return redirect()->back();
+    }
+
     public function journalistIndex()
     {
         if(Auth::user()->role == 'editor') {
