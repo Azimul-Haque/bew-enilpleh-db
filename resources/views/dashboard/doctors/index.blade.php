@@ -177,13 +177,13 @@
                                             <select name="district_id" id="district" class="form-control district select21" data-placeholder="জেলা নির্বাচন করুন" required>
                                                 <option selected="" disabled="" value="">জেলা নির্বাচন করুন</option>
                                                 @foreach($districts as $district)
-                                                  <option value="{{ $district->id }}" @if($district->id == $hospital->district_id) selected @endif>{{ $district->name_bangla }}-{{ $district->name }}</option>
+                                                  <option value="{{ $district->id }}" @if($district->id == $doctor->district_id) selected @endif>{{ $district->name_bangla }}-{{ $district->name }}</option>
                                                 @endforeach
                                             </select>
                                           </div>
                                           <div class="col-md-6">
                                             <select name="upazilla_id" id="upazilla" class="form-control upazilla select21" data-placeholder="উপজেলা সিলেক্ট করুন" required>
-                                                <option selected="" value="{{ $hospital->upazilla_id }}">{{ $hospital->upazilla->name_bangla }}-{{ $hospital->upazilla->name }}</option>
+                                                <option selected="" value="{{ $doctor->upazilla_id }}">{{ $doctor->upazilla->name_bangla }}-{{ $doctor->upazilla->name }}</option>
                                             </select>
                                           </div>
                                           @else
@@ -193,7 +193,7 @@
                                             </div>
                                             <div class="col-md-6">
                                               <select name="upazilla_id" id="upazilla" class="form-control upazilla select21" data-placeholder="উপজেলা সিলেক্ট করুন" required>
-                                                  <option selected="" value="{{ $hospital->upazilla_id }}">{{ $hospital->upazilla->name_bangla }}-{{ $hospital->upazilla->name }}</option>
+                                                  <option selected="" value="{{ $doctor->upazilla_id }}">{{ $doctor->upazilla->name_bangla }}-{{ $doctor->upazilla->name }}</option>
                                               </select>
                                             </div>
                                           @endif
