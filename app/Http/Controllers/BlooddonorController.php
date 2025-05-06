@@ -151,7 +151,7 @@ class BlooddonorController extends Controller
 
     public function deleteBloodDonor ($id)
     {
-        $blooddonormember = Blooddonormember::findOrFail($member_id);
+        $blooddonor = Blooddonor::find($id);
         $blooddonormember->delete();
 
         Cache::forget('blooddonormembers'. $blooddonor_id);
