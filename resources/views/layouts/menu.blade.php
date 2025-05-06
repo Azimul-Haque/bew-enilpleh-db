@@ -15,12 +15,14 @@
 </li>
 @endif
 
+{{-- @if(Auth::user()->role == 'admin' || in_array('hospitals', Auth::user()->accessibleTables())) --}}
 <li class="nav-item">
     <a href="{{ route('dashboard.hospitals') }}" class="nav-link {{ Request::is('dashboard/hospitals') ? 'active' : '' }} {{ Request::is('dashboard/hospitals/*') ? 'active' : '' }}">
         <i class="nav-icon fas fa-hospital"></i>
         <p>হাসপাতাল তালিকা</p>
     </a>
 </li>
+{{-- @endif --}}
 
 @if(Auth::user()->role == 'admin' || in_array('doctors', Auth::user()->accessibleTables()) || in_array('hospitals', Auth::user()->accessibleTables()))
 <li class="nav-item">
