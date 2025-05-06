@@ -362,7 +362,7 @@
                       @endforeach
                   </select>
 
-                  <div style="margin-bottom: 15px;">
+                  <div style="margin-top: 15px;">
                     <select name="hospitals[]" class="form-control multiple-select" multiple="multiple" data-placeholder="যে যে হাসপাতালের এক্সেস দেওয়া হবে (প্রয়োজনে একাধিক সিলেক্ট করা যাবে) [Optional]" onautocomplete="off">
                         @foreach($hospitals as $hospital)
                           <option value="{{ $hospital->id }}">{{ $hospital->name }} - ({{ $hospital->upazilla->name_bangla }}, {{ $hospital->district->name_bangla }})</option>
