@@ -276,7 +276,6 @@ class AdminandothersController extends Controller
     public function lawyerIndex()
     {
         $districts = District::all();
-                
         return view('dashboard.lawyers.index')
                             ->withDistricts($districts);
     }
