@@ -369,7 +369,8 @@ class AdminandothersController extends Controller
     public function deleteLawyer($id) {
         $lawyer = Lawyer::find($id);
         $lawyer->delete();
-        
+
+        Session::flash('success', 'Lawyer deleted successfully!');
         return redirect()->bacK();
     }
 
