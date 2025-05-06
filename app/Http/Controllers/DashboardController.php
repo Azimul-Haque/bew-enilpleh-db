@@ -110,9 +110,11 @@ class DashboardController extends Controller
         $doctors = Doctor::all();
         $blooddonors = Blooddonor::all();
         $coachings = Coaching::all();
+        $districts = District::all();
 
         return view('dashboard.users.index')
                     ->withUsers($users)
+                    ->withDistricts($districts)
                     ->withUserscount($userscount)
                     ->withHospitals($hospitals)
                     ->withDoctors($doctors)
