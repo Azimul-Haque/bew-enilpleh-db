@@ -499,9 +499,15 @@ class AdminandothersController extends Controller
     public function deleteRentacar($district_id, $id)
     {
         $rentacar = Rentacar::find($id);
-        // Remove old counter data
-        $bus->buscounterdatas()->delete();
-        $bus->delete();
+        if($coaching->coachingimages) {
+            foreach($coaching->coachingimages as $coachingimage) {
+                $image_path = public_path('images/coachings/'. $coachingimage->image);
+                if(File::exists($image_path)) {
+                    File::delete($image_path);
+                }
+                $coachingimage->delete();
+            }
+        }
 
         Cache::forget('busesfrom' . $district_id);
         Cache::forget('busesto' . $district_id);
