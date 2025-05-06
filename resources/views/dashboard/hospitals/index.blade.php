@@ -568,6 +568,13 @@
           dropdownParent: $('.modal')
         });
       });
+      $('.multiple-select').select2({
+        // theme: 'bootstrap4',
+      });
+      $('.select21').select2({
+        // theme: 'bootstrap4',
+        dropdownParent: $('.modal')
+      });
       
 
         $('.district').on('change', function() {
