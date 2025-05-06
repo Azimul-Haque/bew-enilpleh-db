@@ -62,12 +62,12 @@
                       <div class="modal-dialog modal-lg" role="document">
                         <div class="modal-content">
                           <div class="modal-header bg-primary">
-                            <h5 class="modal-title" id="editUserModalLabel">শিক্ষা প্রতিষ্ঠান তথ্য হালনাগাদ (জেলা: {{ $coaching->district->name_bangla }})</h5>
+                            <h5 class="modal-title" id="editUserModalLabel">শিক্ষা প্রতিষ্ঠান তথ্য হালনাগাদ</h5>
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                               <span aria-hidden="true">&times;</span>
                             </button>
                           </div>
-                          <form method="post" action="{{ route('dashboard.coachings.update', [$coaching->district->id, $coaching->id]) }}" enctype="multipart/form-data">
+                          <form method="post" action="{{ route('dashboard.coachings.update', [$district->id, $coaching->id]) }}" enctype="multipart/form-data">
                             <div class="modal-body">
                               
                                   @csrf
@@ -84,7 +84,7 @@
                                   </div>
 
                                   <div class="input-group mb-3">
-                                    <select name="type" class="form-control" required>
+                                    <select name="type" class="form-control typeSelectEdit{{ $coaching->id }}" required>
                                         <option selected="" disabled="" value="">শিক্ষা প্রতিষ্ঠানের ধরন</option>
                                         <option value="1" @if($coaching->type == 1) selected @endif>সরকারি শিক্ষা প্রতিষ্ঠান</option>
                                         <option value="2" @if($coaching->type == 2) selected @endif>বেসরকারি শিক্ষা প্রতিষ্ঠান</option>
@@ -95,12 +95,18 @@
                                     </div>
                                   </div>
 
+                                  <div id="subTypeEditContainer{{ $coaching->id }}" class="input-group mb-3" style="display:none;">
+                                      <select id="subTypeSelectEdit{{ $coaching->id }}" name="sub_type" class="form-control" required>
+                                          <!-- Options will load dynamically -->
+                                      </select>
+                                  </div>
+
                                   <div class="input-group mb-3">
                                       <input type="number"
                                              name="mobile"
                                              value="{{ $coaching->mobile }}"
                                              class="form-control"
-                                             placeholder="শিক্ষা প্রতিষ্ঠানের মোবাইল নম্বর" required>
+                                             placeholder="শিক্ষা প্রতিষ্ঠানের মোবাইল নম্বর (OPTIONAL)">
                                       <div class="input-group-append">
                                           <div class="input-group-text"><span class="fas fa-mobile"></span></div>
                                       </div>
@@ -115,28 +121,52 @@
                                           <div class="input-group-text"><span class="fas fa-map-marked-alt"></span></div>
                                       </div>
                                   </div>
+                                  <div class="input-group mb-3">
+                                      <input type="text"
+                                             name="location"
+                                             value="{{ $coaching->location }}"
+                                             autocomplete="off"
+                                             class="form-control"
+                                             placeholder="(OPTIONAL) গুগল ম্যাপ লোকেশন লিংক">
+                                      <div class="input-group-append">
+                                          <div class="input-group-text"><span class="fas fa-map-marker-alt"></span></div>
+                                      </div>
+                                  </div>
                                   <textarea class="form-control" name="description" placeholder="বক্স এর জন্য বার্তা লিখুন (Optional)">{{ $coaching->description }}</textarea>    
 
                                   <div class="row">
+                                    <div class="col-md-12">
+                                      <h4>
+                                        বিস্তারিত (OPTIONAL)
+                                      </h4>
+                                      <input type="text" name="webaddress" value="{{ $coaching->webaddress }}" class="form-control" placeholder="ওয়েব এড্রেস" style="margin-bottom: 5px;">
+                                      <h5>
+                                        অথবা (ওয়েব এড্রেস দিলে নিচের ব্যানার প্রদর্শন করবে না)
+                                      </h5>
+                                    </div>
                                     <div class="col-md-6">
                                       <div class="form-group" style="margin-top: 15px;">
                                           <label for="image">ব্যানার-১ (Optional, Max 1 MB)</label>
+                                          <input type="text" name="image1caption" class="form-control" placeholder="ব্যানার-১ এর ক্যাপশন লিখুন (OPTIONAL)" style="margin-bottom: 5px;">
                                           <input type="file" name="image1" accept="image/*">
                                       </div>
 
                                       <div class="form-group" style="margin-top: 15px;">
                                           <label for="image">ব্যানার-২ (Optional, Max 1 MB)</label>
+                                          <input type="text" name="image2caption" class="form-control" placeholder="ব্যানার-২ এর ক্যাপশন লিখুন (OPTIONAL)" style="margin-bottom: 5px;">
                                           <input type="file" name="image2" accept="image/*">
                                       </div>
                                     </div>
+
                                     <div class="col-md-6">
                                       <div class="form-group" style="margin-top: 15px;">
                                           <label for="image">ব্যানার-৩ (Optional, Max 1 MB)</label>
+                                          <input type="text" name="image3caption" class="form-control" placeholder="ব্যানার-৩ এর ক্যাপশন লিখুন (OPTIONAL)" style="margin-bottom: 5px;">
                                           <input type="file" name="image3" accept="image/*">
                                       </div>
-
                                       <div class="form-group" style="margin-top: 15px;">
                                           <label for="image">ব্যানার-৪ (Optional, Max 1 MB)</label>
+                                          <input type="text" name="image4caption" class="form-control" placeholder="ব্যানার-৪ এর ক্যাপশন লিখুন (OPTIONAL)" style="margin-bottom: 5px;">
                                           <input type="file" name="image4" accept="image/*">
                                       </div>
                                     </div>
@@ -151,6 +181,65 @@
                         </div>
                       </div>
                     </div>
+                    <script>
+                    $(document).ready(function() {
+                        var selectedSubType = "{{ $coaching->sub_type }}";
+
+                        function loadSubTypes(type, selectedValue = '') {
+                            var options = '';
+
+                            if (type == '1') {
+                                options = `
+                                    <option value="প্রাথমিক">প্রাথমিক</option>
+                                    <option value="মাধ্যমিক">মাধ্যমিক</option>
+                                    <option value="উচ্চমাধ্যমিক">উচ্চমাধ্যমিক</option>
+                                    <option value="কলেজ/ বিশ্ববিদ্যালয়">কলেজ/ বিশ্ববিদ্যালয়</option>
+                                    <option value="মাদ্রাসা">মাদ্রাসা</option>
+                                    <option value="কারিগরি শিক্ষা">কারিগরি শিক্ষা</option>
+                                `;
+                            } else if (type == '2') {
+                                options = `
+                                    <option value="প্রাথমিক">প্রাথমিক</option>
+                                    <option value="মাধ্যমিক">মাধ্যমিক</option>
+                                    <option value="উচ্চমাধ্যমিক">উচ্চমাধ্যমিক</option>
+                                    <option value="কলেজ/ বিশ্ববিদ্যালয়">কলেজ/ বিশ্ববিদ্যালয়</option>
+                                    <option value="কারিগরি শিক্ষা">কারিগরি শিক্ষা</option>
+                                    <option value="ইংলিশ মিডিয়াম">ইংলিশ মিডিয়াম</option>
+                                    <option value="মাদ্রাসা">মাদ্রাসা</option>
+                                `;
+                            } else if (type == '3') {
+                                options = `
+                                    <option value="একাডেমিক (প্রাথমিক/ মাধ্যমিক/ উচ্চমাধ্যমিক)">একাডেমিক (প্রাথমিক/ মাধ্যমিক/ উচ্চমাধ্যমিক)</option>
+                                    <option value="ভর্তি কোচিং">ভর্তি কোচিং</option>
+                                    <option value="স্কিল ডেভেলপমেন্ট">স্কিল ডেভেলপমেন্ট</option>
+                                    <option value="IELTS/ GRE/ Toefl">IELTS/ GRE/ Toefl</option>
+                                `;
+                            }
+
+                            if (options != '') {
+                                $('#subTypeSelectEdit{{ $coaching->id }}').html(options);
+                                $('#subTypeEditContainer{{ $coaching->id }}').show();
+
+                                // After options are loaded, select the correct sub_type
+                                if (selectedValue != '') {
+                                    $('#subTypeSelectEdit{{ $coaching->id }}').val(selectedValue);
+                                }
+                            } else {
+                                $('#subTypeEditContainer{{ $coaching->id }}').hide();
+                            }
+                        }
+
+                        $('.typeSelectEdit{{ $coaching->id }}').change(function() {
+                            loadSubTypes($(this).val());
+                        });
+
+                        // If editing, trigger change automatically
+                        if ($('.typeSelectEdit{{ $coaching->id }}').val()) {
+                            loadSubTypes($('.typeSelectEdit{{ $coaching->id }}').val(), selectedSubType);
+                        }
+                    });
+                    </script>
+
                     {{-- Edit User Modal Code --}}
                     {{-- Edit User Modal Code --}}
                     
