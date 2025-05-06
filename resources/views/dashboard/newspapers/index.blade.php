@@ -107,7 +107,8 @@
                                         @endforeach
                                     </select>
                                     @else
-                                      
+                                      জেলা: {{ Auth::user()->district->name_bangla }}
+                                      <input type="hidden" name="district_id" value="{{ Auth::user()->district_id }}">
                                     @endif
 
                                     <div class="input-group mb-3" style="margin-top: 15px;">
