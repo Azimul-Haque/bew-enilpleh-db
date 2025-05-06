@@ -116,6 +116,7 @@
                                   @else
                                     <div class="col-md-6">
                                       জেলা: {{ Auth::user()->district->name_bangla }}
+                                      <input type="hidden" name="district_id" value="{{ Auth::user()->district_id }}">
                                     </div>
                                     <div class="col-md-6">
                                       <select name="upazilla_id" id="upazilla" class="form-control upazilla select21" data-placeholder="উপজেলা সিলেক্ট করুন" required>
