@@ -150,7 +150,8 @@ class BlooddonorController extends Controller
     public function getBloodDonorMembers($id)
     {
         if(Auth::user()->role == 'editor') {
-            $blooddonor = Blooddonor::find($id);
+            $blooddonor = Blooddonor::where('id', $id)
+                                    ->where()
             $blooddonormemberscount = Blooddonormember::where('blooddonor_id', $id)->count();
             $blooddonormembers = Blooddonormember::where('blooddonor_id', $id)->orderBy('id', 'desc')->paginate(10);
         } else {
