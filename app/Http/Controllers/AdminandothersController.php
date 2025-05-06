@@ -509,8 +509,7 @@ class AdminandothersController extends Controller
             }
         }
 
-        Cache::forget('busesfrom' . $district_id);
-        Cache::forget('busesto' . $district_id);
+        Cache::forget('rentacars' . $district_id);
 
         Session::flash('success', 'Hospital deleted successfully!');
         return redirect()->back();
