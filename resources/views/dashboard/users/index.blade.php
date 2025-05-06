@@ -355,14 +355,14 @@
 	                    </div>
 	                </div>
 
-                  <select name="district_id" id="district" class="form-control district select21" data-placeholder="জেলা নির্বাচন করুন" style="margin-bottom: 15px;" required>
+                  <select name="district_id" id="district" class="form-control district select21" data-placeholder="জেলা নির্বাচন করুন"  required>
                       <option selected="" disabled="" value="">জেলা নির্বাচন করুন</option>
                       @foreach($districts as $district)
                         <option value="{{ $district->id }}" @if($district->id == $hospital->district_id) selected @endif>{{ $district->name_bangla }}-{{ $district->name }}</option>
                       @endforeach
                   </select>
 
-                  <div style="margin-bottom: 15px;">
+                  <div style="margin-bottom: 15px; margin-top: 15px;">
                     <select name="hospitals[]" class="form-control multiple-select" multiple="multiple" data-placeholder="যে যে হাসপাতালের এক্সেস দেওয়া হবে (প্রয়োজনে একাধিক সিলেক্ট করা যাবে) [Optional]" onautocomplete="off">
                         @foreach($hospitals as $hospital)
                           <option value="{{ $hospital->id }}">{{ $hospital->name }} - ({{ $hospital->upazilla->name_bangla }}, {{ $hospital->district->name_bangla }})</option>
