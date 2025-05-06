@@ -1332,7 +1332,7 @@ class AdminandothersController extends Controller
     public function newspaperIndex()
     {
         if(Auth::user()->role == 'editor') {
-            $newspaperscount = Newspaper::count();
+            $newspaperscount = Newspaper::where('district_id', Auth::user()->district_id)->count();
             $newspapers = Newspaper::orderBy('id', 'desc')->paginate(10);
         } else {
             $newspaperscount = Newspaper::count();
