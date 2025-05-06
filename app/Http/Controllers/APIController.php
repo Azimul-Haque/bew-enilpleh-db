@@ -732,7 +732,7 @@ class APIController extends Controller
     {
         if($softtoken == env('SOFT_TOKEN')) {
             $newspapers = Cache::remember('newspapers' . $district_id, 365 * 24 * 60 * 60, function ()  {
-               $newspapers = Newspaper::where('district_id', $district_id)->get();
+               $newspapers = Newspaper::where('district_id', $district_id)->orderBy('id', 'desc')->get();
                foreach($newspapers as $newspaper) {
                    $newspaper->image = $newspaper->newspaperimage ? $newspaper->newspaperimage->image : '';
                    $newspaper->makeHidden('newspaperimage', 'created_at', 'updated_at');
