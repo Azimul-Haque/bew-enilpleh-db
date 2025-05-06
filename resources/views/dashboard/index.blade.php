@@ -98,7 +98,7 @@
               </div>
             </a>
           </div>
-          @elseif(Auth::user()->role == 'editor' && in_array('coachings', Auth::user()->accessibleTables()))
+          @elseif(Auth::user()->role == 'editor')
           <div class="col-md-3">
             <a href="{{ route('dashboard.coachings.singleforeditor') }}" class="info-box mb-3">
               <span class="info-box-icon bg-warning elevation-1"><i class="fas fa-chalkboard-teacher"></i></span>
