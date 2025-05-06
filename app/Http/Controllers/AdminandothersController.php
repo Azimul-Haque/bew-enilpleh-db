@@ -368,7 +368,7 @@ class AdminandothersController extends Controller
 
     public function deleteLawyer($id) {
         $lawyer = Lawyer::find($id);
-        $lawyer->district_id = $district_id;
+        $lawyer->delete();
     }
 
     public function rentacarIndex()
