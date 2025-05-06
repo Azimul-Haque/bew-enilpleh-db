@@ -728,7 +728,7 @@ class APIController extends Controller
         }
     }
 
-    public function getNewspapers($softtoken)
+    public function getNewspapers($softtoken, $district_id)
     {
         if($softtoken == env('SOFT_TOKEN')) {
             $newspapers = Cache::remember('newspapers' . $district_id, 365 * 24 * 60 * 60, function ()  {
