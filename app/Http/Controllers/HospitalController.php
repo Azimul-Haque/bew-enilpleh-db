@@ -41,8 +41,8 @@ class HospitalController extends Controller
             // $hospitalscount = Auth::user()->accessibleHospitals()->count();
             // $hospitals = Auth::user()->accessibleHospitals()->paginate(10);
 
-            $hospitalscount = Auth::user()->accessibleHospitals()->count();
-            $hospitals = Auth::user()->accessibleHospitals()->paginate(10);
+            $hospitalscount = Hospital::where('district_id', Auth::user()->district_id)->count();
+            $hospitals = Hospital::where('district_id', Auth::user()->district_id)->paginate(10);
         } else {
             $hospitalscount = Hospital::count();
             $hospitals = Hospital::orderBy('id', 'desc')->paginate(10);
