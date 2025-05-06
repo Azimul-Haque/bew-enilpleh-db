@@ -1391,7 +1391,7 @@ class AdminandothersController extends Controller
             $newspaperimage->save();
         }
         
-        Cache::forget('newspapers');
+        Cache::forget('newspapers' . $district_id);
         Session::flash('success', 'Newspaper added successfully!');
         return redirect()->route('dashboard.newspapers');
     }
@@ -1433,7 +1433,7 @@ class AdminandothersController extends Controller
         }
 
         
-        Cache::forget('newspapers');
+        Cache::forget('newspapers' . $district_id);
         Session::flash('success', 'Newspaper updated successfully!');
         return redirect()->route('dashboard.newspapers');
     }
@@ -1451,7 +1451,7 @@ class AdminandothersController extends Controller
         }
         $newspaper->delete();
 
-        Cache::forget('rentacars' . $district_id);
+        Cache::forget('newspapers' . $district_id);
 
         Session::flash('success', 'Rent-a-Car deleted successfully!');
         return redirect()->back();
