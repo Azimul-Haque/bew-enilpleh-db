@@ -52,7 +52,7 @@
                       {{ $newspaper->name }}
                     </td>
                     <td>
-                      {{ $newspaper->district->name_bangla }}
+                      {{ $newspaper->district ? $newspaper->district->name_bangla : '' }}
                     </td>
                     <td>
                       <a href="{{ $newspaper->url }}" target="_blank">{{ $newspaper->name }} (ক্লিক করুন)</a>
