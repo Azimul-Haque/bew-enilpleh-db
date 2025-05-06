@@ -1449,9 +1449,10 @@ class AdminandothersController extends Controller
           }
           $newspaper->newspaperimage->delete();
         }
+        Cache::forget('newspapers' . $newspaper->district_id);
         $newspaper->delete();
 
-        Cache::forget('newspapers' . $district_id);
+        
 
         Session::flash('success', 'Rent-a-Car deleted successfully!');
         return redirect()->back();
