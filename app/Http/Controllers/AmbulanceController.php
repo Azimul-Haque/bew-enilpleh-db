@@ -167,8 +167,7 @@ class AmbulanceController extends Controller
 
     public function deleteAmbulance($id)
     {
-        $ambulance = ambulance::find($id);
-        
+        $ambulance = Ambulance::find($id);
         $ambulance->delete();
 
         Cache::forget('blooddonors'. 1 . Auth::user()->district_id);
