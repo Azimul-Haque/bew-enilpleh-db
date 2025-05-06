@@ -605,7 +605,7 @@ class AdminandothersController extends Controller
     public function coachingIndexSingleForEditor()
     {
         $coachingscount = Coaching::where('district_id', Auth::user()->district_id)->count();
-        $coachings = Coaching::where('district_id', Auth::user()->district_id)->paginate(10);
+        $coachings = Coaching::where('district_id', Auth::user()->district_id)->orderBy('id', 'desc')->paginate(10);
 
         return view('dashboard.coachings.singleforeditors')
                             ->withCoachingscount($coachingscount)
