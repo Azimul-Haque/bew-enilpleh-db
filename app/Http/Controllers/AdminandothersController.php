@@ -42,7 +42,8 @@ class AdminandothersController extends Controller
     {
         parent::__construct();
         ini_set('memory_limit', '-1');
-        $this->middleware(['admin'])->only('index', 'indexSearch', 'lawyerIndex', 'busIndex', 'rentacarIndex', 'newspaperIndex', 'journalistIndex');
+        $this->middleware(['admin'])->only('index', 'indexSearch');
+        // 'lawyerIndex', 'busIndex', 'rentacarIndex', 'newspaperIndex', 'journalistIndex'
     }
 
     public function index()
