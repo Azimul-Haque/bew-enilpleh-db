@@ -292,7 +292,7 @@ class AdminandothersController extends Controller
             $lawyers = Lawyer::where('district_id', $district_id)->orderBy('id', 'asc')->paginate(10);
             $district = District::find($district_id);
         }
-          
+
         return view('dashboard.lawyers.single')
                             ->withDistrict($district)
                             ->withLawyerscount($lawyerscount)
@@ -364,6 +364,11 @@ class AdminandothersController extends Controller
         Cache::forget('lawyers' . $district_id . 3);
         Session::flash('success', 'Lawyer updated successfully!');
         return redirect()->route('dashboard.lawyers.districtwise', $district_id);
+    }
+
+    public function deleteLawyer($id) {
+        $lawyer = Lawyer::find($id);
+        $lawyer->district_id = $district_id;
     }
 
     public function rentacarIndex()
