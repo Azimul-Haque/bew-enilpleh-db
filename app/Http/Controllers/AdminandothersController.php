@@ -890,7 +890,7 @@ class AdminandothersController extends Controller
         return redirect()->back();
     }
 
-    public function deleteCoaching($id) {
+    public function deleteCoaching($district_id, $id) {
 
         $coaching = Coaching::find($id);
         $coaching->delete();
