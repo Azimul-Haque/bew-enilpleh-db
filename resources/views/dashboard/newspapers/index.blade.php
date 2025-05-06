@@ -71,85 +71,86 @@
                       <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#editUserModal{{ $newspaper->id }}">
                         <i class="fas fa-edit"></i>
                       </button>
-                      {{-- Edit User Modal Code --}}
-                      {{-- Edit User Modal Code --}}
-                      <!-- Modal -->
-                      <div class="modal fade" id="editUserModal{{ $newspaper->id }}" tabindex="-1" role="dialog" aria-labelledby="editUserModalLabel" aria-hidden="true" data-backdrop="static">
-                        <div class="modal-dialog" role="document">
-                          <div class="modal-content">
-                            <div class="modal-header bg-primary">
-                              <h5 class="modal-title" id="editUserModalLabel">দৈনিক পত্রিকা তথ্য হালনাগাদ</h5>
-                              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                              </button>
-                            </div>
-                            <form method="post" action="{{ route('dashboard.newspapers.update', $newspaper->id) }}" enctype="multipart/form-data">
-                              <div class="modal-body">
-                                
-                                    @csrf
-
-                                    <div class="input-group mb-3">
-                                        <input type="text"
-                                               name="name"
-                                               class="form-control"
-                                               value="{{ $newspaper->name }}"
-                                               placeholder="দৈনিক পত্রিকার নাম" required>
-                                        <div class="input-group-append">
-                                            <div class="input-group-text"><span class="fas fa-hand-holding-medical"></span></div>
-                                        </div>
-                                    </div>
-
-                                    @if(Auth::user()->role == 'admin')
-                                    <select name="district_id" id="district" class="form-control district select21" data-placeholder="জেলা নির্বাচন করুন" required>
-                                        <option selected="" disabled="" value="">জেলা নির্বাচন করুন</option>
-                                        @foreach($districts as $district)
-                                          <option value="{{ $district->id }}" @if($district->id == $newspaper->district_id) selected @endif>{{ $district->name_bangla }}-{{ $district->name }}</option>
-                                        @endforeach
-                                    </select>
-                                    @else
-                                      জেলা: {{ Auth::user()->district->name_bangla }}
-                                      <input type="hidden" name="district_id" value="{{ Auth::user()->district_id }}">
-                                    @endif
-
-                                    <div class="input-group mb-3" style="margin-top: 15px;">
-                                        <input type="text"
-                                               name="url"
-                                               value="{{ $newspaper->url }}"
-                                               class="form-control"
-                                               placeholder="দৈনিক পত্রিকা লিংক (URL)" required>
-                                        <div class="input-group-append">
-                                            <div class="input-group-text"><span class="fas fa-external-link-alt"></span></div>
-                                        </div>
-                                    </div>
-                                     
-                                    <div class="form-group">
-                                        <label for="image">ছবি (প্রয়োজনে, ৩০০ x ৭০ সাইজের, ১ মেগাবাইটের মধ্যে)</label><br/>
-                                        <input type="file" id="image" name="image" accept="image/*">
-                                    </div>
-                                    <center>
-                                      @if($newspaper->newspaperimage != null)
-                                        <img src="{{ asset('images/newspapers/' . $newspaper->newspaperimage->image)}}" id='img-upload' style="width: 250px; height: auto;" class="img-responsive" />
-                                      @else
-                                        <img src="{{ asset('images/placeholder.png')}}" id='img-upload' style="width: 250px; height: auto;" class="img-responsive" />
-                                      @endif
-                                    </center>            
-                                
-                              </div>
-                              <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-dismiss="modal">ফিরে যান</button>
-                                <button type="submit" class="btn btn-primary">দাখিল করুন</button>
-                              </div>
-                            </form>
-                          </div>
-                        </div>
-                      </div>
-                      {{-- Edit User Modal Code --}}
-                      {{-- Edit User Modal Code --}}
-
                       <button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#deleteUserModal{{ $newspaper->id }}">
                         <i class="fas fa-trash-alt"></i>
                       </button>
                     </td>
+
+                    {{-- Edit User Modal Code --}}
+                    {{-- Edit User Modal Code --}}
+                    <!-- Modal -->
+                    <div class="modal fade" id="editUserModal{{ $newspaper->id }}" tabindex="-1" role="dialog" aria-labelledby="editUserModalLabel" aria-hidden="true" data-backdrop="static">
+                      <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                          <div class="modal-header bg-primary">
+                            <h5 class="modal-title" id="editUserModalLabel">দৈনিক পত্রিকা তথ্য হালনাগাদ</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                              <span aria-hidden="true">&times;</span>
+                            </button>
+                          </div>
+                          <form method="post" action="{{ route('dashboard.newspapers.update', $newspaper->id) }}" enctype="multipart/form-data">
+                            <div class="modal-body">
+                              
+                                  @csrf
+
+                                  <div class="input-group mb-3">
+                                      <input type="text"
+                                             name="name"
+                                             class="form-control"
+                                             value="{{ $newspaper->name }}"
+                                             placeholder="দৈনিক পত্রিকার নাম" required>
+                                      <div class="input-group-append">
+                                          <div class="input-group-text"><span class="fas fa-hand-holding-medical"></span></div>
+                                      </div>
+                                  </div>
+
+                                  @if(Auth::user()->role == 'admin')
+                                  <select name="district_id" id="district" class="form-control district select21" data-placeholder="জেলা নির্বাচন করুন" required>
+                                      <option selected="" disabled="" value="">জেলা নির্বাচন করুন</option>
+                                      @foreach($districts as $district)
+                                        <option value="{{ $district->id }}" @if($district->id == $newspaper->district_id) selected @endif>{{ $district->name_bangla }}-{{ $district->name }}</option>
+                                      @endforeach
+                                  </select>
+                                  @else
+                                    জেলা: {{ Auth::user()->district->name_bangla }}
+                                    <input type="hidden" name="district_id" value="{{ Auth::user()->district_id }}">
+                                  @endif
+
+                                  <div class="input-group mb-3" style="margin-top: 15px;">
+                                      <input type="text"
+                                             name="url"
+                                             value="{{ $newspaper->url }}"
+                                             class="form-control"
+                                             placeholder="দৈনিক পত্রিকা লিংক (URL)" required>
+                                      <div class="input-group-append">
+                                          <div class="input-group-text"><span class="fas fa-external-link-alt"></span></div>
+                                      </div>
+                                  </div>
+                                   
+                                  <div class="form-group">
+                                      <label for="image">ছবি (প্রয়োজনে, ৩০০ x ৭০ সাইজের, ১ মেগাবাইটের মধ্যে)</label><br/>
+                                      <input type="file" id="image" name="image" accept="image/*">
+                                  </div>
+                                  <center>
+                                    @if($newspaper->newspaperimage != null)
+                                      <img src="{{ asset('images/newspapers/' . $newspaper->newspaperimage->image)}}" id='img-upload' style="width: 250px; height: auto;" class="img-responsive" />
+                                    @else
+                                      <img src="{{ asset('images/placeholder.png')}}" id='img-upload' style="width: 250px; height: auto;" class="img-responsive" />
+                                    @endif
+                                  </center>            
+                              
+                            </div>
+                            <div class="modal-footer">
+                              <button type="button" class="btn btn-secondary" data-dismiss="modal">ফিরে যান</button>
+                              <button type="submit" class="btn btn-primary">দাখিল করুন</button>
+                            </div>
+                          </form>
+                        </div>
+                      </div>
+                    </div>
+                    {{-- Edit User Modal Code --}}
+                    {{-- Edit User Modal Code --}}
+                    
                         {{-- Delete User Modal Code --}}
                         {{-- Delete User Modal Code --}}
                         <!-- Modal -->
