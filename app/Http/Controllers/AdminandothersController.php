@@ -275,6 +275,9 @@ class AdminandothersController extends Controller
 
     public function lawyerIndex()
     {
+        if(Auth::user()->role == 'editor') {
+            abort(403, 'Access Denied');
+        }
         $districts = District::all();
         return view('dashboard.lawyers.index')
                             ->withDistricts($districts);
