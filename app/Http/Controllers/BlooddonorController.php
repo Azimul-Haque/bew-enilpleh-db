@@ -153,6 +153,7 @@ class BlooddonorController extends Controller
             $blooddonor = Blooddonor::where('id', $id)
                                     ->where('district_id', Auth::user()->id)
                                     ->first();
+            dd($blooddonor);
             // if($blooddonor) {
                 
             // } else {
