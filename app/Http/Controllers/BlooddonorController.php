@@ -147,9 +147,9 @@ class BlooddonorController extends Controller
         return redirect()->route('dashboard.blooddonors');
     }
 
-    
 
-    public function deleteBloodDonor ($blooddonor_id, $member_id)
+
+    public function deleteBloodDonor ($blooddonor_id)
     {
         $blooddonormember = Blooddonormember::findOrFail($member_id);
         $blooddonormember->delete();
