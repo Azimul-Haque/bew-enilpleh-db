@@ -1433,7 +1433,7 @@ class AdminandothersController extends Controller
         }
 
         
-        Cache::forget('newspapers' . $district_id);
+        Cache::forget('newspapers' . $request->district_id);
         Session::flash('success', 'Newspaper updated successfully!');
         return redirect()->route('dashboard.newspapers');
     }
