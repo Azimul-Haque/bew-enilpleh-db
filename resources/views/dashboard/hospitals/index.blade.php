@@ -591,7 +591,7 @@
           $('.upazilla').append('<option value="" selected disabled>উপজেলা লোড হচ্ছে...</option>');
 
           $.ajax({
-            url: "/api/getupazillas/{{ env('SOFT_TOKEN') }}/" +$(this).val(), 
+            url: "/api/getupazillas/{{ env('SOFT_TOKEN') }}/" +{{ Auth::user()->district_id }}, 
             type: "GET",
             success: function(result){
               $('.upazilla')
