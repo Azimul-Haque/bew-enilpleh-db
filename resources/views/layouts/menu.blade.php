@@ -105,7 +105,7 @@
 </li>
 @elseif(Auth::user()->role == 'editor')
 <li class="nav-item">
-    <a href="{{ route('dashboard.lawyers') }}" class="nav-link {{ Request::is('dashboard/lawyers') ? 'active' : '' }} {{ Request::is('dashboard/lawyers/*') ? 'active' : '' }}">
+    <a href="{{ route('dashboard.lawyers.districtwise', Auth::user()->district_id) }}" class="nav-link {{ Request::is('dashboard/lawyers') ? 'active' : '' }} {{ Request::is('dashboard/lawyers/*') ? 'active' : '' }}">
         <i class="nav-icon fas fa-gavel"></i>
         <p>আইনজীবী</p>
     </a>
