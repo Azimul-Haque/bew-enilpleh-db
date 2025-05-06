@@ -370,6 +370,10 @@ class AdminandothersController extends Controller
         $lawyer = Lawyer::find($id);
         $lawyer->delete();
 
+        Cache::forget('lawyers' . Auth::user()->district_id . 1);
+        Cache::forget('lawyers' . Auth::user()->district_id . 2);
+        Cache::forget('lawyers' . Auth::user()->district_id . 3);
+
         Session::flash('success', 'Lawyer deleted successfully!');
         return redirect()->bacK();
     }
