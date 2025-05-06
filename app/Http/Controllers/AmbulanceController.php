@@ -164,4 +164,18 @@ class AmbulanceController extends Controller
         Session::flash('success', 'Ambulance updated successfully!');
         return redirect()->route('dashboard.ambulances');
     }
+
+    public function deleteBloodDonor($id)
+    {
+        $blooddonor = Blooddonor::find($id);
+        foreach($blooddonor->blooddonormembers as $blooddonormember) {
+            $blooddonormember->delete();
+        }
+        $blooddonor->delete();
+
+        Cache::forget('blooddonors'. 1 . Auth::user()->district_id);
+        Cache::forget('blooddonors'. 2 . Auth::user()->district_id);
+        Session::flash('success', 'Blood Donor deleted successfully!');
+        return redirect()->back();
+    }
 }
