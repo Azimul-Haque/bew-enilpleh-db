@@ -97,7 +97,9 @@ class AmbulanceController extends Controller
         $ambulance->upazilla_id = $request->upazilla_id;
         $ambulance->name = $request->name;
         $ambulance->mobile = $request->mobile;
-        $ambulance->description = $request->description;
+        if($request->description) {
+            $ambulance->description = $request->description;
+        }
         $ambulance->save();
 
         // image upload
