@@ -33,8 +33,8 @@ class AmbulanceController extends Controller
     public function index()
     {
         if(Auth::user()->role == 'editor') {
-            $ambulancescount = Ambulance::count();
-            $ambulances = Ambulance::orderBy('id', 'desc')->paginate(10);
+            $ambulancescount = Ambulance::where('district_id', Auth::user()->district_id)->count();
+            $ambulances = Ambulance::where('district_id', Auth::user()->district_id)->orderBy('id', 'desc')->paginate(10);
         } else {
             $ambulancescount = Ambulance::count();
             $ambulances = Ambulance::orderBy('id', 'desc')->paginate(10);
