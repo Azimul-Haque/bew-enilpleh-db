@@ -115,7 +115,7 @@
                                   </div>
                                   @else
                                     <div class="col-md-6">
-                                      {{ Auth::user()->district->name_bangla }}
+                                      জেলা: {{ Auth::user()->district->name_bangla }}
                                     </div>
                                     <div class="col-md-6">
                                       <select name="upazilla_id" id="upazilla" class="form-control upazilla select21" data-placeholder="উপজেলা সিলেক্ট করুন" required>
@@ -367,7 +367,7 @@
                       </div>
                     @else
                       <div class="col-md-6">
-                        {{ Auth::user()->district->name_bangla }}
+                        জেলা: {{ Auth::user()->district->name_bangla }}
                       </div>
                       <div class="col-md-6">
                         <select name="upazilla_id" id="upazilla" class="form-control upazilla select21" data-placeholder="উপজেলা নির্বাচন করুন" required>
