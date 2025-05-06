@@ -140,7 +140,7 @@
 </li>
 @elseif(Auth::user()->role == 'editor')
 <li class="nav-item">
-    <a href="{{ route('dashboard.buses') }}" class="nav-link {{ Request::is('dashboard/buses') ? 'active' : '' }} {{ Request::is('dashboard/buses/*') ? 'active' : '' }}">
+    <a href="{{ route('dashboard.buses.districtwise', Auth::user()->district_id) }}" class="nav-link {{ Request::is('dashboard/buses') ? 'active' : '' }} {{ Request::is('dashboard/buses/*') ? 'active' : '' }}">
         <i class="nav-icon fas fa-bus"></i>
         <p>বাস</p>
     </a>
