@@ -15,7 +15,7 @@ class CreateUsersTable extends Migration
     {
         Schema::create('users', function (Blueprint $table) {
             $table->id();
-            $table->string('district_id')->nullable();
+            $table->integer('district_id')->nullable();
             $table->string('uid')->nullable();
             $table->string('onesignal_id')->nullable();
             $table->string('name');
