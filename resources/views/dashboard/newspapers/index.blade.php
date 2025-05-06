@@ -99,12 +99,16 @@
                                         </div>
                                     </div>
 
+                                    @if(Auth::user()->role == 'admin')
                                     <select name="district_id" id="district" class="form-control district select21" data-placeholder="জেলা নির্বাচন করুন" required>
                                         <option selected="" disabled="" value="">জেলা নির্বাচন করুন</option>
                                         @foreach($districts as $district)
                                           <option value="{{ $district->id }}" @if($district->id == $newspaper->district_id) selected @endif>{{ $district->name_bangla }}-{{ $district->name }}</option>
                                         @endforeach
                                     </select>
+                                    @else
+                                      
+                                    @endif
 
                                     <div class="input-group mb-3" style="margin-top: 15px;">
                                         <input type="text"
