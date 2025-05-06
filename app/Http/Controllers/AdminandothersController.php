@@ -1261,10 +1261,12 @@ class AdminandothersController extends Controller
     {
         $newspaperscount = Newspaper::count();
         $newspapers = Newspaper::orderBy('id', 'desc')->paginate(10);
+        $districts = District::all();
                 
         return view('dashboard.newspapers.index')
                             ->withNewspaperscount($newspaperscount)
-                            ->withNewspapers($newspapers);
+                            ->withNewspapers($newspapers)
+                            ->withDistricts($districts);
     }
 
     public function newspaperIndexSearch($search)
