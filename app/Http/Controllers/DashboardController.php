@@ -189,6 +189,7 @@ class DashboardController extends Controller
         ));
 
         $user = User::find($id);
+        $user->district_id = $request->district_id;
         $user->name = $request->name;
         $user->mobile = $request->mobile;
         $user->role = $request->role;
