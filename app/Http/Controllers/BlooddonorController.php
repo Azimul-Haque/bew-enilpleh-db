@@ -152,7 +152,10 @@ class BlooddonorController extends Controller
     public function deleteBloodDonor ($id)
     {
         $blooddonor = Blooddonor::find($id);
-        $blooddonormember->delete();
+        foreach($blooddonor->blooddonormembers $blooddonormember) {
+            $blooddonormember->delete();
+        }
+        $blooddonor->delete();
 
         Cache::forget('blooddonormembers'. $blooddonor_id);
         Session::flash('success', 'Blood Donor Member deleted successfully!');
