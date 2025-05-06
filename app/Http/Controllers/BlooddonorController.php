@@ -149,7 +149,7 @@ class BlooddonorController extends Controller
 
 
 
-    public function deleteBloodDonor ($blooddonor_id)
+    public function deleteBloodDonor ($id)
     {
         $blooddonormember = Blooddonormember::findOrFail($member_id);
         $blooddonormember->delete();
