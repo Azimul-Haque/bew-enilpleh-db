@@ -893,6 +893,13 @@ class AdminandothersController extends Controller
     public function deleteCoaching($district_id, $id) {
 
         $coaching = Coaching::find($id);
+        foreach($coaching->coachingimages as $coachingimage) {
+            $image_path = public_path('images/coachings/'. $coachingimage->image);
+            if(File::exists($image_path)) {
+                File::delete($image_path);
+            }
+            $coachingimage->delete();
+        }
         $coaching->delete();
 
         Cache::forget('coachings' . 1 . Auth::user()->district_id);
