@@ -561,9 +561,9 @@ class AdminandothersController extends Controller
 
     public function coachingIndex()
     {
-        if(Auth::user()->role == 'editor') {
-            abort(403, 'Access Denied');
-        }
+        // if(Auth::user()->role == 'editor') {
+        //     abort(403, 'Access Denied');
+        // }
         $districts = District::all();
                 
         return view('dashboard.coachings.index')
