@@ -292,9 +292,7 @@ class AdminandothersController extends Controller
             $lawyers = Lawyer::where('district_id', $district_id)->orderBy('id', 'asc')->paginate(10);
             $district = District::find($district_id);
         }
-
-        
-                
+          
         return view('dashboard.lawyers.single')
                             ->withDistrict($district)
                             ->withLawyerscount($lawyerscount)
