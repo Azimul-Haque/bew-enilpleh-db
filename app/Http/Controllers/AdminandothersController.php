@@ -366,7 +366,7 @@ class AdminandothersController extends Controller
         return redirect()->route('dashboard.lawyers.districtwise', $district_id);
     }
 
-    public function deleteLawyer($id) {
+    public function deleteLawyer($district_id, $id) {
         $lawyer = Lawyer::find($id);
         $lawyer->delete();
 
