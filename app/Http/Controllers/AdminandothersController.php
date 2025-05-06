@@ -1114,6 +1114,9 @@ class AdminandothersController extends Controller
 
     public function busIndex()
     {
+        if(Auth::user()->role == 'editor') {
+            abort(403, 'Access Denied');
+        }
         $districts = District::all();
         $buscounters = Buscounter::all();
                 
