@@ -561,9 +561,9 @@ class AdminandothersController extends Controller
 
     public function coachingIndex()
     {
-        // if(Auth::user()->role == 'editor') {
-        //     abort(403, 'Access Denied');
-        // }
+        if(Auth::user()->role == 'editor') {
+            abort(403, 'Access Denied');
+        }
         $districts = District::all();
                 
         return view('dashboard.coachings.index')
@@ -572,9 +572,9 @@ class AdminandothersController extends Controller
 
     public function coachingIndexSingle($district_id)
     {
-        // if(Auth::user()->role == 'editor') {
-        //     abort(403, 'Access Denied');
-        // }        
+        if(Auth::user()->role == 'editor') {
+            abort(403, 'Access Denied');
+        }        
         $district = District::find($district_id);
         $coachingscount = Coaching::where('district_id', $district_id)->count();
             $coachings = Coaching::where('district_id', $district_id)->orderBy('id', 'asc')->paginate(10);
