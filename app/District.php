@@ -8,6 +8,10 @@ class District extends Model
 {
     public $timestamps = false;
 
+    public function users(){
+        return $this->hasMany('App\User');
+    }
+
     public function hospitals(){
         return $this->hasMany('App\Hospital');
     }
