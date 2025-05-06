@@ -24,32 +24,32 @@
 </li>
 {{-- @endif --}}
 
-@if(Auth::user()->role == 'admin' || in_array('doctors', Auth::user()->accessibleTables()) || in_array('hospitals', Auth::user()->accessibleTables()))
+{{-- @if(Auth::user()->role == 'admin' || in_array('doctors', Auth::user()->accessibleTables()) || in_array('hospitals', Auth::user()->accessibleTables())) --}}
 <li class="nav-item">
     <a href="{{ route('dashboard.doctors') }}" class="nav-link {{ Request::is('dashboard/doctors') ? 'active' : '' }} {{ Request::is('dashboard/doctors/*') ? 'active' : '' }}">
         <i class="nav-icon fas fa-user-md"></i>
         <p>ডাক্তার তালিকা</p>
     </a>
 </li>
-@endif
+{{-- @endif --}}
 
-@if(Auth::user()->role == 'admin' || in_array('blooddonors', Auth::user()->accessibleTables()))
+{{-- @if(Auth::user()->role == 'admin' || in_array('blooddonors', Auth::user()->accessibleTables())) --}}
 <li class="nav-item">
     <a href="{{ route('dashboard.blooddonors') }}" class="nav-link {{ Request::is('dashboard/blooddonors') ? 'active' : '' }} {{ Request::is('dashboard/blooddonors/*') ? 'active' : '' }}">
         <i class="nav-icon fas fa-tint"></i>
         <p>রক্তদাতা তালিকা</p>
     </a>
 </li>
-@endif
+{{-- @endif --}}
 
-@if(Auth::user()->role == 'admin')
+{{-- @if(Auth::user()->role == 'admin') --}}
 <li class="nav-item">
     <a href="{{ route('dashboard.ambulances') }}" class="nav-link {{ Request::is('dashboard/ambulances') ? 'active' : '' }} {{ Request::is('dashboard/ambulances/*') ? 'active' : '' }}">
         <i class="nav-icon fas fa-ambulance"></i>
         <p>অ্যাম্বুলেন্স</p>
     </a>
 </li>
-@endif
+{{-- @endif --}}
 
 {{-- @if(Auth::user()->role == 'admin')
 <li class="nav-item">
@@ -96,14 +96,14 @@
 </li>
 @endif --}}
 
-@if(Auth::user()->role == 'admin')
+{{-- @if(Auth::user()->role == 'admin') --}}
 <li class="nav-item">
     <a href="{{ route('dashboard.lawyers') }}" class="nav-link {{ Request::is('dashboard/lawyers') ? 'active' : '' }} {{ Request::is('dashboard/lawyers/*') ? 'active' : '' }}">
         <i class="nav-icon fas fa-gavel"></i>
         <p>আইনজীবী</p>
     </a>
 </li>
-@endif
+{{-- @endif --}}
 
 
 @if(Auth::user()->role == 'admin')
