@@ -37,6 +37,7 @@
               <thead>
                 <tr>
                   <th>নাম</th>
+                  <th>জেলা</th>
                   <th>লিংক</th>
                   <th>লোগো</th>
                   <th align="right">কার্যক্রম</th>
@@ -46,7 +47,10 @@
                 @foreach($newspapers as $newspaper)
                   <tr>
                     <td>
-                      {{ $newspaper->name }}<br/>
+                      {{ $newspaper->name }}
+                    </td>
+                    <td>
+                      {{ $newspaper->district->name_bangla }}
                     </td>
                     <td>
                       <a href="{{ $newspaper->url }}" target="_blank">{{ $newspaper->name }} (ক্লিক করুন)</a>
