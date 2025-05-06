@@ -499,13 +499,13 @@ class AdminandothersController extends Controller
     public function deleteRentacar($district_id, $id)
     {
         $rentacar = Rentacar::find($id);
-        if($coaching->coachingimages) {
-            foreach($coaching->coachingimages as $coachingimage) {
-                $image_path = public_path('images/coachings/'. $coachingimage->image);
+        if($rentacar->rentacarimages) {
+            foreach($rentacar->rentacarimages as $rentacarimage) {
+                $image_path = public_path('images/rentacars/'. $rentacarimage->image);
                 if(File::exists($image_path)) {
                     File::delete($image_path);
                 }
-                $coachingimage->delete();
+                $rentacarimage->delete();
             }
         }
 
