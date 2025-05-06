@@ -501,7 +501,6 @@ class AdminandothersController extends Controller
         $rentacar = Rentacar::find($id);
         if($rentacar->rentacarimage != null) {
           $image_path = public_path('images/rentacars/'. $rentacar->rentacarimage);
-          // dd($image_path);
           if(File::exists($image_path)) {
               File::delete($image_path);
           }
