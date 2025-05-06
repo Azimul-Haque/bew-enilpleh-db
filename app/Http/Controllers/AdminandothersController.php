@@ -740,7 +740,7 @@ class AdminandothersController extends Controller
         Cache::forget('coachings' . 2 . $district_id);
         Cache::forget('coachings' . 3 . $district_id);
         Session::flash('success', 'Coaching added successfully!');
-        return redirect()->route('dashboard.coachings.districtwise', $district_id);
+        return redirect()->back();
     }
 
     public function updateCoaching(Request $request, $district_id, $id)
