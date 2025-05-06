@@ -12,6 +12,7 @@ use App\Hospital;
 use App\Doctor;
 use App\Blooddonor;
 use App\Coaching;
+use App\District;
 
 use Carbon\Carbon;
 use DB;
@@ -76,6 +77,7 @@ class DashboardController extends Controller
         $doctors = Doctor::all();
         $blooddonors = Blooddonor::all();
         $coachings = Coaching::all();
+        $districts = District::all();
 
         return view('dashboard.users.index')
                     ->withUsers($users)
