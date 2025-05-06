@@ -1437,18 +1437,19 @@ class AdminandothersController extends Controller
         Session::flash('success', 'Newspaper updated successfully!');
         return redirect()->route('dashboard.newspapers');
     }
-    
+
     public function deleteNewspaper($district_id, $id)
     {
-        $rentacar = Rentacar::find($id);
-        if($rentacar->rentacarimage != null) {
-          $image_path = public_path('images/rentacars/'. $rentacar->rentacarimage);
+        $newspaper = Newspaper::find($id);
+
+        if($newspaper->newspaperimage != null) {
+          $image_path = public_path('images/newspapers/'. $newspaper->newspaperimage);
           if(File::exists($image_path)) {
               File::delete($image_path);
           }
-          $rentacar->rentacarimage->delete();
+          $newspaper->newspaperimage->delete();
         }
-        $rentacar->delete();
+        $newspaper->delete();
 
         Cache::forget('rentacars' . $district_id);
 
