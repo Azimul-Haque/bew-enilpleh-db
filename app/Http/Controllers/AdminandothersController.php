@@ -1318,11 +1318,13 @@ class AdminandothersController extends Controller
     {
         $this->validate($request,array(
             'name'                => 'required|string|max:191',
-            'url'              => 'required|string|max:191',
+            'district_id'         => 'required',
+            'url'                 => 'required|string|max:191',
             'image'               => 'sometimes',
         ));
 
         $newspaper = Newspaper::find($id);
+        $newspaper->district_id = $request->district_id;
         $newspaper->name = $request->name;
         $newspaper->url = $request->url;
         $newspaper->save();
