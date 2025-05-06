@@ -165,7 +165,7 @@ class AmbulanceController extends Controller
         return redirect()->route('dashboard.ambulances');
     }
 
-    public function deleteBloodDonor($id)
+    public function deleteAmbulance($id)
     {
         $blooddonor = Blooddonor::find($id);
         foreach($blooddonor->blooddonormembers as $blooddonormember) {
