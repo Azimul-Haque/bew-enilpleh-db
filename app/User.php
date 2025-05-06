@@ -34,6 +34,10 @@ class User extends Authenticatable
         return $this->hasMany('App\Message');
     }
 
+    public function district(){
+        return $this->belongsTo('App\District');
+    }
+
     public function accessibleTables()
     {
         $tables = [];
