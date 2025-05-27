@@ -43,6 +43,8 @@ class HospitalController extends Controller
 
             $hospitalscount = Hospital::where('district_id', Auth::user()->district_id)->count();
             $hospitals = Hospital::where('district_id', Auth::user()->district_id)->paginate(10);
+        } elseif(Auth::user()->role == 'editor') {
+            
         } else {
             $hospitalscount = Hospital::count();
             $hospitals = Hospital::orderBy('id', 'desc')->paginate(10);
