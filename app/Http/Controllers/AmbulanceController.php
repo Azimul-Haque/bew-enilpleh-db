@@ -53,6 +53,9 @@ class AmbulanceController extends Controller
 
     public function indexSearch($search)
     {
+        if(Auth::user()->role == 'editor' || Auth::user()->role == 'manager') {
+            abort(403, 'Access Denied');
+        }
         $ambulancescount = Ambulance::where('name', 'LIKE', "%$search%")
                                   ->orWhere('mobile', 'LIKE', "%$search%")
                                   ->orWhereHas('district', function ($query) use ($search){
