@@ -96,7 +96,7 @@
 </li>
 @endif --}}
 
-@if(Auth::user()->role == 'admin' || Auth::user()->role == 'editor')
+@if(Auth::user()->role == 'admin')
 <li class="nav-item">
     <a href="{{ route('dashboard.lawyers') }}" class="nav-link {{ Request::is('dashboard/lawyers') ? 'active' : '' }} {{ Request::is('dashboard/lawyers/*') ? 'active' : '' }}">
         <i class="nav-icon fas fa-gavel"></i>
