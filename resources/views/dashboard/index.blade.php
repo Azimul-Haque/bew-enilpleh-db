@@ -48,7 +48,7 @@
           </div>
           {{-- @endif --}}
 
-          @if(Auth::user()->role == 'admin' || in_array('ambulances', Auth::user()->accessibleTables()))
+          @if(Auth::user()->role == 'admin' || Auth::user()->role == 'editor')
           <div class="col-md-3">
             <a href="{{ route('dashboard.ambulances') }}" class="info-box mb-3">
               <span class="info-box-icon bg-info elevation-1"><i class="fas fa-hospital"></i></span>
