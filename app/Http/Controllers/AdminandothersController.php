@@ -640,18 +640,6 @@ class AdminandothersController extends Controller
             $coachingscount = Auth::user()->accessibleCoachings()->count();
             $coachings = Auth::user()->accessibleCoachings()->get();
 
-            $accessedhospitals = Auth::user()->accessibleCoachings()->get();
-            $hospitals = $accessedhospitals;
-
-            foreach($accessedhospitals as $hospital) {
-                foreach($hospital->doctorhospitals as $doctor) {
-                    $doctors->push($doctor->doctor);
-                }
-            }
-            $doctors = collect($doctors )->unique('id');
-
-            // Now paginate the collection:
-
             // Define how many items you want per page
             $perPage = 10;
 
