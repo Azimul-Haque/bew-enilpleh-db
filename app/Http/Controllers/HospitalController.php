@@ -163,7 +163,7 @@ class HospitalController extends Controller
 
         $hospital->save();
 
-        if(Auth::user()->role == 'editor') {
+        if(Auth::user()->role == 'editor' || Auth::user()->role == 'manager') {
             Auth::user()->accessibleHospitals()->attach($hospital);
         }
 
