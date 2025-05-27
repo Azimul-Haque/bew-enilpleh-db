@@ -633,8 +633,6 @@ class AdminandothersController extends Controller
             $coachingscount = Coaching::where('district_id', Auth::user()->district_id)->count();
             $coachings = Coaching::where('district_id', Auth::user()->district_id)->orderBy('id', 'desc')->paginate(10);
         } elseif(Auth::user()->role == 'manager') {
-            
-            $coachings = Coaching::where('district_id', Auth::user()->district_id)->orderBy('id', 'desc')->paginate(10);
 
             if(!in_array('coachings', Auth::user()->accessibleTables())) {
                 abort(403, 'Access Denied');
