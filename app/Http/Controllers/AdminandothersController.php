@@ -287,6 +287,10 @@ class AdminandothersController extends Controller
 
     public function lawyerIndexSingle($district_id)
     {
+        if(Auth::user()->role == 'manager') {
+            abort(403, 'Access Denied');
+        }
+        
         if(Auth::user()->role == 'editor') {
             $lawyerscount = Lawyer::where('district_id', Auth::user()->district_id)->count();
             $lawyers = Lawyer::where('district_id', Auth::user()->district_id)->orderBy('id', 'asc')->paginate(10);
