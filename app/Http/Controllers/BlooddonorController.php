@@ -58,7 +58,7 @@ class BlooddonorController extends Controller
 
     public function indexSearch($search)
     {
-        if(Auth::user()->role == 'editor') {
+        if(Auth::user()->role == 'editor' || Auth::user()->role == 'manager') {
             abort(403, 'Access Denied');
         }
         $blooddonorscount = Blooddonor::where('name', 'LIKE', "%$search%")
