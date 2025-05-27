@@ -394,7 +394,7 @@ class AdminandothersController extends Controller
 
     public function rentacarIndexSingle($district_id)
     {
-        if(Auth::user()->role == 'editor' || Auth::user()->role == 'manager') {
+        if(Auth::user()->role == 'manager') {
             abort(403, 'Access Denied');
         }
         $district = District::find($district_id);
