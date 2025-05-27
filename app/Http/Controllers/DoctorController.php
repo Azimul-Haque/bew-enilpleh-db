@@ -57,6 +57,7 @@ class DoctorController extends Controller
             }
             $doctorscount = Auth::user()->accessibleDoctors()->count();
             $doctors = Auth::user()->accessibleDoctors()->get();
+            dd($doctors);
 
             $accessedhospitals = Auth::user()->accessibleHospitals()->get();
             $hospitals = $accessedhospitals;
