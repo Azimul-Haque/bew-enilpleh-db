@@ -1190,6 +1190,10 @@ class AdminandothersController extends Controller
 
     public function busIndexSingle($district_id)
     {
+        if(Auth::user()->role == 'manager') {
+            abort(403, 'Access Denied');
+        }
+        
         $districts = District::all();
         
         
