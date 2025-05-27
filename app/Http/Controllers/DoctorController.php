@@ -92,7 +92,7 @@ class DoctorController extends Controller
                 ]
             );
 
-            // dd($doctors);
+            dd($doctors);
         } else {
             $doctorscount = Doctor::count();
             $doctors = Doctor::orderBy('id', 'desc')->paginate(10);
