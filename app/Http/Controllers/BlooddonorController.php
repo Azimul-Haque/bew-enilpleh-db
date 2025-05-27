@@ -111,7 +111,7 @@ class BlooddonorController extends Controller
         $blooddonor->description = $request->description;
         $blooddonor->save();
 
-        if(Auth::user()->role == 'editor') {
+        if(Auth::user()->role == 'editor' || Auth::user()->role == 'manager') {
             Auth::user()->accessibleBlooddonors()->attach($blooddonor);
         }
 
