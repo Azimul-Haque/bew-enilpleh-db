@@ -290,7 +290,7 @@ class AdminandothersController extends Controller
         if(Auth::user()->role == 'manager') {
             abort(403, 'Access Denied');
         }
-        
+
         if(Auth::user()->role == 'editor') {
             $lawyerscount = Lawyer::where('district_id', Auth::user()->district_id)->count();
             $lawyers = Lawyer::where('district_id', Auth::user()->district_id)->orderBy('id', 'asc')->paginate(10);
@@ -309,6 +309,9 @@ class AdminandothersController extends Controller
 
     public function lawyerIndexSearch($district_id, $search)
     {
+        if(Auth::user()->role == 'editor' || Auth::user()->role == 'manager') {
+            abort(403, 'Access Denied');
+        }
         $district = District::find($district_id);
         $lawyerscount = Lawyer::where('district_id', $district_id)
                                  ->where('name', 'LIKE', "%$search%")
