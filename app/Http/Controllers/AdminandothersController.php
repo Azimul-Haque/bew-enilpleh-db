@@ -648,12 +648,12 @@ class AdminandothersController extends Controller
             // Calculate the starting offset
             $offset = ($page - 1) * $perPage;
             // Slice the collection to get the items to display in current page
-            $currentPageItems = $doctors->slice($offset, $perPage)->values();
+            $currentPageItems = $coachings->slice($offset, $perPage)->values();
 
             // Create LengthAwarePaginator instance
-            $doctors = new LengthAwarePaginator(
+            $coachings = new LengthAwarePaginator(
                 $currentPageItems,
-                $doctors->count(),  // total items
+                $coachings->count(),  // total items
                 $perPage,
                 $page,
                 [
