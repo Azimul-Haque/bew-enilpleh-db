@@ -168,7 +168,9 @@ class BlooddonorController extends Controller
 
     public function getBloodDonorMembers($id)
     {
-        if(Auth::user()->role == 'manager') {
+        if(Auth::user()->role == 'editor') {
+
+        } elseif(Auth::user()->role == 'manager') {
             $blooddonor = Blooddonor::where('id', $id)
                                     ->where('district_id', Auth::user()->district_id)
                                     ->first();
