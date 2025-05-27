@@ -60,7 +60,7 @@
                 			<br/>
                             {{-- {{ $user->balances2 }} --}}
                 			<small class="text-black-50">{{ $user->mobile }}</small> 
-                			<span class="badge @if($user->role == 'admin') bg-success @elseif($user->role == 'editor') bg-info @endif">{{ ucfirst($user->role) }}</span>
+                			<span class="badge @if($user->role == 'admin') bg-success @elseif($user->role == 'editor') bg-warning bg-info @endif">{{ ucfirst($user->role) }}</span>
                 		</td>
                 		<td align="right" width="40%">
                       {{-- <button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#smsModal{{ $user->id }}">
