@@ -121,9 +121,9 @@
   function role_bangla($role) {
       $text = '';
       if ($role == 'admin') {
-        $text = "success";
-      } elseif($role == 2) {
-        $text = "primary";
+        $text = "এডমিন";
+      } elseif($role == 'editor') {
+        $text = "জেলা এডমিন";
       } elseif($role == 3) {
         $text = "warning";
       }
