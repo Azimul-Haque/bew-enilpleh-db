@@ -1370,6 +1370,8 @@ class AdminandothersController extends Controller
         } elseif(Auth::user()->role == 'admin') {
             $newspaperscount = Newspaper::count();
             $newspapers = Newspaper::orderBy('id', 'desc')->paginate(10);
+        } else {
+            abort(403, 'Access Denied');
         }
         
         $districts = District::all();
