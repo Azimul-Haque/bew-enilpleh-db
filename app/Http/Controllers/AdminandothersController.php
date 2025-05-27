@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Pagination\LengthAwarePaginator;
 
 use App\Admin;
 use App\Police;
@@ -662,7 +663,7 @@ class AdminandothersController extends Controller
                 ]
             );
         }
-        
+
         return view('dashboard.coachings.singleforeditors')
                             ->withCoachingscount($coachingscount)
                             ->withCoachings($coachings);
