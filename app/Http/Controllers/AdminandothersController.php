@@ -394,6 +394,9 @@ class AdminandothersController extends Controller
 
     public function rentacarIndexSingle($district_id)
     {
+        if(Auth::user()->role == 'editor' || Auth::user()->role == 'manager') {
+            abort(403, 'Access Denied');
+        }
         $district = District::find($district_id);
         $rentacarscount = Rentacar::where('district_id', $district_id)->count();
         $rentacars = Rentacar::where('district_id', $district_id)->orderBy('id', 'asc')->paginate(10);
