@@ -397,7 +397,6 @@ class AdminandothersController extends Controller
         if(Auth::user()->role == 'manager') {
             abort(403, 'Access Denied');
         } elseif(Auth::user()->role == 'editor') {
-
             $rentacarscount = Rentacar::where('district_id', Auth::user()->district_id)->count();
             $rentacars = Rentacar::where('district_id', Auth::user()->district_id)->orderBy('id', 'asc')->paginate(10);
         }
