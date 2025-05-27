@@ -663,9 +663,6 @@ class AdminandothersController extends Controller
             );
         }
         
-
-        
-
         return view('dashboard.coachings.singleforeditors')
                             ->withCoachingscount($coachingscount)
                             ->withCoachings($coachings);
