@@ -124,7 +124,7 @@
         $text = "এডমিন";
       } elseif($role == 'editor') {
         $text = "জেলা এডমিন";
-      } elseif($role == 3) {
+      } elseif($role == 'manager') {
         $text = "warning";
       }
       return $text;
