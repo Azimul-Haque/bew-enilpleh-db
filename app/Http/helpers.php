@@ -118,6 +118,18 @@
       return $text;
   }
 
+  function role_bangla($role) {
+      $text = '';
+      if ($role == 'admin') {
+        $text = "success";
+      } elseif($role == 2) {
+        $text = "primary";
+      } elseif($role == 3) {
+        $text = "warning";
+      }
+      return $text;
+  }
+
   function local_currency($num) {
     $explrestunits = "" ;
     if(strlen($num)>3) {
