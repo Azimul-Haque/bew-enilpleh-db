@@ -460,7 +460,7 @@ class DoctorController extends Controller
 
     public function doctorSerialIndex($doctor_id, $todaydate)
     {
-        if(Auth::user()->role == 'editor') {
+        if(Auth::user()->role == 'manager') {
             if(!in_array('doctors', Auth::user()->accessibleTables())) {
                 abort(403, 'Access Denied');
             }
