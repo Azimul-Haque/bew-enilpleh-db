@@ -120,7 +120,7 @@
         <p>শিক্ষা প্রতিষ্ঠান</p>
     </a>
 </li>
-@elseif(Auth::user()->role == 'editor')
+@elseif(Auth::user()->role == 'editor' || Auth::user()->role == 'manager')
 <li class="nav-item">
     <a href="{{ route('dashboard.coachings.singleforeditor') }}" class="nav-link {{ Request::is('dashboard/coachings') ? 'active' : '' }} {{ Request::is('dashboard/coachings/*') ? 'active' : '' }}">
         <i class="nav-icon fas fa-chalkboard-teacher"></i>
