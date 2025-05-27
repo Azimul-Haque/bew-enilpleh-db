@@ -35,16 +35,16 @@ class HospitalController extends Controller
     public function index()
     {
         if(Auth::user()->role == 'editor') {
+            
+
+            $hospitalscount = Hospital::where('district_id', Auth::user()->district_id)->count();
+            $hospitals = Hospital::where('district_id', Auth::user()->district_id)->paginate(10);
+        } elseif(Auth::user()->role == 'manager') {
             // if(!in_array('hospitals', Auth::user()->accessibleTables())) {
             //     abort(403, 'Access Denied');
             // }
             // $hospitalscount = Auth::user()->accessibleHospitals()->count();
             // $hospitals = Auth::user()->accessibleHospitals()->paginate(10);
-
-            $hospitalscount = Hospital::where('district_id', Auth::user()->district_id)->count();
-            $hospitals = Hospital::where('district_id', Auth::user()->district_id)->paginate(10);
-        } elseif(Auth::user()->role == 'editor') {
-            
         } else {
             $hospitalscount = Hospital::count();
             $hospitals = Hospital::orderBy('id', 'desc')->paginate(10);
