@@ -179,7 +179,14 @@ class BlooddonorController extends Controller
             $blooddonormemberscount = Blooddonormember::where('blooddonor_id', $blooddonor->id)->count();
             $blooddonormembers = Blooddonormember::where('blooddonor_id', $blooddonor->id)->orderBy('id', 'desc')->paginate(10);
         } elseif(Auth::user()->role == 'manager') {
+            $blooddonor = Blooddonor::where('id', $id)
+                                    ->first();
             
+            if(!$blooddonor) {
+                abort(403, 'Access Denied');
+            }
+            $blooddonormemberscount = Blooddonormember::where('blooddonor_id', $blooddonor->id)->count();
+            $blooddonormembers = Blooddonormember::where('blooddonor_id', $blooddonor->id)->orderBy('id', 'desc')->paginate(10);
         } else {
             $blooddonor = Blooddonor::find($id);
             $blooddonormemberscount = Blooddonormember::where('blooddonor_id', $id)->count();
