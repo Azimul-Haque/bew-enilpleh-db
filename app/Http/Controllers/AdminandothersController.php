@@ -632,7 +632,10 @@ class AdminandothersController extends Controller
         if(Auth::user()->role == 'editor') {
             $coachingscount = Coaching::where('district_id', Auth::user()->district_id)->count();
             $coachings = Coaching::where('district_id', Auth::user()->district_id)->orderBy('id', 'desc')->paginate(10);
-        } elseif(Auth::user()->role == 'manager')   
+        } elseif(Auth::user()->role == 'manager') {
+            $coachingscount = Coaching::where('district_id', Auth::user()->district_id)->count();
+            $coachings = Coaching::where('district_id', Auth::user()->district_id)->orderBy('id', 'desc')->paginate(10);
+        }
         
 
         Auth::user()->accessibleBlooddonors()
