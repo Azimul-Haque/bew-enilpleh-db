@@ -87,7 +87,7 @@
           </div>
           @endif
 
-          @if(Auth::user()->role == 'admin')
+          @if(Auth::user()->role == 'admin' || Auth::user()->role == 'editor')
           <div class="col-md-3">
             <a href="{{ route('dashboard.coachings') }}" class="info-box mb-3">
               <span class="info-box-icon bg-warning elevation-1"><i class="fas fa-chalkboard-teacher"></i></span>
