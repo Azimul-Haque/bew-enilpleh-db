@@ -351,7 +351,6 @@
 	                	<select name="role" id="adduserrole" class="form-control" required>
 	                		<option selected="" disabled="" value="">ধরন</option>
 	                		<option value="admin">এডমিন</option>
-							       <option value="editor">এডিটর</option>
                      <option value="editor">জেলা এডমিন</option>
                      <option value="manager">হাসপাতাল ম্যানেজার</option>
                     {{--  <option value="manager">ম্যানেজার</option>
