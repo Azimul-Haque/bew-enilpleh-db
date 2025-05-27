@@ -38,7 +38,7 @@
           {{-- @if(Auth::user()->role == 'admin' || in_array('blooddonors', Auth::user()->accessibleTables())) --}}
           <div class="col-md-3">
             <a href="{{ route('dashboard.blooddonors') }}" class="info-box mb-3">
-              <span class="info-box-icon bg-warning elevation-1"><i class="fas fa-ambulance"></i></span>
+              <span class="info-box-icon bg-warning elevation-1"><i class="fas fa-droplet"></i></span>
 
               <div class="info-box-content">
                 <span class="info-box-text">রক্তদাতা তালিকা</span>
@@ -51,7 +51,7 @@
           @if(Auth::user()->role == 'admin' || Auth::user()->role == 'editor')
           <div class="col-md-3">
             <a href="{{ route('dashboard.ambulances') }}" class="info-box mb-3">
-              <span class="info-box-icon bg-info elevation-1"><i class="fas fa-droplet"></i></span>
+              <span class="info-box-icon bg-info elevation-1"><i class="fas fa-ambulance"></i></span>
 
               <div class="info-box-content">
                 <span class="info-box-text">অ্যাম্বুলেন্স তালিকা</span>
