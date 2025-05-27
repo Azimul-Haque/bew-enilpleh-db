@@ -633,12 +633,12 @@ class AdminandothersController extends Controller
             $coachingscount = Coaching::where('district_id', Auth::user()->district_id)->count();
             $coachings = Coaching::where('district_id', Auth::user()->district_id)->orderBy('id', 'desc')->paginate(10);
         } elseif(Auth::user()->role == 'manager') {
-            $coachingscount = Coaching::where('district_id', Auth::user()->district_id)->count();
+            $coachingscount = Auth::user()->accessibleBlooddonors()->count();
             $coachings = Coaching::where('district_id', Auth::user()->district_id)->orderBy('id', 'desc')->paginate(10);
         }
         
 
-        Auth::user()->accessibleBlooddonors()
+        
 
         return view('dashboard.coachings.singleforeditors')
                             ->withCoachingscount($coachingscount)
