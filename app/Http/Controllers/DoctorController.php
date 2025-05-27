@@ -52,7 +52,47 @@ class DoctorController extends Controller
             $hospitals = Hospital::where('district_id', Auth::user()->district_id)->get();
 
         } elseif(Auth::user()->role == 'editor') {
+            if(!in_array('doctors', Auth::user()->accessibleTables())) {
+                abort(403, 'Access Denied');
+            }
+            $doctorscount = Auth::user()->accessibleDoctors()->count();
+            $doctors = Auth::user()->accessibleDoctors()->get();
 
+            $accessedhospitals = Auth::user()->accessibleHospitals()->get();
+            $hospitals = $accessedhospitals;
+
+            foreach($accessedhospitals as $hospital) {
+                foreach($hospital->doctorhospitals as $doctor) {
+                    $doctors->push($doctor->doctor);
+                }
+            }
+            $doctors = collect($doctors )->unique('id');
+
+            // Now paginate the collection:
+
+            // Define how many items you want per page
+            $perPage = 10;
+
+            // Get current page from the request, defaulting to 1
+            $page = request()->get('page', 1);
+            // Calculate the starting offset
+            $offset = ($page - 1) * $perPage;
+            // Slice the collection to get the items to display in current page
+            $currentPageItems = $doctors->slice($offset, $perPage)->values();
+
+            // Create LengthAwarePaginator instance
+            $doctors = new LengthAwarePaginator(
+                $currentPageItems,
+                $doctors->count(),  // total items
+                $perPage,
+                $page,
+                [
+                    'path'  => request()->url(),
+                    'query' => request()->query(),
+                ]
+            );
+
+            dd($doctors);
         } else {
             $doctorscount = Doctor::count();
             $doctors = Doctor::orderBy('id', 'desc')->paginate(10);
