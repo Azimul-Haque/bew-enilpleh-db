@@ -277,7 +277,7 @@ class AdminandothersController extends Controller
 
     public function lawyerIndex()
     {
-        if(Auth::user()->role == 'editor') {
+        if(Auth::user()->role == 'editor' || Auth::user()->role == 'manager') {
             abort(403, 'Access Denied');
         }
         $districts = District::all();
@@ -1193,7 +1193,7 @@ class AdminandothersController extends Controller
         if(Auth::user()->role == 'manager') {
             abort(403, 'Access Denied');
         }
-        
+
         $districts = District::all();
         
         
