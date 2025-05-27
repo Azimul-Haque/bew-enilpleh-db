@@ -399,10 +399,12 @@ class AdminandothersController extends Controller
         } elseif(Auth::user()->role == 'editor') {
             $rentacarscount = Rentacar::where('district_id', Auth::user()->district_id)->count();
             $rentacars = Rentacar::where('district_id', Auth::user()->district_id)->orderBy('id', 'asc')->paginate(10);
+        } else {
+            $district = District::find($district_id);
+            $rentacarscount = Rentacar::where('district_id', $district_id)->count();
+            $rentacars = Rentacar::where('district_id', $district_id)->orderBy('id', 'asc')->paginate(10);
         }
-        $district = District::find($district_id);
-        $rentacarscount = Rentacar::where('district_id', $district_id)->count();
-        $rentacars = Rentacar::where('district_id', $district_id)->orderBy('id', 'asc')->paginate(10);
+        
                 
         return view('dashboard.rentacars.single')
                             ->withDistrict($district)
