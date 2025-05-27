@@ -638,9 +638,9 @@ class AdminandothersController extends Controller
                 abort(403, 'Access Denied');
             }
             $coachingscount = Auth::user()->accessibleCoachings()->count();
-            $doctors = Auth::user()->accessibleDoctors()->get();
+            $coachings = Auth::user()->accessibleCoachings()->get();
 
-            $accessedhospitals = Auth::user()->accessibleHospitals()->get();
+            $accessedhospitals = Auth::user()->accessibleCoachings()->get();
             $hospitals = $accessedhospitals;
 
             foreach($accessedhospitals as $hospital) {
