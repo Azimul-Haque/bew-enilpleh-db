@@ -38,6 +38,8 @@ class AmbulanceController extends Controller
         } elseif(Auth::user()->role == 'admin') {
             $ambulancescount = Ambulance::count();
             $ambulances = Ambulance::orderBy('id', 'desc')->paginate(10);
+        } else {
+            abort(403, 'Access Denied');
         }
         
 
