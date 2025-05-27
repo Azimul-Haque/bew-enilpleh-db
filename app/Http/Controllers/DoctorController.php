@@ -91,7 +91,7 @@ class DoctorController extends Controller
                              ->paginate(10);
             $hospitals = Hospital::where('district_id', Auth::user()->district_id)->get();
 
-        } else {
+        } elseif(Auth::user()->role == 'editor') {} else {
             $doctorscount = Doctor::count();
             $doctors = Doctor::orderBy('id', 'desc')->paginate(10);
             $hospitals = Hospital::all();
