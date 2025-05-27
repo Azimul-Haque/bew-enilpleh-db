@@ -190,8 +190,8 @@
             				                		<option value="admin" @if($user->role == 'admin') selected="" @endif>এডমিন</option>
               													<option value="editor" @if($user->role == 'editor') selected="" @endif>জেলা এডমিন</option>
                                         <option value="manager" @if($user->role == 'manager') selected="" @endif>হাসপাতাল ম্যানেজার</option>
-                                        <option value="volunteer" @if($user->role == 'volunteer') selected="" @endif>ভলান্টিয়ার</option>
-              													<option value="user" @if($user->role == 'user') selected="" @endif>ব্যবহারকারী</option>
+                                        {{-- <option value="volunteer" @if($user->role == 'volunteer') selected="" @endif>ভলান্টিয়ার</option>
+              													<option value="user" @if($user->role == 'user') selected="" @endif>ব্যবহারকারী</option> --}}
               													{{-- <option value="accountant" @if($user->role == 'accountant') selected="" @endif>একাউন্টেন্ট</option> --}}
             				                	</select>
             				                    <div class="input-group-append">
@@ -352,6 +352,8 @@
 	                		<option selected="" disabled="" value="">ধরন</option>
 	                		<option value="admin">এডমিন</option>
 							       <option value="editor">এডিটর</option>
+                     <option value="editor">জেলা এডমিন</option>
+                     <option value="manager">হাসপাতাল ম্যানেজার</option>
                     {{--  <option value="manager">ম্যানেজার</option>
                      <option value="volunteer">ভলান্টিয়ার</option>
 	                		<option value="user">ব্যবহারকারী</option> --}}
