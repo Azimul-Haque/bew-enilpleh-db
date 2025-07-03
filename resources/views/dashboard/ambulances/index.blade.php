@@ -280,7 +280,7 @@
                              class="form-control"
                              placeholder="মোবাইল নম্বর" required>
                       <div class="input-group-append">
-                          <div class="input-group-text"><span class="fas fa-map-marked-alt"></span></div>
+                          <div class="input-group-text"><span class="fas fa-map"></span></div>
                       </div>
                   </div>
                   <textarea class="form-control" name="description" placeholder="বক্স এর জন্য বার্তা লিখুন (Optional)">{{ old('description') }}</textarea> <br/>
