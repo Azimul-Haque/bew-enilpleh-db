@@ -58,6 +58,7 @@ class AmbulanceController extends Controller
         }
         $ambulancescount = Ambulance::where('name', 'LIKE', "%$search%")
                                   ->orWhere('mobile', 'LIKE', "%$search%")
+                                  ->orWhere('address', 'LIKE', "%$search%")
                                   ->orWhereHas('district', function ($query) use ($search){
                                       $query->where('name', 'like', '%'.$search.'%');
                                       $query->orWhere('name_bangla', 'like', '%'.$search.'%');
@@ -68,6 +69,7 @@ class AmbulanceController extends Controller
                                   ->count();
         $ambulances = Ambulance::where('name', 'LIKE', "%$search%")
                                   ->orWhere('mobile', 'LIKE', "%$search%")
+                                  ->orWhere('address', 'LIKE', "%$search%")
                                   ->orWhereHas('district', function ($query) use ($search){
                                       $query->where('name', 'like', '%'.$search.'%');
                                       $query->orWhere('name_bangla', 'like', '%'.$search.'%');
