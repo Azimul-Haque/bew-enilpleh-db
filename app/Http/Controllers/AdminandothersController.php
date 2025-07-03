@@ -428,11 +428,13 @@ class AdminandothersController extends Controller
         $district = District::find($district_id);
         $rentacarscount = Rentacar::where('district_id', $district_id)
                                  ->where('name', 'LIKE', "%$search%")
+                                 ->orWhere('address', 'LIKE', "%$search%")
                                  ->orWhere('mobile', 'LIKE', "%$search%")->count();
 
         $rentacars = Rentacar::where('district_id', $district_id)
                             ->where('name', 'LIKE', "%$search%")
                             ->orWhere('mobile', 'LIKE', "%$search%")
+                            ->orWhere('address', 'LIKE', "%$search%")
                             ->orderBy('id', 'asc')
                             ->paginate(10);
 
