@@ -103,6 +103,7 @@ class AmbulanceController extends Controller
         $ambulance->upazilla_id = $request->upazilla_id;
         $ambulance->name = $request->name;
         $ambulance->mobile = $request->mobile;
+        $ambulance->address = $request->address;
         if($request->description) {
             $ambulance->description = $request->description;
         }
@@ -133,6 +134,7 @@ class AmbulanceController extends Controller
             'upazilla_id'            => 'required',
             'name'                => 'required|string|max:191',
             'mobile'              => 'required|string|max:191',
+            'address'              => 'required|string|max:191',
             'image'              => 'sometimes',
             'description'              => 'sometimes|max:500',
         ));
