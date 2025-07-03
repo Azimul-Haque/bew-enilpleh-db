@@ -484,6 +484,7 @@ class AdminandothersController extends Controller
         $this->validate($request,array(
             'name'           => 'required|string|max:191',
             'mobile'         => 'required|string|max:191',
+            'address'         => 'required|string|max:191',
             'image'          => 'sometimes',
             'description'          => 'sometimes|string|max:500',
         ));
@@ -492,6 +493,7 @@ class AdminandothersController extends Controller
         $rentacar->district_id = $district_id;
         $rentacar->name = $request->name;
         $rentacar->mobile = $request->mobile;
+        $rentacar->address = $request->address;
         $rentacar->description = $request->description;
         $rentacar->save();
 
