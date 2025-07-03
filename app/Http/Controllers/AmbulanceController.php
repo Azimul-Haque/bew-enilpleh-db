@@ -93,6 +93,7 @@ class AmbulanceController extends Controller
             'upazilla_id'            => 'required',
             'name'                => 'required|string|max:191',
             'mobile'              => 'required|string|max:191',
+            'address'              => 'required|string|max:191',
             'image'              => 'sometimes',
             'description'        => 'sometimes|max:500',
         ));
