@@ -51,7 +51,8 @@
                       <span class="badge bg-success"><i class="fas fa-phone"></i> {{ $ambulance->mobile }}</span>
                     </td>
                     <td>
-                      {{ $ambulance->upazilla->name_bangla }}, {{ $ambulance->district->name_bangla }}
+                      {{ $ambulance->upazilla->name_bangla }}, {{ $ambulance->district->name_bangla }}<br>
+                      <small>{{ $ambulance->address }}</small>
                     </td>
                     <td align="right">
                       {{-- <button type="button" class="btn btn-warning btn-sm" data-toggle="modal" data-target="#notifModal{{ $ambulance->id }}">
