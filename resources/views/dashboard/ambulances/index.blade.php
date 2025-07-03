@@ -52,7 +52,7 @@
                     </td>
                     <td>
                       {{ $ambulance->upazilla->name_bangla }}, {{ $ambulance->district->name_bangla }}<br>
-                      <small class="light">{{ $ambulance->address }}</small>
+                      <small style="color: lightgrey;">{{ $ambulance->address }}</small>
                     </td>
                     <td align="right">
                       {{-- <button type="button" class="btn btn-warning btn-sm" data-toggle="modal" data-target="#notifModal{{ $ambulance->id }}">
