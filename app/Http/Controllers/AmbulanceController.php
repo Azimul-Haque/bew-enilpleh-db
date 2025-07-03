@@ -144,6 +144,7 @@ class AmbulanceController extends Controller
         $ambulance->upazilla_id = $request->upazilla_id;
         $ambulance->name = $request->name;
         $ambulance->mobile = $request->mobile;
+        $ambulance->address = $request->address;
         if($request->description) {
             $ambulance->description = $request->description;
         }
