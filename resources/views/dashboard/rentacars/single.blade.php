@@ -200,14 +200,14 @@
                       </div>
                   </div>
                   <div class="input-group mb-3">
-                      <input type="number"
-                             name="mobile"
-                             value="{{ old('mobile') }}"
+                      <input type="text"
+                             name="address"
+                             value="{{ old('address') }}"
                              autocomplete="off"
                              class="form-control"
-                             placeholder="মোবাইল নম্বর" required>
+                             placeholder="ঠিকানা" required>
                       <div class="input-group-append">
-                          <div class="input-group-text"><span class="fas fa-mobile"></span></div>
+                          <div class="input-group-text"><span class="fas fa-map"></span></div>
                       </div>
                   </div>
 
