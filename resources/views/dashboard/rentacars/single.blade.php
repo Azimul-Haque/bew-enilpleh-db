@@ -102,7 +102,7 @@
                                   <div class="input-group mb-3">
                                       <input type="text"
                                              name="address"
-                                             value="{{ $ambulance->address }}"
+                                             value="{{ $rentacar->address }}"
                                              autocomplete="off"
                                              class="form-control"
                                              placeholder="ঠিকানা" required>
