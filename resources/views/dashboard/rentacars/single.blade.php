@@ -51,6 +51,7 @@
                       {{ $rentacar->name }}
                     </td>
                     <td>{{ $rentacar->mobile }}</td>
+                    <td>{{ $rentacar->address }}</td>
                     <td align="right">
                       {{-- <button type="button" class="btn btn-warning btn-sm" data-toggle="modal" data-target="#notifModal{{ $rentacar->id }}">
                         <i class="fas fa-bell"></i>
