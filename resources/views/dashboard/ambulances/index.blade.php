@@ -142,7 +142,7 @@
                                   <div class="input-group mb-3">
                                       <input type="text"
                                              name="address"
-                                             value="{{ old('address') }}"
+                                             value="{{ $ambulance->address }}"
                                              autocomplete="off"
                                              class="form-control"
                                              placeholder="ঠিকানা" required>
