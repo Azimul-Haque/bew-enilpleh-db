@@ -220,7 +220,7 @@
       format: 'yyyy-mm-dd',
       todayHighlight: true,
       autoclose: true,
-      multidate: true,
+      multidate: false,
     });
 
     $(document).on('click', '#search-button', function() {
