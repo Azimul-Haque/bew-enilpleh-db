@@ -71,7 +71,7 @@
       } elseif($hospital_type == 3) {
         $text = "warning";
       } elseif($hospital_type == 4) {
-        $text = "কিডনি ডায়ালাইসিস";
+        $text = "info";
       } else {
         $text = $hospital_type;
       }
