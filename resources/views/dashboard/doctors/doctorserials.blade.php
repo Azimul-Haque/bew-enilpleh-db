@@ -223,6 +223,13 @@
       multidate: false,
     });
 
+    $("#addserialdate").datepicker({
+      format: 'yyyy-mm-dd',
+      todayHighlight: true,
+      autoclose: true,
+      multidate: false,
+    });
+
     $(document).on('click', '#search-button', function() {
       if($('#selectdate').val() != '') {
         var urltocall = '{{ route('dashboard.doctors') }}' +  '/{{ $doctor->id }}/appoinments/list/' + $('#selectdate').val();
