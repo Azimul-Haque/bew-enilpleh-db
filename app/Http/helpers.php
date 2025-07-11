@@ -67,9 +67,9 @@
       if ($hospital_type == 1) {
         $text = "success";
       } elseif($hospital_type == 2) {
-        $text = "প্রাইভেট ক্লিনিক ও হাসপাতাল";
+        $text = "primary";
       } elseif($hospital_type == 3) {
-        $text = "ফিজিওথেরাপি সেন্টার";
+        $text = "warning";
       } elseif($hospital_type == 4) {
         $text = "কিডনি ডায়ালাইসিস";
       } else {
