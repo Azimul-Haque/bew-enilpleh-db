@@ -297,6 +297,7 @@
                                               <textarea name="weekdays" class="form-control" style="min-height: 90px;" placeholder="উদাহরণ: শুক্রবার সকাল ৯টা থেকে দুপুর ১২টা, শনিবার সন্ধ্যা ৬টা থেকে রাত ১০টা ইত্যাদি (কোন সপ্তাহে ডাক্তার না বসলে সেটা লিখে দিন)">{{ str_replace('<br />', "", $doctor->weekdays) }}</textarea>
                                             </div>
                                           </div>
+                                          @if()
                                           <div class="col-md-6">
                                             অনলাইনে সিরিয়াল দেওয়া যাবে কি না<br/>
                                             <select name="onlineserial" class="form-control" required>
@@ -305,6 +306,7 @@
                                                 <option value="0" @if($doctor->onlineserial == 0) selected @endif>অনলাইনে সিরিয়াল দেওয়া যাবে না ❌</option>
                                             </select>
                                           </div>
+                                          @endif
                                         </div>
 
                                         <div style="margin-top: 15px;">
