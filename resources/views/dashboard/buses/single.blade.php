@@ -138,7 +138,7 @@
     {{-- Add User Modal Code --}}
     <!-- Modal -->
     <div class="modal fade" id="addUserModal" tabindex="-1" role="dialog" aria-labelledby="addUserModalLabel" aria-hidden="true" data-backdrop="static">
-      <div class="modal-dialog modal-lg" role="document">
+      <div class="modal-dialog modal-xl" role="document">
         <div class="modal-content">
           <div class="modal-header bg-success">
             <h5 class="modal-title" id="addUserModalLabel">নতুন বাস যোগ (জেলা: <strong>{{ $district->name_bangla }}</strong>)</h5>
