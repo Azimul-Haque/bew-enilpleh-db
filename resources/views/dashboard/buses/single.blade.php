@@ -252,7 +252,7 @@
                           <input type="text"
                                  name="online_ticket"
                                  class="form-control"
-                                 value="{{ $bus->online_ticket }}"
+                                 value="{{ old('online_ticket') }}"
                                  placeholder="টিকেট কাটার অনলাইন লিংক (OPTIONAL)">
                           <div class="input-group-append">
                               <div class="input-group-text"><span class="fas fa-bus"></span></div>
