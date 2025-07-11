@@ -50,6 +50,7 @@
               <thead>
                 <tr>
                   <th>নাম</th>
+                  <th>ধরন</th>
                   <th>ঠিকানা</th>
                   <th align="right">কার্যক্রম</th>
                 </tr>
