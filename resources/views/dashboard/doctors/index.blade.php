@@ -686,6 +686,7 @@
                         <textarea name="weekdays" class="form-control" style="min-height: 90px;" placeholder="উদাহরণ: শুক্রবার সকাল ৯টা থেকে দুপুর ১২টা, শনিবার সন্ধ্যা ৬টা থেকে রাত ১০টা ইত্যাদি (কোন সপ্তাহে ডাক্তার না বসলে সেটা লিখে দিন)">{{ str_replace('<br />', "", old('weekdays')) }}</textarea>
                       </div>
                     </div>
+                    @if(Auth::user()->role != 'manager')
                     <div class="col-md-6">
                       অনলাইনে সিরিয়াল দেওয়া যাবে কি না<br/>
                       <select name="onlineserial" class="form-control" required>
@@ -694,6 +695,7 @@
                           <option value="0">অনলাইনে সিরিয়াল দেওয়া যাবে না ❌</option>
                       </select>
                     </div>
+                    @endif
                   </div>
                   <div style="margin-top: 15px;">
                     <input type="text" id="selected_offdays" name="selected_offdays" class="selected_offdays form-control" placeholder="যেদিন যেদিন রোগী দেখবেন না (প্রয়োজনে একাধিক সিলেক্ট করা যাবে) [Optional]" readonly>
