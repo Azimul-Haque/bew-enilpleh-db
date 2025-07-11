@@ -63,6 +63,21 @@
       return $text;
   }
 
+  function hospital_badge($hospital_type) {
+      if ($hospital_type == 1) {
+        $text = "সরকারি হাসপাতাল";
+      } elseif($hospital_type == 2) {
+        $text = "প্রাইভেট ক্লিনিক ও হাসপাতাল";
+      } elseif($hospital_type == 3) {
+        $text = "ফিজিওথেরাপি সেন্টার";
+      } elseif($hospital_type == 4) {
+        $text = "কিডনি ডায়ালাইসিস";
+      } else {
+        $text = $hospital_type;
+      }
+      return $text;
+  }
+
   function blooddonor_category($category) {
       if ($category == 1) {
         $text = "ব্লাড ব্যাংক";
