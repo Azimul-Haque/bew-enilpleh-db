@@ -255,7 +255,7 @@
                                  value="{{ old('online_ticket') }}"
                                  placeholder="টিকেট কাটার অনলাইন লিংক (OPTIONAL)">
                           <div class="input-group-append">
-                              <div class="input-group-text"><span class="fas fa-bus"></span></div>
+                              <div class="input-group-text"><span class="fas fa-globe"></span></div>
                           </div>
                       </div>
                     </div>
