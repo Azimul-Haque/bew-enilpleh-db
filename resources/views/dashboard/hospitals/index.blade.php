@@ -62,9 +62,9 @@
                       {{ $hospital->name }}
                       <small class="text-black-50"><i class="fas fa-phone"></i> {{ $hospital->telephone }}</small>
                       <small class="text-black-50"><i class="fas fa-mobile"></i> {{ $hospital->mobile }}</small><br/>
-                      <span class="badge bg-success">{{ hospital_type($hospital->hospital_type) }}</span>
                     </td>
-                    <td></td>
+                    <td>
+                      <span class="badge bg-success">{{ hospital_type($hospital->hospital_type) }}</span></td>
                     <td>
                       {{ $hospital->address }}<br/>
                       {{ $hospital->upazilla->name_bangla }}, {{ $hospital->district->name_bangla }}
