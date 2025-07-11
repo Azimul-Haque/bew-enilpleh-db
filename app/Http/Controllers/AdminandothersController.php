@@ -1316,6 +1316,7 @@ class AdminandothersController extends Controller
             'fare'             => 'required|string|max:191',
             'starting_time'    => 'required|string|max:191',
             'contact'          => 'required|string|max:191',
+            'online_ticket'    => 'sometimes',
             'counterdata.*'    => 'sometimes',
         ));
 
@@ -1329,6 +1330,7 @@ class AdminandothersController extends Controller
         $bus->starting_time = $request->starting_time;
         // $bus->counter_address = $request->counter_address;
         $bus->contact = $request->contact;
+        $bus->online_ticket = $request->online_ticket;
         $bus->save();
 
         // Remove old counter data
