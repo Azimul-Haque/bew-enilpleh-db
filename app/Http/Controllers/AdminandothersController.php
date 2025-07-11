@@ -1284,6 +1284,7 @@ class AdminandothersController extends Controller
         $bus->starting_time = $request->starting_time;
         // $bus->counter_address = $request->counter_address;
         $bus->contact = $request->contact;
+        $bus->online_ticket = $request->online_ticket;
         $bus->save();
 
 
