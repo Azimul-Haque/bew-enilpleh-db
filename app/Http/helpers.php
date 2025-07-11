@@ -65,7 +65,7 @@
 
   function hospital_badge($hospital_type) {
       if ($hospital_type == 1) {
-        $text = "সরকারি হাসপাতাল";
+        $text = "success";
       } elseif($hospital_type == 2) {
         $text = "প্রাইভেট ক্লিনিক ও হাসপাতাল";
       } elseif($hospital_type == 3) {
