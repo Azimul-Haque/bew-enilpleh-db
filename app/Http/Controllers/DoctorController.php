@@ -672,7 +672,7 @@ class DoctorController extends Controller
         $doctorserial->doctor_id = $request->doctor_id;
         $doctorserial->name = $request->name;
         $doctorserial->mobile = $request->mobile;
-        $doctorserial->serialdate = date('Y-m-d', strtotime($selecteddate));
+        $doctorserial->serialdate = date('Y-m-d', strtotime($request->serialdate));
         if($request->reference) {
             $doctorserial->reference = $request->reference;
         }
