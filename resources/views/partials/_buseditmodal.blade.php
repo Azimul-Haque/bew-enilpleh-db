@@ -117,7 +117,7 @@
                 <div class="col-md-6">
                   <div class="input-group mb-3">
                       <input type="text"
-                             name="online-ticket"
+                             name="online_ticket"
                              class="form-control"
                              value="{{ $bus->online_ticket }}"
                              placeholder="টিকেট কাটার অনলাইন লিংক (OPTIONAL)">
