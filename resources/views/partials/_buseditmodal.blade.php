@@ -119,7 +119,7 @@
                       <input type="text"
                              name="online-ticket"
                              class="form-control"
-                             value="{{ $bus->starting_time }}"
+                             value="{{ $bus->online-ticket }}"
                              placeholder="ছাড়ার সময়/ সময়সমূহ (একাধিক হলে কমা দিয়ে লিখুন)" required>
                       <div class="input-group-append">
                           <div class="input-group-text"><span class="fas fa-bus"></span></div>
