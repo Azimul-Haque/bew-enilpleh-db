@@ -1271,6 +1271,7 @@ class AdminandothersController extends Controller
             'fare'             => 'required|string|max:191',
             'starting_time'    => 'required|string|max:191',
             'contact'          => 'required|string|max:191',
+            'online_ticket'    => 'sometimes',
         ));
 
         $bus = new Bus;
