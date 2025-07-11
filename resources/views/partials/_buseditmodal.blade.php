@@ -111,6 +111,34 @@
                   </div>
                 </div>
               </div>
+
+
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="input-group mb-3">
+                      <input type="text"
+                             name="starting_time"
+                             class="form-control"
+                             value="{{ $bus->starting_time }}"
+                             placeholder="ছাড়ার সময়/ সময়সমূহ (একাধিক হলে কমা দিয়ে লিখুন)" required>
+                      <div class="input-group-append">
+                          <div class="input-group-text"><span class="fas fa-bus"></span></div>
+                      </div>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  {{-- <div class="input-group mb-3">
+                      <input type="number"
+                             name="contact"
+                             value="{{ $bus->contact }}"
+                             class="form-control"
+                             placeholder="যোগাযোগ" required>
+                      <div class="input-group-append">
+                          <div class="input-group-text"><span class="fas fa-mobile"></span></div>
+                      </div>
+                  </div> --}}
+                </div>
+              </div>
               
 
               <hr>
