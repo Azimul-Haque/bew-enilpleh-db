@@ -24,6 +24,7 @@ class CreateBusesTable extends Migration
             $table->string('starting_time');
             $table->string('counter_address');
             $table->string('contact');
+            $table->text('online-ticket');
             $table->timestamps();
 
             $table->foreign('district_id')->references('district_id')->on('districts');
