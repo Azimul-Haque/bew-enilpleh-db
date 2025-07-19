@@ -596,13 +596,18 @@ class AdminandothersController extends Controller
             'mobile'              => 'required|string|max:191',
             'top_news_links'      => 'sometimes',
         ));
-        
+
 
         $journalist = new Journalist;
         $journalist->district_id = $district_id;
         $journalist->name = $request->name;
         $journalist->affiliation = $request->affiliation;
         $journalist->mobile = $request->mobile;
+
+        $topNewsLinks = array_filter($request->input('top_news_links', []), function ($link) {
+            return !empty($link);
+        });
+        
         $journalist->top_news_links = $request->input('top_news_links');
         $journalist->save();
 
