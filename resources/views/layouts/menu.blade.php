@@ -172,14 +172,14 @@
 </li>
 @endif
 
-{{-- @if(Auth::user()->role == 'admin')
+@if(Auth::user()->role == 'admin')
 <li class="nav-item">
     <a href="{{ route('dashboard.journalists') }}" class="nav-link {{ Request::is('dashboard/journalists') ? 'active' : '' }} {{ Request::is('dashboard/journalists/*') ? 'active' : '' }}">
         <i class="nav-icon fas fa-gavel"></i>
         <p>সাংবাদিকরৃন্দ</p>
     </a>
 </li>
-@endif --}}
+@endif
 
 
 @if(Auth::user()->role == 'admin')
