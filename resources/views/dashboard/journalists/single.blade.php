@@ -217,7 +217,7 @@
                              name="newslink[]"
                              value="{{ old('newslink') }}"
                              class="form-control"
-                             placeholder="সাংবাদিকের হোয়াটসঅ্যাপ নাম্বার নম্বর" required>
+                             placeholder="প্রকাশিত নিউজের লিংক - ১" required>
                       <div class="input-group-append">
                           <div class="input-group-text"><span class="fas fa-mobile"></span></div>
                       </div>
