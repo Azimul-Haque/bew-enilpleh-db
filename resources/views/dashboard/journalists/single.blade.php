@@ -195,7 +195,7 @@
                              name="affiliation"
                              class="form-control"
                              value="{{ old('affiliation') }}"
-                             placeholder="সংশ্লিষ্টতা (পত্রিকা বা টিভি চ্যানেলের নাম)" required>
+                             placeholder="কোন পত্রিকায় কাজ করে" required>
                       <div class="input-group-append">
                           <div class="input-group-text"><span class="fas fa-university"></span></div>
                       </div>
