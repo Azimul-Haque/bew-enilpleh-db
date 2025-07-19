@@ -212,6 +212,17 @@
                       </div>
                   </div>
                   
+                  <div class="input-group mb-3">
+                      <input type="number"
+                             name="mobile"
+                             value="{{ old('mobile') }}"
+                             class="form-control"
+                             placeholder="সাংবাদিকের হোয়াটসঅ্যাপ নাম্বার নম্বর" required>
+                      <div class="input-group-append">
+                          <div class="input-group-text"><span class="fas fa-mobile"></span></div>
+                      </div>
+                  </div>
+                  
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-dismiss="modal">ফিরে যান</button>
