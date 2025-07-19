@@ -219,7 +219,7 @@
                              class="form-control"
                              placeholder="প্রকাশিত নিউজের লিংক - ১" required>
                       <div class="input-group-append">
-                          <div class="input-group-text"><span class="fas fa-mobile"></span></div>
+                          <div class="input-group-text"><span class="fas fa-newspaper"></span></div>
                       </div>
                   </div>
                   
