@@ -228,7 +228,7 @@
                              name="newslink[]"
                              value="{{ old('newslink') }}"
                              class="form-control"
-                             placeholder="প্রকাশিত নিউজের লিংক - ১" required>
+                             placeholder="প্রকাশিত নিউজের লিংক - ২" required>
                       <div class="input-group-append">
                           <div class="input-group-text"><span class="fas fa-newspaper"></span></div>
                       </div>
@@ -239,7 +239,7 @@
                              name="newslink[]"
                              value="{{ old('newslink') }}"
                              class="form-control"
-                             placeholder="প্রকাশিত নিউজের লিংক - ১" required>
+                             placeholder="প্রকাশিত নিউজের লিংক - ৩" required>
                       <div class="input-group-append">
                           <div class="input-group-text"><span class="fas fa-newspaper"></span></div>
                       </div>
@@ -250,7 +250,18 @@
                              name="newslink[]"
                              value="{{ old('newslink') }}"
                              class="form-control"
-                             placeholder="প্রকাশিত নিউজের লিংক - ১" required>
+                             placeholder="প্রকাশিত নিউজের লিংক - ৪" required>
+                      <div class="input-group-append">
+                          <div class="input-group-text"><span class="fas fa-newspaper"></span></div>
+                      </div>
+                  </div>
+                  
+                  <div class="input-group mb-3">
+                      <input type="text"
+                             name="newslink[]"
+                             value="{{ old('newslink') }}"
+                             class="form-control"
+                             placeholder="প্রকাশিত নিউজের লিংক - ৫" required>
                       <div class="input-group-append">
                           <div class="input-group-text"><span class="fas fa-newspaper"></span></div>
                       </div>
