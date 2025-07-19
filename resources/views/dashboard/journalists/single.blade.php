@@ -91,7 +91,7 @@
                                                name="affiliation"
                                                value="{{ $journalist->affiliation }}"
                                                class="form-control"
-                                               placeholder="সংশ্লিষ্টতা (পত্রিকা বা টিভি চ্যানেলের নাম)" required>
+                                               placeholder="কোন পত্রিকায় কাজ করে" required>
                                         <div class="input-group-append">
                                             <div class="input-group-text"><span class="fas fa-university"></span></div>
                                         </div>
@@ -101,7 +101,7 @@
                                                name="mobile"
                                                value="{{ $journalist->mobile }}"
                                                class="form-control"
-                                               placeholder="সাংবাদিকের মোবাইল নম্বর" required>
+                                               placeholder="সাংবাদিকের হোয়াটসঅ্যাপ নম্বর" required>
                                         <div class="input-group-append">
                                             <div class="input-group-text"><span class="fas fa-mobile"></span></div>
                                         </div>
