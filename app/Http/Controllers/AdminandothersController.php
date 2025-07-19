@@ -608,7 +608,7 @@ class AdminandothersController extends Controller
             return !empty($link);
         });
         
-        $journalist->top_news_links = $request->input('top_news_links');
+        $journalist->top_news_links = array_values($topNewsLinks);
         $journalist->save();
 
         Cache::forget('journalists' . $district_id);
