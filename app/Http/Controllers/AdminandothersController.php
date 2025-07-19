@@ -615,6 +615,7 @@ class AdminandothersController extends Controller
             'name'                => 'required|string|max:191',
             'affiliation'         => 'required',
             'mobile'              => 'required|string|max:191',
+            'top_news_links'      => 'sometimes',
         ));
 
         $journalist = Journalist::find($id);
