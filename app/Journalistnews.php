@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Journalistnews extends Model
 {
-    public function district(){
-        return $this->belongsTo('App\District');
+    public function journalist(){
+        return $this->belongsTo('App\Journalist');
     }
 }
