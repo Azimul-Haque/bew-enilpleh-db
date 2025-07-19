@@ -19,7 +19,8 @@ class CreateJournalistsTable extends Migration
             $table->string('name');
             $table->string('affiliation');
             $table->string('mobile');
-            $table->string('mobile');
+            $table->text('news1');
+            $table->text('news2');
             $table->timestamps();
         });
     }
