@@ -19,7 +19,7 @@ class CreateJournalistsTable extends Migration
             $table->string('name');
             $table->string('affiliation');
             $table->string('mobile');
-            $table->json('top_news_links');
+            $table->json('top_news_links')->nullable();
             $table->timestamps();
         });
     }
