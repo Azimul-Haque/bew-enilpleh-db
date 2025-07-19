@@ -597,7 +597,6 @@ class AdminandothersController extends Controller
             'top_news_links'      => 'sometimes',
         ));
         
-        dd($request->all());
 
         $journalist = new Journalist;
         $journalist->district_id = $district_id;
