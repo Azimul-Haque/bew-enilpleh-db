@@ -596,6 +596,7 @@ class AdminandothersController extends Controller
             'mobile'              => 'required|string|max:191',
             'top_news_links'      => 'sometimes',
         ));
+        dd($request->all());
 
         $journalist = new Journalist;
         $journalist->district_id = $district_id;
