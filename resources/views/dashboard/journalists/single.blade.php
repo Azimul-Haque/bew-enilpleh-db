@@ -106,6 +106,23 @@
                                             <div class="input-group-text"><span class="fas fa-mobile"></span></div>
                                         </div>
                                     </div>
+
+                                    @php
+                                        $topLinks = old('top_news_links', $journalist->top_news_links ?? []);
+                                    @endphp
+
+                                    @for($i = 0; $i < 5; $i++)
+                                        <div class="input-group mb-2">
+                                            <input type="url"
+                                                   name="top_news_links[]"
+                                                   class="form-control"
+                                                   placeholder="Top News Link {{ $i + 1 }}"
+                                                   value="{{ $topLinks[$i] ?? '' }}">
+                                            <div class="input-group-append">
+                                                <div class="input-group-text"><span class="fas fa-link"></span></div>
+                                            </div>
+                                        </div>
+                                    @endfor
                                      
                               </div>
                               <div class="modal-footer">
