@@ -614,6 +614,7 @@ class ComposerStaticInitd99be2aa22b662638be63ef18831ea06
         'App\\Http\\Middleware\\TrustProxies' => __DIR__ . '/../..' . '/app/Http/Middleware/TrustProxies.php',
         'App\\Http\\Middleware\\VerifyCsrfToken' => __DIR__ . '/../..' . '/app/Http/Middleware/VerifyCsrfToken.php',
         'App\\Journalist' => __DIR__ . '/../..' . '/app/Journalist.php',
+        'App\\Journalistnews' => __DIR__ . '/../..' . '/app/Journalistnews.php',
         'App\\Lawyer' => __DIR__ . '/../..' . '/app/Lawyer.php',
         'App\\Medicaldepartment' => __DIR__ . '/../..' . '/app/Medicaldepartment.php',
         'App\\Medicalsymptom' => __DIR__ . '/../..' . '/app/Medicalsymptom.php',

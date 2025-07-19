@@ -63,6 +63,7 @@ return array(
     'App\\Http\\Middleware\\TrustProxies' => $baseDir . '/app/Http/Middleware/TrustProxies.php',
     'App\\Http\\Middleware\\VerifyCsrfToken' => $baseDir . '/app/Http/Middleware/VerifyCsrfToken.php',
     'App\\Journalist' => $baseDir . '/app/Journalist.php',
+    'App\\Journalistnews' => $baseDir . '/app/Journalistnews.php',
     'App\\Lawyer' => $baseDir . '/app/Lawyer.php',
     'App\\Medicaldepartment' => $baseDir . '/app/Medicaldepartment.php',
     'App\\Medicalsymptom' => $baseDir . '/app/Medicalsymptom.php',
