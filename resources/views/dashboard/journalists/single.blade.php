@@ -234,8 +234,7 @@
                           <input type="url"
                                  name="top_news_links[]"
                                  class="form-control"
-                                 placeholder="শীর্ষ প্রকাশিত সংবাদের লিংক -  {{ $i + 1 }}"
-                          >
+                                 placeholder="শীর্ষ প্রকাশিত সংবাদের লিংক -  {{ $i + 1 }}">
                           <div class="input-group-append">
                               <div class="input-group-text"><span class="fas fa-link"></span></div>
                           </div>
