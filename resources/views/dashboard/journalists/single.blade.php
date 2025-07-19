@@ -213,9 +213,9 @@
                   </div>
                   
                   <div class="input-group mb-3">
-                      <input type="number"
+                      <input type="text"
                              name="newslink[]"
-                             value="{{ old('mobile') }}"
+                             value="{{ old('newslink') }}"
                              class="form-control"
                              placeholder="সাংবাদিকের হোয়াটসঅ্যাপ নাম্বার নম্বর" required>
                       <div class="input-group-append">
