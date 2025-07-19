@@ -10,7 +10,7 @@ class Journalist extends Model
         return $this->belongsTo('App\District');
     }
 
-    public function Journalistnews(){
+    public function journalistnews(){
         return $this->hasMany('App\Journalistnews');
     }
 }
