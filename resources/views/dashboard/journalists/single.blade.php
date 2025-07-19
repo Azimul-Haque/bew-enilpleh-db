@@ -212,60 +212,7 @@
                       </div>
                   </div>
                   
-                  <div class="input-group mb-3">
-                      <input type="text"
-                             name="newslink[]"
-                             value="{{ old('newslink') }}"
-                             class="form-control"
-                             placeholder="প্রকাশিত নিউজের লিংক - ১ [OPTIONAL]">
-                      <div class="input-group-append">
-                          <div class="input-group-text"><span class="fas fa-newspaper"></span></div>
-                      </div>
-                  </div>
                   
-                  <div class="input-group mb-3">
-                      <input type="text"
-                             name="newslink[]"
-                             value="{{ old('newslink') }}"
-                             class="form-control"
-                             placeholder="প্রকাশিত নিউজের লিংক - ২ [OPTIONAL]">
-                      <div class="input-group-append">
-                          <div class="input-group-text"><span class="fas fa-newspaper"></span></div>
-                      </div>
-                  </div>
-                  
-                  <div class="input-group mb-3">
-                      <input type="text"
-                             name="newslink[]"
-                             value="{{ old('newslink') }}"
-                             class="form-control"
-                             placeholder="প্রকাশিত নিউজের লিংক - ৩ [OPTIONAL]">
-                      <div class="input-group-append">
-                          <div class="input-group-text"><span class="fas fa-newspaper"></span></div>
-                      </div>
-                  </div>
-                  
-                  <div class="input-group mb-3">
-                      <input type="text"
-                             name="newslink[]"
-                             value="{{ old('newslink') }}"
-                             class="form-control"
-                             placeholder="প্রকাশিত নিউজের লিংক - ৪ [OPTIONAL]">
-                      <div class="input-group-append">
-                          <div class="input-group-text"><span class="fas fa-newspaper"></span></div>
-                      </div>
-                  </div>
-                  
-                  <div class="input-group mb-3">
-                      <input type="text"
-                             name="newslink[]"
-                             value="{{ old('newslink') }}"
-                             class="form-control"
-                             placeholder="প্রকাশিত নিউজের লিংক - ৫ [OPTIONAL]">
-                      <div class="input-group-append">
-                          <div class="input-group-text"><span class="fas fa-newspaper"></span></div>
-                      </div>
-                  </div>
                   
             </div>
             <div class="modal-footer">
