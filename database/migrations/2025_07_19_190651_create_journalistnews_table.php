@@ -15,6 +15,7 @@ class CreateJournalistnewsTable extends Migration
     {
         Schema::create('journalistnews', function (Blueprint $table) {
             $table->id();
+            $table->integer('bus_id')->unsigned();
             $table->timestamps();
         });
     }
