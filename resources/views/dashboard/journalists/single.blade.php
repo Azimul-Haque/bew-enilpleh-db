@@ -217,7 +217,7 @@
                              name="newslink[]"
                              value="{{ old('newslink') }}"
                              class="form-control"
-                             placeholder="প্রকাশিত নিউজের লিংক - ১" required>
+                             placeholder="প্রকাশিত নিউজের লিংক - ১ [OPTIONAL]">
                       <div class="input-group-append">
                           <div class="input-group-text"><span class="fas fa-newspaper"></span></div>
                       </div>
@@ -228,7 +228,7 @@
                              name="newslink[]"
                              value="{{ old('newslink') }}"
                              class="form-control"
-                             placeholder="প্রকাশিত নিউজের লিংক - ২" required>
+                             placeholder="প্রকাশিত নিউজের লিংক - ২ [OPTIONAL]">
                       <div class="input-group-append">
                           <div class="input-group-text"><span class="fas fa-newspaper"></span></div>
                       </div>
@@ -239,7 +239,7 @@
                              name="newslink[]"
                              value="{{ old('newslink') }}"
                              class="form-control"
-                             placeholder="প্রকাশিত নিউজের লিংক - ৩" required>
+                             placeholder="প্রকাশিত নিউজের লিংক - ৩ [OPTIONAL]">
                       <div class="input-group-append">
                           <div class="input-group-text"><span class="fas fa-newspaper"></span></div>
                       </div>
@@ -250,7 +250,7 @@
                              name="newslink[]"
                              value="{{ old('newslink') }}"
                              class="form-control"
-                             placeholder="প্রকাশিত নিউজের লিংক - ৪" required>
+                             placeholder="প্রকাশিত নিউজের লিংক - ৪ [OPTIONAL]">
                       <div class="input-group-append">
                           <div class="input-group-text"><span class="fas fa-newspaper"></span></div>
                       </div>
@@ -261,7 +261,7 @@
                              name="newslink[]"
                              value="{{ old('newslink') }}"
                              class="form-control"
-                             placeholder="প্রকাশিত নিউজের লিংক - ৫" required>
+                             placeholder="প্রকাশিত নিউজের লিংক - ৫ [OPTIONAL]">
                       <div class="input-group-append">
                           <div class="input-group-text"><span class="fas fa-newspaper"></span></div>
                       </div>
