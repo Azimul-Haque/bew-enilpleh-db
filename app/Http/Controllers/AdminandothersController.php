@@ -630,7 +630,11 @@ class AdminandothersController extends Controller
         $journalist->name = $request->name;
         $journalist->affiliation = $request->affiliation;
         $journalist->mobile = $request->mobile;
-        $journalist->top_news_links = $request->input('top_news_links');
+        $topNewsLinks = array_filter($request->input('top_news_links', []), function ($link) {
+            return !empty($link);
+        });
+        
+        $journalist->top_news_links = array_values($topNewsLinks);
         $journalist->save();
 
         Cache::forget('journalists' . $district_id);
