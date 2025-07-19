@@ -223,6 +223,39 @@
                       </div>
                   </div>
                   
+                  <div class="input-group mb-3">
+                      <input type="text"
+                             name="newslink[]"
+                             value="{{ old('newslink') }}"
+                             class="form-control"
+                             placeholder="প্রকাশিত নিউজের লিংক - ১" required>
+                      <div class="input-group-append">
+                          <div class="input-group-text"><span class="fas fa-newspaper"></span></div>
+                      </div>
+                  </div>
+                  
+                  <div class="input-group mb-3">
+                      <input type="text"
+                             name="newslink[]"
+                             value="{{ old('newslink') }}"
+                             class="form-control"
+                             placeholder="প্রকাশিত নিউজের লিংক - ১" required>
+                      <div class="input-group-append">
+                          <div class="input-group-text"><span class="fas fa-newspaper"></span></div>
+                      </div>
+                  </div>
+                  
+                  <div class="input-group mb-3">
+                      <input type="text"
+                             name="newslink[]"
+                             value="{{ old('newslink') }}"
+                             class="form-control"
+                             placeholder="প্রকাশিত নিউজের লিংক - ১" required>
+                      <div class="input-group-append">
+                          <div class="input-group-text"><span class="fas fa-newspaper"></span></div>
+                      </div>
+                  </div>
+                  
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-dismiss="modal">ফিরে যান</button>
