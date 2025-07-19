@@ -622,6 +622,7 @@ class AdminandothersController extends Controller
         $journalist->name = $request->name;
         $journalist->affiliation = $request->affiliation;
         $journalist->mobile = $request->mobile;
+        $journalist->top_news_links = $request->input('top_news_links');
         $journalist->save();
 
         Cache::forget('journalists' . $district_id);
