@@ -214,7 +214,7 @@
                   
                   <div class="input-group mb-3">
                       <input type="number"
-                             name="mobile"
+                             name="newslink[]"
                              value="{{ old('mobile') }}"
                              class="form-control"
                              placeholder="সাংবাদিকের হোয়াটসঅ্যাপ নাম্বার নম্বর" required>
