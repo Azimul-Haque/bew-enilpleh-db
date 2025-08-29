@@ -395,7 +395,8 @@ class DoctorController extends Controller
 
         Cache::forget('doctors*');
         Session::flash('success', 'Doctors updated successfully!');
-        return redirect()->route('dashboard.doctors');
+        // return redirect()->route('dashboard.doctors');
+        রংপুর
     }
 
     public function storeDoctorDept(Request $request)
@@ -410,8 +411,7 @@ class DoctorController extends Controller
 
         Cache::forget('medicaldepartments');
         Session::flash('success', 'Medical Department added successfully!');
-        // return redirect()->route('dashboard.doctors');
-        return redirect()->back();
+        return redirect()->route('dashboard.doctors');
     }
 
     public function updateDoctorDept(Request $request, $id)
