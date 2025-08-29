@@ -192,7 +192,7 @@ $(document).ready(function () {
         });
 
         let options = `<option value="">কাউন্টার নির্বাচন করুন</option>`;
-        @foreach($buscounters as $counter)
+        @foreach($district->buscounters as $counter)
             if (!existingOptions.includes("{{ $counter->id }}")) {
                 options += `<option value="{{ $counter->id }}">{{ $counter->name }}</option>`;
             }
