@@ -293,7 +293,7 @@
                                         <div class="row">
                                           <div class="col-md-6">
                                             <div>
-                                              সপ্তাহে যে যে দিন রোগী দেখেন<br/>
+                                              সপ্তাহে যে যে দিন রোগী দেখেন/রোগী দেখার সময়সূচি<br/>
                                               <textarea name="weekdays" class="form-control" style="min-height: 90px;" placeholder="উদাহরণ: শুক্রবার সকাল ৯টা থেকে দুপুর ১২টা, শনিবার সন্ধ্যা ৬টা থেকে রাত ১০টা ইত্যাদি (কোন সপ্তাহে ডাক্তার না বসলে সেটা লিখে দিন)">{{ str_replace('<br />', "", $doctor->weekdays) }}</textarea>
                                             </div>
                                           </div>
@@ -682,7 +682,7 @@
                   <div class="row">
                     <div class="col-md-6">
                       <div>
-                        সপ্তাহে যে যে দিন রোগী দেখেন<br/>
+                        সপ্তাহে যে যে দিন রোগী দেখেন/রোগী দেখার সময়সূচি<br/>
                         <textarea name="weekdays" class="form-control" style="min-height: 90px;" placeholder="উদাহরণ: শুক্রবার সকাল ৯টা থেকে দুপুর ১২টা, শনিবার সন্ধ্যা ৬টা থেকে রাত ১০টা ইত্যাদি (কোন সপ্তাহে ডাক্তার না বসলে সেটা লিখে দিন)">{{ str_replace('<br />', "", old('weekdays')) }}</textarea>
                       </div>
                     </div>
