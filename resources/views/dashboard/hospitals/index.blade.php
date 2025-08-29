@@ -647,5 +647,19 @@
             }
           }
         });
+        $("#districtsearch").keyup(function(e) {
+          if(e.which == 13) {
+            if($('#search-param').val() != '') {
+              var urltocall = '{{ route('dashboard.hospitals') }}' +  '/' + $('#search-param').val();
+              location.href= urltocall;
+            } else {
+              $('#search-param').css({ "border": '#FF0000 2px solid'});
+              Toast.fire({
+                  icon: 'warning',
+                  title: 'কিছু লিখে খুঁজুন!'
+              })
+            }
+          }
+        });
     </script>
 @endsection
