@@ -1372,10 +1372,12 @@ class AdminandothersController extends Controller
     public function storeBusCounter(Request $request)
     {
         $this->validate($request,array(
-            'name'      => 'required|string|max:191',
+            'district_id'   => 'required',
+            'name'          => 'required|string|max:191',
         ));
 
         $buscounter = new Buscounter;
+        $buscounter->district_id = $request->district_id;
         $buscounter->name = $request->name;
         $buscounter->save();
         Session::flash('success', 'Bus Counter added successfully!');
@@ -1386,10 +1388,12 @@ class AdminandothersController extends Controller
     public function updateBusCounter(Request $request, $id)
     {
         $this->validate($request,array(
+            'district_id'   => 'required',
             'name'         => 'required|string|max:191',
         ));
 
         $buscounter = Buscounter::find($id);
+        $buscounter->district_id = $request->district_id;
         $buscounter->name = $request->name;
         $buscounter->save();
         Session::flash('success', 'Bus Counter updated successfully!');

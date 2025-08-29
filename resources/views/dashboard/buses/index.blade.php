@@ -78,6 +78,7 @@
                       <tr>
                         <td>
                           {{ $buscounter->name }}
+                          <small>জেলা: {{ $buscounter->district->name_bangla }}</small>
                         </td>
                         <td align="right">
                           {{-- <button type="button" class="btn btn-warning btn-sm" data-toggle="modal" data-target="#notifModal{{ $buscounter->id }}">
@@ -102,6 +103,12 @@
                                   <div class="modal-body">
                                     
                                         @csrf
+                                        <select name="district_id" class="form-control select2 mb-3" required>
+                                            <option selected="" disabled="" value="">জেলা নির্বাচন করুন</option>
+                                            @foreach($districts as $district)
+                                              <option value="{{ $district->id }}" @if($district->id == $buscounter->district_id) selected @endif>{{ $district->name }}</option>
+                                            @endforeach
+                                        </select>
                                         <div class="input-group mb-3">
                                             <input type="text"
                                                    name="name"
@@ -151,6 +158,12 @@
           <form method="post" action="{{ route('dashboard.buses.addcounter') }}">
             <div class="modal-body">
                   @csrf
+                  <select name="district_id" class="form-control select2 mb-3" required>
+                      <option selected="" disabled="" value="">জেলা নির্বাচন করুন</option>
+                      @foreach($districts as $district)
+                        <option value="{{ $district->id }}">{{ $district->name }}</option>
+                      @endforeach
+                  </select>
                   <div class="input-group mb-3">
                       <input type="text"
                              name="name"

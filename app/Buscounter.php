@@ -9,4 +9,9 @@ class Buscounter extends Model
     public function buscounterdatas(){
         return $this->hasMany('App\Buscounterdata');
     }
+
+    public function district()
+    {
+        return $this->belongsTo('App\District');
+    }
 }
