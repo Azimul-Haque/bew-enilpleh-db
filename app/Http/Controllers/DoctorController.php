@@ -395,8 +395,7 @@ class DoctorController extends Controller
 
         Cache::forget('doctors*');
         Session::flash('success', 'Doctors updated successfully!');
-        // return redirect()->route('dashboard.doctors');
-        রংপুর
+        return redirect()->back();
     }
 
     public function storeDoctorDept(Request $request)
