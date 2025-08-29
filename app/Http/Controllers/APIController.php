@@ -872,6 +872,7 @@ class APIController extends Controller
                        $bus->district_from = $bus->district->name_bangla;
                        $bus->district_to = $bus->toDistrict->name_bangla;
                        $bustmp = collect();
+                       $buscntrdistids = [];
                        foreach($bus->buscounterdatas as $buscounterdata) {
                           $bustmp->push([
                               'district_id' => $buscounterdata->buscounter->district_id,
