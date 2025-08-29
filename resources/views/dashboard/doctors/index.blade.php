@@ -899,17 +899,6 @@
                 title: 'কিছু লিখে খুঁজুন!'
             })
           }
-        $("#districtsearch").change(function(e) {
-          if($('#districtsearch').val() != '') {
-            var urltocall = '{{ route('dashboard.hospitals') }}' +  '/' + $('#districtsearch').val();
-            location.href= urltocall;
-          } else {
-            $('#districtsearch').css({ "border": '#FF0000 2px solid'});
-            Toast.fire({
-                icon: 'warning',
-                title: 'কিছু লিখে খুঁজুন!'
-            })
-          }
         });
 
 
