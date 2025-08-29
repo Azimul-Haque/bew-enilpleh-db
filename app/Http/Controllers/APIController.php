@@ -843,7 +843,7 @@ class APIController extends Controller
                                             ->get();
                  foreach($buscounters as $buscounter) {
                        $buscounter->district_name = $buscounter->district->name_bangla;
-                       // $buscounter->makeHidden('buscounterdatas', 'district', 'toDistrict', 'id', 'district_id', 'to_district', 'created_at', 'updated_at');
+                       $buscounter->makeHidden('district', 'district', 'toDistrict', 'id', 'district_id', 'to_district', 'created_at', 'updated_at');
                  }
 
                  return $buscounters;
