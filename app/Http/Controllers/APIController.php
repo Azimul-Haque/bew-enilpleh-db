@@ -874,6 +874,7 @@ class APIController extends Controller
                        $bustmp = collect();
                        foreach($bus->buscounterdatas as $buscounterdata) {
                           $bustmp->push([
+                              'counter' => $buscounterdata->buscounter->district_id,
                               'counter' => $buscounterdata->buscounter->name,
                               'address' => $buscounterdata->address,
                               'mobile' => $buscounterdata->mobile,
