@@ -100,7 +100,8 @@ class HospitalController extends Controller
                     ->withHospitals($hospitals)
                     ->withDistricts($districts)
                     ->withAllhospitals($allhospitals)
-                    ->withAlldoctors($alldoctors);
+                    ->withAlldoctors($alldoctors)
+                    ->withSearch($search);
     }
 
     public function storeHospital(Request $request)
