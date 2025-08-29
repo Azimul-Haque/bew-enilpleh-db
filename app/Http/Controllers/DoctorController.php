@@ -158,7 +158,8 @@ class DoctorController extends Controller
                             ->withDistricts($districts)
                             ->withMedicaldepartments($medicaldepartments)
                             ->withMedicalsymptoms($medicalsymptoms)
-                            ->withHospitals($hospitals);
+                            ->withHospitals($hospitals)
+                            ->withSearch($search);
     }
 
     public function storeDoctor(Request $request)
