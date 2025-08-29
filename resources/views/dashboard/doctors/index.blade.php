@@ -58,6 +58,12 @@
                   <div class="card-tools">
                     @if(Auth::user()->role == 'admin')
                     <form class="form-inline form-group-lg" action="">
+                      <select id="districtsearch" class="form-control form-control-sm" data-placeholder="জেলা ফিল্টার করুন" style="margin-right: 20px;">
+                          <option selected="" disabled="" value="">জেলা ফিল্টার করুন</option>
+                          @foreach($districts as $district)
+                            <option value="{{ $district->name_bangla }}">{{ $district->name_bangla }}-{{ $district->name }}</option>
+                          @endforeach
+                      </select>
                       <div class="form-group">
                         <input type="search-param" class="form-control form-control-sm" placeholder="ডাক্তার খুঁজুন" id="search-param" required>
                       </div>
