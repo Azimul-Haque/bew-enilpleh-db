@@ -856,12 +856,12 @@ class APIController extends Controller
                  //       $bus->makeHidden('buscounterdatas', 'district', 'toDistrict', 'id', 'district_id', 'to_district', 'created_at', 'updated_at');
                  // }
 
-                 return $buses;
+                 return $buscounters;
             });
             
             return response()->json([
                 'success' => true,
-                'buses' => $buses,
+                'buscounters' => $buscounters,
             ]);
         } else {
             return response()->json([
