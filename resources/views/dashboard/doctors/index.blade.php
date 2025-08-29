@@ -61,7 +61,7 @@
                       <select id="districtsearch" class="form-control form-control-sm" data-placeholder="জেলা ফিল্টার করুন" style="margin-right: 20px;">
                           <option selected="" disabled="" value="">জেলা ফিল্টার করুন</option>
                           @foreach($districts as $district)
-                            <option value="{{ $district->name_bangla }}">{{ $district->name_bangla }}-{{ $district->name }}</option>
+                            <option value="{{ $district->name_bangla }}" @isset($search)>{{ $district->name_bangla }}-{{ $district->name }}</option>
                           @endforeach
                       </select>
                       <div class="form-group">
