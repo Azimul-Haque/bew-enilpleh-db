@@ -23,16 +23,15 @@
           <div class="card-header">
             <h3 class="card-title">হাসপাতাল তালিকা</h3>
 
-            <div class="card-tools">
-              <select name="district_id" id="district" class="form-control" data-placeholder="জেলা নির্বাচন করুন" required>
-                  <option selected="" disabled="" value="">জেলা নির্বাচন করুন</option>
-                  @foreach($districts as $district)
-                    <option value="{{ $district->id }}">{{ $district->name_bangla }}-{{ $district->name }}</option>
-                  @endforeach
-              </select>
-              
+            <div class="card-tools">              
               <form class="form-inline form-group-lg" action="">
                 @if(Auth::user()->role == 'admin')
+                <select name="district_id" id="district" class="form-control" data-placeholder="জেলা নির্বাচন করুন" required>
+                    <option selected="" disabled="" value="">জেলা নির্বাচন করুন</option>
+                    @foreach($districts as $district)
+                      <option value="{{ $district->id }}">{{ $district->name_bangla }}-{{ $district->name }}</option>
+                    @endforeach
+                </select>
                 <div class="form-group">
                   <input type="search-param" class="form-control form-control-sm" placeholder="হাসপাতাল খুঁজুন" id="search-param" required>
                 </div>
