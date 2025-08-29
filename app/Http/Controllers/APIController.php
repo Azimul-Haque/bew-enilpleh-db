@@ -836,7 +836,7 @@ class APIController extends Controller
     {
         if($softtoken == env('SOFT_TOKEN'))
         {
-            $buscounters = Cache::remember('busesfrom'  . $district_id, 30 * 24 * 60 * 60, function () use ($district_id) {
+            $buscounters = Cache::remember('buscounters'  . $district_id, 30 * 24 * 60 * 60, function () use ($district_id) {
                  $buses = Bus::orderBy('id', 'asc')
                              ->where('district_id', $district_id) // COMMENTED
                              ->get();
