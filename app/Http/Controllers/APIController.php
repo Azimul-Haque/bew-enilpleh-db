@@ -842,7 +842,7 @@ class APIController extends Controller
                                             ->where('district_id', $district_id) // COMMENTED
                                             ->get();
                  foreach($buscounters as $buscounter) {
-                       $bus->district_from = $bus->district->name_bangla;
+                       $buscounter->district = $bus->district->name_bangla;
                        $bus->district_to = $bus->toDistrict->name_bangla;
                        $bustmp = collect();
                        foreach($bus->buscounterdatas as $buscounterdata) {
