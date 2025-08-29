@@ -24,7 +24,7 @@
             <h3 class="card-title">হাসপাতাল তালিকা</h3>
 
             <div class="card-tools">
-              <select name="district_id" id="district" class="form-control district select21" data-placeholder="জেলা নির্বাচন করুন" required>
+              <select name="district_id" id="district" class="form-control" data-placeholder="জেলা নির্বাচন করুন" required>
                   <option selected="" disabled="" value="">জেলা নির্বাচন করুন</option>
                   @foreach($districts as $district)
                     <option value="{{ $district->id }}" @if($district->id == $doctor->district_id) selected @endif>{{ $district->name_bangla }}-{{ $district->name }}</option>
