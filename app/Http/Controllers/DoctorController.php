@@ -410,7 +410,8 @@ class DoctorController extends Controller
 
         Cache::forget('medicaldepartments');
         Session::flash('success', 'Medical Department added successfully!');
-        return redirect()->route('dashboard.doctors');
+        // return redirect()->route('dashboard.doctors');
+        return redirect()->back();
     }
 
     public function updateDoctorDept(Request $request, $id)
