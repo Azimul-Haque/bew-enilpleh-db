@@ -647,7 +647,7 @@
             }
           }
         });
-        $("#districtsearch").keyup(function(e) {
+        $("#districtsearch").change(function(e) {
           if(e.which == 13) {
             if($('#search-param').val() != '') {
               var urltocall = '{{ route('dashboard.hospitals') }}' +  '/' + $('#search-param').val();
