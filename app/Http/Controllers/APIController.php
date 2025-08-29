@@ -872,7 +872,7 @@ class APIController extends Controller
                        $bus->district_from = $bus->district->name_bangla;
                        $bus->district_to = $bus->toDistrict->name_bangla;
                        $bustmp = collect();
-                       $buscntrdistids = [];
+                       $buscntrids = [];
                        foreach($bus->buscounterdatas as $buscounterdata) {
                           $bustmp->push([
                               'district_id' => $buscounterdata->buscounter->district_id,
@@ -880,11 +880,11 @@ class APIController extends Controller
                               'address' => $buscounterdata->address,
                               'mobile' => $buscounterdata->mobile,
                           ]);
-                          $buscntrdistids[] = $buscounterdata->buscounter->district_id;
+                          $buscntrids[] = $buscounterdata->buscounter->district_id;
                           $buscounterdata->makeHidden('id', 'bus_id', 'buscounter_id', 'created_at', 'updated_at');
                        }
                        $bus->buscounters = $bustmp;
-                       $bus->buscntrdistids = $buscntrdistids;
+                       $bus->buscntrids = $buscntrids;
                        $bus->makeHidden('buscounterdatas', 'district', 'toDistrict', 'id', 'district_id', 'to_district', 'created_at', 'updated_at');
                  }
 
