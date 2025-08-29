@@ -273,14 +273,14 @@
                     </div>
                   </div>
                   
-                  <div class="" style="margin-bottom: 15px;">
+                  {{-- <div class="" style="margin-bottom: 15px;">
                     <select name="buscounters" class="form-control select2" required>
                         <option selected="" disabled="" value="">গন্তব্য জেলা নির্বাচন করুন</option>
                         @foreach($buscounters as $buscounter)
                           <option value="{{ $buscounter->id }}">{{ $buscounter->name }}</option>
                         @endforeach
                     </select>
-                  </div>
+                  </div> --}}
 
                   <!-- কাউন্টার যোগ করুন Button -->
                   <hr/>
