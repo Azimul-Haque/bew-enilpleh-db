@@ -77,7 +77,7 @@
                     @foreach($buscounters as $buscounter)
                       <tr>
                         <td>
-                          {{ $buscounter->name }}
+                          {{ $buscounter->name }}<br/>
                           <small>জেলা: {{ $buscounter->district->name_bangla }}</small>
                         </td>
                         <td align="right">
