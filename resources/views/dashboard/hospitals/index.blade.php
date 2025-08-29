@@ -26,7 +26,7 @@
             <div class="card-tools">              
               <form class="form-inline form-group-lg" action="">
                 @if(Auth::user()->role == 'admin')
-                <select id="districtsearch" class="form-control form-control-sm" data-placeholder="জেলা নির্বাচন করুন">
+                <select id="districtsearch" class="form-control form-control-sm" data-placeholder="জেলা নির্বাচন করুন" style="margin-left: 10px;">
                     <option selected="" disabled="" value="">জেলা নির্বাচন করুন</option>
                     @foreach($districts as $district)
                       <option value="{{ $district->id }}">{{ $district->name_bangla }}-{{ $district->name }}</option>
