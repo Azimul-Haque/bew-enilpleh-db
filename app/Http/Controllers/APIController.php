@@ -841,7 +841,7 @@ class APIController extends Controller
                  $buscounters = Buscounter::orderBy('id', 'asc')
                                             ->where('district_id', $district_id) // COMMENTED
                                             ->get();
-                 foreach($buses as $bus) {
+                 foreach($buscounters as $buscounter) {
                        $bus->district_from = $bus->district->name_bangla;
                        $bus->district_to = $bus->toDistrict->name_bangla;
                        $bustmp = collect();
