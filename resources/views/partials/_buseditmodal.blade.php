@@ -151,7 +151,7 @@
                         <div class="col-md-4">
                             <select name="counterdata[{{ $key }}][buscounter_id]" class="form-control" required>
                                 <option value="">কাউন্টার নির্বাচন করুন</option>
-                                @foreach($district->buscounters as $buscounter)
+                                @foreach($buscounters as $buscounter)
                                     <option value="{{ $buscounter->id }}" {{ $buscounter->id == $counterdata->buscounter_id ? 'selected' : '' }}>{{ $buscounter->name }}</option>
                                 @endforeach
                             </select>
