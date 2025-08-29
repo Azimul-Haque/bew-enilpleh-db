@@ -288,7 +288,6 @@
 
                   <!-- Dynamic Counter Inputs Will Appear Here -->
                   <div id="counterInputsWrapper"></div>
-                  {{ $district->buscounters }}
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-dismiss="modal">ফিরে যান</button>
