@@ -832,6 +832,44 @@ class APIController extends Controller
         }
     }
 
+    public function getBusCounters($softtoken, $district_id)
+    {
+        if($softtoken == env('SOFT_TOKEN'))
+        {
+            $buses = Cache::remember('busesfrom'  . $district_id, 30 * 24 * 60 * 60, function () use ($district_id) {
+                 $buses = Bus::orderBy('id', 'asc')
+                             ->where('district_id', $district_id) // COMMENTED
+                             ->get();
+                 foreach($buses as $bus) {
+                       $bus->district_from = $bus->district->name_bangla;
+                       $bus->district_to = $bus->toDistrict->name_bangla;
+                       $bustmp = collect();
+                       foreach($bus->buscounterdatas as $buscounterdata) {
+                          $bustmp->push([
+                              'counter' => $buscounterdata->buscounter->name,
+                              'address' => $buscounterdata->address,
+                              'mobile' => $buscounterdata->mobile,
+                          ]);
+                          $buscounterdata->makeHidden('id', 'bus_id', 'buscounter_id', 'created_at', 'updated_at');
+                       }
+                       $bus->buscounters = $bustmp;
+                       $bus->makeHidden('buscounterdatas', 'district', 'toDistrict', 'id', 'district_id', 'to_district', 'created_at', 'updated_at');
+                 }
+
+                 return $buses;
+            });
+            
+            return response()->json([
+                'success' => true,
+                'buses' => $buses,
+            ]);
+        } else {
+            return response()->json([
+                'success' => false
+            ]);
+        }
+    }
+
     public function getBusesFrom($softtoken, $district_id)
     {
         if($softtoken == env('SOFT_TOKEN'))
