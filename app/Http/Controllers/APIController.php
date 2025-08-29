@@ -841,21 +841,21 @@ class APIController extends Controller
                  $buscounters = Buscounter::orderBy('id', 'asc')
                                             ->where('district_id', $district_id) // COMMENTED
                                             ->get();
-                 // foreach($buses as $bus) {
-                 //       $bus->district_from = $bus->district->name_bangla;
-                 //       $bus->district_to = $bus->toDistrict->name_bangla;
-                 //       $bustmp = collect();
-                 //       foreach($bus->buscounterdatas as $buscounterdata) {
-                 //          $bustmp->push([
-                 //              'counter' => $buscounterdata->buscounter->name,
-                 //              'address' => $buscounterdata->address,
-                 //              'mobile' => $buscounterdata->mobile,
-                 //          ]);
-                 //          $buscounterdata->makeHidden('id', 'bus_id', 'buscounter_id', 'created_at', 'updated_at');
-                 //       }
-                 //       $bus->buscounters = $bustmp;
-                 //       $bus->makeHidden('buscounterdatas', 'district', 'toDistrict', 'id', 'district_id', 'to_district', 'created_at', 'updated_at');
-                 // }
+                 foreach($buses as $bus) {
+                       $bus->district_from = $bus->district->name_bangla;
+                       $bus->district_to = $bus->toDistrict->name_bangla;
+                       $bustmp = collect();
+                       foreach($bus->buscounterdatas as $buscounterdata) {
+                          $bustmp->push([
+                              'counter' => $buscounterdata->buscounter->name,
+                              'address' => $buscounterdata->address,
+                              'mobile' => $buscounterdata->mobile,
+                          ]);
+                          $buscounterdata->makeHidden('id', 'bus_id', 'buscounter_id', 'created_at', 'updated_at');
+                       }
+                       $bus->buscounters = $bustmp;
+                       $bus->makeHidden('buscounterdatas', 'district', 'toDistrict', 'id', 'district_id', 'to_district', 'created_at', 'updated_at');
+                 }
 
                  return $buscounters;
             });
