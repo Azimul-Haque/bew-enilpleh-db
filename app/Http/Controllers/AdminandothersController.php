@@ -1380,6 +1380,7 @@ class AdminandothersController extends Controller
         $buscounter->district_id = $request->district_id;
         $buscounter->name = $request->name;
         $buscounter->save();
+        
         Cache::forget('buscounters' . $request->district_id);
         Session::flash('success', 'Bus Counter added successfully!');
         return redirect()->route('dashboard.buses');
@@ -1397,6 +1398,8 @@ class AdminandothersController extends Controller
         $buscounter->district_id = $request->district_id;
         $buscounter->name = $request->name;
         $buscounter->save();
+
+        Cache::forget('buscounters' . $request->district_id);
         Session::flash('success', 'Bus Counter updated successfully!');
         return redirect()->route('dashboard.buses');
     }
