@@ -884,6 +884,7 @@ class APIController extends Controller
                           $buscounterdata->makeHidden('id', 'bus_id', 'buscounter_id', 'created_at', 'updated_at');
                        }
                        $bus->buscounters = $bustmp;
+                       $bus->buscntrdistids = $buscntrdistids;
                        $bus->makeHidden('buscounterdatas', 'district', 'toDistrict', 'id', 'district_id', 'to_district', 'created_at', 'updated_at');
                  }
 
