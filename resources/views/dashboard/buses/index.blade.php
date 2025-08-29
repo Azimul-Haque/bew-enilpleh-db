@@ -78,7 +78,7 @@
                       <tr>
                         <td>
                           {{ $buscounter->name }}<br/>
-                          <small>জেলা: {{ $buscounter->district->name_bangla }}</small>
+                          <small style="color: grey;">জেলা: {{ $buscounter->district->name_bangla }}</small>
                         </td>
                         <td align="right">
                           {{-- <button type="button" class="btn btn-warning btn-sm" data-toggle="modal" data-target="#notifModal{{ $buscounter->id }}">
