@@ -77,7 +77,7 @@
 
                     <td>
                       @foreach($doctorhospital->doctor->doctorhospitals as $hospital)
-                        <small class="badge badge-pill badge-warning">{{ $hospital->hospital->name }}</small>
+                        <small class="badge badge-pill badge-success">{{ $hospital->hospital->name }}</small>
                       @endforeach <br/>
                       <small class="">{{ $doctorhospital->doctor->upazilla->name_bangla }}, {{ $doctorhospital->doctor->district->name_bangla }}</small>
                     </td>
