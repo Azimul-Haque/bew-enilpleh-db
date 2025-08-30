@@ -55,8 +55,8 @@
                 </tr>
               </thead>
               <tbody>
+                @foreach($hospital->doctorhospitals as $doctor)
                 <tr>
-                  @foreach($hospital->doctorhospitals as $doctor)
                     <td>
                       {{ $doctor->name }}<br/>
                       <span style="font-size: 12px;">{{ $doctor->degree }}</span><br/>
@@ -89,9 +89,8 @@
                         <i class="fas fa-calendar-alt"></i> <b>অ্যাপয়েন্টমেন্ট তালিকা</b>
                       </a>
                     </td>
-                    
-                  @endforeach
-                </tr>
+                  </tr>
+                @endforeach
               </tbody>
             </table>
           </div>
