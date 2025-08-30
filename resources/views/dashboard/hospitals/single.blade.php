@@ -55,7 +55,7 @@
                 </tr>
               </thead>
               <tbody>
-                @foreach($hospitals as $hospital)
+                @foreach($hospital-> as $hospital)
                   <tr>
                     <td>
                       <a href="{{ route('dashboard.singlehospital', $hospital->id) }}" title="প্রোফাইল দেখুন">{{ $hospital->name }}</a><br/>
