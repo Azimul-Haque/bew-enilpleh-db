@@ -74,6 +74,13 @@
                         <span class="">{{ $medicalsymptom->medicalsymptom->name }}</span>
                       @endforeach
                     </td>
+
+                    <td>
+                      @foreach($doctor->doctorhospitals as $hospital)
+                        <small class="">{{ $hospital->hospital->name }}</small>
+                      @endforeach <br/>
+                      <small class="">{{ $doctor->upazilla->name_bangla }}, {{ $doctor->district->name_bangla }}</small>
+                    </td>
                     
                     <td align="right">
                       {{-- <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#editUserModal{{ $doctorhospital->doctor->id }}">
