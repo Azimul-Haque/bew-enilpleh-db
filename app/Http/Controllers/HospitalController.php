@@ -108,7 +108,7 @@ class HospitalController extends Controller
     {
         $hospital = Hospital::findOrFail($id);
         
-        return view('dashboard.hospitals.index')
+        return view('dashboard.hospitals.single')
                             ->withHospitalscount($hospitalscount)
                             ->withHospitals($hospitals)
                             ->withDistricts($districts)
