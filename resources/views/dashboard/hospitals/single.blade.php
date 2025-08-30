@@ -66,12 +66,12 @@
                     
                   </td>
                   <td>
-                    @foreach($doctor->doctormedicaldepartments as $medicaldepartment)
+                    {{-- @foreach($doctor->doctormedicaldepartments as $medicaldepartment)
                       <span class="">{{ $medicaldepartment->medicaldepartment->name }}</span>
                     @endforeach <br/>
                     @foreach($doctor->doctormedicalsymptoms as $medicalsymptom)
                       <span class="">{{ $medicalsymptom->medicalsymptom->name }}</span>
-                    @endforeach
+                    @endforeach --}}
                   </td>
                   <td>
                     @foreach($doctor->doctorhospitals as $hospital)
