@@ -1,1 +1,1 @@
-{{ $hospital->doctors }}
+{{ $hospital->doctorhospitals }}
