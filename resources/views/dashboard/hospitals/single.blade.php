@@ -55,7 +55,7 @@
                 </tr>
               </thead>
               <tbody>
-                @foreach($hospital->doctorhospitals as $doctor)
+                @foreach($hospital->doctorhospitals as $doctorhospitals)
                 <tr>
                     <td>
                       {{ $doctor->name }}<br/>
@@ -67,12 +67,12 @@
                       
                     </td>
                     <td>
-                      {{-- @foreach($doctor->doctormedicaldepartments as $medicaldepartment)
+                      @foreach($doctor->doctormedicaldepartments as $medicaldepartment)
                         <span class="">{{ $medicaldepartment->medicaldepartment->name }}</span>
                       @endforeach <br/>
                       @foreach($doctor->doctormedicalsymptoms as $medicalsymptom)
                         <span class="">{{ $medicalsymptom->medicalsymptom->name }}</span>
-                      @endforeach --}}
+                      @endforeach
                     </td>
                     
                     <td align="right">
