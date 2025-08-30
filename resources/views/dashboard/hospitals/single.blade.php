@@ -21,7 +21,7 @@
     <div class="container-fluid">
     <div class="card">
           <div class="card-header">
-            <h3 class="card-title">হাসপাতাল - ডাক্তার তালিকা তালিকা</h3>
+            <h3 class="card-title">{{ $hospital->name }}-এর ডাক্তার তালিকা তালিকা</h3>
 
             <div class="card-tools">              
               <form class="form-inline form-group-lg" action="">
