@@ -102,7 +102,7 @@
                           <td>
                             {{ $doctor->name }}<br/>
                             <span style="font-size: 12px;">{{ $doctor->degree }}</span><br/>
-                            {{-- <span class="">{{ $doctor->specialization }}</span> --}}
+                            <span class="">{{ $doctor->specialization }}</span>
                             <small class="text-black-50"><i class="fas fa-phone"></i> {{ $doctor->serial }}</small>
                             <small class="text-black-50"><i class="fas fa-mobile"></i> {{ $doctor->helpline }}</small>
                             
