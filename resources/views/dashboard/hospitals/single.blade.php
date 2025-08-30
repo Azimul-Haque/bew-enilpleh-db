@@ -17,7 +17,7 @@
 @endsection
 
 @section('content')
-  @section('page-header') হাসপাতাল - ডাক্তার তালিকা ({{ bangla($hospitalscount) }}) @endsection
+  @section('page-header') হাসপাতাল - ডাক্তার তালিকা ({{ $hospital }}) @endsection
     <div class="container-fluid">
     <div class="card">
           <div class="card-header">
