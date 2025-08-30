@@ -109,11 +109,7 @@ class HospitalController extends Controller
         $hospital = Hospital::findOrFail($id);
         
         return view('dashboard.hospitals.single')
-                            ->withHospitalscount($hospitalscount)
-                            ->withHospitals($hospitals)
-                            ->withDistricts($districts)
-                            ->withAllhospitals($allhospitals)
-                            ->withAlldoctors($alldoctors);
+                            ->withHospital($hospital);
     }
 
     public function storeHospital(Request $request)
