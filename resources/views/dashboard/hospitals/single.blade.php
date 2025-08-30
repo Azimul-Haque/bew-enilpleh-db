@@ -76,15 +76,12 @@
                     </td>
                     
                     <td align="right">
-                      {{-- <button type="button" class="btn btn-warning btn-sm" data-toggle="modal" data-target="#notifModal{{ $doctorhospital->doctor->id }}">
-                        <i class="fas fa-bell"></i>
-                      </button> --}}
-                      <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#editUserModal{{ $doctorhospital->doctor->id }}">
+                      {{-- <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#editUserModal{{ $doctorhospital->doctor->id }}">
                         <i class="fas fa-edit"></i>
                       </button>
                       <button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#deleteUserModal{{ $doctorhospital->doctor->id }}" >
                         <i class="fas fa-trash-alt"></i>
-                      </button><br/>
+                      </button><br/> --}}
                        <a href="{{ route('dashboard.doctorserialindex', [$doctorhospital->doctor->id, date('Y-m-d')]) }}" style="margin-top: 5px;" class="btn btn-warning btn-sm">
                         <i class="fas fa-calendar-alt"></i> <b>অ্যাপয়েন্টমেন্ট তালিকা</b>
                       </a>
