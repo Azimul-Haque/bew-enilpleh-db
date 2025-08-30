@@ -104,7 +104,7 @@ class HospitalController extends Controller
                     ->withSearch($search);
     }
 
-    public function getSingleHospital()
+    public function getSingleHospital($id)
     {
         if(Auth::user()->role == 'editor') {
             $hospitalscount = Hospital::where('district_id', Auth::user()->district_id)->count();
