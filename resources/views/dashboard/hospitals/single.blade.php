@@ -17,7 +17,7 @@
 @endsection
 
 @section('content')
-  @section('page-header') হাসপাতাল - ডাক্তার তালিকা ({{ $hospital }}) @endsection
+  @section('page-header') হাসপাতাল - ডাক্তার তালিকা ({{ $hospital->name }}) @endsection
     <div class="container-fluid">
     <div class="card">
           <div class="card-header">
