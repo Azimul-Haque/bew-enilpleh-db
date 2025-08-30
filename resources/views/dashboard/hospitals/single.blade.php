@@ -55,41 +55,43 @@
                 </tr>
               </thead>
               <tbody>
-                @foreach($hospital->doctorhospitals as $doctor)
-                  <td>
-                    {{ $doctor->name }}<br/>
-                    <span style="font-size: 12px;">{{ $doctor->degree }}</span><br/>
-                    {{-- <span class="">{{ $doctor->specialization }}</span> --}}
-                    <br/>
-                    <small class="text-black-50"><i class="fas fa-phone"></i> {{ $doctor->serial }}</small>
-                    <small class="text-black-50"><i class="fas fa-mobile"></i> {{ $doctor->helpline }}</small>
+                <tr>
+                  @foreach($hospital->doctorhospitals as $doctor)
+                    <td>
+                      {{ $doctor->name }}<br/>
+                      <span style="font-size: 12px;">{{ $doctor->degree }}</span><br/>
+                      {{-- <span class="">{{ $doctor->specialization }}</span> --}}
+                      <br/>
+                      <small class="text-black-50"><i class="fas fa-phone"></i> {{ $doctor->serial }}</small>
+                      <small class="text-black-50"><i class="fas fa-mobile"></i> {{ $doctor->helpline }}</small>
+                      
+                    </td>
+                    <td>
+                      {{-- @foreach($doctor->doctormedicaldepartments as $medicaldepartment)
+                        <span class="">{{ $medicaldepartment->medicaldepartment->name }}</span>
+                      @endforeach <br/>
+                      @foreach($doctor->doctormedicalsymptoms as $medicalsymptom)
+                        <span class="">{{ $medicalsymptom->medicalsymptom->name }}</span>
+                      @endforeach --}}
+                    </td>
                     
-                  </td>
-                  <td>
-                    {{-- @foreach($doctor->doctormedicaldepartments as $medicaldepartment)
-                      <span class="">{{ $medicaldepartment->medicaldepartment->name }}</span>
-                    @endforeach <br/>
-                    @foreach($doctor->doctormedicalsymptoms as $medicalsymptom)
-                      <span class="">{{ $medicalsymptom->medicalsymptom->name }}</span>
-                    @endforeach --}}
-                  </td>
-                  
-                  <td align="right">
-                    {{-- <button type="button" class="btn btn-warning btn-sm" data-toggle="modal" data-target="#notifModal{{ $doctor->id }}">
-                      <i class="fas fa-bell"></i>
-                    </button> --}}
-                    <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#editUserModal{{ $doctor->id }}">
-                      <i class="fas fa-edit"></i>
-                    </button>
-                    <button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#deleteUserModal{{ $doctor->id }}" >
-                      <i class="fas fa-trash-alt"></i>
-                    </button><br/>
-                     <a href="{{ route('dashboard.doctorserialindex', [$doctor->id, date('Y-m-d')]) }}" style="margin-top: 5px;" class="btn btn-warning btn-sm">
-                      <i class="fas fa-calendar-alt"></i> <b>অ্যাপয়েন্টমেন্ট তালিকা</b>
-                    </a>
-                  </td>
-                  
-                @endforeach
+                    <td align="right">
+                      {{-- <button type="button" class="btn btn-warning btn-sm" data-toggle="modal" data-target="#notifModal{{ $doctor->id }}">
+                        <i class="fas fa-bell"></i>
+                      </button> --}}
+                      <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#editUserModal{{ $doctor->id }}">
+                        <i class="fas fa-edit"></i>
+                      </button>
+                      <button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#deleteUserModal{{ $doctor->id }}" >
+                        <i class="fas fa-trash-alt"></i>
+                      </button><br/>
+                       <a href="{{ route('dashboard.doctorserialindex', [$doctor->id, date('Y-m-d')]) }}" style="margin-top: 5px;" class="btn btn-warning btn-sm">
+                        <i class="fas fa-calendar-alt"></i> <b>অ্যাপয়েন্টমেন্ট তালিকা</b>
+                      </a>
+                    </td>
+                    
+                  @endforeach
+                </tr>
               </tbody>
             </table>
           </div>
