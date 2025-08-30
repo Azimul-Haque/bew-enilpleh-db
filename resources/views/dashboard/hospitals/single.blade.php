@@ -76,10 +76,10 @@
                     </td>
 
                     <td>
-                      @foreach($doctor->doctorhospitals as $hospital)
+                      @foreach($doctorhospital->doctor->doctorhospitals as $hospital)
                         <small class="">{{ $hospital->hospital->name }}</small>
                       @endforeach <br/>
-                      <small class="">{{ $doctor->upazilla->name_bangla }}, {{ $doctor->district->name_bangla }}</small>
+                      <small class="">{{ $doctorhospital->doctor->upazilla->name_bangla }}, {{ $doctorhospital->doctor->district->name_bangla }}</small>
                     </td>
                     
                     <td align="right">
