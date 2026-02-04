@@ -302,6 +302,8 @@
                                             </div>
                                           </div>
                                           @if(Auth::user()->role != 'manager')
+                                          
+                                          @endif
                                           <div class="col-md-6">
                                             অনলাইনে সিরিয়াল দেওয়া যাবে কি না<br/>
                                             <select name="onlineserial" class="form-control" required>
@@ -310,7 +312,6 @@
                                                 <option value="0" @if($doctor->onlineserial == 0) selected @endif>অনলাইনে সিরিয়াল দেওয়া যাবে না ❌</option>
                                             </select>
                                           </div>
-                                          @endif
                                         </div>
 
                                         <div style="margin-top: 15px;">
@@ -691,6 +692,8 @@
                       </div>
                     </div>
                     @if(Auth::user()->role != 'manager')
+                    
+                    @endif
                     <div class="col-md-6">
                       অনলাইনে সিরিয়াল দেওয়া যাবে কি না<br/>
                       <select name="onlineserial" class="form-control" required>
@@ -699,7 +702,6 @@
                           <option value="0">অনলাইনে সিরিয়াল দেওয়া যাবে না ❌</option>
                       </select>
                     </div>
-                    @endif
                   </div>
                   <div style="margin-top: 15px;">
                     <input type="text" id="selected_offdays" name="selected_offdays" class="selected_offdays form-control" placeholder="যেদিন যেদিন রোগী দেখবেন (প্রয়োজনে একাধিক সিলেক্ট করা যাবে) [Optional]" readonly>
