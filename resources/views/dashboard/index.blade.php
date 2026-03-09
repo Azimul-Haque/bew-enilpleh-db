@@ -175,6 +175,9 @@
             </a>
           </div> --}}
         </div>
+      @else
+
+      @endif
 
         @if(Auth::user()->role == 'admin')
         <div class="row">
