@@ -148,7 +148,7 @@
                     success:function(data) {
                         $('#upazilla').empty().append('<option selected disabled value="">উপজেলা নির্বাচন করুন</option>');
                         $.each(data, function(key, value) {
-                            $('#upazilla').append('<option value="'+ value.id +'">'+ value.name_bangla +'</option>');
+                            $('#upazilla').append('<option value="'+ value.id +'">'+ value.name_bangla +'-' + value.name + '</option>');
                         });
                         $('#upazilla').prop('disabled', false);
                     }
