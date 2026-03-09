@@ -40,7 +40,7 @@
           <div class="col-12">
               <div class="card card-outline card-success shadow-sm">
                   <div class="card-header border-0">
-                      <h3 class="card-title fw-bold"><i class="fas fa-hospital-alt mr-2 text-success"></i> আমার চেম্বারসমূহ</h3>
+                      <h3 class="card-title fw-bold"><i class="fas fa-hospital-alt mr-2 text-success"></i> চেম্বারসমূহ</h3>
                       <div class="card-tools">
                           <button type="button" class="btn btn-success btn-sm rounded-pill px-3" data-toggle="modal" data-target="#addChamberModal">
                               <i class="fas fa-plus-circle mr-1"></i> নতুন চেম্বার যোগ করুন
