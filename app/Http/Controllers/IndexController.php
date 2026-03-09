@@ -96,6 +96,7 @@ class IndexController extends Controller
         try {
             $user = User::create([
                 'name' => $request->name,
+                'district_id' => $request->district_id,
                 'mobile' => $request->mobile,
                 'password' => Hash::make($request->password),
                 'role' => 'doctor',
