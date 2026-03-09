@@ -171,7 +171,7 @@
                                   </div>
                                   <input type="text" name="ondays" class="form-control ondays-datepicker" 
                                          placeholder="তারিখগুলো নির্বাচন করুন" 
-                                         value="{{ $chamber->ondays ? implode(',', json_decode($chamber->ondays)) : '' }}" readonly>
+                                         value="" readonly>
                               </div>
                               <small class="text-muted">একাধিক তারিখ সিলেক্ট করা যাবে।</small>
                           </div>
