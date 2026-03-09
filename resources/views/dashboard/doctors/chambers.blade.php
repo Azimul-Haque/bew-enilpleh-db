@@ -87,9 +87,13 @@
                                           @endif
                                       </td>
                                       <td class="text-right">
-                                          <button class="btn btn-sm btn-outline-primary rounded-circle" title="এডিট করুন" data-toggle="modal" data-target="#editChamber-{{ $chamber->id }}">
+                                          <button class="btn btn-sm btn-outline-primary" title="এডিট করুন" data-toggle="modal" data-target="#editChamber-{{ $chamber->id }}">
                                               <i class="fas fa-edit"></i>
                                           </button>
+
+                                          <a href="{{ route('dashboard.doctorserialindex', [$doctor->id, date('Y-m-d')]) }}" style="margin-top: 5px;" class="btn btn-warning btn-sm">
+                                            <i class="fas fa-calendar-alt"></i> <b>অ্যাপয়েন্টমেন্ট তালিকা</b>
+                                          </a>
                                           
                                           {{-- <form action="{{ route('doctor.chambers.destroy', $chamber->id) }}" method="POST" class="d-inline" onsubmit="return confirm('আপনি কি এই চেম্বারটি বাদ দিতে চান?')">
                                               @csrf @method('DELETE')
