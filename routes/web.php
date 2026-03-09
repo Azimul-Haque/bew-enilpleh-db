@@ -59,7 +59,7 @@ Route::post('/dashboard/doctors/{doctor_id}/appoinments/add/{date}/manually', 'D
 Route::post('/dashboard/doctors/appoinments/delete/{serial_id}', 'DoctorController@deleteDoctorSerial')->name('dashboard.deletedoctorserial');
 
 Route::get('/dashboard/chambers', 'DoctorController@doctorChambers')->name('dashboard.doctors.chambers');
-Route::post('/dashboard/chambers', 'DoctorController@doctorChambers')->name('dashboard.doctors.chambers.store');
+Route::post('/dashboard/chambers/Store', 'DoctorController@doctorChamberStore')->name('dashboard.doctors.chambers.store');
 
 // Blood Donors
 Route::get('/dashboard/blooddonors', 'BlooddonorController@index')->name('dashboard.blooddonors');
