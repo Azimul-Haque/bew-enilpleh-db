@@ -61,7 +61,7 @@
                             </div>
                         </div>
                         <div class="col-md-6">
-                            <label class="form-label">BMDC রেজিস্ট্রেশন নম্বর *</label>
+                            <label class="form-label">BM&DC রেজিস্ট্রেশন নম্বর *</label>
                             <div class="input-group">
                                 <span class="input-group-text"><i class="fas fa-id-card"></i></span>
                                 <input type="text" name="bmdc_number" class="form-control" value="{{ old('bmdc_number') }}" placeholder="যেমন: A-12345" required>
