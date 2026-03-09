@@ -57,9 +57,9 @@ class DashboardController extends Controller
             if(Auth::user()->is_active == 0) {
                 Auth::logout();
                 // Invalidate the user's session
-                Session()->invalidate();
+                Session::invalidate();
                 // Regenerate the CSRF token to prevent token fixation attacks
-                Session()->regenerateToken();
+                Session::regenerateToken();
                 Session::flash('warning', 'আপনার একাউন্ট এখনও একটিভেট করা হয়নি! SmartBD এডমিনের সাথে যোগাযোগ করুন!');
                 return redirect()->route('index.doctor.register');
             }
