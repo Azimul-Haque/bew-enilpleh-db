@@ -58,7 +58,7 @@
                                       <th>সিরিয়াল ফোন</th>
                                       <th>সময়সূচী</th>
                                       <th class="text-center">অনলাইন সিরিয়াল</th>
-                                      <th class="text-right">অ্যাকশন</th>
+                                      <th class="text-right">কার্যক্রম</th>
                                   </tr>
                               </thead>
                               <tbody>
