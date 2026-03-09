@@ -811,7 +811,7 @@ class DoctorController extends Controller
                             ->withHospitals($hospitals);
     }
 
-    public function storeChamber(Request $request)
+    public function doctorChamberStore(Request $request)
     {
         $request->validate([
             'hospital_id' => 'required',
