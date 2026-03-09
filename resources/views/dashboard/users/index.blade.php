@@ -68,8 +68,8 @@
                       <button type="button" class="btn btn-warning btn-sm" data-toggle="modal" data-target="#activateModal{{ $user->id }}" title="একটিভেট করুন">
                         <i class="fas fa-check"></i>
                       </button>
-                      {{-- SMS Modal Code --}}
-                      {{-- SMS Modal Code --}}
+                      {{-- Activate Modal Code --}}
+                      {{-- Activate Modal Code --}}
                       <!-- Modal -->
                       <div class="modal fade" id="activateModal{{ $user->id }}" tabindex="-1" role="dialog" aria-labelledby="activateModalLabel" aria-hidden="true" data-backdrop="static">
                         <div class="modal-dialog" role="document">
@@ -93,8 +93,8 @@
                           </div>
                         </div>
                       </div>
-                      {{-- SMS Modal Code --}}
-                      {{-- SMS Modal Code --}}
+                      {{-- Activate Modal Code --}}
+                      {{-- Activate Modal Code --}}
                       {{-- <button type="button" class="btn btn-warning btn-sm" data-toggle="modal" data-target="#notifModal{{ $user->id }}">
                         <i class="fas fa-bell"></i>
                       </button> --}}
