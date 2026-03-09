@@ -309,7 +309,7 @@ class AdminandothersController extends Controller
 
     public function lawyerIndexSearch($district_id, $search)
     {
-        if(Auth::user()->role == 'editor' || Auth::user()->role == 'manager') {
+        if(Auth::user()->role == 'editor' || Auth::user()->role == 'manager' || Auth::user()->role == 'doctor') {
             abort(403, 'Access Denied');
         }
         $district = District::find($district_id);
@@ -391,7 +391,7 @@ class AdminandothersController extends Controller
 
     public function rentacarIndex()
     {
-        if(Auth::user()->role == 'editor' || Auth::user()->role == 'manager') {
+        if(Auth::user()->role == 'editor' || Auth::user()->role == 'manager' || Auth::user()->role == 'doctor') {
             abort(403, 'Access Denied');
         }
         $districts = District::all();
@@ -422,7 +422,7 @@ class AdminandothersController extends Controller
 
     public function rentacarIndexSearch($district_id, $search)
     {
-        if(Auth::user()->role == 'editor' || Auth::user()->role == 'manager') {
+        if(Auth::user()->role == 'editor' || Auth::user()->role == 'manager' || Auth::user()->role == 'doctor') {
             abort(403, 'Access Denied');
         }
         $district = District::find($district_id);
