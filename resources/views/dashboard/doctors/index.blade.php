@@ -810,7 +810,7 @@
     
     <script type="text/javascript">
         $('.multiple-select').select2({
-          // theme: 'bootstrap4',
+          theme: 'bootstrap4',
         });
         $('.select21').select2({
           theme: 'bootstrap4',
