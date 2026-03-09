@@ -5,6 +5,12 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\User;
+use App\District;
+use App\Medicaldepartment;
+use App\Medicalsymptom;
+use App\Hospital;
+
+
 use App\Package;
 
 use App\Balance;
