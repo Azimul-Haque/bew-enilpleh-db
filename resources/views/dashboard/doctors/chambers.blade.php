@@ -162,6 +162,19 @@
                                   <option value="0" selected>না, অফলাইন ❌</option>
                               </select>
                           </div>
+
+                          <div class="col-md-12 mb-3">
+                              <label class="font-weight-bold small text-muted">যেদিন যেদিন চেম্বারে বসবেন (অতিরিক্ত তারিখসমূহ)</label>
+                              <div class="input-group">
+                                  <div class="input-group-prepend">
+                                      <span class="input-group-text"><i class="fas fa-calendar-check"></i></span>
+                                  </div>
+                                  <input type="text" name="ondays" class="form-control ondays-datepicker" 
+                                         placeholder="তারিখগুলো নির্বাচন করুন" 
+                                         value="{{ $chamber->ondays ? implode(',', json_decode($chamber->ondays)) : '' }}" readonly>
+                              </div>
+                              <small class="text-muted">একাধিক তারিখ সিলেক্ট করা যাবে।</small>
+                          </div>
                       </div>
                   </div>
                   <div class="modal-footer border-0 p-4">
