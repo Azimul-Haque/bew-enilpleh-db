@@ -827,6 +827,9 @@ class DoctorController extends Controller
         $chamber->address_or_room = $request->address_or_room;
         $chamber->serial_phone = $request->serial_phone;
         $chamber->weekdays = $request->weekdays;
+        if ($request->filled('ondays')) {
+            $chamber->ondays = json_encode(explode(',', $request->ondays));
+        }
         $chamber->onlineserial = $request->onlineserial;
         $chamber->save();
 
