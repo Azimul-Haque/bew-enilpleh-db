@@ -216,20 +216,13 @@ $(document).ready(function() {
     $('#mainRegForm').on('submit', function(e) {
         if(parseInt($('#math-answer').val()) !== result) {
             e.preventDefault();
-            alert('দুঃখিত! যোগফল সঠিক হয়নি। আবার চেষ্টা করুন।');
-            if (parseInt($('#math-answer').val()) !== result) {
-                e.preventDefault();
-                
-                // Nice Toast Error instead of alert
-                Swal.fire({
-                    icon: 'error',
-                    title: 'ভুল উত্তর!',
-                    text: 'দয়া করে সঠিক যোগফলটি প্রদান করুন।',
-                    confirmButtonColor: '#1c9288',
-                });
-
-                // Refresh captcha logic...
-            }
+            // alert('দুঃখিত! যোগফল সঠিক হয়নি। আবার চেষ্টা করুন।');
+            Swal.fire({
+                icon: 'error',
+                title: 'ভুল উত্তর!',
+                text: 'দয়া করে সঠিক যোগফলটি প্রদান করুন।',
+                confirmButtonColor: '#1c9288',
+            });
             // Reset for another try
             n1 = Math.floor(Math.random() * 9) + 1;
             n2 = Math.floor(Math.random() * 9) + 1;
