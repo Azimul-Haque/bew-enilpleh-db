@@ -89,9 +89,6 @@ class IndexController extends Controller
             'bmdc_number' => 'required|string|unique:doctors,bmdc_number',
             'specialization' => 'required|string',
             'degree' => 'required|string',
-            'serial' => 'required|string',
-            'address' => 'required|string',
-            'weekdays' => 'required|string',
         ]);
 
         DB::beginTransaction();
