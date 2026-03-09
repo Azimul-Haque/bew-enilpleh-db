@@ -210,38 +210,6 @@
           </div>
         </div>
         @endif
-        <div class="row">
-          {{-- <div class="col-md-6">
-            <div class="card card-success">
-              <div class="card-header">
-                <h3 class="card-title">ব্যবহারকারী যোগদানের হার</h3>
-                <div class="card-tools">
-                  <small>সর্বশেষ দুই সপ্তাহ</small>
-                </div>
-              </div>
-              <div class="card-body">
-              <div class="chart">
-                <canvas id="lineChart" style="min-height: 250px; height: 300px; max-height: 400px; max-width: 100%;"></canvas>
-              </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-6">
-            <div class="card card-primary">
-              <div class="card-header">
-                <h3 class="card-title">ক্রমবর্ধমান ব্যবহারকারী সংখ্যা</h3>
-                <div class="card-tools">
-                  <small>সর্বশেষ দুই সপ্তাহ</small>
-                </div>
-              </div>
-              <div class="card-body">
-              <div class="chart">
-                <canvas id="lineChart2" style="min-height: 250px; height: 300px; max-height: 400px; max-width: 100%;"></canvas>
-              </div>
-              </div>
-            </div>
-          </div> --}}
-        </div>
     </div>
 @endsection
 
