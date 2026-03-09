@@ -142,7 +142,7 @@
             var districtID = $(this).val();
             if(districtID) {
                 $.ajax({
-                    url: '/api/getupazillas/' + districtID, // Adjust this path to your real API
+                    url: '/api/getupazillas/{{ env('SOFT_TOKEN') }}/' + districtID, // Adjust this path to your real API
                     type: "GET",
                     dataType: "json",
                     success:function(data) {
