@@ -30,7 +30,7 @@ class CreateDoctorhospitalsTable extends Migration
                   ->onDelete('cascade');
 
             $table->string('address_or_room')->nullable();
-            $table->string('serial')->nullable(); 
+            $table->string('serial_phone')->nullable(); 
             $table->text('weekdays')->nullable();
             $table->json('ondays')->nullable();
             $table->integer('onlineserial');
