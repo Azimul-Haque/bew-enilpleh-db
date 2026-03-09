@@ -147,7 +147,7 @@
                           </div>
                           <div class="col-md-6 mb-3">
                               <label class="font-weight-bold small">রুম নম্বর/বিভাগ *</label>
-                              <input type="text" name="address_or_room" class="form-control" placeholder="উদা: ৩১০ নম্বর রুম">
+                              <input type="text" name="address_or_room" class="form-control" placeholder="উদা: ৩১০ নম্বর রুম" required>
                           </div>
                           <div class="col-md-6 mb-3">
                               <label class="font-weight-bold small">সিরিয়াল ফোন নম্বর *</label>

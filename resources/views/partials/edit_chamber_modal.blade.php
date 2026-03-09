@@ -30,7 +30,7 @@
                                     <span class="input-group-text bg-white border-right-0"><i class="fas fa-door-open text-primary"></i></span>
                                 </div>
                                 <input type="text" name="address_or_room" class="form-control border-left-0" 
-                                       value="{{ $chamber->address_or_room }}" placeholder="যেমন: ৩১০ নম্বর রুম">
+                                       value="{{ $chamber->address_or_room }}" placeholder="যেমন: ৩১০ নম্বর রুম" required>
                             </div>
                         </div>
 
