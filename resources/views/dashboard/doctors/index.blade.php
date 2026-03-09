@@ -134,7 +134,7 @@
                                 <i class="fas fa-calendar-alt"></i> <b>অ্যাপয়েন্টমেন্ট তালিকা</b>
                               </a>
                               <a href="{{ route('dashboard.doctors.chambers', Auth::user()->accessibleDoctors()->first()->id) }}" style="margin-top: 5px;" class="btn btn-warning btn-sm">
-                                <i class="fas fa-calendar-alt"></i> <b>অ্যাপয়েন্টমেন্ট তালিকা</b>
+                                <i class="fas fa-calendar-alt"></i> <b>চেম্বার তালিকা</b>
                               </a>
                           </td>
 
