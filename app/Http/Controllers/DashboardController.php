@@ -231,7 +231,11 @@ class DashboardController extends Controller
                 $user->accessibleBlooddonors()->attach($blooddonor);
             }
         } else {
-            $user->accessibleBlooddonors()->detach();
+            if($user->role == 'doctor') {
+
+            } else {
+                $user->accessibleBlooddonors()->detach();
+            }
         }
 
         if(isset($request->coachings)){
