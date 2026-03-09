@@ -183,7 +183,7 @@
       {{-- doctor role এর জন্য এই নতুন if else কোড --}}
       {{-- doctor role এর জন্য এই নতুন if else কোড --}}
       <div class="col-md-3">
-        <a href="{{ route('dashboard.hospitals') }}" class="info-box mb-3">
+        <a href="{{ route('dashboard.doctor.chambers') }}" class="info-box mb-3">
           <span class="info-box-icon bg-primary elevation-1"><i class="fas fa-hospital"></i></span>
 
           <div class="info-box-content">
