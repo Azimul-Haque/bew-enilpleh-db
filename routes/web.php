@@ -39,7 +39,7 @@ Route::post('/dashboard/hospitals/{id}/update', 'HospitalController@updateHospit
 Route::get('/dashboard/hospitals/{id}/delete', 'HospitalController@deleteHospital')->name('dashboard.hospitals.delete');
 
 
-Route::get('/dashboard/chambers', 'HospitalController@index')->name('dashboard.chambers');
+
 
 // Doctors
 Route::get('/dashboard/doctors', 'DoctorController@index')->name('dashboard.doctors');
@@ -57,6 +57,8 @@ Route::post('/dashboard/doctors/{doctor_id}/appoinments/cancel/{date}/all', 'Doc
 Route::get('/dashboard/doctors/appoinments/pdf/{doctor_id}/{date}', 'DoctorController@getDoctorSerialPDF')->name('dashboard.getdoctorserialpdf');
 Route::post('/dashboard/doctors/{doctor_id}/appoinments/add/{date}/manually', 'DoctorController@addDoctorSerialManually')->name('dashboard.adddoctorserialmanually');
 Route::post('/dashboard/doctors/appoinments/delete/{serial_id}', 'DoctorController@deleteDoctorSerial')->name('dashboard.deletedoctorserial');
+
+Route::get('/dashboard/chambers', 'HospitalController@index')->name('dashboard.chambers');
 
 // Blood Donors
 Route::get('/dashboard/blooddonors', 'BlooddonorController@index')->name('dashboard.blooddonors');
