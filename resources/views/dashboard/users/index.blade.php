@@ -56,6 +56,7 @@
                 	<tr>
                 		<td>
                 			<a href="#!">{{ $user->name }}</a> @if($user->is_active == 0)<span class="badge bg-danger">একটিভ নয়!</span>@endif
+                      @if($user->role == 'doctor')<span class="badge bg-default">BM&DC রেজিস্ট্রেশন নম্বর: </span>@endif
                       
                 			<br/>
                             {{-- {{ $user->balances2 }} --}}
