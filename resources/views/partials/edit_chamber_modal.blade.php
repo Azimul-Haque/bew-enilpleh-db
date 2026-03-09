@@ -17,7 +17,7 @@
                 <div class="modal-body p-4">
                     <div class="alert alert-secondary border-0 mb-4">
                         <small class="d-block text-uppercase font-weight-bold opacity-10">হাসপাতাল:</small>
-                        <h5 class="mb-0 font-weight-bold text-dark">{{ $chamber->hospital->name }}</h5>
+                        <h5 class="mb-0 font-weight-bold text-white">{{ $chamber->hospital->name }}</h5>
                     </div>
 
                     <div class="row">
