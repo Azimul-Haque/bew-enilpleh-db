@@ -67,7 +67,7 @@
                             <input type="text" name="name" class="form-control rounded-3" value="{{ old('name') }}" placeholder="নাম লিখুন" required>
                         </div>
                         <div class="col-md-6">
-                            <label class="form-label">BMDC রেজিস্ট্রেশন নম্বর *</label>
+                            <label class="form-label">BM&DC রেজিস্ট্রেশন নম্বর *</label>
                             <input type="text" name="bmdc_number" class="form-control rounded-3" value="{{ old('bmdc_number') }}" placeholder="যেমন: A-54321" required>
                         </div>
                     </div>
