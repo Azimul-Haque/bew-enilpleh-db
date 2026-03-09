@@ -238,10 +238,14 @@ $(document).ready(function() {
     $(document).ready(function() {
         const Toast = Swal.mixin({
             toast: false,
-            position: 'top-end',
-            showConfirmButton: true,
+            position: 'center', // <--- This moves it to the middle center
+            showConfirmButton: false,
             timer: 3000,
             timerProgressBar: true,
+            didOpen: (toast) => {
+                toast.addEventListener('mouseenter', Swal.stopTimer)
+                toast.addEventListener('mouseleave', Swal.resumeTimer)
+            }
         });
 
         // Show Success Message
