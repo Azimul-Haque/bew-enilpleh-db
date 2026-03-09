@@ -80,7 +80,7 @@
                                 <span aria-hidden="true">&times;</span>
                               </button>
                             </div>
-                            <form method="post" action="{{ route('dashboard.users.singlesms', $user->id) }}">
+                            <form method="post" action="{{ route('dashboard.users.activate', $user->id) }}">
                               <div class="modal-body">
                                     @csrf
                                     <textarea class="form-control" placeholder="মেসেজ লিখুন" name="message" style="min-height: 150px; resize: none;" required></textarea>
