@@ -800,4 +800,9 @@ class DoctorController extends Controller
         Session::flash('success', 'ডাক্তার ডিলেট করা হয়েছে!');
         return redirect()->back();
     }
+
+    public function doctorChambers()
+    {
+        
+    }
 }
