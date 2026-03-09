@@ -155,7 +155,7 @@
                               <label class="font-weight-bold small">সাপ্তাহিক সময়সূচী *</label>
                               <textarea name="weekdays" class="form-control" rows="3" placeholder="উদা: শনি-বুধ (বিকাল ৫টা - রাত ৯টা)" required></textarea>
                           </div>
-                          <div class="col-md-6">
+                          <div class="col-md-6 mb-3">
                               <label class="font-weight-bold small">অনলাইন সিরিয়াল</label>
                               <select name="onlineserial" class="form-control" required>
                                   <option value="1">অনলাইনে সিরিয়াল দেওয়া যাবে ✅</option>
