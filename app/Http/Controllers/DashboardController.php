@@ -231,11 +231,7 @@ class DashboardController extends Controller
                 $user->accessibleBlooddonors()->attach($blooddonor);
             }
         } else {
-            if($user->role == 'doctor') {
-                Session::flash('warning', 'এ ইউজারের জন্য অন্তত একজন ডাক্তার রাখতে হবে!');
-            } else {
-                $user->accessibleBlooddonors()->detach();
-            }
+            $user->accessibleBlooddonors()->detach();
         }
 
         if(isset($request->coachings)){
@@ -245,7 +241,11 @@ class DashboardController extends Controller
                 $user->accessibleCoachings()->attach($coaching);
             }
         } else {
-            $user->accessibleCoachings()->detach();
+            if($user->role == 'doctor') {
+                Session::flash('warning', 'এ ইউজারের জন্য অন্তত একজন ডাক্তার রাখতে হবে!');
+            } else {
+                $user->accessibleCoachings()->detach();
+            }
         }
         if(!empty($request->password)) {
             $user->password = Hash::make($request->password);
