@@ -85,7 +85,7 @@
                               <form method="post" action="{{ route('dashboard.users.activate', $user->id) }}">
                                 <div class="modal-body">
                                       @csrf
-                                      আপনি কি নিশ্চিতভাবে {{ $user->name }}-কে একটিভেট করতে চান?
+                                      আপনি কি নিশ্চিতভাবে <strong>{{ $user->name }}</strong>-কে একটিভেট করতে চান?
                                 </div>
                                 <div class="modal-footer">
                                   <button type="button" class="btn btn-secondary" data-dismiss="modal">ফিরে যান</button>
