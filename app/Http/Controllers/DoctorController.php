@@ -821,7 +821,6 @@ class DoctorController extends Controller
             'weekdays' => 'required',
         ]);
 
-
         $chamber = new Doctorhospital;
         $chamber->doctor_id = $request->doctor_id;
         $chamber->hospital_id = $request->hospital_id;
