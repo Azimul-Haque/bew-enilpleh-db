@@ -179,6 +179,10 @@
           </div> --}}
         </div>
       @else
+      {{-- doctor role এর জন্য এই নতুন if else কোড --}}
+      {{-- doctor role এর জন্য এই নতুন if else কোড --}}
+      {{-- doctor role এর জন্য এই নতুন if else কোড --}}
+      
 
       @endif
 
