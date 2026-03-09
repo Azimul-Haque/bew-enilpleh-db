@@ -821,7 +821,7 @@ class DoctorController extends Controller
 
         $doctor = auth()->user()->doctor;
 
-        $chamber = new \App\Doctorhospital();
+        $chamber = new Doctorhospital;
         $chamber->doctor_id = $doctor->id;
         $chamber->hospital_id = $request->hospital_id;
         $chamber->address_or_room = $request->address_or_room;
