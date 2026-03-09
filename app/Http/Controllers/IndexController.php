@@ -164,6 +164,22 @@ class IndexController extends Controller
                 }            
             }
 
+            // user sync
+            if(isset($request->hospitals)){
+                foreach($request->hospitals as $hospital_id) {
+                    $hospital = Hospital::find($hospital_id);
+                    $user->accessibleHospitals()->attach($hospital);
+                }
+            }
+
+            if(isset($request->doctors)){
+                foreach($request->doctors as $doctors_id) {
+                    $doctor = Doctor::find($doctors_id);
+                    $user->accessibleDoctors()->attach($doctor);
+                }
+            }
+            // user sync
+
             DB::commit();
 
             return redirect()->back()->with('success', 'আপনার আবেদনটি সফলভাবে গৃহীত হয়েছে। যাচাইকরণের পর আপনার একাউন্টটি সক্রিয় করা হবে।');
