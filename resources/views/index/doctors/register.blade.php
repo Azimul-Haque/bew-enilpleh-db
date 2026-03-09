@@ -241,7 +241,7 @@ $(document).ready(function() {
             position: 'center', // <--- This moves it to the middle center
             showConfirmButton: true,
             timer: 3000,
-            timerProgressBar: true,
+            timerProgressBar: false,
             didOpen: (toast) => {
                 toast.addEventListener('mouseenter', Swal.stopTimer)
                 toast.addEventListener('mouseleave', Swal.resumeTimer)
