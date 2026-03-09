@@ -10,7 +10,7 @@
                 </button>
             </div>
             
-            <form action="{{ route('doctor.chambers.update', $chamber->id) }}" method="POST">
+            <form action="{{ route('dashboard.doctors.chambers.update', $chamber->id) }}" method="POST">
                 @csrf
                 @method('PUT')
                 
