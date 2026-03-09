@@ -36,7 +36,7 @@ class BlooddonorController extends Controller
             
             $blooddonorscount = Blooddonor::where('district_id', Auth::user()->district_id)->count();
             $blooddonors = Blooddonor::where('district_id', Auth::user()->district_id)->orderBy('id', 'desc')->paginate(10);
-        } elseif(Auth::user()->role == 'manager') {
+        } elseif(Auth::user()->role == 'manager' || Auth::user()->role == 'doctor') {
             if(!in_array('blooddonors', Auth::user()->accessibleTables())) {
                 abort(403, 'Access Denied');
             }
