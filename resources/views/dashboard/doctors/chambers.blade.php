@@ -128,7 +128,7 @@
                       <span aria-hidden="true">&times;</span>
                   </button>
               </div>
-              <form action="{{ route('doctor.chambers.store') }}" method="POST">
+              <form action="{{ route('dashboard.doctors.chambers.store') }}" method="POST">
                   @csrf
                   <div class="modal-body p-4">
                       <div class="row">
