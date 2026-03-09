@@ -822,7 +822,12 @@ class DoctorController extends Controller
 
     public function doctorChambers($id)
     {
-        $doctor = Doctor::findOrFail($id);
+        if(Auth::user()->role == 'doctor') {
+            $doctor = Auth::user()->accessibleDoctors()->first();
+        } else {
+            $doctor = Doctor::findOrFail($id);
+        }
+        
         $hospitals = Hospital::all();
 
         return view('dashboard.doctors.chambers')
