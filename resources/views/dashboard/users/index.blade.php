@@ -65,7 +65,7 @@
 
                 		</td>
                 		<td align="right" width="40%">
-                      <button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#activateModal{{ $user->id }}">
+                      <button type="button" class="btn btn-warning btn-sm" data-toggle="modal" data-target="#activateModal{{ $user->id }}">
                         <i class="fas fa-check"></i>
                       </button>
                       {{-- SMS Modal Code --}}
