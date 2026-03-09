@@ -190,6 +190,7 @@
             				                		<option value="admin" @if($user->role == 'admin') selected="" @endif>এডমিন</option>
               													<option value="editor" @if($user->role == 'editor') selected="" @endif>জেলা এডমিন</option>
                                         <option value="manager" @if($user->role == 'manager') selected="" @endif>প্রতিষ্ঠান ম্যানেজার</option>
+                                        <option value="doctor" @if($user->role == 'doctor') selected="" @endif>প্রতিষ্ঠান ম্যানেজার</option>
                                         {{-- <option value="volunteer" @if($user->role == 'volunteer') selected="" @endif>ভলান্টিয়ার</option>
               													<option value="user" @if($user->role == 'user') selected="" @endif>ব্যবহারকারী</option> --}}
               													{{-- <option value="accountant" @if($user->role == 'accountant') selected="" @endif>একাউন্টেন্ট</option> --}}
