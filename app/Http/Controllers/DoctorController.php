@@ -93,7 +93,7 @@ class DoctorController extends Controller
             );
 
             // dd($doctors);
-        } elseif(Auth::user()->role == 'manager') {
+        } elseif(Auth::user()->role == 'doctor') {
             if(!in_array('doctors', Auth::user()->accessibleTables())) {
                 abort(403, 'Access Denied');
             }
