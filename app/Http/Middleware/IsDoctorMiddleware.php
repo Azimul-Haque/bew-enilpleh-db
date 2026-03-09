@@ -16,7 +16,7 @@ class IsManagerMiddleware
      */
     public function handle($request, Closure $next)
     {
-        if(!Auth::check() || Auth::user()->role != 'manager'){
+        if(!Auth::check() || Auth::user()->role != 'doctor'){
             abort(403, 'Access Denied');
         }
         return $next($request);
