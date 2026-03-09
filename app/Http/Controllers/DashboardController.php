@@ -55,7 +55,7 @@ class DashboardController extends Controller
             abort(403, 'Access Denied');
         } elseif(Auth::user()->role == 'doctor') {
             if(Auth::user()->is_active == 0) {
-                Session::flash('success', 'সকল কোয়েরি ক্যাশ মুছে দেওয়া হয়েছে!');
+                Session::flash('warning', 'আপনার একাউন্ট এখনও একটিভেট করা হয়নি! SmartBD এডমিনের সাথে যোগাযোগ করুন!');
                 return redirect()->route('dashboard.index');
             }
         }
