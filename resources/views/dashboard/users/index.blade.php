@@ -65,17 +65,17 @@
 
                 		</td>
                 		<td align="right" width="40%">
-                      {{-- <button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#smsModal{{ $user->id }}">
-                        <i class="fas fa-envelope"></i>
-                      </button> --}}
+                      <button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#activateModal{{ $user->id }}">
+                        <i class="fas fa-check"></i>
+                      </button>
                       {{-- SMS Modal Code --}}
                       {{-- SMS Modal Code --}}
                       <!-- Modal -->
-                      <div class="modal fade" id="smsModal{{ $user->id }}" tabindex="-1" role="dialog" aria-labelledby="smsModalLabel" aria-hidden="true" data-backdrop="static">
+                      <div class="modal fade" id="activateModal{{ $user->id }}" tabindex="-1" role="dialog" aria-labelledby="activateModalLabel" aria-hidden="true" data-backdrop="static">
                         <div class="modal-dialog" role="document">
                           <div class="modal-content">
                             <div class="modal-header bg-info">
-                              <h5 class="modal-title" id="smsModalLabel">এসএমএস পাঠান</h5>
+                              <h5 class="modal-title" id="activateModalLabel">এসএমএস পাঠান</h5>
                               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                 <span aria-hidden="true">&times;</span>
                               </button>
