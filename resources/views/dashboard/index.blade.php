@@ -8,9 +8,9 @@
 @section('content')
 	@section('page-header') ড্যাশবোর্ড @endsection
     <div class="container-fluid">
-      {{-- doctor role এর জন্য নতুন কোড --}}
-      {{-- doctor role এর জন্য নতুন কোড --}}
-      {{-- doctor role এর জন্য নতুন কোড --}}
+      {{-- doctor role এর জন্য এই নতুন if else কোড --}}
+      {{-- doctor role এর জন্য এই নতুন if else কোড --}}
+      {{-- doctor role এর জন্য এই নতুন if else কোড --}}
       @if(Auth::user()->role != 'doctor')
         <div class="row">
           {{-- @if(Auth::user()->role == 'admin' || in_array('hospitals', Auth::user()->accessibleTables())) --}}
