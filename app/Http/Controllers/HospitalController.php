@@ -37,7 +37,7 @@ class HospitalController extends Controller
         if(Auth::user()->role == 'editor') {
             $hospitalscount = Hospital::where('district_id', Auth::user()->district_id)->count();
             $hospitals = Hospital::where('district_id', Auth::user()->district_id)->paginate(10);
-        } elseif(Auth::user()->role == 'manager') {
+        } elseif(Auth::user()->role == 'manager' || Auth::user()->role == 'doctor') {
             if(!in_array('hospitals', Auth::user()->accessibleTables())) {
                 abort(403, 'Access Denied');
             }
