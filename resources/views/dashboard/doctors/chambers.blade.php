@@ -91,7 +91,7 @@
                                               <i class="fas fa-edit"></i>
                                           </button>
 
-                                          <a href="{{ route('dashboard.doctorserialindex', [$chamber->id, date('Y-m-d')]) }}" style="margin-top: 5px;" class="btn btn-warning btn-sm">
+                                          <a href="{{ route('dashboard.doctorserialindex', [$chamber->id, date('Y-m-d')]) }}" style="" class="btn btn-warning btn-sm">
                                             <i class="fas fa-calendar-alt"></i> <b>অ্যাপয়েন্টমেন্ট তালিকা</b>
                                           </a>
                                           
