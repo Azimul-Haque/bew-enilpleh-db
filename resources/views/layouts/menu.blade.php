@@ -47,6 +47,12 @@
 @else
 {{-- doctor role এর জন্য --}}
 {{-- doctor role এর জন্য --}}
+<li class="nav-item">
+    <a href="{{ route('dashboard.hospitals') }}" class="nav-link {{ Request::is('dashboard/hospitals') ? 'active' : '' }} {{ Request::is('dashboard/hospitals/*') ? 'active' : '' }}">
+        <i class="nav-icon fas fa-hospital"></i>
+        <p>চেম্বার তালিকা</p>
+    </a>
+</li>
 @endif
 
 @if(Auth::user()->role == 'admin' || Auth::user()->role == 'editor')
