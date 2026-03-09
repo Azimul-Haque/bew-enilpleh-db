@@ -16,6 +16,8 @@
 @endif
 
 @if(Auth::user()->role != 'doctor')
+{{-- doctor role এর জন্য --}}
+{{-- doctor role এর জন্য --}}
 {{-- @if(Auth::user()->role == 'admin' || in_array('hospitals', Auth::user()->accessibleTables())) --}}
 <li class="nav-item">
     <a href="{{ route('dashboard.hospitals') }}" class="nav-link {{ Request::is('dashboard/hospitals') ? 'active' : '' }} {{ Request::is('dashboard/hospitals/*') ? 'active' : '' }}">
@@ -42,6 +44,9 @@
     </a>
 </li>
 {{-- @endif --}}
+@else
+{{-- doctor role এর জন্য --}}
+{{-- doctor role এর জন্য --}}
 @endif
 
 @if(Auth::user()->role == 'admin' || Auth::user()->role == 'editor')
