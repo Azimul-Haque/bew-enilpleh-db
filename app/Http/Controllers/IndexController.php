@@ -78,9 +78,68 @@ class IndexController extends Controller
                         ->withHospitals($hospitals);
     }
 
-    public function registerDoctorStore()
+    public function registerDoctorStore(Request $request)
     {
-        
+        $request->validate([
+            'name' => 'required|string|max:255',
+            'mobile' => 'required|string|unique:users,mobile|max:15',
+            'password' => 'required|string|min:6',
+            'district_id' => 'required|integer',
+            'upazilla_id' => 'required|integer',
+            'bmdc_number' => 'required|string|unique:doctors,bmdc_number',
+            'specialization' => 'required|string',
+            'degree' => 'required|string',
+            'serial' => 'required|string',
+            'address' => 'required|string',
+            'weekdays' => 'required|string',
+        ]);
+
+        DB::beginTransaction();
+
+        try {
+            $user = User::create([
+                'name' => $request->name,
+                'mobile' => $request->mobile,
+                'password' => Hash::make($request->password),
+                'role' => 'doctor',
+                'is_active' => 0,
+            ]);
+
+            $doctor = new Doctor();
+            $doctor->user_id = $user->id;
+            $doctor->district_id = $request->district_id;
+            $doctor->upazilla_id = $request->upazilla_id;
+            $doctor->name = $request->name;
+            $doctor->bmdc_number = $request->bmdc_number;
+            $doctor->specialization = $request->specialization;
+            $doctor->degree = nl2br($request->degree);
+            $doctor->serial = $request->serial;
+            $doctor->address = $request->address;
+            $doctor->weekdays = nl2br($request->weekdays);
+            $doctor->onlineserial = $request->onlineserial;
+            $doctor->selected_offdays = $request->selected_offdays;
+            $doctor->save();
+
+            if ($request->has('medicaldepartments')) {
+                $doctor->departments()->sync($request->medicaldepartments);
+            }
+
+            if ($request->has('medicalsymptoms')) {
+                $doctor->symptoms()->sync($request->medicalsymptoms);
+            }
+
+            if ($request->has('hospitals')) {
+                $doctor->hospitals()->sync($request->hospitals);
+            }
+
+            DB::commit();
+
+            return redirect()->back()->with('success', 'আপনার আবেদনটি সফলভাবে গৃহীত হয়েছে। যাচাইকরণের পর আপনার একাউন্টটি সক্রিয় করা হবে।');
+
+        } catch (\Exception $e) {
+            DB::rollback();
+            return redirect()->back()->withInput()->with('error', 'দুঃখিত! কোনো সমস্যা হয়েছে। আবার চেষ্টা করুন।');
+        }
     }
 
 
