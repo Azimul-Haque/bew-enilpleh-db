@@ -820,10 +820,9 @@ class DoctorController extends Controller
             'weekdays' => 'required',
         ]);
 
-        $doctor = auth()->user()->doctor;
 
         $chamber = new Doctorhospital;
-        $chamber->doctor_id = $doctor->id;
+        $chamber->doctor_id = $request->doctor_id;
         $chamber->hospital_id = $request->hospital_id;
         $chamber->address_or_room = $request->address_or_room;
         $chamber->serial_phone = $request->serial_phone;
