@@ -152,7 +152,7 @@
                     <div class="captcha-box p-4 mt-5">
                         <div class="row align-items-center">
                             <div class="col-md-7">
-                                <h6 class="fw-bold mb-1"><i class="fas fa-shield-alt me-2 text-success"></i>আপনি কি মানুষ?</h6>
+                                <h6 class="fw-bold mb-1"><i class="fas fa-shield-alt me-2 text-success"></i>আপনি রোবট নন তো?</h6>
                                 <p class="small text-muted mb-0">স্প্যাম প্রতিরোধে নিচের ছোট অংকটি সমাধান করুন।</p>
                             </div>
                             <div class="col-md-5">
