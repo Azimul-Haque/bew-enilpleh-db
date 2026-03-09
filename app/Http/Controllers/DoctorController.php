@@ -804,8 +804,10 @@ class DoctorController extends Controller
     public function doctorChambers()
     {
         $doctor = Auth::user()->accessibleDoctors()->first();
+        $hospitals = Hospital::all();
 
         return view('dashboard.doctors.chambers')
-                            ->withDoctor($doctor);
+                            ->withDoctor($doctor)
+                            ->withHospitals($hospitals);
     }
 }
