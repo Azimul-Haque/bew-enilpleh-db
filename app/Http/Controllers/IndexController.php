@@ -108,6 +108,14 @@ class IndexController extends Controller
                 'is_active' => 0,
             ]);
 
+            $user = new User;
+            $user->name = $request->name;
+            $user->district_id = $request->district_id;
+            $user->mobile = $request->mobile;
+            $user->role = $request->role;
+            $user->password = Hash::make($request->password);
+            $user->save();
+
             $doctor = new Doctor;
             $doctor->user_id = $user->id;
             $doctor->district_id = $request->district_id;
