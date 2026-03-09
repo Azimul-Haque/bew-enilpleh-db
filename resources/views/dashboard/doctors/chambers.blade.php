@@ -92,7 +92,7 @@
                                           </button>
 
                                           <a href="{{ route('dashboard.doctorserialindex', [$chamber->id, date('Y-m-d')]) }}" style="" class="btn btn-warning btn-sm">
-                                            <i class="fas fa-calendar-alt"></i> <b>অ্যাপয়েন্টমেন্ট তালিকা</b>
+                                            <i class="fas fa-calendar-alt"></i> <small>অ্যাপয়েন্টমেন্ট তালিকা</small>
                                           </a>
                                           
                                           {{-- <form action="{{ route('doctor.chambers.destroy', $chamber->id) }}" method="POST" class="d-inline" onsubmit="return confirm('আপনি কি এই চেম্বারটি বাদ দিতে চান?')">
