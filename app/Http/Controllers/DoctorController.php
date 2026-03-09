@@ -803,6 +803,6 @@ class DoctorController extends Controller
 
     public function doctorChambers()
     {
-        
+        $doctor = Doctor::findOrFail($id);
     }
 }
