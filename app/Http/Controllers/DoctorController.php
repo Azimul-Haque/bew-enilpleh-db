@@ -101,7 +101,8 @@ class DoctorController extends Controller
             $doctors = Auth::user()->accessibleDoctors()->get();
 
             $accessedhospitals = Auth::user()->accessibleHospitals()->get();
-            $hospitals = $accessedhospitals;
+            // $hospitals = $accessedhospitals;
+            $hospitals = Hospital::all();
 
             // Now paginate the collection:
 
