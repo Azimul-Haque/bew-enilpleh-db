@@ -40,6 +40,13 @@ class Doctor extends Model
         return $this->hasMany('App\Doctorhospital');
     }
 
+    public function hospitals()
+    {
+        return $this->belongsToMany('App\Hospital', 'doctorhospitals')
+                    ->withPivot('address_or_room', 'serial_phone', 'weekdays', 'ondays', 'onlineserial')
+                    ->withTimestamps();
+    }
+
     protected static function booted()
     {
         static::deleting(function ($doctor) {
