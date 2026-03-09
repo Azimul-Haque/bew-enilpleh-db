@@ -65,6 +65,8 @@
 
                 		</td>
                 		<td align="right" width="40%">
+
+                      @if($user->is_active == 0)
                       <button type="button" class="btn btn-warning btn-sm" data-toggle="modal" data-target="#activateModal{{ $user->id }}" title="একটিভেট করুন">
                         <i class="fas fa-check"></i>
                       </button>
@@ -95,6 +97,7 @@
                       </div>
                       {{-- Activate Modal Code --}}
                       {{-- Activate Modal Code --}}
+                      @endif
 
                 			<button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#editUserModal{{ $user->id }}">
                 				<i class="fas fa-user-edit"></i>
