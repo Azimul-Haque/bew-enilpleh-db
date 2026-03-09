@@ -89,7 +89,7 @@
                                 </div>
                                 <div class="modal-footer">
                                   <button type="button" class="btn btn-secondary" data-dismiss="modal">ফিরে যান</button>
-                                  <button type="submit" class="btn btn-warning">মেসেজ পাঠান</button>
+                                  <button type="submit" class="btn btn-warning">একটিভেট করুন</button>
                                 </div>
                               </form>
                             </div>
