@@ -34,20 +34,8 @@
 @endsection
 
 @section('content')
-  @section('page-header') ডাক্তার তালিকা (মোট {{ bangla($doctorscount) }} জন) @endsection
+  @section('page-header') চেম্বার তালিকা @endsection
 
-  @php
-      use Carbon\Carbon;
-
-      $startDate = Carbon::today();
-      $endDate = $startDate->copy()->addMonths(3);
-      $optiondates = [];
-
-      while ($startDate->lte($endDate)) {
-          $optiondates[] = $startDate->copy();
-          $startDate->addDay();
-      }
-  @endphp
     <div class="container-fluid">
       <div class="row">
         <div class="col-md-9">
