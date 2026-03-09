@@ -27,7 +27,7 @@
 
 <nav class="navbar navbar-light bg-white shadow-sm mb-4">
     <div class="container justify-content-center">
-        <a class="navbar-brand" href="#"><i class="fas fa-bolt me-2"></i>SmartBD</a>
+        <a class="navbar-brand" href="https://smartbd.bdhelpline.info/"><i class="fas fa-bolt me-2"></i>SmartBD</a>
     </div>
 </nav>
 
