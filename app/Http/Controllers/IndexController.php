@@ -178,12 +178,7 @@ class IndexController extends Controller
                 }
             }
 
-            if(isset($doctor)){
-                foreach($request->doctors as $doctors_id) {
-                    $doctor = Doctor::find($doctors_id);
-                    $user->accessibleDoctors()->attach($doctor);
-                }
-            }
+            $user->accessibleDoctors()->attach($doctor);
             // user sync
 
             DB::commit();
