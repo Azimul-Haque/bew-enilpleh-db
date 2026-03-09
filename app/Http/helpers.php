@@ -141,6 +141,8 @@
         $text = "জেলা এডমিন";
       } elseif($role == 'manager') {
         $text = "প্রতিষ্ঠান ম্যানেজার";
+      } elseif($role == 'doctor') {
+        $text = "ডাক্তার";
       }
       return $text;
   }
