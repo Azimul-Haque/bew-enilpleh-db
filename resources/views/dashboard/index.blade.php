@@ -198,7 +198,7 @@
           <span class="info-box-icon bg-warning elevation-1"><i class="fas fa-hospital"></i></span>
 
           <div class="info-box-content">
-            <span class="info-box-text">চেম্বার তালিকা</span>
+            <span class="info-box-text">প্রোফাইল</span>
             <small class="info-box-text" style="margin-top: 10px;">ক্লিক করুন</small>
           </div>
         </a>
