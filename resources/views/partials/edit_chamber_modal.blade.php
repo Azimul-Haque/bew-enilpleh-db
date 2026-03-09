@@ -24,7 +24,7 @@
 
                     <div class="row">
                         <div class="col-md-6 mb-3">
-                            <label class="font-weight-bold small text-muted">চেম্বার এড্রেস/রুম নম্বর</label>
+                            <label class="font-weight-bold small text-muted">চেম্বার এড্রেস/রুম নম্বর *</label>
                             <div class="input-group">
                                 <div class="input-group-prepend">
                                     <span class="input-group-text bg-white border-right-0"><i class="fas fa-door-open text-primary"></i></span>
