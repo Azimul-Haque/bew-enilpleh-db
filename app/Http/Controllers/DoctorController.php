@@ -805,7 +805,7 @@ class DoctorController extends Controller
     {
         $doctor = Doctor::findOrFail($id);
 
-        return view('dashboard.doctors.doctorserials')
+        return view('dashboard.doctors.chambers')
                             ->withDoctor($doctor)
                             ->withDoctorserials($doctorserials)
                             ->withTodaydate($todaydate);
