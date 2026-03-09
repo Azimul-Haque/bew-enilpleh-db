@@ -120,16 +120,45 @@ class IndexController extends Controller
             $doctor->selected_offdays = $request->selected_offdays;
             $doctor->save();
 
-            if ($request->has('medicaldepartments')) {
-                $doctor->departments()->sync($request->medicaldepartments);
+            if(isset($request->medicaldepartments)){
+                foreach($request->medicaldepartments as $medicaldepartment_id) {
+                    $doctormedicaldepartment = new Doctormedicaldepartment;
+                    $doctormedicaldepartment->doctor_id = $doctor->id;
+                    $doctormedicaldepartment->medicaldepartment_id = $medicaldepartment_id;
+                    $doctormedicaldepartment->save();
+
+                    Cache::forget('doctors'. $medicaldepartment_id . 'departmentwise' . $request->district_id);
+                    Cache::forget('doctors'. $medicaldepartment_id . 'departmentwise' . $request->district_id . $request->upazilla_id);
+
+                    Cache::forget('doctors'. $medicaldepartment_id . 'symptomwise' . $request->district_id);
+                    Cache::forget('doctors'. $medicaldepartment_id . 'symptomwise' . $request->district_id . $request->upazilla_id);
+                }            
             }
 
-            if ($request->has('medicalsymptoms')) {
-                $doctor->symptoms()->sync($request->medicalsymptoms);
+            if(isset($request->medicalsymptoms)){
+                foreach($request->medicalsymptoms as $medicalsymptom_id) {
+                    $doctormedicalsymptom = new Doctormedicalsymptom;
+                    $doctormedicalsymptom->doctor_id = $doctor->id;
+                    $doctormedicalsymptom->medicalsymptom_id = $medicalsymptom_id;
+                    $doctormedicalsymptom->save();
+
+                    Cache::forget('doctors'. $medicalsymptom_id . 'departmentwise' . $request->district_id);
+                    Cache::forget('doctors'. $medicalsymptom_id . 'departmentwise' . $request->district_id . $request->upazilla_id);
+
+                    Cache::forget('doctors'. $medicalsymptom_id . 'symptomwise' . $request->district_id);
+                    Cache::forget('doctors'. $medicalsymptom_id . 'symptomwise' . $request->district_id . $request->upazilla_id);
+                }            
             }
 
-            if ($request->has('hospitals')) {
-                $doctor->hospitals()->sync($request->hospitals);
+            if(isset($request->hospitals)){
+                foreach($request->hospitals as $hospital_id) {
+                    $doctorhospital = new Doctorhospital;
+                    $doctorhospital->doctor_id = $doctor->id;
+                    $doctorhospital->hospital_id = $hospital_id;
+                    $doctorhospital->save();
+
+                    Cache::forget('hospitaldoctors'. $hospital_id);
+                }            
             }
 
             DB::commit();
