@@ -354,6 +354,7 @@
 	                		<option value="admin">এডমিন</option>
                      <option value="editor">জেলা এডমিন</option>
                      <option value="manager">প্রতিষ্ঠান ম্যানেজার</option>
+                     <option value="doctor">ডাক্তার</option>
                     {{--  <option value="manager">ম্যানেজার</option>
                      <option value="volunteer">ভলান্টিয়ার</option>
 	                		<option value="user">ব্যবহারকারী</option> --}}
