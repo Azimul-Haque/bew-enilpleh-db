@@ -164,7 +164,7 @@
                           </div>
 
                           <div class="col-md-12 mb-3">
-                              <label class="font-weight-bold small text-muted">যেদিন যেদিন চেম্বারে বসবেন (অতিরিক্ত তারিখসমূহ)</label>
+                              <label class="font-weight-bold small">যেদিন যেদিন চেম্বারে বসবেন (অতিরিক্ত তারিখসমূহ)</label>
                               <div class="input-group">
                                   <div class="input-group-prepend">
                                       <span class="input-group-text"><i class="fas fa-calendar-check"></i></span>
