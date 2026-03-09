@@ -499,9 +499,6 @@ class DashboardController extends Controller
 
     public function activateUser(Request $request, $id)
     {
-        $this->validate($request,array(
-            'message'           => 'required',
-        ));
 
         $user = User::find($id);
 
