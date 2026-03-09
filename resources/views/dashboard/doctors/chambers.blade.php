@@ -100,7 +100,7 @@
                                       </td>
                                   </tr>
                                   
-                                  {{-- @include('partials.edit_chamber_modal', ['chamber' => $chamber]) --}}
+                                  @include('partials.edit_chamber_modal', ['chamber' => $chamber])
                                   
                                   @empty
                                   <tr>
