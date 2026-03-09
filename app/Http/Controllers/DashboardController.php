@@ -54,7 +54,10 @@ class DashboardController extends Controller
         if(Auth::user()->role == 'user') {
             abort(403, 'Access Denied');
         } elseif(Auth::user()->role == 'doctor') {
-
+            if(Auth::user()->is_active == 0) {
+                Session::flash('success', 'সকল কোয়েরি ক্যাশ মুছে দেওয়া হয়েছে!');
+                return redirect()->route('dashboard.index');
+            }
         }
 
         return view('dashboard.index');
