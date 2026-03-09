@@ -232,7 +232,7 @@ class DashboardController extends Controller
             }
         } else {
             if($user->role == 'doctor') {
-
+                Session::flash('warning', 'এ ইউজারের জন্য অন্তত একজন ডাক্তার রাখতে হবে!');
             } else {
                 $user->accessibleBlooddonors()->detach();
             }
