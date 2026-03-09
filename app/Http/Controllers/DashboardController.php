@@ -499,8 +499,9 @@ class DashboardController extends Controller
 
     public function activateUser(Request $request, $id)
     {
-
         $user = User::find($id);
+        $user->is_active = 1;
+        $user->save();
 
         // send sms
         $mobile_number = 0;
