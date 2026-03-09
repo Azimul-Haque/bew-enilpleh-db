@@ -175,28 +175,6 @@
           </div> --}}
         </div>
 
-        <div class="row">
-          {{-- <div class="col-md-6">
-            <a href="{{ route('dashboard.deposit.getlist', [date('Y-m-d'), 'All']) }}" class="info-box mb-3">
-              <span class="info-box-icon bg-warning elevation-1"><i class="fas fa-coins"></i></span>
-
-              <div class="info-box-content">
-                <span class="info-box-text">দৈনিক জমা</span>
-                <span class="info-box-number">৳ {{ 0 }}</span>
-              </div>
-            </a>
-          </div>
-          <div class="col-md-6">
-            <a href="{{ route('dashboard.expenses.getlist', [date('Y-m-d'), 'All']) }}" class="info-box mb-3">
-              <span class="info-box-icon bg-info elevation-1"><i class="fas fa-hand-holding-usd"></i></span>
-
-              <div class="info-box-content">
-                <span class="info-box-text">দৈনিক খরচ</span>
-                <span class="info-box-number">৳ {{ 0 }}</span>
-              </div>
-            </a>
-          </div> --}}
-        </div>
         @if(Auth::user()->role == 'admin')
         <div class="row">
           <div class="col-md-6">
