@@ -51,7 +51,7 @@ class DoctorController extends Controller
                              ->paginate(10);
             $hospitals = Hospital::where('district_id', Auth::user()->district_id)->get();
 
-        } elseif(Auth::user()->role == 'manager') {
+        } elseif(Auth::user()->role == 'manager' || Auth::user()->role == 'doctor') {
             if(!in_array('doctors', Auth::user()->accessibleTables())) {
                 abort(403, 'Access Denied');
             }
