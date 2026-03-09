@@ -165,7 +165,7 @@
                     </div>
 
                     <div class="text-center mt-5">
-                        <button type="submit" class="btn btn-submit text-white shadow-lg">রেজিস্ট্রেশন দাখিল করুন</button><br/>
+                        <button type="submit" class="btn btn-submit text-white shadow-lg">রেজিস্ট্রেশন দাখিল করুন</button><br/><br/>
                         <a type="submit" class="">লগইন করুন</a>
                     </div>
                 </form>
