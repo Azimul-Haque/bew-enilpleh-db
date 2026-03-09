@@ -52,7 +52,7 @@
                             <small class="form-text text-muted">আপনি সপ্তাহে যে দিন এবং সময়ে এই চেম্বারে বসেন তা পরিষ্কারভাবে লিখুন।</small>
                         </div>
 
-                        <div class="col-md-6">
+                        <div class="col-md-6 mb-3">
                             <label class="font-weight-bold small text-muted">অনলাইন সিরিয়াল স্ট্যাটাস</label>
                             <select name="onlineserial" class="form-control custom-select" required>
                                 <option value="1" {{ $chamber->onlineserial == 1 ? 'selected' : '' }}>সক্রিয় ✅ (অনলাইনে সিরিয়াল দেওয়া যাবে)</option>
