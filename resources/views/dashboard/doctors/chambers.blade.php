@@ -87,7 +87,7 @@
                                           @endif
                                       </td>
                                       <td class="text-right">
-                                          <button class="btn btn-sm btn-outline-primary" title="এডিট করুন" data-toggle="modal" data-target="#editChamber-{{ $chamber->id }}">
+                                          <button class="btn btn-sm btn-primary" title="এডিট করুন" data-toggle="modal" data-target="#editChamber-{{ $chamber->id }}">
                                               <i class="fas fa-edit"></i>
                                           </button>
 
