@@ -60,7 +60,7 @@ Route::post('/dashboard/doctors/appoinments/delete/{serial_id}', 'DoctorControll
 
 Route::get('/dashboard/chambers', 'DoctorController@doctorChambers')->name('dashboard.doctors.chambers');
 Route::post('/dashboard/chambers/store', 'DoctorController@doctorChamberStore')->name('dashboard.doctors.chambers.store');
-Route::post('/dashboard/chambers/update', 'DoctorController@doctorChamberUpdate')->name('dashboard.doctors.chambers.update');
+Route::post('/dashboard/chambers/{id}/update', 'DoctorController@doctorChamberUpdate')->name('dashboard.doctors.chambers.update');
 
 // Blood Donors
 Route::get('/dashboard/blooddonors', 'BlooddonorController@index')->name('dashboard.blooddonors');
