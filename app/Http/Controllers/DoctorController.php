@@ -835,4 +835,27 @@ class DoctorController extends Controller
 
         return redirect()->back()->with('success', 'নতুন চেম্বারটি সফলভাবে যুক্ত করা হয়েছে। এটি এখন সক্রিয়।');
     }
+
+    public function doctorChamberUpdate(Request $request, $id)
+    {
+        $chamber = \App\Doctorhospital::findOrFail($id);
+        
+        // ... validation ...
+
+        $chamber->address_or_room = $request->address_or_room;
+        $chamber->serial_phone = $request->serial_phone;
+        $chamber->weekdays = $request->weekdays;
+        $chamber->onlineserial = $request->onlineserial;
+
+        // Convert comma string to JSON array for storage
+        if ($request->filled('ondays')) {
+            $chamber->ondays = json_encode(explode(',', $request->ondays));
+        } else {
+            $chamber->ondays = null;
+        }
+
+        $chamber->save();
+
+        return redirect()->back()->with('success', 'তথ্য সফলভাবে আপডেট করা হয়েছে!');
+    }
 }
