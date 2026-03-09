@@ -201,6 +201,35 @@
                 			</button>
                       @endif
                 		</td>
+                      @if($user->is_active == 0)
+                        {{-- Activate Modal Code --}}
+                        {{-- Activate Modal Code --}}
+                        <!-- Modal -->
+                        <div class="modal fade" id="activateModal{{ $user->id }}" tabindex="-1" role="dialog" aria-labelledby="activateModalLabel" aria-hidden="true" data-backdrop="static">
+                          <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                              <div class="modal-header bg-warning">
+                                <h5 class="modal-title" id="activateModalLabel">একটিভেট করুন</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                  <span aria-hidden="true">&times;</span>
+                                </button>
+                              </div>
+                              <form method="post" action="{{ route('dashboard.users.activate', $user->id) }}">
+                                <div class="modal-body">
+                                      @csrf
+                                      আপনি কি নিশ্চিতভাবে <strong>{{ $user->name }}</strong>-কে একটিভেট করতে চান?
+                                </div>
+                                <div class="modal-footer">
+                                  <button type="button" class="btn btn-secondary" data-dismiss="modal">ফিরে যান</button>
+                                  <button type="submit" class="btn btn-warning">একটিভেট করুন</button>
+                                </div>
+                              </form>
+                            </div>
+                          </div>
+                        </div>
+                        {{-- Activate Modal Code --}}
+                        {{-- Activate Modal Code --}}
+                      @endif
                         {{-- Delete User Modal Code --}}
                         {{-- Delete User Modal Code --}}
                         <!-- Modal -->
