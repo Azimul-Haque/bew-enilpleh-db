@@ -1,4 +1,4 @@
-<div class="modal fade" id="editChamber-{{ $chamber->id }}" tabindex="-1" role="dialog" aria-hidden="true">
+<div class="modal fade" id="editChamber-{{ $chamber->id }}" tabindex="-1" role="dialog" aria-hidden="true" data-backdrop="static">
     <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content rounded-4 border-0 shadow-lg">
             <div class="modal-header bg-primary text-white border-0">
