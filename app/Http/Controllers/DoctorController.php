@@ -814,6 +814,7 @@ class DoctorController extends Controller
     public function doctorChamberStore(Request $request)
     {
         $request->validate([
+            'doctor_id' => 'required',
             'hospital_id' => 'required',
             'serial_phone' => 'required',
             'weekdays' => 'required',
