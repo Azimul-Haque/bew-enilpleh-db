@@ -118,7 +118,6 @@ class IndexController extends Controller
             $user->save();
 
             $doctor = new Doctor;
-            $doctor->user_id = $user->id;
             $doctor->district_id = $request->district_id;
             $doctor->upazilla_id = $request->upazilla_id;
             $doctor->name = $request->name;
