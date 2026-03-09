@@ -116,11 +116,6 @@ class IndexController extends Controller
                 $doctor->specialization = nl2br($request->specialization);
             }
             $doctor->degree = nl2br($request->degree);
-            $doctor->serial = $request->serial;
-            $doctor->address = $request->address;
-            $doctor->weekdays = nl2br($request->weekdays);
-            $doctor->onlineserial = $request->onlineserial;
-            $doctor->selected_offdays = $request->selected_offdays;
             $doctor->save();
 
             if(isset($request->medicaldepartments)){
