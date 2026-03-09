@@ -195,7 +195,7 @@
         </div>
         <div class="col-md-3">
           <a href="{{ route('dashboard.doctors.chambers') }}" class="info-box mb-3">
-            <span class="info-box-icon bg-primary elevation-1"><i class="fas fa-hospital"></i></span>
+            <span class="info-box-icon bg-success elevation-1"><i class="fas fa-hospital"></i></span>
 
             <div class="info-box-content">
               <span class="info-box-text">চেম্বার তালিকা</span>
