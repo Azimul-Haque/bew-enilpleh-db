@@ -56,7 +56,7 @@ class DashboardController extends Controller
         } elseif(Auth::user()->role == 'doctor') {
             if(Auth::user()->is_active == 0) {
                 Session::flash('warning', 'আপনার একাউন্ট এখনও একটিভেট করা হয়নি! SmartBD এডমিনের সাথে যোগাযোগ করুন!');
-                return redirect()->route('dashboard.index');
+                return redirect()->route('index.login');
             }
         }
 
