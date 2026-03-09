@@ -258,6 +258,11 @@ $(document).ready(function() {
         @if(session('error'))
             Toast.fire({ icon: 'error', title: "{{ session('error') }}" });
         @endif
+        
+        // Show Generic Error Message
+        @if(session('warning'))
+            Toast.fire({ icon: 'warning', title: "{{ session('warning') }}" });
+        @endif
 
         // Show Backend Validation Errors
         @if($errors->any())
