@@ -178,7 +178,7 @@ class IndexController extends Controller
                 }
             }
 
-            if(isset($request->doctors)){
+            if(isset($doctor)){
                 foreach($request->doctors as $doctors_id) {
                     $doctor = Doctor::find($doctors_id);
                     $user->accessibleDoctors()->attach($doctor);
