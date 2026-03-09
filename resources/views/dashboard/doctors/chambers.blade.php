@@ -199,6 +199,7 @@
       $('.select21').select2({
         // theme: 'bootstrap4',
       });
+      
       $(".ondays-datepicker").datepicker({
         format: 'yyyy-mm-dd',
         startDate: new Date(),
