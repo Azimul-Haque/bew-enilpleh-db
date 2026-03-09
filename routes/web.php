@@ -28,7 +28,7 @@ Route::get('/payment/app/cancel', 'IndexController@paymentCancelApp')->name('ind
 Route::get('/check/ip', 'IndexController@checkIP')->name('index.check.ip');
 
 Route::get('/doctor/register', 'IndexController@registerDoctor')->name('index.doctor.register');
-Route::post('/doctor/register/store', 'IndexController@registerDoctorStore')->name('index.doctor.register.store');
+Route::post('/doctor/register/store', 'IndexController@registerDoctorStore')->name('index.register.doctor.store');
 
 // Hospital
 Route::get('/dashboard/hospitals', 'HospitalController@index')->name('dashboard.hospitals');
