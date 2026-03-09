@@ -801,7 +801,7 @@ class DoctorController extends Controller
         return redirect()->back();
     }
 
-    public function doctorChambers()
+    public function doctorChambers($id)
     {
         $doctor = Auth::user()->accessibleDoctors()->first();
         $hospitals = Hospital::all();
