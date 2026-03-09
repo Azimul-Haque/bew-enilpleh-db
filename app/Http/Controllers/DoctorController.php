@@ -393,19 +393,23 @@ class DoctorController extends Controller
         }
 
         if(isset($request->hospitals)){
-
-            foreach($doctor->doctorhospitals as $olddoctorhospital) {
-                $olddoctorhospital->delete();
-            }
+            // Get the IDs of hospitals already attached to this doctor
+            $existingHospitalIds = $doctor->doctorhospitals->pluck('hospital_id')->toArray();
 
             foreach($request->hospitals as $hospital_id) {
-                $doctorhospital = new Doctorhospital;
-                $doctorhospital->doctor_id = $doctor->id;
-                $doctorhospital->hospital_id = $hospital_id;
-                $doctorhospital->save();
+                // Only add if the hospital_id is NOT already in the existing list
+                if (!in_array($hospital_id, $existingHospitalIds)) {
+                    $doctorhospital = new Doctorhospital;
+                    $doctorhospital->doctor_id = $doctor->id;
+                    $doctorhospital->hospital_id = $hospital_id;
+                    
+                    // Note: You can set default values here if needed
+                    $doctorhospital->save();
 
-                Cache::forget('hospitaldoctors'. $hospital_id);
-            }            
+                    // Clear cache only for the newly added hospital
+                    Cache::forget('hospitaldoctors'. $hospital_id);
+                }
+            }           
         }
 
         // image upload
