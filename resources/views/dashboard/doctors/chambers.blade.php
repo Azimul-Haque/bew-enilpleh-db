@@ -34,7 +34,7 @@
 @endsection
 
 @section('content')
-  @section('page-header') চেম্বার তালিকা @endsection
+  @section('page-header') {{ $doctor->name }} চেম্বার তালিকা @endsection
   <div class="container-fluid">
       <div class="row">
           <div class="col-12">
