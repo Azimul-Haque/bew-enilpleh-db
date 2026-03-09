@@ -851,12 +851,8 @@ class DoctorController extends Controller
         $chamber->serial_phone = $request->serial_phone;
         $chamber->weekdays = $request->weekdays;
         $chamber->onlineserial = $request->onlineserial;
-
-        // Convert comma string to JSON array for storage
         if ($request->filled('ondays')) {
             $chamber->ondays = json_encode(explode(',', $request->ondays));
-        } else {
-            $chamber->ondays = null;
         }
 
         $chamber->save();
