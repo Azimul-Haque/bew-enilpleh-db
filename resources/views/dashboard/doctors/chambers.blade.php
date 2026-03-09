@@ -130,6 +130,8 @@
               </div>
               <form action="{{ route('dashboard.doctors.chambers.store') }}" method="POST">
                   @csrf
+
+                  <input type="hidden" name="doctor_id" value="{{ $doctor->id }}">
                   <div class="modal-body p-4">
                       <div class="row">
                           <div class="col-md-12 mb-3">
