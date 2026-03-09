@@ -645,7 +645,7 @@ class AdminandothersController extends Controller
 
     public function coachingIndex()
     {
-        if(Auth::user()->role == 'editor' || Auth::user()->role == 'manager') {
+        if(Auth::user()->role == 'editor' || Auth::user()->role == 'manager' || Auth::user()->role == 'doctor') {
             abort(403, 'Access Denied');
         }
         $districts = District::all();
