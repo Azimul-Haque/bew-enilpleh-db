@@ -28,6 +28,10 @@ class CreateDoctorhospitalsTable extends Migration
                   ->references('id')
                   ->on('hospitals')
                   ->onDelete('cascade');
+
+            $table->string('address_or_room')->nullable(); 
+            $table->text('schedule')->nullable()->after('chamber_name');
+            $table->string('serial_number')->nullable()->after('schedule');
         });
     }
 
