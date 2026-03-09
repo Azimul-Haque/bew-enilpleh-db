@@ -74,9 +74,9 @@
                                               <span class="text-muted small">সেট করা নেই</span>
                                           @endif
                                       </td>
-                                      <td>{{ $chamber->serial_phone ?? 'সেট করা নেই' }}</td>
                                       <td>
-                                          <div class="small" style="max-width: 200px;">{{ $chamber->weekdays ?? 'সেট করা নেই' }}</div>
+                                        {{ $chamber->serial_phone ?? 'সেট করা নেই' }}</br>
+                                        <div class="small" style="max-width: 200px;">{{ $chamber->weekdays ?? 'সেট করা নেই' }}</div>
                                       </td>
                                       <td class="text-center">
                                           @if($chamber->onlineserial == 1)
