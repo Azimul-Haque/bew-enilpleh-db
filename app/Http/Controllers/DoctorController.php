@@ -803,11 +803,9 @@ class DoctorController extends Controller
 
     public function doctorChambers()
     {
-        $doctor = Doctor::findOrFail($id);
+        $doctor = Auth::user()->accessibleDoctors()->get();
 
         return view('dashboard.doctors.chambers')
-                            ->withDoctor($doctor)
-                            ->withDoctorserials($doctorserials)
-                            ->withTodaydate($todaydate);
+                            ->withDoctor($doctor);
     }
 }
