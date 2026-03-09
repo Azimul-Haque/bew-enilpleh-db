@@ -77,18 +77,9 @@ class IndexController extends Controller
                         ->withHospitals($hospitals);
     }
 
-    public function registerDoctorStore ()
+    public function registerDoctorStore()
     {
-        $districts = District::all();
-        $medicaldepartments = Medicaldepartment::all();
-        $medicalsymptoms = Medicalsymptom::all();
-        $hospitals = Hospital::all();
-
-        return view('index.doctors.register')
-                        ->withDistricts($districts)
-                        ->withMedicaldepartments($medicaldepartments)
-                        ->withMedicalsymptoms($medicalsymptoms)
-                        ->withHospitals($hospitals);
+        
     }
 
 
