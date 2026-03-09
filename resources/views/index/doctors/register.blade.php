@@ -36,8 +36,9 @@
         <div class="col-xl-10">
             <div class="smart-card p-4 p-md-5">
                 <div class="text-center mb-5">
-                    <h2 class="fw-bold">ডাক্তার হিসেবে যুক্ত হোন</h2>
-                    <p class="text-muted">আপনার পেশাদার তথ্য প্রদান করে স্মার্ট বাংলাদেশ হেল্পলাইনে নিবন্ধিত হোন</p>
+                    <i class="fas fa-user-md fa-3x text-success mb-3"></i>
+                    <h2 class="fw-bold">ডাক্তার রেজিস্ট্রেশন ফরম</h2>
+                    <p class="text-muted">আপনার তথ্য প্রদান করে আমাদের নেটওয়ার্কে যুক্ত হোন</p>
                 </div>
 
                 <form method="post" action="{{ route('index.register.doctor.store') }}" enctype="multipart/form-data" id="mainRegForm">
