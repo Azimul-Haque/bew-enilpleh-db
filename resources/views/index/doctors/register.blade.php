@@ -192,13 +192,13 @@ $(document).ready(function() {
         if(districtID) {
             $('#upazilla').prop('disabled', true).html('<option>অপেক্ষা করুন...</option>');
             $.ajax({
-                url: '/api/getupazillas/' + districtID, 
+                url: '/api/getupazillas/{{ env('SOFT_TOKEN') }}/' + districtID, 
                 type: "GET",
                 dataType: "json",
                 success:function(data) {
                     $('#upazilla').empty().append('<option selected disabled value="">উপজেলা নির্বাচন করুন</option>');
                     $.each(data, function(key, value) {
-                        $('#upazilla').append('<option value="'+ value.id +'">'+ value.name_bangla +'</option>');
+                        $('#upazilla').append('<option value="'+ value.id +'">'+ value.name_bangla +'-'+ value.name_bangla +'</option>');
                     });
                     $('#upazilla').prop('disabled', false);
                 }
