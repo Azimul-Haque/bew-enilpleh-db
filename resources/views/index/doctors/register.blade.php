@@ -228,5 +228,34 @@ $(document).ready(function() {
 });
 </script>
 
+<script>
+    $(document).ready(function() {
+        const Toast = Swal.mixin({
+            toast: true,
+            position: 'top-end',
+            showConfirmButton: false,
+            timer: 3000,
+            timerProgressBar: true,
+        });
+
+        // Show Success Message
+        @if(session('success'))
+            Toast.fire({ icon: 'success', title: "{{ session('success') }}" });
+        @endif
+
+        // Show Generic Error Message
+        @if(session('error'))
+            Toast.fire({ icon: 'error', title: "{{ session('error') }}" });
+        @endif
+
+        // Show Backend Validation Errors
+        @if($errors->any())
+            @foreach($errors->all() as $error)
+                Toast.fire({ icon: 'error', title: "{{ $error }}" });
+            @endforeach
+        @endif
+    });
+</script>
+
 </body>
 </html>
