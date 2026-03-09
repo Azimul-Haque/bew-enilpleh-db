@@ -109,7 +109,9 @@ class IndexController extends Controller
             $doctor->upazilla_id = $request->upazilla_id;
             $doctor->name = $request->name;
             $doctor->bmdc_number = $request->bmdc_number;
-            $doctor->specialization = $request->specialization;
+            if($request->specialization) {
+                $doctor->specialization = nl2br($request->specialization);
+            }
             $doctor->degree = nl2br($request->degree);
             $doctor->serial = $request->serial;
             $doctor->address = $request->address;
