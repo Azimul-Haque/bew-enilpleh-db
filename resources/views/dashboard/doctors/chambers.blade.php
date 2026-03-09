@@ -91,12 +91,12 @@
                                               <i class="fas fa-edit"></i>
                                           </button>
                                           
-                                          <form action="{{ route('doctor.chambers.destroy', $chamber->id) }}" method="POST" class="d-inline" onsubmit="return confirm('আপনি কি এই চেম্বারটি বাদ দিতে চান?')">
+                                          {{-- <form action="{{ route('doctor.chambers.destroy', $chamber->id) }}" method="POST" class="d-inline" onsubmit="return confirm('আপনি কি এই চেম্বারটি বাদ দিতে চান?')">
                                               @csrf @method('DELETE')
                                               <button type="submit" class="btn btn-sm btn-outline-danger rounded-circle">
                                                   <i class="fas fa-trash-alt"></i>
                                               </button>
-                                          </form>
+                                          </form> --}}
                                       </td>
                                   </tr>
                                   
