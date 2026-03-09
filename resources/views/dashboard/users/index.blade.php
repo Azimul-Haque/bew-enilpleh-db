@@ -74,7 +74,7 @@
                       <div class="modal fade" id="activateModal{{ $user->id }}" tabindex="-1" role="dialog" aria-labelledby="activateModalLabel" aria-hidden="true" data-backdrop="static">
                         <div class="modal-dialog" role="document">
                           <div class="modal-content">
-                            <div class="modal-header bg-info">
+                            <div class="modal-header bg-warning">
                               <h5 class="modal-title" id="activateModalLabel">একটিভেট করুন</h5>
                               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                 <span aria-hidden="true">&times;</span>
@@ -87,7 +87,7 @@
                               </div>
                               <div class="modal-footer">
                                 <button type="button" class="btn btn-secondary" data-dismiss="modal">ফিরে যান</button>
-                                <button type="submit" class="btn btn-info">মেসেজ পাঠান</button>
+                                <button type="submit" class="btn btn-warning">মেসেজ পাঠান</button>
                               </div>
                             </form>
                           </div>
