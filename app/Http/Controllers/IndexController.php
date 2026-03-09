@@ -62,6 +62,7 @@ class IndexController extends Controller
         $districts = District::all();
         $medicaldepartments = Medicaldepartment::all();
         $medicalsymptoms = Medicalsymptom::all();
+        $hospitals = Hospital::all();
 
         return view('index.doctors.register')
                         ->withDistricts($districts)
