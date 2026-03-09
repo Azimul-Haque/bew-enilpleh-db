@@ -8,6 +8,7 @@
 @section('content')
 	@section('page-header') ড্যাশবোর্ড @endsection
     <div class="container-fluid">
+      @if(Auth::user()->role != 'doctor')
         <div class="row">
           {{-- @if(Auth::user()->role == 'admin' || in_array('hospitals', Auth::user()->accessibleTables())) --}}
             <div class="col-md-3">
