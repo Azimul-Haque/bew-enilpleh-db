@@ -59,6 +59,10 @@ class IndexController extends Controller
 
     public function registerDoctor()
     {
+        $districts = District::all();
+        $medicaldepartments = Medicaldepartment::all();
+        $medicalsymptoms = Medicalsymptom::all();
+        
         return view('index.doctors.register');
     }
 
