@@ -32,6 +32,7 @@ Route::post('/doctor/register/store', 'IndexController@registerDoctorStore')->na
 
 // Hospital
 Route::get('/dashboard/hospitals', 'HospitalController@index')->name('dashboard.hospitals');
+Route::get('/dashboard/chambers', 'HospitalController@index')->name('dashboard.chambers');
 Route::get('/dashboard/hospitals/{search}', 'HospitalController@indexSearch')->name('dashboard.hospitals.search');
 Route::get('/dashboard/hospitals/single/{id}', 'HospitalController@getSingleHospital')->name('dashboard.singlehospital');
 Route::post('/dashboard/hospitals/store', 'HospitalController@storeHospital')->name('dashboard.hospitals.store');
