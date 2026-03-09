@@ -810,4 +810,26 @@ class DoctorController extends Controller
                             ->withDoctor($doctor)
                             ->withHospitals($hospitals);
     }
+
+    public function storeChamber(Request $request)
+    {
+        $request->validate([
+            'hospital_id' => 'required',
+            'serial_phone' => 'required',
+            'weekdays' => 'required',
+        ]);
+
+        $doctor = auth()->user()->doctor;
+
+        $chamber = new \App\Doctorhospital();
+        $chamber->doctor_id = $doctor->id;
+        $chamber->hospital_id = $request->hospital_id;
+        $chamber->address_or_room = $request->address_or_room;
+        $chamber->serial_phone = $request->serial_phone;
+        $chamber->weekdays = $request->weekdays;
+        $chamber->onlineserial = $request->onlineserial;
+        $chamber->save();
+
+        return redirect()->back()->with('success', 'নতুন চেম্বারটি সফলভাবে যুক্ত করা হয়েছে। এটি এখন সক্রিয়।');
+    }
 }
