@@ -96,7 +96,7 @@ class IndexController extends Controller
 
         DB::beginTransaction();
 
-        dd($request->all());
+        // dd($request->all());
 
         try {
             // $user = User::create([
