@@ -55,7 +55,7 @@ class DashboardController extends Controller
             abort(403, 'Access Denied');
         } elseif(Auth::user()->role == 'doctor') {
             if(Auth::user()->is_active == 0) {
-                Session::flush();
+                // Session::flush();
                 Session::flash('warning', 'আপনার একাউন্ট এখনও একটিভেট করা হয়নি! SmartBD এডমিনের সাথে যোগাযোগ করুন!');
                 return redirect()->route('index.doctor.register');
             }
