@@ -14,7 +14,6 @@
             
             <form action="{{ route('dashboard.doctors.chambers.update', $chamber->id) }}" method="POST">
                 @csrf
-                @method('POST')
                 
                 <div class="modal-body p-4">
                     <div class="alert alert-secondary border-0 mb-4">
