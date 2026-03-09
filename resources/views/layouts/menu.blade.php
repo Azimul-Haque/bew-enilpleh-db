@@ -15,6 +15,7 @@
 </li>
 @endif
 
+@if(Auth::user()->role != 'doctor')
 {{-- @if(Auth::user()->role == 'admin' || in_array('hospitals', Auth::user()->accessibleTables())) --}}
 <li class="nav-item">
     <a href="{{ route('dashboard.hospitals') }}" class="nav-link {{ Request::is('dashboard/hospitals') ? 'active' : '' }} {{ Request::is('dashboard/hospitals/*') ? 'active' : '' }}">
@@ -41,6 +42,7 @@
     </a>
 </li>
 {{-- @endif --}}
+@endif
 
 @if(Auth::user()->role == 'admin' || Auth::user()->role == 'editor')
 <li class="nav-item">
