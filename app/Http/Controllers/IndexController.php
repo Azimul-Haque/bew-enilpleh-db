@@ -106,7 +106,7 @@ class IndexController extends Controller
                 'is_active' => 0,
             ]);
 
-            $doctor = new Doctor();
+            $doctor = new Doctor;
             $doctor->user_id = $user->id;
             $doctor->district_id = $request->district_id;
             $doctor->upazilla_id = $request->upazilla_id;
