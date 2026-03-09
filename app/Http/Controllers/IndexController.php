@@ -57,7 +57,18 @@ class IndexController extends Controller
         // return view('index.index')->withPackages($packages);
     }
 
-    public function getContact ()
+    public function registerDoctor()
+    {
+        return view('index.doctors.register');
+    }
+
+
+
+
+
+
+
+    public function getContact()
     {
         return view('index.contact');
     }
