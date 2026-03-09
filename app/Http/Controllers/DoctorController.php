@@ -838,7 +838,7 @@ class DoctorController extends Controller
 
     public function doctorChamberUpdate(Request $request, $id)
     {
-        $chamber = \App\Doctorhospital::findOrFail($id);
+        $chamber = Doctorhospital::findOrFail($id);
         
         // ... validation ...
 
