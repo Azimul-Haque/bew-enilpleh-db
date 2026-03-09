@@ -190,20 +190,23 @@
 @endsection
 
 @section('third_party_scripts')
-  <script type="text/javascript" src="{{ asset('js/jquery-for-dp.min.js') }}"></script>
-  <script type="text/javascript" src="{{ asset('js/bootstrap-datepicker.min.js') }}"></script>
-  <link rel="stylesheet" href="{{ asset('css/bootstrap-datepicker.min.css') }}">
+    
 
-  <script type="text/javascript">
-      $(document).ready(function() {
-          $('.ondays-datepicker').datepicker({
-              format: 'yyyy-mm-dd',
-              startDate: new Date(),
-              todayHighlight: true,
-              autoclose: false,
-              multidate: true,
-              multidateSeparator: ","
-          });
-      });
-  </script>
+    <script type="text/javascript" src="{{ asset('js/jquery-for-dp.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('js/bootstrap-datepicker.min.js') }}"></script>
+
+    <script type="text/javascript">
+      $(".ondays-datepicker").datepicker({
+        format: 'yyyy-mm-dd',
+        startDate: new Date(),
+        todayHighlight: true,
+        autoclose: false,
+        multidate: true,
+      })
+      // Close Button Functionality
+      // $("#closePicker").click(function() {
+      //   $("#selected_offdays").datepicker('hide'); // Close the picker
+      //   $('body').click();
+      // })
+    </script>
 @endsection
