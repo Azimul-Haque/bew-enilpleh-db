@@ -64,7 +64,7 @@
 
 
                 		</td>
-                		<td align="right" width="40%">
+                		<td align="" width="40%">
 
                       @if($user->is_active == 0)
                         <button type="button" class="btn btn-warning btn-sm" data-toggle="modal" data-target="#activateModal{{ $user->id }}" title="একটিভেট করুন">
