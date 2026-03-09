@@ -392,24 +392,39 @@ class DoctorController extends Controller
             }            
         }
 
-        if(isset($request->hospitals)){
-            // Get the IDs of hospitals already attached to this doctor
+        if (isset($request->hospitals)) {
+            $requestedHospitalIds = $request->hospitals; // IDs from the form
             $existingHospitalIds = $doctor->doctorhospitals->pluck('hospital_id')->toArray();
 
-            foreach($request->hospitals as $hospital_id) {
-                // Only add if the hospital_id is NOT already in the existing list
+            // 1. REMOVE: Hospitals that are in the database but NOT in the request
+            foreach ($doctor->doctorhospitals as $olddoctorhospital) {
+                if (!in_array($olddoctorhospital->hospital_id, $requestedHospitalIds)) {
+                    // Clear cache before deleting
+                    Cache::forget('hospitaldoctors' . $olddoctorhospital->hospital_id);
+                    $olddoctorhospital->delete();
+                }
+            }
+
+            // 2. ADD: Hospitals that are in the request but NOT in the database
+            foreach ($requestedHospitalIds as $hospital_id) {
                 if (!in_array($hospital_id, $existingHospitalIds)) {
                     $doctorhospital = new Doctorhospital;
                     $doctorhospital->doctor_id = $doctor->id;
                     $doctorhospital->hospital_id = $hospital_id;
                     
-                    // Note: You can set default values here if needed
+                    // Set default values for new chambers if necessary
+                    $doctorhospital->onlineserial = 0; 
                     $doctorhospital->save();
 
-                    // Clear cache only for the newly added hospital
-                    Cache::forget('hospitaldoctors'. $hospital_id);
+                    Cache::forget('hospitaldoctors' . $hospital_id);
                 }
-            }           
+            }
+        } else {
+            // If the hospitals field is empty/unset, remove all existing associations
+            foreach ($doctor->doctorhospitals as $olddoctorhospital) {
+                Cache::forget('hospitaldoctors' . $olddoctorhospital->hospital_id);
+                $olddoctorhospital->delete();
+            }
         }
 
         // image upload
