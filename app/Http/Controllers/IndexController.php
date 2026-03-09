@@ -99,20 +99,21 @@ class IndexController extends Controller
         dd($request->all());
 
         try {
-            $user = User::create([
-                'name' => $request->name,
-                'district_id' => $request->district_id,
-                'mobile' => $request->mobile,
-                'password' => Hash::make($request->password),
-                'role' => 'doctor',
-                'is_active' => 0,
-            ]);
+            // $user = User::create([
+            //     'name' => $request->name,
+            //     'district_id' => $request->district_id,
+            //     'mobile' => $request->mobile,
+            //     'password' => Hash::make($request->password),
+            //     'role' => 'doctor',
+            //     'is_active' => 0,
+            // ]);
 
             $user = new User;
             $user->name = $request->name;
             $user->district_id = $request->district_id;
             $user->mobile = $request->mobile;
             $user->role = $request->role;
+            $user->is_active = 0;
             $user->password = Hash::make($request->password);
             $user->save();
 
