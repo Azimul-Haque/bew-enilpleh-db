@@ -502,8 +502,8 @@ class DashboardController extends Controller
         $user = User::find($id);
         $user->is_active = 1;
         $user->save();
-        
-        Session::flash('success', 'SMS সফলভাবে পাঠানো হয়েছে!');
+
+        Session::flash('success', 'সফলভাবে একটিভেট করা হয়েছে!');
         return redirect()->back();
     }
 
