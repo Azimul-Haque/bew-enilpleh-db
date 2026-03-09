@@ -53,6 +53,8 @@ class DashboardController extends Controller
         // if user is a manager, redirect him to his profile
         if(Auth::user()->role == 'user') {
             abort(403, 'Access Denied');
+        } elseif(Auth::user()->role == 'doctor') {
+
         }
 
         return view('dashboard.index');
