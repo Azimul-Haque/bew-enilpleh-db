@@ -10,6 +10,7 @@ use App\Medicaldepartment;
 use App\Medicalsymptom;
 use App\Hospital;
 use App\Doctor;
+use App\Doctormedicaldepartment;
 
 
 use App\Package;
