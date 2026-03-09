@@ -239,7 +239,7 @@ $(document).ready(function() {
         const Toast = Swal.mixin({
             toast: false,
             position: 'center', // <--- This moves it to the middle center
-            showConfirmButton: false,
+            showConfirmButton: true,
             timer: 3000,
             timerProgressBar: true,
             didOpen: (toast) => {
