@@ -231,9 +231,9 @@ $(document).ready(function() {
 <script>
     $(document).ready(function() {
         const Toast = Swal.mixin({
-            toast: true,
+            toast: false,
             position: 'top-end',
-            showConfirmButton: false,
+            showConfirmButton: true,
             timer: 3000,
             timerProgressBar: true,
         });
