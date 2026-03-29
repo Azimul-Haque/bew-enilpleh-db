@@ -616,7 +616,7 @@
                     </div>
                   </div>
                   
-                  <div class="row">
+                  {{-- <div class="row">
                     <div class="col-md-6">
                       <div class="input-group mb-3">
                           <input type="number"
@@ -630,16 +630,6 @@
                       </div>
                     </div>
                     <div class="col-md-6">
-                      {{-- <div class="input-group mb-3">
-                          <input type="number"
-                                 name="helpline"
-                                 value="{{ old('helpline') }}"
-                                 class="form-control"
-                                 placeholder="হেল্পলাইন নম্বর (যদি থাকে)">
-                          <div class="input-group-append">
-                              <div class="input-group-text"><span class="fas fa-mobile"></span></div>
-                          </div>
-                      </div> --}}
                       <div class="input-group mb-3">
                           <input type="text"
                                  name="address"
@@ -648,7 +638,7 @@
                                  placeholder="চেম্বারের ঠিকানা" required>
                       </div>
                     </div>
-                  </div>
+                  </div> --}}
 
                   
                   
