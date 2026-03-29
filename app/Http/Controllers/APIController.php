@@ -417,13 +417,13 @@ class APIController extends Controller
                 //     $doctor->makeHidden('doctormedicaldepartments', 'doctorimage', 'district_id', 'bmdc_number', 'serial', 'address', 'helpline', 'weekdays', 'offdays', 'onlineserial', 'created_at', 'updated_at');
                 //     // dd($doctorstoreturn);
                 // }
-                return $doctors;
+                return $chambers;
             });
             
             // dd($courses);
             return response()->json([
                 'success' => true,
-                'doctors' => $doctors,
+                'chambers' => $chambers,
             ]);
         } else {
             return response()->json([
