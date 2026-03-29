@@ -90,9 +90,13 @@
                                               <i class="fas fa-edit"></i>
                                           </button>
 
-                                          <a href="{{ route('dashboard.doctorserialindex', [$chamber->id, date('Y-m-d')]) }}" style="" class="btn btn-warning btn-sm">
-                                            <i class="fas fa-calendar-alt"></i> <small>অ্যাপয়েন্টমেন্ট তালিকা</small>
-                                          </a>
+                                          @if($chamber->onlineserial == 1)
+                                              <a href="{{ route('dashboard.doctorserialindex', [$chamber->id, date('Y-m-d')]) }}" style="" class="btn btn-warning btn-sm">
+                                                <i class="fas fa-calendar-alt"></i> <small>অ্যাপয়েন্টমেন্ট তালিকা</small>
+                                              </a>
+                                          @endif
+
+                                          
                                           
                                           {{-- <form action="{{ route('doctor.chambers.destroy', $chamber->id) }}" method="POST" class="d-inline" onsubmit="return confirm('আপনি কি এই চেম্বারটি বাদ দিতে চান?')">
                                               @csrf @method('DELETE')
