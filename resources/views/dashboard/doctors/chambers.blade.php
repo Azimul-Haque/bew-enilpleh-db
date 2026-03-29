@@ -165,7 +165,7 @@
                                   @empty
                                   <tr>
                                       <td colspan="6" class="text-center py-5">
-                                          <img src="{{ asset('assets/images/no-data.png') }}" width="80" class="mb-3 opacity-50"><br>
+                                          <img src="{{ asset('images/no-data.png') }}" width="80" class="mb-3 opacity-50"><br>
                                           <span class="text-muted">আপনার কোনো চেম্বার এখনো সেট করা হয়নি।</span>
                                       </td>
                                   </tr>
