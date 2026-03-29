@@ -160,17 +160,19 @@
               <span aria-hidden="true">&times;</span>
             </button>
           </div>
+          <form class="form-inline form-group-lg" action="">
           <div class="modal-body">
-            <form class="form-inline form-group-lg" action="">
+            
               <div class="form-group">
                 <input type="text" id="selectdate2" class="form-control form-control-sm" placeholder="তারিখ সিলেক্ট করুন" required>
               </div>
-            </form>
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-dismiss="modal">ফিরে যান</button>
             <button type="submit" class="btn btn-primary">মেসেজ পাঠান</button>
           </div>
+          
+            </form>
         </div>
       </div>
     </div>
