@@ -858,6 +858,8 @@ class DoctorController extends Controller
         $chamber->is_chamber = 1;
         $chamber->save();
 
+        Cache::forget('doctorchambers'. $request->doctor_id);
+
         return redirect()->back()->with('success', 'নতুন চেম্বারটি সফলভাবে যুক্ত করা হয়েছে। এটি এখন সক্রিয়।');
     }
 
