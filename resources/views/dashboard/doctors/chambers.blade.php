@@ -73,11 +73,6 @@
                                             <input type="checkbox" class="custom-control-input" id="switch1">
                                             <label class="custom-control-label" for="switch1">অনলাইন সিরিয়াল সক্রিয় করুন</label>
                                           </div>
-
-                                          <div class="custom-control custom-switch">
-                                            <input type="checkbox" class="custom-control-input" id="switch2" checked>
-                                            <label class="custom-control-label" for="switch2">অফলাইন মোড</label>
-                                          </div>
                                       </td>
                                       <td>
                                           @if($chamber->address_or_room)
