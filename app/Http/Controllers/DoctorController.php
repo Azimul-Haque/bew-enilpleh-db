@@ -619,6 +619,8 @@ class DoctorController extends Controller
                                          ->where('serialdate', $serialdate)
                                          ->paginate(10);
         }
+
+        $hospital = Hospital::findOrFail($hospital_id);
         
         // dd($doctorserials);
         $pdf = PDF::loadView('dashboard.doctors.pdf.serials', ['doctor' => $doctor, 'doctorserials' => $doctorserials, 'serialdate' => $serialdate]);
