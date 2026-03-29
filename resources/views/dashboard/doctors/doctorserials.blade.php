@@ -155,7 +155,7 @@
       <div class="modal-dialog modal-md" role="document">
         <div class="modal-content">
           <div class="modal-header bg-warning">
-            <h5 class="modal-title" id="prntAptModal"><i class="fas fa-print"></i> ক্যান্সেল মেসেজ পাঠান</h5>
+            <h5 class="modal-title" id="prntAptModal"><i class="fas fa-print"></i> প্রিন্ট করুন</h5>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
