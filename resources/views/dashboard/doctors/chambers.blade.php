@@ -54,6 +54,7 @@
                               <thead class="bg-light">
                                   <tr>
                                       <th>হাসপাতালের নাম</th>
+                                      <th>চেম্বার কি না</th>
                                       <th>রুম/ঠিকানা</th>
                                       <th>সিরিয়াল ফোন/সময়সূচী</th>
                                       <th class="text-center">অনলাইন সিরিয়াল</th>
