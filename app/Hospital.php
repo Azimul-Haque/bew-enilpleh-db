@@ -61,4 +61,8 @@ class Hospital extends Model
             $hospital->doctorhospitals()->delete();
         });
     }
+
+    public function doctorserials(){
+        return $this->hasMany('App\Doctorserial');
+    }
 }
