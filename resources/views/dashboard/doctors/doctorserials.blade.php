@@ -286,7 +286,7 @@
     $("#selectdate").keyup(function(e) {
       if(e.which == 13) {
         if($('#selectdate').val() != '') {
-          var urltocall = '{{ route('dashboard.index') }}' +  '/dashboard/doctors/appoinments/pdf/{{ $doctor->id }}/{{ $hospitalid }}/appoinments/list/' + $('#selectdate').val();
+          var urltocall = '{{ route('dashboard.doctors') }}' +  '/{{ $doctor->id }}/{{ $hospitalid }}/appoinments/list/' + $('#selectdate').val();
           location.href= urltocall;
         } else {
           $('#selectdate').css({ "border": '#FF0000 2px solid'});
@@ -300,8 +300,8 @@
 
     $(document).on('click', '#print-btn', function() {
       if($('#selectdate2').val() != '') {
-        {{-- var urltocall = '{{ route('dashboard.getdoctorserialpdf', [$doctor->id, $hospitalid]) }}';
-        location.href= urltocall; --}}
+        var urltocall = '{{ route('dashboard.index') }}' +  '/dashboard/doctors/appoinments/pdf//{{ $doctor->id }}/{{ $hospitalid }}/' + $('#selectdate2').val();
+        location.href= urltocall;
       } else {
         $('#selectdate2').css({ "border": '#FF0000 2px solid'});
         Toast.fire({
