@@ -301,7 +301,8 @@
     $(document).on('click', '#print-btn', function() {
       if($('#selectdate2').val() != '') {
         var urltocall = '{{ route('dashboard.index') }}' +  '/doctors/appoinments/pdf/{{ $doctor->id }}/{{ $hospitalid }}/' + $('#selectdate2').val();
-        location.href= urltocall;
+        {{-- location.href= urltocall; --}}
+        window.open(urltocall, '_blank');
       } else {
         $('#selectdate2').css({ "border": '#FF0000 2px solid'});
         Toast.fire({
