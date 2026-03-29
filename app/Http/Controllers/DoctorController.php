@@ -885,7 +885,7 @@ class DoctorController extends Controller
 
     public function toggleChamberStatus(Request $request, $id)
     {
-        $chamber = \App\Doctorhospital::findOrFail($id);
+        $chamber = Doctorhospital::findOrFail($id);
 
         // চেক বক্স টিক দেওয়া থাকলে ১, না থাকলে ০
         $chamber->is_chamber = $request->has('is_chamber') ? 1 : 0;
