@@ -855,6 +855,7 @@ class DoctorController extends Controller
             $chamber->ondays = json_encode(explode(',', $request->ondays));
         }
         $chamber->onlineserial = $request->onlineserial;
+        $chamber->is_chamber = 1;
         $chamber->save();
 
         return redirect()->back()->with('success', 'নতুন চেম্বারটি সফলভাবে যুক্ত করা হয়েছে। এটি এখন সক্রিয়।');
