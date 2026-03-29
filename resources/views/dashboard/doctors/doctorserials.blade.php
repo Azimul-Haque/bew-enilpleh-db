@@ -14,7 +14,7 @@
 @endsection
 
 @section('content')
-  @section('page-header') <a href="{{ Auth::user()->role == 'admin' ?? route('dashboard.doctors') }}">ডাক্তার তালিকা</a> / {{ $doctor->name }}-এর অ্যাপয়েন্টমেন্ট তালিকা @endsection
+  @section('page-header') <a href="{{ Auth::user()->role == 'admin' ? route('dashboard.doctors') : '#!' }}">ডাক্তার তালিকা</a> / {{ $doctor->name }}-এর অ্যাপয়েন্টমেন্ট তালিকা @endsection
     <div class="container-fluid">
       <div class="card">
             <div class="card-header">
