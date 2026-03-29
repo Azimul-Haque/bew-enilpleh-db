@@ -83,10 +83,24 @@
                                           <small class="text-muted">{{ $chamber->hospital->upazilla->name_bangla }}, {{ $chamber->hospital->district->name_bangla }}</small>
                                       </td>
                                       <td>
-                                          <div class="custom-control custom-switch">
-                                            <input type="checkbox" class="custom-control-input" id="switch1">
-                                            <label class="custom-control-label" for="switch1">অনলাইন সিরিয়াল সক্রিয় করুন</label>
-                                          </div>
+                                          <form action="{{ route('doctor.chambers.toggle-status', $chamber->id) }}" method="POST">
+                                              @csrf
+                                              @method('PUT')
+                                              
+                                              <div class="custom-control custom-switch">
+                                                  <input type="checkbox" 
+                                                         name="is_chamber" 
+                                                         class="custom-control-input" 
+                                                         id="switch-{{ $chamber->id }}" 
+                                                         value="1" 
+                                                         {{ $chamber->is_chamber == 1 ? 'checked' : '' }} 
+                                                         onchange="this.form.submit()">
+                                                         
+                                                  <label class="custom-control-label font-weight-bold" for="switch-{{ $chamber->id }}">
+                                                      {{ $chamber->is_chamber == 1 ? 'চেম্বার সক্রিয়' : 'চেম্বার বন্ধ' }}
+                                                  </label>
+                                              </div>
+                                          </form>
                                       </td>
                                       <td>
                                           @if($chamber->address_or_room)
