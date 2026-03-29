@@ -883,7 +883,7 @@ class DoctorController extends Controller
 
         $chamber->save();
 
-        Cache::forget('doctorchambers'. $request->doctor_id);
+        Cache::forget('doctorchambers'. $chamber->doctor_id);
 
         return redirect()->back()->with('success', 'তথ্য সফলভাবে আপডেট করা হয়েছে!');
     }
