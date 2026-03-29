@@ -80,7 +80,7 @@
                                       </td>
                                       <td class="text-center">
                                           @if($chamber->onlineserial == 1)
-                                              <span class="badge badge-success px-2">সক্রিয় ✅</span>
+                                              <span class="badge badge-success px-2">চালু আছে ✅</span>
                                           @else
                                               <span class="badge badge-secondary px-2">বন্ধ ❌</span>
                                           @endif
