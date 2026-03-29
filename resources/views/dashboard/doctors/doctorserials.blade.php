@@ -300,8 +300,8 @@
 
     $(document).on('click', '#print-btn', function() {
       if($('#selectdate2').val() != '') {
-        var urltocall = '{{ route('dashboard.getdoctorserialpdf', [$doctor->id, $hospitalid]) }}';
-        location.href= urltocall;
+        {{-- var urltocall = '{{ route('dashboard.getdoctorserialpdf', [$doctor->id, $hospitalid]) }}';
+        location.href= urltocall; --}}
       } else {
         $('#selectdate2').css({ "border": '#FF0000 2px solid'});
         Toast.fire({
