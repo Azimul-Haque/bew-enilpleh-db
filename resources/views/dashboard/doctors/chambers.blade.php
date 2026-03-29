@@ -83,7 +83,7 @@
                                           <small class="text-muted">{{ $chamber->hospital->upazilla->name_bangla }}, {{ $chamber->hospital->district->name_bangla }}</small>
                                       </td>
                                       <td>
-                                          <form action="{{ route('doctor.chambers.toggle-status', $chamber->id) }}" method="POST">
+                                          <form action="{{ route('dashboard.doctors.chambers.toggle-status', $chamber->id) }}" method="POST">
                                               @csrf
                                               @method('PUT')
                                               
