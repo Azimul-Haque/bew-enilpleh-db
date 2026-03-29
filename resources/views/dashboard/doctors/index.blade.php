@@ -317,7 +317,7 @@
                                           </div>
                                         </div> --}}
 
-                                        <div style="margin-top: 15px;">
+                                        {{-- <div style="margin-top: 15px;">
                                           @php
                                             $datesString = '';
                                             if($doctor->offdays) {
@@ -327,16 +327,7 @@
                                             }
                                           @endphp
                                           <input type="text" id="selected_offdays" name="selected_offdays" class="selected_offdays form-control" placeholder="যেদিন যেদিন রোগী দেখবেন (প্রয়োজনে একাধিক সিলেক্ট করা যাবে) [Optional]" value="{{ $datesString }}" readonly>
-
-                                          {{-- <select name="offdays[]" class="form-control multiple-select" multiple="multiple" data-placeholder="যেদিন যেদিন রোগী দেখবেন না (প্রয়োজনে একাধিক সিলেক্ট করা যাবে) [Optional]">
-                                              
-                                              @foreach($optiondates as $date)
-                                                  <option value="{{ $date->format('Y-m-d') }}" @if(!empty($decodedoffdays) && in_array($date->format('Y-m-d'), $decodedoffdays, true)) selected @endif>
-                                                      {{ bangla($date->format('d-m-Y l')) }}
-                                                  </option>
-                                              @endforeach
-                                          </select> --}}
-                                        </div> 
+                                        </div> --}} 
                                     
                                   </div>
                                   <div class="modal-footer">
