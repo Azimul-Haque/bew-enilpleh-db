@@ -51,7 +51,7 @@ Route::post('/dashboard/doctors/departments/store', 'DoctorController@storeDocto
 Route::post('/dashboard/doctors/departments/{id}/update', 'DoctorController@updateDoctorDept')->name('dashboard.doctorsdept.update');
 Route::post('/dashboard/doctors/symptom/store', 'DoctorController@storeDoctorSymp')->name('dashboard.doctorssymp.store');
 Route::post('/dashboard/doctors/symptom/{id}/update', 'DoctorController@updateDoctorSymp')->name('dashboard.doctorssymp.update');
-Route::get('/dashboard/doctors/{doctor_id}/appoinments/list/{date}', 'DoctorController@doctorSerialIndex')->name('dashboard.doctorserialindex');
+Route::get('/dashboard/doctors/{doctor_id}/{hospital_id}/appoinments/list/{date}', 'DoctorController@doctorSerialIndex')->name('dashboard.doctorserialindex');
 Route::post('/dashboard/doctors/{doctor_id}/appoinments/cancel/{date}', 'DoctorController@doctorSerialCancelSingle')->name('dashboard.doctorserialcancelsingle');
 Route::post('/dashboard/doctors/{doctor_id}/appoinments/cancel/{date}/all', 'DoctorController@doctorSerialCancelALL')->name('dashboard.doctorserialcancelall');
 Route::get('/dashboard/doctors/appoinments/pdf/{doctor_id}/{date}', 'DoctorController@getDoctorSerialPDF')->name('dashboard.getdoctorserialpdf');
