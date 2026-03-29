@@ -36,6 +36,7 @@ use App\Newspaper;
 use App\Newspaperimage;
 use App\Message;
 use App\Doctorserial;
+use App\Doctorhospital;
 
 use Hash;
 use Carbon\Carbon;
@@ -402,8 +403,8 @@ class APIController extends Controller
     {
         if($softtoken == env('SOFT_TOKEN'))
         {
-            $doctors = Cache::remember('doctorchambers'.$doctor_id, 30 * 24 * 60 * 60, function () use ($doctor_id) {
-                $doctors = Doctor::whereHas('doctorhospitals', function($q) use ($doctor_id){
+            $chambers = Cache::remember('doctorchambers'.$doctor_id, 30 * 24 * 60 * 60, function () use ($doctor_id) {
+                $chambers = Doctorhospital::whereHas('doctorhospitals', function($q) use ($doctor_id){
                                         $q->where('doctor_id', $doctor_id);
                                     })->get();
                 // dd($doctors);
