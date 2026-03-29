@@ -95,16 +95,16 @@
                               </thead>
                               <tbody>
                                   @forelse($doctor->doctorhospitals as $chamber)
-                                  <tr>
-                                      <td>
+                                  <tr style="{{ $chamber->is_chamber == 0 ? 'background-color: #fcfcfc;' : '' }}">
+                                      <td style="{{ $chamber->is_chamber == 0 ? 'opacity: 0.5; filter: grayscale(1);' : '' }}">
                                           <div class="font-weight-bold">{{ $chamber->hospital->name }}</div>
                                           <small class="text-muted">{{ $chamber->hospital->upazilla->name_bangla }}, {{ $chamber->hospital->district->name_bangla }}</small>
                                       </td>
+
                                       <td>
                                           <form action="{{ route('dashboard.doctors.chambers.toggle-status', $chamber->id) }}" method="POST">
                                               @csrf
                                               @method('PUT')
-                                              
                                               <div class="custom-control custom-switch">
                                                   <input type="checkbox" 
                                                          name="is_chamber" 
@@ -113,50 +113,50 @@
                                                          value="1" 
                                                          {{ $chamber->is_chamber == 1 ? 'checked' : '' }} 
                                                          onchange="this.form.submit()">
-                                                         
+                                                  
                                                   <label class="custom-control-label font-weight-bold" for="switch-{{ $chamber->id }}">
-                                                      {{ $chamber->is_chamber == 1 ? 'চেম্বার সক্রিয়' : 'চেম্বার বন্ধ' }}
+                                                      {{ $chamber->is_chamber == 1 ? 'চেম্বার সক্রিয়' : 'চেম্বার বন্ধ' }}
                                                   </label>
                                               </div>
                                           </form>
                                       </td>
-                                      <td>
+
+                                      <td style="{{ $chamber->is_chamber == 0 ? 'opacity: 0.5; filter: grayscale(1);' : '' }}">
                                           @if($chamber->address_or_room)
-                                              <span class="badge badge-info">{{ $chamber->address_or_room }}</span>
+                                              <span class="badge {{ $chamber->is_chamber == 1 ? 'badge-info' : 'badge-secondary' }}">
+                                                  {{ $chamber->address_or_room }}
+                                              </span>
                                           @else
                                               <span class="text-muted small">সেট করা নেই</span>
                                           @endif
                                       </td>
-                                      <td>
-                                        {{ $chamber->serial_phone ?? 'সেট করা নেই' }}<br>
-                                        <div class="small" style="max-width: 200px;">{{ $chamber->weekdays ?? 'সেট করা নেই' }}</div>
+
+                                      <td style="{{ $chamber->is_chamber == 0 ? 'opacity: 0.5;' : '' }}">
+                                          <span class="{{ $chamber->is_chamber == 0 ? 'text-muted' : '' }}">{{ $chamber->serial_phone ?? 'সেট করা নেই' }}</span><br>
+                                          <div class="small {{ $chamber->is_chamber == 0 ? 'text-muted' : '' }}" style="max-width: 200px;">
+                                              {{ $chamber->weekdays ?? 'সেট করা নেই' }}
+                                          </div>
                                       </td>
-                                      <td class="text-center">
+
+                                      <td class="text-center" style="{{ $chamber->is_chamber == 0 ? 'opacity: 0.5; filter: grayscale(1);' : '' }}">
                                           @if($chamber->onlineserial == 1)
-                                              <span class="badge badge-success px-2">চালু আছে ✅</span>
+                                              <span class="badge {{ $chamber->is_chamber == 1 ? 'badge-success' : 'badge-secondary' }} px-2">চালু আছে ✅</span>
                                           @else
                                               <span class="badge badge-secondary px-2">বন্ধ আছে ❌</span>
                                           @endif
                                       </td>
+
                                       <td class="text-right">
-                                          <button class="btn btn-sm btn-primary" title="এডিট করুন" data-toggle="modal" data-target="#editChamber-{{ $chamber->id }}">
+                                          <button class="btn btn-sm {{ $chamber->is_chamber == 1 ? 'btn-primary' : 'btn-outline-secondary' }}" 
+                                                  title="এডিট করুন" data-toggle="modal" data-target="#editChamber-{{ $chamber->id }}">
                                               <i class="fas fa-edit"></i> <small>এডিট</small>
                                           </button>
 
-                                          @if($chamber->onlineserial == 1)
-                                              <a href="{{ route('dashboard.doctorserialindex', [$chamber->id, date('Y-m-d')]) }}" style="" class="btn btn-warning btn-sm">
-                                                <i class="fas fa-calendar-alt"></i> <small>অ্যাপয়েন্টমেন্ট তালিকা</small>
+                                          @if($chamber->is_chamber == 1 && $chamber->onlineserial == 1)
+                                              <a href="{{ route('dashboard.doctorserialindex', [$chamber->id, date('Y-m-d')]) }}" class="btn btn-warning btn-sm shadow-sm">
+                                                  <i class="fas fa-calendar-alt"></i> <small>অ্যাপয়েন্টমেন্ট তালিকা</small>
                                               </a>
                                           @endif
-
-                                          
-                                          
-                                          {{-- <form action="{{ route('doctor.chambers.destroy', $chamber->id) }}" method="POST" class="d-inline" onsubmit="return confirm('আপনি কি এই চেম্বারটি বাদ দিতে চান?')">
-                                              @csrf @method('DELETE')
-                                              <button type="submit" class="btn btn-sm btn-outline-danger rounded-circle">
-                                                  <i class="fas fa-trash-alt"></i>
-                                              </button>
-                                          </form> --}}
                                       </td>
                                   </tr>
                                   
