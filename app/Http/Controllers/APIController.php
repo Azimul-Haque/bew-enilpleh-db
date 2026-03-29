@@ -398,6 +398,41 @@ class APIController extends Controller
         }
     }
 
+    public function getDoctorChambers($softtoken, $hospital_id)
+    {
+        if($softtoken == env('SOFT_TOKEN'))
+        {
+            $doctors = Cache::remember('hospitaldoctors'.$hospital_id, 30 * 24 * 60 * 60, function () use ($hospital_id) {
+                $doctors = Doctor::whereHas('doctorhospitals', function($q) use ($hospital_id){
+                                        $q->where('hospital_id', $hospital_id);
+                                    })->get();
+                // dd($doctors);
+                foreach($doctors as $doctor) {
+                    $medicaldepartments = []; // shudhu department jothesto bojhar jonno
+                    foreach($doctor->doctormedicaldepartments as $doctormedicaldepartment) {
+                        $medicaldepartments[] = $doctormedicaldepartment->medicaldepartment->name;
+                    }
+                    $doctor->medicaldepartments = $medicaldepartments;
+                    $doctor->makeHidden('doctormedicaldepartments', 'doctorimage', 'district_id', 'bmdc_number', 'serial', 'address', 'helpline', 'weekdays', 'offdays', 'onlineserial', 'created_at', 'updated_at');
+                    // dd($doctorstoreturn);
+                }
+                return $doctors;
+            });
+            
+            // dd($courses);
+            return response()->json([
+                'success' => true,
+                'doctors' => $doctors,
+            ]);
+        } else {
+            return response()->json([
+                'success' => false
+            ]);
+        }
+    }
+
+    
+
     public function getBloodDonorsDistrict($softtoken, $category, $district_id)
     {
         if($softtoken == env('SOFT_TOKEN'))
