@@ -3,7 +3,7 @@
         <img src="{{ asset('images/icon.png') }}"
              alt="AdminLTE Logo"
              class="brand-image img-circle elevation-2">
-        <span class="brand-text font-weight-light">বিডি হেল্পলাইন</span>
+        <span class="brand-text font-weight-light">SmartBD</span>
     </a>
 
     <div class="sidebar">
