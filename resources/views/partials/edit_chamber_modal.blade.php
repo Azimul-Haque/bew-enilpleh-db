@@ -21,15 +21,16 @@
                         <h5 class="mb-0 font-weight-bold text-white">{{ $chamber->hospital->name }}</h5>
                     </div>
 
-                    <div class="col-md-6 mb-3">
-                        <label class="font-weight-bold small text-muted">অনলাইন সিরিয়াল স্ট্যাটাস</label>
-                        <select name="onlineserial" class="form-control custom-select" required>
-                            <option value="1" {{ $chamber->onlineserial == 1 ? 'selected' : '' }}>সক্রিয় ✅ (অনলাইনে সিরিয়াল দেওয়া যাবে)</option>
-                            <option value="0" {{ $chamber->onlineserial == 0 ? 'selected' : '' }}>বন্ধ ❌ (শুধুমাত্র অফলাইন)</option>
-                        </select>
-                    </div>
-
                     <div class="row">
+
+                        <div class="col-md-6 mb-3">
+                            <label class="font-weight-bold small text-muted">অনলাইন সিরিয়াল স্ট্যাটাস</label>
+                            <select name="onlineserial" class="form-control custom-select" required>
+                                <option value="1" {{ $chamber->onlineserial == 1 ? 'selected' : '' }}>সক্রিয় ✅ (অনলাইনে সিরিয়াল দেওয়া যাবে)</option>
+                                <option value="0" {{ $chamber->onlineserial == 0 ? 'selected' : '' }}>বন্ধ ❌ (শুধুমাত্র অফলাইন)</option>
+                            </select>
+                        </div>
+                        
                         <div class="col-md-6 mb-3">
                             <label class="font-weight-bold small text-muted">চেম্বার এড্রেস/রুম নম্বর *</label>
                             <div class="input-group">
