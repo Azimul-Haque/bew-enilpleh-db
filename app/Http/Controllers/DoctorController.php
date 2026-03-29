@@ -541,6 +541,8 @@ class DoctorController extends Controller
                                          ->where('hospital_id', $hospital_id)
                                          ->where('serialdate', $todaydate)
                                          ->paginate(10);
+        } elseif(Auth::user()->role == 'doctor') {
+            $doctor = Auth::user()->accessibleDoctors()->first();
         }
         $doctor = Doctor::findOrFail($doctor_id);
         $doctorserials = Doctorserial::where('doctor_id', $doctor_id)
