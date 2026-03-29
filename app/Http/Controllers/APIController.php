@@ -992,7 +992,7 @@ class APIController extends Controller
         
         $doctorserial = new Doctorserial;
         $doctorserial->doctor_id = $request->doctor_id;
-        $doctorserial->hospital_id = $request->hospitalname;
+        $doctorserial->hospital_id = $request->hospital_id;
         $doctorserial->name = $request->name;
         $doctorserial->mobile = $request->mobile;
         $doctorserial->serialdate = $request->serialdate;
