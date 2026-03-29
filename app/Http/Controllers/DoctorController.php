@@ -896,6 +896,8 @@ class DoctorController extends Controller
         $chamber->is_chamber = $request->has('is_chamber') ? 1 : 0;
         $chamber->save();
 
+        Cache::forget('doctorchambers'. $chamber->doctor_id);
+
         return redirect()->back()->with('success', 'চেম্বারের স্ট্যাটাস পরিবর্তন করা হয়েছে!');
     }
 }
