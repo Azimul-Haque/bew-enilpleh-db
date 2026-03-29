@@ -141,13 +141,6 @@
                   <input type="hidden" name="doctor_id" value="{{ $doctor->id }}">
                   <div class="modal-body p-4">
                       <div class="row">
-                          <div class="col-md-6 mb-3">
-                              <label class="font-weight-bold small">অনলাইন সিরিয়াল</label>
-                              <select name="onlineserial" class="form-control" required>
-                                  <option value="1">অনলাইনে সিরিয়াল দেওয়া যাবে ✅</option>
-                                  <option value="0" selected>না, অফলাইন ❌</option>
-                              </select>
-                          </div>
                           <div class="col-md-12 mb-3">
                               <label class="font-weight-bold small">হাসপাতাল নির্বাচন করুন *</label>
                               <select name="hospital_id" class="form-control select21" style="width: 100%;" required>
@@ -159,6 +152,15 @@
                                   @endforeach
                               </select>
                           </div>
+
+                          <div class="col-md-6 mb-3">
+                              <label class="font-weight-bold small">অনলাইন সিরিয়াল</label>
+                              <select name="onlineserial" class="form-control" required>
+                                  <option value="1">অনলাইনে সিরিয়াল দেওয়া যাবে ✅</option>
+                                  <option value="0" selected>না, অফলাইন ❌</option>
+                              </select>
+                          </div>
+                          
                           <div class="col-md-6 mb-3">
                               <label class="font-weight-bold small">রুম নম্বর/বিভাগ *</label>
                               <input type="text" name="address_or_room" class="form-control" placeholder="উদা: ৩১০ নম্বর রুম" required>
