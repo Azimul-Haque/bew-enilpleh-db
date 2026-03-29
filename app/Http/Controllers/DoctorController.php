@@ -568,6 +568,7 @@ class DoctorController extends Controller
                             ->withDoctor($doctor)
                             ->withDoctorserials($doctorserials)
                             ->withTodaydate($todaydate);
+                            ->withHospitalid($hospital_id);
     }
 
     public function getDoctorSerialPDF($doctor_id, $serialdate)
