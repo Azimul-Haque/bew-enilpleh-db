@@ -36,8 +36,8 @@
           border-radius: 1rem;
       }
       .custom-switch .custom-control-label::after {
-          width: calc(1.5rem -4px);
-          height: calc(1.5rem -4px);
+          width: calc(1.5rem - 4px);
+          height: calc(1.5rem - 4px);
           border-radius: 1rem;
       }
       .custom-switch .custom-control-input:checked ~ .custom-control-label::after {
