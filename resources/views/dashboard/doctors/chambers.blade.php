@@ -148,7 +148,7 @@
 
                                       <td class="text-right">
                                           <button class="btn btn-sm {{ $chamber->is_chamber == 1 ? 'btn-primary' : 'btn-outline-secondary' }}" 
-                                                  title="এডিট করুন" data-toggle="modal" data-target="#editChamber-{{ $chamber->id }}">
+                                                  title="এডিট করুন" data-toggle="modal" data-target="#editChamber-{{ $chamber->id }}" {{ $chamber->is_chamber == 1 ? 'disabled' : '' }}>
                                               <i class="fas fa-edit"></i> <small>এডিট</small>
                                           </button>
 
