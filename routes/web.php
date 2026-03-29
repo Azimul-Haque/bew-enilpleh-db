@@ -54,8 +54,8 @@ Route::post('/dashboard/doctors/symptom/{id}/update', 'DoctorController@updateDo
 Route::get('/dashboard/doctors/{doctor_id}/{hospital_id}/appoinments/list/{date}', 'DoctorController@doctorSerialIndex')->name('dashboard.doctorserialindex');
 Route::post('/dashboard/doctors/{doctor_id}/appoinments/cancel/{date}', 'DoctorController@doctorSerialCancelSingle')->name('dashboard.doctorserialcancelsingle');
 Route::post('/dashboard/doctors/{doctor_id}/appoinments/cancel/{date}/all', 'DoctorController@doctorSerialCancelALL')->name('dashboard.doctorserialcancelall');
-Route::get('/dashboard/doctors/appoinments/pdf/{doctor_id}/{date}', 'DoctorController@getDoctorSerialPDF')->name('dashboard.getdoctorserialpdf');
-Route::post('/dashboard/doctors/{doctor_id}/appoinments/add/{date}/manually', 'DoctorController@addDoctorSerialManually')->name('dashboard.adddoctorserialmanually');
+Route::get('/dashboard/doctors/appoinments/pdf/{doctor_id}/{hospital_id}/{date}', 'DoctorController@getDoctorSerialPDF')->name('dashboard.getdoctorserialpdf');
+Route::post('/dashboard/doctors/{doctor_id}/{hospital_id}/appoinments/add/{date}/manually', 'DoctorController@addDoctorSerialManually')->name('dashboard.adddoctorserialmanually');
 Route::post('/dashboard/doctors/appoinments/delete/{serial_id}', 'DoctorController@deleteDoctorSerial')->name('dashboard.deletedoctorserial');
 
 Route::get('/dashboard/doctors/{id}/chambers', 'DoctorController@doctorChambers')->name('dashboard.doctors.chambers');
