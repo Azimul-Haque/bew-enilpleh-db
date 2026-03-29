@@ -538,6 +538,7 @@ class DoctorController extends Controller
                             ->where('district_id', Auth::user()->district_id)
                             ->first();
             $doctorserials = Doctorserial::where('doctor_id', $doctor->id)
+                                         ->where('hospital_id', $hospital_id)
                                          ->where('serialdate', $todaydate)
                                          ->paginate(10);
         }
