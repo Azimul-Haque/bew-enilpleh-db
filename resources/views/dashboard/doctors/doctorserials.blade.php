@@ -31,7 +31,7 @@
                   <a href="{{ route('dashboard.getdoctorserialpdf', [$doctor->id, $hospitalid, $todaydate]) }}" class="btn btn-success btn-sm"  style="margin-left: 5px;" target="_blank">
                     <i class="fas fa-print"></i> প্রিন্ট করুন
                   </a>
-                  <button type="button" class="btn btn-success btn-sm" style="margin-left: 5px;" title="প্রিন্ট করুন" data-toggle="modal" data-target="#sendCancelSMSALLModal">
+                  <button type="button" class="btn btn-success btn-sm" style="margin-left: 5px;" title="অ্যাপয়েন্টমেন্ট প্রিন্ট করুন" data-toggle="modal" data-target="#sendCancelSMSALLModal">
                    <i class="fas fa-print"></i> প্রিন্ট করুন
                   </button>
 
