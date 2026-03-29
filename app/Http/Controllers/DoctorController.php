@@ -594,13 +594,32 @@ class DoctorController extends Controller
                             ->where('district_id', Auth::user()->district_id)
                             ->first();
             $doctorserials = Doctorserial::where('doctor_id', $doctor->id)
-                                       ->where('serialdate', $serialdate)
+                                       ->where('hospital_id', $hospital_id)
+                                       ->where('serialdate', '>=', $todaydate)
                                        ->get();
+        } elseif(Auth::user()->role == 'doctor') {
+            if(in_array($doctor_id, Auth::user()->accessibleDoctors()->pluck('accessible_id')->toArray())) {
+                
+            } else {
+                abort(403, 'Access Denied');
+            }
+
+            $doctor = Doctor::where('id', $doctor_id)
+                            ->where('district_id', Auth::user()->district_id)
+                            ->first();
+            $doctorserials = Doctorserial::where('doctor_id', $doctor->id)
+                                         ->where('hospital_id', $hospital_id)
+                                         ->where('serialdate', '>=', $todaydate)
+                                         ->paginate(10);
+
+        } else {
+            $doctor = Doctor::findOrFail($doctor_id);
+            $doctorserials = Doctorserial::where('doctor_id', $doctor_id)
+                                         ->where('hospital_id', $hospital_id)
+                                         ->where('serialdate', '>=', $todaydate)
+                                         ->paginate(10);
         }
-        $doctor = Doctor::findOrFail($doctor_id);
-        $doctorserials = Doctorserial::where('doctor_id', $doctor_id)
-                                   ->where('serialdate', $serialdate)
-                                   ->get();
+        
         // dd($doctorserials);
         $pdf = PDF::loadView('dashboard.doctors.pdf.serials', ['doctor' => $doctor, 'doctorserials' => $doctorserials, 'serialdate' => $serialdate]);
         $fileName = 'Doctor-Serial-'. $doctor_id . '-' . $serialdate . '.pdf';
