@@ -300,7 +300,7 @@
 
     $(document).on('click', '#print-btn', function() {
       if($('#selectdate2').val() != '') {
-        var urltocall = '{{ route('dashboard.getdoctorserialpdf', [$doctor->id, $hospitalid]) }}' +  '/{{ $doctor->id }}/{{ $hospitalid }}/' + $('#selectdate2').val();
+        var urltocall = '{{ route('dashboard.getdoctorserialpdf', [$doctor->id, $hospitalid, $('#selectdate2').val()]) }}' +  '/{{ $doctor->id }}/{{ $hospitalid }}/' + $('#selectdate2').val();
         location.href= urltocall;
       } else {
         $('#selectdate2').css({ "border": '#FF0000 2px solid'});
