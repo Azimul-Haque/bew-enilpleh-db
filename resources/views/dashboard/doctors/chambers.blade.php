@@ -96,7 +96,7 @@
                                                          {{ $chamber->is_chamber == 1 ? 'checked' : '' }} 
                                                          onchange="this.form.submit()">
                                                          
-                                                  <label class="custom-control-label font-weight-bold" for="switch-{{ $chamber->id }}">
+                                                  <label class="custom-control-label font-weight-bold" for="switch-{{ $chamber->id }}" style="margin-left: 10px;">
                                                       {{ $chamber->is_chamber == 1 ? 'চেম্বার সক্রিয়' : 'চেম্বার বন্ধ' }}
                                                   </label>
                                               </div>
