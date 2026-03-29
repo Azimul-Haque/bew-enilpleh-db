@@ -28,7 +28,7 @@
                   <button type="button" id="search-button" class="btn btn-default btn-sm" style="margin-left: 5px;">
                     <i class="fas fa-search"></i> Search
                   </button>
-                  <a href="{{ route('dashboard.getdoctorserialpdf', [$doctor->id, $doctorserials->first()->hospital_id, $todaydate]) }}" class="btn btn-success btn-sm"  style="margin-left: 5px;" target="_blank">
+                  <a href="{{ route('dashboard.getdoctorserialpdf', [$doctor->id, $hospitalid, $todaydate]) }}" class="btn btn-success btn-sm"  style="margin-left: 5px;" target="_blank">
                     <i class="fas fa-print"></i> প্রিন্ট করুন
                   </a>
                   <button type="button" class="btn btn-warning btn-sm" style="margin-left: 5px;" title="সকলকে ক্যানসেল মেসেজ পাঠান" data-toggle="modal" data-target="#sendCancelSMSALLModal">
@@ -185,7 +185,7 @@
               <span aria-hidden="true">&times;</span>
             </button>
           </div>
-          <form method="post" action="{{ route('dashboard.adddoctorserialmanually', [$doctor->id, $doctorserials->first()->hospital_id, $todaydate]) }}" enctype="multipart/form-data">
+          <form method="post" action="{{ route('dashboard.adddoctorserialmanually', [$doctor->id, $hospitalid, $todaydate]) }}" enctype="multipart/form-data">
             <div class="modal-body">
         
               @csrf
@@ -232,7 +232,7 @@
 
     $(document).on('click', '#search-button', function() {
       if($('#selectdate').val() != '') {
-        var urltocall = '{{ route('dashboard.doctors') }}' +  '/{{ $doctor->id }}/{{ $doctorserials->first()->hospital_id }}/appoinments/list/' + $('#selectdate').val();
+        var urltocall = '{{ route('dashboard.doctors') }}' +  '/{{ $doctor->id }}/{{ $hospitalid }}/appoinments/list/' + $('#selectdate').val();
         location.href= urltocall;
       } else {
         $('#selectdate').css({ "border": '#FF0000 2px solid'});
@@ -245,7 +245,7 @@
     $("#selectdate").keyup(function(e) {
       if(e.which == 13) {
         if($('#selectdate').val() != '') {
-          var urltocall = '{{ route('dashboard.doctors') }}' +  '/{{ $doctor->id }}/{{ $doctorserials->first()->hospital_id }}/appoinments/list/' + $('#selectdate').val();
+          var urltocall = '{{ route('dashboard.doctors') }}' +  '/{{ $doctor->id }}/{{ $hospitalid }}/appoinments/list/' + $('#selectdate').val();
           location.href= urltocall;
         } else {
           $('#selectdate').css({ "border": '#FF0000 2px solid'});
