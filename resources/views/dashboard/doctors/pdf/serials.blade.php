@@ -36,7 +36,7 @@
   <body>
     <h3 align="center">
       <img src="{{ public_path('images/icon.png') }}" style="height: 80px; width: auto;"><br/>
-      <span class=""><b>SmartBD</b> - ২৪/৭ ই-সেবা</span><br/>
+      <span class="calibri_normal"><b>SmartBD</b></span> - ২৪/৭ ই-সেবা<br/>
     </h3>
     <h3 style="color: #397736; border-bottom: 1px solid #397736;" align="center">
         <b>{{ $doctor->name }}-এর সিরিয়ালসমূহ</b>
