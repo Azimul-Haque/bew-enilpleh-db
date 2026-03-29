@@ -514,7 +514,7 @@ class DoctorController extends Controller
         return redirect()->route('dashboard.doctors');
     }
 
-    public function doctorSerialIndex($doctor_id, $todaydate)
+    public function doctorSerialIndex($doctor_id, $hospital_id, $todaydate)
     {
         if(Auth::user()->role == 'manager') {
             if(!in_array('doctors', Auth::user()->accessibleTables())) {
