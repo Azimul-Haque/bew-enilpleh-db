@@ -32,7 +32,7 @@
 
       /* Increased padding to prevent text overlap */
       .custom-switch .custom-control-label {
-          padding-left: 2rem; /* Pushes text to the right of the wider switch */
+          padding-left: 1rem; /* Pushes text to the right of the wider switch */
           padding-top: 0.2rem;   /* Aligns text vertically with the larger switch */
           cursor: pointer;
       }
