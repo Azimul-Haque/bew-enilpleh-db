@@ -163,7 +163,7 @@
           <div class="modal-body">
             <form class="form-inline form-group-lg" action="">
               <div class="form-group">
-                <input type="text" id="selectdate" class="form-control form-control-sm" placeholder="তারিখ পরিবর্তন" required>
+                <input type="text" id="selectdate2" class="form-control form-control-sm" placeholder="তারিখ সিলেক্ট করুন" required>
               </div>
             </form>
           </div>
