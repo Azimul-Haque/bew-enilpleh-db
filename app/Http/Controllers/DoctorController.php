@@ -800,7 +800,7 @@ class DoctorController extends Controller
                 "Your appointment with " . $serialdoctor->name . " is booked successfully.\n" .
                 "Date: " . date('d-m-Y', strtotime($selecteddate)) . "\n" .
                 "Serial: " . count($doctorserialsforserial) . "\n" .
-                "Chamber: " . $serialdoctor->address . "\n\n" .
+                "Chamber: " . $hospital->name . ", " . $hospital->upazilla->name_bangla . ", " . $hospital->district->name_bangla . "\n\n" .
                 "Infoline - BD Smart Seba";
         
         // NEW PANEL
