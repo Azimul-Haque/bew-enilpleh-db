@@ -18,7 +18,7 @@
     <div class="container-fluid">
       <div class="card">
             <div class="card-header">
-              <h3 class="card-title">{{ $doctor->name }}-এর অ্যাপয়েন্টমেন্ট তালিকা (<strong>{{ date('d-m-Y', strtotime($todaydate)) }}</strong> )</h3>
+              <h3 class="card-title">{{ $doctor->name }}-এর অ্যাপয়েন্টমেন্ট তালিকা (<strong>{{ date('d-m-Y', strtotime($todaydate)) }}</strong> ও তৎপরবর্তী )</h3>
 
               <div class="card-tools">
                 <form class="form-inline form-group-lg" action="">
