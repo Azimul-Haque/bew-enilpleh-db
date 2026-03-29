@@ -297,5 +297,18 @@
         }
       }
     });
+
+    $(document).on('click', '#search-button', function() {
+      if($('#selectdate').val() != '') {
+        var urltocall = '{{ route('dashboard.doctors') }}' +  '/{{ $doctor->id }}/{{ $hospitalid }}/appoinments/list/' + $('#selectdate').val();
+        location.href= urltocall;
+      } else {
+        $('#selectdate').css({ "border": '#FF0000 2px solid'});
+        Toast.fire({
+            icon: 'warning',
+            title: 'তারিখ সিলেক্ট করুন!'
+        })
+      }
+    });
   </script>
 @endsection
