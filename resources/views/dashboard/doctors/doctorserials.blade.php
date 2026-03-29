@@ -160,7 +160,7 @@
               <span aria-hidden="true">&times;</span>
             </button>
           </div>
-          <form class="form-inline form-group-lg" action="">
+          <form class="form form-group-lg" action="">
           <div class="modal-body">
             
               <div class="form-group">
@@ -171,7 +171,7 @@
             <button type="button" class="btn btn-secondary" data-dismiss="modal">ফিরে যান</button>
             <button type="submit" class="btn btn-primary">প্রিন্ট করুন</button>
           </div>
-          
+
             </form>
         </div>
       </div>
