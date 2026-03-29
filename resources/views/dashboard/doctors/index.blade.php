@@ -298,7 +298,7 @@
                                         </div>
 
                                         <div class="row">
-                                          <div class="col-md-6">
+                                          {{-- <div class="col-md-6">
                                             <div>
                                               সপ্তাহে যে যে দিন রোগী দেখেন/রোগী দেখার সময়সূচি<br/>
                                               <textarea name="weekdays" class="form-control" style="min-height: 90px;" placeholder="উদাহরণ: শুক্রবার সকাল ৯টা থেকে দুপুর ১২টা, শনিবার সন্ধ্যা ৬টা থেকে রাত ১০টা ইত্যাদি (কোন সপ্তাহে ডাক্তার না বসলে সেটা লিখে দিন)">{{ str_replace('<br />', "", $doctor->weekdays) }}</textarea>
@@ -315,7 +315,7 @@
                                                 <option value="0" @if($doctor->onlineserial == 0) selected @endif>অনলাইনে সিরিয়াল দেওয়া যাবে না ❌</option>
                                             </select>
                                           </div>
-                                        </div>
+                                        </div> --}}
 
                                         <div style="margin-top: 15px;">
                                           @php
