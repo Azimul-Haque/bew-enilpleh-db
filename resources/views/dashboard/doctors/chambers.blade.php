@@ -55,9 +55,6 @@
           transform: translateX(1rem);
           background-color: #fff;
       }
-
-      /* Optional: Change track color when active to match your SmartBD theme */
-      
     </style>
 
 @endsection
