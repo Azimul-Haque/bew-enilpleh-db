@@ -28,9 +28,9 @@
                   <button type="button" id="search-button" class="btn btn-default btn-sm" style="margin-left: 5px;">
                     <i class="fas fa-search"></i> Search
                   </button>
-                  <a href="{{ route('dashboard.getdoctorserialpdf', [$doctor->id, $hospitalid, $todaydate]) }}" class="btn btn-success btn-sm"  style="margin-left: 5px;" target="_blank">
+                  {{-- <a href="{{ route('dashboard.getdoctorserialpdf', [$doctor->id, $hospitalid, $todaydate]) }}" class="btn btn-success btn-sm"  style="margin-left: 5px;" target="_blank">
                     <i class="fas fa-print"></i> প্রিন্ট করুন
-                  </a>
+                  </a> --}}
                   <button type="button" class="btn btn-success btn-sm" style="margin-left: 5px;" title="অ্যাপয়েন্টমেন্ট প্রিন্ট করুন" data-toggle="modal" data-target="#prntAptModal">
                    <i class="fas fa-print"></i> প্রিন্ট করুন
                   </button>
