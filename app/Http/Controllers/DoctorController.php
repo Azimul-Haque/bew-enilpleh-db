@@ -571,7 +571,7 @@ class DoctorController extends Controller
                             ->withHospitalid($hospital_id);
     }
 
-    public function getDoctorSerialPDF($doctor_id, $serialdate)
+    public function getDoctorSerialPDF($doctor_id, $hospital_id, $serialdate)
     {
         if(Auth::user()->role == 'manager') {
             if(!in_array('doctors', Auth::user()->accessibleTables())) {
