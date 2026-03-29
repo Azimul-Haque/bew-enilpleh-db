@@ -404,7 +404,7 @@ class APIController extends Controller
         if($softtoken == env('SOFT_TOKEN'))
         {
             $chambers = Cache::remember('doctorchambers'.$doctor_id, 30 * 24 * 60 * 60, function () use ($doctor_id) {
-                $chambers = Doctorhospital::where('doctor_id');
+                $chambers = Doctorhospital::where('doctor_id', $doctor_id);
                 // dd($doctors);
                 foreach($doctors as $doctor) {
                     $medicaldepartments = []; // shudhu department jothesto bojhar jonno
