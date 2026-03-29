@@ -380,7 +380,7 @@ class APIController extends Controller
                         $medicaldepartments[] = $doctormedicaldepartment->medicaldepartment->name;
                     }
                     $doctor->medicaldepartments = $medicaldepartments;
-                    $doctor->makeHidden('doctormedicaldepartments', 'doctorimage', 'district_id', 'created_at', 'updated_at');
+                    $doctor->makeHidden('doctormedicaldepartments', 'doctorimage', 'district_id', 'bmdc_number',  'created_at', 'updated_at');
                     // dd($doctorstoreturn);
                 }
                 return $doctors;
