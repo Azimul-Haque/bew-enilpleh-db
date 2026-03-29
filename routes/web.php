@@ -62,7 +62,7 @@ Route::get('/dashboard/doctors/{id}/chambers', 'DoctorController@doctorChambers'
 // Route::get('/dashboard/chambers', 'DoctorController@doctorChambers')->name('dashboard.doctors.chambers');
 Route::post('/dashboard/doctors/chambers/store', 'DoctorController@doctorChamberStore')->name('dashboard.doctors.chambers.store');
 Route::post('/dashboard/doctors/chambers/{id}/update', 'DoctorController@doctorChamberUpdate')->name('dashboard.doctors.chambers.update');
-Route::put('/dashboard/doctors/chambers/{id}/toggle-status', 'DoctorController@doctorChamberUpdate')->name('dashboard.doctors.chambers.toggle-status');
+Route::put('/dashboard/doctors/chambers/{id}/toggle-status', 'DoctorController@toggleChamberStatus')->name('dashboard.doctors.chambers.toggle-status');
 
 // Blood Donors
 Route::get('/dashboard/blooddonors', 'BlooddonorController@index')->name('dashboard.blooddonors');
