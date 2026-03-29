@@ -232,7 +232,8 @@
 
     $(document).on('click', '#search-button', function() {
       if($('#selectdate').val() != '') {
-        var urltocall = '{{ route('dashboard.doctors') }}' +  '/{{ $doctor->id }}/appoinments/list/' + $('#selectdate').val();
+        var urltocall = '{{ route('dashboard.doctors') }}' +  '/{{ $doctor->id }}/$doctorserials->first()->hospital_id,/appoinments/list/' + $('#selectdate').val();
+        var urltocall = '{{ route('dashboard.doctors') }}' +  '/{{ $doctor->id }}/{{  }}/appoinments/list/' + $('#selectdate').val();
         location.href= urltocall;
       } else {
         $('#selectdate').css({ "border": '#FF0000 2px solid'});
