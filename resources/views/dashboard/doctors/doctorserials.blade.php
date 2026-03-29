@@ -164,7 +164,7 @@
           <div class="modal-body">
             
               <div class="form-group">
-                <input type="text" id="selectdate2" class="form-control form-control-sm" placeholder="তারিখ সিলেক্ট করুন" required>
+                <input type="text" id="selectdate2" class="form-control form-control-sm" placeholder="তারিখ সিলেক্ট করুন" autocomplete="off" required>
               </div>
           </div>
           <div class="modal-footer">
