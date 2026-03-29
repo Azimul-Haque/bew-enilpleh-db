@@ -754,7 +754,7 @@ class DoctorController extends Controller
         return redirect()->back();
     }
 
-    public function addDoctorSerialManually(Request $request, $doctor_id, $selecteddate)
+    public function addDoctorSerialManually(Request $request, $doctor_id, $hospital_id, $selecteddate)
     {
         $this->validate($request,array(
             'doctor_id'               => 'required',
