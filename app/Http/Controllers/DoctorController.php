@@ -540,6 +540,7 @@ class DoctorController extends Controller
             $doctorserials = Doctorserial::where('doctor_id', $doctor->id)
                                          ->where('hospital_id', $hospital_id)
                                          ->where('serialdate', '>=', $todaydate)
+                                         ->orderBy('serialdate', 'asc')
                                          ->paginate(10);
         } elseif(Auth::user()->role == 'doctor') {
             if(in_array($doctor_id, Auth::user()->accessibleDoctors()->pluck('accessible_id')->toArray())) {
@@ -554,6 +555,7 @@ class DoctorController extends Controller
             $doctorserials = Doctorserial::where('doctor_id', $doctor->id)
                                          ->where('hospital_id', $hospital_id)
                                          ->where('serialdate', '>=', $todaydate)
+                                         ->orderBy('serialdate', 'asc')
                                          ->paginate(10);
 
         } else {
@@ -561,6 +563,7 @@ class DoctorController extends Controller
             $doctorserials = Doctorserial::where('doctor_id', $doctor_id)
                                          ->where('hospital_id', $hospital_id)
                                          ->where('serialdate', '>=', $todaydate)
+                                         ->orderBy('serialdate', 'asc')
                                          ->paginate(10);
         }
 
