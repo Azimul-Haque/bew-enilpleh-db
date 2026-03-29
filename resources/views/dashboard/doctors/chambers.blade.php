@@ -87,7 +87,7 @@
                                       </td>
                                       <td class="text-right">
                                           <button class="btn btn-sm btn-primary" title="এডিট করুন" data-toggle="modal" data-target="#editChamber-{{ $chamber->id }}">
-                                              <i class="fas fa-edit"></i> এডিট
+                                              <i class="fas fa-edit"></i> <small>এডিট</small>
                                           </button>
 
                                           @if($chamber->onlineserial == 1)
