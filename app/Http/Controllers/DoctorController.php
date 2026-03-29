@@ -314,15 +314,15 @@ class DoctorController extends Controller
             'name'                => 'required|max:191',
             'degree'                => 'required|max:191',
             'specialization'                => 'sometimes|max:191',
-            'serial'           => 'required',
-            'address'           => 'required',
-            'helpline'              => 'sometimes',
+            // 'serial'           => 'required',
+            // 'address'           => 'required',
+            // 'helpline'              => 'sometimes',
             'medicaldepartments'            => 'required',
             'medicalsymptoms'            => 'required',
             'hospitals'            => 'sometimes',
-            'weekdays'            => 'sometimes',
-            'selected_offdays'            => 'sometimes',
-            'onlineserial'            => 'required',
+            // 'weekdays'            => 'sometimes',
+            // 'selected_offdays'            => 'sometimes',
+            // 'onlineserial'            => 'required',
         ));
 
         $doctor = Doctor::findOrFail($id);
@@ -333,13 +333,13 @@ class DoctorController extends Controller
         if($request->specialization) {
             $doctor->specialization = nl2br($request->specialization);
         }
-        $doctor->serial = $request->serial;
-        $doctor->address = $request->address;
-        if($request->helpline) {
-            $doctor->helpline = $request->helpline;
-        } else {
-            $doctor->helpline = '';
-        }
+        // $doctor->serial = $request->serial;
+        // $doctor->address = $request->address;
+        // if($request->helpline) {
+        //     $doctor->helpline = $request->helpline;
+        // } else {
+        //     $doctor->helpline = '';
+        // }
         $doctor->weekdays = $request->weekdays;
         if($request->selected_offdays) {
             $formattedDates = explode(',', $request->selected_offdays);
