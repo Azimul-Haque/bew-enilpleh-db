@@ -793,6 +793,8 @@ class DoctorController extends Controller
             }
         }
 
+        $hospital = Hospital::findOrFail($hospital_id);
+
         $text = "Appointment\n\n" .
                 "Dear " . $request->name . ",\n" .
                 "Your appointment with " . $serialdoctor->name . " is booked successfully.\n" .
