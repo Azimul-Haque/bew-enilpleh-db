@@ -47,7 +47,7 @@
           width: calc(1.5rem - 4px);
           height: calc(1.5rem - 4px);
           border-radius: 1rem;
-          background-color: #adb5bd; /* Optional: subtle color for the knob */
+          
       }
 
       /* Adjust the sliding distance for the larger width */
