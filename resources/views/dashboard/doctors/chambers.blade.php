@@ -57,10 +57,7 @@
       }
 
       /* Optional: Change track color when active to match your SmartBD theme */
-      .custom-switch .custom-control-input:checked ~ .custom-control-label::before {
-          background-color: #1c9288;
-          border-color: #1c9288;
-      }
+      
     </style>
 
 @endsection
