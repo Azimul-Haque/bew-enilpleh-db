@@ -141,6 +141,13 @@
                   <input type="hidden" name="doctor_id" value="{{ $doctor->id }}">
                   <div class="modal-body p-4">
                       <div class="row">
+                          <div class="col-md-6 mb-3">
+                              <label class="font-weight-bold small">অনলাইন সিরিয়াল</label>
+                              <select name="onlineserial" class="form-control" required>
+                                  <option value="1">অনলাইনে সিরিয়াল দেওয়া যাবে ✅</option>
+                                  <option value="0" selected>না, অফলাইন ❌</option>
+                              </select>
+                          </div>
                           <div class="col-md-12 mb-3">
                               <label class="font-weight-bold small">হাসপাতাল নির্বাচন করুন *</label>
                               <select name="hospital_id" class="form-control select21" style="width: 100%;" required>
@@ -163,13 +170,6 @@
                           <div class="col-md-12 mb-3">
                               <label class="font-weight-bold small">সাপ্তাহিক সময়সূচী *</label>
                               <textarea name="weekdays" class="form-control" rows="3" placeholder="উদা: শনি-বুধ (বিকাল ৫টা - রাত ৯টা)" required></textarea>
-                          </div>
-                          <div class="col-md-6 mb-3">
-                              <label class="font-weight-bold small">অনলাইন সিরিয়াল</label>
-                              <select name="onlineserial" class="form-control" required>
-                                  <option value="1">অনলাইনে সিরিয়াল দেওয়া যাবে ✅</option>
-                                  <option value="0" selected>না, অফলাইন ❌</option>
-                              </select>
                           </div>
 
                           <div class="col-md-12 mb-3">
