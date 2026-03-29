@@ -82,7 +82,7 @@
                                           @if($chamber->onlineserial == 1)
                                               <span class="badge badge-success px-2">চালু আছে ✅</span>
                                           @else
-                                              <span class="badge badge-secondary px-2">বন্ধ ❌</span>
+                                              <span class="badge badge-secondary px-2">বন্ধ আছে ❌</span>
                                           @endif
                                       </td>
                                       <td class="text-right">
