@@ -1021,7 +1021,7 @@ class APIController extends Controller
                 "Date: " . date('d-m-Y', strtotime($request->serialdate)) . "\n" .
                 "Serial: " . count($doctorserialsforserial) . "\n" .
                 "Chamber: " . $request->hospitalname . ", " $request->upazillaname . ", " . $request->districtname . "\n\n" .
-                "Infoline - BD Smart Seba";
+                "SmartBD - 24/7 ই-সেবা";
         
         // NEW PANEL
         $url = config('sms.url');
