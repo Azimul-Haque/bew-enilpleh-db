@@ -42,6 +42,7 @@
         <b>{{ $doctor->name }}-এর সিরিয়ালসমূহ</b>
     </h3>
     <span class="calibri_normal"><b>Date: {{ date('d F Y', strtotime($serialdate)) }}</b></span><br/><br/>
+    <span class=""><b>Date: {{ date('d F Y', strtotime($serialdate)) }}</b></span><br/><br/>
 
     <table class="bordertable">
         <thead>
