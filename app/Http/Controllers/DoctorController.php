@@ -553,7 +553,7 @@ class DoctorController extends Controller
                             ->first();
             $doctorserials = Doctorserial::where('doctor_id', $doctor->id)
                                          ->where('hospital_id', $hospital_id)
-                                         ->where('serialdate', '>=', $todaydate)
+                                         ->where('serialdate', $todaydate)
                                          ->paginate(10);
 
         }
