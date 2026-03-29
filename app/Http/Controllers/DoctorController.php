@@ -544,6 +544,7 @@ class DoctorController extends Controller
         }
         $doctor = Doctor::findOrFail($doctor_id);
         $doctorserials = Doctorserial::where('doctor_id', $doctor_id)
+                                     ->where('hospital_id', $hospital_id)
                                      ->where('serialdate', $todaydate)
                                      ->paginate(10);
 
