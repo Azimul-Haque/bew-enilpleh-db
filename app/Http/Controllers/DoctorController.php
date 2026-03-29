@@ -766,6 +766,7 @@ class DoctorController extends Controller
 
         $doctorserial = new Doctorserial;
         $doctorserial->doctor_id = $request->doctor_id;
+        $doctorserial->hospital_id = $hospital_id;
         $doctorserial->name = $request->name;
         $doctorserial->mobile = $request->mobile;
         $doctorserial->serialdate = date('Y-m-d', strtotime($request->serialdate));
