@@ -212,9 +212,9 @@ class DoctorController extends Controller
             'medicaldepartments'            => 'required',
             'medicalsymptoms'            => 'required',
             'hospitals'            => 'sometimes',
-            'weekdays'            => 'sometimes',
-            'selected_offdays'            => 'sometimes',
-            'onlineserial'            => 'required',
+            // 'weekdays'            => 'sometimes',
+            // 'selected_offdays'            => 'sometimes',
+            // 'onlineserial'            => 'sometimes',
         ));
 
         $doctor = new Doctor;
