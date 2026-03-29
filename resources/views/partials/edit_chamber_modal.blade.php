@@ -30,6 +30,9 @@
                                 <option value="0" {{ $chamber->onlineserial == 0 ? 'selected' : '' }}>বন্ধ ❌ (শুধুমাত্র অফলাইন)</option>
                             </select>
                         </div>
+                        <div class="col-md-6">
+                            
+                        </div>
                         
                         <div class="col-md-6 mb-3">
                             <label class="font-weight-bold small text-muted">চেম্বার এড্রেস/রুম নম্বর *</label>
