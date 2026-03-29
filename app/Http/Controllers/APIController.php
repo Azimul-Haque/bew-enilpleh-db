@@ -270,9 +270,6 @@ class APIController extends Controller
                         $doctormedicaldepartment->weekdays = $doctormedicaldepartment->doctor->weekdays;
                         $doctormedicaldepartment->offdays = $doctormedicaldepartment->doctor->offdays;
                         $doctormedicaldepartment->onlineserial = $doctormedicaldepartment->doctor->onlineserial;
-                        // $doctormedicaldepartment->timefrom = $doctormedicaldepartment->doctor->timefrom;
-                        // $doctormedicaldepartment->timeto = $doctormedicaldepartment->doctor->timeto;
-                        // $doctormedicaldepartment->image = $doctormedicaldepartment->doctor->doctorimage ? $doctormedicaldepartment->doctor->doctorimage->image : '';
                         $doctormedicaldepartment->makeHidden('doctor', 'medicaldepartment_id', 'doctor_id', 'created_at', 'updated_at');
                         $doctorstoreturn->push($doctormedicaldepartment);
                         // dd($doctorstoreturn);
@@ -298,9 +295,6 @@ class APIController extends Controller
                         $doctormedicalsymptom->weekdays = $doctormedicalsymptom->doctor->weekdays;
                         $doctormedicalsymptom->offdays = $doctormedicalsymptom->doctor->offdays;
                         $doctormedicalsymptom->onlineserial = $doctormedicalsymptom->doctor->onlineserial;
-                        // $doctormedicalsymptom->timefrom = $doctormedicalsymptom->doctor->timefrom;
-                        // $doctormedicalsymptom->timeto = $doctormedicalsymptom->doctor->timeto;
-                        // $doctormedicalsymptom->image = $doctormedicalsymptom->doctor->doctorimage ? $doctormedicalsymptom->doctor->doctorimage->image : '';
                         $doctormedicalsymptom->makeHidden('doctor', 'medicaldepartment_id', 'doctor_id', 'created_at', 'updated_at');
                         $doctorstoreturn->push($doctormedicalsymptom);
                         // dd($doctorstoreturn);
