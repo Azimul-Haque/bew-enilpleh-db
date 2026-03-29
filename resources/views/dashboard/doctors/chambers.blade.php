@@ -30,18 +30,36 @@
           border-top: 1px solid #ddd;
       }
 
+      /* Increased padding to prevent text overlap */
+      .custom-switch .custom-control-label {
+          padding-left: 3.25rem; /* Pushes text to the right of the wider switch */
+          padding-top: 0.2rem;   /* Aligns text vertically with the larger switch */
+          cursor: pointer;
+      }
+
       .custom-switch .custom-control-label::before {
           height: 1.5rem;
           width: 2.5rem;
           border-radius: 1rem;
       }
+
       .custom-switch .custom-control-label::after {
           width: calc(1.5rem - 4px);
           height: calc(1.5rem - 4px);
           border-radius: 1rem;
+          background-color: #adb5bd; /* Optional: subtle color for the knob */
       }
+
+      /* Adjust the sliding distance for the larger width */
       .custom-switch .custom-control-input:checked ~ .custom-control-label::after {
           transform: translateX(1rem);
+          background-color: #fff;
+      }
+
+      /* Optional: Change track color when active to match your SmartBD theme */
+      .custom-switch .custom-control-input:checked ~ .custom-control-label::before {
+          background-color: #1c9288;
+          border-color: #1c9288;
       }
     </style>
 
