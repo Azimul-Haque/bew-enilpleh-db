@@ -543,6 +543,21 @@ class DoctorController extends Controller
                                          ->paginate(10);
         } elseif(Auth::user()->role == 'doctor') {
             $doctor = Auth::user()->accessibleDoctors()->first();
+
+            if(!in_array($doctor_id, Auth::user()->accessibleDoctors()->pluck('accessible_id')->toArray())) {
+                // if not in accessed doctors list, check if hospital is accessed atleast
+                $accessedhospitals = Auth::user()->accessibleHospitals()->get();
+                $hospitaldoctorslist = collect();
+                foreach($accessedhospitals as $hospital) {
+                    foreach($hospital->doctorhospitals as $doctor) {
+                        $hospitaldoctorslist->push($doctor->doctor);
+                    }
+                }
+                if(!in_array($doctor_id, $hospitaldoctorslist->pluck('id')->toArray())) {
+                    abort(403, 'Access Denied');
+                }
+            }
+            
         }
         $doctor = Doctor::findOrFail($doctor_id);
         $doctorserials = Doctorserial::where('doctor_id', $doctor_id)
