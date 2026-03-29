@@ -408,15 +408,15 @@ class APIController extends Controller
                                           ->where('is_chamber', 1)
                                           ->get();
                 
-                foreach($doctors as $doctor) {
-                    $medicaldepartments = []; // shudhu department jothesto bojhar jonno
-                    foreach($doctor->doctormedicaldepartments as $doctormedicaldepartment) {
-                        $medicaldepartments[] = $doctormedicaldepartment->medicaldepartment->name;
-                    }
-                    $doctor->medicaldepartments = $medicaldepartments;
-                    $doctor->makeHidden('doctormedicaldepartments', 'doctorimage', 'district_id', 'bmdc_number', 'serial', 'address', 'helpline', 'weekdays', 'offdays', 'onlineserial', 'created_at', 'updated_at');
-                    // dd($doctorstoreturn);
-                }
+                // foreach($doctors as $doctor) {
+                //     $medicaldepartments = []; // shudhu department jothesto bojhar jonno
+                //     foreach($doctor->doctormedicaldepartments as $doctormedicaldepartment) {
+                //         $medicaldepartments[] = $doctormedicaldepartment->medicaldepartment->name;
+                //     }
+                //     $doctor->medicaldepartments = $medicaldepartments;
+                //     $doctor->makeHidden('doctormedicaldepartments', 'doctorimage', 'district_id', 'bmdc_number', 'serial', 'address', 'helpline', 'weekdays', 'offdays', 'onlineserial', 'created_at', 'updated_at');
+                //     // dd($doctorstoreturn);
+                // }
                 return $doctors;
             });
             
