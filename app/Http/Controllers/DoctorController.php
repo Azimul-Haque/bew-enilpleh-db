@@ -623,7 +623,7 @@ class DoctorController extends Controller
         $hospital = Hospital::findOrFail($hospital_id);
         
         // dd($doctorserials);
-        $pdf = PDF::loadView('dashboard.doctors.pdf.serials', ['doctor' => $doctor, 'doctorserials' => $doctorserials, 'serialdate' => $serialdate]);
+        $pdf = PDF::loadView('dashboard.doctors.pdf.serials', ['doctor' => $doctor, 'hospital' => $hospital, 'doctorserials' => $doctorserials, 'serialdate' => $serialdate]);
         $fileName = 'Doctor-Serial-'. $doctor_id . '-' . $serialdate . '.pdf';
         return $pdf->stream($fileName);
     }
