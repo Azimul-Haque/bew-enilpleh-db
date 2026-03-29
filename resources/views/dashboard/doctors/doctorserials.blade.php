@@ -165,22 +165,6 @@
               <div class="form-group">
                 <input type="text" id="selectdate" class="form-control form-control-sm" placeholder="তারিখ পরিবর্তন" required>
               </div>
-              <button type="button" id="search-button" class="btn btn-default btn-sm" style="margin-left: 5px;">
-                <i class="fas fa-search"></i> Search
-              </button>
-              <a href="{{ route('dashboard.getdoctorserialpdf', [$doctor->id, $hospitalid, $todaydate]) }}" class="btn btn-success btn-sm"  style="margin-left: 5px;" target="_blank">
-                <i class="fas fa-print"></i> প্রিন্ট করুন
-              </a>
-              <button type="button" class="btn btn-success btn-sm" style="margin-left: 5px;" title="অ্যাপয়েন্টমেন্ট প্রিন্ট করুন" data-toggle="modal" data-target="#prntAptModal">
-               <i class="fas fa-print"></i> প্রিন্ট করুন
-              </button>
-
-              <button type="button" class="btn btn-warning btn-sm" style="margin-left: 5px;" title="সকলকে ক্যানসেল মেসেজ পাঠান" data-toggle="modal" data-target="#sendCancelSMSALLModal">
-               <i class="fas fa-envelope"></i> ক্যানসেল মেসেজ
-              </button>
-               <button type="button" class="btn btn-primary btn-sm" style="margin-left: 5px;" title="নতুন সিরিয়াল যোগ করুন" data-toggle="modal" data-target="#addNewAppointmentModal">
-                 <i class="fas fa-user-plus"></i> সিরিয়াল যোগ
-               </button>
             </form>
           </div>
           <div class="modal-footer">
