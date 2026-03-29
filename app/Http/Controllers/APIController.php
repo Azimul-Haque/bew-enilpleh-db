@@ -1020,7 +1020,7 @@ class APIController extends Controller
                 "Your appointment with " . $serialdoctor->name . " is booked successfully.\n" .
                 "Date: " . date('d-m-Y', strtotime($request->serialdate)) . "\n" .
                 "Serial: " . count($doctorserialsforserial) . "\n" .
-                "Chamber: " . $serialdoctor->address . "\n\n" .
+                "Chamber: " . $request->hospitalname . ", " $request->upazillaname . ", " . $request->districtname . "\n\n" .
                 "Infoline - BD Smart Seba";
         
         // NEW PANEL
