@@ -288,7 +288,7 @@ class APIController extends Controller
                         $doctormedicalsymptom->weekdays = $doctormedicalsymptom->doctor->weekdays;
                         $doctormedicalsymptom->offdays = $doctormedicalsymptom->doctor->offdays;
                         $doctormedicalsymptom->onlineserial = $doctormedicalsymptom->doctor->onlineserial;
-                        $doctormedicalsymptom->makeHidden('doctor', 'medicaldepartment_id', 'doctor_id', 'created_at', 'updated_at');
+                        $doctormedicalsymptom->makeHidden('doctor', 'medicaldepartment_id', 'doctor_id', 'serial', 'address', 'helpline', 'weekdays', 'offdays', 'onlineserial', 'created_at', 'updated_at');
                         $doctorstoreturn->push($doctormedicalsymptom);
                         // dd($doctorstoreturn);
                     }
