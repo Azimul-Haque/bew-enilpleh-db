@@ -227,10 +227,10 @@ class DoctorController extends Controller
         if($request->specialization) {
             $doctor->specialization = nl2br($request->specialization);
         }
-        if($request->helpline) {
-            $doctor->helpline = $request->helpline;
-        }
-        $doctor->weekdays = $request->weekdays;
+        // if($request->helpline) {
+        //     $doctor->helpline = $request->helpline;
+        // }
+        // $doctor->weekdays = $request->weekdays;
         if($request->selected_offdays) {
             $formattedDates = explode(',', $request->selected_offdays);
             // dd($formattedDates);
