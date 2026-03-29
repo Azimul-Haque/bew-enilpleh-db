@@ -882,4 +882,15 @@ class DoctorController extends Controller
 
         return redirect()->back()->with('success', 'তথ্য সফলভাবে আপডেট করা হয়েছে!');
     }
+
+    public function toggleChamberStatus(Request $request, $id)
+    {
+        $chamber = \App\Doctorhospital::findOrFail($id);
+
+        // চেক বক্স টিক দেওয়া থাকলে ১, না থাকলে ০
+        $chamber->is_chamber = $request->has('is_chamber') ? 1 : 0;
+        $chamber->save();
+
+        return redirect()->back()->with('success', 'চেম্বারের স্ট্যাটাস পরিবর্তন করা হয়েছে!');
+    }
 }
