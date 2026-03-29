@@ -231,15 +231,15 @@ class DoctorController extends Controller
         //     $doctor->helpline = $request->helpline;
         // }
         // $doctor->weekdays = $request->weekdays;
-        if($request->selected_offdays) {
-            $formattedDates = explode(',', $request->selected_offdays);
-            // dd($formattedDates);
-            $doctor->offdays = json_encode($formattedDates);
-        }
+        // if($request->selected_offdays) {
+        //     $formattedDates = explode(',', $request->selected_offdays);
+        //     // dd($formattedDates);
+        //     $doctor->offdays = json_encode($formattedDates);
+        // }
         // if($request->offdays) {
         //     $doctor->offdays = json_encode($request->offdays);
         // }
-        $doctor->onlineserial = $request->onlineserial;
+        // $doctor->onlineserial = $request->onlineserial;
         $doctor->save();
 
         if(Auth::user()->role == 'editor' || Auth::user()->role == 'manager') {
