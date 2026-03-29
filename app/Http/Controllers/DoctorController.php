@@ -780,6 +780,7 @@ class DoctorController extends Controller
         // send sms
 
         $doctorserialsforserial = Doctorserial::where('doctor_id', $doctor_id)
+                                              ->where('hospital_id', $hospital_id)
                                               ->where('serialdate', $selecteddate)
                                               ->get();
         $mobile_number = 0;
