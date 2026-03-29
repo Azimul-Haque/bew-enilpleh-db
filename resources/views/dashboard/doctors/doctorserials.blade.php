@@ -232,7 +232,7 @@
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-dismiss="modal">ফিরে যান</button>
-              <button type="submit" class="btn btn-primary">যোগ করুন</button>
+              <button type="button" id="print-btn" class="btn btn-primary">যোগ করুন</button>
             </div>
           </form>
         </div>
@@ -298,7 +298,7 @@
       }
     });
 
-    $(document).on('click', '#search-button', function() {
+    $(document).on('click', '#print-btn', function() {
       if($('#selectdate').val() != '') {
         var urltocall = '{{ route('dashboard.doctors') }}' +  '/{{ $doctor->id }}/{{ $hospitalid }}/appoinments/list/' + $('#selectdate').val();
         location.href= urltocall;
