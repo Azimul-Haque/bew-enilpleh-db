@@ -256,6 +256,13 @@
       multidate: false,
     });
 
+    $("#selectdate2").datepicker({
+      format: 'yyyy-mm-dd',
+      todayHighlight: true,
+      autoclose: true,
+      multidate: false,
+    });
+
     $("#addserialdate").datepicker({
       format: 'yyyy-mm-dd',
       todayHighlight: true,
