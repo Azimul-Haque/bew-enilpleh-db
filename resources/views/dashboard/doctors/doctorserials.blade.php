@@ -299,11 +299,11 @@
     });
 
     $(document).on('click', '#print-btn', function() {
-      if($('#selectdate').val() != '') {
-        var urltocall = '{{ route('dashboard.getdoctorserialpdf') }}' +  '/{{ $doctor->id }}/{{ $hospitalid }}/appoinments/list/' + $('#selectdate').val();
+      if($('#selectdate2').val() != '') {
+        var urltocall = '{{ route('dashboard.getdoctorserialpdf') }}' +  '/{{ $doctor->id }}/{{ $hospitalid }}/' + $('#selectdate2').val();
         location.href= urltocall;
       } else {
-        $('#selectdate').css({ "border": '#FF0000 2px solid'});
+        $('#selectdate2').css({ "border": '#FF0000 2px solid'});
         Toast.fire({
             icon: 'warning',
             title: 'তারিখ সিলেক্ট করুন!'
