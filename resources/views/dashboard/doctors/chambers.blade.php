@@ -147,7 +147,7 @@
                                           </button>
 
                                           @if($chamber->is_chamber == 1 && $chamber->onlineserial == 1)
-                                              <a href="{{ route('dashboard.doctorserialindex', [$chamber->id, date('Y-m-d')]) }}" class="btn btn-warning btn-sm shadow-sm">
+                                              <a href="{{ route('dashboard.doctorserialindex', [$chamber->doctor_id, $chamber->hospital_id, date('Y-m-d')]) }}" class="btn btn-warning btn-sm shadow-sm">
                                                   <i class="fas fa-calendar-alt"></i> <small>অ্যাপয়েন্টমেন্ট তালিকা</small>
                                               </a>
                                           @endif
