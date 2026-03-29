@@ -28,7 +28,7 @@
                   <button type="button" id="search-button" class="btn btn-default btn-sm" style="margin-left: 5px;">
                     <i class="fas fa-search"></i> Search
                   </button>
-                  <a href="{{ route('dashboard.getdoctorserialpdf', [$doctor->id, $doctorserials->first()->hospital_id $todaydate]) }}" class="btn btn-success btn-sm"  style="margin-left: 5px;" target="_blank">
+                  <a href="{{ route('dashboard.getdoctorserialpdf', [$doctor->id, $doctorserials->first()->hospital_id, $todaydate]) }}" class="btn btn-success btn-sm"  style="margin-left: 5px;" target="_blank">
                     <i class="fas fa-print"></i> প্রিন্ট করুন
                   </a>
                   <button type="button" class="btn btn-warning btn-sm" style="margin-left: 5px;" title="সকলকে ক্যানসেল মেসেজ পাঠান" data-toggle="modal" data-target="#sendCancelSMSALLModal">
