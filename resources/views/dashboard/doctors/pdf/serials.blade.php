@@ -74,7 +74,7 @@
 
     <htmlpagefooter name="page-footer">
       <small><span class="calibri_normal">Downloaded at:  {{ date('F d, Y, h:i A') }}</span></small><br/>
-      <small class="calibri_normal" style="color: #3f51b5;">Powered by: <b>SmartBD</b></small> <small> - ২৪/৭ ই=সেবা</small>
+      <small class="calibri_normal" style="color: #3f51b5;">Powered by: <b>SmartBD</b></small> <small> - ২৪/৭ ই-সেবা</small>
     </htmlpagefooter>
   </body>
 </html>
