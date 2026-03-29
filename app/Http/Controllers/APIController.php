@@ -409,7 +409,8 @@ class APIController extends Controller
                                           ->get();
                 
                 foreach($chambers as $chamber) {
-                    $chamber->hospital = $medicaldepartments;
+                    $chamber->hospital = $chamber->hospital->name;
+                    $chamber->hospital = $chamber->hospital->name;
                     $doctor->makeHidden('doctormedicaldepartments', 'doctorimage', 'district_id', 'bmdc_number', 'serial', 'address', 'helpline', 'weekdays', 'offdays', 'onlineserial', 'created_at', 'updated_at');
                     // dd($doctorstoreturn);
                 }
