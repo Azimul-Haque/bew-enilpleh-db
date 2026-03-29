@@ -409,7 +409,7 @@ class APIController extends Controller
                                           ->get();
                 
                 foreach($chambers as $chamber) {
-                    $chamber->hospital = $chamber->hospital->name;
+                    $chamber->hospitalname = $chamber->hospital->name;
                     // $chamber->upazilla = $chamber->hospital->upazilla->name_bangla;
                     // $chamber->district = $chamber->hospital->district->name_bangla;
                     // $chamber->makeHidden('hospitals', 'created_at', 'updated_at');
