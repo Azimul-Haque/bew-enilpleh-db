@@ -29,6 +29,20 @@
           background: #f8f9fa;
           border-top: 1px solid #ddd;
       }
+
+      .custom-switch .custom-control-label::before {
+          height: 1.5rem;
+          width: 2.5rem;
+          border-radius: 1rem;
+      }
+      .custom-switch .custom-control-label::after {
+          width: calc(1.5rem - 4px);
+          height: calc(1.5rem - 4px);
+          border-radius: 1rem;
+      }
+      .custom-switch .custom-control-input:checked ~ .custom-control-label::after {
+          transform: translateX(1rem);
+      }
     </style>
 
 @endsection
