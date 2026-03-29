@@ -273,7 +273,6 @@ class APIController extends Controller
                         $doctormedicaldepartment->makeHidden('doctor', 'medicaldepartment_id', 'doctor_id', 'created_at', 'updated_at');
                         $doctorstoreturn->push($doctormedicaldepartment);
                         // dd($doctorstoreturn);
-                        
                     }
                     return $doctorstoreturn;
                 });
