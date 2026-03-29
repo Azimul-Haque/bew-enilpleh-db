@@ -412,7 +412,7 @@ class APIController extends Controller
                     $chamber->hospital = $chamber->hospital->name;
                     // $chamber->upazilla = $chamber->hospital->upazilla->name_bangla;
                     // $chamber->district = $chamber->hospital->district->name_bangla;
-                    $chamber->makeHidden('hospitals', 'created_at', 'updated_at');
+                    // $chamber->makeHidden('hospitals', 'created_at', 'updated_at');
                     // dd($doctorstoreturn);
                 }
                 return $chambers;
