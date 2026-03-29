@@ -401,7 +401,7 @@ class APIController extends Controller
 
     public function getDoctorChambers($softtoken, $doctor_id)
     {
-        if($softtoken == env('SOFT_TOKEN'))
+        if($softtoken == 'env('SOFT_TOKEN')')
         {
             $chambers = Cache::remember('doctorchambers'.$doctor_id, 30 * 24 * 60 * 60, function () use ($doctor_id) {
                 $chambers = Doctorhospital::where('doctor_id', $doctor_id)
