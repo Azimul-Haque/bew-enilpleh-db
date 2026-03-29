@@ -34,7 +34,7 @@ class CreateDoctorhospitalsTable extends Migration
             $table->text('weekdays')->nullable();
             $table->json('ondays')->nullable();
             $table->integer('onlineserial');
-            $table->integer('is_chamber');
+            $table->integer('is_chamber')->nullable();
         });
     }
 
