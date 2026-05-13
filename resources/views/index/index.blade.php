@@ -83,7 +83,7 @@
                                 <i class="fab fa-google-play"></i> অ্যাপ ডাউনলোড করুন
                             </a>
                             <a
-                                href="https://bdhelpline.info/doctor/register"
+                                href="{{ route('index.doctor.register') }}"
                                 class="btn btn-secondary w-full"
                             >
                                 <i class="fas fa-user-md"></i> ডাক্তার রেজিস্ট্রেশন করুন
