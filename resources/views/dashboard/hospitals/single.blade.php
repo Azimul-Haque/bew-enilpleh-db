@@ -73,8 +73,11 @@
                       <button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#deleteUserModal{{ $doctorhospital->doctor->id }}" >
                         <i class="fas fa-trash-alt"></i>
                       </button><br/> --}}
-                      <a href="{{ route('dashboard.doctorserialindex', [$doctorhospital->doctor->id, $hospital->id, date('Y-m-d')]) }}" style="margin-top: 5px;" class="btn btn-warning btn-sm">
+                      {{-- <a href="{{ route('dashboard.doctorserialindex', [$doctorhospital->doctor->id, $hospital->id, date('Y-m-d')]) }}" style="margin-top: 5px;" class="btn btn-warning btn-sm">
                         <i class="fas fa-calendar-alt"></i> <b>অ্যাপয়েন্টমেন্ট তালিকা</b>
+                      </a> --}}
+                      <a href="{{ route('dashboard.doctors.chambers', $doctor->id) }}" style="margin-top: 5px;" class="btn btn-warning btn-sm">
+                        <i class="fas fa-hospital"></i> <b>চেম্বার তালিকা</b>
                       </a>
                     </td>
                   </tr>
