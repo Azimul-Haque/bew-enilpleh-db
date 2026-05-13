@@ -41,7 +41,7 @@
               </thead>
               <tbody>
                 @foreach($hospital->doctorhospitals as $doctorhospital)
-                <tr>
+                  <tr>
                     <td>
                       {{ $doctorhospital->doctor->name }}<br/>
                       <span style="font-size: 12px;">{{ $doctorhospital->doctor->degree }}</span>
