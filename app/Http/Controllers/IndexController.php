@@ -62,10 +62,10 @@ class IndexController extends Controller
      */
     public function index()
     {
-        return redirect()->route('dashboard.index');
+        // return redirect()->route('dashboard.index');
         // $packages = Package::where('status', 1)->get();
 
-        // return view('index.index')->withPackages($packages);
+        return view('index.index');
     }
 
     public function registerDoctor()
