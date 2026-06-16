@@ -907,15 +907,9 @@ class DoctorController extends Controller
             'name'                => 'required|max:191',
             'degree'                => 'required',
             'specialization'                => 'sometimes|max:191',
-            // 'serial'           => 'required',
-            // 'address'           => 'required',
-            // 'helpline'              => 'sometimes',
             'medicaldepartments'            => 'required',
             'medicalsymptoms'            => 'required',
             'hospitals'            => 'sometimes',
-            // 'weekdays'            => 'sometimes',
-            // 'selected_offdays'            => 'sometimes',
-            // 'onlineserial'            => 'required',
         ));
 
         $doctor = Doctor::findOrFail($id);
