@@ -913,8 +913,7 @@ class DoctorController extends Controller
         ));
 
         $doctor = Doctor::findOrFail($id);
-        $doctor->district_id = $request->district_id;
-        $doctor->upazilla_id = $request->upazilla_id;
+        
         $doctor->name = $request->name;
         $doctor->degree = $request->degree;
         if($request->specialization) {
