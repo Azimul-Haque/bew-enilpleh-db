@@ -79,7 +79,7 @@
                           </select>
                        </div>
                        <div class="">
-                          <button type="submit" class="btn btn-primary">দাখিল করুন</button>
+                          <button type="submit" class="btn btn-success">দাখিল করুন</button>
                        </div>
                     </form>
                   </div>
