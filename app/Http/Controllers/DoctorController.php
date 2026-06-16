@@ -933,11 +933,11 @@ class DoctorController extends Controller
                 $doctormedicaldepartment->medicaldepartment_id = $medicaldepartment_id;
                 $doctormedicaldepartment->save();
 
-                Cache::forget('doctors'. $medicaldepartment_id . '1' . $request->district_id);
-                Cache::forget('doctors'. $medicaldepartment_id . '1' . $request->district_id . $request->upazilla_id);
+                Cache::forget('doctors'. $medicaldepartment_id . '1' . $doctor->district_id);
+                Cache::forget('doctors'. $medicaldepartment_id . '1' . $doctor->district_id . $request->upazilla_id);
 
-                Cache::forget('doctors'. $medicaldepartment_id . '2' . $request->district_id);
-                Cache::forget('doctors'. $medicaldepartment_id . '2' . $request->district_id . $request->upazilla_id);
+                Cache::forget('doctors'. $medicaldepartment_id . '2' . $doctor->district_id);
+                Cache::forget('doctors'. $medicaldepartment_id . '2' . $doctor->district_id . $request->upazilla_id);
             }            
         }
 
