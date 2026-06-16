@@ -904,8 +904,6 @@ class DoctorController extends Controller
     public function updateDoctorProfile(Request $request, $id)
     {
         $this->validate($request,array(
-            'district_id'            => 'required',
-            'upazilla_id'            => 'required',
             'name'                => 'required|max:191',
             'degree'                => 'required',
             'specialization'                => 'sometimes|max:191',
