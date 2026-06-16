@@ -15,7 +15,7 @@
 @endsection
 
 @section('content')
-  @section('page-header') <a href="{{ Auth::user()->role != 'doctor' ? route('dashboard.doctors') : '#!' }}">ডাক্তার তালিকা</a> /  {{ $doctor->name }} - চেম্বার তালিকা @endsection
+  @section('page-header') ডাক্তার প্রোফাইল @endsection
   <div class="container-fluid">
       <div class="row">
           <div class="col-12">
