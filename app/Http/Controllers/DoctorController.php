@@ -901,6 +901,8 @@ class DoctorController extends Controller
                             ->withHospitals($hospitals);
     }
 
+    updateDoctorProfile
+
     public function doctorChamberStore(Request $request)
     {
         $request->validate([
