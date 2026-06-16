@@ -18,7 +18,7 @@
   @section('page-header') ডাক্তার প্রোফাইল @endsection
   <div class="container-fluid">
       <div class="row">
-          <div class="col-8">
+          <div class="col-10">
               <div class="card card-outline card-success shadow-sm">
                   <div class="card-header">
                       <h3 class="card-title fw-bold"><i class="fas fa-user-md mr-2 text-success"></i> ডাক্তার: <strong>{{ $doctor->name }}</strong></h3>
