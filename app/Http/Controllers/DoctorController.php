@@ -919,23 +919,6 @@ class DoctorController extends Controller
         if($request->specialization) {
             $doctor->specialization = nl2br($request->specialization);
         }
-        // $doctor->serial = $request->serial;
-        // $doctor->address = $request->address;
-        // if($request->helpline) {
-        //     $doctor->helpline = $request->helpline;
-        // } else {
-        //     $doctor->helpline = '';
-        // }
-        // $doctor->weekdays = $request->weekdays;
-        // if($request->selected_offdays) {
-        //     $formattedDates = explode(',', $request->selected_offdays);
-        //     // dd($formattedDates);
-        //     $doctor->offdays = json_encode($formattedDates);
-        // }
-        // if($request->offdays) {
-        //     $doctor->offdays = json_encode($request->offdays);
-        // }
-        // $doctor->onlineserial = $request->onlineserial;
         $doctor->save();
 
         if(isset($request->medicaldepartments)){
