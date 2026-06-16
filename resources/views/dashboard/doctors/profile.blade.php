@@ -78,7 +78,7 @@
                           @endforeach
                           </select>
                        </div>
-                       <div class="modal-footer">
+                       <div class="">
                           <button type="button" class="btn btn-secondary" data-dismiss="modal">ফিরে যান</button>
                           <button type="submit" class="btn btn-primary">দাখিল করুন</button>
                        </div>
