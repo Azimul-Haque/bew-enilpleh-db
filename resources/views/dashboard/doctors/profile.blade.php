@@ -11,49 +11,7 @@
       .select2-selection__choice{
           background-color: rgba(0, 123, 255) !important;
       }
-    </style>
-    <link rel="stylesheet" type="text/css" href="{{ asset('css/bootstrap-datepicker.min.css') }}">
-    <style type="text/css">
-      .datepicker_wrapper, .datepicker_wrapper2{
-        position:relative;
-      }
-      /*textarea {
-        resize: none;
-      }*/
-
-      .datepicker-footer {
-          padding: 5px;
-          background: #f8f9fa;
-          border-top: 1px solid #ddd;
-      }
-
-      /* Increased padding to prevent text overlap */
-      .custom-switch .custom-control-label {
-          padding-left: 1rem; /* Pushes text to the right of the wider switch */
-          padding-top: 0.2rem;   /* Aligns text vertically with the larger switch */
-          cursor: pointer;
-      }
-
-      .custom-switch .custom-control-label::before {
-          height: 1.5rem;
-          width: 2.5rem;
-          border-radius: 1rem;
-      }
-
-      .custom-switch .custom-control-label::after {
-          width: calc(1.5rem - 4px);
-          height: calc(1.5rem - 4px);
-          border-radius: 1rem;
-          background-color: #adb5bd;
-      }
-
-      /* Adjust the sliding distance for the larger width */
-      .custom-switch .custom-control-input:checked ~ .custom-control-label::after {
-          transform: translateX(1rem);
-          background-color: #fff;
-      }
-    </style>
-
+    </style> 
 @endsection
 
 @section('content')
