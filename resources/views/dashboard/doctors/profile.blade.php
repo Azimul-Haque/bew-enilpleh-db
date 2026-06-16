@@ -20,7 +20,7 @@
       <div class="row">
           <div class="col-10">
               <div class="card card-outline card-success shadow-sm">
-                  <div class="card-header border-0">
+                  <div class="card-header">
                       <h3 class="card-title fw-bold"><i class="fas fa-hospital-alt mr-2 text-success"></i> চেম্বারসমূহ</h3>
                       <div class="card-tools">
                           <button type="button" class="btn btn-success btn-sm rounded-pill px-3" data-toggle="modal" data-target="#addChamberModal">
