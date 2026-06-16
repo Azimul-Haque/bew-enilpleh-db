@@ -173,8 +173,8 @@
 
 @section('third_party_scripts')
     <script type="text/javascript">
-      $('.select21').select2({
-        theme: 'bootstrap4',
+      $('.multiple-select').select2({
+        // theme: 'bootstrap4',
       });
     </script>
 @endsection
