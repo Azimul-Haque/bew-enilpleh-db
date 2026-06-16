@@ -890,8 +890,23 @@ class DoctorController extends Controller
             $doctor = Doctor::findOrFail($id);
         }
 
+        $medicaldepartments = Medicaldepartment::all();
+        $medicalsymptoms = Medicalsymptom::all();
+        $hospitals = Hospital::all();
+
+        
+        return view('dashboard.doctors.index')
+                            ->withDoctorscount($doctorscount)
+                            ->withDoctors($doctors)
+                            ->withDistricts($districts)
+                            
+                            ->withSearch($search);
+
         return view('dashboard.doctors.profile')
-                            ->withDoctor($doctor);
+                            ->withDoctor($doctor)
+                            ->withMedicaldepartments($medicaldepartments)
+                            ->withMedicalsymptoms($medicalsymptoms)
+                            ->withHospitals($hospitals);
     }
 
     public function doctorChamberStore(Request $request)
