@@ -22,14 +22,9 @@
               <div class="card card-outline card-success shadow-sm">
                   <div class="card-header">
                       <h3 class="card-title fw-bold"><i class="fas fa-hospital-alt mr-2 text-success"></i> ডাক্তার: <strong>{{ $doctor->name }}</strong></h3>
-                      <div class="card-tools">
-                          <button type="button" class="btn btn-success btn-sm rounded-pill px-3" data-toggle="modal" data-target="#addChamberModal">
-                              <i class="fas fa-plus-circle mr-1"></i> নতুন চেম্বার যোগ করুন
-                          </button>
-                      </div>
                   </div>
                   
-                  <div class="card-body p-0">
+                  <div class="card-body">
                       <div class="table-responsive">
                           <table class="table table-hover table-valign-middle mb-0">
                               <thead class="bg-light">
