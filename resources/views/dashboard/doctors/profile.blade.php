@@ -1,0 +1,276 @@
+@extends('layouts.app')
+@section('title') ড্যাশবোর্ড | ডাক্তার প্রোফাইল @endsection
+
+@section('third_party_stylesheets')
+    <link href="{{ asset('css/select2.min.css') }}" rel="stylesheet" />
+    <link href="{{ asset('css/select2-bootstrap4.min.css') }}" rel="stylesheet" />
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    {{-- <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script> --}}
+  {{-- <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script> --}}
+
+    <script src="{{ asset('js/select2.full.min.js') }}"></script>
+    {{-- <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.8/js/select2.min.js" defer></script> --}}
+    <style type="text/css">
+      .select2-selection__choice{
+          background-color: rgba(0, 123, 255) !important;
+      }
+    </style>
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/bootstrap-datepicker.min.css') }}">
+    <style type="text/css">
+      .datepicker_wrapper, .datepicker_wrapper2{
+        position:relative;
+      }
+      /*textarea {
+        resize: none;
+      }*/
+
+      .datepicker-footer {
+          padding: 5px;
+          background: #f8f9fa;
+          border-top: 1px solid #ddd;
+      }
+
+      /* Increased padding to prevent text overlap */
+      .custom-switch .custom-control-label {
+          padding-left: 1rem; /* Pushes text to the right of the wider switch */
+          padding-top: 0.2rem;   /* Aligns text vertically with the larger switch */
+          cursor: pointer;
+      }
+
+      .custom-switch .custom-control-label::before {
+          height: 1.5rem;
+          width: 2.5rem;
+          border-radius: 1rem;
+      }
+
+      .custom-switch .custom-control-label::after {
+          width: calc(1.5rem - 4px);
+          height: calc(1.5rem - 4px);
+          border-radius: 1rem;
+          background-color: #adb5bd;
+      }
+
+      /* Adjust the sliding distance for the larger width */
+      .custom-switch .custom-control-input:checked ~ .custom-control-label::after {
+          transform: translateX(1rem);
+          background-color: #fff;
+      }
+    </style>
+
+@endsection
+
+@section('content')
+  @section('page-header') <a href="{{ Auth::user()->role != 'doctor' ? route('dashboard.doctors') : '#!' }}">ডাক্তার তালিকা</a> /  {{ $doctor->name }} - চেম্বার তালিকা @endsection
+  <div class="container-fluid">
+      <div class="row">
+          <div class="col-12">
+              <div class="card card-outline card-success shadow-sm">
+                  <div class="card-header border-0">
+                      <h3 class="card-title fw-bold"><i class="fas fa-hospital-alt mr-2 text-success"></i> চেম্বারসমূহ</h3>
+                      <div class="card-tools">
+                          <button type="button" class="btn btn-success btn-sm rounded-pill px-3" data-toggle="modal" data-target="#addChamberModal">
+                              <i class="fas fa-plus-circle mr-1"></i> নতুন চেম্বার যোগ করুন
+                          </button>
+                      </div>
+                  </div>
+                  
+                  <div class="card-body p-0">
+                      <div class="table-responsive">
+                          <table class="table table-hover table-valign-middle mb-0">
+                              <thead class="bg-light">
+                                  <tr>
+                                      <th>হাসপাতালের নাম</th>
+                                      <th>চেম্বার কি না</th>
+                                      <th>রুম/ঠিকানা</th>
+                                      <th>সিরিয়াল ফোন/সময়সূচী</th>
+                                      <th class="text-center">অনলাইন সিরিয়াল</th>
+                                      <th class="text-right">কার্যক্রম</th>
+                                  </tr>
+                              </thead>
+                              <tbody>
+                                  @forelse($doctor->doctorhospitals as $chamber)
+                                  <tr style="{{ $chamber->is_chamber == 0 ? 'background-color: #fcfcfc;' : '' }}">
+                                      <td style="{{ $chamber->is_chamber == 0 ? 'opacity: 0.5; filter: grayscale(1);' : '' }}">
+                                          <div class="font-weight-bold">{{ $chamber->hospital->name }}</div>
+                                          <small class="text-muted">{{ $chamber->hospital->upazilla->name_bangla }}, {{ $chamber->hospital->district->name_bangla }}</small>
+                                      </td>
+
+                                      <td>
+                                          <form action="{{ route('dashboard.doctors.chambers.toggle-status', $chamber->id) }}" method="POST">
+                                              @csrf
+                                              @method('PUT')
+                                              <div class="custom-control custom-switch">
+                                                  <input type="checkbox" 
+                                                         name="is_chamber" 
+                                                         class="custom-control-input" 
+                                                         id="switch-{{ $chamber->id }}" 
+                                                         value="1" 
+                                                         {{ $chamber->is_chamber == 1 ? 'checked' : '' }} 
+                                                         onchange="this.form.submit()">
+                                                  
+                                                  <label class="custom-control-label font-weight-bold" for="switch-{{ $chamber->id }}">
+                                                      {{ $chamber->is_chamber == 1 ? 'চেম্বার সক্রিয়' : 'চেম্বার বন্ধ' }}
+                                                  </label>
+                                              </div>
+                                          </form>
+                                      </td>
+
+                                      <td style="{{ $chamber->is_chamber == 0 ? 'opacity: 0.5; filter: grayscale(1);' : '' }}">
+                                          @if($chamber->address_or_room)
+                                              <span class="badge {{ $chamber->is_chamber == 1 ? 'badge-info' : 'badge-secondary' }}">
+                                                  {{ $chamber->address_or_room }}
+                                              </span>
+                                          @else
+                                              <span class="text-muted small">সেট করা নেই</span>
+                                          @endif
+                                      </td>
+
+                                      <td style="{{ $chamber->is_chamber == 0 ? 'opacity: 0.5;' : '' }}">
+                                          <span class="{{ $chamber->is_chamber == 0 ? 'text-muted' : '' }}">{{ $chamber->serial_phone ?? 'সেট করা নেই' }}</span><br>
+                                          <div class="small {{ $chamber->is_chamber == 0 ? 'text-muted' : '' }}" style="max-width: 200px;">
+                                              {{ $chamber->weekdays ?? 'সেট করা নেই' }}
+                                          </div>
+                                      </td>
+
+                                      <td class="text-center" style="{{ $chamber->is_chamber == 0 ? 'opacity: 0.5; filter: grayscale(1);' : '' }}">
+                                          @if($chamber->onlineserial == 1)
+                                              <span class="badge {{ $chamber->is_chamber == 1 ? 'badge-success' : 'badge-secondary' }} px-2">চালু আছে ✅</span>
+                                          @else
+                                              <span class="badge badge-secondary px-2">বন্ধ আছে ❌</span>
+                                          @endif
+                                      </td>
+
+                                      <td class="text-right">
+                                          <button class="btn btn-sm {{ $chamber->is_chamber == 1 ? 'btn-primary' : 'btn-outline-secondary' }}" 
+                                                  title="এডিট করুন" data-toggle="modal" data-target="#editChamber-{{ $chamber->id }}" {{ $chamber->is_chamber == 0 ? 'disabled' : '' }}>
+                                              <i class="fas fa-edit"></i> <small>এডিট</small>
+                                          </button>
+
+                                          @if($chamber->is_chamber == 1 && $chamber->onlineserial == 1)
+                                              <a href="{{ route('dashboard.doctorserialindex', [$chamber->doctor_id, $chamber->hospital_id, date('Y-m-d')]) }}" class="btn btn-warning btn-sm shadow-sm">
+                                                  <i class="fas fa-calendar-alt"></i> <small>অ্যাপয়েন্টমেন্ট তালিকা</small>
+                                              </a>
+                                          @endif
+                                      </td>
+                                  </tr>
+                                  
+                                  @include('partials.edit_chamber_modal', ['chamber' => $chamber])
+                                  
+                                  @empty
+                                  <tr>
+                                      <td colspan="6" class="text-center py-5">
+                                          <img src="{{ asset('images/no-data.png') }}" width="120" class="mb-3 opacity-50"><br>
+                                          <span class="text-muted">আপনার কোনো চেম্বার এখনো সেট করা হয়নি।</span>
+                                      </td>
+                                  </tr>
+                                  @endforelse
+                              </tbody>
+                          </table>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+
+  <div class="modal fade" id="addChamberModal" role="dialog" aria-hidden="true" data-backdrop="static">
+      <div class="modal-dialog modal-lg" role="document">
+          <div class="modal-content rounded-4 border-0">
+              <div class="modal-header bg-success text-white border-0">
+                  <h5 class="modal-title font-weight-bold"><i class="fas fa-plus-circle mr-2"></i>নতুন চেম্বার যুক্ত করুন</h5>
+                  <button type="button" class="close text-white" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                  </button>
+              </div>
+              <form action="{{ route('dashboard.doctors.chambers.store') }}" method="POST">
+                  @csrf
+
+                  <input type="hidden" name="doctor_id" value="{{ $doctor->id }}">
+                  <div class="modal-body p-4">
+                      <div class="row">
+                          <div class="col-md-12 mb-3">
+                              <label class="font-weight-bold small">হাসপাতাল নির্বাচন করুন *</label>
+                              <select name="hospital_id" class="form-control select21" style="width: 100%;" required>
+                                  <option value="" selected disabled>তালিকা থেকে হাসপাতাল খুঁজুন...</option>
+                                  @foreach($hospitals as $hosp)
+                                      @if(!$doctor->doctorhospitals->contains('hospital_id', $hosp->id))
+                                          <option value="{{ $hosp->id }}">{{ $hosp->name }} - ({{ $hosp->upazilla->name_bangla }})</option>
+                                      @endif
+                                  @endforeach
+                              </select>
+                          </div>
+
+                          <div class="col-md-6 mb-3">
+                              <label class="font-weight-bold small">অনলাইন সিরিয়াল</label>
+                              <select name="onlineserial" class="form-control" required>
+                                  <option value="1">অনলাইনে সিরিয়াল দেওয়া যাবে ✅</option>
+                                  <option value="0" selected>না, অফলাইন ❌</option>
+                              </select>
+                          </div>
+                          <div class="col-md-6">
+                          </div>
+
+                          <div class="col-md-6 mb-3">
+                              <label class="font-weight-bold small">রুম নম্বর/বিভাগ *</label>
+                              <input type="text" name="address_or_room" class="form-control" placeholder="উদা: ৩১০ নম্বর রুম" required>
+                          </div>
+                          <div class="col-md-6 mb-3">
+                              <label class="font-weight-bold small">সিরিয়াল ফোন নম্বর *</label>
+                              <input type="text" name="serial_phone" class="form-control" placeholder="০১৭XXXXXXXX" required>
+                          </div>
+                          <div class="col-md-12 mb-3">
+                              <label class="font-weight-bold small">সাপ্তাহিক সময়সূচী *</label>
+                              <textarea name="weekdays" class="form-control" rows="3" placeholder="উদা: শনি-বুধ (বিকাল ৫টা - রাত ৯টা)" required></textarea>
+                          </div>
+
+                          <div class="col-md-12 mb-3">
+                              <label class="font-weight-bold small">যেদিন যেদিন চেম্বারে বসবেন (অতিরিক্ত তারিখসমূহ)</label>
+                              <div class="input-group">
+                                  <div class="input-group-prepend">
+                                      <span class="input-group-text"><i class="fas fa-calendar-check"></i></span>
+                                  </div>
+                                  <input type="text" name="ondays" class="form-control ondays-datepicker" 
+                                         placeholder="তারিখগুলো নির্বাচন করুন" 
+                                         value="" readonly>
+                              </div>
+                              <small class="text-muted">একাধিক তারিখ সিলেক্ট করা যাবে, কোন তারিখ সিলেক্ট না করলে অ্যাপ ব্যবহারকারী বর্তমান তারিখ হতে প্রতিদিন সিরিয়াল দিতে পারবে।</small>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="modal-footer border-0 p-4">
+                      <button type="button" class="btn btn-light rounded-pill px-4" data-dismiss="modal">ফিরে যান</button>
+                      <button type="submit" class="btn btn-success rounded-pill px-4 shadow-sm">সংরক্ষণ করুন</button>
+                  </div>
+              </form>
+          </div>
+      </div>
+  </div>
+    
+
+@endsection
+
+@section('third_party_scripts')
+    <script type="text/javascript">
+      $('.select21').select2({
+        theme: 'bootstrap4',
+      });
+    </script>
+
+    <script type="text/javascript" src="{{ asset('js/jquery-for-dp.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('js/bootstrap-datepicker.min.js') }}"></script>
+
+    <script type="text/javascript">
+      $(".ondays-datepicker").datepicker({
+        format: 'yyyy-mm-dd',
+        startDate: new Date(),
+        todayHighlight: true,
+        autoclose: false,
+        multidate: true,
+      })
+      // Close Button Functionality
+      // $("#closePicker").click(function() {
+      //   $("#selected_offdays").datepicker('hide'); // Close the picker
+      //   $('body').click();
+      // })
+    </script>
+@endsection
