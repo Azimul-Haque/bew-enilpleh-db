@@ -889,12 +889,9 @@ class DoctorController extends Controller
         } else {
             $doctor = Doctor::findOrFail($id);
         }
-        
-        $hospitals = Hospital::all();
 
-        return view('dashboard.doctors.chambers')
-                            ->withDoctor($doctor)
-                            ->withHospitals($hospitals);
+        return view('dashboard.doctors.profile')
+                            ->withDoctor($doctor);
     }
 
     public function doctorChamberStore(Request $request)
