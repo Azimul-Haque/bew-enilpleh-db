@@ -882,6 +882,21 @@ class DoctorController extends Controller
                             ->withHospitals($hospitals);
     }
 
+    public function doctorProfile($id)
+    {
+        if(Auth::user()->role == 'doctor') {
+            $doctor = Auth::user()->accessibleDoctors()->first();
+        } else {
+            $doctor = Doctor::findOrFail($id);
+        }
+        
+        $hospitals = Hospital::all();
+
+        return view('dashboard.doctors.chambers')
+                            ->withDoctor($doctor)
+                            ->withHospitals($hospitals);
+    }
+
     public function doctorChamberStore(Request $request)
     {
         $request->validate([
