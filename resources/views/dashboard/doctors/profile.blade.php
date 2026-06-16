@@ -18,7 +18,7 @@
   @section('page-header') ডাক্তার প্রোফাইল @endsection
   <div class="container-fluid">
       <div class="row">
-          <div class="col-12">
+          <div class="col-10">
               <div class="card card-outline card-success shadow-sm">
                   <div class="card-header border-0">
                       <h3 class="card-title fw-bold"><i class="fas fa-hospital-alt mr-2 text-success"></i> চেম্বারসমূহ</h3>
