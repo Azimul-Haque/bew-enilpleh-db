@@ -1034,7 +1034,7 @@ class DoctorController extends Controller
         $chamber = Doctorhospital::findOrFail($id);
         
         $request->validate([
-            'address_or_room' => 'required',
+            'address_or_room' => 'sometimes',
             'serial_phone' => 'required',
             'weekdays' => 'required',
         ]);
