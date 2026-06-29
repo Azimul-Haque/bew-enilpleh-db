@@ -13,7 +13,7 @@
       {{-- doctor role এর জন্য এই নতুন if else কোড --}}
       @if(Auth::user()->role != 'doctor')
         <div class="row">
-          {{-- @if(Auth::user()->role == 'admin' || in_array('hospitals', Auth::user()->accessibleTables())) --}}
+          @if(Auth::user()->role == 'admin' || in_array('hospitals', Auth::user()->accessibleTables()))
             <div class="col-md-3">
               <a href="{{ route('dashboard.hospitals') }}" class="info-box mb-3">
                 <span class="info-box-icon bg-primary elevation-1"><i class="fas fa-hospital"></i></span>
@@ -24,7 +24,7 @@
                 </div>
               </a>
             </div>
-          {{-- @endif --}}
+          @endif
 
           @if(Auth::user()->role == 'admin' || in_array('doctors', Auth::user()->accessibleTables()) || in_array('hospitals', Auth::user()->accessibleTables()))
           <div class="col-md-3">
