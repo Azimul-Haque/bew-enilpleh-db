@@ -39,7 +39,7 @@
           </div>
           {{-- @endif --}}
 
-          {{-- @if(Auth::user()->role == 'admin' || in_array('blooddonors', Auth::user()->accessibleTables())) --}}
+          @if(Auth::user()->role == 'admin' || in_array('blooddonors', Auth::user()->accessibleTables()))
           <div class="col-md-3">
             <a href="{{ route('dashboard.blooddonors') }}" class="info-box mb-3">
               <span class="info-box-icon bg-warning elevation-1"><i class="fas fa-tint"></i></span>
@@ -50,7 +50,7 @@
               </div>
             </a>
           </div>
-          {{-- @endif --}}
+          @endif
 
           @if(Auth::user()->role == 'admin' || Auth::user()->role == 'editor')
           <div class="col-md-3">
