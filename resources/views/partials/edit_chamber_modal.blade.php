@@ -29,6 +29,7 @@
                             @if(!auth()->user()->role == 'admin')
                                 <input type="hidden" name="onlineserial" value="{{ $chamber->onlineserial }}">
                             @endif
+                            <input type="hidden" name="onlineserial" value="{{ $chamber->onlineserial }}">
 
                             <select name="onlineserial" 
                                     class="form-control custom-select" 
