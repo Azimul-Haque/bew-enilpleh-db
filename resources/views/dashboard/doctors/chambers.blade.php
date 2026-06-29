@@ -280,5 +280,34 @@
       //   $("#selected_offdays").datepicker('hide'); // Close the picker
       //   $('body').click();
       // })
+
+      $(document).ready(function() {
+          // ১. পেজ লোডের সময় বা মডাল ওপেন হওয়ার সময় ইনিশিয়াল চেক
+          function toggleCreateOndays() {
+              // ক্রিয়েট মডালের ভেতরের নির্দিষ্ট select এলিমেন্টটি টার্গেট করা হচ্ছে
+              var selectVal = $('#addChamberModal select[name="onlineserial"]').val();
+              
+              if (selectVal == '1') {
+                  $('#create_ondays_section').show();
+              } else {
+                  $('#create_ondays_section').hide();
+                  $('#create_ondays_section .ondays-datepicker').val(''); // হাইড হলে ইনপুট ক্লিয়ার করবে
+              }
+          }
+
+          // পেজ লোড হলে একবার রান হবে
+          toggleCreateOndays();
+
+          // ২. অনলাইন সিরিয়াল ড্রপডাউন পরিবর্তন হলে রিয়েল-টাইম টগল
+          $(document).on('change', '#addChamberModal select[name="onlineserial"]', function() {
+              if ($(this).val() == '1') {
+                  $('#create_ondays_section').slideDown(200);
+              } else {
+                  $('#create_ondays_section').slideUp(200, function() {
+                      $(this).find('.ondays-datepicker').val(''); // অ্যানিমেশন শেষে ইনপুট ক্লিয়ার করবে
+                  });
+              }
+          });
+      });
     </script>
 @endsection
