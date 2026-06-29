@@ -83,7 +83,7 @@
                         </div>
 
 
-                        <div class="col-md-12 mb-3">
+                        <div class="col-md-12 mb-3" id="ondays_section" style="{{ $chamber->onlineserial == 1 ? '' : 'display: none;' }}">
                             <label class="font-weight-bold small">যেদিন যেদিন চেম্বারে বসবেন (অতিরিক্ত তারিখসমূহ)</label>
                             <div class="input-group">
                                 <div class="input-group-prepend">
@@ -93,7 +93,7 @@
                                        placeholder="তারিখগুলো নির্বাচন করুন" 
                                        value="{{ $chamber->ondays ? implode(',', json_decode($chamber->ondays)) : '' }}" readonly>
                             </div>
-                            <small class="text-muted">একাধিক তারিখ সিলেক্ট করা যাবে, কোন তারিখ সিলেক্ট না করলে অ্যাপ ব্যবহারকারী বর্তমান তারিখ হতে প্রতিদিন সিরিয়াল দিতে পারবে।</small>
+                            <small class="text-muted">একাধিক তারিখ সিলেক্ট করা যাবে, কোন তারিখ সিলেক্ট না করলে অ্যাপ ব্যবহারকারী বর্তমান তারিখ হতে প্রতিদিন সিরিয়াল দিতে পারবে।</small>
                         </div>
                     </div>
                 </div>
