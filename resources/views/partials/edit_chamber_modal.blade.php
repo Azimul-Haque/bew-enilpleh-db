@@ -31,9 +31,26 @@
                             </select>
                         </div>
 
+                        <div class="col-md-6 mb-3">
+                            <label class="font-weight-bold small text-muted">অনলাইন সিরিয়াল স্ট্যাটাস</label>
+                            
+                            <!-- Hidden input to ensure value is submitted if disabled -->
+                            @if(!auth()->user()->isAdmin())
+                                <input type="hidden" name="onlineserial" value="{{ $chamber->onlineserial }}">
+                            @endif
+
+                            <select name="onlineserial" 
+                                    class="form-control custom-select" 
+                                    {{ auth()->user()->isAdmin() ? '' : 'disabled' }} 
+                                    required>
+                                <option value="1" {{ $chamber->onlineserial == 1 ? 'selected' : '' }}>সক্রিয় ✅ (অনলাইনে সিরিয়াল দেওয়া যাবে)</option>
+                                <option value="0" {{ $chamber->onlineserial == 0 ? 'selected' : '' }}>বন্ধ ❌ (শুধুমাত্র অফলাইন)</option>
+                            </select>
+                        </div>
+
                         Auth::user()->role != 'admin'
 
-                        
+
                         <div class="col-md-6">
                             
                         </div>
