@@ -209,11 +209,11 @@
 
                               <select name="onlineserial" 
                                       class="form-control" 
-                                      {{ auth()->user()->role == 'admin' ? '' : 'disabled' }} 
+                                      {{ auth()->user()->role == 'doctor' ? '' : 'disabled' }} 
                                       required>
                                   <option>সিলেক্ট করুন</option>
                                   <option value="1">অনলাইনে সিরিয়াল দেওয়া যাবে ✅</option>
-                                  <option value="0" {{ auth()->user()->role != 'admin' ? 'selected' : '' }}>না, অফলাইন ❌</option>
+                                  <option value="0" {{ auth()->user()->role == 'doctor' ? 'selected' : '' }}>না, অফলাইন ❌</option>
                               </select>
                           </div>
                           <div class="col-md-6">
