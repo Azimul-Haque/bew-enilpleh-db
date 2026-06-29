@@ -11,7 +11,7 @@
       {{-- doctor role এর জন্য এই নতুন if else কোড --}}
       {{-- doctor role এর জন্য এই নতুন if else কোড --}}
       {{-- doctor role এর জন্য এই নতুন if else কোড --}}
-      @if(Auth::user()->role != 'doctor' || Auth::user()->role != 'manager')
+      @if(Auth::user()->role != 'doctor')
         <div class="row">
           {{-- @if(Auth::user()->role == 'admin' || in_array('hospitals', Auth::user()->accessibleTables())) --}}
             <div class="col-md-3">
