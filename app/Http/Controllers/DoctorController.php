@@ -1006,7 +1006,7 @@ class DoctorController extends Controller
         $request->validate([
             'doctor_id' => 'required',
             'hospital_id' => 'required',
-            'address_or_room' => 'required',
+            'address_or_room' => 'sometimes',
             'serial_phone' => 'required',
             'weekdays' => 'required',
         ]);
