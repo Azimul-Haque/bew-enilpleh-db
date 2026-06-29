@@ -213,7 +213,7 @@
                                       required>
                                   <option>সিলেক্ট করুন</option>
                                   <option value="1">অনলাইনে সিরিয়াল দেওয়া যাবে ✅</option>
-                                  <option value="0" {{ auth()->user()->role != 'admin' ? 'selected' : '' }}>না, অফলাইন ❌</option>
+                                  <option value="0">না, অফলাইন ❌</option>
                               </select>
                           </div>
                           <div class="col-md-6">
