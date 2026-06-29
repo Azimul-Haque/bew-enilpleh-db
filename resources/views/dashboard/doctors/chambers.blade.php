@@ -202,9 +202,17 @@
 
                           <div class="col-md-6 mb-3">
                               <label class="font-weight-bold small">অনলাইন সিরিয়াল</label>
-                              <select name="onlineserial" class="form-control" required>
+                              
+                              @if(auth()->user()->role != 'admin')
+                                  <input type="hidden" name="onlineserial" value="0">
+                              @endif
+
+                              <select name="onlineserial" 
+                                      class="form-control" 
+                                      {{ auth()->user()->role == 'admin' ? '' : 'disabled' }} 
+                                      required>
                                   <option value="1">অনলাইনে সিরিয়াল দেওয়া যাবে ✅</option>
-                                  <option value="0" selected>না, অফলাইন ❌</option>
+                                  <option value="0" {{ auth()->user()->role != 'admin' ? 'selected' : '' }}>না, অফলাইন ❌</option>
                               </select>
                           </div>
                           <div class="col-md-6">
