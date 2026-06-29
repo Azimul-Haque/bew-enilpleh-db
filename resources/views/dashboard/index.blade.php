@@ -103,16 +103,18 @@
             </a>
           </div>
           @elseif(Auth::user()->role == 'editor' || Auth::user()->role == 'manager')
-          <div class="col-md-3">
-            <a href="{{ route('dashboard.coachings.singleforeditor') }}" class="info-box mb-3">
-              <span class="info-box-icon bg-warning elevation-1"><i class="fas fa-chalkboard-teacher"></i></span>
+            @if(in_array('coachings', Auth::user()->accessibleTables()))
+            <div class="col-md-3">
+              <a href="{{ route('dashboard.coachings.singleforeditor') }}" class="info-box mb-3">
+                <span class="info-box-icon bg-warning elevation-1"><i class="fas fa-chalkboard-teacher"></i></span>
 
-              <div class="info-box-content">
-                <span class="info-box-text">শিক্ষা প্রতিষ্ঠান তালিকা</span>
-                <small class="info-box-text" style="margin-top: 10px;">ক্লিক করুন</small>
-              </div>
-            </a>
-          </div>
+                <div class="info-box-content">
+                  <span class="info-box-text">শিক্ষা প্রতিষ্ঠান তালিকা</span>
+                  <small class="info-box-text" style="margin-top: 10px;">ক্লিক করুন</small>
+                </div>
+              </a>
+            </div>
+            @endif
           @endif
 
           @if(Auth::user()->role == 'admin' || Auth::user()->role == 'editor')
