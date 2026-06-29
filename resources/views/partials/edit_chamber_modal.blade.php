@@ -83,7 +83,7 @@
                         </div>
 
 
-                        <div class="col-md-12 mb-3" id="ondays_section" style="{{ $chamber->onlineserial == 1 ? '' : 'display: none;' }}">
+                        <div class="col-md-12 mb-3 edit-ondays-section" style="{{ $chamber->onlineserial == 1 ? '' : 'display: none;' }}">
                             <label class="font-weight-bold small">যেদিন যেদিন চেম্বারে বসবেন (অতিরিক্ত তারিখসমূহ)</label>
                             <div class="input-group">
                                 <div class="input-group-prepend">
