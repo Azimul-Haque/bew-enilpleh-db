@@ -54,13 +54,13 @@
                         </div>
                         
                         <div class="col-md-6 mb-3">
-                            <label class="font-weight-bold small text-muted">চেম্বার এড্রেস/রুম নম্বর *</label>
+                            <label class="font-weight-bold small text-muted">চেম্বার এড্রেস/রুম নম্বর (OPTIONAL)</label>
                             <div class="input-group">
                                 <div class="input-group-prepend">
                                     <span class="input-group-text bg-white border-right-0"><i class="fas fa-door-open text-primary"></i></span>
                                 </div>
                                 <input type="text" name="address_or_room" class="form-control border-left-0" 
-                                       value="{{ $chamber->address_or_room }}" placeholder="যেমন: ৩১০ নম্বর রুম" required>
+                                       value="{{ $chamber->address_or_room }}" placeholder="যেমন: ৩১০ নম্বর রুম">
                             </div>
                         </div>
 
