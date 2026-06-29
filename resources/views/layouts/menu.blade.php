@@ -47,14 +47,6 @@
 @else
 {{-- doctor role এর জন্য --}}
 {{-- doctor role এর জন্য --}}
-@if(Auth::user()->role == 'manager')
-<li class="nav-item">
-    <a href="{{ route('dashboard.doctors') }}" class="nav-link {{ Request::is('dashboard/doctors') ? 'active' : '' }} {{ Request::is('dashboard/doctors/*') ? 'active' : '' }}">
-        <i class="nav-icon fas fa-user-md"></i>
-        <p>ডাক্তার তালিকা</p>
-    </a>
-</li>
-@endif
 <li class="nav-item">
     <a href="{{ route('dashboard.doctors.chambers', Auth::user()->accessibleDoctors()->first()->id) }}" class="nav-link {{ Request::is('dashboard/chambers') ? 'active' : '' }} {{ Request::is('dashboard/chambers/*') ? 'active' : '' }}">
         <i class="nav-icon fas fa-hospital"></i>
@@ -142,12 +134,12 @@
     </a>
 </li>
 @elseif(Auth::user()->role == 'editor' || Auth::user()->role == 'manager')
-{{-- <li class="nav-item">
+<li class="nav-item">
     <a href="{{ route('dashboard.coachings.singleforeditor') }}" class="nav-link {{ Request::is('dashboard/coachings') ? 'active' : '' }} {{ Request::is('dashboard/coachings/*') ? 'active' : '' }}">
         <i class="nav-icon fas fa-chalkboard-teacher"></i>
         <p>শিক্ষা প্রতিষ্ঠান</p>
     </a>
-</li> --}}
+</li>
 @endif
 
 
