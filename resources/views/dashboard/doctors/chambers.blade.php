@@ -201,21 +201,21 @@
                           </div>
 
                           <div class="col-md-6 mb-3">
-                              <label class="font-weight-bold small text-muted">অনলাইন সিরিয়াল</label>
+                              <label class="font-weight-bold small">অনলাইন সিরিয়াল</label>
                               
                               @if(auth()->user()->role != 'admin')
-                                  <input type="hidden" name="onlineserial" value="{{ $chamber->onlineserial }}">
+                                  <input type="hidden" name="onlineserial" value="0">
                               @endif
 
                               <select name="onlineserial" 
-                                      class="form-control custom-select" 
+                                      class="form-control" 
                                       {{ auth()->user()->role == 'admin' ? '' : 'disabled' }} 
                                       required>
-                                  <option value="1" {{ $chamber->onlineserial == 1 ? 'selected' : '' }}>অনলাইনে সিরিয়াল দেওয়া যাবে ✅</option>
-                                  <option value="0" {{ $chamber->onlineserial == 0 ? 'selected' : '' }}>না, অফলাইন ❌</option>
+                                  <option>সিলেক্ট করুন</option>
+                                  <option value="1">অনলাইনে সিরিয়াল দেওয়া যাবে ✅</option>
+                                  <option value="0" {{ auth()->user()->role != 'admin' ? 'selected' : '' }}>না, অফলাইন ❌</option>
                               </select>
                           </div>
-                          
                           <div class="col-md-6">
                           </div>
 
