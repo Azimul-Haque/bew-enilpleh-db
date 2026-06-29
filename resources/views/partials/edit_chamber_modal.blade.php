@@ -41,14 +41,12 @@
 
                             <select name="onlineserial" 
                                     class="form-control custom-select" 
-                                    {{ auth()->user()->isAdmin() ? '' : 'disabled' }} 
+                                    {{ auth()->user()->role == 'admin' ? '' : 'disabled' }} 
                                     required>
                                 <option value="1" {{ $chamber->onlineserial == 1 ? 'selected' : '' }}>সক্রিয় ✅ (অনলাইনে সিরিয়াল দেওয়া যাবে)</option>
                                 <option value="0" {{ $chamber->onlineserial == 0 ? 'selected' : '' }}>বন্ধ ❌ (শুধুমাত্র অফলাইন)</option>
                             </select>
                         </div>
-
-                        Auth::user()->role != 'admin'
 
 
                         <div class="col-md-6">
