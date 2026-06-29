@@ -35,7 +35,7 @@
     </a>
 </li>
 @elseif(Auth::user()->role == 'editor' || Auth::user()->role == 'manager')
-    @if(in_array('doctors', Auth::user()->accessibleTables()) || in_array('hospitals', Auth::user()->accessibleTables()))
+    @if(in_array('doctors', Auth::user()->accessibleTables()))
     <li class="nav-item">
         <a href="{{ route('dashboard.doctors') }}" class="nav-link {{ Request::is('dashboard/doctors') ? 'active' : '' }} {{ Request::is('dashboard/doctors/*') ? 'active' : '' }}">
             <i class="nav-icon fas fa-user-md"></i>
