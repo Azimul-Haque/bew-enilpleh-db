@@ -44,14 +44,6 @@
     </li>
     @endif
 @endif
-
-<li class="nav-item">
-    <a href="{{ route('dashboard.doctors') }}" class="nav-link {{ Request::is('dashboard/doctors') ? 'active' : '' }} {{ Request::is('dashboard/doctors/*') ? 'active' : '' }}">
-        <i class="nav-icon fas fa-user-md"></i>
-        <p>ডাক্তার তালিকা</p>
-    </a>
-</li>
-
 {{-- @if(Auth::user()->role == 'admin' || in_array('blooddonors', Auth::user()->accessibleTables())) --}}
 <li class="nav-item">
     <a href="{{ route('dashboard.blooddonors') }}" class="nav-link {{ Request::is('dashboard/blooddonors') ? 'active' : '' }} {{ Request::is('dashboard/blooddonors/*') ? 'active' : '' }}">
