@@ -203,7 +203,7 @@
                           <div class="col-md-6 mb-3">
                               <label class="font-weight-bold small">অনলাইন সিরিয়াল</label>
                               
-                              @if(auth()->user()->role != 'admin')
+                              @if(auth()->user()->role == 'doctor')
                                   <input type="hidden" name="onlineserial" value="0">
                               @endif
 
