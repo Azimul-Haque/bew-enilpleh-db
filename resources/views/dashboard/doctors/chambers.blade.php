@@ -231,7 +231,7 @@
                               <textarea name="weekdays" class="form-control" rows="3" placeholder="উদা: শনি-বুধ (বিকাল ৫টা - রাত ৯টা)" required></textarea>
                           </div>
 
-                          <div class="col-md-12 mb-3">
+                          <div class="col-md-12 mb-3" id="create_ondays_section" style="display: none;">
                               <label class="font-weight-bold small">যেদিন যেদিন চেম্বারে বসবেন (অতিরিক্ত তারিখসমূহ)</label>
                               <div class="input-group">
                                   <div class="input-group-prepend">
@@ -241,7 +241,7 @@
                                          placeholder="তারিখগুলো নির্বাচন করুন" 
                                          value="" readonly>
                               </div>
-                              <small class="text-muted">একাধিক তারিখ সিলেক্ট করা যাবে, কোন তারিখ সিলেক্ট না করলে অ্যাপ ব্যবহারকারী বর্তমান তারিখ হতে প্রতিদিন সিরিয়াল দিতে পারবে।</small>
+                              <small class="text-muted">একাধিক তারিখ সিলেক্ট করা যাবে, কোন তারিখ সিলেক্ট না করলে অ্যাপ ব্যবহারকারী বর্তমান তারিখ হতে প্রতিদিন সিরিয়াল দিতে পারবে।</small>
                           </div>
                       </div>
                   </div>
