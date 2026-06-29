@@ -35,6 +35,8 @@
     </a>
 </li>
 @elseif(Auth::user()->role == 'editor' || Auth::user()->role == 'manager')
+    @if(in_array('doctors', Auth::user()->accessibleTables()) || in_array('hospitals', Auth::user()->accessibleTables()))
+    @endif
 @endif
 
 {{-- @if(Auth::user()->role == 'admin' || in_array('blooddonors', Auth::user()->accessibleTables())) --}}
