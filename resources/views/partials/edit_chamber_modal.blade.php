@@ -30,6 +30,10 @@
                                 <option value="0" {{ $chamber->onlineserial == 0 ? 'selected' : '' }}>বন্ধ ❌ (শুধুমাত্র অফলাইন)</option>
                             </select>
                         </div>
+
+                        Auth::user()->role != 'admin'
+
+                        
                         <div class="col-md-6">
                             
                         </div>
