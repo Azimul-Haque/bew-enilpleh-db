@@ -1045,6 +1045,8 @@ class DoctorController extends Controller
         $chamber->onlineserial = $request->onlineserial;
         if ($request->filled('ondays')) {
             $chamber->ondays = json_encode(explode(',', $request->ondays));
+        } else {
+            $chamber->ondays = '';
         }
 
         $chamber->save();
