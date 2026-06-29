@@ -15,7 +15,7 @@
 </li>
 @endif
 
-@if(Auth::user()->role != 'doctor')
+@if(Auth::user()->role != 'doctor' && Auth::user()->role != 'manager')
 {{-- doctor role এর জন্য --}}
 {{-- doctor role এর জন্য --}}
 {{-- @if(Auth::user()->role == 'admin' || in_array('hospitals', Auth::user()->accessibleTables())) --}}
