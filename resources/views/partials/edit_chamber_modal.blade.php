@@ -26,13 +26,13 @@
                             <label class="font-weight-bold small text-muted">অনলাইন সিরিয়াল স্ট্যাটাস</label>
                             
                             <!-- Hidden input to ensure value is submitted if disabled -->
-                            @if(auth()->user()->role != 'admin')
+                            @if(auth()->user()->role == 'doctor')
                                 <input type="hidden" name="onlineserial" value="{{ $chamber->onlineserial }}">
                             @endif
 
                             <select name="onlineserial" 
                                     class="form-control custom-select" 
-                                    {{ auth()->user()->role == 'admin' ? '' : 'disabled' }} 
+                                    {{ auth()->user()->role != 'doctor' ? '' : 'disabled' }} 
                                     required>
                                 <option value="1" {{ $chamber->onlineserial == 1 ? 'selected' : '' }}>সক্রিয় ✅ (অনলাইনে সিরিয়াল দেওয়া যাবে)</option>
                                 <option value="0" {{ $chamber->onlineserial == 0 ? 'selected' : '' }}>বন্ধ ❌ (শুধুমাত্র অফলাইন)</option>
