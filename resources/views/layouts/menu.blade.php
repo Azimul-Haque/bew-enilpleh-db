@@ -34,7 +34,7 @@
         <p>ডাক্তার তালিকা</p>
     </a>
 </li>
-@elseif(Auth::user()->role == 'editor' || Auth::user()->role == 'editor' in_array('doctors', Auth::user()->accessibleTables()) || in_array('hospitals', Auth::user()->accessibleTables()))
+@elseif(Auth::user()->role == 'editor' || Auth::user()->role == 'manager')
 @endif
 
 {{-- @if(Auth::user()->role == 'admin' || in_array('blooddonors', Auth::user()->accessibleTables())) --}}
