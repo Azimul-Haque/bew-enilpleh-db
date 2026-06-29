@@ -35,7 +35,7 @@
                             <label class="font-weight-bold small text-muted">অনলাইন সিরিয়াল স্ট্যাটাস</label>
                             
                             <!-- Hidden input to ensure value is submitted if disabled -->
-                            @if(!auth()->user()->isAdmin())
+                            @if(!auth()->user()->role == 'admin')
                                 <input type="hidden" name="onlineserial" value="{{ $chamber->onlineserial }}">
                             @endif
 
