@@ -57,7 +57,7 @@
     @endif
 @endif
 <li class="nav-item">
-    <a href="{{ route('dashboard.doctors.chambers', Auth::user()->accessibleDoctors()->first()->id) }}" class="nav-link {{ Request::is('dashboard/chambers') ? 'active' : '' }} {{ Request::is('dashboard/chambers/*') ? 'active' : '' }}">
+    <a href="{{ Auth::user()->accessibleDoctors()->first() ? route('dashboard.doctors.chambers', Auth::user()->accessibleDoctors()->first()->id) : '#' }}" class="nav-link {{ Request::is('dashboard/chambers') ? 'active' : '' }} {{ Request::is('dashboard/chambers/*') ? 'active' : '' }}">
         <i class="nav-icon fas fa-hospital"></i>
         <p>চেম্বার তালিকা</p>
     </a>
